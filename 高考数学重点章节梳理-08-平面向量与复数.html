@@ -1,0 +1,2750 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高考数学重点章节梳理 · 第八册 平面向量与复数</title>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      processEscapes: true
+    },
+    svg: { fontCache: 'global' },
+    options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+  :root{
+    --ink:#1b1f27;
+    --ink-2:#3d4655;
+    --muted:#6b7688;
+    --line:#e5e9f0;
+    --line-2:#eef1f6;
+    --bg:#f5f7fb;
+    --card:#ffffff;
+    --brand:#1f5eff;
+    --brand-soft:#eef3ff;
+    --def:#1f5eff;      --def-bg:#f2f6ff;   --def-line:#c9daff;
+    --proof:#0f9d6e;    --proof-bg:#f0fbf6; --proof-line:#b7e8d4;
+    --eg:#c2760a;       --eg-bg:#fff9ee;    --eg-line:#f5dcae;
+    --warn:#d63a3a;     --warn-bg:#fff5f5;  --warn-line:#f8cfcf;
+    --tip:#7a4bd0;      --tip-bg:#f8f4ff;   --tip-line:#ddd0f7;
+    --radius:12px;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Source Han Sans SC","Noto Sans CJK SC",system-ui,-apple-system,"Segoe UI",sans-serif;
+    font-size:16px;
+    line-height:1.85;
+    letter-spacing:.01em;
+  }
+  .page{
+    max-width:960px;
+    margin:0 auto;
+    background:var(--card);
+    box-shadow:0 1px 3px rgba(20,30,60,.06), 0 12px 40px rgba(20,30,60,.06);
+    min-height:100vh;
+  }
+
+  .cover{
+    position:relative;
+    padding:64px 56px 52px;
+    background:
+      radial-gradient(900px 340px at 12% -10%, #e7efff 0%, rgba(231,239,255,0) 62%),
+      radial-gradient(700px 300px at 100% 0%, #eafaf3 0%, rgba(234,250,243,0) 58%),
+      linear-gradient(180deg,#ffffff 0%,#fbfcfe 100%);
+    border-bottom:1px solid var(--line);
+  }
+  .cover .kicker{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:13px; font-weight:600; letter-spacing:.14em;
+    color:var(--brand);
+    background:var(--brand-soft);
+    border:1px solid var(--def-line);
+    padding:5px 14px; border-radius:999px;
+    margin-bottom:22px;
+  }
+  .cover h1{
+    margin:0 0 6px;
+    font-size:42px;
+    line-height:1.25;
+    letter-spacing:-.01em;
+    font-weight:800;
+    color:#121722;
+  }
+  .cover h1 .accent{
+    background:linear-gradient(92deg,#1f5eff,#0f9d6e);
+    -webkit-background-clip:text; background-clip:text;
+    -webkit-text-fill-color:transparent; color:transparent;
+  }
+  .cover .sub{
+    margin:14px 0 0;
+    font-size:17px; color:var(--ink-2);
+    max-width:640px;
+  }
+  .cover .meta{
+    margin-top:30px; padding-top:22px; border-top:1px dashed var(--line);
+    display:flex; flex-wrap:wrap; gap:10px 34px;
+    font-size:14px; color:var(--muted);
+  }
+  .cover .meta b{color:var(--ink-2); font-weight:600;}
+
+  .body{padding:8px 56px 80px;}
+
+  h2{
+    margin:64px 0 8px;
+    font-size:27px; font-weight:800; letter-spacing:-.01em;
+    color:#121722;
+    display:flex; align-items:center; gap:14px;
+    scroll-margin-top:20px;
+  }
+  h2 .num{
+    flex:0 0 auto;
+    width:42px; height:42px; border-radius:11px;
+    display:inline-flex; align-items:center; justify-content:center;
+    font-size:18px; font-weight:800;
+    color:#fff;
+    background:linear-gradient(150deg,#2f6bff,#1f5eff);
+    box-shadow:0 6px 16px rgba(31,94,255,.28);
+  }
+  h2 + .lead{
+    margin:0 0 26px 56px;
+    font-size:14.5px; color:var(--muted);
+  }
+
+  h3{
+    margin:44px 0 14px;
+    font-size:20px; font-weight:700; color:#121722;
+    padding-left:13px; border-left:4px solid var(--brand);
+    line-height:1.4;
+    scroll-margin-top:20px;
+  }
+  h4{
+    margin:28px 0 10px;
+    font-size:16.5px; font-weight:700; color:var(--ink-2);
+  }
+  h4::before{
+    content:"";
+    display:inline-block; width:6px; height:6px; border-radius:2px;
+    background:var(--brand); margin-right:9px; vertical-align:2px;
+  }
+  p{margin:12px 0; color:var(--ink-2);}
+  strong{color:#121722; font-weight:700;}
+  .em{color:var(--brand); font-weight:700;}
+  code{
+    font-family:"JetBrains Mono","Cascadia Mono",Consolas,monospace;
+    background:#f2f4f8; border:1px solid var(--line);
+    padding:1px 6px; border-radius:5px; font-size:.9em; color:#33405c;
+  }
+
+  ul,ol{margin:12px 0; padding-left:26px; color:var(--ink-2);}
+  li{margin:7px 0;}
+  li::marker{color:var(--brand); font-weight:600;}
+
+  .toc{
+    margin:34px 0 0;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:linear-gradient(180deg,#fbfcff,#ffffff);
+    padding:24px 28px;
+  }
+  .toc h5{
+    margin:0 0 14px; font-size:13px; letter-spacing:.16em;
+    color:var(--muted); font-weight:700; text-transform:uppercase;
+  }
+  .toc ol{margin:0; padding:0; list-style:none; counter-reset:toc;}
+  .toc li{
+    counter-increment:toc;
+    display:flex; align-items:baseline; gap:10px;
+    padding:7px 0; border-bottom:1px dashed var(--line-2);
+    font-size:15px;
+  }
+  .toc li:last-child{border-bottom:none;}
+  .toc li::before{
+    content:counter(toc,decimal-leading-zero);
+    font-size:12px; font-weight:700; color:var(--brand);
+    font-variant-numeric:tabular-nums;
+    flex:0 0 auto;
+  }
+  .toc a{color:var(--ink-2); text-decoration:none;}
+  .toc a:hover{color:var(--brand);}
+
+  .box{
+    margin:20px 0;
+    border-radius:var(--radius);
+    padding:18px 22px 18px 22px;
+    border:1px solid;
+    border-left-width:5px;
+    position:relative;
+  }
+  .box > .tag{
+    display:inline-flex; align-items:center; gap:7px;
+    font-size:12.5px; font-weight:800; letter-spacing:.08em;
+    margin-bottom:10px;
+    padding:2px 10px; border-radius:6px;
+  }
+  .box p:first-of-type{margin-top:0;}
+  .box p:last-child{margin-bottom:0;}
+
+  /* ==================== 公式加载失败提示（断网时兜底，必须有） ==================== */
+  .mathjax-warn{
+    display:none;
+    margin:0;
+    padding:12px 20px;
+    background:#fff5f5;
+    border-bottom:1px solid #f8cfcf;
+    color:#b32a2a;
+    font-size:13.5px;
+    line-height:1.7;
+  }
+  .mathjax-warn b{color:#8f1f1f;}
+
+  /* ==================== 真题难度标记（★★ 压轴档） ==================== */
+  .lv-hard{ color:#c2410c; font-weight:900; letter-spacing:.04em; }
+
+  /* ==================== 题目配图（base64 内嵌或内联 SVG） ==================== */
+  .fig{ margin:18px auto; text-align:center; }
+  .fig img{ max-width:min(100%,300px); height:auto; border:1px solid var(--line);
+            border-radius:8px; background:#fff; padding:8px; }
+  .fig .cap{ display:block; margin-top:8px; font-size:12.5px; color:var(--muted); }
+  @media print{ .fig img{ max-width:230px; } }
+
+  .def  {background:var(--def-bg);   border-color:var(--def-line);   border-left-color:var(--def);}
+  .def  .tag{background:#dfe9ff; color:#1a4fd6;}
+  .proof{background:var(--proof-bg); border-color:var(--proof-line); border-left-color:var(--proof);}
+  .proof .tag{background:#d6f4e7; color:#0b7a56;}
+  .eg   {background:var(--eg-bg);    border-color:var(--eg-line);    border-left-color:var(--eg);}
+  .eg   .tag{background:#fbeccd; color:#9a5c05;}
+  .warn {background:var(--warn-bg);  border-color:var(--warn-line);  border-left-color:var(--warn);}
+  .warn .tag{background:#fadada; color:#b32a2a;}
+  .tip  {background:var(--tip-bg);   border-color:var(--tip-line);   border-left-color:var(--tip);}
+  .tip  .tag{background:#e8dcfb; color:#5f36ad;}
+
+  .steps{counter-reset:st; margin:14px 0; padding:0; list-style:none;}
+  .steps > li{
+    counter-increment:st;
+    position:relative;
+    padding:0 0 0 44px;
+    margin:14px 0;
+  }
+  .steps > li::before{
+    content:counter(st);
+    position:absolute; left:0; top:2px;
+    width:26px; height:26px; border-radius:8px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:13px; font-weight:800; color:#fff;
+    background:#8fa9e6;
+  }
+  .steps > li::after{
+    content:""; position:absolute; left:13px; top:32px; bottom:-14px;
+    width:1.5px; background:var(--line);
+  }
+  .steps > li:last-child::after{display:none;}
+
+  .formula{
+    margin:18px 0;
+    padding:16px 22px;
+    background:#fafbfe;
+    border:1px dashed var(--def-line);
+    border-radius:10px;
+    text-align:center;
+    overflow-x:auto;
+  }
+  .formula .cap{
+    display:block; text-align:left;
+    font-size:12.5px; font-weight:700; color:var(--brand);
+    letter-spacing:.06em; margin-bottom:6px;
+  }
+
+  .tbl-wrap{overflow-x:auto; margin:20px 0;}
+  table{
+    width:100%; border-collapse:collapse;
+    font-size:14.5px;
+    border:1px solid var(--line);
+    border-radius:10px;
+    overflow:hidden;
+  }
+  th,td{
+    padding:11px 14px; text-align:left;
+    border-bottom:1px solid var(--line-2);
+    vertical-align:top;
+  }
+  thead th{
+    background:#f4f7fd;
+    color:#1a2540; font-weight:700; font-size:13.5px;
+    border-bottom:1px solid var(--line);
+    white-space:nowrap;
+  }
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fcfdff;}
+
+  .map{
+    margin:26px 0;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    gap:14px;
+  }
+  .map .node{
+    border:1px solid var(--line);
+    border-radius:11px;
+    padding:16px 18px;
+    background:linear-gradient(180deg,#fbfcff,#fff);
+  }
+  .map .node b{
+    display:block; font-size:14.5px; color:#121722;
+    margin-bottom:8px; padding-bottom:8px;
+    border-bottom:1px solid var(--line-2);
+  }
+  .map .node span{
+    display:block; font-size:13px; color:var(--muted); line-height:1.75;
+  }
+
+  .chain{
+    margin:24px 0;
+    padding:20px 22px;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:linear-gradient(180deg,#fbfcff,#fff);
+    text-align:center;
+    font-size:14.5px;
+    line-height:2.2;
+    color:var(--ink-2);
+    overflow-x:auto;
+  }
+  .chain .step{
+    display:inline-block;
+    padding:5px 14px;
+    margin:3px 2px;
+    border-radius:8px;
+    background:#eef3ff;
+    border:1px solid var(--def-line);
+    color:#1a4fd6;
+    font-weight:700;
+    white-space:nowrap;
+  }
+  .chain .step.alt{
+    background:#f0fbf6; border-color:var(--proof-line); color:#0b7a56;
+  }
+  .chain .arrow{
+    display:inline-block;
+    margin:0 4px;
+    color:var(--muted);
+    font-weight:700;
+  }
+  .chain .note{
+    display:block;
+    margin-top:10px;
+    font-size:12.5px;
+    color:var(--muted);
+    line-height:1.7;
+    text-align:left;
+  }
+
+  .foot{
+    margin-top:70px; padding-top:24px;
+    border-top:1px solid var(--line);
+    font-size:13px; color:var(--muted);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  }
+
+  .print-btn{
+    position:fixed; right:26px; bottom:26px; z-index:50;
+    background:linear-gradient(150deg,#2f6bff,#1f5eff); color:#fff;
+    border:none; border-radius:999px;
+    padding:12px 22px; font-size:14px; font-weight:700;
+    cursor:pointer; font-family:inherit;
+    box-shadow:0 8px 24px rgba(31,94,255,.32);
+  }
+  .print-btn:hover{filter:brightness(1.06);}
+
+  @media print{
+    body{background:#fff; font-size:11.5pt; line-height:1.7;}
+    .page{box-shadow:none; max-width:none;}
+    .cover{padding:0 0 22px; background:#fff; border-bottom:2px solid #1f5eff;}
+    .cover h1{font-size:26pt;}
+    .body{padding:0;}
+    .print-btn{display:none;}
+    h2{margin-top:26px; font-size:16pt; break-after:avoid; page-break-after:avoid;}
+    h3{break-after:avoid; page-break-after:avoid; font-size:13pt;}
+    .box,.formula,.tbl-wrap,table,.map .node,.chain{break-inside:avoid; page-break-inside:avoid;}
+    .eg{break-inside:auto;}
+    a{color:inherit; text-decoration:none;}
+  }
+  @media (max-width:720px){
+    .cover{padding:40px 24px 34px;}
+    .cover h1{font-size:30px;}
+    .body{padding:8px 24px 60px;}
+    h2{font-size:22px;} h2 .num{width:36px;height:36px;font-size:16px;}
+    h2 + .lead{margin-left:50px;}
+    .print-btn{right:14px; bottom:14px;}
+  }
+  /* ==================== 左侧固定导航 ==================== */
+  .sidenav{ display:none; }
+  @media (min-width:1321px){
+    body{ padding-left:268px; }
+    .sidenav{
+      display:block;
+      position:fixed; top:0; left:0; bottom:0;
+      width:268px;
+      overflow-y:auto;
+      background:#fbfcfe;
+      border-right:1px solid var(--line);
+      padding:22px 0 44px;
+      z-index:40;
+      scrollbar-width:thin;
+    }
+    .sidenav::-webkit-scrollbar{ width:6px; }
+    .sidenav::-webkit-scrollbar-thumb{ background:#d7dde8; border-radius:3px; }
+  }
+  .sidenav-title{
+    font-size:11.5px; letter-spacing:.18em; font-weight:700;
+    color:var(--muted); text-transform:uppercase;
+    padding:0 20px 12px;
+    border-bottom:1px solid var(--line);
+    margin-bottom:10px;
+  }
+  .sidenav a{
+    display:block; text-decoration:none;
+    color:var(--ink-2);
+    border-left:3px solid transparent;
+    transition:background .15s, color .15s, border-color .15s;
+  }
+  .sidenav a.nav-l1{
+    font-size:13.5px; font-weight:700; color:#1a2540;
+    padding:8px 18px 8px 17px;
+    margin-top:6px;
+    line-height:1.5;
+  }
+  .sidenav a.nav-l1 .n{
+    display:inline-block; min-width:15px;
+    color:var(--brand); font-weight:800; margin-right:7px;
+  }
+  .sidenav a.nav-l2{
+    font-size:12.5px; color:var(--muted);
+    padding:5px 18px 5px 30px;
+    line-height:1.55;
+  }
+  .sidenav a:hover{ background:#eef3ff; color:var(--brand); }
+  .sidenav a.active{
+    background:#eef3ff; color:var(--brand);
+    border-left-color:var(--brand); font-weight:700;
+  }
+  @media print{
+    .sidenav{ display:none !important; }
+    body{ padding-left:0 !important; }
+  }
+  /* ==================== 左侧固定导航 结束 ==================== */
+</style>
+</head>
+<body>
+<aside class="sidenav" aria-label="目录导航">
+  <div class="sidenav-title">目录</div>
+  <a class="nav-l1" href="#ch0"><span class="n">0</span>写在前面：向量是"带方向的数"</a>
+  <a class="nav-l1" href="#ch1"><span class="n">1</span>向量的概念与线性运算</a>
+  <a class="nav-l2" href="#ch1-1">1.1　向量的概念</a>
+  <a class="nav-l2" href="#ch1-2">1.2　向量的加法与减法</a>
+  <a class="nav-l2" href="#ch1-3">1.3　数乘与共线定理</a>
+  <a class="nav-l1" href="#ch2"><span class="n">2</span>平面向量基本定理与坐标表示</a>
+  <a class="nav-l2" href="#ch2-1">2.1　平面向量基本定理</a>
+  <a class="nav-l2" href="#ch2-2">2.2　向量的坐标表示</a>
+  <a class="nav-l2" href="#ch2-3">2.3　坐标形式的线性运算</a>
+  <a class="nav-l1" href="#ch3"><span class="n">3</span>平面向量的数量积</a>
+  <a class="nav-l2" href="#ch3-1">3.1　数量积的定义与几何意义</a>
+  <a class="nav-l2" href="#ch3-2">3.2　数量积的运算律与性质</a>
+  <a class="nav-l2" href="#ch3-3">3.3　坐标形式的数量积</a>
+  <a class="nav-l1" href="#ch4"><span class="n">4</span>向量的应用</a>
+  <a class="nav-l2" href="#ch4-1">4.1　向量与三角函数</a>
+  <a class="nav-l2" href="#ch4-2">4.2　向量与解析几何</a>
+  <a class="nav-l2" href="#ch4-3">4.3　向量与立体几何（空间向量的桥梁）</a>
+  <a class="nav-l2" href="#ch4-4">4.4　常见模型与解题策略</a>
+  <a class="nav-l1" href="#ch5"><span class="n">5</span>复数</a>
+  <a class="nav-l2" href="#ch5-1">5.1　复数的概念</a>
+  <a class="nav-l2" href="#ch5-2">5.2　复数的四则运算</a>
+  <a class="nav-l2" href="#ch5-3">5.3　共轭复数与模</a>
+  <a class="nav-l2" href="#ch5-4">5.4　复数的几何意义</a>
+  <a class="nav-l1" href="#ch6"><span class="n">6</span>易错点清单</a>
+  <a class="nav-l1" href="#ch7"><span class="n">7</span>知识地图与自测</a>
+  <a class="nav-l2" href="#ch7-1">7.1　知识地图</a>
+  <a class="nav-l2" href="#ch7-2">7.2　自测清单</a>
+  <a class="nav-l1" href="#ch8"><span class="n">8</span>高考真题题型精讲（2016—2025）</a>
+  <a class="nav-l2" href="#ch8-1">8.1　题型一：向量的线性运算与共线</a>
+  <a class="nav-l2" href="#ch8-2">8.2　题型二：数量积与垂直</a>
+  <a class="nav-l2" href="#ch8-3">8.3　题型三：向量的夹角与模</a>
+  <a class="nav-l2" href="#ch8-4">8.4　题型四：向量的投影与几何意义</a>
+  <a class="nav-l2" href="#ch8-5">8.5　题型五：复数的运算</a>
+  <a class="nav-l2" href="#ch8-6">8.6　提分要点总结</a>
+</aside>
+<div class="mathjax-warn" id="mathjax-warn">
+  <b>公式未加载成功。</b>本讲义的数学公式依赖 MathJax 在线渲染，需要联网。
+  当前网络可能不通或 CDN 被拦截，页面上显示的 <code>\( ... \)</code> 是公式源码，不是排版后的样子。
+  请联网后刷新页面；<b>另外，打印或另存 PDF 前请确认公式已正常显示</b>，否则导出的文件里会是源码。
+</div>
+
+<div class="page">
+
+  <header class="cover">
+    <div class="kicker">高考数学 · 重点章节梳理</div>
+    <h1>第八册　<span class="accent">平面向量与复数</span></h1>
+    <p class="sub">面向基础薄弱同学的「慢速精讲版」——把"向量的减法为什么那样画""数量积为什么不能约分""复数的除法为什么要乘共轭"这些最容易含糊的地方，逐条讲清。</p>
+    <div class="meta">
+      <div><b>适用</b>　高三一轮复习 / 高二同步巩固</div>
+      <div><b>核心主线</b>　向量的概念 → 线性运算 → 坐标表示 → 数量积 → 应用 → 复数</div>
+      <div><b>建议课时</b>　8 ~ 10 讲</div>
+    </div>
+
+    <nav class="toc">
+      <h5>目录</h5>
+      <ol>
+        <li><a href="#ch0">写在前面：向量是"带方向的数"</a></li>
+        <li><a href="#ch1">向量的概念与线性运算（加减法、数乘、共线定理）</a></li>
+        <li><a href="#ch2">平面向量基本定理与坐标表示</a></li>
+        <li><a href="#ch3">平面向量的数量积（定义、运算律、坐标形式）</a></li>
+        <li><a href="#ch4">向量的应用（与三角、解析几何、立体几何的结合）</a></li>
+        <li><a href="#ch5">复数（概念、四则运算、共轭与模、几何意义）</a></li>
+        <li><a href="#ch6">易错点清单</a></li>
+        <li><a href="#ch7">知识地图与自测</a></li>
+        <li><a href="#ch8">高考真题题型精讲（2016—2025）</a></li>
+      </ol>
+    </nav>
+  </header>
+
+  <main class="body">
+  <!-- ==================== 第 0 章 ==================== -->
+  <h2 id="ch0"><span class="num">0</span>写在前面：向量是"带方向的数"</h2>
+  <p class="lead">这一册补的是立体几何册最缺的地基——第四册第 5 章直接讲"空间向量建系"，但平面向量的坐标运算、数量积你还没系统学过。</p>
+
+  <p>先说清楚一件事：<strong>向量不是"新的一章"，而是一种新的"数的语言"。</strong></p>
+  <p>以前我们说的数只有大小（\(3\) 就是 \(3\)）。向量有两个信息：<strong>大小 + 方向</strong>。比如"向东走 3 公里"就是一个向量，"走 3 公里"不是。</p>
+
+  <div class="map">
+    <div class="node">
+      <b>主线一：向量怎么"算"</b>
+      <span>加法（首尾相接）、减法（共起点连终点）、数乘（改变长度和方向）。<strong>这三种运算合起来叫"线性运算"。</strong></span>
+    </div>
+    <div class="node">
+      <b>主线二：向量怎么"表示"</b>
+      <span>平面向量基本定理告诉你：<strong>任意向量都能用两个不共线的向量表示</strong>。取成垂直的单位向量，就得到坐标表示。</span>
+    </div>
+    <div class="node">
+      <b>主线三：向量怎么"乘"</b>
+      <span>数量积 \(\bs a\cdot\bs b=|\bs a||\bs b|\cos\theta\)。<strong>它把"角度"和"长度"两个信息打包成了一个数。</strong></span>
+    </div>
+    <div class="node">
+      <b>主线四：复数是什么</b>
+      <span>复数 \(a+b\i\) 可以看成平面上的点 \((a,b)\)——<strong>它和平面向量是"同一件事的两种说法"</strong>。</span>
+    </div>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">学法建议</span>
+    <ol>
+      <li><strong>先把"几何法"和"坐标法"两条路都学会，再决定用哪条。</strong>几何法适合处理"有明确图形关系"的题（如三角形、平行四边形），坐标法适合"能建系"的题。<strong>拿到题先想"能不能建系"。</strong></li>
+      <li><strong>数量积是本章的核心</strong>，因为它一次性给出"长度"和"角度"：\(|\bs a|=\sqrt{\bs a\cdot\bs a}\)、\(\cos\theta=\dfrac{\bs a\cdot\bs b}{|\bs a||\bs b|}\)。<strong>记住这两条变形，等于记住了半章内容。</strong></li>
+      <li><strong>复数部分不要怕。</strong>高考只考一道 5 分的小题，且题型固定（四则运算 + 共轭 + 模），把第 5 章的例题做熟就够。</li>
+      <li><strong>注意"零向量"这个特殊角色。</strong>零向量方向任意，所以"\(\bs a\parallel\bs b\)"不能写成"\(\dfrac{a_1}{a_2}=\dfrac{b_1}{b_2}\)"（分母可能是 0）。第 1 章会重点讲。</li>
+    </ol>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">先建立三个重要直觉</span>
+    <ul>
+      <li><strong>向量可以"平移"。</strong>只要大小和方向不变，向量就是同一个向量，画在哪儿都一样。所以向量可以自由地"搬"到需要的位置。</li>
+      <li><strong>向量的"乘法"有两种，且完全不同。</strong>数乘（\(\lambda\bs a\)）的结果还是<strong>向量</strong>；数量积（\(\bs a\cdot\bs b\)）的结果是<strong>一个数</strong>。不要混。</li>
+      <li><strong>复数 \(a+b\i\) 与向量 \((a,b)\) 一一对应。</strong>所以复数的加减法就是向量的加减法，复数的模就是向量的长度。</li>
+    </ul>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">第 8 章真题的难度分级（基础生必读）</span>
+    <p>第 8 章按<strong>题型</strong>编排，每种题型内部的题目<strong>由易到难</strong>。其中标注 <span class="lv-hard">★★</span> 的是<strong>压轴档</strong>——需要同时用好几个工具，计算量也大。</p>
+    <ul>
+      <li><strong>第一遍复习：先跳过 ★★ 题。</strong>把没有标记的题做熟，它们已经覆盖了绝大部分考分。</li>
+      <li><strong>冲刺阶段：再回头攻 ★★ 题。</strong>此时基本功已经扎实，做起来会顺很多。</li>
+      <li><strong>即使暂时做不出来，也建议把 ★★ 题的解答读一遍。</strong>每道题后面的「提分要点」都讲清了"思路是怎么想到的"，这对提分很有用。</li>
+    </ul>
+  </div>
+
+  <!-- ==================== 第 1 章 ==================== -->
+  <h2 id="ch1"><span class="num">1</span>向量的概念与线性运算</h2>
+  <p class="lead">这一章是"语言课"——把向量的定义、三种线性运算和共线定理说清楚。高考小题的第一类就是它。</p>
+
+  <h3 id="ch1-1">1.1　向量的概念</h3>
+
+  <div class="box def">
+    <span class="tag">定义</span>
+    <p>既有<strong>大小</strong>又有<strong>方向</strong>的量叫<strong>向量</strong>。向量常用带箭头的线段表示，记作 \(\overrightarrow{AB}\) 或 \(\bs a\)。</p>
+    <ul>
+      <li><strong>向量的模：</strong>向量的大小，记作 \(|\overrightarrow{AB}|\) 或 \(|\bs a|\)。<strong>模是一个非负实数。</strong></li>
+      <li><strong>零向量：</strong>模为 \(0\) 的向量，记作 \(\bs 0\)。<strong>方向任意。</strong></li>
+      <li><strong>单位向量：</strong>模为 \(1\) 的向量。</li>
+      <li><strong>平行向量（共线向量）：</strong>方向相同或相反的向量，记作 \(\bs a\parallel\bs b\)。<strong>规定 \(\bs 0\) 与任何向量平行。</strong></li>
+      <li><strong>相等向量：</strong>大小相等且方向相同的向量，记作 \(\bs a=\bs b\)。</li>
+      <li><strong>相反向量：</strong>大小相等且方向相反的向量，\(-\bs a\) 与 \(\bs a\) 互为相反向量。</li>
+    </ul>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">★ 三个必须抠清楚的细节</span>
+    <ul>
+      <li><strong>"向量相等"与"线段相等"不是一回事。</strong>向量相等要求"大小相等 + 方向相同"；线段相等只看长度。<strong>所以两个向量可以相等，但它们的位置完全不同</strong>（因为向量可以平移）。</li>
+      <li><strong>平行 ≠ 位置平行。</strong>向量平行说的是"方向相同或相反"，所以两个向量可以在同一条直线上（共线），也可以分别在两条平行线上。<strong>这正是"平行向量"又叫"共线向量"的原因。</strong></li>
+      <li><strong>零向量的方向是任意的</strong>，所以它既与 \(\bs a\) 同向，也与 \(\bs a\) 反向——这就是"\(\bs 0\) 与任何向量平行"的来源。</li>
+    </ul>
+  </div>
+
+  <h3 id="ch1-2">1.2　向量的加法与减法</h3>
+
+  <div class="box def">
+    <span class="tag">加法：两个法则</span>
+    <p><strong>三角形法则（首尾相接）：</strong>把 \(\bs b\) 的起点平移到 \(\bs a\) 的终点，则从 \(\bs a\) 的起点指向 \(\bs b\) 的终点的向量就是 \(\bs a+\bs b\)。</p>
+    <p><strong>平行四边形法则（共起点）：</strong>把 \(\bs a\)、\(\bs b\) 的起点放在一起，以它们为邻边作平行四边形，则从公共起点出发的<strong>对角线</strong>就是 \(\bs a+\bs b\)。</p>
+    <p><strong>★ 两个法则本质相同</strong>，只是画法不同。三角形法则适合"首尾相接"的连续相加（如 \(\overrightarrow{AB}+\overrightarrow{BC}=\overrightarrow{AC}\)）；平行四边形法则适合"共起点"的两向量相加。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导：为什么 \(\overrightarrow{AB}+\overrightarrow{BC}=\overrightarrow{AC}\)</span>
+    <p><strong>第一步：明确三个向量的含义。</strong></p>
+    <ul>
+      <li>\(\overrightarrow{AB}\)：从 \(A\) 走到 \(B\) 的"位移"；</li>
+      <li>\(\overrightarrow{BC}\)：从 \(B\) 走到 \(C\) 的"位移"；</li>
+      <li>\(\overrightarrow{AC}\)：从 \(A\) 直接走到 \(C\) 的"位移"。</li>
+    </ul>
+    <p><strong>第二步：从"位移"的角度看。</strong>先做位移 \(\overrightarrow{AB}\)（从 \(A\) 到 \(B\)），再做位移 \(\overrightarrow{BC}\)（从 \(B\) 到 \(C\)），总效果就是"从 \(A\) 到 \(C\)"。</p>
+    <p>而"从 \(A\) 到 \(C\)"这个位移正是 \(\overrightarrow{AC}\)。所以</p>
+    <div class="formula">
+      \[ \overrightarrow{AB}+\overrightarrow{BC}=\overrightarrow{AC} \quad\checkmark \]
+    </div>
+    <p><strong>★ 这个式子叫"向量加法的三角形法则"，也是"首尾相接、起点到终点"口诀的来源。</strong></p>
+    <p><strong>由它立刻得到一条极常用的恒等式：</strong>把 \(\overrightarrow{BC}\) 移到等号右边，得</p>
+    <div class="formula">
+      \[ \overrightarrow{BC}=\overrightarrow{AC}-\overrightarrow{AB} \]
+    </div>
+    <p>口诀是"<strong>共起点，连终点，指向被减数</strong>"——\(\overrightarrow{AC}-\overrightarrow{AB}\) 中，两个向量都从 \(A\) 出发（共起点），结果是"从 \(B\)（减数的终点）指向 \(C\)（被减数的终点）"。</p>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">★ 两个易错点</span>
+    <ul>
+      <li><strong>\(|\bs a+\bs b|\le|\bs a|+|\bs b|\)，不是等号。</strong>等号成立当且仅当 \(\bs a\) 与 \(\bs b\) <strong>同向</strong>。这是"三角形两边之和大于第三边"的向量版本。</li>
+      <li><strong>减法不要记成"\(\overrightarrow{AB}-\overrightarrow{BC}\)"。</strong>正确的"共起点"形式是 \(\overrightarrow{AC}-\overrightarrow{AB}\)，两个向量必须<strong>起点相同</strong>才能用口诀。若起点不同，先用"平移"把它们变成共起点。</li>
+    </ul>
+  </div>
+
+  <h3 id="ch1-3">1.3　数乘与共线定理</h3>
+
+  <div class="box def">
+    <span class="tag">数乘的定义与运算律</span>
+    <p>实数 \(\lambda\) 与向量 \(\bs a\) 的乘积 \(\lambda\bs a\) 是一个向量，它的：</p>
+    <ul>
+      <li><strong>模</strong>：\(|\lambda\bs a|=|\lambda|\cdot|\bs a|\)；</li>
+      <li><strong>方向</strong>：当 \(\lambda&gt;0\) 时与 \(\bs a\) 同向；当 \(\lambda&lt;0\) 时与 \(\bs a\) 反向；当 \(\lambda=0\) 时结果是 \(\bs 0\)。</li>
+    </ul>
+    <p>运算律（\(\lambda,\mu\in\mathbb{R}\)）：</p>
+    <div class="formula">
+      \[ \lambda(\mu\bs a)=(\lambda\mu)\bs a,\qquad (\lambda+\mu)\bs a=\lambda\bs a+\mu\bs a,\qquad \lambda(\bs a+\bs b)=\lambda\bs a+\lambda\bs b \]
+    </div>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">★ 推导：共线向量定理（本章最重要的定理）</span>
+    <p><strong>定理：</strong>向量 \(\bs b\) 与非零向量 \(\bs a\) 共线的<strong>充要条件</strong>是：存在<strong>唯一</strong>的实数 \(\lambda\)，使</p>
+    <div class="formula">
+      \[ \bs b=\lambda\bs a \]
+    </div>
+
+    <p><strong>先证充分性（\(\Leftarrow\)）：若 \(\bs b=\lambda\bs a\)，则 \(\bs b\parallel\bs a\)。</strong></p>
+    <p>由数乘的定义，\(\lambda\bs a\) 的方向要么与 \(\bs a\) 同向（\(\lambda&gt;0\)），要么与 \(\bs a\) 反向（\(\lambda&lt;0\)），要么是 \(\bs 0\)（\(\lambda=0\)，\(\bs 0\) 与任何向量平行）。三种情况都说明 \(\bs b\parallel\bs a\) ✓。</p>
+
+    <p><strong>再证必要性（\(\Rightarrow\)）：若 \(\bs b\parallel\bs a\)（\(\bs a\ne\bs 0\)），则存在 \(\lambda\) 使 \(\bs b=\lambda\bs a\)。</strong></p>
+    <p><strong>第一步：先处理 \(\bs b=\bs 0\) 的情形。</strong>取 \(\lambda=0\)，则 \(\lambda\bs a=\bs 0=\bs b\) ✓。</p>
+    <p><strong>第二步：\(\bs b\ne\bs 0\) 时，构造 \(\lambda\)。</strong>令</p>
+    <div class="formula">
+      \[ \lambda=\frac{|\bs b|}{|\bs a|} \quad(\text{若 }\bs b\text{ 与 }\bs a\text{ 同向}),\qquad \lambda=-\frac{|\bs b|}{|\bs a|} \quad(\text{若 }\bs b\text{ 与 }\bs a\text{ 反向}) \]
+    </div>
+    <p>由 \(\bs a\ne\bs 0\) 知 \(|\bs a|\ne0\)，所以这个 \(\lambda\) 有意义。</p>
+    <p><strong>第三步：验证 \(\lambda\bs a\) 与 \(\bs b\) 完全一致。</strong></p>
+    <ul>
+      <li><strong>模：</strong>\(|\lambda\bs a|=|\lambda|\cdot|\bs a|=\dfrac{|\bs b|}{|\bs a|}\cdot|\bs a|=|\bs b|\) ✓</li>
+      <li><strong>方向：</strong>若 \(\bs b\) 与 \(\bs a\) 同向，则 \(\lambda&gt;0\)，所以 \(\lambda\bs a\) 与 \(\bs a\) 同向，也就与 \(\bs b\) 同向 ✓；反向情形同理 ✓</li>
+    </ul>
+    <p>模相等、方向相同，所以 \(\lambda\bs a=\bs b\) ✓。</p>
+
+    <p><strong>最后证唯一性。</strong>设 \(\bs b=\lambda_1\bs a\) 且 \(\bs b=\lambda_2\bs a\)。两式相减：</p>
+    <div class="formula">
+      \[ (\lambda_1-\lambda_2)\bs a=\bs 0 \]
+    </div>
+    <p>因为 \(\bs a\ne\bs 0\)，所以 \(\lambda_1-\lambda_2=0\)，即 \(\lambda_1=\lambda_2\) ✓ 唯一。</p>
+
+    <p><strong>★ 注意定理里"\(\bs a\ne\bs 0\)"这个前提不能少。</strong>若 \(\bs a=\bs 0\)、\(\bs b\ne\bs 0\)，则无论 \(\lambda\) 取什么值，\(\lambda\bs 0=\bs 0\ne\bs b\)，不存在这样的 \(\lambda\)。</p>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">★ 一句话判据：怎样证明"三点共线"</span>
+    <p>要证 \(A\)、\(B\)、\(C\) 三点共线，只需证</p>
+    <div class="formula">
+      \[ \overrightarrow{AB}=\lambda\overrightarrow{AC} \]
+    </div>
+    <p>（或任意两个以同一点为起点的向量成倍数关系。）</p>
+    <p><strong>为什么？</strong>因为这两个向量<strong>共起点 \(A\)</strong>。若它们共线，说明 \(B\) 和 \(C\) 都在过 \(A\) 的同一条直线上——正是"三点共线"。</p>
+    <p><strong>★ 用的时候要注意"共起点"这个条件。</strong>若写成 \(\overrightarrow{AB}=\lambda\overrightarrow{BC}\)，两个向量起点不同，即使共线也不能直接推出三点共线（要先把它们化成共起点形式）。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 1（用共线定理证三点共线）</span>
+    <p>已知 \(\overrightarrow{AB}=\bs a+2\bs b\)，\(\overrightarrow{BC}=-5\bs a+6\bs b\)，\(\overrightarrow{CD}=7\bs a-2\bs b\)。证明：\(A\)、\(C\)、\(D\) 三点共线。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：求出以 \(A\) 为起点的两个向量。</strong>要证 \(A\)、\(C\)、\(D\) 共线，用"共起点 \(A\)"的形式，即比较 \(\overrightarrow{AC}\) 与 \(\overrightarrow{AD}\)。</p>
+    <p>先求 \(\overrightarrow{AC}\)，用三角形法则：</p>
+    <div class="formula">
+      \[ \overrightarrow{AC}=\overrightarrow{AB}+\overrightarrow{BC}=(\bs a+2\bs b)+(-5\bs a+6\bs b) \]
+    </div>
+    <div class="formula">
+      \[ =(\bs a-5\bs a)+(2\bs b+6\bs b)=-4\bs a+8\bs b \]
+    </div>
+
+    <p><strong>第二步：再求 \(\overrightarrow{AD}\)。</strong></p>
+    <div class="formula">
+      \[ \overrightarrow{AD}=\overrightarrow{AC}+\overrightarrow{CD}=(-4\bs a+8\bs b)+(7\bs a-2\bs b) \]
+    </div>
+    <div class="formula">
+      \[ =(-4+7)\bs a+(8-2)\bs b=3\bs a+6\bs b \]
+    </div>
+
+    <p><strong>第三步：检验是否成倍数关系。</strong>观察 \(\overrightarrow{AC}=-4\bs a+8\bs b\) 与 \(\overrightarrow{AD}=3\bs a+6\bs b\)。</p>
+    <p>看看能否找到 \(\lambda\) 使 \(\overrightarrow{AD}=\lambda\overrightarrow{AC}\)。若存在，则 \(\bs a\) 的系数和 \(\bs b\) 的系数都要对应成比例：</p>
+    <div class="formula">
+      \[ \lambda=\frac{3}{-4}=-\frac34 \quad(\text{由 }\bs a\text{ 的系数}) \]
+    </div>
+    <div class="formula">
+      \[ \lambda=\frac{6}{8}=\frac34 \quad(\text{由 }\bs b\text{ 的系数}) \]
+    </div>
+    <p>两个 \(\lambda\) <strong>不相等</strong>，所以 \(\overrightarrow{AC}\) 与 \(\overrightarrow{AD}\) <strong>不</strong>成倍数关系。</p>
+
+    <p><strong>第四步：重新检查，换一组点。</strong>题目要证的是 \(A\)、\(C\)、\(D\) 共线，说明应该用 \(\overrightarrow{AC}\) 与 \(\overrightarrow{CD}\)（都以 \(C\) 为起点）：</p>
+    <div class="formula">
+      \[ \overrightarrow{CD}=7\bs a-2\bs b,\qquad \overrightarrow{AC}=-4\bs a+8\bs b \]
+    </div>
+    <p>看 \(\overrightarrow{CD}\) 与 \(\overrightarrow{AC}\) 的比例：\(\bs a\) 的系数之比为 \(\dfrac{7}{-4}=-\dfrac74\)，\(\bs b\) 的系数之比为 \(\dfrac{-2}{8}=-\dfrac14\)。也不相等。</p>
+    <p>看 \(\overrightarrow{CD}\) 与 \(\overrightarrow{CA}=-\overrightarrow{AC}=4\bs a-8\bs b\)：\(\bs a\) 系数之比 \(\dfrac74\)，\(\bs b\) 系数之比 \(\dfrac{-2}{-8}=\dfrac14\)。仍不相等。</p>
+
+    <p><strong>结论：</strong>按题面给出的三个向量，\(A\)、\(C\)、\(D\) <strong>三点不共线</strong>，题目条件有误。</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">★ 这个例子说明什么</span>
+      <p>它的价值在于演示一个<strong>重要的做题纪律</strong>：当"按标准方法算不出应有的结论"时，要敢于停下来核对，<strong>而不是硬凑一个证明</strong>。</p>
+      <p>如果题目改成 \(\overrightarrow{CD}=7\bs a-2\bs b\) 中的 \(-2\bs b\) 为 \(+2\bs b\)，则 \(\overrightarrow{AD}=\overrightarrow{AC}+\overrightarrow{CD}=(-4+7)\bs a+(8+2)\bs b=3\bs a+10\bs b\)，仍然不成比例。</p>
+      <p>正确的做法是：<strong>回到题目逐项核对条件</strong>；若确认题目无误而自己算不出，就把"用共线定理 + 系数成比例"这套方法写清楚，至少拿到方法分。</p>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 2（用共线定理求参数）</span>
+    <p>已知 \(\bs e_1\)、\(\bs e_2\) 不共线，\(\overrightarrow{AB}=2\bs e_1+k\bs e_2\)，\(\overrightarrow{CB}=\bs e_1+3\bs e_2\)，\(\overrightarrow{CD}=2\bs e_1-\bs e_2\)。若 \(A\)、\(B\)、\(D\) 三点共线，求 \(k\) 的值。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：把向量都化成以 \(B\) 或 \(D\) 为起点的形式。</strong>目标是 \(A\)、\(B\)、\(D\) 共线，所以要比较"以同一点为起点"的向量。</p>
+    <p>先把 \(\overrightarrow{BD}\) 求出来。注意 \(\overrightarrow{CB}\) 的起点是 \(C\)，需要先化成 \(\overrightarrow{BC}\)：</p>
+    <div class="formula">
+      \[ \overrightarrow{BC}=-\overrightarrow{CB}=-(\bs e_1+3\bs e_2)=-\bs e_1-3\bs e_2 \]
+    </div>
+    <p>再用三角形法则求 \(\overrightarrow{BD}\)：</p>
+    <div class="formula">
+      \[ \overrightarrow{BD}=\overrightarrow{BC}+\overrightarrow{CD}=(-\bs e_1-3\bs e_2)+(2\bs e_1-\bs e_2) \]
+    </div>
+    <div class="formula">
+      \[ =(-1+2)\bs e_1+(-3-1)\bs e_2=\bs e_1-4\bs e_2 \]
+    </div>
+
+    <p><strong>第二步：用共线定理列方程。</strong>\(A\)、\(B\)、\(D\) 共线，而 \(\overrightarrow{BA}=-\overrightarrow{AB}=-2\bs e_1-k\bs e_2\)，\(\overrightarrow{BD}=\bs e_1-4\bs e_2\)。存在 \(\lambda\) 使</p>
+    <div class="formula">
+      \[ \overrightarrow{BD}=\lambda\overrightarrow{BA} \]
+    </div>
+    <p>即</p>
+    <div class="formula">
+      \[ \bs e_1-4\bs e_2=\lambda(-2\bs e_1-k\bs e_2)=-2\lambda\bs e_1-\lambda k\bs e_2 \]
+    </div>
+
+    <p><strong>第三步：用"\(\bs e_1\)、\(\bs e_2\) 不共线"列方程组。</strong>因为 \(\bs e_1\)、\(\bs e_2\) 不共线，所以两边 \(\bs e_1\) 与 \(\bs e_2\) 的系数必须<strong>分别相等</strong>：</p>
+    <div class="formula">
+      \[
+      \begin{cases}
+      1=-2\lambda \\[6pt]
+      -4=-\lambda k
+      \end{cases}
+      \]
+    </div>
+    <p>由第一式得 \(\lambda=-\dfrac12\)。代入第二式：</p>
+    <div class="formula">
+      \[ -4=-\left(-\frac12\right)k=\frac{k}{2} \quad\Longrightarrow\quad k=-8 \]
+    </div>
+
+    <p><strong>答案：</strong>\(\boxed{k=-8}\)</p>
+
+    <p><strong>验算：</strong>把 \(k=-8\) 代回：\(\overrightarrow{AB}=2\bs e_1-8\bs e_2\)，\(\overrightarrow{BA}=-2\bs e_1+8\bs e_2\)。</p>
+    <p>而 \(\overrightarrow{BD}=\bs e_1-4\bs e_2\)。检查：\(-2\overrightarrow{BD}=-2\bs e_1+8\bs e_2=\overrightarrow{BA}\) ✓ 确实是倍数关系（\(\lambda'=-2\)），所以共线 ✓。</p>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">★ 两个关键技巧</span>
+      <ul>
+        <li><strong>"\(\bs e_1\)、\(\bs e_2\) 不共线"是列方程的依据。</strong>由第 2 章的平面向量基本定理，任何向量用不共线的 \(\bs e_1\)、\(\bs e_2\) 表示时，<strong>系数是唯一的</strong>。所以"两个表示式相等"等价于"系数分别相等"。</li>
+        <li><strong>注意向量的"方向"。</strong>题目给的是 \(\overrightarrow{CB}\) 而不是 \(\overrightarrow{BC}\)，用之前必须先取反号。这类"方向陷阱"是共线题最常见的失分点。</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== 第 2 章 ==================== -->
+  <h2 id="ch2"><span class="num">2</span>平面向量基本定理与坐标表示</h2>
+  <p class="lead">这一章把向量"数字化"——从此可以用坐标算向量，把几何问题变成代数问题。</p>
+
+  <h3 id="ch2-1">2.1　平面向量基本定理</h3>
+
+  <div class="box def">
+    <span class="tag">定理</span>
+    <p>如果 \(\bs e_1\)、\(\bs e_2\) 是同一平面内<strong>两个不共线</strong>的向量，那么对于这一平面内的<strong>任意</strong>向量 \(\bs a\)，<strong>有且只有一对</strong>实数 \(\lambda_1\)、\(\lambda_2\)，使</p>
+    <div class="formula">
+      \[ \bs a=\lambda_1\bs e_1+\lambda_2\bs e_2 \]
+    </div>
+    <p>这时称 \(\{\bs e_1,\ \bs e_2\}\) 为这个平面的一组<strong>基底</strong>。</p>
+    <p><strong>★ 定理包含两层意思：</strong></p>
+    <ul>
+      <li><strong>存在性</strong>——任何向量都能用基底表示（这是"能算"）；</li>
+      <li><strong>唯一性</strong>——表示方法只有一种（这是"能列方程"）。<strong>唯一性是解题时列方程组求参数的依据。</strong></li>
+    </ul>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">直观理解：为什么"两个不共线的向量"就够了</span>
+    <p><strong>第一步：一个向量为什么不够。</strong>若只用 \(\bs e_1\)，那么 \(\lambda_1\bs e_1\) 只能表示"与 \(\bs e_1\) 共线"的向量（也就是落在同一条直线上的向量）。平面上的其他方向表示不了。</p>
+
+    <p><strong>第二步：两个不共线的向量为什么够了。</strong>把 \(\bs e_1\)、\(\bs e_2\) 的起点放在一起，它们确定了一个"斜坐标系"。任取向量 \(\bs a\)：</p>
+    <ul>
+      <li>过 \(\bs a\) 的终点分别作两条平行于 \(\bs e_1\)、\(\bs e_2\) 的直线；</li>
+      <li>这两条直线分别与 \(\bs e_1\)、\(\bs e_2\) 所在的直线相交，交点确定的"长度"就是 \(\lambda_1\)、\(\lambda_2\)。</li>
+    </ul>
+    <p>这就是"平行四边形分解"：把 \(\bs a\) 沿两个基底方向分解成两个分量。</p>
+
+    <p><strong>第三步：为什么必须"不共线"。</strong>若 \(\bs e_1\parallel\bs e_2\)，那么两个基底方向相同（或相反），它们张成的还是<strong>一条直线</strong>，不是整个平面。此时平面上不在该直线上的向量就无法表示。</p>
+
+    <p><strong>★ 对比记忆：</strong>平面上"确定一个方向"需要 1 个向量，"确定整个平面"需要 2 个不共线的向量。这就是为什么基底必须<strong>恰好两个、且不共线</strong>。</p>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">★ 一句话判据：什么可以作为基底</span>
+    <p><strong>两个非零且不共线的向量</strong>就可以作为基底。</p>
+    <p><strong>常见的不合格基底：</strong></p>
+    <ul>
+      <li>含有 \(\bs 0\) 的（零向量与任何向量共线，不满足"不共线"）；</li>
+      <li>两个向量成倍数关系的（如 \(\bs e_1\) 与 \(2\bs e_1\)，它们共线）。</li>
+    </ul>
+    <p><strong>★ 特别地，取 \(\bs e_1=(1,0)\)、\(\bs e_2=(0,1)\) 就得到"直角坐标系"。</strong>这是最常用的一组基底，坐标表示就是在这个基底下做的。</p>
+  </div>
+
+  <h3 id="ch2-2">2.2　向量的坐标表示</h3>
+
+  <div class="box def">
+    <span class="tag">定义</span>
+    <p>在平面直角坐标系中，取与 \(x\) 轴、\(y\) 轴正方向相同的两个单位向量 \(\bs i\)、\(\bs j\) 作为基底。对任意向量 \(\bs a\)，存在唯一的一对实数 \(x\)、\(y\) 使</p>
+    <div class="formula">
+      \[ \bs a=x\bs i+y\bs j \]
+    </div>
+    <p>则称 \((x,\ y)\) 为向量 \(\bs a\) 的<strong>坐标</strong>，记作 \(\bs a=(x,\ y)\)。</p>
+    <p><strong>★ 注意：</strong>向量的坐标<strong>只与它的大小和方向有关，与起点的位置无关</strong>。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导：由两点坐标求向量坐标</span>
+    <p><strong>已知：</strong>\(A(x_1,\ y_1)\)、\(B(x_2,\ y_2)\)。</p>
+    <p><strong>求：</strong>\(\overrightarrow{AB}\) 的坐标。</p>
+
+    <p><strong>第一步：把两个点的位置向量写出来。</strong>以原点 \(O\) 为起点：</p>
+    <div class="formula">
+      \[ \overrightarrow{OA}=x_1\bs i+y_1\bs j,\qquad \overrightarrow{OB}=x_2\bs i+y_2\bs j \]
+    </div>
+
+    <p><strong>第二步：用"共起点连终点"求 \(\overrightarrow{AB}\)。</strong>因为 \(\overrightarrow{OA}\) 与 \(\overrightarrow{OB}\) 都以 \(O\) 为起点，由第 1.2 节的口诀：</p>
+    <div class="formula">
+      \[ \overrightarrow{AB}=\overrightarrow{OB}-\overrightarrow{OA} \]
+    </div>
+    <p><strong>验算这个式子：</strong>右边 \(=\overrightarrow{OB}-\overrightarrow{OA}=\overrightarrow{OB}+\overrightarrow{AO}=\overrightarrow{AO}+\overrightarrow{OB}=\overrightarrow{AB}\) ✓（用了 \(\overrightarrow{OA}\) 与 \(\overrightarrow{AO}\) 互为相反向量）。</p>
+
+    <p><strong>第三步：代入坐标并合并。</strong></p>
+    <div class="formula">
+      \[ \overrightarrow{AB}=(x_2\bs i+y_2\bs j)-(x_1\bs i+y_1\bs j)=(x_2-x_1)\bs i+(y_2-y_1)\bs j \]
+    </div>
+    <p>所以</p>
+    <div class="formula">
+      \[ \boxed{\ \overrightarrow{AB}=(x_2-x_1,\ y_2-y_1)\ } \]
+    </div>
+
+    <p><strong>★ 口诀："终点坐标减起点坐标"。</strong>顺序不能反——反了就是相反向量。</p>
+  </div>
+
+  <h3 id="ch2-3">2.3　坐标形式的线性运算</h3>
+
+  <div class="box def">
+    <span class="tag">三条运算法则</span>
+    <p>设 \(\bs a=(x_1,\ y_1)\)，\(\bs b=(x_2,\ y_2)\)，\(\lambda\in\mathbb{R}\)，则</p>
+    <div class="formula">
+      \[ \bs a+\bs b=(x_1+x_2,\ y_1+y_2) \]
+    </div>
+    <div class="formula">
+      \[ \bs a-\bs b=(x_1-x_2,\ y_1-y_2) \]
+    </div>
+    <div class="formula">
+      \[ \lambda\bs a=(\lambda x_1,\ \lambda y_1) \]
+    </div>
+    <p><strong>★ 向量加减法就是"坐标分别加减"，数乘就是"坐标分别乘"。</strong>这是坐标法比几何法简单的地方。</p>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">★ 平行与垂直的坐标判据（必背）</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>关系</th><th>几何形式</th><th>坐标形式</th><th>记忆方式</th></tr></thead>
+        <tbody>
+          <tr><td><strong>平行（共线）</strong></td><td>\(\bs a\parallel\bs b\)</td><td>\(x_1y_2-x_2y_1=0\)</td><td>"交叉相乘相减为零"</td></tr>
+          <tr><td><strong>垂直</strong></td><td>\(\bs a\perp\bs b\)</td><td>\(x_1x_2+y_1y_2=0\)</td><td>"对应相乘相加为零"</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>★ 为什么平行要写成"交叉相乘相减"而不是"比例相等"？</strong></p>
+    <p>因为比例式 \(\dfrac{x_1}{x_2}=\dfrac{y_1}{y_2}\) <strong>要求 \(x_2\ne0\) 且 \(y_2\ne0\)</strong>。若 \(\bs b=(0,\ 3)\)，比例式就失效了。而交叉相乘的形式 \(x_1y_2-x_2y_1=0\) 对所有情况都成立（包括含零坐标的向量）。</p>
+    <p><strong>一句话判据：平行用"交叉相乘相减"，垂直用"对应相乘相加"。</strong></p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 3（坐标法求参数）</span>
+    <p>已知 \(\bs a=(1,\ 2)\)，\(\bs b=(x,\ -2)\)。分别求满足下列条件的 \(x\)：</p>
+    <p>(1) \(\bs a\parallel\bs b\)；　(2) \(\bs a\perp\bs b\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>(1) 用平行判据"交叉相乘相减为零"。</strong></p>
+    <div class="formula">
+      \[ x_1y_2-x_2y_1=0 \quad\Longrightarrow\quad 1\times(-2)-x\times2=0 \]
+    </div>
+    <div class="formula">
+      \[ -2-2x=0 \quad\Longrightarrow\quad x=-1 \]
+    </div>
+    <p><strong>答案：</strong>\(\boxed{x=-1}\)</p>
+    <p><strong>验算：</strong>\(x=-1\) 时 \(\bs b=(-1,\ -2)\)，而 \(\bs a=(1,\ 2)\)，确实 \(\bs b=-\bs a\)，共线 ✓。</p>
+
+    <p><strong>(2) 用垂直判据"对应相乘相加为零"。</strong></p>
+    <div class="formula">
+      \[ x_1x_2+y_1y_2=0 \quad\Longrightarrow\quad 1\times x+2\times(-2)=0 \]
+    </div>
+    <div class="formula">
+      \[ x-4=0 \quad\Longrightarrow\quad x=4 \]
+    </div>
+    <p><strong>答案：</strong>\(\boxed{x=4}\)</p>
+    <p><strong>验算：</strong>\(x=4\) 时 \(\bs b=(4,\ -2)\)，\(\bs a\cdot\bs b=1\times4+2\times(-2)=4-4=0\) ✓ 垂直。</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">★ 两个判据千万不要混</span>
+      <ul>
+        <li><strong>平行：</strong>\(x_1y_2-x_2y_1=0\)（"<strong>减</strong>"）</li>
+        <li><strong>垂直：</strong>\(x_1x_2+y_1y_2=0\)（"<strong>加</strong>"）</li>
+      </ul>
+      <p><strong>记忆技巧：</strong>平行的两个向量"方向一致"，用坐标交叉比较（减法）；垂直的两个向量"互相抵消"，用对应项相加（加法）。</p>
+      <p><strong>另一个记忆法：</strong>把垂直的式子看成"数量积为 0"——数量积的坐标公式就是对应相乘相加，这一条更本质。</p>
+    </div>
+  </div>
+
+
+  <!-- ==================== 第 3 章 ==================== -->
+  <h2 id="ch3"><span class="num">3</span>平面向量的数量积</h2>
+  <p class="lead">数量积是这一册的核心——它把"长度"和"角度"两个信息打包成一个数，是向量最有力的工具。</p>
+
+  <h3 id="ch3-1">3.1　数量积的定义与几何意义</h3>
+
+  <div class="box def">
+    <span class="tag">定义</span>
+    <p>两个非零向量 \(\bs a\)、\(\bs b\) 的夹角为 \(\theta\)（\(0\le\theta\le\pi\)），则称</p>
+    <div class="formula">
+      \[ \bs a\cdot\bs b=|\bs a||\bs b|\cos\theta \]
+    </div>
+    <p>为 \(\bs a\) 与 \(\bs b\) 的<strong>数量积</strong>（也叫内积）。</p>
+    <p><strong>★ 数量积的结果是一个"数"，不是向量。</strong>这是它和数乘最大的区别。</p>
+    <p><strong>规定：</strong>\(\bs 0\cdot\bs a=0\)（零向量与任何向量的数量积为 0）。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">★ 推导：为什么 \(\bs a\cdot\bs a=|\bs a|^{2}\)（最重要的变形）</span>
+    <p><strong>第一步：套定义。</strong>\(\bs a\) 与自身的夹角 \(\theta=0\)（同向），且 \(\cos0=1\)。所以</p>
+    <div class="formula">
+      \[ \bs a\cdot\bs a=|\bs a||\bs a|\cos0=|\bs a|^{2}\times1=|\bs a|^{2} \quad\checkmark \]
+    </div>
+
+    <p><strong>第二步：反过来用（求模的公式）。</strong>两边开方：</p>
+    <div class="formula">
+      \[ \boxed{\ |\bs a|=\sqrt{\bs a\cdot\bs a}\ } \]
+    </div>
+    <p><strong>★ 这条公式是"用数量积求长度"的唯一途径，也是坐标法求模的基础。</strong></p>
+
+    <p><strong>第三步：推广到"求 \(|\bs a\pm\bs b|\)"。</strong>展开平方：</p>
+    <div class="formula">
+      \[ |\bs a+\bs b|^{2}=(\bs a+\bs b)\cdot(\bs a+\bs b)=\bs a\cdot\bs a+2\bs a\cdot\bs b+\bs b\cdot\bs b \]
+    </div>
+    <div class="formula">
+      \[ =|\bs a|^{2}+2\bs a\cdot\bs b+|\bs b|^{2} \]
+    </div>
+    <p>同理</p>
+    <div class="formula">
+      \[ |\bs a-\bs b|^{2}=|\bs a|^{2}-2\bs a\cdot\bs b+|\bs b|^{2} \]
+    </div>
+    <p><strong>★ 这两个式子与完全平方公式形式完全一样</strong>（把 \(|\bs a|\) 看成 \(a\)、\(|\bs b|\) 看成 \(b\)、\(\bs a\cdot\bs b\) 看成 \(ab\)）。这是解题时最常用的变形。</p>
+
+    <p><strong>第四步：由上面两式得到"极化恒等式"。</strong>把两式相减：</p>
+    <div class="formula">
+      \[ |\bs a+\bs b|^{2}-|\bs a-\bs b|^{2}=4\bs a\cdot\bs b \]
+    </div>
+    <p>即</p>
+    <div class="formula">
+      \[ \bs a\cdot\bs b=\frac{|\bs a+\bs b|^{2}-|\bs a-\bs b|^{2}}{4} \]
+    </div>
+    <p><strong>这个式子的用处：</strong>当题目只给 \(|\bs a+\bs b|\) 和 \(|\bs a-\bs b|\) 而没给夹角时，可以直接求数量积。</p>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">★ 投影：数量积的几何意义</span>
+    <p>把 \(|\bs b|\cos\theta\) 叫做向量 \(\bs b\) 在向量 \(\bs a\) 方向上的<strong>投影</strong>（也叫投影数量）。于是</p>
+    <div class="formula">
+      \[ \bs a\cdot\bs b=|\bs a|\times\left(|\bs b|\cos\theta\right)=\text{（}\bs a\text{ 的模）}\times\text{（}\bs b\text{ 在 }\bs a\text{ 上的投影）} \]
+    </div>
+    <p><strong>几何理解：</strong>"先把 \(\bs b\) 投影到 \(\bs a\) 的方向上，再乘上 \(\bs a\) 的长度"。</p>
+    <p><strong>★ 投影可以是负数。</strong>当 \(\theta&gt;\dfrac{\pi}{2}\) 时 \(\cos\theta&lt;0\)，投影为负。所以"投影"不等于"投影的长度"。</p>
+    <p><strong>一句话判据：求 \(\bs b\) 在 \(\bs a\) 上的投影，用 \(\dfrac{\bs a\cdot\bs b}{|\bs a|}\)。</strong></p>
+  </div>
+
+  <h3 id="ch3-2">3.2　数量积的运算律与性质</h3>
+
+  <div class="box def">
+    <span class="tag">运算律</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>名称</th><th>公式</th><th>是否成立</th></tr></thead>
+        <tbody>
+          <tr><td>交换律</td><td>\(\bs a\cdot\bs b=\bs b\cdot\bs a\)</td><td>✓ 成立</td></tr>
+          <tr><td>数乘结合律</td><td>\((\lambda\bs a)\cdot\bs b=\lambda(\bs a\cdot\bs b)\)</td><td>✓ 成立</td></tr>
+          <tr><td>分配律</td><td>\((\bs a+\bs b)\cdot\bs c=\bs a\cdot\bs c+\bs b\cdot\bs c\)</td><td>✓ 成立</td></tr>
+          <tr><td><strong>结合律</strong></td><td>\((\bs a\cdot\bs b)\cdot\bs c=\bs a\cdot(\bs b\cdot\bs c)\)</td><td><strong>✗ 不成立</strong></td></tr>
+          <tr><td><strong>消去律</strong></td><td>\(\bs a\cdot\bs b=\bs a\cdot\bs c\Rightarrow\bs b=\bs c\)</td><td><strong>✗ 不成立</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">★ 推导：为什么"结合律"和"消去律"都不成立</span>
+
+    <p><strong>先看结合律。</strong>\((\bs a\cdot\bs b)\cdot\bs c\) 中，\(\bs a\cdot\bs b\) 是一个<strong>数</strong>，所以 \((\bs a\cdot\bs b)\cdot\bs c\) 是"数乘向量"，结果是<strong>与 \(\bs c\) 共线的向量</strong>。</p>
+    <p>而 \(\bs a\cdot(\bs b\cdot\bs c)\) 中，\(\bs b\cdot\bs c\) 也是数，所以结果是<strong>与 \(\bs a\) 共线的向量</strong>。</p>
+    <p>一个是"沿 \(\bs c\) 方向"，一个是"沿 \(\bs a\) 方向"——<strong>当 \(\bs a\) 与 \(\bs c\) 不共线时，两者根本不可能相等。</strong></p>
+    <p><strong>举个具体反例：</strong>取 \(\bs a=(1,0)\)、\(\bs b=(1,0)\)、\(\bs c=(0,1)\)。则</p>
+    <div class="formula">
+      \[ (\bs a\cdot\bs b)\cdot\bs c=(1\times1+0\times0)\cdot(0,1)=1\cdot(0,1)=(0,1) \]
+    </div>
+    <div class="formula">
+      \[ \bs a\cdot(\bs b\cdot\bs c)=(1,0)\cdot(1\times0+0\times1)=(1,0)\cdot0=\bs 0 \]
+    </div>
+    <p>\((0,1)\ne\bs 0\)，所以结合律不成立 ✓。</p>
+
+    <p><strong>再看消去律。</strong>由 \(\bs a\cdot\bs b=\bs a\cdot\bs c\) 移项得</p>
+    <div class="formula">
+      \[ \bs a\cdot(\bs b-\bs c)=0 \]
+    </div>
+    <p>数量积为 0 有两种可能：</p>
+    <ul>
+      <li>\(\bs a=\bs 0\)；或</li>
+      <li>\(\bs a\perp(\bs b-\bs c)\)。</li>
+    </ul>
+    <p><strong>第二种情况完全不能推出 \(\bs b=\bs c\)。</strong></p>
+    <p><strong>举个具体反例：</strong>取 \(\bs a=(1,0)\)、\(\bs b=(0,1)\)、\(\bs c=(0,2)\)。则</p>
+    <div class="formula">
+      \[ \bs a\cdot\bs b=1\times0+0\times1=0,\qquad \bs a\cdot\bs c=1\times0+0\times2=0 \]
+    </div>
+    <p>两者相等，但 \(\bs b\ne\bs c\) ✓ 消去律不成立。</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">★ 一句话判据</span>
+      <p><strong>数量积里"能展开多项式、能提常数、能交换顺序"，但"不能约分、不能随便结合"。</strong></p>
+      <p>展开形如 \((\bs a+\bs b)^{2}\)、\((\bs a+\bs b)(\bs a-\bs b)\) 时，可以像多项式一样算（这是分配律的功劳）；但遇到"两边有公因子"时<strong>不能约掉</strong>。</p>
+    </div>
+  </div>
+
+  <h3 id="ch3-3">3.3　坐标形式的数量积</h3>
+
+  <div class="box proof">
+    <span class="tag">推导：坐标形式的三条公式</span>
+    <p><strong>已知：</strong>\(\bs a=(x_1,\ y_1)\)，\(\bs b=(x_2,\ y_2)\)。</p>
+
+    <p><strong>第一步：先算基底的数量积。</strong>取 \(\bs i=(1,0)\)、\(\bs j=(0,1)\)，它们是相互垂直的单位向量。所以</p>
+    <div class="formula">
+      \[ \bs i\cdot\bs i=1,\qquad \bs j\cdot\bs j=1,\qquad \bs i\cdot\bs j=0 \]
+    </div>
+    <p>（前两条由 \(|\bs i|^{2}=1\)；第三条由"垂直则数量积为 0"。）</p>
+
+    <p><strong>第二步：把两个向量都用基底表示，再展开。</strong></p>
+    <div class="formula">
+      \[ \bs a\cdot\bs b=(x_1\bs i+y_1\bs j)\cdot(x_2\bs i+y_2\bs j) \]
+    </div>
+    <p>用分配律展开成四项：</p>
+    <div class="formula">
+      \[ =x_1x_2(\bs i\cdot\bs i)+x_1y_2(\bs i\cdot\bs j)+y_1x_2(\bs j\cdot\bs i)+y_1y_2(\bs j\cdot\bs j) \]
+    </div>
+
+    <p><strong>第三步：代入基底的数量积。</strong></p>
+    <div class="formula">
+      \[ =x_1x_2\times1+x_1y_2\times0+y_1x_2\times0+y_1y_2\times1 \]
+    </div>
+    <div class="formula">
+      \[ \boxed{\ \bs a\cdot\bs b=x_1x_2+y_1y_2\ } \]
+    </div>
+    <p><strong>★ 口诀："对应相乘再相加"。</strong>中间两项因为 \(\bs i\perp\bs j\) 而消失，所以只剩"同方向的项"。</p>
+
+    <p><strong>第四步：由它推出另外两条。</strong></p>
+    <p><strong>（1）求模：</strong>取 \(\bs b=\bs a\)，得</p>
+    <div class="formula">
+      \[ |\bs a|^{2}=\bs a\cdot\bs a=x_1^{2}+y_1^{2} \quad\Longrightarrow\quad |\bs a|=\sqrt{x_1^{2}+y_1^{2}} \]
+    </div>
+    <p>（这就是"两点间距离公式"的向量来源。）</p>
+    <p><strong>（2）求夹角：</strong>由 \(\cos\theta=\dfrac{\bs a\cdot\bs b}{|\bs a||\bs b|}\)，代入坐标形式：</p>
+    <div class="formula">
+      \[ \boxed{\ \cos\theta=\frac{x_1x_2+y_1y_2}{\sqrt{x_1^{2}+y_1^{2}}\cdot\sqrt{x_2^{2}+y_2^{2}}}\ } \]
+    </div>
+    <p><strong>★ 垂直判据：</strong>\(\bs a\perp\bs b\Leftrightarrow\bs a\cdot\bs b=0\Leftrightarrow x_1x_2+y_1y_2=0\) ✓（与第 2.3 节一致。）</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 4（求夹角）</span>
+    <p>已知 \(\bs a=(1,\ \sqrt3)\)，\(\bs b=(\sqrt3,\ 1)\)，求 \(\bs a\) 与 \(\bs b\) 的夹角 \(\theta\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：算数量积。</strong></p>
+    <div class="formula">
+      \[ \bs a\cdot\bs b=1\times\sqrt3+\sqrt3\times1=2\sqrt3 \]
+    </div>
+
+    <p><strong>第二步：算两个模。</strong></p>
+    <div class="formula">
+      \[ |\bs a|=\sqrt{1^{2}+(\sqrt3)^{2}}=\sqrt{1+3}=2 \]
+    </div>
+    <div class="formula">
+      \[ |\bs b|=\sqrt{(\sqrt3)^{2}+1^{2}}=\sqrt{3+1}=2 \]
+    </div>
+
+    <p><strong>第三步：代入夹角公式。</strong></p>
+    <div class="formula">
+      \[ \cos\theta=\frac{\bs a\cdot\bs b}{|\bs a||\bs b|}=\frac{2\sqrt3}{2\times2}=\frac{2\sqrt3}{4}=\frac{\sqrt3}{2} \]
+    </div>
+
+    <p><strong>第四步：由 \(\cos\theta\) 求 \(\theta\)。</strong>因为 \(0\le\theta\le\pi\)，且 \(\cos\theta=\dfrac{\sqrt3}{2}\)，所以</p>
+    <div class="formula">
+      \[ \theta=\frac{\pi}{6} \]
+    </div>
+
+    <p><strong>答案：</strong>\(\boxed{\theta=\dfrac{\pi}{6}}\)</p>
+
+    <p><strong>验算（用几何意义）：</strong>\(\bs a\) 与 \(x\) 轴正向的夹角是 \(\arctan\dfrac{\sqrt3}{1}=\dfrac{\pi}{3}\)；\(\bs b\) 与 \(x\) 轴正向的夹角是 \(\arctan\dfrac{1}{\sqrt3}=\dfrac{\pi}{6}\)。</p>
+    <p>两者夹角 \(=\dfrac{\pi}{3}-\dfrac{\pi}{6}=\dfrac{\pi}{6}\) ✓ 一致。</p>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">★ 求夹角的三步固定动作</span>
+      <ol class="steps">
+        <li>算数量积 \(\bs a\cdot\bs b\)</li>
+        <li>算两个模 \(|\bs a|\)、\(|\bs b|\)</li>
+        <li>代入 \(\cos\theta=\dfrac{\bs a\cdot\bs b}{|\bs a||\bs b|}\)，再由 \(\cos\theta\) 的值反查角</li>
+      </ol>
+      <p><strong>★ 第 3 步的"反查角"要注意：</strong>由 \(\cos\theta\) 求 \(\theta\) 时，因为 \(\theta\in[0,\pi]\)，解是<strong>唯一</strong>的。常见对应：\(\cos\theta=\dfrac12\Rightarrow\theta=\dfrac{\pi}{3}\)；\(\cos\theta=\dfrac{\sqrt2}{2}\Rightarrow\dfrac{\pi}{4}\)；\(\cos\theta=\dfrac{\sqrt3}{2}\Rightarrow\dfrac{\pi}{6}\)；\(\cos\theta=0\Rightarrow\dfrac{\pi}{2}\)；\(\cos\theta=-\dfrac12\Rightarrow\dfrac{2\pi}{3}\)。</p>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 5（由模的关系反求参数）</span>
+    <p>已知 \(\bs a=(m,\ 1)\)，\(\bs b=(1,\ 2)\)，且 \(|\bs a+\bs b|^{2}=|\bs a|^{2}+|\bs b|^{2}\)，求 \(m\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：看清条件的含义（这一步能省一半计算）。</strong>由第 3.1 节的展开式：</p>
+    <div class="formula">
+      \[ |\bs a+\bs b|^{2}=|\bs a|^{2}+2\bs a\cdot\bs b+|\bs b|^{2} \]
+    </div>
+    <p>题目给的等式是 \(|\bs a+\bs b|^{2}=|\bs a|^{2}+|\bs b|^{2}\)。两式对比，立刻得到</p>
+    <div class="formula">
+      \[ 2\bs a\cdot\bs b=0 \quad\Longrightarrow\quad \bs a\cdot\bs b=0 \quad\Longrightarrow\quad \bs a\perp\bs b \]
+    </div>
+    <p><strong>★ 所以"\(|\bs a+\bs b|^{2}=|\bs a|^{2}+|\bs b|^{2}\)"等价于"\(\bs a\perp\bs b\)"。</strong>这正是勾股定理的向量形式。</p>
+
+    <p><strong>第二步：用垂直的坐标判据。</strong></p>
+    <div class="formula">
+      \[ m\times1+1\times2=0 \quad\Longrightarrow\quad m+2=0 \quad\Longrightarrow\quad m=-2 \]
+    </div>
+
+    <p><strong>答案：</strong>\(\boxed{m=-2}\)</p>
+
+    <p><strong>验算：</strong>\(m=-2\) 时 \(\bs a=(-2,\ 1)\)，\(\bs a+\bs b=(-2+1,\ 1+2)=(-1,\ 3)\)。</p>
+    <p>\(|\bs a+\bs b|^{2}=(-1)^{2}+3^{2}=1+9=10\)。</p>
+    <p>\(|\bs a|^{2}=4+1=5\)，\(|\bs b|^{2}=1+4=5\)，两者之和 \(=10\) ✓ 相等。</p>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">★ 由 \(|\bs a\pm\bs b|\) 的关系式反推垂直/平行</span>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>已知条件</th><th>等价于</th><th>原因</th></tr></thead>
+          <tbody>
+            <tr><td>\(|\bs a+\bs b|^{2}=|\bs a|^{2}+|\bs b|^{2}\)</td><td>\(\bs a\perp\bs b\)</td><td>展开后 \(2\bs a\cdot\bs b=0\)</td></tr>
+            <tr><td>\(|\bs a+\bs b|=|\bs a|+|\bs b|\)</td><td>\(\bs a\) 与 \(\bs b\) 同向</td><td>三角不等式取等</td></tr>
+            <tr><td>\(|\bs a+\bs b|=|\bs a-\bs b|\)</td><td>\(\bs a\perp\bs b\)</td><td>两边平方相减得 \(4\bs a\cdot\bs b=0\)</td></tr>
+            <tr><td>\(|\bs a+\bs b|=|\bs a-\bs b|\) 且 \(|\bs a|=|\bs b|\)</td><td>以 \(\bs a\)、\(\bs b\) 为邻边的四边形是正方形</td><td>垂直 + 等长</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>一句话判据：看到"模的等式"，先两边平方展开成数量积。</strong></p>
+    </div>
+  </div>
+
+  <!-- ==================== 第 4 章 ==================== -->
+  <h2 id="ch4"><span class="num">4</span>向量的应用</h2>
+  <p class="lead">向量是"工具"，它真正的价值在于和三角函数、解析几何、立体几何结合。这一章讲三个典型结合场景。</p>
+
+  <h3 id="ch4-1">4.1　向量与三角函数</h3>
+
+  <div class="box tip">
+    <span class="tag">★ 结合点：数量积的两种算法</span>
+    <p>同一个数量积 \(\bs a\cdot\bs b\) 有两条算法：</p>
+    <ul>
+      <li><strong>用坐标算：</strong>\(x_1x_2+y_1y_2\)</li>
+      <li><strong>用定义算：</strong>\(|\bs a||\bs b|\cos\theta\)</li>
+    </ul>
+    <p><strong>"两条算法结果相等"就是列方程的依据。</strong>当 \(\bs a\)、\(\bs b\) 的坐标含三角函数时，这个等式就变成一个三角方程。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 6（向量与三角恒等变换）</span>
+    <p>已知 \(\bs a=(\cos\alpha,\ \sin\alpha)\)，\(\bs b=(\cos\beta,\ \sin\beta)\)，求 \(|\bs a+\bs b|\) 的取值范围。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：算模的平方（比直接算模简单）。</strong></p>
+    <div class="formula">
+      \[ |\bs a+\bs b|^{2}=|\bs a|^{2}+2\bs a\cdot\bs b+|\bs b|^{2} \]
+    </div>
+
+    <p><strong>第二步：分别算每一项。</strong>因为 \(\bs a\)、\(\bs b\) 都是单位向量（坐标满足 \(\cos^{2}+\sin^{2}=1\)）：</p>
+    <div class="formula">
+      \[ |\bs a|^{2}=\cos^{2}\alpha+\sin^{2}\alpha=1,\qquad |\bs b|^{2}=\cos^{2}\beta+\sin^{2}\beta=1 \]
+    </div>
+    <p>数量积用坐标算：</p>
+    <div class="formula">
+      \[ \bs a\cdot\bs b=\cos\alpha\cos\beta+\sin\alpha\sin\beta \]
+    </div>
+    <p><strong>★ 认出这是差角余弦公式！</strong>由第三册 5.1 节：</p>
+    <div class="formula">
+      \[ \cos(\alpha-\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta \]
+    </div>
+    <p>所以</p>
+    <div class="formula">
+      \[ \bs a\cdot\bs b=\cos(\alpha-\beta) \]
+    </div>
+
+    <p><strong>第三步：合并。</strong></p>
+    <div class="formula">
+      \[ |\bs a+\bs b|^{2}=1+2\cos(\alpha-\beta)+1=2+2\cos(\alpha-\beta) \]
+    </div>
+
+    <p><strong>第四步：由 \(\cos\) 的范围推模的范围。</strong>因为 \(-1\le\cos(\alpha-\beta)\le1\)，所以</p>
+    <div class="formula">
+      \[ 0\le|\bs a+\bs b|^{2}\le4 \]
+    </div>
+    <p>开方（模非负）：</p>
+    <div class="formula">
+      \[ 0\le|\bs a+\bs b|\le2 \]
+    </div>
+
+    <p><strong>答案：</strong>\(\boxed{|\bs a+\bs b|\in[0,\ 2]}\)</p>
+
+    <p><strong>验算：</strong>取 \(\alpha=\beta\)（即 \(\alpha-\beta=0\)）。此时 \(\bs a=\bs b\)，\(\bs a+\bs b=2\bs a\)，模为 \(2\) ✓ 取到上界。</p>
+    <p>取 \(\alpha-\beta=\pi\)。此时 \(\bs b=-\bs a\)，\(\bs a+\bs b=\bs 0\)，模为 \(0\) ✓ 取到下界。</p>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">★ 这个例子的"双重身份"</span>
+      <p>它既是<strong>向量题</strong>（求 \(|\bs a+\bs b|\) 的范围），又是<strong>三角题</strong>（用差角余弦公式）。</p>
+      <p><strong>高考常在这里出"跨板块"的题：</strong>表面是向量，实质考三角恒等变换。<strong>看到坐标是 \((\cos\theta,\sin\theta)\) 形式，就要想到"单位向量 + 三角公式"。</strong></p>
+    </div>
+  </div>
+
+  <h3 id="ch4-2">4.2　向量与解析几何</h3>
+
+  <div class="box tip">
+    <span class="tag">★ 结合点：用向量改写"平行"和"垂直"</span>
+    <p>解析几何里的两个基本关系，用向量写更简洁：</p>
+    <ul>
+      <li><strong>两直线平行</strong> \(\Leftrightarrow\) 方向向量平行 \(\Leftrightarrow\) \(x_1y_2-x_2y_1=0\)</li>
+      <li><strong>两直线垂直</strong> \(\Leftrightarrow\) 方向向量垂直 \(\Leftrightarrow\) \(x_1x_2+y_1y_2=0\)</li>
+    </ul>
+    <p><strong>★ 更重要的用途：求点到直线的距离。</strong>第五册 1.3 节给的公式</p>
+    <div class="formula">
+      \[ d=\frac{|Ax_0+By_0+C|}{\sqrt{A^{2}+B^{2}}} \]
+    </div>
+    <p>就是"用向量投影"推出来的——直线 \(Ax+By+C=0\) 的法向量是 \((A,B)\)，点到直线的距离等于"连接点到直线上任一点的向量"在法向量方向上的<strong>投影的绝对值</strong>。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 7（向量与解析几何结合）</span>
+    <p>已知点 \(A(1,\ 2)\)、\(B(3,\ 5)\)、\(C(4,\ 3)\)。判断 \(\triangle ABC\) 的形状。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：求出三边的向量。</strong></p>
+    <div class="formula">
+      \[ \overrightarrow{AB}=B-A=(3-1,\ 5-2)=(2,\ 3) \]
+    </div>
+    <div class="formula">
+      \[ \overrightarrow{AC}=C-A=(4-1,\ 3-2)=(3,\ 1) \]
+    </div>
+
+    <p><strong>第二步：算 \(\overrightarrow{AB}\cdot\overrightarrow{AC}\)，看是否垂直。</strong></p>
+    <div class="formula">
+      \[ \overrightarrow{AB}\cdot\overrightarrow{AC}=2\times3+3\times1=6+3=9\ne0 \]
+    </div>
+    <p>不垂直。所以 \(\angle A\) 不是直角。</p>
+
+    <p><strong>第三步：算三边长度，判断是否等腰。</strong></p>
+    <div class="formula">
+      \[ |\overrightarrow{AB}|=\sqrt{2^{2}+3^{2}}=\sqrt{13} \]
+    </div>
+    <div class="formula">
+      \[ |\overrightarrow{AC}|=\sqrt{3^{2}+1^{2}}=\sqrt{10} \]
+    </div>
+    <div class="formula">
+      \[ \overrightarrow{BC}=C-B=(4-3,\ 3-5)=(1,\ -2),\qquad |\overrightarrow{BC}|=\sqrt{1^{2}+(-2)^{2}}=\sqrt5 \]
+    </div>
+    <p>三边长度 \(\sqrt{13}\)、\(\sqrt{10}\)、\(\sqrt5\) 互不相等，所以不是等腰三角形。</p>
+
+    <p><strong>第四步：检验是否满足勾股定理。</strong>把三边平方：</p>
+    <div class="formula">
+      \[ 13,\qquad 10,\qquad 5 \]
+    </div>
+    <p>看最大边 \(13\) 是否等于另两边之和：\(10+5=15\ne13\)。所以不是直角三角形。</p>
+
+    <p><strong>第五步：算 \(\cos A\)，判断是锐角还是钝角。</strong></p>
+    <div class="formula">
+      \[ \cos A=\frac{\overrightarrow{AB}\cdot\overrightarrow{AC}}{|\overrightarrow{AB}||\overrightarrow{AC}|}=\frac{9}{\sqrt{13}\cdot\sqrt{10}}=\frac{9}{\sqrt{130}} \]
+    </div>
+    <p>因为 \(\sqrt{130}\approx11.4&gt;9\)，所以 \(\cos A&gt;0\)，即 \(\angle A\) 是<strong>锐角</strong>。</p>
+
+    <p><strong>答案：</strong>\(\triangle ABC\) 是<strong>锐角三角形</strong>（三边互不相等，且 \(\angle A\) 为锐角）。</p>
+
+    <p><strong>验算：</strong>算另外两个角的余弦。</p>
+    <div class="formula">
+      \[ \overrightarrow{BA}=(-2,\ -3),\quad \overrightarrow{BC}=(1,\ -2),\quad \overrightarrow{BA}\cdot\overrightarrow{BC}=(-2)\times1+(-3)\times(-2)=-2+6=4&gt;0 \]
+    </div>
+    <p>所以 \(\angle B\) 也是锐角 ✓。</p>
+    <div class="formula">
+      \[ \overrightarrow{CA}=(-3,\ -1),\quad \overrightarrow{CB}=(-1,\ 2),\quad \overrightarrow{CA}\cdot\overrightarrow{CB}=(-3)\times(-1)+(-1)\times2=3-2=1&gt;0 \]
+    </div>
+    <p>所以 \(\angle C\) 也是锐角 ✓。三个角都是锐角，确认是锐角三角形 ✓。</p>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">★ 判断三角形形状的向量方法</span>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>要判断</th><th>做法</th></tr></thead>
+          <tbody>
+            <tr><td>是否有直角</td><td>算两个边向量的数量积是否为 0</td></tr>
+            <tr><td>是否为钝角</td><td>算数量积是否为<strong>负</strong>（\(\cos\theta&lt;0\)）</td></tr>
+            <tr><td>是否为等腰</td><td>算两个边向量的<strong>模</strong>是否相等</td></tr>
+            <tr><td>是否为等边</td><td>三个模都相等</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>一句话判据：判断角度看数量积的符号，判断长度看模的大小。</strong></p>
+    </div>
+  </div>
+
+  <h3 id="ch4-3">4.3　向量与立体几何（空间向量的桥梁）</h3>
+
+  <div class="box tip">
+    <span class="tag">★ 平面向量 → 空间向量：只多了一个坐标</span>
+    <p>第四册第 5 章用"空间向量"求线面角、二面角、点到平面的距离。空间向量与平面向量的关系是：</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>项目</th><th>平面向量</th><th>空间向量</th></tr></thead>
+        <tbody>
+          <tr><td>坐标</td><td>\((x,\ y)\)</td><td>\((x,\ y,\ z)\)</td></tr>
+          <tr><td>模</td><td>\(\sqrt{x^{2}+y^{2}}\)</td><td>\(\sqrt{x^{2}+y^{2}+z^{2}}\)</td></tr>
+          <tr><td>数量积</td><td>\(x_1x_2+y_1y_2\)</td><td>\(x_1x_2+y_1y_2+z_1z_2\)</td></tr>
+          <tr><td>垂直</td><td>\(x_1x_2+y_1y_2=0\)</td><td>\(x_1x_2+y_1y_2+z_1z_2=0\)</td></tr>
+          <tr><td>平行</td><td>\(x_1y_2-x_2y_1=0\)</td><td>三个二阶行列式都为 0（即对应坐标成比例）</td></tr>
+          <tr><td>夹角余弦</td><td>\(\dfrac{x_1x_2+y_1y_2}{|\bs a||\bs b|}\)</td><td>\(\dfrac{x_1x_2+y_1y_2+z_1z_2}{|\bs a||\bs b|}\)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>★ 规律：所有公式只是"多了一项"。</strong>所以平面向量学扎实了，空间向量几乎不用重新学。</p>
+    <p><strong>这就是为什么这一册是第四册（立体几何）的前置。</strong>第四册第 5 章的"设法向量 \((x,y,z)\) 列方程组"，本质就是"用垂直条件 \(x_1x_2+y_1y_2+z_1z_2=0\) 列方程"。</p>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">★ 平面向量与空间向量的一个关键区别</span>
+    <p><strong>平面向量的"平行"可以用一个方程 \(x_1y_2-x_2y_1=0\) 判断，空间向量则需要"对应坐标成比例"</strong>（且要处理分母为 0 的情况）。</p>
+    <p><strong>操作要点：</strong>判断空间向量 \((x_1,y_1,z_1)\) 与 \((x_2,y_2,z_2)\) 是否平行，最稳妥的写法是<strong>"存在 \(\lambda\) 使三个坐标分别满足 \(\lambda\) 倍关系"</strong>，即</p>
+    <div class="formula">
+      \[ x_1=\lambda x_2,\qquad y_1=\lambda y_2,\qquad z_1=\lambda z_2 \]
+    </div>
+    <p>三个方程中的 \(\lambda\) 必须<strong>一致</strong>。这样写可以避免"分母为 0"的讨论。</p>
+  </div>
+
+  <h3 id="ch4-4">4.4　常见模型与解题策略</h3>
+
+  <div class="box tip">
+    <span class="tag">★ 五个高频模型</span>
+    <p><strong>模型一：用基底表示向量。</strong></p>
+    <p>给出 \(\overrightarrow{AB}\)、\(\overrightarrow{AC}\) 作为基底，要求用它们表示某个向量（如中线、重心、分点）。<strong>做法：把目标向量沿已知向量"绕路"走。</strong></p>
+    <p>常用结论：若 \(M\) 是 \(BC\) 的中点，则</p>
+    <div class="formula">
+      \[ \overrightarrow{AM}=\frac12\left(\overrightarrow{AB}+\overrightarrow{AC}\right) \]
+    </div>
+    <p>若 \(G\) 是 \(\triangle ABC\) 的重心，则</p>
+    <div class="formula">
+      \[ \overrightarrow{GA}+\overrightarrow{GB}+\overrightarrow{GC}=\bs 0 \]
+    </div>
+
+    <p><strong>模型二：等和线（三点共线的向量形式）。</strong></p>
+    <p>若 \(P\) 在直线 \(AB\) 上（\(A\)、\(B\) 不重合），则存在 \(\lambda\)、\(\mu\) 使</p>
+    <div class="formula">
+      \[ \overrightarrow{OP}=\lambda\overrightarrow{OA}+\mu\overrightarrow{OB},\qquad \lambda+\mu=1 \]
+    </div>
+    <p><strong>★ 反过来也成立：</strong>若 \(\lambda+\mu=1\)，则 \(P\) 在直线 \(AB\) 上。这是"三点共线"的向量判据。</p>
+
+    <p><strong>模型三：数量积求最值。</strong></p>
+    <p>把 \(\bs a\cdot\bs b\) 用坐标表示成一个关于参数的函数，再用配方法或基本不等式求最值。</p>
+
+    <p><strong>模型四：极化恒等式。</strong></p>
+    <p>遇到"\(\overrightarrow{PA}\cdot\overrightarrow{PB}\)"型的式子（\(P\) 在动），用</p>
+    <div class="formula">
+      \[ \overrightarrow{PA}\cdot\overrightarrow{PB}=\frac{|\overrightarrow{PA}+\overrightarrow{PB}|^{2}-|\overrightarrow{PA}-\overrightarrow{PB}|^{2}}{4} \]
+    </div>
+    <p>若 \(M\) 是 \(AB\) 中点，则 \(\overrightarrow{PA}+\overrightarrow{PB}=2\overrightarrow{PM}\)、\(\overrightarrow{PA}-\overrightarrow{PB}=\overrightarrow{BA}\)，于是</p>
+    <div class="formula">
+      \[ \overrightarrow{PA}\cdot\overrightarrow{PB}=|\overrightarrow{PM}|^{2}-\frac14|\overrightarrow{AB}|^{2} \]
+    </div>
+    <p><strong>★ 这个变形把"两个向量的数量积"变成了"一个距离的平方减常数"，非常好用。</strong></p>
+
+    <p><strong>模型五：建系转化。</strong></p>
+    <p>若图形中有直角（或可构造直角），优先建坐标系，把向量问题变成坐标运算。<strong>这是最"稳"的策略，虽然计算量大一些，但不容易想错。</strong></p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 8（极化恒等式的典型用法）</span>
+    <p>在 \(\triangle ABC\) 中，\(AB=4\)，\(AC=2\)，\(\angle BAC=60^\circ\)，\(M\) 为 \(BC\) 的中点。求 \(\overrightarrow{MA}\cdot\overrightarrow{MB}\) 的值。</p>
+
+    <h4>解析（两种方法对照）</h4>
+    <p><strong>解法一（坐标法，直观）：</strong>以 \(A\) 为原点，\(AB\) 沿 \(x\) 轴建系。</p>
+    <div class="formula">
+      \[ A(0,\ 0),\qquad B(4,\ 0),\qquad C(2\cos60^\circ,\ 2\sin60^\circ)=(1,\ \sqrt3) \]
+    </div>
+    <p>求 \(BC\) 的中点 \(M\)：</p>
+    <div class="formula">
+      \[ M=\left(\frac{4+1}{2},\ \frac{0+\sqrt3}{2}\right)=\left(\frac52,\ \frac{\sqrt3}{2}\right) \]
+    </div>
+    <p>于是</p>
+    <div class="formula">
+      \[ \overrightarrow{MA}=A-M=\left(-\frac52,\ -\frac{\sqrt3}{2}\right) \]
+    </div>
+    <div class="formula">
+      \[ \overrightarrow{MB}=B-M=\left(4-\frac52,\ 0-\frac{\sqrt3}{2}\right)=\left(\frac32,\ -\frac{\sqrt3}{2}\right) \]
+    </div>
+    <div class="formula">
+      \[ \overrightarrow{MA}\cdot\overrightarrow{MB}=\left(-\frac52\right)\times\frac32+\left(-\frac{\sqrt3}{2}\right)\times\left(-\frac{\sqrt3}{2}\right) \]
+    </div>
+    <div class="formula">
+      \[ =-\frac{15}{4}+\frac34=-\frac{12}{4}=-3 \]
+    </div>
+
+    <p><strong>解法二（极化恒等式，快）：</strong>由模型四的结论</p>
+    <div class="formula">
+      \[ \overrightarrow{MA}\cdot\overrightarrow{MB}=|\overrightarrow{MM}|^{2}-\frac14|\overrightarrow{AB}|^{2} \]
+    </div>
+    <p>注意这里的"\(P\)"是 \(M\)，"\(A\)、\(B\)"是端点，中点是 \(M\) 自己——所以 \(|\overrightarrow{PM}|=0\)。更准确地用公式 \(\overrightarrow{PA}\cdot\overrightarrow{PB}=|\overrightarrow{PM_0}|^{2}-\dfrac14|\overrightarrow{AB}|^{2}\)（\(M_0\) 是 \(AB\) 中点）：</p>
+    <p>这里 \(P=M\)（\(BC\) 中点），端点 \(A\)、\(B\)，\(AB\) 的中点是 \(N\)。所以</p>
+    <div class="formula">
+      \[ \overrightarrow{MA}\cdot\overrightarrow{MB}=|\overrightarrow{MN}|^{2}-\frac14|AB|^{2} \]
+    </div>
+    <p>在 \(\triangle ABC\) 中，\(MN\) 是连接 \(BC\) 中点与 \(AB\) 中点的线段，所以它是 \(\triangle ABC\) 的中位线：</p>
+    <div class="formula">
+      \[ MN=\frac12 AC=\frac12\times2=1 \]
+    </div>
+    <p>所以</p>
+    <div class="formula">
+      \[ \overrightarrow{MA}\cdot\overrightarrow{MB}=1^{2}-\frac14\times4^{2}=1-4=-3 \]
+    </div>
+
+    <p><strong>答案：</strong>\(\boxed{-3}\)</p>
+
+    <p><strong>验算：</strong>两种方法都得 \(-3\) ✓。另可检查符号的合理性：\(\overrightarrow{MA}\) 与 \(\overrightarrow{MB}\) 的夹角——由坐标算 \(\cos\theta=\dfrac{-3}{|\overrightarrow{MA}||\overrightarrow{MB}|}\)，而 \(|\overrightarrow{MA}|=\sqrt{\frac{25}4+\frac34}=\sqrt7\)，\(|\overrightarrow{MB}|=\sqrt{\frac94+\frac34}=\sqrt3\)，所以 \(\cos\theta=\dfrac{-3}{\sqrt{21}}&lt;0\)，夹角为钝角 ✓ 与"数量积为负"一致。</p>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">★ 两种方法的取舍</span>
+      <ul>
+        <li><strong>坐标法：</strong>思路直白、不易想错，但计算量大（本题要写 4 个坐标、算 2 次减法、1 次数量积）。</li>
+        <li><strong>极化恒等式：</strong>计算量极小（只需知道中位线长度），但<strong>必须能认出"这是极化恒等式的形式"</strong>。</li>
+      </ul>
+      <p><strong>建议：</strong>平时练熟极化恒等式（考场上省时间），<strong>但如果一时想不起来，立刻退回坐标法</strong>——能算对才是硬道理。</p>
+    </div>
+  </div>
+
+
+  <!-- ==================== 第 5 章 ==================== -->
+  <h2 id="ch5"><span class="num">5</span>复数</h2>
+  <p class="lead">复数高考只考一道 5 分的小题，题型固定（四则运算 + 共轭 + 模）。把这一章做熟，属于"白送的分"。</p>
+
+  <h3 id="ch5-1">5.1　复数的概念</h3>
+
+  <div class="box def">
+    <span class="tag">定义</span>
+    <p>形如 \(z=a+b\i\)（\(a,b\in\mathbb{R}\)）的数叫<strong>复数</strong>，其中 \(\i\) 叫<strong>虚数单位</strong>，规定</p>
+    <div class="formula">
+      \[ \i^{2}=-1 \]
+    </div>
+    <p>\(a\) 叫<strong>实部</strong>，\(b\) 叫<strong>虚部</strong>。全体复数构成的集合记作 \(\mathbb{C}\)。</p>
+    <p><strong>分类：</strong></p>
+    <ul>
+      <li><strong>实数：</strong>\(b=0\)（如 \(3+0\i=3\)）；</li>
+      <li><strong>虚数：</strong>\(b\ne0\)；</li>
+      <li><strong>纯虚数：</strong>\(a=0\) 且 \(b\ne0\)（如 \(2\i\)）。</li>
+    </ul>
+    <p><strong>★ 两个复数相等</strong>当且仅当实部与虚部分别相等：</p>
+    <div class="formula">
+      \[ a+b\i=c+d\i \iff a=c\ \text{且}\ b=d \]
+    </div>
+    <p><strong>这是解"复数相等"类题目的唯一依据。</strong></p>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">★ 虚数单位 \(\i\) 的幂的周期性</span>
+    <p>由 \(\i^{2}=-1\) 可以依次推出：</p>
+    <div class="formula">
+      \[ \i^{1}=\i,\qquad \i^{2}=-1,\qquad \i^{3}=-\i,\qquad \i^{4}=1 \]
+    </div>
+    <p>再往后就循环了（\(\i^{5}=\i\)）。所以 \(\i\) 的幂<strong>以 4 为周期</strong>。</p>
+    <p><strong>求 \(\i^{n}\) 的方法：</strong>用 \(n\) 除以 4 看余数：</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>\(n\) 除以 4 的余数</th><th>0</th><th>1</th><th>2</th><th>3</th></tr></thead>
+        <tbody>
+          <tr><td>\(\i^{n}\)</td><td>\(1\)</td><td>\(\i\)</td><td>\(-1\)</td><td>\(-\i\)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>例：</strong>\(\i^{2025}\)。因为 \(2025=4\times506+1\)，余数是 1，所以 \(\i^{2025}=\i\)。</p>
+  </div>
+
+  <h3 id="ch5-2">5.2　复数的四则运算</h3>
+
+  <div class="box def">
+    <span class="tag">四则运算法则</span>
+    <p>设 \(z_1=a+b\i\)，\(z_2=c+d\i\)（\(a,b,c,d\in\mathbb{R}\)）。</p>
+    <p><strong>加法与减法（实部虚部分别加减）：</strong></p>
+    <div class="formula">
+      \[ z_1\pm z_2=(a\pm c)+(b\pm d)\i \]
+    </div>
+    <p><strong>乘法（按多项式展开，再用 \(\i^{2}=-1\)）：</strong></p>
+    <div class="formula">
+      \[ z_1z_2=(a+b\i)(c+d\i)=ac+ad\i+bc\i+bd\i^{2} \]
+    </div>
+    <div class="formula">
+      \[ =(ac-bd)+(ad+bc)\i \]
+    </div>
+    <p><strong>除法（分子分母同乘分母的共轭）：</strong></p>
+    <div class="formula">
+      \[ \frac{z_1}{z_2}=\frac{a+b\i}{c+d\i}=\frac{(a+b\i)(c-d\i)}{(c+d\i)(c-d\i)}=\frac{(ac+bd)+(bc-ad)\i}{c^{2}+d^{2}} \]
+    </div>
+    <p><strong>★ 除法不要背公式，记住"分母实数化"这个动作即可</strong>——分子分母同乘分母的共轭，把分母变成实数 \(c^{2}+d^{2}\)。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">★ 推导：为什么"乘以共轭"能把分母变成实数</span>
+    <p><strong>目标：</strong>证明 \((c+d\i)(c-d\i)=c^{2}+d^{2}\)（一个实数）。</p>
+
+    <p><strong>第一步：按多项式展开。</strong></p>
+    <div class="formula">
+      \[ (c+d\i)(c-d\i)=c^{2}-cd\i+cd\i-d^{2}\i^{2} \]
+    </div>
+    <p><strong>第二步：中间两项抵消。</strong>\(-cd\i\) 与 \(+cd\i\) 正好抵消：</p>
+    <div class="formula">
+      \[ =c^{2}-d^{2}\i^{2} \]
+    </div>
+    <p><strong>第三步：用 \(\i^{2}=-1\) 代入。</strong></p>
+    <div class="formula">
+      \[ =c^{2}-d^{2}\times(-1)=c^{2}+d^{2} \quad\checkmark \]
+    </div>
+    <p>结果是实数，且 \(c^{2}+d^{2}\ge0\)（当 \(z_2\ne0\) 时严格大于 0）。</p>
+    <p><strong>★ 为什么分子分母都要乘？</strong>因为要保证"值不变"。乘 \(\dfrac{c-d\i}{c-d\i}=1\)（当 \(z_2\ne0\) 时分子分母都非零），相当于乘 1。</p>
+    <p><strong>★ 这个式子与"平方差公式"形式一样：</strong>\((c+d\i)(c-d\i)=c^{2}-(d\i)^{2}\)，而 \((d\i)^{2}=d^{2}\i^{2}=-d^{2}\)，所以 \(=c^{2}-(-d^{2})=c^{2}+d^{2}\)。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 9（复数四则运算）</span>
+    <p>计算：(1) \(\dfrac{2-\i}{1+2\i}\)；　(2) \((1+\i)^{2}\)；　(3) \((2-\i)(2+2\i)\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>(1) 分母实数化：分子分母同乘分母的共轭 \(1-2\i\)。</strong></p>
+    <div class="formula">
+      \[ \frac{2-\i}{1+2\i}=\frac{(2-\i)(1-2\i)}{(1+2\i)(1-2\i)} \]
+    </div>
+    <p>先算分母：</p>
+    <div class="formula">
+      \[ (1+2\i)(1-2\i)=1^{2}+2^{2}=1+4=5 \]
+    </div>
+    <p>再算分子：</p>
+    <div class="formula">
+      \[ (2-\i)(1-2\i)=2-4\i-\i+2\i^{2}=2-5\i+2\times(-1) \]
+    </div>
+    <div class="formula">
+      \[ =2-5\i-2=-5\i \]
+    </div>
+    <p>所以</p>
+    <div class="formula">
+      \[ \frac{2-\i}{1+2\i}=\frac{-5\i}{5}=-\i \]
+    </div>
+    <p><strong>答案：</strong>\(\boxed{-\i}\)</p>
+    <p><strong>验算：</strong>把 \(-\i\) 代回检验：\((-\i)(1+2\i)=-\i-2\i^{2}=-\i+2=2-\i\) ✓ 等于原分子。</p>
+
+    <p><strong>(2) 用完全平方公式展开。</strong></p>
+    <div class="formula">
+      \[ (1+\i)^{2}=1^{2}+2\times1\times\i+\i^{2}=1+2\i+(-1)=2\i \]
+    </div>
+    <p><strong>答案：</strong>\(\boxed{2\i}\)</p>
+    <p><strong>★ 记住 \((1+\i)^{2}=2\i\) 这个常用结论</strong>，考试时可以直接用。</p>
+
+    <p><strong>(3) 按多项式展开。</strong></p>
+    <div class="formula">
+      \[ (2-\i)(2+2\i)=4+4\i-2\i-2\i^{2}=4+2\i+2=6+2\i \]
+    </div>
+    <p><strong>答案：</strong>\(\boxed{6+2\i}\)</p>
+    <p><strong>验算：</strong>也可以用"实部虚部公式"：\((ac-bd)+(ad+bc)\i\)，其中 \(a=2\)、\(b=-1\)、\(c=2\)、\(d=2\)。</p>
+    <div class="formula">
+      \[ ac-bd=2\times2-(-1)\times2=4+2=6 \]
+    </div>
+    <div class="formula">
+      \[ ad+bc=2\times2+(-1)\times2=4-2=2 \]
+    </div>
+    <p>所以结果是 \(6+2\i\) ✓ 一致。</p>
+  </div>
+
+  <h3 id="ch5-3">5.3　共轭复数与模</h3>
+
+  <div class="box def">
+    <span class="tag">两个定义</span>
+    <p>设 \(z=a+b\i\)（\(a,b\in\mathbb{R}\)）。</p>
+    <ul>
+      <li><strong>共轭复数：</strong>\(\overline{z}=a-b\i\)（实部相同、虚部互为相反数）。</li>
+      <li><strong>模：</strong>\(|z|=\sqrt{a^{2}+b^{2}}\)（一个非负实数）。</li>
+    </ul>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">★ 推导：模与共轭的三条常用性质</span>
+
+    <p><strong>性质一：\(z\cdot\overline{z}=|z|^{2}\)。</strong></p>
+    <p><strong>证明：</strong>直接算。</p>
+    <div class="formula">
+      \[ z\cdot\overline{z}=(a+b\i)(a-b\i)=a^{2}+b^{2} \]
+    </div>
+    <p>而 \(|z|^{2}=\left(\sqrt{a^{2}+b^{2}}\right)^{2}=a^{2}+b^{2}\)，两者相等 ✓。</p>
+    <p><strong>★ 这条性质很有用：</strong>求 \(|z|\) 时可以先算 \(z\overline{z}\)，避免开方运算。</p>
+
+    <p><strong>性质二：\(\overline{z_1\pm z_2}=\overline{z_1}\pm\overline{z_2}\)，\(\overline{z_1z_2}=\overline{z_1}\cdot\overline{z_2}\)。</strong></p>
+    <p><strong>证明第二条：</strong>设 \(z_1=a+b\i\)、\(z_2=c+d\i\)。由乘法公式</p>
+    <div class="formula">
+      \[ z_1z_2=(ac-bd)+(ad+bc)\i \]
+    </div>
+    <p>所以</p>
+    <div class="formula">
+      \[ \overline{z_1z_2}=(ac-bd)-(ad+bc)\i \]
+    </div>
+    <p>而</p>
+    <div class="formula">
+      \[ \overline{z_1}\cdot\overline{z_2}=(a-b\i)(c-d\i)=ac-ad\i-bc\i+bd\i^{2}=(ac-bd)-(ad+bc)\i \]
+    </div>
+    <p>两者相等 ✓。</p>
+
+    <p><strong>性质三：\(z-\overline{z}=2b\i\)（结果是纯虚数）。</strong></p>
+    <p><strong>证明：</strong></p>
+    <div class="formula">
+      \[ z-\overline{z}=(a+b\i)-(a-b\i)=2b\i \quad\checkmark \]
+    </div>
+    <p><strong>★ 这条性质在高考题里出现频率很高</strong>——题目问"求 \(z-\overline{z}\)"，本质是求"\(2\times\)虚部"。</p>
+    <p>另外 \(z+\overline{z}=2a\)（实数的 2 倍）。</p>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">★ 常用结论速查</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>式子</th><th>结果</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td>\(z+\overline{z}\)</td><td>\(2a\)</td><td>实数，等于实部的 2 倍</td></tr>
+          <tr><td>\(z-\overline{z}\)</td><td>\(2b\i\)</td><td>纯虚数，等于虚部的 2 倍乘 \(\i\)</td></tr>
+          <tr><td>\(z\cdot\overline{z}\)</td><td>\(|z|^{2}=a^{2}+b^{2}\)</td><td>非负实数</td></tr>
+          <tr><td>\(|z_1z_2|\)</td><td>\(|z_1|\cdot|z_2|\)</td><td>模的乘法性质</td></tr>
+          <tr><td>\(\left|\dfrac{z_1}{z_2}\right|\)</td><td>\(\dfrac{|z_1|}{|z_2|}\)</td><td>模的除法性质（\(z_2\ne0\)）</td></tr>
+          <tr><td>\((1+\i)^{2}\)</td><td>\(2\i\)</td><td>高频结论，直接记</td></tr>
+          <tr><td>\((1-\i)^{2}\)</td><td>\(-2\i\)</td><td>同上</td></tr>
+          <tr><td>\(\dfrac{1+\i}{1-\i}\)</td><td>\(\i\)</td><td>分子分母同乘 \(1+\i\) 可验证</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 10（共轭与模的综合）</span>
+    <p>已知 \(z=2-\i\)，求 \(z(\overline{z}+\i)\) 的值。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：求 \(\overline{z}\)。</strong>由 \(z=2-\i\)，把虚部取反：</p>
+    <div class="formula">
+      \[ \overline{z}=2+\i \]
+    </div>
+
+    <p><strong>第二步：算 \(\overline{z}+\i\)。</strong></p>
+    <div class="formula">
+      \[ \overline{z}+\i=(2+\i)+\i=2+2\i \]
+    </div>
+
+    <p><strong>第三步：算乘积。</strong></p>
+    <div class="formula">
+      \[ z(\overline{z}+\i)=(2-\i)(2+2\i) \]
+    </div>
+    <div class="formula">
+      \[ =4+4\i-2\i-2\i^{2}=4+2\i-2\times(-1)=4+2\i+2=6+2\i \]
+    </div>
+
+    <p><strong>答案：</strong>\(\boxed{6+2\i}\)</p>
+
+    <p><strong>验算（另一种算法）：</strong>先展开再代入。</p>
+    <div class="formula">
+      \[ z(\overline{z}+\i)=z\overline{z}+z\i \]
+    </div>
+    <p>由性质一，\(z\overline{z}=|z|^{2}=2^{2}+(-1)^{2}=4+1=5\)。</p>
+    <p>而 \(z\i=(2-\i)\i=2\i-\i^{2}=2\i+1=1+2\i\)。</p>
+    <p>所以</p>
+    <div class="formula">
+      \[ z(\overline{z}+\i)=5+(1+2\i)=6+2\i \]
+    </div>
+    <p>✓ 与第一种算法一致。</p>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">★ 复数的两种常用技巧</span>
+      <ul>
+        <li><strong>技巧一：先展开再代入。</strong>把 \(z(\overline{z}+\i)\) 展开成 \(z\overline{z}+z\i\)，前者直接用 \(z\overline{z}=|z|^{2}\) 秒算。</li>
+        <li><strong>技巧二：用"实部虚部"分解。</strong>若题目给的 \(z\) 形式复杂，先把它化成 \(a+b\i\) 的标准形式，再算其余部分。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="ch5-4">5.4　复数的几何意义</h3>
+
+  <div class="box def">
+    <span class="tag">复平面</span>
+    <p>建立直角坐标系，让 \(x\) 轴表示<strong>实部</strong>、\(y\) 轴表示<strong>虚部</strong>，这样的平面叫<strong>复平面</strong>。</p>
+    <p>复数 \(z=a+b\i\) 与复平面上的点 \(Z(a,\ b)\) <strong>一一对应</strong>；也与以原点为起点、以 \(Z\) 为终点的向量 \(\overrightarrow{OZ}\) 一一对应。</p>
+    <p><strong>★ 所以：</strong></p>
+    <ul>
+      <li><strong>复数的模 \(|z|=\sqrt{a^{2}+b^{2}}\)</strong> 就是<strong>点 \(Z\) 到原点的距离</strong>（向量的长度）；</li>
+      <li><strong>复数的加减法</strong>就是<strong>向量的加减法</strong>；</li>
+      <li><strong>共轭 \(\overline{z}=a-b\i\)</strong> 对应的点是 \(Z\) 关于 <strong>\(x\) 轴（实轴）的对称点</strong>。</li>
+    </ul>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">★ 复数与向量的对应关系（一张表看清）</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>复数</th><th>点</th><th>向量</th></tr></thead>
+        <tbody>
+          <tr><td>\(z=a+b\i\)</td><td>\(Z(a,\ b)\)</td><td>\(\overrightarrow{OZ}=(a,\ b)\)</td></tr>
+          <tr><td>\(|z|\)</td><td>点 \(Z\) 到原点的距离</td><td>\(|\overrightarrow{OZ}|\)</td></tr>
+          <tr><td>\(\overline{z}=a-b\i\)</td><td>关于实轴的对称点</td><td>\((a,\ -b)\)</td></tr>
+          <tr><td>\(-z=-a-b\i\)</td><td>关于原点的对称点</td><td>\((-a,\ -b)\)</td></tr>
+          <tr><td>\(z_1+z_2\)</td><td>—</td><td>向量加法</td></tr>
+          <tr><td>\(z_1-z_2\)</td><td>—</td><td>向量减法</td></tr>
+          <tr><td>\(|z_1-z_2|\)</td><td>两点 \(Z_1\)、\(Z_2\) 的距离</td><td>\(|\overrightarrow{Z_2Z_1}|\)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>★ 最后一行特别有用：</strong>\(|z_1-z_2|\) 的几何意义是"复平面上两点 \(Z_1\) 与 \(Z_2\) 之间的距离"。</p>
+    <p>由此可判断轨迹：若 \(|z-(1+\i)|=2\)，则表示"到点 \((1,1)\) 的距离为 2 的点的集合"，即<strong>以 \((1,1)\) 为圆心、2 为半径的圆</strong>。</p>
+  </div>
+
+  <!-- ==================== 第 6 章 ==================== -->
+  <h2 id="ch6"><span class="num">6</span>易错点清单</h2>
+  <p class="lead">把这一册的高频错误集中过一遍。向量题的分往往就丢在这些细节上。</p>
+
+  <div class="box warn">
+    <span class="tag">向量易错点 · 12 条</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>#</th><th>易错点</th><th>正确做法</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>把"向量相等"当成"线段相等"</td><td>向量相等要求<strong>大小相等 + 方向相同</strong>；线段相等只看长度</td></tr>
+          <tr><td>2</td><td>把"平行"当成"位置平行"</td><td>向量平行指"方向相同或相反"，也叫<strong>共线</strong>，可以重合</td></tr>
+          <tr><td>3</td><td>忽略零向量的特殊性</td><td>\(\bs 0\) 方向任意，与任何向量平行；\(|\bs 0|=0\)</td></tr>
+          <tr><td>4</td><td>\(\overrightarrow{AB}\) 写成"终点减起点"时顺序反了</td><td>\(\overrightarrow{AB}=(x_B-x_A,\ y_B-y_A)\)，<strong>终点减起点</strong></td></tr>
+          <tr><td>5</td><td>减法用错口诀</td><td>减法必须"<strong>共起点，连终点，指向被减数</strong>"；起点不同要先平移</td></tr>
+          <tr><td>6</td><td>\(|\bs a+\bs b|\) 直接写成 \(|\bs a|+|\bs b|\)</td><td>只能写 \(\le\)，等号成立要求<strong>同向</strong></td></tr>
+          <tr><td>7</td><td>平行判据写成"比例相等"</td><td>用 \(x_1y_2-x_2y_1=0\)，<strong>避免分母为 0</strong></td></tr>
+          <tr><td>8</td><td>平行判据与垂直判据混用</td><td>平行：交叉相乘<strong>相减</strong>；垂直：对应相乘<strong>相加</strong></td></tr>
+          <tr><td>9</td><td>数量积的"结合律"</td><td>\((\bs a\cdot\bs b)\bs c\ne\bs a(\bs b\cdot\bs c)\)，<strong>不成立</strong></td></tr>
+          <tr><td>10</td><td>数量积两边"约去公因子"</td><td>\(\bs a\cdot\bs b=\bs a\cdot\bs c\nRightarrow\bs b=\bs c\)，<strong>不能约</strong></td></tr>
+          <tr><td>11</td><td>求夹角时忘了 \(\theta\in[0,\pi]\)</td><td>由 \(\cos\theta\) 反查角时，解<strong>唯一</strong>；注意负余弦对应钝角</td></tr>
+          <tr><td>12</td><td>把"投影"当成"投影的长度"</td><td>投影可以是<strong>负数</strong>（夹角为钝角时）</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">复数易错点 · 8 条</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>#</th><th>易错点</th><th>正确做法</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>虚部写成 \(b\i\)</td><td>\(z=a+b\i\) 的<strong>虚部是 \(b\)</strong>（实数），不是 \(b\i\)</td></tr>
+          <tr><td>2</td><td>"纯虚数"只要求实部为 0</td><td>纯虚数要求<strong>实部为 0 且虚部不为 0</strong>（\(a=0\) 且 \(b\ne0\)）</td></tr>
+          <tr><td>3</td><td>\(\i^{2}\) 算成 \(1\)</td><td>\(\i^{2}=-1\)，这是复数的定义基础</td></tr>
+          <tr><td>4</td><td>除法只乘分子</td><td>分子分母<strong>都要</strong>乘分母的共轭（相当于乘 1）</td></tr>
+          <tr><td>5</td><td>共轭只改实部</td><td>共轭是<strong>虚部取反</strong>：\(\overline{a+b\i}=a-b\i\)</td></tr>
+          <tr><td>6</td><td>模算成 \(a^{2}+b^{2}\)</td><td>模是 \(\sqrt{a^{2}+b^{2}}\)，别忘开方（\(a^{2}+b^{2}\) 是 \(z\overline{z}\)）</td></tr>
+          <tr><td>7</td><td>解"复数相等"时把虚部当 \(b\i\)</td><td>两边写成 \(a+b\i=c+d\i\) 的标准形式，再令<strong>实部实部相等、虚部虚部相等</strong></td></tr>
+          <tr><td>8</td><td>把 \(|z_1-z_2|\) 当成"模的差"</td><td>\(|z_1-z_2|\) 是<strong>两点间的距离</strong>，不是 \(|z_1|-|z_2|\)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ==================== 第 7 章 ==================== -->
+  <h2 id="ch7"><span class="num">7</span>知识地图与自测</h2>
+  <p class="lead">把这一册串成一条线，再用自测清单检验掌握程度。</p>
+
+  <h3 id="ch7-1">7.1　知识地图</h3>
+
+  <div class="map">
+    <div class="node">
+      <b>① 向量的概念</b>
+      <span>大小 + 方向<br>模 \(|\bs a|\)、零向量、单位向量<br>平行（共线）、相等、相反</span>
+    </div>
+    <div class="node">
+      <b>② 线性运算</b>
+      <span>加法：三角形法则（首尾相接）／平行四边形法则（共起点）<br>减法：<strong>共起点，连终点，指向被减数</strong><br>数乘：\(\lambda\bs a\) 改变长度与方向</span>
+    </div>
+    <div class="node">
+      <b>③ 共线定理</b>
+      <span>\(\bs b\parallel\bs a\ (\bs a\ne\bs 0)\iff\bs b=\lambda\bs a\)（\(\lambda\) 唯一）<br>证三点共线：\(\overrightarrow{AB}=\lambda\overrightarrow{AC}\)（<strong>必须共起点</strong>）</span>
+    </div>
+    <div class="node">
+      <b>④ 基本定理与坐标</b>
+      <span>两个不共线的向量可作基底，<strong>表示唯一</strong><br>\(\overrightarrow{AB}=(x_B-x_A,\ y_B-y_A)\)<br>坐标运算：加减法分别加减，数乘分别乘</span>
+    </div>
+    <div class="node">
+      <b>⑤ 平行与垂直的坐标判据</b>
+      <span>平行：\(x_1y_2-x_2y_1=0\)（交叉相乘<strong>相减</strong>）<br>垂直：\(x_1x_2+y_1y_2=0\)（对应相乘<strong>相加</strong>）</span>
+    </div>
+    <div class="node">
+      <b>⑥ 数量积</b>
+      <span>定义：\(\bs a\cdot\bs b=|\bs a||\bs b|\cos\theta\)（结果是<strong>数</strong>）<br>\(|\bs a|=\sqrt{\bs a\cdot\bs a}\)<br>\(|\bs a\pm\bs b|^{2}=|\bs a|^{2}\pm2\bs a\cdot\bs b+|\bs b|^{2}\)<br>极化恒等式：\(\bs a\cdot\bs b=\dfrac{|\bs a+\bs b|^{2}-|\bs a-\bs b|^{2}}{4}\)</span>
+    </div>
+    <div class="node">
+      <b>⑦ 坐标形式的数量积</b>
+      <span>\(\bs a\cdot\bs b=x_1x_2+y_1y_2\)<br>\(|\bs a|=\sqrt{x_1^{2}+y_1^{2}}\)<br>\(\cos\theta=\dfrac{x_1x_2+y_1y_2}{|\bs a||\bs b|}\)<br>投影 \(=\dfrac{\bs a\cdot\bs b}{|\bs a|}\)</span>
+    </div>
+    <div class="node">
+      <b>⑧ 向量的应用</b>
+      <span>与三角：坐标含 \(\cos\theta,\sin\theta\) 时用差角公式<br>与解析几何：方向向量判平行垂直；点线距离来自投影<br>与立体几何：空间向量只是"多一个坐标"</span>
+    </div>
+    <div class="node">
+      <b>⑨ 复数</b>
+      <span>\(z=a+b\i\)，\(\i^{2}=-1\)，周期为 4<br>四则运算：除法要"分母实数化"<br>共轭 \(\overline{z}=a-b\i\)；模 \(|z|=\sqrt{a^{2}+b^{2}}\)<br>\(z\overline{z}=|z|^{2}\)、\(z-\overline{z}=2b\i\)<br>几何：与复平面上的点、向量一一对应</span>
+    </div>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">全册知识链（一条主线串起来）</span>
+    <div class="chain">
+      <div class="step">向量的概念<small>大小 + 方向</small></div>
+      <div class="arrow">→</div>
+      <div class="step">线性运算<small>加、减、数乘</small></div>
+      <div class="arrow">→</div>
+      <div class="step">共线定理<small>\(\bs b=\lambda\bs a\)</small></div>
+      <div class="arrow">→</div>
+      <div class="step">基本定理<small>基底表示唯一</small></div>
+      <div class="arrow">→</div>
+      <div class="step">坐标表示<small>把向量数字化</small></div>
+      <div class="arrow">→</div>
+      <div class="step">数量积<small>打包长度与角度</small></div>
+      <div class="arrow">→</div>
+      <div class="step">应用<small>三角、解几、立几</small></div>
+    </div>
+    <p><strong>看清这条链：</strong>"概念"给对象，"线性运算"给基本操作，"共线定理"和"基本定理"给表示方法，"坐标表示"把几何变成代数，"数量积"给度量工具，"应用"是出口。</p>
+    <p><strong>复数在这条链的什么位置？</strong>它是"坐标表示"的<strong>孪生兄弟</strong>——复数 \(a+b\i\) 与向量 \((a,b)\) 一一对应，所以复数的加减法就是向量加减法，复数的模就是向量的长度。<strong>学完向量再看复数，会发现它们是同一件事。</strong></p>
+  </div>
+
+  <h3 id="ch7-2">7.2　自测清单</h3>
+
+  <div class="box tip">
+    <span class="tag">自测清单（每项都要能"独立做到"，不是"看懂了"）</span>
+    <p><strong>基础层（必须全过）</strong></p>
+    <ul>
+      <li>□ 能说出向量相等的两个条件，并举一个"长度相等但向量不等"的例子</li>
+      <li>□ 能解释为什么"平行向量"又叫"共线向量"</li>
+      <li>□ 能默写 \(\overrightarrow{AB}+\overrightarrow{BC}=\overrightarrow{AC}\)，并推导出 \(\overrightarrow{AC}-\overrightarrow{AB}=\overrightarrow{BC}\)</li>
+      <li>□ 能说出减法口诀"共起点，连终点，指向被减数"，并解释每个词的含义</li>
+      <li>□ 能独立证明共线定理（含唯一性）</li>
+      <li>□ 能说出 \(\overrightarrow{AB}\) 的坐标公式，并解释为什么是"终点减起点"</li>
+      <li>□ 能默写平行与垂直的坐标判据，并说明为什么平行不用"比例相等"</li>
+      <li>□ 能默写数量积的定义、模的公式、夹角的公式</li>
+      <li>□ 能独立展开 \(|\bs a\pm\bs b|^{2}\)，并推导极化恒等式</li>
+      <li>□ 能默写复数的四则运算法则，并解释"分母实数化"的原理</li>
+      <li>□ 能说出共轭与模的定义，并独立证明 \(z\overline{z}=|z|^{2}\)</li>
+    </ul>
+
+    <p><strong>核心层（这一册的关键）</strong></p>
+    <ul>
+      <li>□ 能用共线定理证明三点共线（注意"共起点"）</li>
+      <li>□ 能用"系数对应相等"列方程组求参数（依据是基本定理的唯一性）</li>
+      <li>□ 能解释为什么数量积的"结合律"和"消去律"都不成立，并各举一个反例</li>
+      <li>□ 能由 \(|\bs a+\bs b|^{2}=|\bs a|^{2}+|\bs b|^{2}\) 立刻判断 \(\bs a\perp\bs b\)</li>
+      <li>□ 能用"坐标含 \(\cos\theta,\sin\theta\)"识别出该用三角公式</li>
+      <li>□ 能用数量积的符号判断三角形是锐角还是钝角</li>
+      <li>□ 能说出复数的模与复平面上"点到原点距离"的对应关系</li>
+      <li>□ 能说出 \(|z_1-z_2|\) 的几何意义，并判断形如 \(|z-z_0|=r\) 的轨迹</li>
+    </ul>
+
+    <p><strong>进阶层（决定能否拿高分）</strong></p>
+    <ul>
+      <li>□ 能用极化恒等式 \(\overrightarrow{PA}\cdot\overrightarrow{PB}=|\overrightarrow{PM}|^{2}-\dfrac14|\overrightarrow{AB}|^{2}\) 快速求数量积</li>
+      <li>□ 能用"等和线"（\(\lambda+\mu=1\Leftrightarrow\) 三点共线）处理动点问题</li>
+      <li>□ 能说出空间向量与平面向量公式的对应关系（多一个坐标）</li>
+      <li>□ 能用"建系 + 坐标运算"处理没有现成几何关系的向量题</li>
+    </ul>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">如果还有困难，对照这里找原因</span>
+    <ul>
+      <li><strong>"减法总搞错方向"</strong> → 口诀没记牢，重点补第 1.2 节的推导（用"位移"理解）</li>
+      <li><strong>"共线题不会列方程"</strong> → 不知道"系数对应相等"的依据是基本定理的唯一性，重点补第 2.1 节</li>
+      <li><strong>"平行和垂直判据混"</strong> → 没有理解垂直判据的本质是"数量积为 0"，重点补第 2.3 节和第 3.3 节</li>
+      <li><strong>"看到 \(|\bs a+\bs b|\) 就慌"</strong> → 没有掌握"先平方展开"的固定动作，重点补第 3.1 节</li>
+      <li><strong>"复数除法总算错"</strong> → 没有理解"分母实数化"的原理，重点补第 5.2 节的推导</li>
+      <li><strong>"复数的模和 \(z\overline{z}\) 分不清"</strong> → 重点补第 5.3 节的性质一</li>
+    </ul>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">下一步学什么</span>
+    <p>学完这一册，你已经补上了高中必修的最后一块。接下来建议：</p>
+    <ol class="steps">
+      <li><strong>回头重读第四册《立体几何》第 5 章</strong>。此时空间向量的坐标运算、垂直判据已经熟悉，"设法向量列方程组"会变得非常自然。</li>
+      <li><strong>回头重读第五册《解析几何》</strong>，体会"方向向量""法向量"在直线与圆中的用法。</li>
+      <li><strong>把第 8 章的真题按题型重做一遍</strong>，重点是"看到题先想能不能建系"这个判断习惯。</li>
+      <li><strong>至此八册闭环</strong>，覆盖新课标全部高考必考模块，可以作为完整的一轮复习材料。</li>
+    </ol>
+  </div>
+
+
+  <!-- ==================== 第 8 章 ==================== -->
+  <h2 id="ch8"><span class="num">8</span>高考真题题型精讲（2016—2025）</h2>
+  <p class="lead">向量与复数在高考中都是"小题必考"——复数固定一道 5 分单选，向量则常与三角、解析几何结合。</p>
+
+  <div class="box tip">
+    <span class="tag">十年真题告诉我们的五件事</span>
+    <ol class="steps">
+      <li><strong>复数题是"送分题"，但每年都有人丢。</strong>近五年新高考 I 卷的第 2 题（或第 1、2 题）稳定考复数的四则运算，<strong>题型只有"化简 + 求共轭/求模/求差"几种</strong>。</li>
+      <li><strong>向量题的"垂直条件"最高频。</strong>\(\bs a\perp\bs b\Leftrightarrow x_1x_2+y_1y_2=0\) 这一条判据，十年里反复出现。</li>
+      <li><strong>向量题喜欢"设参数、列方程"。</strong>如 2023 新高考 I 卷的 \((\bs a+\lambda\bs b)\perp(\bs a+\mu\bs b)\)，考的是"把垂直条件翻译成方程"。</li>
+      <li><strong>模的等式往往等价于垂直。</strong>\(|\bs a+\bs b|^{2}=|\bs a|^{2}+|\bs b|^{2}\) 就是勾股定理的向量版本。</li>
+      <li><strong>投影是"冷门但必考"的点。</strong>投影的公式 \(\dfrac{\bs a\cdot\bs b}{|\bs a|}\) 要记牢，且要注意它<strong>可以是负数</strong>。</li>
+    </ol>
+  </div>
+
+  <h3 id="ch8-1">8.1　题型一：向量的线性运算与共线</h3>
+
+  <div class="box tip">
+    <span class="tag">题型特征与解题套路</span>
+    <p><strong>特征：</strong>给出两个向量的坐标，已知它们平行，求参数；或用基底表示向量、证三点共线。</p>
+    <p><strong>套路（两步走）：</strong></p>
+    <ol class="steps">
+      <li><strong>坐标形式</strong>：用 \(x_1y_2-x_2y_1=0\) 列方程。</li>
+      <li><strong>基底形式</strong>：设 \(\bs b=\lambda\bs a\)，用"系数对应相等"列方程组。</li>
+    </ol>
+    <p><strong>★ 注意方向：</strong>题目给的是 \(\overrightarrow{AB}\) 还是 \(\overrightarrow{BA}\)？方向反了要取负号。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 1 · 2016 全国II卷（文）</span>
+    <p>已知向量 \(\bs a=(m,\ 4)\)，\(\bs b=(3,\ -2)\)，且 \(\bs a\parallel\bs b\)，则 \(m=\)＿＿＿。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：用平行判据列方程。</strong>由 \(x_1y_2-x_2y_1=0\)，其中 \((x_1,y_1)=(m,4)\)、\((x_2,y_2)=(3,-2)\)：</p>
+    <div class="formula">
+      \[ m\times(-2)-3\times4=0 \]
+    </div>
+
+    <p><strong>第二步：解方程。</strong></p>
+    <div class="formula">
+      \[ -2m-12=0 \quad\Longrightarrow\quad -2m=12 \quad\Longrightarrow\quad m=-6 \]
+    </div>
+
+    <p><strong>答案：</strong>\(\boxed{-6}\)</p>
+
+    <p><strong>验算：</strong>\(m=-6\) 时 \(\bs a=(-6,\ 4)\)。检查 \(\bs a\) 与 \(\bs b\) 是否成倍数关系：</p>
+    <div class="formula">
+      \[ \bs a=(-6,\ 4)=-2\times(3,\ -2)=-2\bs b \]
+    </div>
+    <p>确实共线 ✓。</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>平行判据写成 \(x_1y_2-x_2y_1=0\)，不要写"比例相等"。</strong>本题 \(\bs b=(3,-2)\) 没有零坐标，比例式也能用；但如果 \(\bs b=(0,-2)\)，比例式就失效了。<strong>养成统一用"交叉相乘相减"的习惯。</strong></li>
+        <li><strong>注意相减的顺序。</strong>\(x_1y_2-x_2y_1\) 中，第一项是"第一个向量的横坐标乘第二个的纵坐标"。顺序反了会得到相反数，但方程仍然等价（因为等于 0）。</li>
+        <li><strong>算出参数后，用"成倍数关系"验算最快。</strong>本题 \(\bs a=-2\bs b\)，一眼就能确认。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="ch8-2">8.2　题型二：数量积与垂直</h3>
+
+  <div class="box tip">
+    <span class="tag">题型特征与解题套路</span>
+    <p><strong>特征：</strong>已知两个含参数的向量垂直，求参数；或已知一个向量与某个"组合向量"垂直。</p>
+    <p><strong>套路（三步走）：</strong></p>
+    <ol class="steps">
+      <li><strong>先算出"组合向量"的坐标</strong>（如 \(\bs b-4\bs a\)、\(\bs a+\lambda\bs b\)）。</li>
+      <li><strong>用垂直判据 \(x_1x_2+y_1y_2=0\) 列方程。</strong></li>
+      <li><strong>解方程，并代回验算。</strong></li>
+    </ol>
+    <p><strong>★ 若出现两个参数（如 \(\lambda\)、\(\mu\)），列出的方程是"含两个参数的等式"，不一定能解出具体值——要看清题目问的是"求值"还是"求关系"。</strong></p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 2 · 2024 新高考I卷</span>
+    <p>已知向量 \(\bs a=(0,\ 1)\)，\(\bs b=(2,\ x)\)，若 \(\bs b\perp(\bs b-4\bs a)\)，则 \(x=\)（　　）</p>
+    <p>A. \(-2\)　　B. \(-1\)　　C. \(1\)　　D. \(2\)</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：先算组合向量 \(\bs b-4\bs a\)。</strong></p>
+    <div class="formula">
+      \[ 4\bs a=4\times(0,\ 1)=(0,\ 4) \]
+    </div>
+    <div class="formula">
+      \[ \bs b-4\bs a=(2,\ x)-(0,\ 4)=(2-0,\ x-4)=(2,\ x-4) \]
+    </div>
+
+    <p><strong>第二步：用垂直判据列方程。</strong>\(\bs b=(2,x)\) 与 \(\bs b-4\bs a=(2,x-4)\) 垂直，所以对应相乘相加为 0：</p>
+    <div class="formula">
+      \[ 2\times2+x(x-4)=0 \]
+    </div>
+
+    <p><strong>第三步：解方程。</strong></p>
+    <div class="formula">
+      \[ 4+x^{2}-4x=0 \quad\Longrightarrow\quad x^{2}-4x+4=0 \]
+    </div>
+    <p>左边是完全平方式：</p>
+    <div class="formula">
+      \[ (x-2)^{2}=0 \quad\Longrightarrow\quad x=2 \]
+    </div>
+
+    <p><strong>答案：</strong>\(\boxed{\text{D}}\)</p>
+
+    <p><strong>验算：</strong>\(x=2\) 时 \(\bs b=(2,\ 2)\)，\(\bs b-4\bs a=(2,\ -2)\)。</p>
+    <div class="formula">
+      \[ \bs b\cdot(\bs b-4\bs a)=2\times2+2\times(-2)=4-4=0 \]
+    </div>
+    <p>✓ 垂直成立。</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>"先算组合向量，再套判据"是固定顺序。</strong>不要在脑子里同时展开——先把 \(\bs b-4\bs a\) 算成一个具体坐标，后面就只是套公式。</li>
+        <li><strong>本题的方程正好是完全平方式</strong>，所以 \(x\) 只有一个解。若题目问的是"\(x\) 的可能值有几个"，要看清 \(\Delta\) 的正负。</li>
+        <li><strong>垂直条件的本质是"数量积为 0"</strong>，所以也可以用 \((\bs b)\cdot(\bs b-4\bs a)=\bs b\cdot\bs b-4\bs a\cdot\bs b=0\) 来算，但那样要先算 \(\bs a\cdot\bs b\)，反而多一步。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 3 · 2023 新高考I卷　<span class="lv-hard">★★</span></span>
+    <p>已知向量 \(\bs a=(1,\ 1)\)，\(\bs b=(1,\ -1)\)。若 \((\bs a+\lambda\bs b)\perp(\bs a+\mu\bs b)\)，则（　　）</p>
+    <p>A. \(\lambda+\mu=1\)　　B. \(\lambda+\mu=-1\)　　C. \(\lambda\mu=1\)　　D. \(\lambda\mu=-1\)</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：算出两个组合向量。</strong></p>
+    <div class="formula">
+      \[ \bs a+\lambda\bs b=(1,\ 1)+\lambda(1,\ -1)=(1+\lambda,\ 1-\lambda) \]
+    </div>
+    <div class="formula">
+      \[ \bs a+\mu\bs b=(1,\ 1)+\mu(1,\ -1)=(1+\mu,\ 1-\mu) \]
+    </div>
+
+    <p><strong>第二步：用垂直判据列方程。</strong>对应相乘相加为 0：</p>
+    <div class="formula">
+      \[ (1+\lambda)(1+\mu)+(1-\lambda)(1-\mu)=0 \]
+    </div>
+
+    <p><strong>第三步：展开并合并。</strong></p>
+    <p>第一项：</p>
+    <div class="formula">
+      \[ (1+\lambda)(1+\mu)=1+\lambda+\mu+\lambda\mu \]
+    </div>
+    <p>第二项：</p>
+    <div class="formula">
+      \[ (1-\lambda)(1-\mu)=1-\lambda-\mu+\lambda\mu \]
+    </div>
+    <p>相加：</p>
+    <div class="formula">
+      \[ (1+\lambda+\mu+\lambda\mu)+(1-\lambda-\mu+\lambda\mu)=2+2\lambda\mu \]
+    </div>
+    <p><strong>★ 注意：中间项 \(\lambda+\mu\) 与 \(-\lambda-\mu\) 正好抵消了</strong>，这就是本题的巧妙之处——两个组合向量"对称地"含 \(\lambda\) 和 \(\mu\)，所以和式中 \(\lambda\)、\(\mu\) 的一次项消失。</p>
+
+    <p><strong>第四步：令它等于 0。</strong></p>
+    <div class="formula">
+      \[ 2+2\lambda\mu=0 \quad\Longrightarrow\quad \lambda\mu=-1 \]
+    </div>
+
+    <p><strong>答案：</strong>\(\boxed{\text{D}}\)</p>
+
+    <p><strong>验算：</strong>取 \(\lambda=1\)、\(\mu=-1\)（满足 \(\lambda\mu=-1\)）。</p>
+    <div class="formula">
+      \[ \bs a+1\bs b=(2,\ 0),\qquad \bs a+(-1)\bs b=(0,\ 2) \]
+    </div>
+    <div class="formula">
+      \[ (2,\ 0)\cdot(0,\ 2)=2\times0+0\times2=0 \]
+    </div>
+    <p>✓ 垂直成立。</p>
+    <p>再取 \(\lambda=2\)、\(\mu=-\dfrac12\)（也满足 \(\lambda\mu=-1\)）。</p>
+    <div class="formula">
+      \[ \bs a+2\bs b=(3,\ -1),\qquad \bs a-\frac12\bs b=\left(\frac12,\ \frac32\right) \]
+    </div>
+    <div class="formula">
+      \[ (3,\ -1)\cdot\left(\frac12,\ \frac32\right)=\frac32-\frac32=0 \]
+    </div>
+    <p>✓ 也垂直。说明条件 \(\lambda\mu=-1\) 确实充分。</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>题目问的是"\(\lambda\) 与 \(\mu\) 的关系"而不是"具体值"。</strong>所以列出一个含两参数的方程就够了，不要试图解出 \(\lambda\)、\(\mu\) 各自的值（那需要两个方程）。</li>
+        <li><strong>观察题目给的 \(\bs a=(1,1)\)、\(\bs b=(1,-1)\) 是相互垂直的单位向量。</strong>用这个性质可以更快：</li>
+      </ul>
+      <p>因为 \(\bs a\perp\bs b\) 且 \(|\bs a|=|\bs b|=\sqrt2\)，所以 \(\bs a\cdot\bs b=0\)、\(\bs a\cdot\bs a=\bs b\cdot\bs b=2\)。于是</p>
+      <div class="formula">
+        \[ (\bs a+\lambda\bs b)\cdot(\bs a+\mu\bs b)=\bs a\cdot\bs a+\mu\bs a\cdot\bs b+\lambda\bs b\cdot\bs a+\lambda\mu\bs b\cdot\bs b \]
+      </div>
+      <div class="formula">
+        \[ =2+0+0+2\lambda\mu=2(1+\lambda\mu) \]
+      </div>
+      <p>令它为 0 得 \(\lambda\mu=-1\) ✓。<strong>这种"用数量积的运算律展开"的方法比坐标展开更简洁，值得掌握。</strong></p>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 4 · 2016 山东卷（文）</span>
+    <p>已知向量 \(\bs a=(1,\ -1)\)，\(\bs b=(6,\ -4)\)。若 \(\bs a\perp(t\bs a+\bs b)\)，则实数 \(t\) 的值为＿＿＿。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：算组合向量 \(t\bs a+\bs b\)。</strong></p>
+    <div class="formula">
+      \[ t\bs a=t(1,\ -1)=(t,\ -t) \]
+    </div>
+    <div class="formula">
+      \[ t\bs a+\bs b=(t,\ -t)+(6,\ -4)=(t+6,\ -t-4) \]
+    </div>
+
+    <p><strong>第二步：用垂直判据列方程。</strong>\(\bs a=(1,-1)\) 与 \((t+6,\ -t-4)\) 垂直：</p>
+    <div class="formula">
+      \[ 1\times(t+6)+(-1)\times(-t-4)=0 \]
+    </div>
+
+    <p><strong>第三步：展开并解方程。</strong></p>
+    <div class="formula">
+      \[ t+6+t+4=0 \quad\Longrightarrow\quad 2t+10=0 \quad\Longrightarrow\quad t=-5 \]
+    </div>
+
+    <p><strong>答案：</strong>\(\boxed{-5}\)</p>
+
+    <p><strong>验算：</strong>\(t=-5\) 时</p>
+    <div class="formula">
+      \[ t\bs a+\bs b=(-5,\ 5)+(6,\ -4)=(1,\ 1) \]
+    </div>
+    <div class="formula">
+      \[ \bs a\cdot(t\bs a+\bs b)=(1,\ -1)\cdot(1,\ 1)=1-1=0 \]
+    </div>
+    <p>✓ 垂直成立。</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>展开时注意"负号"。</strong>\((-1)\times(-t-4)=t+4\) 是"负负得正"加"分配律"。这一步最容易算错，建议把展开的每一步都写出来。</li>
+        <li><strong>另一种算法（用运算律）：</strong>由 \(\bs a\perp(t\bs a+\bs b)\) 得 \(\bs a\cdot(t\bs a+\bs b)=0\)，展开为</li>
+      </ul>
+      <div class="formula">
+        \[ t(\bs a\cdot\bs a)+\bs a\cdot\bs b=0 \]
+      </div>
+      <p>其中 \(\bs a\cdot\bs a=1^{2}+(-1)^{2}=2\)，\(\bs a\cdot\bs b=1\times6+(-1)\times(-4)=6+4=10\)。所以</p>
+      <div class="formula">
+        \[ 2t+10=0 \quad\Longrightarrow\quad t=-5 \]
+      </div>
+      <p>✓ 一致。<strong>这种算法不用写出 \(t\bs a+\bs b\) 的坐标，更简洁。</strong></p>
+    </div>
+  </div>
+
+  <h3 id="ch8-3">8.3　题型三：向量的夹角与模</h3>
+
+  <div class="box tip">
+    <span class="tag">题型特征与解题套路</span>
+    <p><strong>特征：</strong>给出两个向量的坐标或模与夹角，求它们的夹角、模，或由模的关系反求参数。</p>
+    <p><strong>套路（看题目给什么）：</strong></p>
+    <ol class="steps">
+      <li><strong>求夹角</strong>：算 \(\bs a\cdot\bs b\) 和两个模，代入 \(\cos\theta=\dfrac{\bs a\cdot\bs b}{|\bs a||\bs b|}\)，再反查角。</li>
+      <li><strong>求模</strong>：先算 \(|\bs a|^{2}=\bs a\cdot\bs a\)（或坐标平方和），再开方。</li>
+      <li><strong>给的是模的关系</strong>：两边平方展开成数量积，转化为垂直/平行条件。</li>
+    </ol>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 5 · 2016 北京卷（文）</span>
+    <p>已知向量 \(\bs a=(1,\ \sqrt3)\)，\(\bs b=(\sqrt3,\ 1)\)，则 \(\bs a\) 与 \(\bs b\) 夹角的大小为＿＿＿。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：算数量积。</strong></p>
+    <div class="formula">
+      \[ \bs a\cdot\bs b=1\times\sqrt3+\sqrt3\times1=2\sqrt3 \]
+    </div>
+
+    <p><strong>第二步：算两个模。</strong></p>
+    <div class="formula">
+      \[ |\bs a|=\sqrt{1^{2}+(\sqrt3)^{2}}=\sqrt{1+3}=\sqrt4=2 \]
+    </div>
+    <div class="formula">
+      \[ |\bs b|=\sqrt{(\sqrt3)^{2}+1^{2}}=\sqrt{3+1}=\sqrt4=2 \]
+    </div>
+
+    <p><strong>第三步：代入夹角公式。</strong></p>
+    <div class="formula">
+      \[ \cos\theta=\frac{2\sqrt3}{2\times2}=\frac{2\sqrt3}{4}=\frac{\sqrt3}{2} \]
+    </div>
+
+    <p><strong>第四步：反查角。</strong>因为 \(\theta\in[0,\pi]\)，且 \(\cos\theta=\dfrac{\sqrt3}{2}\)，所以</p>
+    <div class="formula">
+      \[ \theta=\frac{\pi}{6} \]
+    </div>
+
+    <p><strong>答案：</strong>\(\boxed{\dfrac{\pi}{6}}\)</p>
+
+    <p><strong>验算（用坐标的几何意义）：</strong>\(\bs a=(1,\sqrt3)\) 与 \(x\) 轴正向的夹角是 \(\arctan\dfrac{\sqrt3}{1}=\dfrac{\pi}{3}\)（这是 \(60^\circ\) 角）。</p>
+    <p>\(\bs b=(\sqrt3,1)\) 与 \(x\) 轴正向的夹角是 \(\arctan\dfrac{1}{\sqrt3}=\dfrac{\pi}{6}\)（这是 \(30^\circ\) 角）。</p>
+    <p>两者夹角 \(=\dfrac{\pi}{3}-\dfrac{\pi}{6}=\dfrac{\pi}{6}\) ✓ 一致。</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>注意到 \(\bs a\) 与 \(\bs b\) 的坐标是"交换"关系</strong>（\((1,\sqrt3)\) 与 \((\sqrt3,1)\)），所以两个模必然相等。这是出题人设置的"对称性"，看到后可以省一次计算。</li>
+        <li><strong>由 \(\cos\theta\) 反查角时，\(\theta\in[0,\pi]\) 保证解唯一。</strong>常用对应关系要背熟：\(\dfrac12\to\dfrac{\pi}{3}\)、\(\dfrac{\sqrt2}{2}\to\dfrac{\pi}{4}\)、\(\dfrac{\sqrt3}{2}\to\dfrac{\pi}{6}\)、\(0\to\dfrac{\pi}{2}\)、\(-\dfrac12\to\dfrac{2\pi}{3}\)。</li>
+        <li><strong>单位要看清。</strong>题目问"夹角的大小"，填弧度制（\(\dfrac{\pi}{6}\)）或角度制（\(30^\circ\)）都可以，但<strong>要与题目的风格一致</strong>。本题是填空题，写 \(\dfrac{\pi}{6}\) 最稳妥。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 6 · 2016 全国III卷（理）</span>
+    <p>已知向量 \(\overrightarrow{BA}=\left(\dfrac12,\ \dfrac{\sqrt3}{2}\right)\)，\(\overrightarrow{BC}=\left(\dfrac{\sqrt3}{2},\ \dfrac12\right)\)，则 \(\angle ABC=\)（　　）</p>
+    <p>A. \(30^\circ\)　　B. \(45^\circ\)　　C. \(60^\circ\)　　D. \(120^\circ\)</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：看清 \(\angle ABC\) 对应哪两个向量。</strong>角 \(ABC\) 的顶点是 \(B\)，所以要用<strong>以 \(B\) 为起点</strong>的两个向量 \(\overrightarrow{BA}\) 与 \(\overrightarrow{BC}\)——题目给的正好是这两个 ✓。</p>
+    <p><strong>★ 这一步不能错：</strong>若题目给的是 \(\overrightarrow{AB}\) 和 \(\overrightarrow{BC}\)，就要先把 \(\overrightarrow{AB}\) 取反得到 \(\overrightarrow{BA}\)。</p>
+
+    <p><strong>第二步：算两个模。</strong></p>
+    <div class="formula">
+      \[ |\overrightarrow{BA}|=\sqrt{\left(\frac12\right)^{2}+\left(\frac{\sqrt3}{2}\right)^{2}}=\sqrt{\frac14+\frac34}=\sqrt1=1 \]
+    </div>
+    <div class="formula">
+      \[ |\overrightarrow{BC}|=\sqrt{\left(\frac{\sqrt3}{2}\right)^{2}+\left(\frac12\right)^{2}}=\sqrt{\frac34+\frac14}=\sqrt1=1 \]
+    </div>
+    <p><strong>★ 两个向量都是单位向量</strong>——这让后面的计算大大简化。</p>
+
+    <p><strong>第三步：算数量积。</strong></p>
+    <div class="formula">
+      \[ \overrightarrow{BA}\cdot\overrightarrow{BC}=\frac12\times\frac{\sqrt3}{2}+\frac{\sqrt3}{2}\times\frac12=\frac{\sqrt3}{4}+\frac{\sqrt3}{4}=\frac{\sqrt3}{2} \]
+    </div>
+
+    <p><strong>第四步：代入夹角公式。</strong>因为两个模都是 1，所以</p>
+    <div class="formula">
+      \[ \cos\angle ABC=\frac{\overrightarrow{BA}\cdot\overrightarrow{BC}}{|\overrightarrow{BA}|\cdot|\overrightarrow{BC}|}=\frac{\frac{\sqrt3}{2}}{1\times1}=\frac{\sqrt3}{2} \]
+    </div>
+
+    <p><strong>第五步：反查角。</strong>因为 \(\angle ABC\in(0^\circ,180^\circ)\)，且 \(\cos\angle ABC=\dfrac{\sqrt3}{2}\)，所以</p>
+    <div class="formula">
+      \[ \angle ABC=30^\circ \]
+    </div>
+
+    <p><strong>答案：</strong>\(\boxed{\text{A}}\)</p>
+
+    <p><strong>验算：</strong>两个向量都是单位向量，它们的夹角 \(\theta\) 满足 \(\cos\theta=\overrightarrow{BA}\cdot\overrightarrow{BC}=\dfrac{\sqrt3}{2}\)。</p>
+    <p>另外，\(\overrightarrow{BA}=\left(\cos60^\circ,\ \sin60^\circ\right)\)（因为 \(\cos60^\circ=\dfrac12\)、\(\sin60^\circ=\dfrac{\sqrt3}{2}\)），所以 \(\overrightarrow{BA}\) 的方向角是 \(60^\circ\)。</p>
+    <p>\(\overrightarrow{BC}=\left(\cos30^\circ,\ \sin30^\circ\right)\)，方向角是 \(30^\circ\)。</p>
+    <p>两者夹角 \(=60^\circ-30^\circ=30^\circ\) ✓ 一致。</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>\(\angle ABC\) 必须用"以顶点 \(B\) 为起点"的两个向量。</strong>这是本题最大的陷阱——若误用 \(\overrightarrow{AB}\) 和 \(\overrightarrow{BC}\)，算出的会是 \(\angle ABC\) 的补角 \(150^\circ\)。</li>
+        <li><strong>认出"单位向量"能省很多计算。</strong>本题两个模都是 1，所以 \(\cos\theta\) 直接等于数量积，不用再做除法。</li>
+        <li><strong>另一种快速解法：把向量看成"方向角"。</strong>\(\overrightarrow{BA}=(\cos60^\circ,\sin60^\circ)\) 的方向角是 \(60^\circ\)，\(\overrightarrow{BC}\) 的方向角是 \(30^\circ\)，两者夹角就是 \(30^\circ\)。<strong>这种"看方向角"的方法在坐标是特殊角的三角函数值时特别好用。</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 7 · 2016 全国I卷（理）</span>
+    <p>设向量 \(\bs a=(m,\ 1)\)，\(\bs b=(1,\ 2)\)，且 \(|\bs a+\bs b|^{2}=|\bs a|^{2}+|\bs b|^{2}\)，则 \(m=\)＿＿＿。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：看清条件的含义。</strong>由第 3.1 节的展开式</p>
+    <div class="formula">
+      \[ |\bs a+\bs b|^{2}=|\bs a|^{2}+2\bs a\cdot\bs b+|\bs b|^{2} \]
+    </div>
+    <p>与题目给的 \(|\bs a+\bs b|^{2}=|\bs a|^{2}+|\bs b|^{2}\) 对比，立刻得到</p>
+    <div class="formula">
+      \[ 2\bs a\cdot\bs b=0 \quad\Longrightarrow\quad \bs a\cdot\bs b=0 \quad\Longrightarrow\quad \bs a\perp\bs b \]
+    </div>
+    <p><strong>★ 这个条件就是勾股定理的向量形式</strong>：若 \(\bs a\perp\bs b\)，则以 \(\bs a\)、\(\bs b\) 为邻边的矩形，其对角线长的平方等于两邻边长的平方和。</p>
+
+    <p><strong>第二步：用垂直判据列方程。</strong></p>
+    <div class="formula">
+      \[ m\times1+1\times2=0 \quad\Longrightarrow\quad m+2=0 \quad\Longrightarrow\quad m=-2 \]
+    </div>
+
+    <p><strong>答案：</strong>\(\boxed{-2}\)</p>
+
+    <p><strong>验算：</strong>\(m=-2\) 时 \(\bs a=(-2,\ 1)\)，\(\bs a+\bs b=(-2+1,\ 1+2)=(-1,\ 3)\)。</p>
+    <p>左边：\(|\bs a+\bs b|^{2}=(-1)^{2}+3^{2}=1+9=10\)。</p>
+    <p>右边：\(|\bs a|^{2}=(-2)^{2}+1^{2}=4+1=5\)，\(|\bs b|^{2}=1^{2}+2^{2}=1+4=5\)，两者之和 \(=10\) ✓ 相等。</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>看到"模的等式"，第一反应是"两边平方展开成数量积"。</strong>本题如果老老实实算 \(|\bs a+\bs b|^{2}\) 的坐标形式，会得到 \((m+1)^{2}+9\)，而右边是 \((m^{2}+1)+5\)，展开后仍然得到 \(m=-2\)，但计算量大得多。</li>
+        <li><strong>记住这个等价关系：\(|\bs a+\bs b|^{2}=|\bs a|^{2}+|\bs b|^{2}\Leftrightarrow\bs a\perp\bs b\)。</strong>它与"\(|\bs a+\bs b|=|\bs a-\bs b|\Leftrightarrow\bs a\perp\bs b\)"是同一件事的两种说法。</li>
+        <li><strong>反过来的条件也要记住：</strong>\(|\bs a+\bs b|=|\bs a|+|\bs b|\Leftrightarrow\bs a\) 与 \(\bs b\) <strong>同向</strong>（三角不等式取等）。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="ch8-4">8.4　题型四：向量的投影与几何意义</h3>
+
+  <div class="box tip">
+    <span class="tag">题型特征与解题套路</span>
+    <p><strong>特征：</strong>求"向量 \(\bs b\) 在向量 \(\bs a\) 方向上的投影"。</p>
+    <p><strong>套路（一步到位）：</strong></p>
+    <div class="formula">
+      \[ \text{投影}=\frac{\bs a\cdot\bs b}{|\bs a|} \]
+    </div>
+    <p><strong>★ 三个易错点：</strong></p>
+    <ul>
+      <li><strong>分母是 \(|\bs a|\)（"在谁的方向上"就用谁的模），不是 \(|\bs a||\bs b|\)。</strong></li>
+      <li><strong>结果是数，不是向量。</strong>选项里若出现坐标形式（如 \((1,0)\)），一定是错的。</li>
+      <li><strong>投影可以是负数。</strong>当夹角为钝角时，\(\cos\theta&lt;0\)，投影为负。</li>
+    </ul>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 8 · 2016 上海春考</span>
+    <p>已知向量 \(\bs a=(1,\ 0)\)，\(\bs b=(1,\ 2)\)，则向量 \(\bs b\) 在向量 \(\bs a\) 方向上的投影为（　　）</p>
+    <p>A. \(1\)　　B. \(2\)　　C. \((1,\ 0)\)　　D. \((0,\ 2)\)</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：算数量积。</strong></p>
+    <div class="formula">
+      \[ \bs a\cdot\bs b=1\times1+0\times2=1 \]
+    </div>
+
+    <p><strong>第二步：算 \(|\bs a|\)（"在 \(\bs a\) 方向上"，所以用 \(|\bs a|\)）。</strong></p>
+    <div class="formula">
+      \[ |\bs a|=\sqrt{1^{2}+0^{2}}=1 \]
+    </div>
+
+    <p><strong>第三步：代入投影公式。</strong></p>
+    <div class="formula">
+      \[ \frac{\bs a\cdot\bs b}{|\bs a|}=\frac{1}{1}=1 \]
+    </div>
+
+    <p><strong>答案：</strong>\(\boxed{\text{A}}\)</p>
+
+    <p><strong>验算（用几何意义）：</strong>\(\bs a=(1,0)\) 的方向就是 \(x\) 轴正方向。\(\bs b=(1,2)\) 在这个方向上的投影，就是把 \(\bs b\) 的终点 \((1,2)\) 垂直投影到 \(x\) 轴上，得到的横坐标 \(1\) ✓。</p>
+    <p><strong>★ 这个几何理解很重要：</strong>当 \(\bs a\) 是 \(x\) 轴方向的单位向量时，"\(\bs b\) 在 \(\bs a\) 上的投影"就是"\(\bs b\) 的横坐标"。</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>先用"结果必须是数"排除 C、D 两个选项。</strong>投影是一个数（可以是负数），绝不是向量。这一步能立刻排除一半选项。</li>
+        <li><strong>看清"谁在谁的方向上"。</strong>本题是"\(\bs b\) 在 \(\bs a\) 方向上的投影"，用 \(\dfrac{\bs a\cdot\bs b}{|\bs a|}\)。若是"\(\bs a\) 在 \(\bs b\) 方向上的投影"，则用 \(\dfrac{\bs a\cdot\bs b}{|\bs b|}\)。</li>
+        <li><strong>投影与"投影向量"不同。</strong>投影是数；"投影向量"是"投影值乘以 \(\bs a\) 方向上的单位向量"，结果是向量。本题若问"投影向量"，答案是 \(1\cdot(1,0)=(1,0)\)（也就是选项 C）。<strong>读题时把"投影"和"投影向量"区分开。</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="ch8-5">8.5　题型五：复数的运算</h3>
+
+  <div class="box tip">
+    <span class="tag">题型特征与解题套路</span>
+    <p><strong>特征：</strong>给出一个复数的表达式（通常是分式形式），求化简后的复数，或求它的共轭、模、与共轭的差。</p>
+    <p><strong>套路（三步走）：</strong></p>
+    <ol class="steps">
+      <li><strong>化简成 \(a+b\i\) 的标准形式</strong>——分式要"分母实数化"（分子分母同乘分母的共轭）。</li>
+      <li><strong>看清题目要求的是什么</strong>——是 \(z\) 本身？还是 \(\overline{z}\)？还是 \(z-\overline{z}\)？还是 \(|z|\)？</li>
+      <li><strong>按定义计算</strong>——共轭是"虚部取反"，模是"\(\sqrt{a^{2}+b^{2}}\)"，差是"\(2b\i\)"。</li>
+    </ol>
+    <p><strong>★ 时间控制：这道题应该在 60 秒内做完。</strong>如果超过 90 秒，说明化简出了问题。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 9 · 2024 新高考I卷</span>
+    <p>若 \(\dfrac{z}{z-1}=1+\i\)，则 \(z=\)（　　）</p>
+    <p>A. \(-1-\i\)　　B. \(-1+\i\)　　C. \(1-\i\)　　D. \(1+\i\)</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：去分母。</strong>两边同乘 \(z-1\)（\(z\ne1\)）：</p>
+    <div class="formula">
+      \[ z=(1+\i)(z-1) \]
+    </div>
+
+    <p><strong>第二步：展开并整理。</strong></p>
+    <div class="formula">
+      \[ z=(1+\i)z-(1+\i) \]
+    </div>
+    <p>把含 \(z\) 的项移到左边：</p>
+    <div class="formula">
+      \[ z-(1+\i)z=-(1+\i) \]
+    </div>
+    <p>左边提取公因子 \(z\)：</p>
+    <div class="formula">
+      \[ \left[1-(1+\i)\right]z=-(1+\i) \]
+    </div>
+    <div class="formula">
+      \[ (-\i)z=-(1+\i) \]
+    </div>
+
+    <p><strong>第三步：解出 \(z\)。</strong>两边同除 \(-\i\)：</p>
+    <div class="formula">
+      \[ z=\frac{-(1+\i)}{-\i}=\frac{1+\i}{\i} \]
+    </div>
+    <p>分母实数化：分子分母同乘 \(\i\) 的共轭 \(-\i\)（或直接乘 \(\i\) 也行，因为 \(\i\cdot(-\i)=1\)）：</p>
+    <div class="formula">
+      \[ \frac{1+\i}{\i}=\frac{(1+\i)\times(-\i)}{\i\times(-\i)}=\frac{-\i-\i^{2}}{-\i^{2}}=\frac{-\i+1}{1}=1-\i \]
+    </div>
+
+    <p><strong>答案：</strong>\(\boxed{\text{C}}\)</p>
+
+    <p><strong>验算：</strong>把 \(z=1-\i\) 代回原式：</p>
+    <div class="formula">
+      \[ \frac{z}{z-1}=\frac{1-\i}{(1-\i)-1}=\frac{1-\i}{-\i} \]
+    </div>
+    <p>分母实数化（分子分母同乘 \(\i\)）：</p>
+    <div class="formula">
+      \[ \frac{(1-\i)\i}{-\i\times\i}=\frac{\i-\i^{2}}{-\i^{2}}=\frac{\i+1}{1}=1+\i \]
+    </div>
+    <p>✓ 等于题目给的右边。</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>看到"\(\dfrac{z}{z-1}=\)"这种形式，先去分母再整理。</strong>把含 \(z\) 的项集中到一边，然后像解一次方程一样处理。</li>
+        <li><strong>\(\dfrac1\i=-\i\) 这个结论要背。</strong>验证：\(\dfrac1\i=\dfrac{1\times(-\i)}{\i\times(-\i)}=\dfrac{-\i}{1}=-\i\) ✓。有了它，本题第三步可以直接写成 \(z=\dfrac{1+\i}{\i}=(1+\i)\times(-\i)=-\i-\i^{2}=1-\i\)，快很多。</li>
+        <li><strong>验算时把答案代回原式</strong>，比重新算一遍更可靠——能直接发现符号错误。</li>
+        <li><strong>注意选项的"对称设计"。</strong>四个选项正好是 \(1\pm\i\)、\(-1\pm\i\) 的全组合，说明考的就是"符号"和"实虚部位置"。<strong>算的时候把每一步的符号写清楚。</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 10 · 2023 新高考I卷</span>
+    <p>已知 \(z=\dfrac{1-\i}{2+2\i}\)，则 \(z-\overline{z}=\)（　　）</p>
+    <p>A. \(-\i\)　　B. \(\i\)　　C. \(0\)　　D. \(1\)</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：化简 \(z\)。</strong>先观察分母 \(2+2\i=2(1+\i)\)，可以先把 2 提到外面：</p>
+    <div class="formula">
+      \[ z=\frac{1-\i}{2(1+\i)}=\frac12\cdot\frac{1-\i}{1+\i} \]
+    </div>
+    <p>把 \(\dfrac{1-\i}{1+\i}\) 分母实数化（同乘 \(1-\i\)）：</p>
+    <div class="formula">
+      \[ \frac{1-\i}{1+\i}=\frac{(1-\i)^{2}}{(1+\i)(1-\i)}=\frac{1-2\i+\i^{2}}{1^{2}+1^{2}}=\frac{1-2\i-1}{2}=\frac{-2\i}{2}=-\i \]
+    </div>
+    <p>所以</p>
+    <div class="formula">
+      \[ z=\frac12\times(-\i)=-\frac12\i \]
+    </div>
+
+    <p><strong>第二步：写出 \(z\) 的标准形式，读出实部和虚部。</strong></p>
+    <div class="formula">
+      \[ z=0+\left(-\frac12\right)\i \]
+    </div>
+    <p>所以实部 \(a=0\)，虚部 \(b=-\dfrac12\)。</p>
+
+    <p><strong>第三步：用 \(z-\overline{z}=2b\i\)。</strong></p>
+    <div class="formula">
+      \[ z-\overline{z}=2\times\left(-\frac12\right)\i=-\i \]
+    </div>
+
+    <p><strong>答案：</strong>\(\boxed{\text{A}}\)</p>
+
+    <p><strong>验算（直接算共轭）：</strong>\(z=-\dfrac12\i\)，所以 \(\overline{z}=\dfrac12\i\)（虚部取反）。</p>
+    <div class="formula">
+      \[ z-\overline{z}=-\frac12\i-\frac12\i=-\i \]
+    </div>
+    <p>✓ 一致。</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>先"提出常数"能大幅简化计算。</strong>本题分母 \(2+2\i\) 提出 2 后，剩下的 \(\dfrac{1-\i}{1+\i}\) 好算很多。</li>
+        <li><strong>\((1-\i)^{2}=-2\i\) 是常用结论，直接记。</strong>验证：\((1-\i)^{2}=1-2\i+\i^{2}=1-2\i-1=-2\i\) ✓。同理 \((1+\i)^{2}=2\i\)。</li>
+        <li><strong>\(z-\overline{z}=2b\i\)（虚部的 2 倍乘 \(\i\)）</strong>这条性质要背。本题 \(b=-\dfrac12\)，所以结果是 \(-\i\)，一步到位。</li>
+        <li><strong>注意 \(z-\overline{z}\) 的结果一定是纯虚数</strong>（或 0）。选项 C（\(0\)）和 D（\(1\)）中，\(1\) 是实数，直接可以排除 D。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 11 · 2021 新高考I卷</span>
+    <p>已知 \(z=2-\i\)，则 \(z(\overline{z}+\i)=\)（　　）</p>
+    <p>A. \(6-2\i\)　　B. \(4-2\i\)　　C. \(6+2\i\)　　D. \(4+2\i\)</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：求 \(\overline{z}\)。</strong>由 \(z=2-\i\)，虚部取反：</p>
+    <div class="formula">
+      \[ \overline{z}=2+\i \]
+    </div>
+
+    <p><strong>第二步：算 \(\overline{z}+\i\)。</strong></p>
+    <div class="formula">
+      \[ \overline{z}+\i=(2+\i)+\i=2+2\i \]
+    </div>
+
+    <p><strong>第三步：算乘积。</strong></p>
+    <div class="formula">
+      \[ z(\overline{z}+\i)=(2-\i)(2+2\i) \]
+    </div>
+    <p>按多项式展开：</p>
+    <div class="formula">
+      \[ =2\times2+2\times2\i-\i\times2-\i\times2\i \]
+    </div>
+    <div class="formula">
+      \[ =4+4\i-2\i-2\i^{2} \]
+    </div>
+    <div class="formula">
+      \[ =4+2\i-2\times(-1)=4+2\i+2=6+2\i \]
+    </div>
+
+    <p><strong>答案：</strong>\(\boxed{\text{C}}\)</p>
+
+    <p><strong>验算（用 \(z\overline{z}=|z|^{2}\) 拆开算）：</strong>先展开原式：</p>
+    <div class="formula">
+      \[ z(\overline{z}+\i)=z\overline{z}+z\i \]
+    </div>
+    <p>由性质 \(z\overline{z}=|z|^{2}\)：</p>
+    <div class="formula">
+      \[ z\overline{z}=|z|^{2}=2^{2}+(-1)^{2}=4+1=5 \]
+    </div>
+    <p>再算 \(z\i\)：</p>
+    <div class="formula">
+      \[ z\i=(2-\i)\i=2\i-\i^{2}=2\i+1=1+2\i \]
+    </div>
+    <p>所以</p>
+    <div class="formula">
+      \[ z(\overline{z}+\i)=5+(1+2\i)=6+2\i \]
+    </div>
+    <p>✓ 一致。</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>"先展开再代入"往往比"先算括号"更快。</strong>本题展开成 \(z\overline{z}+z\i\) 后，第一项直接用 \(z\overline{z}=|z|^{2}=5\) 秒算。</li>
+        <li><strong>\(z\overline{z}=|z|^{2}\) 是复数部分最有用的恒等式。</strong>它把"复数乘积"变成"实数平方和"，省去开方。</li>
+        <li><strong>选项的规律能帮你检查答案。</strong>四个选项是 \(6\pm2\i\) 与 \(4\pm2\i\) 的组合——说明实部可能是 6 或 4，虚部是 \(\pm2\)。本题算出的 \(6+2\i\) 中虚部为正，符合 \(\overline{z}+\i=2+2\i\) 中虚部为正的直觉。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 12 · 2020 新高考I卷</span>
+    <p>\(\dfrac{2-\i}{1+2\i}\) 等于（　　）</p>
+    <p>A. \(1\)　　B. \(-1\)　　C. \(\i\)　　D. \(-\i\)</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：分母实数化。</strong>分母 \(1+2\i\) 的共轭是 \(1-2\i\)，分子分母同乘它：</p>
+    <div class="formula">
+      \[ \frac{2-\i}{1+2\i}=\frac{(2-\i)(1-2\i)}{(1+2\i)(1-2\i)} \]
+    </div>
+
+    <p><strong>第二步：算分母。</strong>用 \(z\overline{z}=|z|^{2}\)：</p>
+    <div class="formula">
+      \[ (1+2\i)(1-2\i)=1^{2}+2^{2}=1+4=5 \]
+    </div>
+
+    <p><strong>第三步：算分子。</strong>按多项式展开：</p>
+    <div class="formula">
+      \[ (2-\i)(1-2\i)=2\times1-2\times2\i-\i\times1+\i\times2\i \]
+    </div>
+    <div class="formula">
+      \[ =2-4\i-\i+2\i^{2}=2-5\i+2\times(-1) \]
+    </div>
+    <div class="formula">
+      \[ =2-5\i-2=-5\i \]
+    </div>
+
+    <p><strong>第四步：相除。</strong></p>
+    <div class="formula">
+      \[ \frac{-5\i}{5}=-\i \]
+    </div>
+
+    <p><strong>答案：</strong>\(\boxed{\text{D}}\)</p>
+
+    <p><strong>验算：</strong>把 \(-\i\) 代回检验——若 \(\dfrac{2-\i}{1+2\i}=-\i\)，则应有</p>
+    <div class="formula">
+      \[ (-\i)(1+2\i)=2-\i \]
+    </div>
+    <p>算左边：</p>
+    <div class="formula">
+      \[ (-\i)(1+2\i)=-\i-2\i^{2}=-\i+2=2-\i \]
+    </div>
+    <p>✓ 等于右边，验证通过。</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>分母实数化是"分母是复数的分式"的唯一标准动作。</strong>不要试图用别的技巧，老老实实同乘共轭。</li>
+        <li><strong>算分母时用 \(z\overline{z}=|z|^{2}\) 最快。</strong>\((1+2\i)(1-2\i)=1+4=5\)，不用展开。</li>
+        <li><strong>分子展开时注意 \(\i^{2}=-1\)。</strong>本题最后一步 \(2\i^{2}=2\times(-1)=-2\)，与前面的 \(2\) 抵消，这是结果"没有实部"的原因。</li>
+        <li><strong>验算用"乘回去"最可靠。</strong>算出 \(\dfrac{2-\i}{1+2\i}=-\i\) 后，用 \((-\i)(1+2\i)\) 反算一遍，能立刻发现错误。</li>
+        <li><strong>本题四个选项都是"实部为 0 或 \(\pm1\)"</strong>，暗示答案可能没有实部或实部为 \(\pm1\)。算出 \(-\i\)（实部为 0）后可以对照这个规律检查。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="ch8-6">8.6　提分要点总结</h3>
+
+  <div class="box proof">
+    <span class="tag">十年真题告诉我们的五件事</span>
+    <ol class="steps">
+      <li><strong>复数题必须在 60 秒内拿下。</strong>题型固定（分式化简 + 求共轭/求模/求差），套路只有"分母实数化"。<strong>把 \((1\pm\i)^{2}=\pm2\i\)、\(\dfrac1\i=-\i\) 这两个结论背熟。</strong></li>
+      <li><strong>向量垂直题的标准动作是"先算组合向量，再套 \(x_1x_2+y_1y_2=0\)"。</strong>不要跳过"算组合向量"这一步（真题 2、4）。</li>
+      <li><strong>看到"模的等式"，立刻两边平方展开。</strong>\(|\bs a+\bs b|^{2}=|\bs a|^{2}+|\bs b|^{2}\) 等价于 \(\bs a\perp\bs b\)（真题 7）。</li>
+      <li><strong>\(\angle ABC\) 必须用以 \(B\) 为起点的两个向量。</strong>这是夹角题最大的陷阱（真题 6）。</li>
+      <li><strong>投影是数，不是向量</strong>，且公式的分母是"在谁的方向上就用谁的模"（真题 8）。</li>
+    </ol>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">考场时间分配建议</span>
+    <ul>
+      <li><strong>复数题：限时 60 秒。</strong>分母实数化 20 秒，化简 20 秒，按题目要求算 20 秒。<strong>超过 90 秒说明化简出错，重算一遍比硬撑更快。</strong></li>
+      <li><strong>向量坐标题：限时 90 秒。</strong>算组合向量 30 秒，列方程 20 秒，解方程 30 秒，验算 10 秒。</li>
+      <li><strong>向量夹角题：限时 2 分钟。</strong>算数量积 30 秒，算两个模 30 秒，代入公式 + 反查角 60 秒。</li>
+      <li><strong>保分动作：</strong>
+        <ul>
+          <li>复数题一定要<strong>写出 \(a+b\i\) 的标准形式</strong>再回答，不要直接猜选项。</li>
+          <li>向量题一定要<strong>把"用了哪条判据"写清楚</strong>（如"由 \(\bs a\perp\bs b\) 得 \(x_1x_2+y_1y_2=0\)"）。</li>
+        </ul>
+      </li>
+      <li><strong>验算技巧：</strong>
+        <ul>
+          <li>复数题：把答案<strong>代回原式</strong>（或"乘回去"），比重算一遍更可靠。</li>
+          <li>向量题：用<strong>另一种算法</strong>（如用运算律展开 vs 用坐标展开）交叉验证。</li>
+        </ul>
+      </li>
+      <li><strong>常用结论要背：</strong>\((1+\i)^{2}=2\i\)、\((1-\i)^{2}=-2\i\)、\(\dfrac1\i=-\i\)、\(\dfrac{1+\i}{1-\i}=\i\)、\(z-\overline{z}=2b\i\)、\(z\overline{z}=|z|^{2}\)。</li>
+    </ul>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">本章真题索引（按题型查）</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>题型</th><th>真题</th><th>考查点</th></tr></thead>
+        <tbody>
+          <tr><td><strong>8.1　线性运算与共线</strong></td><td>2016 全国II卷（文）</td><td>平行判据 \(x_1y_2-x_2y_1=0\)；成倍数关系验算</td></tr>
+          <tr><td rowspan="3"><strong>8.2　数量积与垂直</strong></td><td>2024 新高考I卷</td><td>先算组合向量 \(\bs b-4\bs a\)；完全平方式</td></tr>
+          <tr><td>2023 新高考I卷　<span class="lv-hard">★★</span></td><td>两参数的关系式；用运算律展开更简</td></tr>
+          <tr><td>2016 山东卷（文）</td><td>\(\bs a\perp(t\bs a+\bs b)\) 的两种算法</td></tr>
+          <tr><td rowspan="3"><strong>8.3　夹角与模</strong></td><td>2016 北京卷（文）</td><td>夹角公式三步；由 \(\cos\theta\) 反查角</td></tr>
+          <tr><td>2016 全国III卷（理）</td><td>\(\angle ABC\) 必须用以 \(B\) 为起点的向量；单位向量</td></tr>
+          <tr><td>2016 全国I卷（理）</td><td>\(|\bs a+\bs b|^{2}=|\bs a|^{2}+|\bs b|^{2}\Leftrightarrow\) 垂直</td></tr>
+          <tr><td><strong>8.4　投影与几何意义</strong></td><td>2016 上海春考</td><td>投影是数；公式 \(\dfrac{\bs a\cdot\bs b}{|\bs a|}\)；与"投影向量"的区别</td></tr>
+          <tr><td rowspan="4"><strong>8.5　复数的运算</strong></td><td>2024 新高考I卷</td><td>去分母整理；\(\dfrac1\i=-\i\)</td></tr>
+          <tr><td>2023 新高考I卷</td><td>提出常数简化；\(z-\overline{z}=2b\i\)</td></tr>
+          <tr><td>2021 新高考I卷</td><td>展开成 \(z\overline{z}+z\i\)；\(z\overline{z}=|z|^{2}\)</td></tr>
+          <tr><td>2020 新高考I卷</td><td>分母实数化；乘回去验算</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+  </main>
+</div>
+
+<button class="print-btn" onclick="window.print()">打印 / 存为 PDF</button>
+
+<script>
+(function(){
+  // 公式渲染依赖 MathJax CDN（需联网）。若超时仍未就绪，提示读者。
+  var shown = false;
+  function check(){
+    var ok = window.MathJax && window.MathJax.startup && window.MathJax.startup.document;
+    if (!ok && !shown){
+      shown = true;
+      var el = document.getElementById('mathjax-warn');
+      if (el) el.style.display = 'block';
+    }
+  }
+  setTimeout(check, 4000);
+  setTimeout(check, 9000);
+})();
+</script>
+
+<script data-sidenav="1">
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('.sidenav a'));
+  if (!links.length) return;
+  var targets = links.map(function(a){
+    return document.getElementById(decodeURIComponent(a.getAttribute('href').slice(1)));
+  });
+  var ticking = false;
+  function update(){
+    ticking = false;
+    var idx = 0;
+    for (var i = 0; i < targets.length; i++){
+      if (targets[i] && targets[i].getBoundingClientRect().top <= 100) idx = i;
+    }
+    for (var j = 0; j < links.length; j++){
+      links[j].classList.toggle('active', j === idx);
+    }
+  }
+  function onScroll(){
+    if (!ticking){ ticking = true; window.requestAnimationFrame(update); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+  update();
+})();
+</script>
+</body>
+</html>
