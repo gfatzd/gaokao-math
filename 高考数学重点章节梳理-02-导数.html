@@ -1,0 +1,3527 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高考数学重点章节梳理 · 第二册 导数</title>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      processEscapes: true
+    },
+    svg: { fontCache: 'global' },
+    options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+  :root{
+    --ink:#1b1f27;
+    --ink-2:#3d4655;
+    --muted:#6b7688;
+    --line:#e5e9f0;
+    --line-2:#eef1f6;
+    --bg:#f5f7fb;
+    --card:#ffffff;
+    --brand:#1f5eff;
+    --brand-soft:#eef3ff;
+    --def:#1f5eff;      --def-bg:#f2f6ff;   --def-line:#c9daff;
+    --proof:#0f9d6e;    --proof-bg:#f0fbf6; --proof-line:#b7e8d4;
+    --eg:#c2760a;       --eg-bg:#fff9ee;    --eg-line:#f5dcae;
+    --warn:#d63a3a;     --warn-bg:#fff5f5;  --warn-line:#f8cfcf;
+    --tip:#7a4bd0;      --tip-bg:#f8f4ff;   --tip-line:#ddd0f7;
+    --radius:12px;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Source Han Sans SC","Noto Sans CJK SC",system-ui,-apple-system,"Segoe UI",sans-serif;
+    font-size:16px;
+    line-height:1.85;
+    letter-spacing:.01em;
+  }
+  .page{
+    max-width:960px;
+    margin:0 auto;
+    background:var(--card);
+    box-shadow:0 1px 3px rgba(20,30,60,.06), 0 12px 40px rgba(20,30,60,.06);
+    min-height:100vh;
+  }
+
+  .cover{
+    position:relative;
+    padding:64px 56px 52px;
+    background:
+      radial-gradient(900px 340px at 12% -10%, #e7efff 0%, rgba(231,239,255,0) 62%),
+      radial-gradient(700px 300px at 100% 0%, #eafaf3 0%, rgba(234,250,243,0) 58%),
+      linear-gradient(180deg,#ffffff 0%,#fbfcfe 100%);
+    border-bottom:1px solid var(--line);
+  }
+  .cover .kicker{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:13px; font-weight:600; letter-spacing:.14em;
+    color:var(--brand);
+    background:var(--brand-soft);
+    border:1px solid var(--def-line);
+    padding:5px 14px; border-radius:999px;
+    margin-bottom:22px;
+  }
+  .cover h1{
+    margin:0 0 6px;
+    font-size:42px;
+    line-height:1.25;
+    letter-spacing:-.01em;
+    font-weight:800;
+    color:#121722;
+  }
+  .cover h1 .accent{
+    background:linear-gradient(92deg,#1f5eff,#0f9d6e);
+    -webkit-background-clip:text; background-clip:text;
+    -webkit-text-fill-color:transparent; color:transparent;
+  }
+  .cover .sub{
+    margin:14px 0 0;
+    font-size:17px; color:var(--ink-2);
+    max-width:640px;
+  }
+  .cover .meta{
+    margin-top:30px; padding-top:22px; border-top:1px dashed var(--line);
+    display:flex; flex-wrap:wrap; gap:10px 34px;
+    font-size:14px; color:var(--muted);
+  }
+  .cover .meta b{color:var(--ink-2); font-weight:600;}
+
+  .body{padding:8px 56px 80px;}
+
+  h2{
+    margin:64px 0 8px;
+    font-size:27px; font-weight:800; letter-spacing:-.01em;
+    color:#121722;
+    display:flex; align-items:center; gap:14px;
+    scroll-margin-top:20px;
+  }
+  h2 .num{
+    flex:0 0 auto;
+    width:42px; height:42px; border-radius:11px;
+    display:inline-flex; align-items:center; justify-content:center;
+    font-size:18px; font-weight:800;
+    color:#fff;
+    background:linear-gradient(150deg,#2f6bff,#1f5eff);
+    box-shadow:0 6px 16px rgba(31,94,255,.28);
+  }
+  h2 + .lead{
+    margin:0 0 26px 56px;
+    font-size:14.5px; color:var(--muted);
+  }
+
+  h3{
+    margin:44px 0 14px;
+    font-size:20px; font-weight:700; color:#121722;
+    padding-left:13px; border-left:4px solid var(--brand);
+    line-height:1.4;
+    scroll-margin-top:20px;
+  }
+  h4{
+    margin:28px 0 10px;
+    font-size:16.5px; font-weight:700; color:var(--ink-2);
+  }
+  h4::before{
+    content:"";
+    display:inline-block; width:6px; height:6px; border-radius:2px;
+    background:var(--brand); margin-right:9px; vertical-align:2px;
+  }
+  p{margin:12px 0; color:var(--ink-2);}
+  strong{color:#121722; font-weight:700;}
+  .em{color:var(--brand); font-weight:700;}
+  code{
+    font-family:"JetBrains Mono","Cascadia Mono",Consolas,monospace;
+    background:#f2f4f8; border:1px solid var(--line);
+    padding:1px 6px; border-radius:5px; font-size:.9em; color:#33405c;
+  }
+
+  ul,ol{margin:12px 0; padding-left:26px; color:var(--ink-2);}
+  li{margin:7px 0;}
+  li::marker{color:var(--brand); font-weight:600;}
+
+  .toc{
+    margin:34px 0 0;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:linear-gradient(180deg,#fbfcff,#ffffff);
+    padding:24px 28px;
+  }
+  .toc h5{
+    margin:0 0 14px; font-size:13px; letter-spacing:.16em;
+    color:var(--muted); font-weight:700; text-transform:uppercase;
+  }
+  .toc ol{margin:0; padding:0; list-style:none; counter-reset:toc;}
+  .toc li{
+    counter-increment:toc;
+    display:flex; align-items:baseline; gap:10px;
+    padding:7px 0; border-bottom:1px dashed var(--line-2);
+    font-size:15px;
+  }
+  .toc li:last-child{border-bottom:none;}
+  .toc li::before{
+    content:counter(toc,decimal-leading-zero);
+    font-size:12px; font-weight:700; color:var(--brand);
+    font-variant-numeric:tabular-nums;
+    flex:0 0 auto;
+  }
+  .toc a{color:var(--ink-2); text-decoration:none;}
+  .toc a:hover{color:var(--brand);}
+
+  .box{
+    margin:20px 0;
+    border-radius:var(--radius);
+    padding:18px 22px 18px 22px;
+    border:1px solid;
+    border-left-width:5px;
+    position:relative;
+  }
+  .box > .tag{
+    display:inline-flex; align-items:center; gap:7px;
+    font-size:12.5px; font-weight:800; letter-spacing:.08em;
+    margin-bottom:10px;
+    padding:2px 10px; border-radius:6px;
+  }
+  .box p:first-of-type{margin-top:0;}
+  .box p:last-child{margin-bottom:0;}
+
+  .lv-hard{ color:#c2410c; font-weight:900; letter-spacing:.04em; }
+
+  .def  {background:var(--def-bg);   border-color:var(--def-line);   border-left-color:var(--def);}
+  .def  .tag{background:#dfe9ff; color:#1a4fd6;}
+  .proof{background:var(--proof-bg); border-color:var(--proof-line); border-left-color:var(--proof);}
+  .proof .tag{background:#d6f4e7; color:#0b7a56;}
+  .eg   {background:var(--eg-bg);    border-color:var(--eg-line);    border-left-color:var(--eg);}
+  .eg   .tag{background:#fbeccd; color:#9a5c05;}
+  .warn {background:var(--warn-bg);  border-color:var(--warn-line);  border-left-color:var(--warn);}
+  .warn .tag{background:#fadada; color:#b32a2a;}
+  .tip  {background:var(--tip-bg);   border-color:var(--tip-line);   border-left-color:var(--tip);}
+  .tip  .tag{background:#e8dcfb; color:#5f36ad;}
+
+  .steps{counter-reset:st; margin:14px 0; padding:0; list-style:none;}
+  .steps > li{
+    counter-increment:st;
+    position:relative;
+    padding:0 0 0 44px;
+    margin:14px 0;
+  }
+  .steps > li::before{
+    content:counter(st);
+    position:absolute; left:0; top:2px;
+    width:26px; height:26px; border-radius:8px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:13px; font-weight:800; color:#fff;
+    background:#8fa9e6;
+  }
+  .steps > li::after{
+    content:""; position:absolute; left:13px; top:32px; bottom:-14px;
+    width:1.5px; background:var(--line);
+  }
+  .steps > li:last-child::after{display:none;}
+
+  .formula{
+    margin:18px 0;
+    padding:16px 22px;
+    background:#fafbfe;
+    border:1px dashed var(--def-line);
+    border-radius:10px;
+    text-align:center;
+    overflow-x:auto;
+  }
+  .formula .cap{
+    display:block; text-align:left;
+    font-size:12.5px; font-weight:700; color:var(--brand);
+    letter-spacing:.06em; margin-bottom:6px;
+  }
+
+  .tbl-wrap{overflow-x:auto; margin:20px 0;}
+  table{
+    width:100%; border-collapse:collapse;
+    font-size:14.5px;
+    border:1px solid var(--line);
+    border-radius:10px;
+    overflow:hidden;
+  }
+  th,td{
+    padding:11px 14px; text-align:left;
+    border-bottom:1px solid var(--line-2);
+    vertical-align:top;
+  }
+  thead th{
+    background:#f4f7fd;
+    color:#1a2540; font-weight:700; font-size:13.5px;
+    border-bottom:1px solid var(--line);
+    white-space:nowrap;
+  }
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fcfdff;}
+
+  .map{
+    margin:26px 0;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    gap:14px;
+  }
+  .map .node{
+    border:1px solid var(--line);
+    border-radius:11px;
+    padding:16px 18px;
+    background:linear-gradient(180deg,#fbfcff,#fff);
+  }
+  .map .node b{
+    display:block; font-size:14.5px; color:#121722;
+    margin-bottom:8px; padding-bottom:8px;
+    border-bottom:1px solid var(--line-2);
+  }
+  .map .node span{
+    display:block; font-size:13px; color:var(--muted); line-height:1.75;
+  }
+
+  .foot{
+    margin-top:70px; padding-top:24px;
+    border-top:1px solid var(--line);
+    font-size:13px; color:var(--muted);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  }
+
+  .print-btn{
+    position:fixed; right:26px; bottom:26px; z-index:50;
+    background:linear-gradient(150deg,#2f6bff,#1f5eff); color:#fff;
+    border:none; border-radius:999px;
+    padding:12px 22px; font-size:14px; font-weight:700;
+    cursor:pointer; font-family:inherit;
+    box-shadow:0 8px 24px rgba(31,94,255,.32);
+  }
+  .print-btn:hover{filter:brightness(1.06);}
+
+  @media print{
+    body{background:#fff; font-size:11.5pt; line-height:1.7;}
+    .page{box-shadow:none; max-width:none;}
+    .cover{padding:0 0 22px; background:#fff; border-bottom:2px solid #1f5eff;}
+    .cover h1{font-size:26pt;}
+    .body{padding:0;}
+    .print-btn{display:none;}
+    h2{margin-top:26px; font-size:16pt; break-after:avoid; page-break-after:avoid;}
+    h3{break-after:avoid; page-break-after:avoid; font-size:13pt;}
+    .box,.formula,.tbl-wrap,table,.map .node{break-inside:avoid; page-break-inside:avoid;}
+    .eg{break-inside:auto;}
+    a{color:inherit; text-decoration:none;}
+  }
+  @media (max-width:720px){
+    .cover{padding:40px 24px 34px;}
+    .cover h1{font-size:30px;}
+    .body{padding:8px 24px 60px;}
+    h2{font-size:22px;} h2 .num{width:36px;height:36px;font-size:16px;}
+    h2 + .lead{margin-left:50px;}
+    .print-btn{right:14px; bottom:14px;}
+  }
+
+  /* ==================== 公式加载失败提示 ==================== */
+  .mathjax-warn{
+    display:none;
+    margin:0;
+    padding:12px 20px;
+    background:#fff5f5;
+    border-bottom:1px solid #f8cfcf;
+    color:#b32a2a;
+    font-size:13.5px;
+    line-height:1.7;
+  }
+  .mathjax-warn b{color:#8f1f1f;}
+
+  /* ==================== 左侧固定导航 ==================== */
+  .sidenav{ display:none; }
+  @media (min-width:1321px){
+    body{ padding-left:268px; }
+    .sidenav{
+      display:block;
+      position:fixed; top:0; left:0; bottom:0;
+      width:268px;
+      overflow-y:auto;
+      background:#fbfcfe;
+      border-right:1px solid var(--line);
+      padding:22px 0 44px;
+      z-index:40;
+      scrollbar-width:thin;
+    }
+    .sidenav::-webkit-scrollbar{ width:6px; }
+    .sidenav::-webkit-scrollbar-thumb{ background:#d7dde8; border-radius:3px; }
+  }
+  .sidenav-title{
+    font-size:11.5px; letter-spacing:.18em; font-weight:700;
+    color:var(--muted); text-transform:uppercase;
+    padding:0 20px 12px;
+    border-bottom:1px solid var(--line);
+    margin-bottom:10px;
+  }
+  .sidenav a{
+    display:block; text-decoration:none;
+    color:var(--ink-2);
+    border-left:3px solid transparent;
+    transition:background .15s, color .15s, border-color .15s;
+  }
+  .sidenav a.nav-l1{
+    font-size:13.5px; font-weight:700; color:#1a2540;
+    padding:8px 18px 8px 17px;
+    margin-top:6px;
+    line-height:1.5;
+  }
+  .sidenav a.nav-l1 .n{
+    display:inline-block; min-width:15px;
+    color:var(--brand); font-weight:800; margin-right:7px;
+  }
+  .sidenav a.nav-l2{
+    font-size:12.5px; color:var(--muted);
+    padding:5px 18px 5px 30px;
+    line-height:1.55;
+  }
+  .sidenav a:hover{ background:#eef3ff; color:var(--brand); }
+  .sidenav a.active{
+    background:#eef3ff; color:var(--brand);
+    border-left-color:var(--brand); font-weight:700;
+  }
+
+  @media print{
+    .sidenav{ display:none !important; }
+    body{ padding-left:0 !important; }
+  }
+</style>
+</head>
+<body>
+<aside class="sidenav" aria-label="目录导航">
+  <div class="sidenav-title">目录</div>
+  <a class="nav-l1" href="#ch0"><span class="n">0</span>写在前面：导数这一章到底在学什么</a>
+  <a class="nav-l1" href="#ch1"><span class="n">1</span>导数的概念与几何意义</a>
+  <a class="nav-l2" href="#ch1-1">1.1　从平均变化率说起</a>
+  <a class="nav-l2" href="#ch1-2">1.2　导数的定义</a>
+  <a class="nav-l2" href="#ch1-3">1.3　导数的几何意义</a>
+  <a class="nav-l2" href="#ch1-4">1.4　切线方程的两类问题（必考）</a>
+  <a class="nav-l2" href="#ch1-5">1.5　导函数</a>
+  <a class="nav-l1" href="#ch2"><span class="n">2</span>★ 导数的计算：公式推导 + 十大题型分类</a>
+  <a class="nav-l2" href="#ch2-1">2.1　基本初等函数的导数公式</a>
+  <a class="nav-l2" href="#ch2-2">2.2　导数的四则运算法则</a>
+  <a class="nav-l2" href="#ch2-3">2.3　复合函数的求导（链式法则）</a>
+  <a class="nav-l2" href="#ch2-4">2.4　★ 导数计算的十大题型分类</a>
+  <a class="nav-l2" href="#ch2-5">2.5　求导易错点汇总</a>
+  <a class="nav-l1" href="#ch3"><span class="n">3</span>导数的应用（一）：单调性</a>
+  <a class="nav-l2" href="#ch3-1">3.1　核心定理</a>
+  <a class="nav-l2" href="#ch3-2">3.2　求单调区间的标准五步</a>
+  <a class="nav-l2" href="#ch3-3">3.3　含参数的单调性讨论</a>
+  <a class="nav-l2" href="#ch3-4">3.4　已知单调性求参数范围</a>
+  <a class="nav-l1" href="#ch4"><span class="n">4</span>导数的应用（二）：极值与最值</a>
+  <a class="nav-l2" href="#ch4-1">4.1　极值的定义</a>
+  <a class="nav-l2" href="#ch4-2">4.2　求极值的标准步骤</a>
+  <a class="nav-l2" href="#ch4-3">4.3　闭区间上的最值</a>
+  <a class="nav-l1" href="#ch5"><span class="n">5</span>导数的应用（三）：恒成立、零点、证明不等式</a>
+  <a class="nav-l2" href="#ch5-1">5.1　恒成立问题</a>
+  <a class="nav-l2" href="#ch5-2">5.2　零点个数问题</a>
+  <a class="nav-l2" href="#ch5-3">5.3　证明不等式</a>
+  <a class="nav-l1" href="#ch6"><span class="n">6</span>易错点清单</a>
+  <a class="nav-l1" href="#ch7"><span class="n">7</span>本章知识地图与自测</a>
+  <a class="nav-l2" href="#ch7-1">7.1　知识地图</a>
+  <a class="nav-l2" href="#ch7-2">7.2　自测清单</a>
+  <a class="nav-l1" href="#ch8"><span class="n">8</span>高考真题题型精讲（2016—2025）</a>
+  <a class="nav-l2" href="#ch8-1">8.1　题型一：切线问题</a>
+  <a class="nav-l2" href="#ch8-2">8.2　题型二：含参数讨论单调性</a>
+  <a class="nav-l2" href="#ch8-3">8.3　题型三：极值点与参数</a>
+  <a class="nav-l2" href="#ch8-4">8.4　题型四：零点问题</a>
+  <a class="nav-l2" href="#ch8-5">8.5　题型五：恒成立与不等式证明</a>
+  <a class="nav-l2" href="#ch8-6">8.6　题型六：隐零点与进阶</a>
+  <a class="nav-l2" href="#ch8-7">8.7　提分要点总结</a>
+</aside>
+<div class="mathjax-warn" id="mathjax-warn">
+  <b>公式未加载成功。</b>本讲义的数学公式依赖 MathJax 在线渲染，需要联网。
+  当前网络可能不通或 CDN 被拦截，页面上显示的 <code>\( ... \)</code> 是公式源码，不是排版后的样子。
+  请联网后刷新页面；<b>另外，打印或另存 PDF 前请确认公式已正常显示</b>，否则导出的文件里会是源码。
+</div>
+
+<div class="page">
+
+  <header class="cover">
+    <div class="kicker">高考数学 · 重点章节梳理</div>
+    <h1>第二册　<span class="accent">导数</span></h1>
+    <p class="sub">面向基础薄弱同学的「慢速精讲版」——导数公式不靠背，靠推导；求导题型不靠猜，靠分类对号入座。</p>
+    <div class="meta">
+      <div><b>适用</b>　高三一轮复习 / 高二同步巩固</div>
+      <div><b>核心主线</b>　先会「算」　再会「用」</div>
+      <div><b>建议课时</b>　8 ~ 10 讲</div>
+    </div>
+
+    <nav class="toc">
+      <h5>目录</h5>
+      <ol>
+        <li><a href="#ch0">写在前面：导数这一章到底在学什么</a></li>
+        <li><a href="#ch1">导数的概念与几何意义（含定义式推导）</a></li>
+        <li><a href="#ch2">★ 导数的计算：公式推导 + 十大题型分类</a></li>
+        <li><a href="#ch3">导数的应用（一）：单调性</a></li>
+        <li><a href="#ch4">导数的应用（二）：极值与最值</a></li>
+        <li><a href="#ch5">导数的应用（三）：恒成立、零点、证明不等式</a></li>
+        <li><a href="#ch6">易错点清单</a></li>
+        <li><a href="#ch7">本章知识地图与自测</a></li>
+      <li><a href="#ch8">高考真题题型精讲（2016—2025）</a></li>
+      </ol>
+    </nav>
+  </header>
+
+  <main class="body">
+
+  <!-- ==================== 第 0 章 ==================== -->
+  <h2 id="ch0"><span class="num">0</span>写在前面：导数这一章到底在学什么</h2>
+  <p class="lead">先搞清楚这一章的地图，再动手，否则很容易"会求导但不会做题"。</p>
+
+  <p>很多同学学导数的感受是："公式我背了，题还是不会做。"原因是把导数当成了<strong>一堆公式</strong>，而没意识到它其实是<strong>一条完整的方法链</strong>。</p>
+
+  <div class="map">
+    <div class="node">
+      <b>第一步：会算（第 1、2 章）</b>
+      <span>给一个函数，能求出它的导函数 \(f'(x)\)。这是<strong>纯技术活</strong>，靠分类训练就能过关。</span>
+    </div>
+    <div class="node">
+      <b>第二步：会用（第 3、4、5 章）</b>
+      <span>有了 \(f'(x)\)，用它判断<strong>单调性</strong> → 求<strong>极值最值</strong> → 解决<strong>恒成立、零点、不等式</strong>问题。</span>
+    </div>
+    <div class="node">
+      <b>贯穿全程的桥梁</b>
+      <span>\(f'(x)\) 的<strong>正负号</strong>决定 \(f(x)\) 的增减。整章所有应用，都建立在这一句话上。</span>
+    </div>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">学法建议</span>
+    <ol>
+      <li><strong>第 2 章是重点，要多花时间。</strong>导数计算不过关，后面所有应用题都做不下去。第 2.4 节把求导题型分成了 10 类，每一类都要练到"看到就知道用哪个法则"。</li>
+      <li><strong>第 3 章的"求单调区间标准步骤"要背下来。</strong>这是导数大题的固定开局，套路非常稳定。</li>
+      <li><strong>每次求导后都要检查两件事</strong>：定义域写了没？复合函数的内层导数乘了没？这两条是丢分重灾区。</li>
+    </ol>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">先破除一个误解</span>
+    <p>导数是"<strong>瞬时变化率</strong>"，通俗地说就是"<strong>某一瞬间的变化快慢</strong>"。几何上，它等于曲线在该点处<strong>切线的斜率</strong>。</p>
+    <p>所以"导数 &gt; 0"意味着"函数在这一段正在往上走"（递增），"导数 &lt; 0"意味着"正在往下走"（递减）。<strong>把这个图像记在脑子里，后面所有应用都不需要死记。</strong></p>
+  </div>
+
+    <div class="box tip">
+    <span class="tag">第 8 章真题的难度分级（基础生必读）</span>
+    <p>第 8 章按<strong>题型</strong>编排，每种题型内部的题目<strong>由易到难</strong>。其中标注 <span class="lv-hard">★★</span> 的是<strong>压轴档</strong>——需要同时用好几个工具，计算量也大。</p>
+    <ul>
+      <li><strong>第一遍复习：先跳过 ★★ 题。</strong>把没有标记的题做熟，它们已经覆盖了绝大部分考分。</li>
+      <li><strong>冲刺阶段：再回头攻 ★★ 题。</strong>此时基本功已经扎实，做起来会顺很多。</li>
+      <li><strong>即使暂时做不出来，也建议把 ★★ 题的解答读一遍。</strong>每道题后面的「提分要点」都讲清了"思路是怎么想到的"，这对提分很有用。</li>
+    </ul>
+  </div>
+
+<!-- ==================== 第 1 章 ==================== -->
+  <h2 id="ch1"><span class="num">1</span>导数的概念与几何意义</h2>
+  <p class="lead">这一章概念多于计算，重点是把定义式的结构刻进脑子，因为第 2.4 节的"类型十"全靠它。</p>
+
+  <h3 id="ch1-1">1.1　从平均变化率说起</h3>
+
+  <div class="box def">
+    <span class="tag">定义</span>
+    <p>设函数 \(y=f(x)\) 在点 \(x_0\) 附近有定义，自变量从 \(x_0\) 变到 \(x_0+\Delta x\)（\(\Delta x\ne0\)），函数值的变化量为</p>
+    <div class="formula">\[ \Delta y = f(x_0+\Delta x) - f(x_0) \]</div>
+    <p>则比值</p>
+    <div class="formula">\[ \frac{\Delta y}{\Delta x} = \frac{f(x_0+\Delta x)-f(x_0)}{\Delta x} \]</div>
+    <p>叫做函数 \(f(x)\) 从 \(x_0\) 到 \(x_0+\Delta x\) 的<strong>平均变化率</strong>。</p>
+  </div>
+
+  <p>平均变化率的几何意义很直观：它是曲线在 \(x_0\) 和 \(x_0+\Delta x\) 两点之间那条<strong>割线的斜率</strong>。它描述的是"这一段整体的平均变化快慢"。</p>
+
+  <h3 id="ch1-2">1.2　导数的定义</h3>
+
+  <div class="box def">
+    <span class="tag">定义（★ 整章的地基）</span>
+    <p>如果 \(\Delta x\) 无限趋近于 0 时，平均变化率 \(\dfrac{\Delta y}{\Delta x}\) 无限趋近于一个<strong>确定的常数</strong>，就说函数 \(f(x)\) 在点 \(x_0\) 处<strong>可导</strong>，并把这个常数叫做 \(f(x)\) 在 \(x_0\) 处的<strong>导数</strong>，记作 \(f'(x_0)\)：</p>
+    <div class="formula">
+      \[ \boxed{\ f'(x_0) = \lim_{\Delta x\to0}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}\ } \]
+    </div>
+    <p>这个式子的另一种等价写法（令 \(x=x_0+\Delta x\)，则 \(\Delta x\to0\) 等价于 \(x\to x_0\)）：</p>
+    <div class="formula">
+      \[ f'(x_0) = \lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0} \]
+    </div>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">怎么理解这个式子（重要）</span>
+    <p>把定义式拆成三段来看：</p>
+    <ul>
+      <li><strong>分子 \(f(x_0+\Delta x)-f(x_0)\)</strong>：函数值变了多少（纵向变化量）。</li>
+      <li><strong>分母 \(\Delta x\)</strong>：自变量变了多少（横向变化量）。</li>
+      <li><strong>整体就是"纵向变化 ÷ 横向变化"</strong>，也就是"每走一个单位，函数值变多少"——这正是"变化率"的含义。</li>
+    </ul>
+    <p>而最前面的 \(\lim\limits_{\Delta x\to0}\) 意思是：让这段横向距离<strong>越来越短，短到趋于 0</strong>，看比值趋于什么。</p>
+    <p>从"一段的平均"过渡到"一点的瞬时"，这就是导数思想的精髓。</p>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">定义式里三个必须注意的细节</span>
+    <ul>
+      <li><strong>\(\Delta x\ne0\)</strong>——分母不能是 0。是"趋近于 0"而不是"等于 0"。</li>
+      <li><strong>分子和分母的 \(\Delta x\) 必须一致。</strong>分子里加了多少，分母就除以多少。这是"类型十"题目的唯一考点。</li>
+      <li><strong>\(x_0\) 是固定的点。</strong>\(f'(x_0)\) 是一个<strong>数</strong>，不是一个函数。</li>
+    </ul>
+  </div>
+
+  <h3 id="ch1-3">1.3　导数的几何意义</h3>
+
+  <div class="box def">
+    <span class="tag">几何意义</span>
+    <p>函数 \(y=f(x)\) 在点 \(P(x_0,\,f(x_0))\) 处的导数 \(f'(x_0)\)，等于曲线在点 \(P\) 处<strong>切线的斜率</strong>。即</p>
+    <div class="formula">\[ k_{\text{切}} = f'(x_0) \]</div>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">为什么是切线斜率（直观论证）</span>
+    <p><strong>第一步：</strong>曲线上取两点 \(P(x_0,f(x_0))\) 和 \(Q(x_0+\Delta x,\,f(x_0+\Delta x))\)，连成割线 \(PQ\)。由斜率的定义：</p>
+    <div class="formula">
+      \[ k_{PQ} = \frac{f(x_0+\Delta x)-f(x_0)}{(x_0+\Delta x)-x_0} = \frac{f(x_0+\Delta x)-f(x_0)}{\Delta x} \]
+    </div>
+    <p>这正好就是平均变化率。</p>
+
+    <p><strong>第二步：让 \(Q\) 沿着曲线向 \(P\) 靠近。</strong>\(\Delta x\to0\) 时，\(Q\to P\)，割线 \(PQ\) 的位置不断转动，最终趋于一个<strong>极限位置</strong>——这条极限位置的直线，就定义为曲线在 \(P\) 处的<strong>切线</strong>。</p>
+
+    <p><strong>第三步：割线斜率的极限就是切线斜率。</strong>所以</p>
+    <div class="formula">
+      \[ k_{\text{切}} = \lim_{\Delta x\to0} k_{PQ} = \lim_{\Delta x\to0}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x} = f'(x_0) \quad\checkmark \]
+    </div>
+    <p>这就是"导数 = 切线斜率"的完整来源。</p>
+  </div>
+
+  <h3 id="ch1-4">1.4　切线方程的两类问题（必考）</h3>
+
+  <div class="box tip">
+    <span class="tag">通用公式</span>
+    <p>若切点为 \(P(x_0,\,f(x_0))\)，切线斜率为 \(k=f'(x_0)\)，则由点斜式得切线方程：</p>
+    <div class="formula">\[ \boxed{\ y - f(x_0) = f'(x_0)\,(x-x_0)\ } \]</div>
+  </div>
+
+  <h4>类型 A：求"在点 P 处"的切线</h4>
+  <p><strong>关键词是"在"</strong>——说明 \(P\) 就在曲线上，<strong>\(P\) 就是切点</strong>。直接套公式即可。</p>
+
+  <div class="box eg">
+    <span class="tag">例题 1</span>
+    <p>求曲线 \(y=x^3-2x\) 在点 \(P(1,\,-1)\) 处的切线方程。</p>
+    <h4>解析</h4>
+    <p><strong>第一步：确认 \(P\) 在曲线上。</strong>把 \(x=1\) 代入：\(1^3-2\times1=-1\) ✓，所以 \(P\) 是切点。</p>
+    <p><strong>第二步：求导函数。</strong></p>
+    <div class="formula">\[ y' = 3x^2-2 \]</div>
+    <p><strong>第三步：求切线斜率。</strong>把 \(x=1\) 代入导函数：</p>
+    <div class="formula">\[ k = y'\big|_{x=1} = 3\times1^2-2 = 1 \]</div>
+    <p><strong>第四步：写切线方程。</strong>切点 \((1,-1)\)，斜率 1：</p>
+    <div class="formula">\[ y-(-1) = 1\cdot(x-1) \quad\Longrightarrow\quad \boxed{y=x-2} \]</div>
+    <p><strong>验算：</strong>把 \(x=1\) 代入 \(y=x-2\) 得 \(y=-1\)，与切点纵坐标一致 ✓。</p>
+  </div>
+
+  <h4>类型 B：求"过点 P"的切线</h4>
+  <div class="box warn">
+    <span class="tag">"在"与"过"，一字之差，做法完全不同</span>
+    <p><strong>"过点 \(P\)"不保证 \(P\) 在曲线上</strong>，即使 \(P\) 在曲线上，\(P\) 也<strong>不一定就是切点</strong>（曲线可能在别处切线正好穿过 \(P\)）。</p>
+    <p>所以必须<strong>设切点</strong>，用"切点在曲线上"和"切线过 \(P\)"两个条件联立。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">"过点 P"的标准解法四步</span>
+    <ol class="steps">
+      <li>设切点为 \(\bigl(t,\,f(t)\bigr)\)，其中 \(t\) 是<strong>未知数</strong>（不要写成 \(x_0\)，容易和已知点混淆）。</li>
+      <li>写出切线斜率 \(k=f'(t)\)。</li>
+      <li>写出切线方程：\(y-f(t)=f'(t)(x-t)\)。</li>
+      <li>把已知点 \(P\) 的坐标代入这个方程，得到关于 \(t\) 的方程，解出 \(t\)，再回代得切线。</li>
+    </ol>
+    <p><strong>关键提醒：</strong>解出的 \(t\) 有几个值，就有<strong>几条</strong>切线，答案不能只写一条。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 2（经典易错题）</span>
+    <p>求曲线 \(y=x^3\) 过点 \(P(1,\,0)\) 的切线方程。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：先检查 \(P\) 在不在曲线上。</strong>\(x=1\) 时 \(y=1^3=1\ne0\)，所以 \(P\) <strong>不在</strong>曲线上。必须设切点。</p>
+
+    <p><strong>第二步：设切点。</strong>设切点为 \(\bigl(t,\,t^3\bigr)\)。</p>
+
+    <p><strong>第三步：求斜率和切线方程。</strong>因为 \(y'=3x^2\)，所以斜率 \(k=3t^2\)。切线方程为：</p>
+    <div class="formula">\[ y-t^3 = 3t^2(x-t) \]</div>
+
+    <p><strong>第四步：把 \(P(1,0)\) 代入。</strong>把 \(x=1,\ y=0\) 代入上式：</p>
+    <div class="formula">
+      \[ 0-t^3 = 3t^2(1-t) \quad\Longrightarrow\quad -t^3 = 3t^2-3t^3 \]
+    </div>
+    <div class="formula">
+      \[ 2t^3-3t^2=0 \quad\Longrightarrow\quad t^2(2t-3)=0 \]
+    </div>
+    <p>解得 \(t=0\) 或 \(t=\dfrac32\)。<strong>两个解，说明有两条切线。</strong></p>
+
+    <p><strong>第五步：分别求两条切线。</strong></p>
+    <p><strong>当 \(t=0\)：</strong>切点 \((0,0)\)，斜率 \(k=3\times0=0\)，切线为</p>
+    <div class="formula">\[ y = 0 \quad(\text{即 }x\text{ 轴}) \]</div>
+    <p><strong>当 \(t=\dfrac32\)：</strong>切点 \(\left(\dfrac32,\dfrac{27}{8}\right)\)，斜率 \(k=3\times\dfrac94=\dfrac{27}{4}\)，切线为</p>
+    <div class="formula">
+      \[ y-\frac{27}{8}=\frac{27}{4}\left(x-\frac32\right) \quad\Longrightarrow\quad y = \frac{27}{4}x-\frac{27}{4} \]
+    </div>
+
+    <p><strong>答案：</strong>\(\boxed{y=0\ \ \text{或}\ \ y=\dfrac{27}{4}x-\dfrac{27}{4}}\)</p>
+
+    <p><strong>验算：</strong>两条直线都过 \(P(1,0)\)：\(x=1\) 代入第二条得 \(y=\dfrac{27}{4}-\dfrac{27}{4}=0\) ✓。且第二条的切点 \((1.5,\,3.375)\) 满足 \(y=x^3\)：\(1.5^3=3.375\) ✓。</p>
+  </div>
+
+  <h3 id="ch1-5">1.5　导函数</h3>
+  <div class="box def">
+    <span class="tag">定义</span>
+    <p>如果函数 \(y=f(x)\) 在区间内每一点都可导，那么对区间内的每一个 \(x\)，都有一个确定的导数 \(f'(x)\) 与之对应。这样得到的<strong>新函数</strong> \(f'(x)\) 叫做 \(f(x)\) 的<strong>导函数</strong>，简称<strong>导数</strong>。</p>
+    <div class="formula">\[ f'(x) = \lim_{\Delta x\to0}\frac{f(x+\Delta x)-f(x)}{\Delta x} \]</div>
+    <p>注意区别：\(f'(x_0)\) 是一个<strong>数</strong>；\(f'(x)\) 是一个<strong>函数</strong>。求 \(f'(x_0)\) 的方法是：先求导函数 \(f'(x)\)，再把 \(x=x_0\) 代进去。</p>
+  </div>
+
+  <!-- ==================== 第 2 章 ==================== -->
+  <h2 id="ch2"><span class="num">2</span>★ 导数的计算：公式推导 + 十大题型分类</h2>
+  <p class="lead">这是本册最重要的章节。公式要会推，题型要会分。建议逐类练到形成条件反射。</p>
+
+  <h3 id="ch2-1">2.1　基本初等函数的导数公式</h3>
+
+  <div class="box def">
+    <span class="tag">公式表（必须熟记）</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>序号</th><th>原函数 \(f(x)\)</th><th>导函数 \(f'(x)\)</th><th>备注</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>\(C\)（常数）</td><td>\(0\)</td><td>常数不变化，变化率当然是 0</td></tr>
+          <tr><td>2</td><td>\(x^{n}\)（\(n\in\mathbb{R}\)）</td><td>\(n\,x^{\,n-1}\)</td><td>★ 幂函数，最常用</td></tr>
+          <tr><td>3</td><td>\(\sin x\)</td><td>\(\cos x\)</td><td></td></tr>
+          <tr><td>4</td><td>\(\cos x\)</td><td>\(-\sin x\)</td><td>★ 有负号，别丢</td></tr>
+          <tr><td>5</td><td>\(e^{x}\)</td><td>\(e^{x}\)</td><td>★ 导数等于自己</td></tr>
+          <tr><td>6</td><td>\(a^{x}\)（\(a>0,a\ne1\)）</td><td>\(a^{x}\ln a\)</td><td>\(a=e\) 时退化为第 5 条</td></tr>
+          <tr><td>7</td><td>\(\ln x\)</td><td>\(\dfrac{1}{x}\)</td><td></td></tr>
+          <tr><td>8</td><td>\(\log_a x\)</td><td>\(\dfrac{1}{x\ln a}\)</td><td>★ 比 \(\ln x\) 多除一个 \(\ln a\)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>由第 2 条可以立刻推出两个常用结果：</strong></p>
+    <div class="formula">
+      \[ (\sqrt{x})' = \left(x^{\frac12}\right)' = \frac12 x^{-\frac12} = \frac{1}{2\sqrt{x}} \]
+    </div>
+    <div class="formula">
+      \[ \left(\frac{1}{x}\right)' = \left(x^{-1}\right)' = -1\cdot x^{-2} = -\frac{1}{x^2} \]
+    </div>
+    <p><strong>这两个结果必须能随时写出来</strong>，因为题目里经常出现根式和分式。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导一：常数函数 \((C)'=0\)</span>
+    <p>因为 \(f(x)=C\) 对任意 \(x\) 都等于 \(C\)，所以：</p>
+    <div class="formula">
+      \[ \frac{f(x+\Delta x)-f(x)}{\Delta x} = \frac{C-C}{\Delta x} = 0 \]
+    </div>
+    <p>分子恒为 0，所以比值恒为 0，取极限还是 0：</p>
+    <div class="formula">\[ f'(x) = \lim_{\Delta x\to0} 0 = 0 \quad\checkmark \]</div>
+    <p><strong>直观理解：</strong>水平直线的斜率是 0，常函数的图象就是一条水平线。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导二：幂函数 \((x^n)'=nx^{n-1}\)（以正整数 \(n\) 为例）</span>
+    <p><strong>第一步：用二项式定理展开 \((x+\Delta x)^n\)。</strong></p>
+    <div class="formula">
+      \[ (x+\Delta x)^n = x^n + n\,x^{\,n-1}\Delta x + C_n^2x^{\,n-2}(\Delta x)^2 + \cdots + (\Delta x)^n \]
+    </div>
+    <p>这里 \(C_n^2=\dfrac{n(n-1)}{2}\) 是组合数。</p>
+
+    <p><strong>第二步：求 \(\Delta y\)。</strong>两式相减，\(x^n\) 被减掉：</p>
+    <div class="formula">
+      \[ \Delta y = n\,x^{\,n-1}\Delta x + C_n^2x^{\,n-2}(\Delta x)^2 + \cdots + (\Delta x)^n \]
+    </div>
+
+    <p><strong>第三步：除以 \(\Delta x\)。</strong>每一项都除掉一个 \(\Delta x\)：</p>
+    <div class="formula">
+      \[ \frac{\Delta y}{\Delta x} = n\,x^{\,n-1} + C_n^2x^{\,n-2}\Delta x + \cdots + (\Delta x)^{n-1} \]
+    </div>
+
+    <p><strong>第四步：令 \(\Delta x\to0\)。</strong>除了第一项 \(n x^{n-1}\) 之外，其余每一项都还带着 \(\Delta x\) 的正幂次，所以都趋于 0。于是：</p>
+    <div class="formula">
+      \[ (x^n)' = \lim_{\Delta x\to0}\frac{\Delta y}{\Delta x} = n\,x^{\,n-1} \quad\checkmark \]
+    </div>
+    <p><strong>说明：</strong>这个结论对<strong>任意实数</strong> \(n\) 都成立（包括负数和分数），高中阶段直接使用结论即可。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导三：\((\sin x)'=\cos x\)</span>
+    <p><strong>第一步：用和差化积公式处理分子。</strong>先回忆公式 \(\sin A-\sin B = 2\cos\dfrac{A+B}{2}\sin\dfrac{A-B}{2}\)。取 \(A=x+\Delta x\)，\(B=x\)：</p>
+    <div class="formula">
+      \[ \sin(x+\Delta x)-\sin x = 2\cos\!\left(\frac{2x+\Delta x}{2}\right)\sin\!\left(\frac{\Delta x}{2}\right) = 2\cos\!\left(x+\frac{\Delta x}{2}\right)\sin\!\left(\frac{\Delta x}{2}\right) \]
+    </div>
+
+    <p><strong>第二步：除以 \(\Delta x\)，并凑出 \(\dfrac{\sin t}{t}\) 的形式。</strong></p>
+    <div class="formula">
+      \[
+      \frac{\sin(x+\Delta x)-\sin x}{\Delta x} = \frac{2\cos\!\left(x+\frac{\Delta x}{2}\right)\sin\!\left(\frac{\Delta x}{2}\right)}{\Delta x}
+      = \cos\!\left(x+\frac{\Delta x}{2}\right)\cdot\frac{\sin\!\left(\frac{\Delta x}{2}\right)}{\frac{\Delta x}{2}}
+      \]
+    </div>
+    <p>这一步的关键是：把分母的 \(\Delta x\) 写成 \(2\cdot\dfrac{\Delta x}{2}\)，正好和分子的 \(\sin\frac{\Delta x}{2}\) 配成标准形式。</p>
+
+    <p><strong>第三步：用重要极限 \(\lim\limits_{t\to0}\dfrac{\sin t}{t}=1\)。</strong>令 \(t=\dfrac{\Delta x}{2}\)，则 \(\Delta x\to0\) 时 \(t\to0\)，所以</p>
+    <div class="formula">
+      \[ \lim_{\Delta x\to0}\frac{\sin\!\left(\frac{\Delta x}{2}\right)}{\frac{\Delta x}{2}} = \lim_{t\to0}\frac{\sin t}{t} = 1 \]
+    </div>
+    <p>同时 \(\cos\!\left(x+\dfrac{\Delta x}{2}\right)\to\cos x\)。所以：</p>
+    <div class="formula">
+      \[ (\sin x)' = \cos x\cdot 1 = \cos x \quad\checkmark \]
+    </div>
+    <p><strong>同理</strong>，用 \(\cos A-\cos B=-2\sin\dfrac{A+B}{2}\sin\dfrac{A-B}{2}\) 可以推出 \((\cos x)'=-\sin x\)，那个<strong>负号就来自公式里的这个负号</strong>。</p>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">\(e^x\) 和 \(\ln x\) 的导数为什么不用推</span>
+    <p>\((e^x)'=e^x\) 和 \((\ln x)'=\dfrac1x\) 的推导需要用到 \(e\) 的定义（\(\lim\limits_{n\to\infty}\left(1+\frac1n\right)^n=e\)）和较复杂的极限运算，超出了高中阶段的要求。</p>
+    <p><strong>记忆方法：</strong></p>
+    <ul>
+      <li>\(e^x\) 是"唯一一个导数等于自身的函数"（除了 \(y=0\)），这个性质本身就是 \(e\) 这个数的定义方式。</li>
+      <li>\((\ln x)'=\dfrac1x\) 可以这样记：\(x^{-1}\) 是幂函数公式 \(nx^{n-1}\) 中 \(n=0\) 时的"补位"——因为 \(n=0\) 时公式给出 0，不适用，所以 \(\dfrac1x\) 单独有个结果。</li>
+    </ul>
+  </div>
+
+  <h3 id="ch2-2">2.2　导数的四则运算法则</h3>
+
+  <div class="box def">
+    <span class="tag">三条法则</span>
+    <div class="formula">
+      \[
+      \begin{aligned}
+      (u\pm v)' &= u' \pm v' \\[6pt]
+      (uv)' &= u'v + uv' \\[6pt]
+      \left(\frac{u}{v}\right)' &= \frac{u'v-uv'}{v^{2}} \qquad (v\ne0)
+      \end{aligned}
+      \]
+    </div>
+    <p>其中 \(u=u(x)\)、\(v=v(x)\) 都是可导函数。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导一：乘积法则 \((uv)'=u'v+uv'\)</span>
+    <p><strong>核心技巧：在分子里"加一项、减一项"。</strong>这是本推导最巧妙的地方。</p>
+
+    <p><strong>第一步：写出平均变化率。</strong>设 \(f(x)=u(x)v(x)\)：</p>
+    <div class="formula">
+      \[ \frac{f(x+\Delta x)-f(x)}{\Delta x} = \frac{u(x+\Delta x)v(x+\Delta x) - u(x)v(x)}{\Delta x} \]
+    </div>
+    <p>现在的问题是：分子是"两个乘积相减"，没法直接拆开。</p>
+
+    <p><strong>第二步：在分子中间插入一项。</strong>加上 \(u(x+\Delta x)v(x)\)，再减去同样的东西（净效果为 0，等式不变）：</p>
+    <div class="formula">
+      \[
+      \frac{u(x+\Delta x)v(x+\Delta x) \;\mathbf{-}\; u(x+\Delta x)v(x) \;\mathbf{+}\; u(x+\Delta x)v(x) - u(x)v(x)}{\Delta x}
+      \]
+    </div>
+    <p><strong>为什么这么插？</strong>插完之后，前两项都含 \(u(x+\Delta x)\)，后两项都含 \(v(x)\)，就可以分别提取公因式了。</p>
+
+    <p><strong>第三步：分组提取公因式。</strong></p>
+    <div class="formula">
+      \[
+      = u(x+\Delta x)\cdot\frac{v(x+\Delta x)-v(x)}{\Delta x} \;+\; v(x)\cdot\frac{u(x+\Delta x)-u(x)}{\Delta x}
+      \]
+    </div>
+    <p>现在每个分式都是标准的"导数定义"形状了。</p>
+
+    <p><strong>第四步：令 \(\Delta x\to0\) 取极限。</strong></p>
+    <ul>
+      <li>\(\dfrac{v(x+\Delta x)-v(x)}{\Delta x}\to v'(x)\)</li>
+      <li>\(\dfrac{u(x+\Delta x)-u(x)}{\Delta x}\to u'(x)\)</li>
+      <li>\(u(x+\Delta x)\to u(x)\)（函数可导必连续）</li>
+    </ul>
+    <p>所以：</p>
+    <div class="formula">
+      \[ (uv)' = u(x)v'(x) + v(x)u'(x) \quad\checkmark \]
+    </div>
+    <p>通常写成 \((uv)'=u'v+uv'\)（加法可交换，两种写法一样）。</p>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">记忆口诀</span>
+      <p><strong>"前导后不导，加，前不导后导。"</strong></p>
+      <p>即：前一个求导 × 后一个不动，加上，前一个不动 × 后一个求导。</p>
+      <p><strong>特别提醒：\((uv)'\ne u'v'\)。</strong>这是最典型的错误，必须杜绝。</p>
+    </div>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导二：商法则 \(\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^{2}}\)</span>
+    <p><strong>这个推导非常漂亮，用"反解"的思路，不用碰极限。</strong></p>
+    <p><strong>先说清前提：</strong>高中阶段直接承认"两个可导函数的商（分母不为 0）仍然可导"。所以下面要做的不是"证明 \(f\) 可导"，而是在 \(f\) <strong>已经可导</strong>的前提下，求出 \(f'\) 的<strong>表达式</strong>。</p>
+
+    <p><strong>第一步：把商写成乘积。</strong>设 \(f=\dfrac{u}{v}\)，把它改写成不含分式的形式：</p>
+    <div class="formula">\[ u = f\cdot v \]</div>
+    <p>（因为 \(v\ne0\)，两边同乘 \(v\) 即可。）</p>
+
+    <p><strong>第二步：两边求导。</strong>左边是 \(u'\)。右边是乘积，用刚才推出来的乘积法则：</p>
+    <div class="formula">\[ u' = f'v + fv' \]</div>
+
+    <p><strong>第三步：解出 \(f'\)。</strong>把含 \(f'\) 的项留在一边：</p>
+    <div class="formula">\[ f'v = u' - fv' \quad\Longrightarrow\quad f' = \frac{u'-fv'}{v} \]</div>
+
+    <p><strong>第四步：把 \(f=\dfrac uv\) 代回去。</strong></p>
+    <div class="formula">
+      \[ f' = \frac{u' - \dfrac{u}{v}v'}{v} = \frac{u' - \dfrac{uv'}{v}}{v} = \frac{\dfrac{u'v-uv'}{v}}{v} = \frac{u'v-uv'}{v^{2}} \quad\checkmark \]
+    </div>
+    <p>最后一步是把分子通分（乘 \(v\)），再把分母的 \(v\) 除下去。</p>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">记忆口诀</span>
+      <p><strong>"分子导乘分母，减，分子乘分母导，除以分母平方。"</strong></p>
+      <p><strong>特别提醒两点：</strong></p>
+      <ul>
+        <li>中间是<strong>减号</strong>，顺序不能反（\(u'v-uv'\)，不是 \(uv'-u'v\)）。</li>
+        <li>分母是 \(v^2\)，不是 \(v\)。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 3（用商法则推 \(\tan x\) 的导数）</span>
+    <p>求 \(y=\tan x\) 的导数。</p>
+    <h4>解析</h4>
+    <p><strong>第一步：化成正弦余弦的商。</strong></p>
+    <div class="formula">\[ y = \tan x = \frac{\sin x}{\cos x} \]</div>
+    <p>这里 \(u=\sin x\)，\(v=\cos x\)，所以 \(u'=\cos x\)，\(v'=-\sin x\)。</p>
+
+    <p><strong>第二步：套商法则。</strong></p>
+    <div class="formula">
+      \[ y' = \frac{u'v-uv'}{v^{2}} = \frac{\cos x\cdot\cos x - \sin x\cdot(-\sin x)}{\cos^{2}x} \]
+    </div>
+
+    <p><strong>第三步：化简分子。</strong>注意 \(-\sin x\cdot(-\sin x)=+\sin^2x\)：</p>
+    <div class="formula">
+      \[ y' = \frac{\cos^{2}x+\sin^{2}x}{\cos^{2}x} \]
+    </div>
+    <p>用平方关系 \(\sin^2x+\cos^2x=1\)：</p>
+    <div class="formula">
+      \[ \boxed{\ (\tan x)' = \frac{1}{\cos^{2}x}\ } \]
+    </div>
+    <p><strong>这个结论建议记住</strong>，考试时直接写可以省时间。但推导过程要会，因为商法则的练习价值很高。</p>
+  </div>
+
+  <h3 id="ch2-3">2.3　复合函数的求导（链式法则）</h3>
+
+  <div class="box def">
+    <span class="tag">链式法则</span>
+    <p>若 \(y=f(u)\)，而 \(u=g(x)\)，则复合函数 \(y=f\bigl(g(x)\bigr)\) 的导数为</p>
+    <div class="formula">
+      \[ \boxed{\ y' = f'(u)\cdot g'(x)\ } \]
+    </div>
+    <p>用文字说就是：<strong>外层函数的导数 × 内层函数的导数。</strong></p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">怎么理解"外层"和"内层"（分层法）</span>
+    <p>复合函数就像"套娃"。判断层次的方法：<strong>把括号里的东西整体看成一个字母 \(u\)，看最外层是什么运算。</strong></p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>复合函数</th><th>设内层 \(u=\)</th><th>外层 \(y=\)</th><th>外层导数 \(f'(u)\)</th><th>内层导数 \(g'(x)\)</th></tr></thead>
+        <tbody>
+          <tr><td>\((3x-1)^4\)</td><td>\(3x-1\)</td><td>\(u^4\)</td><td>\(4u^3\)</td><td>\(3\)</td></tr>
+          <tr><td>\(e^{2x}\)</td><td>\(2x\)</td><td>\(e^{u}\)</td><td>\(e^{u}\)</td><td>\(2\)</td></tr>
+          <tr><td>\(\ln(2x+1)\)</td><td>\(2x+1\)</td><td>\(\ln u\)</td><td>\(\dfrac1u\)</td><td>\(2\)</td></tr>
+          <tr><td>\(\sin(3x)\)</td><td>\(3x\)</td><td>\(\sin u\)</td><td>\(\cos u\)</td><td>\(3\)</td></tr>
+          <tr><td>\(\sqrt{2x+1}\)</td><td>\(2x+1\)</td><td>\(\sqrt{u}\)</td><td>\(\dfrac{1}{2\sqrt{u}}\)</td><td>\(2\)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>操作要点：</strong>先"由外向内"逐层求导，每求一层就把内层原样抄下来，最后<strong>把所有层的导数乘起来</strong>。</p>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">复合函数求导的头号错误</span>
+    <p><strong>忘记乘内层导数。</strong></p>
+    <p>比如把 \((3x-1)^4\) 的导数写成 \(4(3x-1)^3\)——<strong>错了</strong>，正确答案是 \(4(3x-1)^3\cdot3=12(3x-1)^3\)。</p>
+    <p><strong>检查方法：</strong>求完导之后回头看一眼原函数——括号里如果<strong>不是单纯的 \(x\)</strong>，那必须再乘一个内层导数。这是每道题都要做的自检动作。</p>
+  </div>
+
+  <h3 id="ch2-4">2.4　★ 导数计算的十大题型分类</h3>
+
+  <p>下面把高中阶段所有求导题型分成 10 类。做题时先判断"属于哪一类"，再套对应的方法。</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>类型</th><th>形式特征</th><th>用什么方法</th></tr></thead>
+      <tbody>
+        <tr><td>类型一</td><td>多项式、根式、分式（幂函数）</td><td>公式表第 2 条 + 加减法则；<strong>先化成分数指数幂</strong></td></tr>
+        <tr><td>类型二</td><td>指数函数、对数函数</td><td>公式表第 5~8 条 + 加减法则</td></tr>
+        <tr><td>类型三</td><td>三角函数</td><td>公式表第 3、4 条 + 加减法则</td></tr>
+        <tr><td>类型四</td><td>两个函数<strong>相乘</strong></td><td>乘积法则 \((uv)'=u'v+uv'\)</td></tr>
+        <tr><td>类型五</td><td>两个函数<strong>相除</strong></td><td>商法则 \(\left(\frac uv\right)'=\frac{u'v-uv'}{v^2}\)</td></tr>
+        <tr><td>类型六</td><td>复合函数（<strong>一层</strong>）</td><td>链式法则：外层导数 × 内层导数</td></tr>
+        <tr><td>类型七</td><td>复合函数（<strong>多层嵌套</strong>）</td><td>链式法则逐层相乘</td></tr>
+        <tr><td>类型八</td><td>乘积/商 <strong>与</strong> 复合<strong>混合</strong></td><td>先分主结构，再在每一块内部用链式法则</td></tr>
+        <tr><td>类型九</td><td>能<strong>先化简</strong>的式子</td><td>先展开/约分，再求导（往往更简单）</td></tr>
+        <tr><td>类型十</td><td>抽象函数、定义式极限</td><td>凑导数定义 \(f'(x_0)=\lim\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}\)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 类型一 -->
+  <h4>类型一　幂函数型（含根式、分式）</h4>
+
+  <div class="box tip">
+    <span class="tag">核心技巧：先化成 \(x^n\) 的形式</span>
+    <p>公式表里只有 \((x^n)'=nx^{n-1}\)，所以遇到根式和分式，<strong>第一步永远是化成幂</strong>：</p>
+    <div class="formula">
+      \[ \sqrt{x}=x^{\frac12},\qquad \sqrt[3]{x}=x^{\frac13},\qquad \frac{1}{x}=x^{-1},\qquad \frac{1}{x^{2}}=x^{-2},\qquad \frac{1}{\sqrt{x}}=x^{-\frac12} \]
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 4（类型一）</span>
+    <p>求下列函数的导数：</p>
+    <p>(1) \(y=x^{3}-2x^{2}+5x-7\)　　(2) \(y=\dfrac{1}{x^{2}}+\sqrt{x}\)　　(3) \(y=x^{2}\cdot\sqrt[3]{x}\)　　(4) \(y=\dfrac{\sqrt{x}}{x}\)</p>
+
+    <h4>解析</h4>
+    <p><strong>(1)</strong> 直接用幂函数公式，逐项求导（常数项 \(-7\) 的导数是 0）：</p>
+    <div class="formula">
+      \[ y' = 3x^{2}-4x+5 \]
+    </div>
+    <p>注意 \(5x\) 的导数是 \(5\)（因为 \(x\) 的导数是 1）。</p>
+
+    <p><strong>(2)</strong> 先化成分数指数幂：</p>
+    <div class="formula">\[ y = x^{-2}+x^{\frac12} \]</div>
+    <p>再逐项求导：</p>
+    <div class="formula">
+      \[ y' = -2x^{-3}+\frac12x^{-\frac12} = \boxed{-\frac{2}{x^{3}}+\frac{1}{2\sqrt{x}}} \]
+    </div>
+    <p>最后一步把负指数改回分式、分数指数改回根式，写成题目的习惯形式。</p>
+
+    <p><strong>(3)</strong> 先合并指数（同底数幂相乘，指数相加）：</p>
+    <div class="formula">\[ y = x^{2}\cdot x^{\frac13} = x^{2+\frac13} = x^{\frac73} \]</div>
+    <p>再求导：</p>
+    <div class="formula">
+      \[ y' = \frac73 x^{\frac73-1} = \frac73 x^{\frac43} \]
+    </div>
+    <p><strong>★ 关键：必须先合并再求导。</strong>如果直接用乘积法则会绕远路。</p>
+
+    <p><strong>(4)</strong> 先化简（同底数幂相除，指数相减）：</p>
+    <div class="formula">\[ y = \frac{x^{\frac12}}{x^{1}} = x^{\frac12-1} = x^{-\frac12} \]</div>
+    <p>再求导：</p>
+    <div class="formula">
+      \[ y' = -\frac12 x^{-\frac32} = \boxed{-\frac{1}{2x\sqrt{x}}} \]
+    </div>
+  </div>
+
+  <!-- 类型二 -->
+  <h4>类型二　指数函数与对数函数</h4>
+
+  <div class="box eg">
+    <span class="tag">例题 5（类型二）</span>
+    <p>求下列函数的导数：</p>
+    <p>(1) \(y=e^{x}+\ln x\)　　(2) \(y=2^{x}+\log_2 x\)　　(3) \(y=3^{x}-e^{x}+\ln 5\)</p>
+
+    <h4>解析</h4>
+    <p><strong>(1)</strong> 逐项求导，注意 \((\ln x)'=\dfrac1x\)：</p>
+    <div class="formula">\[ y' = e^{x}+\frac{1}{x} \]</div>
+
+    <p><strong>(2)</strong> 注意 \((2^x)'=2^x\ln2\)，\((\log_2x)'=\dfrac{1}{x\ln2}\)：</p>
+    <div class="formula">
+      \[ y' = 2^{x}\ln 2 + \frac{1}{x\ln 2} \]
+    </div>
+    <p><strong>两个 \(\ln 2\) 的位置不一样</strong>：指数函数的 \(\ln a\) 在分子上乘，对数函数的 \(\ln a\) 在分母上除。这是最常见的混淆点。</p>
+
+    <p><strong>(3)</strong> 注意 \(\ln5\) 是<strong>常数</strong>（\(\ln5\approx1.609\)），常数的导数是 0：</p>
+    <div class="formula">
+      \[ y' = 3^{x}\ln3 - e^{x} \]
+    </div>
+    <p><strong>★ 易错点：</strong>不要把 \(\ln5\) 当成 \(\ln x\) 来求导。</p>
+  </div>
+
+  <!-- 类型三 -->
+  <h4>类型三　三角函数</h4>
+
+  <div class="box eg">
+    <span class="tag">例题 6（类型三）</span>
+    <p>求下列函数的导数：</p>
+    <p>(1) \(y=\sin x+\cos x\)　　(2) \(y=2\sin x-3\cos x+\tan x\)</p>
+
+    <h4>解析</h4>
+    <p><strong>(1)</strong> 直接逐项求导，注意 \(\cos x\) 的导数是 \(-\sin x\)：</p>
+    <div class="formula">
+      \[ y' = \cos x - \sin x \]
+    </div>
+    <p><strong>★ 别丢负号。</strong>写完之后回头检查一遍：\(\cos\) 求导要变号。</p>
+
+    <p><strong>(2)</strong> 用到例题 3 的结论 \((\tan x)'=\dfrac{1}{\cos^{2}x}\)：</p>
+    <div class="formula">
+      \[ y' = 2\cos x + 3\sin x + \frac{1}{\cos^{2}x} \]
+    </div>
+    <p>注意 \(-3\cos x\) 求导得 \(-3\cdot(-\sin x)=+3\sin x\)，两个负号相乘变正号。</p>
+  </div>
+
+  <!-- 类型四 -->
+  <h4>类型四　乘积形式 \((uv)'=u'v+uv'\)</h4>
+
+  <div class="box tip">
+    <span class="tag">识别与口诀</span>
+    <p>看到两个<strong>不同的函数相乘</strong>（不是同底数幂），就用乘积法则。</p>
+    <p><strong>口诀：前导后不导，加，前不导后导。</strong></p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 7（类型四）</span>
+    <p>求下列函数的导数：</p>
+    <p>(1) \(y=xe^{x}\)　　(2) \(y=x^{2}\ln x\)　　(3) \(y=x\sin x\)　　(4) \(y=(2x+1)(x-3)\)</p>
+
+    <h4>解析</h4>
+    <p><strong>(1)</strong> 取 \(u=x\)，\(v=e^x\)，则 \(u'=1\)，\(v'=e^x\)：</p>
+    <div class="formula">
+      \[ y' = 1\cdot e^{x} + x\cdot e^{x} = e^{x}+xe^{x} = \boxed{(1+x)e^{x}} \]
+    </div>
+    <p>最后一步提取公因式 \(e^x\)，这是标准答案的写法（便于后面判断符号）。</p>
+
+    <p><strong>(2)</strong> 取 \(u=x^2\)，\(v=\ln x\)，则 \(u'=2x\)，\(v'=\dfrac1x\)：</p>
+    <div class="formula">
+      \[ y' = 2x\cdot\ln x + x^{2}\cdot\frac{1}{x} = 2x\ln x + x \]
+    </div>
+    <p>第二项 \(x^2\cdot\dfrac1x\) 要约分成 \(x\)，不要留着。</p>
+
+    <p><strong>(3)</strong> 取 \(u=x\)，\(v=\sin x\)，则 \(u'=1\)，\(v'=\cos x\)：</p>
+    <div class="formula">\[ y' = \sin x + x\cos x \]</div>
+
+    <p><strong>(4)</strong> 取 \(u=2x+1\)，\(v=x-3\)，则 \(u'=2\)，\(v'=1\)：</p>
+    <div class="formula">
+      \[ y' = 2(x-3) + (2x+1)\cdot1 = 2x-6+2x+1 = 4x-5 \]
+    </div>
+    <p><strong>验算（用类型九的方法）：</strong>先展开 \(y=2x^2-5x-3\)，求导得 \(4x-5\) ✓ 一致。</p>
+    <p><strong>小结：</strong>这类题目如果两个因式都很简单，<strong>先展开再求导往往更快</strong>。什么时候用乘积法则？当其中一个因式是 \(e^x\)、\(\ln x\)、\(\sin x\) 这类"展不开"的函数时。</p>
+  </div>
+
+  <!-- 类型五 -->
+  <h4>类型五　商形式 \(\left(\dfrac uv\right)'=\dfrac{u'v-uv'}{v^{2}}\)</h4>
+
+  <div class="box tip">
+    <span class="tag">识别与口诀</span>
+    <p>看到<strong>分式</strong>，且分子分母<strong>都是函数</strong>（不只是常数分母），就用商法则。</p>
+    <p><strong>口诀：分子导乘分母，减，分子乘分母导，除以分母平方。</strong></p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 8（类型五）</span>
+    <p>求下列函数的导数：</p>
+    <p>(1) \(y=\dfrac{\ln x}{x}\)　　(2) \(y=\dfrac{x+1}{x-1}\)　　(3) \(y=\dfrac{e^{x}}{x^{2}+1}\)</p>
+
+    <h4>解析</h4>
+    <p><strong>(1)</strong> 取 \(u=\ln x\)，\(v=x\)，则 \(u'=\dfrac1x\)，\(v'=1\)：</p>
+    <div class="formula">
+      \[ y' = \frac{\dfrac1x\cdot x - \ln x\cdot 1}{x^{2}} = \frac{1-\ln x}{x^{2}} \]
+    </div>
+    <p>分子第一项 \(\dfrac1x\cdot x=1\)，要约干净。</p>
+
+    <p><strong>(2)</strong> 取 \(u=x+1\)，\(v=x-1\)，则 \(u'=1\)，\(v'=1\)：</p>
+    <div class="formula">
+      \[ y' = \frac{1\cdot(x-1) - (x+1)\cdot1}{(x-1)^{2}} = \frac{x-1-x-1}{(x-1)^{2}} = \boxed{-\frac{2}{(x-1)^{2}}} \]
+    </div>
+    <p><strong>验算：</strong>\(y=\dfrac{x+1}{x-1}=\dfrac{(x-1)+2}{x-1}=1+\dfrac{2}{x-1}\)。所以 \(y'=2\cdot\left(-\dfrac{1}{(x-1)^2}\right)=-\dfrac{2}{(x-1)^2}\) ✓ 一致。</p>
+    <p>这个"先拆项再求导"的技巧很实用，遇到分子分母次数相同时可以优先考虑。</p>
+
+    <p><strong>(3)</strong> 取 \(u=e^x\)，\(v=x^2+1\)，则 \(u'=e^x\)，\(v'=2x\)：</p>
+    <div class="formula">
+      \[ y' = \frac{e^{x}(x^{2}+1) - e^{x}\cdot 2x}{(x^{2}+1)^{2}} = \frac{e^{x}\bigl(x^{2}-2x+1\bigr)}{(x^{2}+1)^{2}} = \frac{e^{x}(x-1)^{2}}{(x^{2}+1)^{2}} \]
+    </div>
+    <p>注意分子两项都有 \(e^x\)，要提取出来；\(x^2-2x+1=(x-1)^2\) 是完全平方，要化简到位。</p>
+  </div>
+
+  <!-- 类型六 -->
+  <h4>类型六　复合函数（一层）</h4>
+
+  <div class="box tip">
+    <span class="tag">识别</span>
+    <p>括号里<strong>不是单纯的 \(x\)</strong>，而是一个关于 \(x\) 的式子。例如 \((3x-1)^4\)、\(e^{2x}\)、\(\ln(2x+1)\)。</p>
+    <p><strong>做法：外层导数 × 内层导数。</strong></p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 9（类型六）</span>
+    <p>求下列函数的导数：</p>
+    <p>(1) \(y=(3x-1)^{4}\)　　(2) \(y=e^{2x}\)　　(3) \(y=\ln(2x+1)\)　　(4) \(y=\sin 3x\)　　(5) \(y=\sqrt{2x+1}\)</p>
+
+    <h4>解析</h4>
+    <p><strong>(1)</strong> 内层 \(u=3x-1\)，外层是 \(u^4\)。</p>
+    <div class="formula">
+      \[ y' = \underbrace{4(3x-1)^{3}}_{\text{外层导数}}\times\underbrace{3}_{\text{内层导数}} = 12(3x-1)^{3} \]
+    </div>
+
+    <p><strong>(2)</strong> 内层 \(u=2x\)，外层是 \(e^u\)。</p>
+    <div class="formula">\[ y' = e^{2x}\times 2 = 2e^{2x} \]</div>
+
+    <p><strong>(3)</strong> 内层 \(u=2x+1\)，外层是 \(\ln u\)。</p>
+    <div class="formula">
+      \[ y' = \frac{1}{2x+1}\times 2 = \frac{2}{2x+1} \]
+    </div>
+
+    <p><strong>(4)</strong> 内层 \(u=3x\)，外层是 \(\sin u\)。</p>
+    <div class="formula">\[ y' = \cos 3x\times 3 = 3\cos 3x \]</div>
+
+    <p><strong>(5)</strong> 先化成幂：\(y=(2x+1)^{\frac12}\)。外层是 \(u^{\frac12}\)。</p>
+    <div class="formula">
+      \[ y' = \frac12(2x+1)^{-\frac12}\times 2 = (2x+1)^{-\frac12} = \frac{1}{\sqrt{2x+1}} \]
+    </div>
+    <p>注意这里的 \(2\) 和 \(\dfrac12\) 正好约掉。</p>
+  </div>
+
+  <!-- 类型七 -->
+  <h4>类型七　复合函数（多层嵌套）</h4>
+
+  <div class="box tip">
+    <span class="tag">识别</span>
+    <p>套了<strong>两层以上</strong>。例如 \(e^{\sin x}\)（\(e\) 套 \(\sin\) 套 \(x\)）、\(\sin^2 2x\)（平方套 \(\sin\) 套 \(2x\)）。</p>
+    <p><strong>做法：由外向内，一层一层求，每层乘起来。</strong></p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 10（类型七）</span>
+    <p>求下列函数的导数：</p>
+    <p>(1) \(y=e^{\sin x}\)　　(2) \(y=\ln(\cos x)\)　　(3) \(y=(x^{2}+1)^{10}\)　　(4) \(y=\sin^{2}2x\)　　(5) \(y=\ln(\ln x)\)</p>
+
+    <h4>解析</h4>
+    <p><strong>(1)</strong> 分三层看：最外层 \(e^{u}\)，中间层 \(u=\sin x\)。</p>
+    <div class="formula">
+      \[ y' = e^{\sin x}\times\cos x \]
+    </div>
+    <p>（外层 \(e^u\) 的导数是 \(e^u\) 本身，内层 \(\sin x\) 的导数是 \(\cos x\)。）</p>
+
+    <p><strong>(2)</strong> 外层 \(\ln u\)，内层 \(u=\cos x\)。</p>
+    <div class="formula">
+      \[ y' = \frac{1}{\cos x}\times(-\sin x) = -\frac{\sin x}{\cos x} = -\tan x \]
+    </div>
+    <p><strong>★ 别丢内层导数里的负号。</strong>\(\cos x\) 求导是 \(-\sin x\)。</p>
+
+    <p><strong>(3)</strong> 外层 \(u^{10}\)，内层 \(u=x^2+1\)。</p>
+    <div class="formula">
+      \[ y' = 10(x^{2}+1)^{9}\times 2x = 20x(x^{2}+1)^{9} \]
+    </div>
+
+    <p><strong>(4)</strong> 把 \(\sin^2 2x\) 理解成 \((\sin 2x)^2\)，分三层：最外是平方，中间是 \(\sin\)，最内是 \(2x\)。</p>
+    <div class="formula">
+      \[ y' = \underbrace{2\sin 2x}_{\text{平方层}}\times\underbrace{\cos 2x}_{\sin\text{层}}\times\underbrace{2}_{2x\text{层}} = 4\sin 2x\cos 2x \]
+    </div>
+    <p>再用二倍角公式 \(2\sin\theta\cos\theta=\sin2\theta\) 化简：</p>
+    <div class="formula">\[ y' = 2\sin 4x \]</div>
+    <p><strong>验算：</strong>换一种思路，\(\sin^2 2x=\dfrac{1-\cos4x}{2}\)，求导得 \(\dfrac{4\sin4x}{2}=2\sin4x\) ✓ 一致。</p>
+
+    <p><strong>(5)</strong> 分三层：外层 \(\ln u\)，中间 \(u=\ln x\)。</p>
+    <div class="formula">
+      \[ y' = \frac{1}{\ln x}\times\frac{1}{x} = \frac{1}{x\ln x} \]
+    </div>
+    <p><strong>注意：</strong>内层是 \(\ln x\)，它的导数是 \(\dfrac1x\)，不是 \(1\)。这里最容易错。</p>
+  </div>
+
+  <!-- 类型八 -->
+  <h4>类型八　乘积/商 与 复合 的混合</h4>
+
+  <div class="box tip">
+    <span class="tag">解题策略：先分主结构，再处理局部</span>
+    <ol class="steps">
+      <li>先看整体是<strong>乘积</strong>还是<strong>商</strong>——这决定用哪个法则（主结构）。</li>
+      <li>套主法则时，其中的 \(u'\) 或 \(v'\) 如果本身是复合函数，<strong>在那一块内部再用链式法则</strong>。</li>
+      <li>最后合并化简。</li>
+    </ol>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 11（类型八）</span>
+    <p>求下列函数的导数：</p>
+    <p>(1) \(y=xe^{-x}\)　　(2) \(y=x^{2}\sin 2x\)　　(3) \(y=\dfrac{e^{x}}{x}\)　　(4) \(y=\dfrac{x+1}{e^{x}}\)　　(5) \(y=\dfrac{\ln x}{x+1}\)</p>
+
+    <h4>解析</h4>
+    <p><strong>(1)</strong> 主结构是<strong>乘积</strong>。取 \(u=x\)，\(v=e^{-x}\)。注意 \(v=e^{-x}\) 是复合函数，\(v'=e^{-x}\cdot(-1)=-e^{-x}\)。</p>
+    <div class="formula">
+      \[ y' = 1\cdot e^{-x} + x\cdot(-e^{-x}) = e^{-x}-xe^{-x} = \boxed{e^{-x}(1-x)} \]
+    </div>
+
+    <p><strong>(2)</strong> 主结构是<strong>乘积</strong>。取 \(u=x^2\)，\(v=\sin 2x\)。这里 \(v'=\cos2x\cdot2=2\cos2x\)。</p>
+    <div class="formula">
+      \[ y' = 2x\sin 2x + x^{2}\cdot 2\cos 2x = 2x\sin 2x + 2x^{2}\cos 2x \]
+    </div>
+    <p>可以提取 \(2x\)：\(y'=2x(\sin2x+x\cos2x)\)。</p>
+
+    <p><strong>(3)</strong> 主结构是<strong>商</strong>。取 \(u=e^x\)，\(v=x\)。</p>
+    <div class="formula">
+      \[ y' = \frac{e^{x}\cdot x - e^{x}\cdot1}{x^{2}} = \frac{e^{x}(x-1)}{x^{2}} \]
+    </div>
+
+    <p><strong>(4)</strong> 主结构是<strong>商</strong>。取 \(u=x+1\)，\(v=e^x\)，则 \(u'=1\)，\(v'=e^x\)。</p>
+    <div class="formula">
+      \[ y' = \frac{1\cdot e^{x} - (x+1)\cdot e^{x}}{(e^{x})^{2}} = \frac{e^{x}\bigl[1-(x+1)\bigr]}{e^{2x}} = \frac{e^{x}(-x)}{e^{2x}} = \boxed{-\frac{x}{e^{x}}} \]
+    </div>
+    <p>注意 \((e^x)^2=e^{2x}\)，然后约分得 \(-\dfrac{x}{e^{x}}\)。别停在 \(\dfrac{-xe^x}{e^{2x}}\)。</p>
+
+    <p><strong>(5)</strong> 主结构是<strong>商</strong>。取 \(u=\ln x\)，\(v=x+1\)，则 \(u'=\dfrac1x\)，\(v'=1\)。</p>
+    <div class="formula">
+      \[ y' = \frac{\dfrac1x\cdot(x+1) - \ln x\cdot1}{(x+1)^{2}} = \frac{\dfrac{x+1}{x}-\ln x}{(x+1)^{2}} \]
+    </div>
+    <p>分子通分（乘 \(x\)）整理成更清爽的形式：</p>
+    <div class="formula">
+      \[ y' = \frac{x+1-x\ln x}{x(x+1)^{2}} \]
+    </div>
+  </div>
+
+  <!-- 类型九 -->
+  <h4>类型九　先化简再求导</h4>
+
+  <div class="box tip">
+    <span class="tag">什么时候考虑先化简</span>
+    <ul>
+      <li>乘积可以<strong>展开</strong>（如 \((x+1)^2\)、\((2x+1)(x-3)\)）</li>
+      <li>分式可以<strong>约分</strong>（如 \(\dfrac{x^2-1}{x+1}\)）</li>
+      <li>分式可以<strong>拆项</strong>（如 \(\dfrac{x+1}{x-1}=1+\dfrac{2}{x-1}\)）</li>
+      <li>同底数幂可以<strong>合并</strong>（如 \(x^2\cdot\sqrt[3]{x}\)）</li>
+    </ul>
+    <p><strong>化简之后再求导，往往比硬套法则简单得多，也不容易算错。</strong></p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 12（类型九）</span>
+    <p>求下列函数的导数：</p>
+    <p>(1) \(y=(x+1)^{2}\)　　(2) \(y=x^{2}(x-1)\)　　(3) \(y=(1+\sqrt{x})^{2}\)　　(4) \(y=\dfrac{x^{2}-1}{x+1}\)</p>
+
+    <h4>解析</h4>
+    <p><strong>(1)</strong> 展开：\(y=x^2+2x+1\)，所以</p>
+    <div class="formula">\[ y' = 2x+2 \]</div>
+    <p>（如果用链式法则：\(y'=2(x+1)\cdot1=2x+2\)，结果一样。两种都可以。）</p>
+
+    <p><strong>(2)</strong> 展开：\(y=x^3-x^2\)，所以</p>
+    <div class="formula">\[ y' = 3x^{2}-2x \]</div>
+    <p><strong>对比：</strong>如果用乘积法则，要算 \(2x\cdot(x-1)+x^2\cdot1=2x^2-2x+x^2=3x^2-2x\)，多绕了几步。所以<strong>能展开就展开</strong>。</p>
+
+    <p><strong>(3)</strong> 用完全平方展开：</p>
+    <div class="formula">\[ y = 1+2\sqrt{x}+x = 1+2x^{\frac12}+x \]</div>
+    <div class="formula">
+      \[ y' = 2\cdot\frac12 x^{-\frac12}+1 = \frac{1}{\sqrt{x}}+1 \]
+    </div>
+
+    <p><strong>(4)</strong> <strong>先约分</strong>。注意 \(x^2-1=(x+1)(x-1)\)：</p>
+    <div class="formula">\[ y = \frac{(x+1)(x-1)}{x+1} = x-1 \qquad (x\ne-1) \]</div>
+    <p>所以</p>
+    <div class="formula">\[ y' = 1 \]</div>
+    <p><strong>★ 如果硬套商法则：</strong>\(y'=\dfrac{2x(x+1)-(x^2-1)}{(x+1)^2}=\dfrac{2x^2+2x-x^2+1}{(x+1)^2}=\dfrac{x^2+2x+1}{(x+1)^2}=\dfrac{(x+1)^2}{(x+1)^2}=1\)。结果一样，但多花了好几倍的时间。</p>
+    <p><strong>结论：动笔前先扫一眼能不能化简。</strong></p>
+  </div>
+
+  <!-- 类型十 -->
+  <h4>类型十　抽象函数与导数定义式</h4>
+
+  <div class="box tip">
+    <span class="tag">唯一方法：凑定义</span>
+    <p>这类题不给你具体的函数表达式，只给你 \(f'(x_0)\) 的值，让你求某个极限式的值。</p>
+    <p><strong>思路：把要求的式子变形，凑成 \(\dfrac{f(x_0+\Delta)-f(x_0)}{\Delta}\) 的标准形状。</strong></p>
+    <p>标准形状记住这一条：</p>
+    <div class="formula">
+      \[ \lim_{\Delta x\to0}\frac{f(x_0+k\Delta x)-f(x_0)}{\Delta x} = k\,f'(x_0)\qquad(k\ne0\ \text{为常数}) \]
+    </div>
+    <p><strong>为什么是 \(k\) 倍？</strong>因为分母是 \(\Delta x\)，而分子里自变量实际变了 \(k\Delta x\)。要凑成标准定义，分母得配成 \(k\Delta x\)，所以外面要补一个 \(k\)。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导：为什么等于 \(kf'(x_0)\)</span>
+    <p>目标是凑出 \(\dfrac{f(x_0+\Delta)-f(x_0)}{\Delta}\) 的形式。现在的分母是 \(\Delta x\)，但分子里加的是 \(k\Delta x\)。<strong>凑法：分子分母同时配 \(k\)。</strong></p>
+    <div class="formula">
+      \[
+      \lim_{\Delta x\to0}\frac{f(x_0+k\Delta x)-f(x_0)}{\Delta x}
+      = \lim_{\Delta x\to0}\left[\,k\cdot\frac{f(x_0+k\Delta x)-f(x_0)}{k\Delta x}\,\right]
+      \]
+    </div>
+    <p>验证一下：\(\dfrac{k}{k\Delta x}=\dfrac{1}{\Delta x}\) ✓，式子没变。</p>
+    <p>现在令 \(h=k\Delta x\)。因为 \(k\) 是非零常数，所以 \(\Delta x\to0\) 等价于 \(h\to0\)。于是方括号里的部分变成：</p>
+    <div class="formula">
+      \[ \lim_{h\to0}\frac{f(x_0+h)-f(x_0)}{h} = f'(x_0) \]
+    </div>
+    <p>所以原式 \(=k\cdot f'(x_0)\)。∎</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 13（类型十）</span>
+    <p>已知 \(f'(x_0)=2\)，求下列极限的值：</p>
+    <p>(1) \(\lim\limits_{\Delta x\to0}\dfrac{f(x_0+3\Delta x)-f(x_0)}{\Delta x}\)　　(2) \(\lim\limits_{h\to0}\dfrac{f(x_0+h)-f(x_0-h)}{2h}\)</p>
+
+    <h4>解析</h4>
+    <p><strong>(1)</strong> 对照公式，这里 \(k=3\)，所以</p>
+    <div class="formula">
+      \[ \lim_{\Delta x\to0}\frac{f(x_0+3\Delta x)-f(x_0)}{\Delta x} = 3f'(x_0) = 3\times2 = \boxed{6} \]
+    </div>
+
+    <p><strong>(2)</strong> 这个式子是"两头都动"的形式，需要<strong>拆成两半</strong>。技巧是<strong>在分子里插入 \(f(x_0)\)</strong>：</p>
+    <div class="formula">
+      \[ f(x_0+h)-f(x_0-h) = \bigl[f(x_0+h)-f(x_0)\bigr] + \bigl[f(x_0)-f(x_0-h)\bigr] \]
+    </div>
+    <p>所以原式拆成：</p>
+    <div class="formula">
+      \[
+      \frac12\left[\underbrace{\frac{f(x_0+h)-f(x_0)}{h}}_{\to f'(x_0)} + \underbrace{\frac{f(x_0)-f(x_0-h)}{h}}_{\to f'(x_0)}\right]
+      \]
+    </div>
+    <p>第二个分式再凑一下：\(f(x_0)-f(x_0-h)=f\bigl((x_0-h)+h\bigr)-f(x_0-h)\)，所以它也趋于 \(f'(x_0)\)。</p>
+    <div class="formula">
+      \[ \text{原式} = \frac12\bigl[f'(x_0)+f'(x_0)\bigr] = f'(x_0) = \boxed{2} \]
+    </div>
+    <p><strong>★ 注意：</strong>这个结果等于 \(f'(x_0)\)，<strong>不是</strong> \(2f'(x_0)\)。分母是 \(2h\) 而不是 \(h\)，别被数字骗了。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 14（含参求值）</span>
+    <p>已知 \(f(x)=x^{3}+ax^{2}\)，且 \(f'(1)=5\)，求 \(a\) 的值。</p>
+    <h4>解析</h4>
+    <p><strong>第一步：求导函数。</strong></p>
+    <div class="formula">\[ f'(x) = 3x^{2}+2ax \]</div>
+    <p><strong>第二步：代入 \(x=1\)。</strong></p>
+    <div class="formula">\[ f'(1) = 3+2a \]</div>
+    <p><strong>第三步：由 \(f'(1)=5\) 解方程。</strong></p>
+    <div class="formula">\[ 3+2a=5 \quad\Longrightarrow\quad 2a=2 \quad\Longrightarrow\quad \boxed{a=1} \]</div>
+  </div>
+
+  <h3 id="ch2-5">2.5　求导易错点汇总</h3>
+  <div class="box warn">
+    <span class="tag">求导易错点 · 8 条</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>#</th><th>错误写法</th><th>正确写法 / 说明</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>\((uv)'=u'v'\)</td><td>应为 \(u'v+uv'\)</td></tr>
+          <tr><td>2</td><td>\(\left(\dfrac uv\right)'=\dfrac{u'v+uv'}{v^{2}}\)</td><td>中间是<strong>减号</strong>：\(\dfrac{u'v-uv'}{v^2}\)</td></tr>
+          <tr><td>3</td><td>\(\left(\dfrac uv\right)'=\dfrac{u'v-uv'}{v}\)</td><td>分母是 \(v^{2}\)，不是 \(v\)</td></tr>
+          <tr><td>4</td><td>\((\cos x)'=\sin x\)</td><td>应为 \(-\sin x\)，<strong>负号不能丢</strong></td></tr>
+          <tr><td>5</td><td>\((\log_a x)'=\dfrac{1}{x}\)</td><td>应为 \(\dfrac{1}{x\ln a}\)，比 \(\ln x\) 多除 \(\ln a\)</td></tr>
+          <tr><td>6</td><td>\((3x-1)^{4}\) 求导得 \(4(3x-1)^{3}\)</td><td>漏乘内层导数，应为 \(12(3x-1)^{3}\)</td></tr>
+          <tr><td>7</td><td>\((e^{-x})'=e^{-x}\)</td><td>漏乘内层导数 \((-1)\)，应为 \(-e^{-x}\)</td></tr>
+          <tr><td>8</td><td>见到分式就套商法则</td><td>先看能不能约分、拆项、展开，<strong>能化简就化简</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ==================== 第 3 章 ==================== -->
+  <h2 id="ch3"><span class="num">3</span>导数的应用（一）：单调性</h2>
+  <p class="lead">这是导数大题的第一问，套路极其固定，必须练成条件反射。</p>
+
+  <h3 id="ch3-1">3.1　核心定理</h3>
+
+  <div class="box def">
+    <span class="tag">定理</span>
+    <p>设函数 \(f(x)\) 在区间 \((a,b)\) 内可导：</p>
+    <ul>
+      <li>若对任意 \(x\in(a,b)\) 都有 \(f'(x)>0\)，则 \(f(x)\) 在 \((a,b)\) 上<strong>单调递增</strong>；</li>
+      <li>若对任意 \(x\in(a,b)\) 都有 \(f'(x)&lt;0\)，则 \(f(x)\) 在 \((a,b)\) 上<strong>单调递减</strong>。</li>
+    </ul>
+    <p>反过来：若 \(f(x)\) 在 \((a,b)\) 上单调递增，则 \(f'(x)\ge0\)；单调递减则 \(f'(x)\le0\)。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">为什么导数正负能决定增减（直观论证）</span>
+    <p><strong>第一步：</strong>\(f'(x)>0\) 意味着在 \(x\) 处，曲线切线的斜率是正的。斜率为正的切线是"从左下往右上"的，所以曲线在这一段是<strong>往上走</strong>的。</p>
+    <p><strong>第二步：</strong>既然每一点的切线都往上走，那整条曲线就是一路上升——这正是"单调递增"的含义。</p>
+    <p><strong>用定义严格说：</strong>取 \(x_1&lt;x_2\)，由拉格朗日中值定理（高中不要求，但可以帮助理解）存在 \(\xi\in(x_1,x_2)\) 使</p>
+    <div class="formula">\[ f(x_2)-f(x_1) = f'(\xi)(x_2-x_1) \]</div>
+    <p>因为 \(x_2-x_1>0\) 且 \(f'(\xi)>0\)，所以 \(f(x_2)-f(x_1)>0\)，即 \(f(x_2)>f(x_1)\)。这就证明了递增。∎</p>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">两个必须注意的细节</span>
+    <ul>
+      <li><strong>单调区间不能用"并集"连接。</strong>比如递增区间是 \((0,1)\) 和 \((2,3)\)，要写成"\((0,1)\) 和 \((2,3)\)"，或者用逗号隔开，<strong>不能</strong>写成 \((0,1)\cup(2,3)\)。</li>
+      <li><strong>先求定义域，再求导。</strong>这是最容易漏的一步。含 \(\ln x\) 的函数定义域是 \(x>0\)，含分母的函数要去掉分母为 0 的点。</li>
+    </ul>
+  </div>
+
+  <h3 id="ch3-2">3.2　求单调区间的标准五步</h3>
+
+  <div class="box proof">
+    <span class="tag">标准步骤（背下来）</span>
+    <ol class="steps">
+      <li><strong>求定义域。</strong>这是第一步，也是必写的一步。</li>
+      <li><strong>求导函数 \(f'(x)\)。</strong>注意化简，尽量写成<strong>因式分解</strong>或<strong>通分</strong>的形式，方便判断符号。</li>
+      <li><strong>令 \(f'(x)=0\)，求出所有根。</strong></li>
+      <li><strong>用这些根把定义域切成若干区间</strong>，在每个区间上判断 \(f'(x)\) 的<strong>正负号</strong>。</li>
+      <li><strong>写出结论：</strong>\(f'(x)>0\) 的区间是递增区间，\(f'(x)&lt;0\) 的区间是递减区间。</li>
+    </ol>
+    <p><strong>关于第 4 步的技巧：</strong>判断符号时，把 \(f'(x)\) 写成因式相乘的形式最方便——每个因式的符号单独看，再数负号的个数（奇数个负号则整体为负）。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 15（求单调区间的完整示范）</span>
+    <p>求函数 \(f(x)=x^{3}-3x^{2}+1\) 的单调区间。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：定义域。</strong>\(f(x)\) 是多项式，定义域为 \(\mathbb{R}\)。</p>
+
+    <p><strong>第二步：求导并因式分解。</strong></p>
+    <div class="formula">
+      \[ f'(x) = 3x^{2}-6x = 3x(x-2) \]
+    </div>
+    <p>写成因式相乘的形式，符号就好判断了。</p>
+
+    <p><strong>第三步：令 \(f'(x)=0\)。</strong></p>
+    <div class="formula">\[ 3x(x-2)=0 \quad\Longrightarrow\quad x=0\ \ \text{或}\ \ x=2 \]</div>
+
+    <p><strong>第四步：列表判断符号。</strong>用 0 和 2 把 \(\mathbb{R}\) 分成三段：</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>区间</th><th>\(3x\)</th><th>\(x-2\)</th><th>\(f'(x)=3x(x-2)\)</th><th>\(f(x)\)</th></tr></thead>
+        <tbody>
+          <tr><td>\((-\infty,\,0)\)</td><td>负</td><td>负</td><td>正（负×负）</td><td>递增 ↗</td></tr>
+          <tr><td>\((0,\,2)\)</td><td>正</td><td>负</td><td>负</td><td>递减 ↘</td></tr>
+          <tr><td>\((2,\,+\infty)\)</td><td>正</td><td>正</td><td>正</td><td>递增 ↗</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>验算：</strong>取 \(x=-1\)（在 \((-\infty,0)\) 内），\(f'(-1)=3\times(-1)\times(-3)=9>0\) ✓；取 \(x=1\)，\(f'(1)=3\times1\times(-1)=-3&lt;0\) ✓；取 \(x=3\)，\(f'(3)=3\times3\times1=9>0\) ✓。</p>
+
+    <p><strong>第五步：写结论。</strong></p>
+    <div class="formula">
+      \[ \boxed{\ f(x)\text{ 的递增区间为 }(-\infty,0)\text{ 和 }(2,+\infty);\quad\text{递减区间为 }(0,2)\ } \]
+    </div>
+    <p><strong>★ 注意写法：</strong>两个递增区间之间用"和"字（或逗号），<strong>不能用 \(\cup\) 并起来</strong>。</p>
+  </div>
+
+  <h3 id="ch3-3">3.3　含参数的单调性讨论</h3>
+
+  <p>这是导数大题中最常见的"提高一步"的考法。核心是：<strong>根的位置依赖于参数，所以要按参数分类讨论。</strong></p>
+
+  <div class="box eg">
+    <span class="tag">例题 16（含参讨论的完整示范）</span>
+    <p>讨论函数 \(f(x)=\ln x-ax\)（\(a\in\mathbb{R}\)）的单调性。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：定义域。</strong>因为有 \(\ln x\)，所以定义域是 \((0,+\infty)\)。</p>
+
+    <p><strong>第二步：求导并通分。</strong></p>
+    <div class="formula">
+      \[ f'(x) = \frac1x - a = \frac{1-ax}{x} \]
+    </div>
+    <p>通分成一个分式，好处是<strong>分母 \(x>0\) 恒成立</strong>，所以 \(f'(x)\) 的符号完全由<strong>分子 \(1-ax\)</strong> 决定。</p>
+
+    <p><strong>第三步：分析分子的符号。</strong>分子 \(1-ax\) 是关于 \(x\) 的一次式，它的走向取决于 \(a\) 的符号，所以要<strong>分三类</strong>：</p>
+
+    <p><strong>情况一：\(a\le0\)。</strong>此时 \(-ax\ge0\)，所以 \(1-ax\ge1>0\) 恒成立。即 \(f'(x)>0\) 对一切 \(x>0\) 成立。</p>
+    <p>结论：\(f(x)\) 在 \((0,+\infty)\) 上<strong>单调递增</strong>。</p>
+
+    <p><strong>情况二：\(a>0\)。</strong>此时令 \(1-ax=0\) 得</p>
+    <div class="formula">\[ x=\frac1a \]</div>
+    <p>因为 \(a>0\)，所以 \(\dfrac1a>0\)，这个根在定义域内。分两段看：</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>区间</th><th>\(x\)</th><th>\(1-ax\)</th><th>\(f'(x)\)</th><th>\(f(x)\)</th></tr></thead>
+        <tbody>
+          <tr><td>\(\left(0,\dfrac1a\right)\)</td><td>正</td><td>正</td><td>正</td><td>递增 ↗</td></tr>
+          <tr><td>\(\left(\dfrac1a,+\infty\right)\)</td><td>正</td><td>负</td><td>负</td><td>递减 ↘</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>第四步：汇总结论。</strong></p>
+    <div class="formula">
+      \[
+      \boxed{
+      \begin{aligned}
+      &\text{当 }a\le0\text{ 时：}f(x)\text{ 在 }(0,+\infty)\text{ 上单调递增;} \\[4pt]
+      &\text{当 }a>0\text{ 时：}f(x)\text{ 在}\left(0,\tfrac1a\right)\text{上单调递增，在}\left(\tfrac1a,+\infty\right)\text{上单调递减。}
+      \end{aligned}}
+      \]
+    </div>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">含参讨论的通用思路</span>
+      <p>分类的标准只有一个：<strong>让 \(f'(x)=0\) 的根的位置发生变化。</strong></p>
+      <ol>
+        <li>如果 \(f'(x)=0\) 是<strong>一次方程</strong>，看 \(x^0\) 项的系数——决定"有没有根"和"根在哪一侧"。</li>
+        <li>如果 \(f'(x)=0\) 是<strong>二次方程</strong>，看判别式 \(\Delta\)（决定有没有根）、开口方向（决定正负分布）、根的大小关系（决定区间顺序）。</li>
+        <li>根如果<strong>不在定义域内</strong>，要单独说明这种情况。</li>
+      </ol>
+    </div>
+  </div>
+
+  <h3 id="ch3-4">3.4　已知单调性求参数范围</h3>
+
+  <div class="box proof">
+    <span class="tag">核心转化</span>
+    <p>"\(f(x)\) 在区间 \(D\) 上单调递增"等价于</p>
+    <div class="formula">\[ f'(x)\ge0\ \text{ 对一切 }x\in D\text{ 恒成立} \]</div>
+    <p>于是就转化为第 5 章的<strong>恒成立问题</strong>——把参数分离出来，求另一边函数的最值。</p>
+    <p><strong>注意：</strong>这里用"\(\ge\)"而不是"\(>\)"，因为单调递增允许个别点导数为 0（比如 \(y=x^3\) 在 \(x=0\) 处导数为 0，但整体是递增的）。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 17</span>
+    <p>已知 \(f(x)=x^{3}-ax\) 在 \([1,+\infty)\) 上单调递增，求 \(a\) 的取值范围。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：转化为恒成立。</strong>先求导：</p>
+    <div class="formula">\[ f'(x) = 3x^{2}-a \]</div>
+    <p>要求 \(f'(x)\ge0\) 对一切 \(x\ge1\) 恒成立，即</p>
+    <div class="formula">\[ 3x^{2}-a\ge0 \quad\Longrightarrow\quad a\le 3x^{2} \]</div>
+
+    <p><strong>第二步：求右边的最小值。</strong>\(x\ge1\) 时，\(3x^2\) 的最小值在 \(x=1\) 处取到：</p>
+    <div class="formula">\[ \min_{x\ge1}\left(3x^{2}\right) = 3\times1^{2} = 3 \]</div>
+
+    <p><strong>第三步：下结论。</strong>要 \(a\le3x^2\) 对一切 \(x\ge1\) 成立，只需 \(a\) 不超过右边的最小值：</p>
+    <div class="formula">\[ \boxed{\,a\le3\,} \]</div>
+
+    <p><strong>验算：</strong>取 \(a=3\)，则 \(f'(x)=3x^2-3=3(x-1)(x+1)\)。当 \(x\ge1\) 时，\(x-1\ge0\)，\(x+1>0\)，所以 \(f'(x)\ge0\) ✓，且在 \(x=1\) 处取等号，不影响递增性。</p>
+  </div>
+
+  <!-- ==================== 第 4 章 ==================== -->
+  <h2 id="ch4"><span class="num">4</span>导数的应用（二）：极值与最值</h2>
+  <p class="lead">极值是"局部概念"，最值是"整体概念"，这两个词的区别必须先搞清楚。</p>
+
+  <h3 id="ch4-1">4.1　极值的定义</h3>
+
+  <div class="box def">
+    <span class="tag">定义</span>
+    <p>设函数 \(f(x)\) 在点 \(x_0\) 附近有定义：</p>
+    <ul>
+      <li>若 \(x_0\) 附近的点都满足 \(f(x)&lt;f(x_0)\)，则 \(f(x_0)\) 叫做<strong>极大值</strong>，\(x_0\) 叫<strong>极大值点</strong>；</li>
+      <li>若 \(x_0\) 附近的点都满足 \(f(x)>f(x_0)\)，则 \(f(x_0)\) 叫做<strong>极小值</strong>，\(x_0\) 叫<strong>极小值点</strong>。</li>
+    </ul>
+    <p>极大值和极小值统称<strong>极值</strong>。</p>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">判断极值的口诀（看导数变号方向）</span>
+    <div class="tbl-wrap" style="margin:0;">
+      <table>
+        <thead><tr><th>\(f'(x)\) 在 \(x_0\) 两侧的符号</th><th>结论</th><th>图像</th></tr></thead>
+        <tbody>
+          <tr><td>左<strong>正</strong>右<strong>负</strong>（先增后减）</td><td>\(x_0\) 是<strong>极大值点</strong>，\(f(x_0)\) 是极大值</td><td>山顶 ⛰</td></tr>
+          <tr><td>左<strong>负</strong>右<strong>正</strong>（先减后增）</td><td>\(x_0\) 是<strong>极小值点</strong>，\(f(x_0)\) 是极小值</td><td>谷底 🕳</td></tr>
+          <tr><td>两侧<strong>同号</strong></td><td>\(x_0\) <strong>不是</strong>极值点</td><td>上坡路 / 下坡路</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">★ 最重要的一个反例</span>
+    <p><strong>\(f'(x_0)=0\) 不能推出 \(x_0\) 是极值点。</strong></p>
+    <p>反例：\(f(x)=x^3\)，则 \(f'(x)=3x^2\)，\(f'(0)=0\)。但在 \(x=0\) 两侧 \(f'(x)=3x^2\) <strong>都是正的</strong>，函数一直递增，所以 \(x=0\) <strong>不是</strong>极值点。</p>
+    <p>所以判断极值必须看<strong>导数是否变号</strong>，不能只看导数是否为零。</p>
+  </div>
+
+  <h3 id="ch4-2">4.2　求极值的标准步骤</h3>
+  <div class="box proof">
+    <span class="tag">标准步骤</span>
+    <ol class="steps">
+      <li>求<strong>定义域</strong>。</li>
+      <li>求导 \(f'(x)\)，并因式分解。</li>
+      <li>令 \(f'(x)=0\)，求出所有根（<strong>只保留在定义域内的根</strong>）。</li>
+      <li><strong>列表</strong>：列出各区间上 \(f'(x)\) 的符号和 \(f(x)\) 的增减性。</li>
+      <li>根据"左正右负为极大，左负右正为极小"写出结论。</li>
+    </ol>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 18</span>
+    <p>求函数 \(f(x)=x^{3}-3x^{2}+1\) 的极值。</p>
+
+    <h4>解析</h4>
+    <p>沿用例题 15 的结果：定义域 \(\mathbb{R}\)，\(f'(x)=3x(x-2)\)，根为 \(x=0\) 和 \(x=2\)。</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>\(x\)</th><th>\((-\infty,0)\)</th><th>\(0\)</th><th>\((0,2)\)</th><th>\(2\)</th><th>\((2,+\infty)\)</th></tr></thead>
+        <tbody>
+          <tr><td>\(f'(x)\)</td><td>+</td><td>0</td><td>−</td><td>0</td><td>+</td></tr>
+          <tr><td>\(f(x)\)</td><td>↗</td><td>极大值</td><td>↘</td><td>极小值</td><td>↗</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>在 \(x=0\) 处，导数<strong>左正右负</strong>，所以是极大值点：</p>
+    <div class="formula">\[ f(0) = 0-0+1 = 1 \]</div>
+    <p>在 \(x=2\) 处，导数<strong>左负右正</strong>，所以是极小值点：</p>
+    <div class="formula">\[ f(2) = 8-12+1 = -3 \]</div>
+    <p><strong>答案：</strong>\(\boxed{\text{极大值为 }1\text{（在 }x=0\text{ 处），极小值为 }-3\text{（在 }x=2\text{ 处）}}\)</p>
+    <p><strong>★ 注意措辞：</strong>极值是一个<strong>数</strong>，极值点是一个<strong>坐标值 \(x_0\)</strong>。题目问"极值"就答数，问"极值点"就答 \(x=0\) 和 \(x=2\)。</p>
+  </div>
+
+  <h3 id="ch4-3">4.3　闭区间上的最值</h3>
+
+  <div class="box def">
+    <span class="tag">关键区别</span>
+    <ul>
+      <li><strong>极值</strong>是<strong>局部</strong>概念：只和附近的点比较。一个函数可以有多个极大值。</li>
+      <li><strong>最值</strong>是<strong>整体</strong>概念：和区间内所有的点比较。最大值、最小值各只有一个（如果存在）。</li>
+    </ul>
+    <p>所以<strong>极大值不一定是最大值</strong>，<strong>极小值也不一定是最小值</strong>。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">求闭区间 \([a,b]\) 上最值的标准步骤</span>
+    <ol class="steps">
+      <li>求 \(f'(x)\)，令 \(f'(x)=0\)，求出<strong>落在 \([a,b]\) 内</strong>的所有根。</li>
+      <li>算出这些根处的函数值 \(f(x_1),f(x_2),\dots\)。</li>
+      <li>算出两个<strong>端点值</strong> \(f(a)\) 和 \(f(b)\)。</li>
+      <li>把上面所有值<strong>放在一起比大小</strong>，最大的就是最大值，最小的就是最小值。</li>
+    </ol>
+    <p><strong>为什么要算端点？</strong>因为在闭区间上，最值可能出现在端点（端点处切线不一定是水平的，但函数值可能是最大的）。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 19</span>
+    <p>求 \(f(x)=x^{3}-3x^{2}+1\) 在 \([-1,3]\) 上的最大值和最小值。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：求导并找区间内的驻点。</strong>\(f'(x)=3x(x-2)\)，根为 \(x=0\) 和 \(x=2\)。<strong>两个根都在 \([-1,3]\) 内</strong>，都要算。</p>
+
+    <p><strong>第二步：算出所有候选点的函数值。</strong></p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>\(x\)</th><th>\(-1\)（端点）</th><th>\(0\)（驻点）</th><th>\(2\)（驻点）</th><th>\(3\)（端点）</th></tr></thead>
+        <tbody>
+          <tr><td>\(f(x)\)</td><td>\(-1-3+1=\mathbf{-3}\)</td><td>\(\mathbf{1}\)</td><td>\(8-12+1=\mathbf{-3}\)</td><td>\(27-27+1=\mathbf{1}\)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>第三步：比大小。</strong>四个值分别是 \(-3,\ 1,\ -3,\ 1\)。最大的是 1，最小的是 \(-3\)。</p>
+    <div class="formula">
+      \[ \boxed{\ \text{最大值为 }1\text{（在 }x=0\text{ 和 }x=3\text{ 处取得），最小值为 }-3\text{（在 }x=-1\text{ 和 }x=2\text{ 处取得）}\ } \]
+    </div>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">这个例子说明什么</span>
+      <p>注意：<strong>极小值 \(f(2)=-3\) 恰好也是整个区间上的最小值</strong>，而<strong>最大值 1 出现在端点 \(x=3\) 处</strong>（\(x=0\) 处的极大值也是 1，两者并列）。</p>
+      <p>如果只算极值不算端点，就会<strong>漏掉 \(x=3\) 这个最大值点</strong>（虽然本题数值恰好相同，但换一道题就会出错）。</p>
+      <p><strong>所以：闭区间求最值，端点值一定要算。</strong></p>
+    </div>
+  </div>
+
+  <!-- ==================== 第 5 章 ==================== -->
+  <h2 id="ch5"><span class="num">5</span>导数的应用（三）：恒成立、零点、证明不等式</h2>
+  <p class="lead">这是压轴题的三大常见考法，但内核都是同一件事：求最值。</p>
+
+  <h3 id="ch5-1">5.1　恒成立问题</h3>
+
+  <div class="box def">
+    <span class="tag">两条核心转化</span>
+    <div class="formula">
+      \[
+      \begin{aligned}
+      &f(x)\ge a\ \text{对一切 }x\in D\text{ 恒成立} \iff \min_{x\in D}f(x)\ge a \\[6pt]
+      &f(x)\le a\ \text{对一切 }x\in D\text{ 恒成立} \iff \max_{x\in D}f(x)\le a
+      \end{aligned}
+      \]
+    </div>
+    <p><strong>记忆方法：</strong>"大于等于恒成立，就找最小值；小于等于恒成立，就找最大值。"</p>
+    <p><strong>为什么？</strong>如果连<strong>最小的那个</strong>都 \(\ge a\)，那所有值当然都 \(\ge a\)；反过来，如果某个值 \(&lt;a\)，恒成立就被破坏了。</p>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">首选方法：分离参数法</span>
+    <p>把含参数的部分<strong>单独挪到一边</strong>，让另一边只剩 \(x\) 的式子，然后求那一边的最值。</p>
+    <p><strong>例：</strong>要 \(f(x)\ge a\) 恒成立，就把式子整理成 \(a\le g(x)\) 的形式，然后求 \(g(x)\) 的最小值。</p>
+    <p><strong>好处：</strong>避免了含参数的讨论，只需要求一个不含参数函数的最值。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 20（用均值不等式）</span>
+    <p>若对一切 \(x>0\)，不等式 \(x^{2}-ax+1\ge0\) 恒成立，求 \(a\) 的取值范围。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：分离参数。</strong>因为 \(x>0\)，两边可以除以 \(x\)：</p>
+    <div class="formula">
+      \[ x^{2}-ax+1\ge0 \quad\Longrightarrow\quad ax\le x^{2}+1 \quad\Longrightarrow\quad a\le x+\frac1x \]
+    </div>
+
+    <p><strong>第二步：求 \(x+\dfrac1x\) 的最小值。</strong>由均值不等式（基本不等式）：</p>
+    <div class="formula">
+      \[ x+\frac1x \ge 2\sqrt{x\cdot\frac1x} = 2 \]
+    </div>
+    <p>等号成立的条件是 \(x=\dfrac1x\)，即 \(x=1\)（满足 \(x>0\)）。所以最小值是 2。</p>
+
+    <p><strong>第三步：下结论。</strong>要 \(a\le x+\dfrac1x\) 对一切 \(x>0\) 成立，只需 \(a\) 不超过右边的最小值：</p>
+    <div class="formula">\[ \boxed{\,a\le2\,} \]</div>
+
+    <p><strong>验算：</strong>取 \(a=2\)，原式变成 \(x^2-2x+1=(x-1)^2\ge0\) ✓ 恒成立。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 21（用导数求最值）</span>
+    <p>若对一切 \(x>0\)，不等式 \(a\le\dfrac{e^{x}}{x}\) 恒成立，求 \(a\) 的取值范围。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：设辅助函数。</strong>令</p>
+    <div class="formula">\[ g(x) = \frac{e^{x}}{x}\qquad(x>0) \]</div>
+    <p>要求 \(a\le g(x)\) 恒成立，即求 \(g(x)\) 的最小值。</p>
+
+    <p><strong>第二步：求导。</strong>用商法则，取 \(u=e^x\)，\(v=x\)：</p>
+    <div class="formula">
+      \[ g'(x) = \frac{e^{x}\cdot x - e^{x}\cdot1}{x^{2}} = \frac{e^{x}(x-1)}{x^{2}} \]
+    </div>
+
+    <p><strong>第三步：判断符号。</strong>因为 \(e^x>0\)、\(x^2>0\) 恒成立，所以 \(g'(x)\) 的符号完全由 \(x-1\) 决定：</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>区间</th><th>\(x-1\)</th><th>\(g'(x)\)</th><th>\(g(x)\)</th></tr></thead>
+        <tbody>
+          <tr><td>\((0,1)\)</td><td>负</td><td>负</td><td>递减 ↘</td></tr>
+          <tr><td>\((1,+\infty)\)</td><td>正</td><td>正</td><td>递增 ↗</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>所以 \(g(x)\) 在 \(x=1\) 处取到<strong>最小值</strong>：</p>
+    <div class="formula">\[ g(1) = \frac{e^{1}}{1} = e \]</div>
+
+    <p><strong>第四步：下结论。</strong></p>
+    <div class="formula">\[ \boxed{\,a\le e\,} \]</div>
+  </div>
+
+  <h3 id="ch5-2">5.2　零点个数问题</h3>
+
+  <div class="box proof">
+    <span class="tag">核心思路：转化为两个函数图象的交点</span>
+    <p>方程 \(f(x)=0\) 的<strong>实根个数</strong>，等于函数 \(y=f(x)\) 图象与 \(x\) 轴<strong>交点个数</strong>。</p>
+    <p>更常用的技巧是<strong>移项分离</strong>：把方程整理成</p>
+    <div class="formula">\[ g(x) = m \]</div>
+    <p>的形式，其中 \(m\) 是常数。那么"方程有几个根"就变成"直线 \(y=m\) 与曲线 \(y=g(x)\) 有几个交点"。</p>
+    <p><strong>操作：</strong>画出 \(g(x)\) 的大致图象（利用单调性和极值），然后看水平线 \(y=m\) 与它相交几次。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 22（经典题型）</span>
+    <p>讨论关于 \(x\) 的方程 \(x^{3}-3x+a=0\) 的实根个数。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：分离常数。</strong>把含 \(a\) 的项单独放一边：</p>
+    <div class="formula">\[ x^{3}-3x = -a \]</div>
+    <p>令 \(g(x)=x^{3}-3x\)，\(m=-a\)。问题转化为：<strong>水平线 \(y=m\) 与曲线 \(y=g(x)\) 有几个交点。</strong></p>
+
+    <p><strong>第二步：研究 \(g(x)\) 的单调性和极值。</strong></p>
+    <div class="formula">\[ g'(x) = 3x^{2}-3 = 3(x-1)(x+1) \]</div>
+    <p>根为 \(x=-1\) 和 \(x=1\)。列表：</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>\(x\)</th><th>\((-\infty,-1)\)</th><th>\(-1\)</th><th>\((-1,1)\)</th><th>\(1\)</th><th>\((1,+\infty)\)</th></tr></thead>
+        <tbody>
+          <tr><td>\(g'(x)\)</td><td>+</td><td>0</td><td>−</td><td>0</td><td>+</td></tr>
+          <tr><td>\(g(x)\)</td><td>↗</td><td>极大</td><td>↘</td><td>极小</td><td>↗</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>计算极值：</p>
+    <div class="formula">
+      \[ g(-1) = -1+3 = 2\ (\text{极大值}),\qquad g(1) = 1-3 = -2\ (\text{极小值}) \]
+    </div>
+    <p>还可以看两端趋势：\(x\to-\infty\) 时 \(g(x)\to-\infty\)；\(x\to+\infty\) 时 \(g(x)\to+\infty\)。</p>
+
+    <p><strong>第三步：画草图，数交点。</strong>曲线的大致形状是：从 \(-\infty\) 上升到 \((-1,2)\)，下降到 \((1,-2)\)，再上升到 \(+\infty\)。</p>
+    <p>水平线 \(y=m\) 与它的交点个数：</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>\(m\) 的范围</th><th>水平线位置</th><th>交点个数</th><th>对应 \(a=-m\)</th></tr></thead>
+        <tbody>
+          <tr><td>\(m>2\)</td><td>在极大值上方</td><td><strong>1 个</strong></td><td>\(a&lt;-2\)</td></tr>
+          <tr><td>\(m=2\)</td><td>正好过极大值点</td><td><strong>2 个</strong></td><td>\(a=-2\)</td></tr>
+          <tr><td>\(-2&lt;m&lt;2\)</td><td>在极大与极小之间</td><td><strong>3 个</strong></td><td>\(-2&lt;a&lt;2\)</td></tr>
+          <tr><td>\(m=-2\)</td><td>正好过极小值点</td><td><strong>2 个</strong></td><td>\(a=2\)</td></tr>
+          <tr><td>\(m&lt;-2\)</td><td>在极小值下方</td><td><strong>1 个</strong></td><td>\(a>2\)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>答案汇总：</strong></p>
+    <div class="formula">
+      \[
+      \boxed{
+      \begin{aligned}
+      &a&lt;-2\text{ 或 }a>2\ \text{时，方程有 }1\text{ 个实根;} \\[3pt]
+      &a=-2\text{ 或 }a=2\ \text{时，方程有 }2\text{ 个实根;} \\[3pt]
+      &-2&lt;a&lt;2\ \text{时，方程有 }3\text{ 个实根。}
+      \end{aligned}}
+      \]
+    </div>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">这类题的固定套路</span>
+      <ol>
+        <li>把含参数的项<strong>单独挪到一边</strong>，得到 \(g(x)=m\)。</li>
+        <li>求 \(g(x)\) 的导数，找极值点和极值。</li>
+        <li>判断两端趋势（\(x\to\pm\infty\) 时 \(g(x)\) 趋于什么）。</li>
+        <li><strong>画草图</strong>（不用精确，标出极值点和两端趋势即可）。</li>
+        <li>让水平线 \(y=m\) 上下移动，数交点，写出各情况对应的参数范围。</li>
+      </ol>
+    </div>
+  </div>
+
+  <h3 id="ch5-3">5.3　证明不等式</h3>
+
+  <div class="box proof">
+    <span class="tag">核心方法：构造函数求最值</span>
+    <p>要证明 \(f(x)\ge g(x)\)（在区间 \(D\) 上），步骤是：</p>
+    <ol class="steps">
+      <li>令 \(h(x)=f(x)-g(x)\)，把问题转化为<strong>证明 \(h(x)\ge0\)</strong>。</li>
+      <li>求 \(h'(x)\)，找出 \(h(x)\) 在 \(D\) 上的<strong>最小值</strong>。</li>
+      <li>证明最小值 \(\ge0\) 即可。</li>
+    </ol>
+    <p><strong>本质：</strong>把"证明不等式"转化为"求最值"，而求最值是我们已经会的事。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 23（必背结论）</span>
+    <p>证明：对任意实数 \(x\)，都有 \(e^{x}\ge x+1\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：构造函数。</strong>令</p>
+    <div class="formula">\[ h(x) = e^{x}-(x+1) = e^{x}-x-1 \]</div>
+    <p>要证的就是 \(h(x)\ge0\)。</p>
+
+    <p><strong>第二步：求导并找极值。</strong></p>
+    <div class="formula">\[ h'(x) = e^{x}-1 \]</div>
+    <p>令 \(h'(x)=0\)，得 \(e^x=1\)，所以 \(x=0\)。</p>
+
+    <p><strong>第三步：列表判断。</strong></p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>\(x\)</th><th>\((-\infty,0)\)</th><th>\(0\)</th><th>\((0,+\infty)\)</th></tr></thead>
+        <tbody>
+          <tr><td>\(e^x\) 与 1 的大小</td><td>\(e^x&lt;1\)</td><td>\(e^x=1\)</td><td>\(e^x>1\)</td></tr>
+          <tr><td>\(h'(x)=e^x-1\)</td><td>−</td><td>0</td><td>+</td></tr>
+          <tr><td>\(h(x)\)</td><td>↘</td><td>极小值</td><td>↗</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>所以 \(x=0\) 是<strong>极小值点</strong>，而由于 \(h(x)\) 先减后增，这个极小值同时也是<strong>全局最小值</strong>。</p>
+
+    <p><strong>第四步：算出最小值。</strong></p>
+    <div class="formula">\[ h(0) = e^{0}-0-1 = 1-1 = 0 \]</div>
+
+    <p><strong>第五步：下结论。</strong>因为 \(h(x)\) 的最小值是 0，所以对一切 \(x\in\mathbb{R}\) 都有 \(h(x)\ge0\)，即</p>
+    <div class="formula">\[ \boxed{\,e^{x}\ge x+1\,} \]</div>
+    <p>等号成立当且仅当 \(x=0\)。</p>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">这个结论要背下来</span>
+      <p>\(e^x\ge x+1\) 是高考中<strong>出现频率极高</strong>的不等式，常作为"切线放缩"的工具。它的几何意义是：曲线 \(y=e^x\) 永远在它过点 \((0,1)\) 的切线 \(y=x+1\) 的<strong>上方</strong>（只在 \(x=0\) 处相切）。</p>
+      <p>类似的还有（\(x>0\) 时）：</p>
+      <div class="formula">\[ \ln x\le x-1 \]</div>
+      <p>证明方法完全相同：令 \(h(x)=\ln x-x+1\)，求导得 \(h'(x)=\dfrac1x-1=\dfrac{1-x}{x}\)，在 \(x=1\) 处取到最大值 \(h(1)=0\)，所以 \(h(x)\le0\)，即 \(\ln x\le x-1\)。</p>
+    </div>
+  </div>
+
+  <!-- ==================== 第 6 章 ==================== -->
+  <h2 id="ch6"><span class="num">6</span>易错点清单</h2>
+  <p class="lead">考前必看。这些都是阅卷场上真正扣分的地方。</p>
+
+  <div class="box warn">
+    <span class="tag">导数易错点 · 14 条</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>#</th><th>易错点</th><th>正确做法</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>求单调区间时<strong>不写定义域</strong></td><td>第一步永远是求定义域，尤其含 \(\ln x\)、分母的式子</td></tr>
+          <tr><td>2</td><td>单调区间用 \(\cup\) 连接</td><td>用"和"或逗号分隔，如"\((-\infty,0)\) 和 \((2,+\infty)\)"</td></tr>
+          <tr><td>3</td><td>复合函数漏乘内层导数</td><td>求完导回头检查括号里是不是纯 \(x\)</td></tr>
+          <tr><td>4</td><td>\((\cos x)'=\sin x\)</td><td>应为 \(-\sin x\)</td></tr>
+          <tr><td>5</td><td>\((uv)'=u'v'\)</td><td>应为 \(u'v+uv'\)</td></tr>
+          <tr><td>6</td><td>商法则分子写成 \(uv'-u'v\)</td><td>应为 \(u'v-uv'\)，顺序不能反</td></tr>
+          <tr><td>7</td><td>商法则分母写成 \(v\)</td><td>应为 \(v^{2}\)</td></tr>
+          <tr><td>8</td><td>闭区间求最值<strong>只算极值不算端点</strong></td><td>端点值一定要算进去比大小</td></tr>
+          <tr><td>9</td><td>由 \(f'(x_0)=0\) 直接断定是极值点</td><td>必须看 \(f'(x)\) 在 \(x_0\) 两侧<strong>是否变号</strong>（反例 \(y=x^3\) 在 \(x=0\)）</td></tr>
+          <tr><td>10</td><td>恒成立问题找错了最值</td><td>\(\ge\) 找最小值，\(\le\) 找最大值，别搞反</td></tr>
+          <tr><td>11</td><td>分离参数时没讨论除数正负</td><td>除以含 \(x\) 的式子前，先确认它在定义域内的符号</td></tr>
+          <tr><td>12</td><td>零点问题漏掉"相切"的情形</td><td>\(m\) 等于极值时交点个数会变化，这些<strong>临界值</strong>必须单独讨论</td></tr>
+          <tr><td>13</td><td>极值和极值点混淆</td><td>极值是<strong>数</strong>，极值点是<strong>\(x_0\)</strong>，按题目问法回答</td></tr>
+          <tr><td>14</td><td>导数算完不化简</td><td>尽量写成<strong>因式分解</strong>或<strong>通分</strong>形式，否则后面判断符号会很痛苦</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">解题流程自检表（做完每道题扫一遍）</span>
+    <ul>
+      <li>□ 定义域写了吗？</li>
+      <li>□ 复合函数的内层导数乘了吗？</li>
+      <li>□ 导数化简成便于判断符号的形式了吗？</li>
+      <li>□ 判断极值时看的是"变号"还是只看了"等于 0"？</li>
+      <li>□ 闭区间最值，端点值算了吗？</li>
+      <li>□ 单调区间写法的"和"用对了吗？</li>
+    </ul>
+  </div>
+
+  <!-- ==================== 第 7 章 ==================== -->
+  <h2 id="ch7"><span class="num">7</span>本章知识地图与自测</h2>
+
+  <h3 id="ch7-1">7.1　知识地图</h3>
+  <div class="map">
+    <div class="node">
+      <b>① 概念</b>
+      <span>平均变化率 → 瞬时变化率<br>\(f'(x_0)=\lim\frac{\Delta y}{\Delta x}\)<br>几何意义：切线斜率</span>
+    </div>
+    <div class="node">
+      <b>② 计算（重点）</b>
+      <span>8 个基本公式<br>四则法则（和差、积、商）<br>链式法则<br><strong>十大题型分类</strong></span>
+    </div>
+    <div class="node">
+      <b>③ 切线</b>
+      <span>"在点处"→ 该点即切点<br>"过点"→ 设切点 \((t,f(t))\)<br>注意可能有<strong>多条</strong>切线</span>
+    </div>
+    <div class="node">
+      <b>④ 单调性</b>
+      <span>\(f'>0\) 增，\(f'&lt;0\) 减<br>五步法求单调区间<br>含参讨论</span>
+    </div>
+    <div class="node">
+      <b>⑤ 极值最值</b>
+      <span>极值看<strong>变号</strong><br>闭区间最值要算<strong>端点</strong><br>\(f'=0\) 不一定是极值点</span>
+    </div>
+    <div class="node">
+      <b>⑥ 综合应用</b>
+      <span>恒成立 → 求最值<br>零点个数 → 数交点<br>证不等式 → 构造函数</span>
+    </div>
+  </div>
+
+  <h3 id="ch7-2">7.2　自测清单</h3>
+  <p>下面每一条，能<strong>不看讲义完整写出来</strong>就打勾。</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:44px;">✓</th><th>自测项</th></tr></thead>
+      <tbody>
+        <tr><td>☐</td><td>能写出导数的定义式，并说清分子分母里的 \(\Delta x\) 为什么必须一致</td></tr>
+        <tr><td>☐</td><td>能说出导数的几何意义，并解释"为什么导数等于切线斜率"</td></tr>
+        <tr><td>☐</td><td>能区分"在点 \(P\) 处的切线"和"过点 \(P\) 的切线"，并说出后者的四步解法</td></tr>
+        <tr><td>☐</td><td>能默写 8 个基本求导公式</td></tr>
+        <tr><td>☐</td><td>能用二项式定理推出 \((x^n)'=nx^{n-1}\)</td></tr>
+        <tr><td>☐</td><td>能用"加减一项"的技巧推出乘积法则 \((uv)'=u'v+uv'\)</td></tr>
+        <tr><td>☐</td><td>能用"反解"的思路推出商法则</td></tr>
+        <tr><td>☐</td><td>能用商法则推出 \((\tan x)'=\dfrac{1}{\cos^2x}\)</td></tr>
+        <tr><td>☐</td><td>能说出链式法则，并正确求 \((3x-1)^4\)、\(e^{-x}\)、\(\ln(\cos x)\)、\(\sin^2 2x\) 的导数</td></tr>
+        <tr><td>☐</td><td>看到 \(x^2\sqrt[3]{x}\)、\(\dfrac{\sqrt x}{x}\) 能先化成幂再求导</td></tr>
+        <tr><td>☐</td><td>能背出求单调区间的五步法</td></tr>
+        <tr><td>☐</td><td>能对含参函数 \(f(x)=\ln x-ax\) 做完整的分类讨论</td></tr>
+        <tr><td>☐</td><td>能说明为什么 \(f'(x_0)=0\) 不能推出 \(x_0\) 是极值点，并给出反例</td></tr>
+        <tr><td>☐</td><td>能背出求闭区间最值的步骤，并强调端点值必须算</td></tr>
+        <tr><td>☐</td><td>能把恒成立问题转化为求最值，并说清"\(\ge\) 找最小、\(\le\) 找最大"</td></tr>
+        <tr><td>☐</td><td>能独立证明 \(e^x\ge x+1\) 和 \(\ln x\le x-1\)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">学完本册，你应该达到什么水平</span>
+    <p><strong>如果这一册学到位了，你应该能独立完成下面这些事：</strong></p>
+    <ul>
+      <li>对任意给出的初等函数（含复合、乘积、商、根式分式）<strong>正确求导</strong>；</li>
+      <li>用导数判断单调性，写出单调区间，并说明理由；</li>
+      <li>求极值与闭区间上的最值（知道极值看变号、最值要算端点）；</li>
+      <li>求曲线在一点处的切线方程，以及过一点作曲线的切线（知道要设切点）；</li>
+      <li>处理三类综合题：恒成立求参数、讨论零点个数、证明不等式。</li>
+    </ul>
+    <p><strong>如果还有困难，对照下面定位问题：</strong></p>
+    <ul>
+      <li><strong>求导频繁出错</strong> → 第 2 章的十大题型没练透，重点补<strong>复合函数的链式法则</strong>（漏乘内层导数）和<strong>商的法则</strong>（分子顺序、分母平方）；</li>
+      <li><strong>单调性写错</strong> → 多半是忘写定义域，或没把导数化成因式分解形式就急着判断符号；</li>
+      <li><strong>综合题动不了笔</strong> → 不是不会求导，而是没养成"先把要求的量用参数表示出来"的习惯。</li>
+    </ul>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">下一步学什么</span>
+    <p>导数这一章到这里结束。后续册次规划：</p>
+    <ul>
+      <li><strong>第三册　三角函数</strong>——诱导公式、和差化积、图象变换、解三角形（正弦定理、余弦定理）。</li>
+      <li><strong>第四册　立体几何</strong>——空间向量法、平行与垂直的证明、距离与夹角。</li>
+      <li><strong>第五册　解析几何</strong>——直线与圆、椭圆双曲线抛物线、弦长与面积。</li>
+      <li><strong>第六册　概率统计</strong>——分布列、期望方差、统计案例。</li>
+    </ul>
+    <p>需要哪一册，直接说编号即可。</p>
+  </div>
+
+  <div class="foot">
+    <span>高考数学重点章节梳理 · 第二册 导数</span>
+    <span>建议配合课本与近 5 年真题同步使用</span>
+  </div>
+
+  <!-- ==================== 第 8 章：真题题型精讲 ==================== -->
+  <h2 id="ch8"><span class="num">8</span>高考真题题型精讲（2016—2025）</h2>
+  <p class="lead">前面七章解决"会不会"，这一章解决"考不考得出分"。十年真题按题型归类，每题给出完整解答与提分要点。</p>
+
+  <div class="box tip">
+    <span class="tag">本章说明：真题来源与使用方式</span>
+    <p><strong>题目来源：</strong>本章全部题目取自 2016—2025 年高考数学真题（全国卷 I/II/III 卷、全国甲/乙卷、新高考 I/II 卷、北京/天津/浙江卷等），题干保持原貌，只做必要的符号统一。</p>
+    <p><strong>解答说明：</strong>解答按本册前七章的方法体系重新组织，分步写清每一步的依据，并补充"官方答案未展开的中间步骤"。</p>
+    <p><strong>使用方法：</strong>每道真题遮住解答，限时 15 分钟独立完成。做错了回到对应章节重读。</p>
+  </div>
+
+  <div class="box def">
+    <span class="tag">十年考情速览：导数题的三种出场方式</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>出场位置</th><th>分值</th><th>常见考法</th><th>难度</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>解答题第 2 题</strong>（常见）</td>
+            <td>12 分</td>
+            <td>讨论单调性；求极值最值；切线问题</td>
+            <td>中等，<strong>第一问必拿分</strong></td>
+          </tr>
+          <tr>
+            <td><strong>解答题压轴</strong>（最常见）</td>
+            <td>12 分</td>
+            <td>零点个数、恒成立求参数、证明不等式</td>
+            <td>难，<strong>区分度最高的题</strong></td>
+          </tr>
+          <tr>
+            <td><strong>小题（选择/填空）</strong></td>
+            <td>5 分</td>
+            <td>切线方程、单调性判断、比较大小</td>
+            <td>容易到中等</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>结论：</strong>导数题的第一问（讨论单调性）几乎年年都考，是必须拿满的；第二问（零点、恒成立、不等式）是拉开差距的地方。本章 8.1~8.3 覆盖第一问，8.4~8.6 覆盖第二问。</p>
+  </div>
+
+  <h3 id="ch8-1">8.1　题型一：切线问题</h3>
+
+  <div class="box tip">
+    <span class="tag">题型特征与解题套路</span>
+    <p><strong>两种问法：</strong></p>
+    <ul>
+      <li><strong>已知切线求参数：</strong>题目给出切线方程，反求函数里的参数。用"<strong>切点在曲线上</strong>"和"<strong>切线斜率 = 导数值</strong>"列两个方程。</li>
+      <li><strong>求切线方程：</strong>先求导，算出斜率 \(k=f'(x_0)\)，再用点斜式。</li>
+    </ul>
+    <p><strong>核心公式（只有一个）：</strong></p>
+    <div class="formula">\[ y-f(x_0)=f'(x_0)(x-x_0) \]</div>
+    <p><strong>★ 最容易错的地方：</strong>题目说"<strong>过</strong>点 \(P\) 的切线"时，\(P\) 不一定是切点，要设切点 \((t,f(t))\)。而"<strong>在</strong>点 \(P\) 处"时 \(P\) 就是切点。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 1 · 2016 北京卷（理）</span>
+    <p>设函数 \(f(x)=x\,e^{\,a-x}+bx\)，曲线 \(y=f(x)\) 在点 \((2,f(2))\) 处的切线方程为 \(y=(e-1)x+4\)。</p>
+    <p>（1）求 \(a\)，\(b\) 的值；</p>
+    <p>（2）求 \(f(x)\) 的单调区间。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：从切线方程读出两个信息。</strong>切线 \(y=(e-1)x+4\)：</p>
+    <ul>
+      <li><strong>斜率</strong>是 \(e-1\)，所以 \(f'(2)=e-1\)；</li>
+      <li>切点在切线上，把 \(x=2\) 代入得 \(y=2(e-1)+4=2e+2\)，所以 \(f(2)=2e+2\)。</li>
+    </ul>
+
+    <p><strong>第二步：求导并列出两个方程。</strong></p>
+    <p>对 \(f(x)=xe^{\,a-x}+bx\) 求导。第一项是乘积，取 \(u=x\)、\(v=e^{\,a-x}\)（复合函数）：</p>
+    <div class="formula">
+      \[ u'=1,\qquad v'=e^{\,a-x}\cdot(-1)=-e^{\,a-x} \]
+    </div>
+    <div class="formula">
+      \[ f'(x)=1\cdot e^{\,a-x}+x\cdot\bigl(-e^{\,a-x}\bigr)+b=(1-x)e^{\,a-x}+b \]
+    </div>
+    <p>现在代入两个条件：</p>
+    <div class="formula">
+      \[ f(2)=2e^{\,a-2}+2b=2e+2 \tag{①} \]
+    </div>
+    <div class="formula">
+      \[ f'(2)=(1-2)e^{\,a-2}+b=-e^{\,a-2}+b=e-1 \tag{②} \]
+    </div>
+
+    <p><strong>第三步：解方程组。</strong>①式两边除以 2：</p>
+    <div class="formula">\[ e^{\,a-2}+b=e+1 \]</div>
+    <p>把它与②相加，\(e^{\,a-2}\) 正好抵消：</p>
+    <div class="formula">
+      \[ 2b=(e+1)+(e-1)=2e \quad\Longrightarrow\quad b=e \]
+    </div>
+    <p>代回 \(e^{\,a-2}+b=e+1\)：\(e^{\,a-2}+e=e+1\)，所以 \(e^{\,a-2}=1\)，即 \(a-2=0\)。</p>
+    <div class="formula">\[ \boxed{\ a=2,\quad b=e\ } \]</div>
+    <p><strong>验算：</strong>\(f(x)=xe^{\,2-x}+ex\)，则 \(f(2)=2e^0+2e=2+2e\) ✓；\(f'(2)=(1-2)e^0+e=e-1\) ✓。</p>
+
+    <p><strong>（2）第一步：写出导数。</strong>代入 \(a=2\)、\(b=e\)：</p>
+    <div class="formula">
+      \[ f'(x)=(1-x)e^{\,2-x}+e \]
+    </div>
+
+    <p><strong>第二步：判断 \(f'(x)\) 的符号（关键）。</strong>这个式子里既有 \(e^{\,2-x}\) 又有常数 \(e\)，直接看不出来。用<strong>换元</strong>化简。</p>
+    <p>把 \(e\) 提到外面：</p>
+    <div class="formula">
+      \[ f'(x)=e\left[\frac{(1-x)e^{\,2-x}}{e}+1\right]=e\left[(1-x)e^{\,1-x}+1\right] \]
+    </div>
+    <p>令 \(u=x-1\)，则 \(1-x=-u\)、\(1-x=-u\)（因为 \(1-x=-(x-1)=-u\)）：</p>
+    <div class="formula">
+      \[ f'(x)=e\bigl[-u\,e^{-u}+1\bigr]=e\bigl(1-u\,e^{-u}\bigr) \]
+    </div>
+
+    <p><strong>第三步：证明 \(1-u\,e^{-u}>0\) 恒成立。</strong>分两种情况：</p>
+    <ul>
+      <li><strong>当 \(u\le0\) 时：</strong>\(e^{-u}>0\)，所以 \(u\,e^{-u}\le0&lt;1\)，于是 \(1-u\,e^{-u}>0\)。</li>
+      <li><strong>当 \(u>0\) 时：</strong>需要用到"<strong>\(e^u>u\) 对一切 \(u>0\) 成立</strong>"（这是 \(e^x\ge x+1\) 的推论，见 5.3 节）。两边同除以 \(e^u>0\)，得 \(1>\dfrac{u}{e^u}=u\,e^{-u}\)，即 \(u\,e^{-u}&lt;1\)，于是 \(1-u\,e^{-u}>0\)。</li>
+    </ul>
+    <p>两种情况合起来，对一切实数 \(x\) 都有 \(f'(x)>0\)。</p>
+
+    <p><strong>第四步：下结论。</strong></p>
+    <div class="formula">
+      \[ \boxed{\ f(x)\text{ 在 }\mathbb{R}\text{ 上单调递增，没有单调递减区间}\ } \]
+    </div>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>已知切线求参数，就是"两个条件列两个方程"。</strong>切点纵坐标给出 \(f(x_0)=y_0\)，斜率给出 \(f'(x_0)=k\)。</li>
+        <li>求 \(f(x)=xe^{\,a-x}\) 这类函数的导数，<strong>别忘了 \(e^{\,a-x}\) 是复合函数，要求导得乘 \(-1\)</strong>。</li>
+        <li><strong>判断导数符号时，如果式子里既有指数又有常数，先提取公因式再换元。</strong>本题把 \(e\) 提出来、再令 \(u=x-1\)，式子立刻变得清楚。</li>
+        <li>"\(e^u>u\)（\(u>0\)）"这个不等式是判断符号的常用工具，来自 5.3 节的切线放缩。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 2 · 2023 北京卷</span>
+    <p>设函数 \(f(x)=x-x^{3}e^{\,ax+b}\)，曲线 \(y=f(x)\) 在点 \((1,f(1))\) 处的切线方程为 \(y=-x+1\)。</p>
+    <p>（1）求 \(a\)，\(b\) 的值；</p>
+    <p>（2）设函数 \(g(x)=f'(x)\)，求 \(g(x)\) 的单调区间；</p>
+    <p>（3）求 \(f(x)\) 的极值点个数。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：从切线读出条件。</strong>切线 \(y=-x+1\)：</p>
+    <ul>
+      <li>斜率 \(-1\)，所以 \(f'(1)=-1\)；</li>
+      <li>把 \(x=1\) 代入切线得 \(y=0\)，所以 \(f(1)=0\)。</li>
+    </ul>
+
+    <p><strong>第二步：求导并列方程。</strong>对 \(f(x)=x-x^3e^{\,ax+b}\) 求导。第二项是乘积，取 \(u=x^3\)、\(v=e^{\,ax+b}\)：</p>
+    <div class="formula">
+      \[ u'=3x^{2},\qquad v'=e^{\,ax+b}\cdot a=a\,e^{\,ax+b} \]
+    </div>
+    <div class="formula">
+      \[ f'(x)=1-\bigl[3x^{2}e^{\,ax+b}+x^{3}\cdot a\,e^{\,ax+b}\bigr]=1-(3x^{2}+ax^{3})e^{\,ax+b} \]
+    </div>
+    <p>代入 \(x=1\)：</p>
+    <div class="formula">
+      \[ f(1)=1-e^{\,a+b}=0 \quad\Longrightarrow\quad e^{\,a+b}=1 \tag{①} \]
+    </div>
+    <div class="formula">
+      \[ f'(1)=1-(3+a)e^{\,a+b}=-1 \tag{②} \]
+    </div>
+
+    <p><strong>第三步：解方程组。</strong>把①代入②：\(1-(3+a)\times1=-1\)，得 \(3+a=2\)，所以 \(a=-1\)。</p>
+    <p>再由①：\(e^{\,a+b}=1\)，得 \(a+b=0\)，所以 \(b=1\)。</p>
+    <div class="formula">\[ \boxed{\ a=-1,\quad b=1\ } \]</div>
+
+    <p><strong>（2）第一步：写出 \(g(x)\)。</strong>代入 \(a=-1\)、\(b=1\)（注意 \(ax+b=-x+1\)）：</p>
+    <div class="formula">
+      \[ g(x)=f'(x)=1-(3x^{2}-x^{3})e^{-x+1} \]
+    </div>
+
+    <p><strong>第二步：求 \(g'(x)\)。</strong>对 \(-(3x^2-x^3)e^{-x+1}\) 求导。取 \(u=3x^2-x^3\)、\(v=e^{-x+1}\)：</p>
+    <div class="formula">
+      \[ u'=6x-3x^{2},\qquad v'=-e^{-x+1} \]
+    </div>
+    <div class="formula">
+      \[
+      \begin{aligned}
+      g'(x) &= -\bigl[(6x-3x^{2})e^{-x+1}+(3x^{2}-x^{3})(-e^{-x+1})\bigr] \\
+      &= -e^{-x+1}\bigl[(6x-3x^{2})-(3x^{2}-x^{3})\bigr] \\
+      &= -e^{-x+1}\bigl(6x-3x^{2}-3x^{2}+x^{3}\bigr) \\
+      &= -e^{-x+1}\bigl(x^{3}-6x^{2}+6x\bigr) \\
+      &= -x(x^{2}-6x+6)e^{-x+1}
+      \end{aligned}
+      \]
+    </div>
+
+    <p><strong>第三步：解 \(g'(x)=0\)。</strong>因为 \(e^{-x+1}>0\) 恒成立，所以 \(g'(x)\) 的符号完全由 \(-x(x^2-6x+6)\) 决定。</p>
+    <p>令 \(x^2-6x+6=0\)，用求根公式：</p>
+    <div class="formula">
+      \[ x=\frac{6\pm\sqrt{36-24}}{2}=\frac{6\pm2\sqrt3}{2}=3\pm\sqrt3 \]
+    </div>
+    <p>记 \(x_1=3-\sqrt3\approx1.27\)，\(x_2=3+\sqrt3\approx4.73\)。三个零点从小到大是 \(0\)、\(x_1\)、\(x_2\)。</p>
+
+    <p><strong>第四步：列表判断符号。</strong>看 \(-x(x^2-6x+6)\) 的符号（注意最前面有个负号）：</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>区间</th><th>\(-x\)</th><th>\(x^2-6x+6\)</th><th>整体</th><th>\(g(x)\)</th></tr></thead>
+        <tbody>
+          <tr><td>\((-\infty,0)\)</td><td>正</td><td>正</td><td>正</td><td>递增 ↗</td></tr>
+          <tr><td>\((0,\ 3-\sqrt3)\)</td><td>负</td><td>正</td><td>负</td><td>递减 ↘</td></tr>
+          <tr><td>\((3-\sqrt3,\ 3+\sqrt3)\)</td><td>负</td><td>负</td><td>正</td><td>递增 ↗</td></tr>
+          <tr><td>\((3+\sqrt3,\ +\infty)\)</td><td>负</td><td>正</td><td>负</td><td>递减 ↘</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>（验算：取 \(x=-1\)，\(-(-1)\times(1+6+6)=1\times13=13>0\) ✓；取 \(x=1\)，\(-1\times(1-6+6)=-1&lt;0\) ✓；取 \(x=3\)，\(-3\times(9-18+6)=-3\times(-3)=9>0\) ✓；取 \(x=5\)，\(-5\times(25-30+6)=-5\times1=-5&lt;0\) ✓）</p>
+
+    <div class="formula">
+      \[
+      \boxed{
+      \begin{aligned}
+      &g(x)\text{ 的单调递增区间：}(-\infty,0)\text{ 和 }(3-\sqrt3,\ 3+\sqrt3); \\[4pt]
+      &g(x)\text{ 的单调递减区间：}(0,\ 3-\sqrt3)\text{ 和 }(3+\sqrt3,\ +\infty).
+      \end{aligned}}
+      \]
+    </div>
+
+    <p><strong>（3）思路：极值点个数 = \(f'(x)=0\) 且变号的点个数。</strong>因为 \(g(x)=f'(x)\)，所以问题转化为"<strong>\(g(x)\) 有几个变号的零点</strong>"。</p>
+    <p>由第（2）问知道 \(g(x)\) 的单调性，我们逐个区间数零点：</p>
+
+    <p><strong>① 在 \((-\infty,0)\) 上：</strong>\(g\) 单调递增。</p>
+    <div class="formula">
+      \[ g(-1)=1-(3+1)e^{2}=1-4e^{2}&lt;0,\qquad g(0)=1-0=1>0 \]
+    </div>
+    <p>两端异号，由零点存在定理和单调性，\(g\) 在 \((-\infty,0)\) 上<strong>有唯一零点</strong>。又因为 \(g\) 从负变正，所以这是 \(f\) 的<strong>极小值点</strong>。</p>
+
+    <p><strong>② 在 \((0,\ 3-\sqrt3)\) 上：</strong>\(g\) 单调递减，从 \(g(0)=1>0\) 递减到 \(g(3-\sqrt3)\)。</p>
+    <p>因为 \(x=3-\sqrt3\) 是 \(g\) 的极小值点，需要判断 \(g(3-\sqrt3)\) 的符号。注意到 \(3-\sqrt3\approx1.27\)，且</p>
+    <div class="formula">
+      \[ g(1)=1-(3-1)e^{0}=1-2=-1&lt;0 \]
+    </div>
+    <p>而 \(1\in(0,\ 3-\sqrt3)\)，所以 \(g\) 在 \((0,1)\) 内从 \(1\) 递减到 \(-1\)，<strong>有唯一零点</strong>。因为 \(g\) 从正变负，这是 \(f\) 的<strong>极大值点</strong>。</p>
+
+    <p><strong>③ 在 \((3-\sqrt3,\ 3+\sqrt3)\) 上：</strong>\(g\) 单调递增，从 \(g(3-\sqrt3)&lt;0\) 递增到 \(g(3+\sqrt3)\)。</p>
+    <p>取 \(x=4\)：</p>
+    <div class="formula">
+      \[ g(4)=1-(48-64)e^{-3}=1+16e^{-3}>0 \]
+    </div>
+    <p>而 \(4\in(3-\sqrt3,\ 3+\sqrt3)\approx(1.27,\ 4.73)\)，所以 \(g\) 在 \((3-\sqrt3,\ 4)\) 内从负递增到正，<strong>有唯一零点</strong>。这是 \(f\) 的<strong>极小值点</strong>。</p>
+
+    <p><strong>④ 在 \((3+\sqrt3,\ +\infty)\) 上：</strong>\(g\) 单调递减，从 \(g(3+\sqrt3)>0\) 递减。</p>
+    <p>取 \(x=5\)：</p>
+    <div class="formula">
+      \[ g(5)=1-(75-125)e^{-4}=1+50e^{-4}>0 \]
+    </div>
+    <p>还需要看 \(x\to+\infty\) 时的趋势。当 \(x\to+\infty\) 时，\(x^3e^{-x+1}\to0\)（指数增长远快于多项式），所以</p>
+    <div class="formula">
+      \[ \lim_{x\to+\infty}g(x)=1-0=1>0 \]
+    </div>
+    <p>这说明 \(g\) 在 \((3+\sqrt3,+\infty)\) 上<strong>始终为正</strong>（因为它递减但极限是 1，不可能穿过 0；更严格地说，\(g\) 递减且 \(g(5)>0\)、\(\lim g=1\)，所以 \(g>1\) 或至少 \(>0\)）。</p>
+    <p><strong>更严谨的做法：</strong>直接证明 \(g(x)>0\) 对 \(x>3+\sqrt3\) 成立。因为 \(g\) 在 \((3+\sqrt3,+\infty)\) 上递减且下确界是 1，而 \(g(3+\sqrt3)>0\)，所以 \(g(x)\ge1>0\)。故<strong>没有零点</strong>。</p>
+
+    <p><strong>第五步：汇总。</strong>\(g(x)=f'(x)\) 共有 <strong>3 个变号零点</strong>（极小、极大、极小各一个）。</p>
+    <div class="formula">
+      \[ \boxed{\ f(x)\text{ 有 }3\text{ 个极值点}\ } \]
+    </div>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>"求极值点个数"的标准路径：先求 \(f'\) 的单调性，再在每个单调区间上用零点存在定理数零点。</strong>本题第（2）问求 \(g\) 的单调区间，正是为第（3）问铺路——这是典型的"前一问为后一问服务"。</li>
+        <li><strong>用零点存在定理时必须找两个异号的点。</strong>本题分别用了 \(g(-1)&lt;0,g(0)>0\)（区间①）、\(g(0)>0,g(1)&lt;0\)（区间②）、\(g(3-\sqrt3)&lt;0,g(4)>0\)（区间③）。找点时可以取整数或简单值试算。</li>
+        <li><strong>判断极值类型看"变号方向"：</strong>\(g\) 从正变负 → 极大值点；从负变正 → 极小值点（见 4.1 节）。</li>
+        <li>最后一个区间需要判断"有没有零点"，<strong>不能只算一个点就下结论</strong>，要结合单调性和极限趋势说明。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 3 · 2021 全国乙卷（文）</span>
+    <p>已知函数 \(f(x)=x^{3}-x^{2}+ax+1\)。</p>
+    <p>（1）讨论 \(f(x)\) 的单调性；</p>
+    <p>（2）求曲线 \(y=f(x)\) 过坐标原点的切线与曲线 \(y=f(x)\) 的公共点的坐标。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：求导。</strong>定义域为 \(\mathbb{R}\)。</p>
+    <div class="formula">\[ f'(x)=3x^{2}-2x+a \]</div>
+
+    <p><strong>第二步：讨论判别式。</strong>这是开口向上的二次函数，判别式：</p>
+    <div class="formula">\[ \Delta=(-2)^{2}-4\times3\times a=4-12a \]</div>
+
+    <p><strong>情况一：\(\Delta\le0\)，即 \(a\ge\dfrac13\)。</strong></p>
+    <p>此时 \(f'(x)\ge0\) 恒成立（\(a=\dfrac13\) 时只在 \(x=\dfrac13\) 处等于 0），所以 \(f(x)\) 在 \(\mathbb{R}\) 上<strong>单调递增</strong>。</p>
+
+    <p><strong>情况二：\(\Delta>0\)，即 \(a&lt;\dfrac13\)。</strong></p>
+    <p>令 \(f'(x)=0\)，由求根公式：</p>
+    <div class="formula">
+      \[ x=\frac{2\pm\sqrt{4-12a}}{6}=\frac{2\pm2\sqrt{1-3a}}{6}=\frac{1\pm\sqrt{1-3a}}{3} \]
+    </div>
+    <p>记 \(x_1=\dfrac{1-\sqrt{1-3a}}{3}\)、\(x_2=\dfrac{1+\sqrt{1-3a}}{3}\)，则 \(x_1&lt;x_2\)。</p>
+    <p>因为 \(f'(x)=3(x-x_1)(x-x_2)\) 且开口向上，所以：</p>
+    <ul>
+      <li>\(f'(x)>0\) 当 \(x&lt;x_1\) 或 \(x>x_2\)；</li>
+      <li>\(f'(x)&lt;0\) 当 \(x_1&lt;x&lt;x_2\)。</li>
+    </ul>
+
+    <div class="formula">
+      \[
+      \boxed{
+      \begin{aligned}
+      &\text{当 }a\ge\tfrac13\text{ 时：}f(x)\text{ 在 }\mathbb{R}\text{ 上单调递增;} \\[4pt]
+      &\text{当 }a&lt;\tfrac13\text{ 时：}f(x)\text{ 在}\left(-\infty,\tfrac{1-\sqrt{1-3a}}{3}\right)\text{和}\left(\tfrac{1+\sqrt{1-3a}}{3},+\infty\right)\text{上递增，}\\
+      &\qquad\qquad\qquad\ \ \text{在}\left(\tfrac{1-\sqrt{1-3a}}{3},\ \tfrac{1+\sqrt{1-3a}}{3}\right)\text{上递减。}
+      \end{aligned}}
+      \]
+    </div>
+
+    <p><strong>（2）第一步：设切点（关键！）。</strong>题目说的是"<strong>过</strong>坐标原点的切线"，原点<strong>不一定</strong>是切点（验证：\(f(0)=1\ne0\)，所以原点不在曲线上）。所以设切点为：</p>
+    <div class="formula">\[ P(t,\ t^{3}-t^{2}+at+1) \]</div>
+
+    <p><strong>第二步：写出切线方程。</strong>斜率 \(k=f'(t)=3t^{2}-2t+a\)，所以：</p>
+    <div class="formula">
+      \[ y-\bigl(t^{3}-t^{2}+at+1\bigr)=\bigl(3t^{2}-2t+a\bigr)(x-t) \]
+    </div>
+
+    <p><strong>第三步：代入原点求 \(t\)。</strong>切线过 \((0,0)\)，代入：</p>
+    <div class="formula">
+      \[ -\bigl(t^{3}-t^{2}+at+1\bigr)=\bigl(3t^{2}-2t+a\bigr)(-t) \]
+    </div>
+    <p>两边展开：</p>
+    <div class="formula">
+      \[ -t^{3}+t^{2}-at-1=-3t^{3}+2t^{2}-at \]
+    </div>
+    <p>移项整理：</p>
+    <div class="formula">
+      \[ 2t^{3}-t^{2}-1=0 \]
+    </div>
+    <p><strong>第四步：解这个三次方程。</strong>观察 \(t=1\) 是一个根（\(2-1-1=0\)），所以可以分解因式：</p>
+    <div class="formula">
+      \[ 2t^{3}-t^{2}-1=(t-1)(2t^{2}+t+1) \]
+    </div>
+    <p><strong>验证分解：</strong>\((t-1)(2t^2+t+1)=2t^3+t^2+t-2t^2-t-1=2t^3-t^2-1\) ✓</p>
+    <p>对于 \(2t^{2}+t+1\)，判别式 \(\Delta=1-8=-7&lt;0\)，无实根。所以只有 \(t=1\)。</p>
+
+    <p><strong>第五步：求切点和切线。</strong>\(t=1\) 时：</p>
+    <div class="formula">
+      \[ f(1)=1-1+a+1=a+1,\qquad k=f'(1)=3-2+a=a+1 \]
+    </div>
+    <p>切线方程：\(y-(a+1)=(a+1)(x-1)\)，整理得</p>
+    <div class="formula">\[ y=(a+1)x \]</div>
+    <p>确实过原点 ✓</p>
+
+    <p><strong>第六步：求切线与曲线的公共点。</strong>解方程组：</p>
+    <div class="formula">
+      \[
+      \begin{cases}
+      y=(a+1)x \\
+      y=x^{3}-x^{2}+ax+1
+      \end{cases}
+      \]
+    </div>
+    <p>联立消 \(y\)：</p>
+    <div class="formula">
+      \[ x^{3}-x^{2}+ax+1=(a+1)x \]
+    </div>
+    <div class="formula">
+      \[ x^{3}-x^{2}+ax+1-ax-x=0 \quad\Longrightarrow\quad x^{3}-x^{2}-x+1=0 \]
+    </div>
+    <p>分解因式（分组分解）：</p>
+    <div class="formula">
+      \[ x^{2}(x-1)-(x-1)=0 \quad\Longrightarrow\quad (x-1)(x^{2}-1)=0 \quad\Longrightarrow\quad (x-1)^{2}(x+1)=0 \]
+    </div>
+    <p>所以 \(x=1\)（二重根）或 \(x=-1\)。</p>
+    <ul>
+      <li>\(x=1\)：\(y=(a+1)\times1=a+1\)，得点 \((1,\ a+1)\)（这就是切点）；</li>
+      <li>\(x=-1\)：\(y=(a+1)\times(-1)=-a-1\)，得点 \((-1,\ -a-1)\)。</li>
+    </ul>
+
+    <div class="formula">
+      \[ \boxed{\ \text{公共点为 }(1,\ a+1)\text{ 和 }(-1,\ -a-1)\ } \]
+    </div>
+
+    <p><strong>验算：</strong>把 \(x=-1\) 代入曲线：\(f(-1)=-1-1-a+1=-a-1\) ✓ 与切线上的纵坐标一致。</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>"过原点的切线"必须设切点。</strong>先验证原点在不在曲线上（本题不在），然后设切点 \((t,f(t))\)，用"切线过原点"列方程解 \(t\)。</li>
+        <li><strong>三次方程要会因式分解。</strong>先用整数试根（\(t=\pm1,\pm2\) 等），找到一个根后用多项式除法或配凑分解。本题 \(t=1\) 是根，分解出 \((t-1)(2t^2+t+1)\)。</li>
+        <li><strong>切线与曲线的公共点不一定只有一个。</strong>本题有 2 个（其中 \(x=1\) 是切点，\(x=-1\) 是"另一个交点"）。这类问题要<strong>联立求解</strong>，不能只写切点。</li>
+        <li>联立后得到的三次方程，因为切点必定是根，所以一定能分解出 \((x-x_0)\) 这个因式。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="ch8-2">8.2　题型二：含参数讨论单调性</h3>
+
+  <div class="box tip">
+    <span class="tag">题型特征与解题套路</span>
+    <p><strong>特征：</strong>函数里含参数 \(a\)，要求"讨论 \(f(x)\) 的单调性"。</p>
+    <p><strong>套路（固定四步）：</strong></p>
+    <ol class="steps">
+      <li><strong>求定义域</strong>（含 \(\ln x\) 时是 \(x>0\)）。</li>
+      <li><strong>求导并通分、因式分解</strong>，把 \(f'(x)\) 化成"几个因式相乘"的形式。</li>
+      <li><strong>找出 \(f'(x)=0\) 的根</strong>，并分析<strong>根的位置如何随参数变化</strong>——这就是分类的标准。</li>
+      <li><strong>按参数分类</strong>，在每一类里列表判断符号，写出单调区间。</li>
+    </ol>
+    <p><strong>分类的依据只有三个：</strong>① 二次项系数是否为 0；② 判别式是否大于 0；③ 根的大小关系和是否落在定义域内。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 4 · 2017 全国I卷（理）</span>
+    <p>已知函数 \(f(x)=ae^{2x}+(a-2)e^{x}-x\)。</p>
+    <p>（1）讨论 \(f(x)\) 的单调性；</p>
+    <p>（2）若 \(f(x)\) 有两个零点，求 \(a\) 的取值范围。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：求导。</strong>定义域为 \(\mathbb{R}\)。</p>
+    <div class="formula">
+      \[ f'(x)=2ae^{2x}+(a-2)e^{x}-1 \]
+    </div>
+
+    <p><strong>第二步：因式分解（关键技巧）。</strong>这个式子看着像二次式，用<strong>换元</strong>看清结构。令 \(t=e^x>0\)：</p>
+    <div class="formula">
+      \[ f'(x)=2at^{2}+(a-2)t-1 \]
+    </div>
+    <p>这是关于 \(t\) 的二次式，试着分解。因为 \(2a\cdot t^2+(a-2)t-1\)，猜测形如 \((2t+1)(at-1)\)：</p>
+    <div class="formula">
+      \[ (2t+1)(at-1)=2at^{2}-2t+at-1=2at^{2}+(a-2)t-1 \quad\checkmark \]
+    </div>
+    <p>所以：</p>
+    <div class="formula">
+      \[ f'(x)=(2e^{x}+1)(ae^{x}-1) \]
+    </div>
+    <p><strong>注意：</strong>\(2e^x+1>0\) 恒成立，所以 \(f'(x)\) 的符号<strong>只由 \(ae^x-1\) 决定</strong>。</p>
+
+    <p><strong>第三步：分类讨论。</strong></p>
+    <p><strong>情况一：\(a\le0\)。</strong>此时 \(ae^x\le0\)，所以 \(ae^x-1&lt;0\) 恒成立，从而 \(f'(x)&lt;0\) 恒成立。</p>
+    <p>结论：\(f(x)\) 在 \(\mathbb{R}\) 上<strong>单调递减</strong>。</p>
+
+    <p><strong>情况二：\(a>0\)。</strong>令 \(ae^x-1=0\)，得 \(e^x=\dfrac1a\)，即</p>
+    <div class="formula">\[ x=\ln\frac1a=-\ln a \]</div>
+    <p>这是唯一的根。分两段判断：</p>
+    <ul>
+      <li>\(x&lt;-\ln a\) 时：\(e^x&lt;\dfrac1a\)，所以 \(ae^x&lt;1\)，即 \(ae^x-1&lt;0\)，故 \(f'(x)&lt;0\)；</li>
+      <li>\(x>-\ln a\) 时：\(e^x>\dfrac1a\)，所以 \(ae^x>1\)，即 \(ae^x-1>0\)，故 \(f'(x)>0\)。</li>
+    </ul>
+
+    <div class="formula">
+      \[
+      \boxed{
+      \begin{aligned}
+      &\text{当 }a\le0\text{ 时：}f(x)\text{ 在 }\mathbb{R}\text{ 上单调递减;} \\[4pt]
+      &\text{当 }a>0\text{ 时：}f(x)\text{ 在}\left(-\infty,\ \ln\tfrac1a\right)\text{上单调递减，在}\left(\ln\tfrac1a,\ +\infty\right)\text{上单调递增。}
+      \end{aligned}}
+      \]
+    </div>
+
+    <p><strong>（2）第一步：先排除 \(a\le0\)。</strong>由（1），\(a\le0\) 时 \(f\) 在 \(\mathbb{R}\) 上单调递减，<strong>至多有一个零点</strong>，不可能有两个。所以必须 \(a>0\)。</p>
+
+    <p><strong>第二步：\(a>0\) 时，最小值在 \(x_0=\ln\dfrac1a\) 处取得。</strong>由（1）的单调性，\(f\) 先减后增，所以 \(x_0\) 是<strong>全局最小值点</strong>。</p>
+
+    <p><strong>第三步：看两端的趋势。</strong></p>
+    <p>当 \(x\to-\infty\) 时，\(e^x\to0\)、\(e^{2x}\to0\)，所以 \(ae^{2x}\to0\)、\((a-2)e^x\to0\)，而 \(-x\to+\infty\)。因此：</p>
+    <div class="formula">\[ \lim_{x\to-\infty}f(x)=+\infty \]</div>
+    <p>当 \(x\to+\infty\) 时，\(ae^{2x}\) 增长最快（\(a>0\)），所以：</p>
+    <div class="formula">\[ \lim_{x\to+\infty}f(x)=+\infty \]</div>
+
+    <p><strong>第四步：下结论。</strong>两端都趋于 \(+\infty\)，中间有一个最小值。所以"\(f\) 有两个零点"等价于"<strong>最小值小于 0</strong>"：</p>
+    <div class="formula">\[ f(x_0)&lt;0 \]</div>
+
+    <p><strong>第五步：计算 \(f(x_0)\)。</strong>由 \(e^{x_0}=\dfrac1a\)，得 \(e^{2x_0}=\dfrac{1}{a^{2}}\)。代入：</p>
+    <div class="formula">
+      \[ f(x_0)=a\cdot\frac{1}{a^{2}}+(a-2)\cdot\frac1a-\ln\frac1a=\frac1a+1-\frac2a+\ln a=1-\frac1a+\ln a \]
+    </div>
+    <p>所以条件化为：</p>
+    <div class="formula">
+      \[ 1-\frac1a+\ln a&lt;0 \tag{①} \]
+    </div>
+
+    <p><strong>第六步：解这个不等式。</strong>令 \(t=\dfrac1a>0\)，则 \(\ln a=\ln\dfrac1t=-\ln t\)，①化为：</p>
+    <div class="formula">
+      \[ 1-t-\ln t&lt;0 \quad\Longleftrightarrow\quad 1-t-\ln t&lt;0 \]
+    </div>
+    <p>设 \(h(t)=1-t-\ln t\)（\(t>0\)），求导：</p>
+    <div class="formula">
+      \[ h'(t)=-1-\frac1t&lt;0 \]
+    </div>
+    <p>所以 \(h(t)\) 在 \((0,+\infty)\) 上<strong>单调递减</strong>。又</p>
+    <div class="formula">\[ h(1)=1-1-0=0 \]</div>
+    <p>所以 \(h(t)&lt;0\) 等价于 \(t>1\)。</p>
+    <p>即 \(\dfrac1a>1\)，所以 \(0&lt;a&lt;1\)。</p>
+
+    <div class="formula">
+      \[ \boxed{\ a\in(0,\ 1)\ } \]
+    </div>
+
+    <p><strong>验算：</strong>取 \(a=\dfrac12\)（在 \((0,1)\) 内），则 \(x_0=\ln2\)，</p>
+    <div class="formula">
+      \[ f(x_0)=1-2+\ln\frac12=-1-0.693=-1.693&lt;0 \]
+    </div>
+    <p>最小值小于 0，两端趋于 \(+\infty\)，所以确实有两个零点 ✓</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>含 \(e^{2x}\)、\(e^x\) 的导数要会"换元因式分解"。</strong>令 \(t=e^x\) 看清二次结构，再凑出 \((2t+1)(at-1)\) 这种形式。这类题几乎每年都考。</li>
+        <li><strong>因式分解后要指出"哪个因式恒正"。</strong>本题 \(2e^x+1>0\) 恒成立，所以符号只看 \(ae^x-1\)，分类讨论立刻就清晰了。</li>
+        <li><strong>"有两个零点"的标准转化：最小值 \(&lt;0\) 且两端趋于 \(+\infty\)。</strong>不要忘了先说明两端趋势。</li>
+        <li>解 \(1-\dfrac1a+\ln a&lt;0\) 时用换元 \(t=\dfrac1a\) 把式子整理成 \(1-t-\ln t&lt;0\)，再用单调性 + 试根 \(t=1\) 解出范围。这是处理"超越不等式"的标准手法。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 5 · 2018 全国I卷（理）</span>
+    <p>已知函数 \(f(x)=\dfrac1x-x+a\ln x\)。</p>
+    <p>（1）讨论 \(f(x)\) 的单调性；</p>
+    <p>（2）若 \(f(x)\) 存在两个极值点 \(x_1\)，\(x_2\)，证明：\(\dfrac{f(x_1)-f(x_2)}{x_1-x_2}&lt;a-2\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：求定义域和导数。</strong>因为有 \(\ln x\)，定义域是 \((0,+\infty)\)。</p>
+    <div class="formula">
+      \[ f'(x)=-\frac{1}{x^{2}}-1+\frac ax=\frac{-1-x^{2}+ax}{x^{2}}=\frac{-x^{2}+ax-1}{x^{2}} \]
+    </div>
+    <p>因为 \(x^2>0\) 恒成立，所以 \(f'(x)\) 的符号<strong>只由分子 \(-x^2+ax-1\) 决定</strong>。</p>
+
+    <p><strong>第二步：分析分子的符号。</strong>把分子变号，讨论 \(g(x)=x^{2}-ax+1\)（注意 \(f'(x)\) 的符号与 \(g(x)\) 相反）：</p>
+    <div class="formula">\[ f'(x)=-\frac{x^{2}-ax+1}{x^{2}} \]</div>
+    <p>判别式 \(\Delta=a^{2}-4\)。</p>
+
+    <p><strong>情况一：\(a\le2\)。</strong>此时 \(a^2\le4\)，所以 \(\Delta\le0\)，\(g(x)=x^2-ax+1\ge0\) 对一切 \(x>0\) 成立。</p>
+    <p>因此 \(f'(x)\le0\)，\(f(x)\) 在 \((0,+\infty)\) 上<strong>单调递减</strong>。</p>
+    <p><strong>关于 \(a=2\) 的说明：</strong>此时 \(f'(x)=-\dfrac{(x-1)^2}{x^2}\le0\)，且只在 \(x=1\) 处等于 0。导数在孤立点等于 0 <strong>不影响</strong>单调性，所以 \(f\) 仍在整个定义域上递减。</p>
+
+    <p><strong>情况二：\(a>2\)。</strong>此时 \(\Delta>0\)，\(g(x)=0\) 有两个正根：</p>
+    <div class="formula">
+      \[ x_{1}=\frac{a-\sqrt{a^{2}-4}}{2},\qquad x_{2}=\frac{a+\sqrt{a^{2}-4}}{2} \]
+    </div>
+    <p><strong>验证两根都是正的：</strong>因为 \(a>2\)，所以 \(\sqrt{a^2-4}&lt;a\)，于是 \(x_1=\dfrac{a-\sqrt{a^2-4}}{2}>0\)；显然 \(x_2>0\) ✓</p>
+    <p>又 \(x_1x_2=\dfrac{a^2-(a^2-4)}{4}=1\)，这个关系后面第（2）问要用。</p>
+    <p>因为 \(g(x)=(x-x_1)(x-x_2)\) 且开口向上，所以 \(g(x)&lt;0\) 在 \((x_1,x_2)\) 内、\(g(x)>0\) 在 \((0,x_1)\cup(x_2,+\infty)\)。而 \(f'(x)\) 与 \(g(x)\) <strong>符号相反</strong>，所以：</p>
+    <ul>
+      <li>\(f'(x)&lt;0\) 在 \((0,x_1)\) 和 \((x_2,+\infty)\)；</li>
+      <li>\(f'(x)>0\) 在 \((x_1,x_2)\)。</li>
+    </ul>
+
+    <div class="formula">
+      \[
+      \boxed{
+      \begin{aligned}
+      &\text{当 }a\le2\text{ 时：}f(x)\text{ 在 }(0,+\infty)\text{ 上单调递减;} \\[4pt]
+      &\text{当 }a>2\text{ 时：}f(x)\text{ 在}(0,x_1)\text{和}(x_2,+\infty)\text{上递减，在}(x_1,x_2)\text{上递增，}\\
+      &\qquad\qquad\ \ \text{其中 }x_{1,2}=\frac{a\pm\sqrt{a^{2}-4}}{2}。
+      \end{aligned}}
+      \]
+    </div>
+
+    <p><strong>（2）第一步：明确目标。</strong>由（1），\(f\) 有两个极值点必须有 \(a>2\)，且 \(x_1\)、\(x_2\) 是方程 \(x^{2}-ax+1=0\) 的两根，满足：</p>
+    <div class="formula">\[ x_{1}+x_{2}=a,\qquad x_{1}x_{2}=1 \tag{①} \]</div>
+    <p>不妨设 \(0&lt;x_1&lt;x_2\)。由 \(x_1x_2=1\) 得 \(x_1=\dfrac{1}{x_2}\)，所以 \(x_1&lt;1&lt;x_2\)。</p>
+
+    <p><strong>第二步：化简要证的式子。</strong>要证</p>
+    <div class="formula">
+      \[ \frac{f(x_1)-f(x_2)}{x_1-x_2}&lt;a-2 \]
+    </div>
+    <p>先算 \(f(x_1)-f(x_2)\)。因为 \(x_1,x_2\) 都是极值点，由 \(f'(x_i)=0\) 得 \(-\dfrac{1}{x_i^2}-1+\dfrac{a}{x_i}=0\)，即：</p>
+    <div class="formula">
+      \[ \frac{a}{x_i}=1+\frac{1}{x_i^{2}}\qquad(i=1,2) \tag{②} \]
+    </div>
+    <p>利用②化简 \(f(x_i)\)：</p>
+    <div class="formula">
+      \[ f(x_i)=\frac{1}{x_i}-x_i+a\ln x_i=\frac{1}{x_i}-x_i+x_i\left(1+\frac{1}{x_i^{2}}\right)\ln x_i \]
+    </div>
+    <p>这里把 \(a=x_i\left(1+\dfrac{1}{x_i^2}\right)\) 代入了（由②两边乘 \(x_i\) 得到）。整理：</p>
+    <div class="formula">
+      \[ f(x_i)=\frac{1}{x_i}-x_i+\left(x_i+\frac{1}{x_i}\right)\ln x_i \]
+    </div>
+
+    <p><strong>第三步：作差。</strong>设 \(A_i=x_i+\dfrac{1}{x_i}\)（注意 \(A_i\) 是 \(x_i\) 的对称式），则：</p>
+    <div class="formula">
+      \[ f(x_i)=A_i\ln x_i-x_i+\frac{1}{x_i} \]
+    </div>
+    <p>利用 \(x_1x_2=1\)（即 \(x_1=\dfrac{1}{x_2}\)），可得 \(\dfrac{1}{x_1}=x_2\)、\(\dfrac{1}{x_2}=x_1\)，且</p>
+    <div class="formula">
+      \[ A_1=x_1+\frac{1}{x_1}=x_1+x_2=a,\qquad A_2=x_2+\frac{1}{x_2}=x_2+x_1=a \]
+    </div>
+    <p>所以 \(A_1=A_2=a\)。于是：</p>
+    <div class="formula">
+      \[
+      \begin{aligned}
+      f(x_1)-f(x_2) &= a\ln x_1-\left(x_1-\frac{1}{x_1}\right)-a\ln x_2+\left(x_2-\frac{1}{x_2}\right) \\
+      &= a\ln\frac{x_1}{x_2}-\left(x_1-x_2\right)+\left(\frac{1}{x_1}-\frac{1}{x_2}\right)
+      \end{aligned}
+      \]
+    </div>
+    <p>而 \(\dfrac{1}{x_1}-\dfrac{1}{x_2}=x_2-x_1=-(x_1-x_2)\)，所以：</p>
+    <div class="formula">
+      \[ f(x_1)-f(x_2)=a\ln\frac{x_1}{x_2}-(x_1-x_2)-(x_1-x_2)=a\ln\frac{x_1}{x_2}-2(x_1-x_2) \]
+    </div>
+
+    <p><strong>第四步：代入要证的式子。</strong>两边除以 \(x_1-x_2\)（注意 \(x_1-x_2&lt;0\)，<strong>除以负数要变号</strong>，所以先算清楚）：</p>
+    <div class="formula">
+      \[ \frac{f(x_1)-f(x_2)}{x_1-x_2}=\frac{a\ln\frac{x_1}{x_2}}{x_1-x_2}-2 \]
+    </div>
+    <p>所以原不等式等价于：</p>
+    <div class="formula">
+      \[ \frac{a\ln\frac{x_1}{x_2}}{x_1-x_2}-2&lt;a-2 \quad\Longleftrightarrow\quad \frac{a\ln\frac{x_1}{x_2}}{x_1-x_2}&lt;a \]
+    </div>
+    <p>因为 \(a>2>0\)，两边同除以 \(a\)：</p>
+    <div class="formula">
+      \[ \frac{\ln\frac{x_1}{x_2}}{x_1-x_2}&lt;1 \tag{③} \]
+    </div>
+
+    <p><strong>第五步：换元化简③。</strong>设 \(t=\dfrac{x_1}{x_2}\)。因为 \(0&lt;x_1&lt;x_2\)，所以 \(0&lt;t&lt;1\)。</p>
+    <p>又 \(x_1-x_2\) 用 \(t\) 表示：由 \(x_1=tx_2\) 且 \(x_1x_2=1\)，得 \(tx_2^2=1\)，即 \(x_2=\dfrac{1}{\sqrt t}\)，\(x_1=t\cdot\dfrac{1}{\sqrt t}=\sqrt t\)。所以</p>
+    <div class="formula">
+      \[ x_1-x_2=\sqrt t-\frac{1}{\sqrt t}=\frac{t-1}{\sqrt t} \]
+    </div>
+    <p>且 \(\ln\dfrac{x_1}{x_2}=\ln t\)。代入③：</p>
+    <div class="formula">
+      \[ \frac{\ln t}{\dfrac{t-1}{\sqrt t}}&lt;1 \quad\Longleftrightarrow\quad \frac{\sqrt t\,\ln t}{t-1}&lt;1 \]
+    </div>
+    <p>因为 \(t-1&lt;0\)（\(0&lt;t&lt;1\)），两边同乘 \(t-1\) 要<strong>变号</strong>：</p>
+    <div class="formula">
+      \[ \sqrt t\,\ln t>t-1 \]
+    </div>
+    <p>即要证：</p>
+    <div class="formula">
+      \[ \sqrt t\,\ln t-t+1>0\qquad(0&lt;t&lt;1) \tag{④} \]
+    </div>
+
+    <p><strong>第六步：构造函数证明④。</strong>设 \(\varphi(t)=\sqrt t\,\ln t-t+1\)（\(0&lt;t&lt;1\)）。</p>
+    <p>求导（\(\sqrt t\ln t\) 用乘积法则）：</p>
+    <div class="formula">
+      \[ \varphi'(t)=\frac{1}{2\sqrt t}\ln t+\sqrt t\cdot\frac1t-1=\frac{\ln t}{2\sqrt t}+\frac{1}{\sqrt t}-1 \]
+    </div>
+    <p>通分（乘 \(2\sqrt t>0\)）：</p>
+    <div class="formula">
+      \[ \varphi'(t)=\frac{\ln t+2-2\sqrt t}{2\sqrt t} \]
+    </div>
+    <p>记 \(\psi(t)=\ln t+2-2\sqrt t\)。再求导：</p>
+    <div class="formula">
+      \[ \psi'(t)=\frac1t-\frac{1}{\sqrt t}=\frac{1-\sqrt t}{t} \]
+    </div>
+    <p>因为 \(0&lt;t&lt;1\)，所以 \(\sqrt t&lt;1\)，故 \(1-\sqrt t>0\)，于是 \(\psi'(t)>0\)，\(\psi\) 在 \((0,1)\) 上<strong>递增</strong>。</p>
+    <p>又 \(\psi(1)=\ln1+2-2=0\)，所以对 \(0&lt;t&lt;1\) 有 \(\psi(t)&lt;\psi(1)=0\)。</p>
+    <p>因此 \(\varphi'(t)=\dfrac{\psi(t)}{2\sqrt t}&lt;0\)，即 \(\varphi\) 在 \((0,1)\) 上<strong>递减</strong>。</p>
+    <p>又 \(\varphi(1)=\sqrt1\cdot\ln1-1+1=0\)，所以对 \(0&lt;t&lt;1\) 有</p>
+    <div class="formula">
+      \[ \varphi(t)>\varphi(1)=0 \]
+    </div>
+    <p>即 \(\sqrt t\,\ln t-t+1>0\) 成立。∎</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>第（2）问的核心技巧：用 \(f'(x_i)=0\) 把 \(a\) 换掉。</strong>由 \(f'(x_i)=0\) 得 \(a=x_i+\dfrac{1}{x_i}\)，这样 \(f(x_i)\) 里的 \(a\ln x_i\) 就能化成只含 \(x_i\) 的式子。这是极值点处的"降参"手法。</li>
+        <li><strong>记住韦达关系 \(x_1+x_2=a\)、\(x_1x_2=1\)。</strong>特别是 \(x_1x_2=1\)（因为常数项是 1），它让 \(\dfrac{1}{x_1}=x_2\)，是化简的关键。</li>
+        <li><strong>换元 \(t=\dfrac{x_1}{x_2}\) 后要把 \(x_1-x_2\) 也用 \(t\) 表示。</strong>这里用到 \(x_1x_2=1\) 才能算出来。</li>
+        <li><strong>注意不等式两边乘除负数要变号。</strong>本题 \(t-1&lt;0\)，乘过去之后不等号方向要反过来。</li>
+        <li>最后构造函数 \(\varphi(t)=\sqrt t\ln t-t+1\)，<strong>两次求导</strong>判断符号，再由端点值定结论。这是"证明超越不等式"的标准套路。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="ch8-3">8.3　题型三：极值点与参数</h3>
+
+  <div class="box eg">
+    <span class="tag">真题 6 · 2018 全国I卷（文）</span>
+    <p>已知函数 \(f(x)=ae^{x}-\ln x-1\)。</p>
+    <p>（1）设 \(x=2\) 是 \(f(x)\) 的极值点，求 \(a\)，并求 \(f(x)\) 的单调区间；</p>
+    <p>（2）证明：当 \(a\ge\dfrac1e\) 时，\(f(x)\ge0\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：求定义域和导数。</strong>因为有 \(\ln x\)，定义域是 \((0,+\infty)\)。</p>
+    <div class="formula">\[ f'(x)=ae^{x}-\frac1x \]</div>
+
+    <p><strong>第二步：用"\(x=2\) 是极值点"求 \(a\)。</strong>极值点处导数为 0（可导函数）：</p>
+    <div class="formula">
+      \[ f'(2)=ae^{2}-\frac12=0 \quad\Longrightarrow\quad a=\frac{1}{2e^{2}} \]
+    </div>
+
+    <p><strong>第三步：写出导数并判断符号。</strong></p>
+    <div class="formula">
+      \[ f'(x)=\frac{e^{x}}{2e^{2}}-\frac1x=\frac{x\,e^{x}-2e^{2}}{2e^{2}x} \]
+    </div>
+    <p>分母 \(2e^2x>0\)（\(x>0\)），所以符号只由分子 \(x\,e^{x}-2e^{2}\) 决定。</p>
+    <p><strong>第四步：判断 \(h(x)=xe^{x}\) 的单调性。</strong></p>
+    <div class="formula">
+      \[ h'(x)=e^{x}+xe^{x}=e^{x}(1+x)>0\quad(x>0) \]
+    </div>
+    <p>所以 \(h(x)=xe^x\) 在 \((0,+\infty)\) 上<strong>严格递增</strong>。又</p>
+    <div class="formula">\[ h(2)=2e^{2} \]</div>
+    <p>所以：</p>
+    <ul>
+      <li>\(0&lt;x&lt;2\) 时，\(h(x)&lt;h(2)=2e^2\)，分子 \(&lt;0\)，故 \(f'(x)&lt;0\)；</li>
+      <li>\(x>2\) 时，\(h(x)>2e^2\)，分子 \(>0\)，故 \(f'(x)>0\)。</li>
+    </ul>
+
+    <div class="formula">
+      \[
+      \boxed{\ a=\frac{1}{2e^{2}};\quad f(x)\text{ 的减区间为 }(0,2)\text{，增区间为 }(2,+\infty)\ }
+      \]
+    </div>
+
+    <p><strong>（2）第一步：利用 \(a\ge\dfrac1e\) 放大。</strong>因为 \(e^x>0\)，由 \(a\ge\dfrac1e\) 得：</p>
+    <div class="formula">
+      \[ f(x)=ae^{x}-\ln x-1\ge\frac1e e^{x}-\ln x-1=e^{\,x-1}-\ln x-1 \]
+    </div>
+    <p>所以<strong>只要证明 \(e^{\,x-1}-\ln x-1\ge0\) 即可</strong>（放缩法：把难证的式子换成更好证的）。</p>
+
+    <p><strong>第二步：用两条切线放缩。</strong>回忆 5.3 节的两个结论（都要记住）：</p>
+    <div class="formula">
+      \[ e^{u}\ge u+1\quad(u\in\mathbb{R}),\qquad \ln x\le x-1\quad(x>0) \]
+    </div>
+    <p>对第一个式子取 \(u=x-1\)：</p>
+    <div class="formula">\[ e^{\,x-1}\ge (x-1)+1=x \]</div>
+    <p>对第二个式子移项：</p>
+    <div class="formula">\[ x-1\ge\ln x \quad\Longleftrightarrow\quad x\ge 1+\ln x \]</div>
+
+    <p><strong>第三步：串联两个不等式。</strong>把上面两式接起来：</p>
+    <div class="formula">
+      \[ e^{\,x-1}\ge x\ge 1+\ln x \]
+    </div>
+    <p>所以 \(e^{\,x-1}-\ln x-1\ge0\) ✓</p>
+
+    <p><strong>第四步：下结论。</strong>因此</p>
+    <div class="formula">
+      \[ f(x)\ge e^{\,x-1}-\ln x-1\ge0 \quad\checkmark \]
+    </div>
+    <p>即当 \(a\ge\dfrac1e\) 时，对一切 \(x>0\) 都有 \(f(x)\ge0\)。∎</p>
+    <p><strong>等号成立条件：</strong>两个不等式都取等号时，即 \(x-1=0\) 且 \(x=1\)，也就是 \(x=1\)。此时 \(a=\dfrac1e\)。</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>"\(x=x_0\) 是极值点" ⟹ "\(f'(x_0)=0\)"。</strong>这是求参数的直接入口（可导函数适用）。</li>
+        <li>判断 \(xe^x-2e^2\) 的符号，关键是<strong>研究 \(h(x)=xe^x\) 的单调性</strong>，而不是硬解方程 \(xe^x=2e^2\)（那个方程解不出来）。</li>
+        <li><strong>证明不等式时，"放缩"往往比直接求最值更快。</strong>本题把 \(a\) 换成最小值 \(\dfrac1e\)，就把问题转化为证明一个不含参数的式子。</li>
+        <li><strong>\(e^u\ge u+1\) 和 \(\ln x\le x-1\) 必须背下来。</strong>它们是导数不等式题的"万能钥匙"，本章真题 6、7、11 都用到。</li>
+        <li>最后要说明等号成立的条件，这是证明题的规范要求。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="ch8-4">8.4　题型四：零点问题</h3>
+
+  <div class="box tip">
+    <span class="tag">题型特征与解题套路</span>
+    <p><strong>三种问法：</strong></p>
+    <ol>
+      <li><strong>求零点个数：</strong>研究 \(f\) 的单调性和极值，再看两端趋势，数出图象与 \(x\) 轴的交点个数。</li>
+      <li><strong>已知零点个数求参数：</strong>把参数<strong>分离</strong>出来，转化为"直线 \(y=a\) 与曲线 \(y=g(x)\) 的交点个数"（见 5.2 节）。</li>
+      <li><strong>证明"有且仅有"：</strong>存在性用<strong>零点存在定理</strong>（找两端异号），唯一性用<strong>单调性</strong>。</li>
+    </ol>
+    <p><strong>核心工具：</strong>零点存在定理 + 单调性。两者配合，就能把"有且仅有"说清楚。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 7 · 2020 全国I卷（文）</span>
+    <p>已知函数 \(f(x)=e^{x}-a(x+2)\)。</p>
+    <p>（1）当 \(a=1\) 时，讨论 \(f(x)\) 的单调性；</p>
+    <p>（2）若 \(f(x)\) 有两个零点，求 \(a\) 的取值范围。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：代入 \(a=1\) 求导。</strong>\(f(x)=e^{x}-x-2\)，定义域 \(\mathbb{R}\)。</p>
+    <div class="formula">\[ f'(x)=e^{x}-1 \]</div>
+
+    <p><strong>第二步：判断符号。</strong>令 \(f'(x)=0\)，得 \(e^x=1\)，即 \(x=0\)。</p>
+    <ul>
+      <li>\(x&lt;0\) 时：\(e^x&lt;1\)，所以 \(f'(x)&lt;0\)；</li>
+      <li>\(x>0\) 时：\(e^x>1\)，所以 \(f'(x)>0\)。</li>
+    </ul>
+
+    <div class="formula">
+      \[ \boxed{\ f(x)\text{ 在 }(-\infty,0)\text{ 上单调递减，在 }(0,+\infty)\text{ 上单调递增}\ } \]
+    </div>
+
+    <p><strong>（2）第一步：分离参数（关键技巧）。</strong>先看 \(x=-2\) 时的情况：</p>
+    <div class="formula">\[ f(-2)=e^{-2}-a\cdot0=e^{-2}\ne0 \]</div>
+    <p>所以 \(x=-2\) <strong>不是零点</strong>。于是当 \(x\ne-2\) 时，\(f(x)=0\) 可以两边除以 \((x+2)\)：</p>
+    <div class="formula">
+      \[ e^{x}-a(x+2)=0 \quad\Longleftrightarrow\quad a=\frac{e^{x}}{x+2} \]
+    </div>
+    <p>所以问题转化为：<strong>直线 \(y=a\) 与曲线 \(g(x)=\dfrac{e^{x}}{x+2}\) 有几个交点。</strong></p>
+
+    <p><strong>第二步：研究 \(g(x)\) 的单调性和极值。</strong>用商法则：</p>
+    <div class="formula">
+      \[ g'(x)=\frac{e^{x}(x+2)-e^{x}\cdot1}{(x+2)^{2}}=\frac{e^{x}(x+1)}{(x+2)^{2}} \]
+    </div>
+    <p>因为 \(e^x>0\)、\((x+2)^2>0\)，所以 \(g'(x)\) 的符号由 \(x+1\) 决定。\(g\) 的定义域是 \(x\ne-2\)，分成两段：</p>
+
+    <p><strong>在 \((-\infty,-2)\) 上：</strong>\(x+1&lt;0\)，所以 \(g'(x)&lt;0\)，\(g\) 单调递减。</p>
+    <p>看两端的趋势：</p>
+    <div class="formula">
+      \[ \lim_{x\to-\infty}g(x)=\frac{0}{-\infty}=0^{-},\qquad \lim_{x\to-2^{-}}g(x)=\frac{e^{-2}}{0^{-}}=-\infty \]
+    </div>
+    <p>所以 \(g\) 在这一段从 \(0^{-}\)（略小于 0）递减到 \(-\infty\)，值域是 \((-\infty,0)\)。</p>
+
+    <p><strong>在 \((-2,+\infty)\) 上：</strong>分两段看 \(x+1\) 的符号。</p>
+    <ul>
+      <li>\(-2&lt;x&lt;-1\)：\(x+1&lt;0\)，\(g'(x)&lt;0\)，\(g\) 递减；</li>
+      <li>\(x>-1\)：\(x+1>0\)，\(g'(x)>0\)，\(g\) 递增。</li>
+    </ul>
+    <p>所以 \(x=-1\) 是极小值点，极小值为</p>
+    <div class="formula">
+      \[ g(-1)=\frac{e^{-1}}{-1+2}=\frac1e \]
+    </div>
+    <p>两端的趋势：</p>
+    <div class="formula">
+      \[ \lim_{x\to-2^{+}}g(x)=\frac{e^{-2}}{0^{+}}=+\infty,\qquad \lim_{x\to+\infty}g(x)=+\infty \]
+    </div>
+
+    <p><strong>第三步：数交点。</strong>把 \(g\) 的图象特征整理一下：</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>\(a\) 的范围</th><th>交点情况</th></tr></thead>
+        <tbody>
+          <tr><td>\(a&lt;0\)</td><td>在 \((-\infty,-2)\) 段上有 <strong>1 个</strong>；\((-2,+\infty)\) 段上 \(g\ge\dfrac1e>0\)，无交点。共 <strong>1 个</strong></td></tr>
+          <tr><td>\(a=0\)</td><td>\(g\) 取不到 0（\(e^x>0\)），<strong>无交点</strong></td></tr>
+          <tr><td>\(0&lt;a&lt;\dfrac1e\)</td><td>\((-2,+\infty)\) 段上 \(g\) 的最小值 \(\dfrac1e>a\)，无交点；\((-\infty,-2)\) 段上 \(g&lt;0&lt;a\)，无交点。共 <strong>0 个</strong></td></tr>
+          <tr><td>\(a=\dfrac1e\)</td><td>\((-2,+\infty)\) 段上相切于 \(x=-1\)，<strong>1 个</strong></td></tr>
+          <tr><td>\(a>\dfrac1e\)</td><td>\((-2,+\infty)\) 段上，\(g\) 在 \((-2,-1)\) 从 \(+\infty\) 降到 \(\dfrac1e\)、在 \((-1,+\infty)\) 从 \(\dfrac1e\) 升到 \(+\infty\)，与 \(y=a\) 各交 1 次，共 <strong>2 个</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>第四步：下结论。</strong>要有两个零点，必须</p>
+    <div class="formula">
+      \[ \boxed{\ a>\frac1e\ } \]
+    </div>
+
+    <p><strong>验算：</strong>取 \(a=1>\dfrac1e\approx0.368\)。此时 \(f(x)=e^x-x-2\)，由第（1）问知最小值 \(f(0)=1-0-2=-1&lt;0\)，且 \(f(-2)=e^{-2}>0\)、\(f(2)=e^2-4>0\)，所以确实有两个零点 ✓</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>"零点个数"问题的首选方法是"分离参数"。</strong>把 \(f(x)=0\) 整理成 \(a=g(x)\)，问题就变成"直线与曲线的交点个数"，比直接讨论 \(f\) 简单得多。</li>
+        <li><strong>分离前要检查"除数为 0"的情况。</strong>本题先验证 \(x=-2\) 不是零点，才能放心除以 \((x+2)\)。</li>
+        <li><strong>研究 \(g(x)\) 时要注意定义域被 \(x=-2\) 分成两段</strong>，两段要分别分析，不能混在一起说"单调性"。</li>
+        <li><strong>端点趋势（极限）必须写出来</strong>，否则无法判断"有没有交点"。本题用到了 \(x\to-\infty\) 时 \(g\to0^-\) 这个细节（说明 \((-\infty,-2)\) 段的值域是 \((-\infty,0)\)，不含 0）。</li>
+        <li>临界情况 \(a=\dfrac1e\)（相切）要单独列出来，不能并入两边。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 8 · 2019 全国II卷（理）</span>
+    <p>已知函数 \(f(x)=\ln x-\dfrac{x+1}{x-1}\)。</p>
+    <p>（1）讨论 \(f(x)\) 的单调性，并证明 \(f(x)\) 有且仅有两个零点；</p>
+    <p>（2）设 \(x_0\) 是 \(f(x)\) 的一个零点，证明曲线 \(y=\ln x\) 在点 \(A(x_0,\ln x_0)\) 处的切线也是曲线 \(y=e^{x}\) 的切线。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：求定义域。</strong>因为有 \(\ln x\) 要求 \(x>0\)，又有分母要求 \(x\ne1\)，所以定义域为</p>
+    <div class="formula">\[ (0,1)\cup(1,+\infty) \]</div>
+
+    <p><strong>第二步：求导。</strong>对 \(\dfrac{x+1}{x-1}\) 用商法则：</p>
+    <div class="formula">
+      \[ \left(\frac{x+1}{x-1}\right)'=\frac{1\cdot(x-1)-(x+1)\cdot1}{(x-1)^{2}}=\frac{x-1-x-1}{(x-1)^{2}}=\frac{-2}{(x-1)^{2}} \]
+    </div>
+    <p>所以：</p>
+    <div class="formula">
+      \[ f'(x)=\frac1x-\frac{-2}{(x-1)^{2}}=\frac1x+\frac{2}{(x-1)^{2}}=\frac{(x-1)^{2}+2x}{x(x-1)^{2}}=\frac{x^{2}+1}{x(x-1)^{2}} \]
+    </div>
+    <p>因为 \(x^2+1>0\)、\(x>0\)、\((x-1)^2>0\)，所以 \(f'(x)>0\) 在定义域上<strong>恒成立</strong>。</p>
+    <p>结论：\(f(x)\) 在 \((0,1)\) 和 \((1,+\infty)\) 上<strong>都单调递增</strong>。</p>
+
+    <p><strong>第三步：证明"有且仅有两个零点"。</strong>分两个区间，每个区间都证明"恰好一个"。</p>
+
+    <p><strong>在 \((0,1)\) 上：</strong>看两端趋势。</p>
+    <div class="formula">
+      \[ \lim_{x\to0^{+}}f(x)=-\infty-\frac{1}{-1}=-\infty+1=-\infty \]
+    </div>
+    <p>（更准确地说：\(x\to0^+\) 时 \(\ln x\to-\infty\)，而 \(\dfrac{x+1}{x-1}\to-1\)，所以 \(f\to-\infty\)。）</p>
+    <div class="formula">
+      \[ \lim_{x\to1^{-}}f(x)=\ln1-\frac{2}{0^{-}}=0-(-\infty)=+\infty \]
+    </div>
+    <p>因为 \(f\) 在 \((0,1)\) 上连续且严格递增，从 \(-\infty\) 升到 \(+\infty\)，由零点存在定理和单调性，<strong>恰有一个零点</strong>。</p>
+
+    <p><strong>在 \((1,+\infty)\) 上：</strong>同样看两端。</p>
+    <div class="formula">
+      \[ \lim_{x\to1^{+}}f(x)=\ln1-\frac{2}{0^{+}}=0-(+\infty)=-\infty \]
+    </div>
+    <p>再取一个具体的点看看。取 \(x=e^{2}\approx7.39\)：</p>
+    <div class="formula">
+      \[ f(e^{2})=2-\frac{e^{2}+1}{e^{2}-1} \]
+    </div>
+    <p>因为 \(\dfrac{e^2+1}{e^2-1}=\dfrac{8.39}{6.39}\approx1.31&lt;2\)，所以 \(f(e^2)>0\)。</p>
+    <p>又当 \(x\to+\infty\) 时，\(\dfrac{x+1}{x-1}\to1\)，而 \(\ln x\to+\infty\)，所以 \(f(x)\to+\infty\)。</p>
+    <p>因为 \(f\) 在 \((1,+\infty)\) 上连续且严格递增，从 \(-\infty\) 升到 \(+\infty\)，<strong>恰有一个零点</strong>。</p>
+
+    <p><strong>结论：</strong>\(f(x)\) 在定义域上<strong>有且仅有两个零点</strong>。∎</p>
+
+    <p><strong>（2）第一步：把零点条件写成有用的等式。</strong>设 \(x_0\) 是零点，即 \(f(x_0)=0\)：</p>
+    <div class="formula">
+      \[ \ln x_0=\frac{x_0+1}{x_0-1} \tag{①} \]
+    </div>
+
+    <p><strong>第二步：写出曲线 \(y=\ln x\) 在 \(A\) 处的切线。</strong>因为 \((\ln x)'=\dfrac1x\)，斜率是 \(\dfrac{1}{x_0}\)：</p>
+    <div class="formula">
+      \[ y-\ln x_0=\frac{1}{x_0}(x-x_0) \]
+    </div>
+    <div class="formula">
+      \[ y=\frac{x}{x_0}+\ln x_0-1 \tag{②} \]
+    </div>
+
+    <p><strong>第三步：把它整理成便于与 \(y=e^x\) 比较的形式。</strong>设</p>
+    <div class="formula">\[ t=-\ln x_0 \]</div>
+    <p>则 \(e^{t}=e^{-\ln x_0}=\dfrac{1}{x_0}\)。把②中的 \(\dfrac{1}{x_0}\) 换成 \(e^t\)、\(\ln x_0\) 换成 \(-t\)：</p>
+    <div class="formula">
+      \[ y=e^{t}x+(-t)-1=e^{t}x-(t+1) \tag{③} \]
+    </div>
+
+    <p><strong>第四步：证明③也是 \(y=e^{x}\) 的切线。</strong>要证③是 \(y=e^x\) 的切线，只需找到一点 \(x=t\)，使得：</p>
+    <ul>
+      <li>该点在曲线 \(y=e^x\) 上：纵坐标是 \(e^t\)；</li>
+      <li>该点处的切线斜率等于③的斜率 \(e^t\)——而 \((e^x)'=e^x\)，在 \(x=t\) 处恰好是 \(e^t\) ✓</li>
+      <li>该点在直线③上：把 \(x=t\) 代入③，得 \(y=e^{t}\cdot t-(t+1)=te^{t}-t-1\)。</li>
+    </ul>
+    <p>所以只需要验证：</p>
+    <div class="formula">\[ e^{t}=te^{t}-t-1 \tag{④} \]</div>
+
+    <p><strong>第五步：用①验证④。</strong>由 \(t=-\ln x_0\) 得 \(x_0=e^{-t}\)，即 \(\ln x_0=-t\)。代入①：</p>
+    <div class="formula">
+      \[ -t=\frac{e^{-t}+1}{e^{-t}-1} \]
+    </div>
+    <p>右边分子分母同乘 \(e^{t}\)：</p>
+    <div class="formula">
+      \[ -t=\frac{1+e^{t}}{1-e^{t}} \]
+    </div>
+    <p>交叉相乘：</p>
+    <div class="formula">
+      \[ -t(1-e^{t})=1+e^{t} \quad\Longrightarrow\quad -t+te^{t}=1+e^{t} \]
+    </div>
+    <p>移项即得：</p>
+    <div class="formula">
+      \[ e^{t}=te^{t}-t-1 \quad\checkmark \]
+    </div>
+    <p>这正是④。所以点 \((t,e^{t})\) 既在直线③上，又是 \(y=e^x\) 的切点。因此③也是 \(y=e^x\) 的切线。∎</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>定义域有"断点"时，要分段讨论零点。</strong>本题定义域是 \((0,1)\cup(1,+\infty)\)，两段要分别证明"恰有一个零点"。</li>
+        <li><strong>证明"有且仅有"= 存在性 + 唯一性。</strong>存在性用零点存在定理（两端异号），唯一性用单调性。</li>
+        <li><strong>判断极限时注意符号。</strong>\(\dfrac{2}{0^-}=-\infty\)、\(\dfrac{2}{0^+}=+\infty\)，这决定了 \(f\) 在断点两侧的走向。</li>
+        <li>第（2）问的关键是<strong>换元 \(t=-\ln x_0\)</strong>。这个换元把 \(\dfrac{1}{x_0}\) 变成 \(e^t\)，正好和 \(y=e^x\) 的导数结构对上——出题人就是设计成这样的。</li>
+        <li><strong>证明"某直线是曲线的切线"，要找到切点并验证两条：</strong>① 切点在直线上；② 直线斜率等于该点的导数值。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 9 · 2022 全国乙卷（理）</span>
+    <p>已知函数 \(f(x)=\ln(1+x)+ax\,e^{-x}\)。</p>
+    <p>（1）当 \(a=1\) 时，求曲线 \(y=f(x)\) 在点 \((0,f(0))\) 处的切线方程；</p>
+    <p>（2）若 \(f(x)\) 在区间 \((-1,0)\)、\((0,+\infty)\) 各恰有一个零点，求 \(a\) 的取值范围。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：确定定义域和函数值。</strong>由 \(\ln(1+x)\) 要求 \(1+x>0\)，定义域为 \((-1,+\infty)\)。</p>
+    <p>当 \(a=1\) 时 \(f(x)=\ln(1+x)+xe^{-x}\)，所以 \(f(0)=\ln1+0=0\)，切点是 \((0,0)\)。</p>
+
+    <p><strong>第二步：求导并算斜率。</strong></p>
+    <div class="formula">
+      \[ f'(x)=\frac{1}{1+x}+\bigl[e^{-x}+x\cdot(-e^{-x})\bigr]=\frac{1}{1+x}+(1-x)e^{-x} \]
+    </div>
+    <p>（第二项是乘积求导：\((x)'e^{-x}+x(e^{-x})'=e^{-x}-xe^{-x}=(1-x)e^{-x}\)。）</p>
+    <div class="formula">
+      \[ f'(0)=\frac{1}{1+0}+(1-0)e^{0}=1+1=2 \]
+    </div>
+
+    <p><strong>第三步：写切线方程。</strong></p>
+    <div class="formula">
+      \[ y-0=2(x-0) \quad\Longrightarrow\quad \boxed{y=2x} \]
+    </div>
+
+    <p><strong>（2）第一步：通分整理导数。</strong></p>
+    <div class="formula">
+      \[ f'(x)=\frac{1}{1+x}+\frac{a(1-x)}{e^{x}}=\frac{e^{x}+a(1-x)(1+x)}{(1+x)e^{x}}=\frac{e^{x}+a(1-x^{2})}{(1+x)e^{x}} \]
+    </div>
+    <p>在定义域 \((-1,+\infty)\) 上，\((1+x)e^x>0\)，所以 \(f'(x)\) 的符号<strong>只由分子决定</strong>。记</p>
+    <div class="formula">\[ g(x)=e^{x}+a(1-x^{2}) \]</div>
+
+    <p><strong>第二步：注意到 \(f(0)=0\)，所以 \(x=0\) 已经是一个零点。</strong>题目要求 \((-1,0)\) 和 \((0,+\infty)\) 上<strong>各恰有一个</strong>零点。</p>
+
+    <p><strong>第三步：分情况讨论 \(a\)。</strong></p>
+
+    <p><strong>情况一：\(a>0\)。</strong>当 \(x\in(-1,0)\) 时，\(x^2&lt;1\)，所以 \(1-x^2>0\)，从而</p>
+    <div class="formula">
+      \[ g(x)=e^{x}+a(1-x^{2})>0+0=0 \]
+    </div>
+    <p>（更准确地说 \(e^x>0\) 且 \(a(1-x^2)>0\)。）所以 \(f'(x)>0\)，\(f\) 在 \((-1,0)\) 上<strong>递增</strong>。</p>
+    <p>又 \(f(0)=0\)，所以对 \(x\in(-1,0)\) 有 \(f(x)&lt;f(0)=0\)，即 \(f\) 在 \((-1,0)\) 上<strong>没有零点</strong>。</p>
+    <p><strong>不符合题意</strong>（题目要求 \((-1,0)\) 上恰有一个零点），所以 \(a>0\) 舍去。</p>
+
+    <p><strong>情况二：\(a=0\)。</strong>此时 \(f(x)=\ln(1+x)\)，只有一个零点 \(x=0\)，不符合题意，舍去。</p>
+
+    <p><strong>情况三：\(a&lt;0\)。</strong>这是需要保留的情况。记 \(b=-a>0\)，则 \(g(x)=e^{x}-b(1-x^{2})\)。</p>
+
+    <p><strong>（i）先看 \(x>0\) 的情形。</strong></p>
+    <p>求 \(g'(x)=e^{x}-b\cdot(-2x)=e^{x}+2bx\)。因为 \(x>0\)、\(b>0\)，所以 \(g'(x)>0\)，\(g\) 在 \((0,+\infty)\) 上<strong>递增</strong>。</p>
+    <p>又 \(g(0)=e^{0}-b(1-0)=1-b\)。</p>
+    <p><strong>子情况 3a：\(1-b\ge0\)，即 \(b\le1\)（也就是 \(-1\le a&lt;0\)）。</strong></p>
+    <p>此时 \(g(0)\ge0\) 且 \(g\) 递增，所以 \(g(x)>0\) 对 \(x>0\) 成立，即 \(f'(x)>0\)，\(f\) 在 \((0,+\infty)\) 上递增。</p>
+    <p>又 \(f(0)=0\)，所以 \(f(x)>0\) 对 \(x>0\) 成立，<strong>\((0,+\infty)\) 上没有零点</strong>，不符合题意，舍去。</p>
+
+    <p><strong>子情况 3b：\(1-b&lt;0\)，即 \(b>1\)（也就是 \(a&lt;-1\)）。</strong></p>
+    <p>此时 \(g(0)&lt;0\)，且 \(g\) 在 \((0,+\infty)\) 上递增，\(\lim\limits_{x\to+\infty}g(x)=+\infty\)（因为 \(e^x\) 增长远快于 \(bx^2\)）。</p>
+    <p>所以存在唯一 \(x_2>0\) 使 \(g(x_2)=0\)。于是：</p>
+    <ul>
+      <li>\(0&lt;x&lt;x_2\) 时 \(g(x)&lt;0\)，\(f'(x)&lt;0\)，\(f\) 递减；</li>
+      <li>\(x>x_2\) 时 \(g(x)>0\)，\(f'(x)>0\)，\(f\) 递增。</li>
+    </ul>
+    <p>所以 \(f\) 在 \((0,+\infty)\) 上先减后增，最小值是 \(f(x_2)\)。</p>
+    <p>因为 \(f(0)=0\) 且 \(f\) 在 \((0,x_2)\) 上递减，所以 \(f(x_2)&lt;f(0)=0\)。又 \(f(x)\to+\infty\)（\(x\to+\infty\) 时 \(\ln(1+x)\to+\infty\)，而 \(axe^{-x}\to0\)）。</p>
+    <p>由零点存在定理和单调性，\(f\) 在 \((x_2,+\infty)\) 上<strong>恰有一个零点</strong>。而 \((0,x_2]\) 上 \(f&lt;0\)，没有零点。</p>
+    <p>所以 \(f\) 在 \((0,+\infty)\) 上<strong>恰有一个零点</strong> ✓</p>
+
+    <p><strong>（ii）再看 \(x\in(-1,0)\) 的情形（\(b>1\)）。</strong></p>
+    <p>在 \((-1,0)\) 上，\(1-x^2>0\)，所以 \(g(x)=e^{x}-b(1-x^{2})\) 的符号不确定：\(e^x\) 在 \((1/e,1)\) 之间，而 \(b(1-x^2)\) 从 \(0\) 增到 \(b\)。</p>
+    <p>看端点：</p>
+    <div class="formula">
+      \[ g(0)=1-b&lt;0 \]
+    </div>
+    <div class="formula">
+      \[ \lim_{x\to-1^{+}}g(x)=e^{-1}-b\cdot0=e^{-1}>0 \]
+    </div>
+    <p>又 \(g'(x)=e^{x}+2bx\)。当 \(x\in(-1,0)\) 时，\(e^x>0\) 而 \(2bx&lt;0\)，符号不定，需要再求导：</p>
+    <div class="formula">\[ g''(x)=e^{x}+2b>0 \]</div>
+    <p>所以 \(g'\) 在 \((-1,0)\) 上<strong>递增</strong>。又</p>
+    <div class="formula">
+      \[ g'(0)=e^{0}+0=1>0,\qquad \lim_{x\to-1^{+}}g'(x)=e^{-1}-2b \]
+    </div>
+    <p>因为 \(b>1\)，所以 \(e^{-1}-2b&lt;\dfrac1e-2&lt;0\)。因此存在唯一 \(x_3\in(-1,0)\) 使 \(g'(x_3)=0\)。</p>
+    <p>所以 \(g\) 在 \((-1,x_3)\) 上递减、在 \((x_3,0)\) 上递增，\(x_3\) 是极小值点。</p>
+    <p>结合 \(g(-1^+)>0\)、\(g(0)&lt;0\)，且 \(g\) 先减后增（最小值在 \(x_3\)），说明 \(g\) 在 \((-1,0)\) 上<strong>有且仅有一个零点</strong>（记为 \(x_1\)）。</p>
+    <p>于是：</p>
+    <ul>
+      <li>\(-1&lt;x&lt;x_1\) 时 \(g(x)>0\)，\(f'(x)>0\)，\(f\) 递增；</li>
+      <li>\(x_1&lt;x&lt;0\) 时 \(g(x)&lt;0\)，\(f'(x)&lt;0\)，\(f\) 递减。</li>
+    </ul>
+    <p>所以 \(f\) 在 \((-1,0)\) 上先增后减，最大值是 \(f(x_1)\)。</p>
+    <p>又 \(f(0)=0\) 且 \(f\) 在 \((x_1,0)\) 上递减，所以 \(f(x_1)>f(0)=0\)。</p>
+    <p>再看 \(x\to-1^+\)：\(\ln(1+x)\to-\infty\)，而 \(axe^{-x}\to a\cdot(-1)\cdot e=(-a)e\)（有限值）。因为 \(a&lt;0\)，所以 \((-a)e>0\) 是有限数，而 \(\ln(1+x)\to-\infty\) 占主导，所以</p>
+    <div class="formula">\[ \lim_{x\to-1^{+}}f(x)=-\infty \]</div>
+    <p>由零点存在定理和单调性，\(f\) 在 \((-1,x_1)\) 上<strong>恰有一个零点</strong>。而 \((x_1,0)\) 上 \(f>0\)，没有零点。</p>
+    <p>所以 \(f\) 在 \((-1,0)\) 上<strong>恰有一个零点</strong> ✓</p>
+
+    <p><strong>第四步：汇总。</strong>综合以上分析，只有 \(a&lt;-1\) 时，\(f\) 在 \((-1,0)\)、\((0,+\infty)\) 上各恰有一个零点。</p>
+    <div class="formula">
+      \[ \boxed{\ a\in(-\infty,\ -1)\ } \]
+    </div>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>本题第（2）问是"含参零点"的典型难题，核心是"分区间 + 分参数"两层讨论。</strong>先按 \(a\) 的正负分大类，再在每个区间上研究 \(f'\) 的符号。</li>
+        <li><strong>注意到 \(f(0)=0\)，这大大简化了问题。</strong>因为 \(x=0\) 已经是零点，只需保证两个开区间上"各恰有一个"。</li>
+        <li><strong>关键观察：在 \((-1,0)\) 上 \(1-x^2>0\)。</strong>这让 \(a>0\) 的情况直接矛盾，快速排除掉一大类。</li>
+        <li><strong>判断 \(g\) 的零点时，需要"再求导"（\(g''\)）来确定 \(g'\) 的单调性。</strong>这是处理"导数里还含参数"的常规手法。</li>
+        <li><strong>利用 \(f(0)=0\) 判断符号很巧妙：</strong>比如在 \((0,x_2)\) 上 \(f\) 递减，所以 \(f(x)&lt;f(0)=0\)，直接说明"这段没有零点"。</li>
+        <li>端点极限必须算清楚，特别是 \(x\to-1^+\) 时 \(\ln(1+x)\to-\infty\) 起主导作用。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="ch8-5">8.5　题型五：恒成立与不等式证明</h3>
+
+  <div class="box eg">
+    <span class="tag">真题 10 · 2025 全国II卷　<span class="lv-hard">★★</span></span>
+    <p>已知函数 \(f(x)=\ln(1+x)-x+\dfrac12x^{2}-kx^{3}\)，其中 \(0&lt;k&lt;\dfrac13\)。</p>
+    <p>（1）证明：\(f(x)\) 在区间 \((0,+\infty)\) 存在唯一的极值点和唯一的零点；</p>
+    <p>（2）设 \(x_1\)、\(x_2\) 分别为 \(f(x)\) 在区间 \((0,+\infty)\) 的极值点和零点。</p>
+    <p>（i）设函数 \(g(t)=f(x_1+t)-f(x_1-t)\)，证明：\(g(t)\) 在区间 \((0,x_1)\) 单调递减；</p>
+    <p>（ii）比较 \(2x_1\) 与 \(x_2\) 的大小，并证明你的结论。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：求导并因式分解。</strong>定义域为 \((-1,+\infty)\)。</p>
+    <div class="formula">
+      \[ f'(x)=\frac{1}{1+x}-1+x-3kx^{2} \]
+    </div>
+    <p>把前三项通分：\(\dfrac{1}{1+x}-1+x=\dfrac{1-(1+x)+x(1+x)}{1+x}=\dfrac{-x+x+x^{2}}{1+x}=\dfrac{x^{2}}{1+x}\)。</p>
+    <div class="formula">
+      \[ f'(x)=\frac{x^{2}}{1+x}-3kx^{2}=x^{2}\left(\frac{1}{1+x}-3k\right) \]
+    </div>
+
+    <p><strong>第二步：研究括号里那部分的单调性。</strong>设</p>
+    <div class="formula">\[ h(x)=\frac{1}{1+x}-3k\qquad(x>0) \]</div>
+    <div class="formula">\[ h'(x)=-\frac{1}{(1+x)^{2}}&lt;0 \]</div>
+    <p>所以 \(h(x)\) 在 \((0,+\infty)\) 上<strong>严格递减</strong>。</p>
+
+    <p><strong>第三步：找 \(h(x)=0\) 的根。</strong></p>
+    <div class="formula">
+      \[ h(0)=1-3k>0\quad(\text{因为 }k&lt;\tfrac13) \]
+    </div>
+    <p>当 \(x\to+\infty\) 时 \(h(x)\to-3k&lt;0\)。由单调性和零点存在定理，存在<strong>唯一</strong>的 \(x_1>0\) 使 \(h(x_1)=0\)，即</p>
+    <div class="formula">
+      \[ \frac{1}{1+x_1}=3k \quad\Longrightarrow\quad 1+x_1=\frac{1}{3k} \quad\Longrightarrow\quad x_{1}=\frac{1}{3k}-1 \]
+    </div>
+    <p><strong>验证 \(x_1>0\)：</strong>因为 \(k&lt;\dfrac13\)，所以 \(\dfrac{1}{3k}>1\)，故 \(x_1=\dfrac{1}{3k}-1>0\) ✓</p>
+
+    <p><strong>第四步：判断 \(f'\) 的符号。</strong>因为 \(x^2>0\)（\(x>0\)），所以 \(f'(x)\) 的符号由 \(h(x)\) 决定：</p>
+    <ul>
+      <li>\(0&lt;x&lt;x_1\) 时，\(h(x)>h(x_1)=0\)，故 \(f'(x)>0\)，\(f\) 递增；</li>
+      <li>\(x>x_1\) 时，\(h(x)&lt;0\)，故 \(f'(x)&lt;0\)，\(f\) 递减。</li>
+    </ul>
+    <p>所以 \(x_1\) 是 \(f\) 在 \((0,+\infty)\) 上的<strong>唯一极值点</strong>（极大值点）✓</p>
+
+    <p><strong>第五步：证明零点唯一。</strong></p>
+    <p>先看 \(f(0)\)：\(f(0)=\ln1-0+0-0=0\)，所以 \(x=0\) 是零点（但不在 \((0,+\infty)\) 内）。</p>
+    <p>由第四步，\(f\) 在 \((0,x_1)\) 上递增，所以 \(f(x)>f(0)=0\) 对 \(x\in(0,x_1)\) 成立——<strong>这一段没有零点</strong>。</p>
+    <p>再看 \(x\to+\infty\) 的趋势。把 \(f\) 拆开看：</p>
+    <ul>
+      <li>\(\ln(1+x)-x\)：因为 \(\ln(1+x)&lt;x\)（\(x>0\)，这是 5.3 节的结论），所以这项<strong>恒为负</strong>；</li>
+      <li>\(-kx^{3}\)：因为 \(k>0\)，这项也<strong>恒为负</strong>；</li>
+      <li>\(\dfrac12x^{2}\)：这是正的二次项。</li>
+    </ul>
+    <p>比较最高次：\(-kx^3\) 是三次项，负的；\(\dfrac12x^2\) 是二次项，正的。当 \(x\to+\infty\) 时，<strong>三次项占主导</strong>，所以</p>
+    <div class="formula">\[ \lim_{x\to+\infty}f(x)=-\infty \]</div>
+    <p>（更严格地：\(f(x)=x^{2}\left(\dfrac12-kx\right)+\bigl[\ln(1+x)-x\bigr]\)，括号里 \(\dfrac12-kx\to-\infty\)，所以第一项 \(\to-\infty\)；第二项有界为负。故整体 \(\to-\infty\)。）</p>
+
+    <p>现在：\(f(x_1)>0\)（因为在 \((0,x_1)\) 上递增且 \(f(0)=0\)），且 \(\lim\limits_{x\to+\infty}f(x)=-\infty\)，又 \(f\) 在 \((x_1,+\infty)\) 上<strong>严格递减</strong>，由零点存在定理和单调性，\(f\) 在 \((x_1,+\infty)\) 上<strong>恰有一个零点</strong> \(x_2\)。</p>
+
+    <p><strong>结论：</strong>\(f(x)\) 在 \((0,+\infty)\) 上存在唯一的极值点 \(x_1\) 和唯一的零点 \(x_2\) ✓∎</p>
+
+    <p><strong>（2）（i）第一步：把 \(g(t)\) 求导。</strong></p>
+    <p>由 \(g(t)=f(x_1+t)-f(x_1-t)\)，用复合函数求导（注意第二项里是 \(x_1-t\)，导数为 \(-1\)）：</p>
+    <div class="formula">
+      \[ g'(t)=f'(x_1+t)\cdot1-f'(x_1-t)\cdot(-1)=f'(x_1+t)+f'(x_1-t) \]
+    </div>
+
+    <p><strong>第二步：分析 \(f'\) 在 \(x_1\) 两侧的符号。</strong>由第（1）问：</p>
+    <ul>
+      <li>\(f'\) 在 \((0,x_1)\) 上<strong>为正</strong>；</li>
+      <li>\(f'\) 在 \((x_1,+\infty)\) 上<strong>为负</strong>。</li>
+    </ul>
+    <p>当 \(t\in(0,x_1)\) 时：\(x_1+t>x_1\)，所以 \(f'(x_1+t)&lt;0\)；\(x_1-t\in(0,x_1)\)，所以 \(f'(x_1-t)>0\)。</p>
+    <p>所以</p>
+    <div class="formula">\[ g'(t)=f'(x_1+t)+f'(x_1-t)=\underbrace{(\text{负})}_{}+\underbrace{(\text{正})}_{} \]</div>
+    <p><strong>一正一负，看不出符号。</strong>需要进一步分析。</p>
+
+    <p><strong>第三步：用 \(f'\) 的具体表达式比较。</strong>由第（1）问，\(f'(x)=x^{2}\left(\dfrac{1}{1+x}-3k\right)\)，且 \(h(x)=\dfrac{1}{1+x}-3k\) 在 \((0,+\infty)\) 上递减。</p>
+    <p>当 \(t\in(0,x_1)\) 时，\(x_1-t&lt;x_1&lt;x_1+t\)，由 \(h\) 递减得：</p>
+    <div class="formula">
+      \[ h(x_1-t)>h(x_1)=0>h(x_1+t) \]
+    </div>
+    <p>又 \(f'(x)=x^2h(x)\)，所以：</p>
+    <div class="formula">
+      \[ g'(t)=(x_1+t)^{2}h(x_1+t)+(x_1-t)^{2}h(x_1-t) \]
+    </div>
+    <p>把 \(h(x_1\pm t)\) 用 \(h(x_1)=0\) 拆开：记 \(\Delta_{\pm}=h(x_1\pm t)-h(x_1)=h(x_1\pm t)\)，则</p>
+    <div class="formula">
+      \[ g'(t)=(x_1+t)^{2}h(x_1+t)+(x_1-t)^{2}h(x_1-t) \]
+    </div>
+    <p>因为 \(h(x_1-t)>0\)、\(h(x_1+t)&lt;0\)，要把正负分开。用 \(h\) 的表达式精确计算：</p>
+    <div class="formula">
+      \[ h(x_1\pm t)=\frac{1}{1+x_1\pm t}-3k \]
+    </div>
+    <p>而 \(\dfrac{1}{1+x_1}=3k\)，所以</p>
+    <div class="formula">
+      \[ h(x_1\pm t)=\frac{1}{1+x_1\pm t}-\frac{1}{1+x_1}=\frac{(1+x_1)-(1+x_1\pm t)}{(1+x_1\pm t)(1+x_1)}=\frac{\mp t}{(1+x_1\pm t)(1+x_1)} \]
+    </div>
+    <p>即</p>
+    <div class="formula">
+      \[ h(x_1+t)=\frac{-t}{(1+x_1+t)(1+x_1)},\qquad h(x_1-t)=\frac{t}{(1+x_1-t)(1+x_1)} \]
+    </div>
+
+    <p><strong>第四步：代入 \(g'(t)\) 并化简。</strong></p>
+    <div class="formula">
+      \[
+      \begin{aligned}
+      g'(t) &= (x_1+t)^{2}\cdot\frac{-t}{(1+x_1+t)(1+x_1)}+(x_1-t)^{2}\cdot\frac{t}{(1+x_1-t)(1+x_1)} \\
+      &= \frac{t}{1+x_1}\left[\frac{(x_1-t)^{2}}{1+x_1-t}-\frac{(x_1+t)^{2}}{1+x_1+t}\right]
+      \end{aligned}
+      \]
+    </div>
+    <p>记方括号里的式子为 \(H(t)\)。要证 \(g'(t)&lt;0\)，只需证 \(H(t)&lt;0\)（因为 \(\dfrac{t}{1+x_1}>0\)）。</p>
+
+    <p><strong>第五步：判断 \(H(t)\) 的符号。</strong>考察函数</p>
+    <div class="formula">\[ \varphi(u)=\frac{u^{2}}{1+u}\qquad(u>-1) \]</div>
+    <p>则 \(H(t)=\varphi(x_1-t)-\varphi(x_1+t)\)。求导：</p>
+    <div class="formula">
+      \[ \varphi'(u)=\frac{2u(1+u)-u^{2}}{(1+u)^{2}}=\frac{2u+2u^{2}-u^{2}}{(1+u)^{2}}=\frac{u^{2}+2u}{(1+u)^{2}}=\frac{u(u+2)}{(1+u)^{2}} \]
+    </div>
+    <p>当 \(u>0\) 时，\(\varphi'(u)>0\)，所以 \(\varphi\) 在 \((0,+\infty)\) 上<strong>递增</strong>。</p>
+    <p>又因为 \(t\in(0,x_1)\)，所以 \(0&lt;x_1-t&lt;x_1+t\)，由 \(\varphi\) 递增得</p>
+    <div class="formula">
+      \[ \varphi(x_1-t)&lt;\varphi(x_1+t) \quad\Longrightarrow\quad H(t)&lt;0 \]
+    </div>
+    <p>因此 \(g'(t)&lt;0\) 对 \(t\in(0,x_1)\) 成立，即 \(g(t)\) 在 \((0,x_1)\) 上<strong>单调递减</strong> ✓∎</p>
+
+    <p><strong>（ii）第一步：把"比较 \(2x_1\) 与 \(x_2\)"转化为 \(g\) 的取值。</strong></p>
+    <p>由（i），\(g(t)=f(x_1+t)-f(x_1-t)\) 在 \((0,x_1)\) 上递减，所以对 \(t\in(0,x_1)\) 有</p>
+    <div class="formula">
+      \[ g(t)&lt;\lim_{t\to0^{+}}g(t) \]
+    </div>
+    <p>而</p>
+    <div class="formula">\[ g(0)=f(x_1)-f(x_1)=0 \]</div>
+    <p>所以 \(g(t)&lt;0\)，即</p>
+    <div class="formula">
+      \[ f(x_1+t)&lt;f(x_1-t)\qquad(0&lt;t&lt;x_1) \tag{①} \]
+    </div>
+
+    <p><strong>第二步：利用 \(x_2\) 和 \(f(0)=0\)。</strong>由第（1）问，\(f\) 在 \((x_1,+\infty)\) 上严格递减，且 \(x_2\in(x_1,+\infty)\) 是唯一零点，即 \(f(x_2)=0\)。</p>
+    <p>又 \(f(x_1)>0\)（因为 \(f\) 在 \((0,x_1)\) 上递增且 \(f(0)=0\)），所以 \(x_2>x_1\) ✓</p>
+
+    <p><strong>第三步：用反证法证明 \(x_2&lt;2x_1\)。</strong></p>
+    <p><strong>假设 \(x_2\ge2x_1\)。</strong>下面推出矛盾。</p>
+
+    <p><strong>（i）先算 \(f(2x_1)-f(0)\)。</strong>由第（2）（i）的结论，\(g(t)=f(x_1+t)-f(x_1-t)\) 在 \((0,x_1)\) 上<strong>严格递减</strong>，且 \(g(0)=0\)。</p>
+    <p>对任意 \(t\in\left(\dfrac{x_1}{2},\ x_1\right)\)，由严格递减得</p>
+    <div class="formula">
+      \[ g(t)&lt;g\left(\frac{x_1}{2}\right)&lt;g(0)=0 \]
+    </div>
+    <p>（第一个不等号用"\(t>\dfrac{x_1}{2}\) 且 \(g\) 递减"，第二个不等号用"\(\dfrac{x_1}{2}>0\) 且 \(g\) 递减"。）</p>
+    <p>让 \(t\to x_1^{-}\) 取极限。由 \(f\) 的连续性：</p>
+    <div class="formula">
+      \[ f(2x_1)-f(0)=\lim_{t\to x_1^{-}}\bigl[f(x_1+t)-f(x_1-t)\bigr]=\lim_{t\to x_1^{-}}g(t)\le g\left(\frac{x_1}{2}\right)&lt;0 \]
+    </div>
+    <p>所以</p>
+    <div class="formula">
+      \[ f(2x_1)&lt;f(0)=0 \tag{②} \]
+    </div>
+
+    <p><strong>（ii）再由假设推出相反的不等式。</strong>由第（1）问，\(f\) 在 \((x_1,+\infty)\) 上<strong>严格递减</strong>，且 \(f(x_2)=0\)。</p>
+    <p>由假设 \(x_2\ge2x_1\)，即 \(2x_1\le x_2\)。因为 \(f\) 在 \((x_1,+\infty)\) 上递减，所以自变量越大函数值越小，于是</p>
+    <div class="formula">
+      \[ f(2x_1)\ge f(x_2)=0 \tag{③} \]
+    </div>
+    <p>（注意 \(2x_1>x_1\)，所以 \(2x_1\) 确实落在递减区间内。）</p>
+
+    <p><strong>（iii）矛盾。</strong>②说 \(f(2x_1)&lt;0\)，③说 \(f(2x_1)\ge0\)，两者矛盾。</p>
+    <p>所以假设不成立，必有</p>
+    <div class="formula">
+      \[ \boxed{\ x_{2}&lt;2x_{1}\ } \]
+    </div>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">这道题为什么要证 \(x_2&lt;2x_1\)</span>
+      <p>"比较 \(2x_1\) 与 \(x_2\) 的大小"，本质是在问：<strong>极值点的位置和零点的位置，谁更靠右？</strong></p>
+      <p>结论 \(x_2&lt;2x_1\) 说明：零点 \(x_2\) 落在极值点 \(x_1\) 和它的"对称点" \(2x_1\) 之间，即<strong>零点比极值点的二倍还靠左</strong>。</p>
+      <p>这类"比较极值点与零点位置"的题，标准做法就是<strong>把两个位置的函数值作差，用单调性判断符号</strong>——本题第（i）步算 \(f(2x_1)-f(0)\)，第（ii）步算 \(f(2x_1)-f(x_2)\)，一正一负，矛盾立现。</p>
+    </div>
+
+    <p>所以假设不成立，</p>
+    <div class="formula">
+      \[ \boxed{\ x_{2}&lt;2x_{1}\ } \]
+    </div>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>第（1）问的关键是因式分解 \(f'(x)=x^{2}\left(\dfrac{1}{1+x}-3k\right)\)。</strong>提出 \(x^2\) 之后，括号里是关于 \(x\) 的简单递减函数，符号一目了然。</li>
+        <li><strong>判断"零点唯一"要用到 \(f(0)=0\)。</strong>因为 \(f\) 在 \((0,x_1)\) 上递增，所以这一段 \(f>0\)，直接排除。</li>
+        <li><strong>第（2）（i）的难点：\(g'(t)\) 是"一正一负"之和。</strong>必须把 \(f'\) 的表达式代入精确计算，不能只靠符号判断。这是本题最大的技术门槛。</li>
+        <li><strong>引入辅助函数 \(\varphi(u)=\dfrac{u^2}{1+u}\) 是化繁为简的关键。</strong>把 \(H(t)\) 写成 \(\varphi(x_1-t)-\varphi(x_1+t)\)，再用 \(\varphi\) 的单调性一步得出结论。</li>
+        <li><strong>第（2）（ii）是"极值点偏移"的典型考法。</strong>核心思路是：由 \(g(t)&lt;0\) 得到 \(f(x_1+t)&lt;f(x_1-t)\)，再令 \(t\to x_1^-\) 得到 \(f(2x_1)&lt;f(0)\)，最后用单调性反推出 \(x_2&lt;2x_1\)。</li>
+        <li><strong>注意极限与严格不等式的配合。</strong>由严格递减得 \(g(t)&lt;g(0)=0\)，取 \(t\to x_1^-\) 后严格性仍然保留（因为可以取中间值 \(t=x_1/2\)），得到 \(f(2x_1)&lt;f(0)\) 而非 \(\le\)。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="ch8-6">8.6　题型六：隐零点与进阶</h3>
+
+  <div class="box tip">
+    <span class="tag">什么是"隐零点"</span>
+    <p>有些题目里，\(f'(x)=0\) 这个方程<strong>解不出来</strong>（是超越方程），但我们可以证明它<strong>有唯一解</strong>，只是写不出具体值。</p>
+    <p><strong>处理套路：</strong></p>
+    <ol class="steps">
+      <li><strong>证明存在唯一：</strong>用单调性 + 零点存在定理，说明 \(f'(x)=0\) 有唯一解 \(x_0\)，并<strong>给它一个范围</strong>（如 \(1&lt;x_0&lt;2\)）。</li>
+      <li><strong>用 \(f'(x_0)=0\) 这个等式</strong>把 \(f(x_0)\) 里的复杂部分替换掉，判断 \(f(x_0)\) 的符号。</li>
+      <li><strong>用 \(x_0\) 的范围</strong>估计 \(f(x_0)\) 的大小。</li>
+    </ol>
+    <p><strong>这类题是导数压轴的常见形态，2022 新高考 I 卷、2019 全国 I 卷都考过。</strong></p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 11 · 2019 全国I卷（理）　<span class="lv-hard">★★</span></span>
+    <p>已知函数 \(f(x)=\sin x-\ln(1+x)\)，且 \(f'(x)\) 为 \(f(x)\) 的导数。证明：</p>
+    <p>（1）\(f'(x)\) 在区间 \(\left(-1,\dfrac{\pi}{2}\right)\) 存在唯一极大值点；</p>
+    <p>（2）\(f(x)\) 有且仅有 2 个零点。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：求导，并把 \(f'\) 本身当作一个新函数研究。</strong>定义域为 \((-1,+\infty)\)。</p>
+    <div class="formula">\[ f'(x)=\cos x-\frac{1}{1+x} \]</div>
+    <p>记 \(g(x)=f'(x)=\cos x-\dfrac{1}{1+x}\)。要求"\(f'\) 的极大值点"，就是求"\(g\) 的极大值点"。</p>
+
+    <p><strong>第二步：求 \(g'\) 和 \(g''\)。</strong></p>
+    <div class="formula">
+      \[ g'(x)=-\sin x+\frac{1}{(1+x)^{2}} \]
+    </div>
+    <div class="formula">
+      \[ g''(x)=-\cos x-\frac{2}{(1+x)^{3}} \]
+    </div>
+
+    <p><strong>第三步：证明 \(g''(x)&lt;0\) 在 \(\left(-1,\dfrac{\pi}{2}\right)\) 上恒成立。</strong></p>
+    <ul>
+      <li>当 \(x\in\left(-1,\dfrac{\pi}{2}\right)\) 时，\(-\dfrac{\pi}{2}&lt;x&lt;\dfrac{\pi}{2}\)，所以 \(\cos x>0\)，故 \(-\cos x&lt;0\)；</li>
+      <li>又 \(1+x>0\)，所以 \(\dfrac{2}{(1+x)^3}>0\)，故 \(-\dfrac{2}{(1+x)^{3}}&lt;0\)。</li>
+    </ul>
+    <p>两项都为负，所以 \(g''(x)&lt;0\) ✓</p>
+    <p>因此 \(g'\) 在 \(\left(-1,\dfrac{\pi}{2}\right)\) 上<strong>严格递减</strong>。</p>
+
+    <p><strong>第四步：找 \(g'(x)=0\) 的根。</strong>计算两端的值：</p>
+    <div class="formula">
+      \[ g'(0)=-\sin0+\frac{1}{(1+0)^{2}}=0+1=1>0 \]
+    </div>
+    <div class="formula">
+      \[ g'\left(\frac{\pi}{2}\right)=-\sin\frac{\pi}{2}+\frac{1}{\left(1+\frac{\pi}{2}\right)^{2}}=-1+\frac{1}{\left(1+\frac{\pi}{2}\right)^{2}} \]
+    </div>
+    <p>因为 \(1+\dfrac{\pi}{2}\approx2.57>1\)，所以 \(\dfrac{1}{\left(1+\frac{\pi}{2}\right)^2}&lt;1\)，于是 \(g'\left(\dfrac{\pi}{2}\right)&lt;0\)。</p>
+    <p>因为 \(g'\) 严格递减，从 \(g'(0)>0\) 降到 \(g'\left(\dfrac{\pi}{2}\right)&lt;0\)，由零点存在定理和单调性，存在<strong>唯一</strong>的 \(\alpha\in\left(0,\dfrac{\pi}{2}\right)\) 使 \(g'(\alpha)=0\)。</p>
+
+    <p><strong>第五步：判断 \(g\) 的单调性。</strong>因为 \(g'\) 严格递减：</p>
+    <ul>
+      <li>\(x\in(-1,\alpha)\) 时，\(g'(x)>g'(\alpha)=0\)，所以 \(g\) 递增；</li>
+      <li>\(x\in\left(\alpha,\dfrac{\pi}{2}\right)\) 时，\(g'(x)&lt;g'(\alpha)=0\)，所以 \(g\) 递减。</li>
+    </ul>
+    <p>所以 \(x=\alpha\) 是 \(g\)（即 \(f'\)）在 \(\left(-1,\dfrac{\pi}{2}\right)\) 上的<strong>唯一极大值点</strong> ✓∎</p>
+
+    <p><strong>（2）第一步：先找已知的零点。</strong></p>
+    <div class="formula">\[ f(0)=\sin0-\ln(1+0)=0-0=0 \]</div>
+    <p>所以 \(x=0\) 是一个零点。</p>
+
+    <p><strong>第二步：分析 \(f'\) 的符号。</strong>由（1），\(g=f'\) 在 \((-1,\alpha)\) 上递增、在 \(\left(\alpha,\dfrac{\pi}{2}\right)\) 上递减，其中 \(\alpha\in\left(0,\dfrac{\pi}{2}\right)\)。</p>
+    <p>计算 \(f'(0)=g(0)=\cos0-\dfrac{1}{1+0}=1-1=0\)。</p>
+    <p>因为 \(g\) 在 \((-1,\alpha)\) 上<strong>严格递增</strong>，且 \(0\in(-1,\alpha)\)：</p>
+    <ul>
+      <li>\(x\in(-1,0)\) 时，\(g(x)&lt;g(0)=0\)，即 \(f'(x)&lt;0\)，\(f\) <strong>递减</strong>；</li>
+      <li>\(x\in(0,\alpha)\) 时，\(g(x)>g(0)=0\)，即 \(f'(x)>0\)，\(f\) <strong>递增</strong>。</li>
+    </ul>
+
+    <p><strong>第三步：确定 \((-1,\alpha)\) 上的零点情况。</strong>因为 \(f\) 在 \((-1,0)\) 上递减、在 \((0,\alpha)\) 上递增，且 \(f(0)=0\)，所以</p>
+    <div class="formula">
+      \[ f(x)>f(0)=0\quad(x\in(-1,0)),\qquad f(x)>f(0)=0\quad(x\in(0,\alpha)) \]
+    </div>
+    <p>所以 \(f\) 在 \((-1,\alpha)\) 上<strong>只有 \(x=0\) 这一个零点</strong>。</p>
+
+    <p><strong>第四步：分析 \(\left(\alpha,\dfrac{\pi}{2}\right)\) 上 \(f'\) 的符号。</strong>由（1），\(g=f'\) 在 \(\left(\alpha,\dfrac{\pi}{2}\right)\) 上递减。</p>
+    <p>因为 \(g(\alpha)>g(0)=0\)（\(g\) 在 \((-1,\alpha)\) 递增且 \(\alpha>0\)），而 \(g\) 在 \(\left(\alpha,\dfrac{\pi}{2}\right)\) 上递减，所以 \(g\) 在这个区间上从正降到 \(g\left(\dfrac{\pi}{2}\right)\)。</p>
+    <div class="formula">
+      \[ g\left(\frac{\pi}{2}\right)=\cos\frac{\pi}{2}-\frac{1}{1+\frac{\pi}{2}}=0-\frac{1}{1+\frac{\pi}{2}}&lt;0 \]
+    </div>
+    <p>所以存在唯一 \(\beta\in\left(\alpha,\dfrac{\pi}{2}\right)\) 使 \(g(\beta)=0\)，即 \(f'(\beta)=0\)。于是：</p>
+    <ul>
+      <li>\(x\in(\alpha,\beta)\) 时 \(f'(x)>0\)，\(f\) 递增；</li>
+      <li>\(x\in\left(\beta,\dfrac{\pi}{2}\right)\) 时 \(f'(x)&lt;0\)，\(f\) 递减。</li>
+    </ul>
+    <p>所以 \(f\) 在 \(\left(\alpha,\dfrac{\pi}{2}\right)\) 上先增后减，最大值是 \(f(\beta)\)。因为 \(f(\alpha)>f(0)=0\) 且 \(f\) 在 \((\alpha,\beta)\) 上递增，所以 \(f(\beta)>f(\alpha)>0\)。</p>
+    <p>再看两端：\(f(\alpha)>0\)，而</p>
+    <div class="formula">
+      \[ f\left(\frac{\pi}{2}\right)=\sin\frac{\pi}{2}-\ln\left(1+\frac{\pi}{2}\right)=1-\ln\left(1+\frac{\pi}{2}\right) \]
+    </div>
+    <p>因为 \(1+\dfrac{\pi}{2}\approx2.571&lt;e\approx2.718\)，所以 \(\ln\left(1+\dfrac{\pi}{2}\right)&lt;1\)，故 \(f\left(\dfrac{\pi}{2}\right)>0\)。</p>
+    <p>所以 \(f>0\) 在整个 \(\left(\alpha,\dfrac{\pi}{2}\right)\) 上成立，<strong>这一段没有零点</strong>。</p>
+
+    <p><strong>第五步：分析 \(x>\pi\) 的情况。</strong></p>
+    <ul>
+      <li>\(\sin x\le1\)；</li>
+      <li>\(\ln(1+x)>\ln(1+\pi)\)。</li>
+    </ul>
+    <p>因为 \(\ln(1+\pi)=\ln(4.1416)\approx1.421>1\)，所以</p>
+    <div class="formula">
+      \[ f(x)=\sin x-\ln(1+x)&lt;1-\ln(1+\pi)&lt;1-1=0 \]
+    </div>
+    <p>所以 \(f(x)&lt;0\) 对一切 \(x>\pi\) 成立，<strong>没有零点</strong>。</p>
+
+    <p><strong>第六步：分析 \(\dfrac{\pi}{2}&lt;x\le\pi\) 的情况。</strong>在这个区间上：</p>
+    <ul>
+      <li>\(\sin x\) 在 \(\left[\dfrac{\pi}{2},\pi\right]\) 上<strong>严格递减</strong>（从 1 降到 0）；</li>
+      <li>\(-\ln(1+x)\) 也<strong>严格递减</strong>（因为 \(\ln(1+x)\) 递增）。</li>
+    </ul>
+    <p>两个递减函数之和仍<strong>严格递减</strong>，所以 \(f\) 在 \(\left[\dfrac{\pi}{2},\pi\right]\) 上严格递减。</p>
+    <p>又</p>
+    <div class="formula">
+      \[ f\left(\frac{\pi}{2}\right)=1-\ln\left(1+\frac{\pi}{2}\right)>0,\qquad f(\pi)=\sin\pi-\ln(1+\pi)=0-\ln(1+\pi)&lt;0 \]
+    </div>
+    <p>由零点存在定理和单调性，\(f\) 在 \(\left(\dfrac{\pi}{2},\pi\right)\) 上<strong>恰有一个零点</strong>。</p>
+
+    <p><strong>第七步：汇总。</strong></p>
+    <ul>
+      <li>\(x=0\)：一个零点；</li>
+      <li>\(\left(\dfrac{\pi}{2},\pi\right)\)：恰有一个零点；</li>
+      <li>其余区间（\((-1,0)\)、\((0,\alpha)\)、\(\left(\alpha,\dfrac{\pi}{2}\right]\)、\((\pi,+\infty)\)）：没有零点。</li>
+    </ul>
+    <p>所以 \(f(x)\) 有且仅有 <strong>2 个零点</strong> ✓∎</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>本题是"隐零点"的典型：\(f'(x)=\cos x-\dfrac{1}{1+x}=0\) 解不出来。</strong>但我们可以用 \(g''&lt;0\) 证明 \(g'\) 单调，从而说明 \(f'\) 有唯一极大值点。</li>
+        <li><strong>"求 \(f'\) 的极大值点"= "把 \(f'\) 当作新函数 \(g\)，求 \(g\) 的极大值点"。</strong>这需要<strong>二次求导</strong>，是本类题的标准动作。</li>
+        <li><strong>判断 \(g''\) 的符号时要用到区间限制。</strong>本题的关键是 \(x\in\left(-1,\dfrac{\pi}{2}\right)\) 保证 \(\cos x>0\)，从而 \(g''&lt;0\)。如果区间再大一点，结论就不成立了。</li>
+        <li><strong>第（2）问要"分区间接力论证"：</strong>先用 \(f'\) 的符号确定 \(f\) 在各段的单调性，再逐段判断有无零点。<strong>不要指望一步到位。</strong></li>
+        <li>比较大小要用估值：\(\ln\left(1+\dfrac{\pi}{2}\right)&lt;1\) 是因为 \(1+\dfrac{\pi}{2}&lt;e\)；\(\ln(1+\pi)>1\) 是因为 \(1+\pi>e\)。这两个估值是本题的关键。</li>
+        <li><strong>\(\left(\dfrac{\pi}{2},\pi\right)\) 上"两个递减函数之和仍递减"</strong>是很实用的判断技巧，比求导快得多。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="ch8-7">8.7　提分要点总结</h3>
+
+  <div class="box proof">
+    <span class="tag">十年真题告诉我们的六件事</span>
+    <ol class="steps">
+      <li><strong>第一问永远是"讨论单调性"，必须拿满。</strong>十年真题里，导数解答题的第一问几乎都是讨论单调性（或求切线）。方法固定：<strong>求定义域 → 求导 → 因式分解 → 按参数分类 → 列表判断符号</strong>。</li>
+      <li><strong>含参数的导数一定要"因式分解后看哪个因式恒正"。</strong>真题 4 把 \(f'\) 分解成 \((2e^x+1)(ae^x-1)\)，指出 \(2e^x+1>0\)，符号问题立刻简化；真题 10 提出 \(x^2\) 之后同理。</li>
+      <li><strong>"零点个数"首选"分离参数"。</strong>把 \(f(x)=0\) 整理成 \(a=g(x)\)，问题变成"直线与曲线的交点个数"（真题 7）。分离前要检查除数为 0 的情况。</li>
+      <li><strong>证明"有且仅有"= 零点存在定理 + 单调性。</strong>存在性靠两端异号，唯一性靠单调（真题 8、10、11）。<strong>定义域有断点时要分段证明。</strong></li>
+      <li><strong>不等式证明的两大武器：切线放缩和构造函数。</strong>\(e^x\ge x+1\)、\(\ln x\le x-1\) 必须背熟（真题 6）；构造函数后<strong>两次求导</strong>判断符号是常规手法（真题 5、10）。</li>
+      <li><strong>新高考的明显趋势：极值点偏移、隐零点、与数列/三角函数结合。</strong>真题 10（2025 全国 II 卷）的"比较 \(2x_1\) 与 \(x_2\)"就是典型的极值点偏移；真题 11（2019 全国 I 卷）是隐零点。这两类题需要专门训练。</li>
+    </ol>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">考场时间分配建议</span>
+    <ul>
+      <li><strong>如果导数题在解答题第 2 题位置：</strong>限时 12 分钟，目标第一问满分、第二问至少写出一半。</li>
+      <li><strong>如果导数题是压轴：</strong>限时 15 分钟。<strong>第一问一定要写完整</strong>（3~4 分钟），第二问写出关键步骤就有分。</li>
+      <li><strong>第二问卡住时的"保分动作"：</strong>把第一问的结论（单调区间、极值）写清楚；把要求证的式子化简一步；构造函数并求导。这些都是有步骤分的。</li>
+      <li><strong>定义域永远第一个写。</strong>含 \(\ln x\) 的定义域是 \(x>0\)；含分母的要排除分母为 0 的点。忘记写定义域是导数题最常见的扣分点。</li>
+      <li><strong>判断完单调性，回头看一眼是否符合直觉。</strong>比如 \(f(x)=e^x-x-2\) 先减后增（在 \(x=0\) 处最小），这个图象在心里应该能画出来。</li>
+    </ul>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">本章真题索引（按题型查）</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>题型</th><th>真题</th><th>考查点</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="3"><strong>切线问题</strong></td><td>2016 北京卷（理）</td><td>已知切线求 \(a,b\)；换元判号</td></tr>
+          <tr><td>2023 北京卷</td><td>已知切线求 \(a,b\)；求 \(f'\) 的单调区间；数极值点</td></tr>
+          <tr><td>2021 全国乙卷（文）</td><td>讨论单调性；<strong>过原点</strong>的切线（设切点）</td></tr>
+          <tr><td rowspan="2"><strong>含参讨论单调性</strong></td><td>2017 全国I卷（理）</td><td>换元因式分解；分 \(a\le0\) / \(a>0\) 讨论</td></tr>
+          <tr><td>2018 全国I卷（理）</td><td>分 \(a\le2\) / \(a>2\) 讨论；极值点处"降参"证明不等式</td></tr>
+          <tr><td><strong>极值点与参数</strong></td><td>2018 全国I卷（文）</td><td>由极值点求 \(a\)；切线放缩证明 \(f(x)\ge0\)</td></tr>
+          <tr><td rowspan="3"><strong>零点问题</strong></td><td>2020 全国I卷（文）</td><td>分离参数；数交点个数</td></tr>
+          <tr><td>2019 全国II卷（理）</td><td>分段证"有且仅有两个零点"；证明切线</td></tr>
+          <tr><td>2022 全国乙卷（理）</td><td>两区间各恰有一个零点；双重分类讨论</td></tr>
+          <tr><td><strong>恒成立与不等式</strong></td><td>2025 全国II卷</td><td>唯一极值点与零点；极值点偏移（比较 \(2x_1\) 与 \(x_2\)）</td></tr>
+          <tr><td><strong>隐零点</strong></td><td>2019 全国I卷（理）</td><td>\(f'\) 的唯一极大值点；分区间接力论证零点个数</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  </main>
+</div>
+
+<button class="print-btn" onclick="window.print()">打印 / 存为 PDF</button>
+
+<script>
+(function(){
+  // 公式渲染依赖 MathJax CDN（需联网）。若超时仍未就绪，提示读者。
+  var shown = false;
+  function check(){
+    var ok = window.MathJax && window.MathJax.startup && window.MathJax.startup.document;
+    if (!ok && !shown){
+      shown = true;
+      var el = document.getElementById('mathjax-warn');
+      if (el) el.style.display = 'block';
+    }
+  }
+  setTimeout(check, 4000);
+  setTimeout(check, 9000);
+})();
+</script>
+
+<script>
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('.sidenav a'));
+  if (!links.length) return;
+  var targets = links.map(function(a){
+    return document.getElementById(decodeURIComponent(a.getAttribute('href').slice(1)));
+  });
+  var ticking = false;
+  function update(){
+    ticking = false;
+    var idx = 0;
+    for (var i = 0; i < targets.length; i++){
+      if (targets[i] && targets[i].getBoundingClientRect().top <= 100) idx = i;
+    }
+    for (var j = 0; j < links.length; j++){
+      links[j].classList.toggle('active', j === idx);
+    }
+  }
+  function onScroll(){
+    if (!ticking){ ticking = true; window.requestAnimationFrame(update); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+  update();
+})();
+</script>
+</body>
+</html>

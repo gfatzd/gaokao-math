@@ -1,0 +1,3488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高考数学重点章节梳理 · 第三册 三角函数</title>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      processEscapes: true
+    },
+    svg: { fontCache: 'global' },
+    options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+  :root{
+    --ink:#1b1f27;
+    --ink-2:#3d4655;
+    --muted:#6b7688;
+    --line:#e5e9f0;
+    --line-2:#eef1f6;
+    --bg:#f5f7fb;
+    --card:#ffffff;
+    --brand:#1f5eff;
+    --brand-soft:#eef3ff;
+    --def:#1f5eff;      --def-bg:#f2f6ff;   --def-line:#c9daff;
+    --proof:#0f9d6e;    --proof-bg:#f0fbf6; --proof-line:#b7e8d4;
+    --eg:#c2760a;       --eg-bg:#fff9ee;    --eg-line:#f5dcae;
+    --warn:#d63a3a;     --warn-bg:#fff5f5;  --warn-line:#f8cfcf;
+    --tip:#7a4bd0;      --tip-bg:#f8f4ff;   --tip-line:#ddd0f7;
+    --radius:12px;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Source Han Sans SC","Noto Sans CJK SC",system-ui,-apple-system,"Segoe UI",sans-serif;
+    font-size:16px;
+    line-height:1.85;
+    letter-spacing:.01em;
+  }
+  .page{
+    max-width:960px;
+    margin:0 auto;
+    background:var(--card);
+    box-shadow:0 1px 3px rgba(20,30,60,.06), 0 12px 40px rgba(20,30,60,.06);
+    min-height:100vh;
+  }
+
+  .cover{
+    position:relative;
+    padding:64px 56px 52px;
+    background:
+      radial-gradient(900px 340px at 12% -10%, #e7efff 0%, rgba(231,239,255,0) 62%),
+      radial-gradient(700px 300px at 100% 0%, #eafaf3 0%, rgba(234,250,243,0) 58%),
+      linear-gradient(180deg,#ffffff 0%,#fbfcfe 100%);
+    border-bottom:1px solid var(--line);
+  }
+  .cover .kicker{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:13px; font-weight:600; letter-spacing:.14em;
+    color:var(--brand);
+    background:var(--brand-soft);
+    border:1px solid var(--def-line);
+    padding:5px 14px; border-radius:999px;
+    margin-bottom:22px;
+  }
+  .cover h1{
+    margin:0 0 6px;
+    font-size:42px;
+    line-height:1.25;
+    letter-spacing:-.01em;
+    font-weight:800;
+    color:#121722;
+  }
+  .cover h1 .accent{
+    background:linear-gradient(92deg,#1f5eff,#0f9d6e);
+    -webkit-background-clip:text; background-clip:text;
+    -webkit-text-fill-color:transparent; color:transparent;
+  }
+  .cover .sub{
+    margin:14px 0 0;
+    font-size:17px; color:var(--ink-2);
+    max-width:640px;
+  }
+  .cover .meta{
+    margin-top:30px; padding-top:22px; border-top:1px dashed var(--line);
+    display:flex; flex-wrap:wrap; gap:10px 34px;
+    font-size:14px; color:var(--muted);
+  }
+  .cover .meta b{color:var(--ink-2); font-weight:600;}
+
+  .body{padding:8px 56px 80px;}
+
+  h2{
+    margin:64px 0 8px;
+    font-size:27px; font-weight:800; letter-spacing:-.01em;
+    color:#121722;
+    display:flex; align-items:center; gap:14px;
+    scroll-margin-top:20px;
+  }
+  h2 .num{
+    flex:0 0 auto;
+    width:42px; height:42px; border-radius:11px;
+    display:inline-flex; align-items:center; justify-content:center;
+    font-size:18px; font-weight:800;
+    color:#fff;
+    background:linear-gradient(150deg,#2f6bff,#1f5eff);
+    box-shadow:0 6px 16px rgba(31,94,255,.28);
+  }
+  h2 + .lead{
+    margin:0 0 26px 56px;
+    font-size:14.5px; color:var(--muted);
+  }
+
+  h3{
+    margin:44px 0 14px;
+    font-size:20px; font-weight:700; color:#121722;
+    padding-left:13px; border-left:4px solid var(--brand);
+    line-height:1.4;
+    scroll-margin-top:20px;
+  }
+  h4{
+    margin:28px 0 10px;
+    font-size:16.5px; font-weight:700; color:var(--ink-2);
+  }
+  h4::before{
+    content:"";
+    display:inline-block; width:6px; height:6px; border-radius:2px;
+    background:var(--brand); margin-right:9px; vertical-align:2px;
+  }
+  p{margin:12px 0; color:var(--ink-2);}
+  strong{color:#121722; font-weight:700;}
+  .em{color:var(--brand); font-weight:700;}
+  code{
+    font-family:"JetBrains Mono","Cascadia Mono",Consolas,monospace;
+    background:#f2f4f8; border:1px solid var(--line);
+    padding:1px 6px; border-radius:5px; font-size:.9em; color:#33405c;
+  }
+
+  ul,ol{margin:12px 0; padding-left:26px; color:var(--ink-2);}
+  li{margin:7px 0;}
+  li::marker{color:var(--brand); font-weight:600;}
+
+  .toc{
+    margin:34px 0 0;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:linear-gradient(180deg,#fbfcff,#ffffff);
+    padding:24px 28px;
+  }
+  .toc h5{
+    margin:0 0 14px; font-size:13px; letter-spacing:.16em;
+    color:var(--muted); font-weight:700; text-transform:uppercase;
+  }
+  .toc ol{margin:0; padding:0; list-style:none; counter-reset:toc;}
+  .toc li{
+    counter-increment:toc;
+    display:flex; align-items:baseline; gap:10px;
+    padding:7px 0; border-bottom:1px dashed var(--line-2);
+    font-size:15px;
+  }
+  .toc li:last-child{border-bottom:none;}
+  .toc li::before{
+    content:counter(toc,decimal-leading-zero);
+    font-size:12px; font-weight:700; color:var(--brand);
+    font-variant-numeric:tabular-nums;
+    flex:0 0 auto;
+  }
+  .toc a{color:var(--ink-2); text-decoration:none;}
+  .toc a:hover{color:var(--brand);}
+
+  .box{
+    margin:20px 0;
+    border-radius:var(--radius);
+    padding:18px 22px 18px 22px;
+    border:1px solid;
+    border-left-width:5px;
+    position:relative;
+  }
+  .box > .tag{
+    display:inline-flex; align-items:center; gap:7px;
+    font-size:12.5px; font-weight:800; letter-spacing:.08em;
+    margin-bottom:10px;
+    padding:2px 10px; border-radius:6px;
+  }
+  .box p:first-of-type{margin-top:0;}
+  .box p:last-child{margin-bottom:0;}
+
+  .lv-hard{ color:#c2410c; font-weight:900; letter-spacing:.04em; }
+
+  .def  {background:var(--def-bg);   border-color:var(--def-line);   border-left-color:var(--def);}
+  .def  .tag{background:#dfe9ff; color:#1a4fd6;}
+  .proof{background:var(--proof-bg); border-color:var(--proof-line); border-left-color:var(--proof);}
+  .proof .tag{background:#d6f4e7; color:#0b7a56;}
+  .eg   {background:var(--eg-bg);    border-color:var(--eg-line);    border-left-color:var(--eg);}
+  .eg   .tag{background:#fbeccd; color:#9a5c05;}
+  .warn {background:var(--warn-bg);  border-color:var(--warn-line);  border-left-color:var(--warn);}
+  .warn .tag{background:#fadada; color:#b32a2a;}
+  .tip  {background:var(--tip-bg);   border-color:var(--tip-line);   border-left-color:var(--tip);}
+  .tip  .tag{background:#e8dcfb; color:#5f36ad;}
+
+  .steps{counter-reset:st; margin:14px 0; padding:0; list-style:none;}
+  .steps > li{
+    counter-increment:st;
+    position:relative;
+    padding:0 0 0 44px;
+    margin:14px 0;
+  }
+  .steps > li::before{
+    content:counter(st);
+    position:absolute; left:0; top:2px;
+    width:26px; height:26px; border-radius:8px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:13px; font-weight:800; color:#fff;
+    background:#8fa9e6;
+  }
+  .steps > li::after{
+    content:""; position:absolute; left:13px; top:32px; bottom:-14px;
+    width:1.5px; background:var(--line);
+  }
+  .steps > li:last-child::after{display:none;}
+
+  .formula{
+    margin:18px 0;
+    padding:16px 22px;
+    background:#fafbfe;
+    border:1px dashed var(--def-line);
+    border-radius:10px;
+    text-align:center;
+    overflow-x:auto;
+  }
+  .formula .cap{
+    display:block; text-align:left;
+    font-size:12.5px; font-weight:700; color:var(--brand);
+    letter-spacing:.06em; margin-bottom:6px;
+  }
+
+  .tbl-wrap{overflow-x:auto; margin:20px 0;}
+  table{
+    width:100%; border-collapse:collapse;
+    font-size:14.5px;
+    border:1px solid var(--line);
+    border-radius:10px;
+    overflow:hidden;
+  }
+  th,td{
+    padding:11px 14px; text-align:left;
+    border-bottom:1px solid var(--line-2);
+    vertical-align:top;
+  }
+  thead th{
+    background:#f4f7fd;
+    color:#1a2540; font-weight:700; font-size:13.5px;
+    border-bottom:1px solid var(--line);
+    white-space:nowrap;
+  }
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fcfdff;}
+
+  .map{
+    margin:26px 0;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    gap:14px;
+  }
+  .map .node{
+    border:1px solid var(--line);
+    border-radius:11px;
+    padding:16px 18px;
+    background:linear-gradient(180deg,#fbfcff,#fff);
+  }
+  .map .node b{
+    display:block; font-size:14.5px; color:#121722;
+    margin-bottom:8px; padding-bottom:8px;
+    border-bottom:1px solid var(--line-2);
+  }
+  .map .node span{
+    display:block; font-size:13px; color:var(--muted); line-height:1.75;
+  }
+
+  .foot{
+    margin-top:70px; padding-top:24px;
+    border-top:1px solid var(--line);
+    font-size:13px; color:var(--muted);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  }
+
+  .print-btn{
+    position:fixed; right:26px; bottom:26px; z-index:50;
+    background:linear-gradient(150deg,#2f6bff,#1f5eff); color:#fff;
+    border:none; border-radius:999px;
+    padding:12px 22px; font-size:14px; font-weight:700;
+    cursor:pointer; font-family:inherit;
+    box-shadow:0 8px 24px rgba(31,94,255,.32);
+  }
+  .print-btn:hover{filter:brightness(1.06);}
+
+  @media print{
+    body{background:#fff; font-size:11.5pt; line-height:1.7;}
+    .page{box-shadow:none; max-width:none;}
+    .cover{padding:0 0 22px; background:#fff; border-bottom:2px solid #1f5eff;}
+    .cover h1{font-size:26pt;}
+    .body{padding:0;}
+    .print-btn{display:none;}
+    h2{margin-top:26px; font-size:16pt; break-after:avoid; page-break-after:avoid;}
+    h3{break-after:avoid; page-break-after:avoid; font-size:13pt;}
+    .box,.formula,.tbl-wrap,table,.map .node{break-inside:avoid; page-break-inside:avoid;}
+    .eg{break-inside:auto;}
+    a{color:inherit; text-decoration:none;}
+  }
+  @media (max-width:720px){
+    .cover{padding:40px 24px 34px;}
+    .cover h1{font-size:30px;}
+    .body{padding:8px 24px 60px;}
+    h2{font-size:22px;} h2 .num{width:36px;height:36px;font-size:16px;}
+    h2 + .lead{margin-left:50px;}
+    .print-btn{right:14px; bottom:14px;}
+  }
+
+  /* ==================== 公式加载失败提示 ==================== */
+  .mathjax-warn{
+    display:none;
+    margin:0;
+    padding:12px 20px;
+    background:#fff5f5;
+    border-bottom:1px solid #f8cfcf;
+    color:#b32a2a;
+    font-size:13.5px;
+    line-height:1.7;
+  }
+  .mathjax-warn b{color:#8f1f1f;}
+
+  /* ==================== 左侧固定导航 ==================== */
+  .sidenav{ display:none; }
+  @media (min-width:1321px){
+    body{ padding-left:268px; }
+    .sidenav{
+      display:block;
+      position:fixed; top:0; left:0; bottom:0;
+      width:268px;
+      overflow-y:auto;
+      background:#fbfcfe;
+      border-right:1px solid var(--line);
+      padding:22px 0 44px;
+      z-index:40;
+      scrollbar-width:thin;
+    }
+    .sidenav::-webkit-scrollbar{ width:6px; }
+    .sidenav::-webkit-scrollbar-thumb{ background:#d7dde8; border-radius:3px; }
+  }
+  .sidenav-title{
+    font-size:11.5px; letter-spacing:.18em; font-weight:700;
+    color:var(--muted); text-transform:uppercase;
+    padding:0 20px 12px;
+    border-bottom:1px solid var(--line);
+    margin-bottom:10px;
+  }
+  .sidenav a{
+    display:block; text-decoration:none;
+    color:var(--ink-2);
+    border-left:3px solid transparent;
+    transition:background .15s, color .15s, border-color .15s;
+  }
+  .sidenav a.nav-l1{
+    font-size:13.5px; font-weight:700; color:#1a2540;
+    padding:8px 18px 8px 17px;
+    margin-top:6px;
+    line-height:1.5;
+  }
+  .sidenav a.nav-l1 .n{
+    display:inline-block; min-width:15px;
+    color:var(--brand); font-weight:800; margin-right:7px;
+  }
+  .sidenav a.nav-l2{
+    font-size:12.5px; color:var(--muted);
+    padding:5px 18px 5px 30px;
+    line-height:1.55;
+  }
+  .sidenav a:hover{ background:#eef3ff; color:var(--brand); }
+  .sidenav a.active{
+    background:#eef3ff; color:var(--brand);
+    border-left-color:var(--brand); font-weight:700;
+  }
+
+  @media print{
+    .sidenav{ display:none !important; }
+    body{ padding-left:0 !important; }
+  }
+</style>
+</head>
+<body>
+<aside class="sidenav" aria-label="目录导航">
+  <div class="sidenav-title">目录</div>
+  <a class="nav-l1" href="#ch0"><span class="n">0</span>写在前面：三角函数的三条主线</a>
+  <a class="nav-l1" href="#ch1"><span class="n">1</span>角的概念与弧度制</a>
+  <a class="nav-l2" href="#ch1-1">1.1　任意角</a>
+  <a class="nav-l2" href="#ch1-2">1.2　终边相同的角</a>
+  <a class="nav-l2" href="#ch1-3">1.3　弧度制</a>
+  <a class="nav-l2" href="#ch1-4">1.4　弧长公式与扇形面积公式</a>
+  <a class="nav-l1" href="#ch2"><span class="n">2</span>任意角的三角函数与同角关系</a>
+  <a class="nav-l2" href="#ch2-1">2.1　单位圆定义</a>
+  <a class="nav-l2" href="#ch2-2">2.2　三角函数在各象限的符号</a>
+  <a class="nav-l2" href="#ch2-3">2.3　特殊角的三角函数值</a>
+  <a class="nav-l2" href="#ch2-4">2.4　同角三角函数的基本关系</a>
+  <a class="nav-l2" href="#ch2-5">2.5　应用：知一求二</a>
+  <a class="nav-l1" href="#ch3"><span class="n">3</span>诱导公式</a>
+  <a class="nav-l2" href="#ch3-1">3.1　推导工具：单位圆的对称性</a>
+  <a class="nav-l2" href="#ch3-2">3.2　口诀："奇变偶不变，符号看象限"</a>
+  <a class="nav-l1" href="#ch4"><span class="n">4</span>图象与性质</a>
+  <a class="nav-l2" href="#ch4-1">4.1　三个基本函数的图象与性质</a>
+  <a class="nav-l2" href="#ch4-2">4.2　\(y=A\sin(\omega x+\varphi)\) 中各字母的含义</a>
+  <a class="nav-l2" href="#ch4-3">4.3　★ 图象变换（本章头号易错点）</a>
+  <a class="nav-l2" href="#ch4-4">4.4　五点法作图</a>
+  <a class="nav-l1" href="#ch5"><span class="n">5</span>三角恒等变换</a>
+  <a class="nav-l2" href="#ch5-1">5.1　两角和与差公式</a>
+  <a class="nav-l2" href="#ch5-2">5.2　二倍角公式</a>
+  <a class="nav-l2" href="#ch5-3">5.3　降幂公式</a>
+  <a class="nav-l2" href="#ch5-4">5.4　辅助角公式</a>
+  <a class="nav-l2" href="#ch5-5">5.5　半角公式</a>
+  <a class="nav-l1" href="#ch6"><span class="n">6</span>解三角形</a>
+  <a class="nav-l2" href="#ch6-1">6.1　正弦定理</a>
+  <a class="nav-l2" href="#ch6-2">6.2　余弦定理</a>
+  <a class="nav-l2" href="#ch6-3">6.3　三角形面积公式</a>
+  <a class="nav-l2" href="#ch6-4">6.4　三角形中的常用关系</a>
+  <a class="nav-l1" href="#ch7"><span class="n">7</span>易错点清单、知识地图与自测</a>
+  <a class="nav-l2" href="#ch7-1">7.1　易错点清单</a>
+  <a class="nav-l2" href="#ch7-2">7.2　知识地图</a>
+  <a class="nav-l2" href="#ch7-3">7.3　自测清单</a>
+  <a class="nav-l1" href="#ch8"><span class="n">8</span>高考真题题型精讲（2016—2025）</a>
+  <a class="nav-l2" href="#ch8-1">8.1　题型一：恒等变换 + 图象性质</a>
+  <a class="nav-l2" href="#ch8-2">8.2　题型二：解三角形——求角</a>
+  <a class="nav-l2" href="#ch8-3">8.3　题型三：解三角形——求边与面积</a>
+  <a class="nav-l2" href="#ch8-4">8.4　题型四：解三角形——范围、最值与结构不良题</a>
+  <a class="nav-l2" href="#ch8-5">8.5　提分要点总结</a>
+</aside>
+<div class="mathjax-warn" id="mathjax-warn">
+  <b>公式未加载成功。</b>本讲义的数学公式依赖 MathJax 在线渲染，需要联网。
+  当前网络可能不通或 CDN 被拦截，页面上显示的 <code>\( ... \)</code> 是公式源码，不是排版后的样子。
+  请联网后刷新页面；<b>另外，打印或另存 PDF 前请确认公式已正常显示</b>，否则导出的文件里会是源码。
+</div>
+
+<div class="page">
+
+  <header class="cover">
+    <div class="kicker">高考数学 · 重点章节梳理</div>
+    <h1>第三册　<span class="accent">三角函数</span></h1>
+    <p class="sub">面向基础薄弱同学的「慢速精讲版」——把单位圆当作唯一的工具，所有公式都从它推出来，不靠死记硬背。</p>
+    <div class="meta">
+      <div><b>适用</b>　高三一轮复习 / 高二同步巩固</div>
+      <div><b>核心主线</b>　单位圆 → 定义 → 公式 → 图象 → 解三角形</div>
+      <div><b>建议课时</b>　10 ~ 12 讲</div>
+    </div>
+
+    <nav class="toc">
+      <h5>目录</h5>
+      <ol>
+        <li><a href="#ch0">写在前面：三角函数的三条主线</a></li>
+        <li><a href="#ch1">角的概念与弧度制（含弧长、扇形面积推导）</a></li>
+        <li><a href="#ch2">任意角的三角函数与同角关系</a></li>
+        <li><a href="#ch3">诱导公式（用单位圆对称性全部推出）</a></li>
+        <li><a href="#ch4">图象与性质（含 \(y=A\sin(\omega x+\varphi)\) 变换）</a></li>
+        <li><a href="#ch5">三角恒等变换（和差角、二倍角、降幂、辅助角、半角）</a></li>
+        <li><a href="#ch6">解三角形（正弦定理、余弦定理、面积）</a></li>
+        <li><a href="#ch7">易错点清单、知识地图与自测</a></li>
+      <li><a href="#ch8">高考真题题型精讲（2016—2025）</a></li>
+      </ol>
+    </nav>
+  </header>
+
+  <main class="body">
+
+  <!-- ==================== 第 0 章 ==================== -->
+  <h2 id="ch0"><span class="num">0</span>写在前面：三角函数的三条主线</h2>
+  <p class="lead">三角函数公式多，但如果你知道它们都从哪来，就不需要背几十条公式了。</p>
+
+  <p>这一章被很多同学称为"公式地狱"——诱导公式十几条、和差角公式六条、二倍角公式三条、降幂公式两条……加起来几十条。硬背的结果通常是：<strong>考场上记混，或者记对了但符号搞错</strong>。</p>
+
+  <p>但实际上，这一章真正需要"记住"的东西<strong>只有一个：单位圆</strong>。</p>
+
+  <div class="map">
+    <div class="node">
+      <b>主线一：从单位圆长出定义</b>
+      <span>角 \(\alpha\) 的终边与单位圆交于点 \(P(x,y)\)，规定 \(\sin\alpha=y\)、\(\cos\alpha=x\)。<strong>所有三角函数的性质都从这个定义来。</strong></span>
+    </div>
+    <div class="node">
+      <b>主线二：从单位圆长出公式</b>
+      <span>对称性 → 诱导公式；两点距离 → 和差角公式；和角公式令 \(\beta=\alpha\) → 二倍角公式。<strong>一条推导链，全部打通。</strong></span>
+    </div>
+    <div class="node">
+      <b>主线三：从定义长出图象</b>
+      <span>把 \(\sin\alpha\) 看成角变化时 \(P\) 点纵坐标的变化 → 正弦曲线。<strong>图象与性质是同一件事的两种说法。</strong></span>
+    </div>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">学法建议</span>
+    <ol>
+      <li><strong>先画单位圆，再记公式。</strong>第 3 章（诱导公式）和第 5 章（恒等变换）的推导都只用单位圆，自己动手推一遍，公式量立刻从"几十条"降到"一个圆"。</li>
+      <li><strong>"奇变偶不变，符号看象限"要理解，不要背。</strong>第 3.2 节会逐字拆解这句口诀的含义。</li>
+      <li><strong>第 4.3 节的图象变换是本章头号易错点。</strong>"先伸缩后平移"时平移量要除以 \(\omega\)，这一点必须彻底搞懂。</li>
+    </ol>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">先建立两个重要直觉</span>
+    <ul>
+      <li><strong>三角函数是"描述转圈"的函数。</strong>角转一圈回到原点，函数值就重复一次——这就是"周期性"的来源。</li>
+      <li><strong>\(\sin\) 和 \(\cos\) 永远在 \([-1,1]\) 之间。</strong>因为 \(P\) 点在单位圆上，坐标 \(x,y\) 的绝对值都不会超过半径 1。</li>
+    </ul>
+  </div>
+
+    <div class="box tip">
+    <span class="tag">第 8 章真题的难度分级（基础生必读）</span>
+    <p>第 8 章按<strong>题型</strong>编排，每种题型内部的题目<strong>由易到难</strong>。其中标注 <span class="lv-hard">★★</span> 的是<strong>压轴档</strong>——需要同时用好几个工具，计算量也大。</p>
+    <ul>
+      <li><strong>第一遍复习：先跳过 ★★ 题。</strong>把没有标记的题做熟，它们已经覆盖了绝大部分考分。</li>
+      <li><strong>冲刺阶段：再回头攻 ★★ 题。</strong>此时基本功已经扎实，做起来会顺很多。</li>
+      <li><strong>即使暂时做不出来，也建议把 ★★ 题的解答读一遍。</strong>每道题后面的「提分要点」都讲清了"思路是怎么想到的"，这对提分很有用。</li>
+    </ul>
+  </div>
+
+<!-- ==================== 第 1 章 ==================== -->
+  <h2 id="ch1"><span class="num">1</span>角的概念与弧度制</h2>
+  <p class="lead">这一章是"准备工作"。重点是弧度制的换算和两个公式（弧长、扇形面积）。</p>
+
+  <h3 id="ch1-1">1.1　任意角</h3>
+
+  <div class="box def">
+    <span class="tag">定义</span>
+    <p>一条射线绕它的端点旋转所形成的图形叫做<strong>角</strong>。规定：</p>
+    <ul>
+      <li>按<strong>逆时针</strong>方向旋转形成的角叫<strong>正角</strong>；</li>
+      <li>按<strong>顺时针</strong>方向旋转形成的角叫<strong>负角</strong>；</li>
+      <li>不做任何旋转形成的角叫<strong>零角</strong>（\(0^\circ\)）。</li>
+    </ul>
+    <p>这样定义的角，取值范围可以是任意实数，所以叫<strong>任意角</strong>。</p>
+  </div>
+
+  <p><strong>为什么要把角推广到任意大小？</strong>因为转圈可以转很多圈：转一整圈是 \(360^\circ\)，转两圈是 \(720^\circ\)，反过来转半圈是 \(-180^\circ\)。物理里（比如齿轮、电机）确实会遇到这些角，所以必须推广。</p>
+
+  <h3 id="ch1-2">1.2　终边相同的角</h3>
+
+  <div class="box def">
+    <span class="tag">定义</span>
+    <p>所有与角 \(\alpha\) 终边相同的角，连同 \(\alpha\) 在内，构成一个集合：</p>
+    <div class="formula">
+      \[ S = \{\,\beta \mid \beta = \alpha + k\cdot360^\circ,\ k\in\mathbb{Z}\,\} \]
+    </div>
+    <p>用弧度制写就是：</p>
+    <div class="formula">
+      \[ S = \{\,\beta \mid \beta = \alpha + 2k\pi,\ k\in\mathbb{Z}\,\} \]
+    </div>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">为什么是 \(k\cdot360^\circ\)</span>
+    <p>从 \(\alpha\) 的终边出发，<strong>再转一整圈</strong>（\(360^\circ\)），终边回到原来的位置。转两圈、三圈、或者反着转一圈（\(-360^\circ\)），终边都一样。</p>
+    <p>所以只要在 \(\alpha\) 的基础上加任意整数个 \(360^\circ\)，终边位置就不变。<strong>终边相同 ≠ 角相等</strong>，它们可以相差 \(360^\circ\) 的整数倍。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 1</span>
+    <p>把 \(-1050^\circ\) 写成 \(\alpha + k\cdot360^\circ\)（\(0^\circ\le\alpha&lt;360^\circ\)，\(k\in\mathbb{Z}\)）的形式，并指出它是第几象限角。</p>
+
+    <h4>解析</h4>
+    <p><strong>思路：反复加 \(360^\circ\)，直到结果落在 \([0^\circ,360^\circ)\) 内。</strong></p>
+    <div class="formula">
+      \[ -1050^\circ + 360^\circ = -690^\circ \]
+    </div>
+    <div class="formula">
+      \[ -690^\circ + 360^\circ = -330^\circ \]
+    </div>
+    <div class="formula">
+      \[ -330^\circ + 360^\circ = 30^\circ \]
+    </div>
+    <p>所以一共加了 \(3\) 个 \(360^\circ\)：</p>
+    <div class="formula">
+      \[ -1050^\circ = 30^\circ + (-3)\times 360^\circ \]
+    </div>
+    <p>即 \(\alpha=30^\circ\)，\(k=-3\)。</p>
+    <p>因为 \(0^\circ&lt;30^\circ&lt;90^\circ\)，所以 \(-1050^\circ\) 是<strong>第一象限角</strong>。</p>
+
+    <p><strong>验算（更快的方法）：</strong>直接算 \(-1050 \div 360 = -2.9166\dots\)，取整得 \(k=-3\)，则</p>
+    <div class="formula">\[ \alpha = -1050^\circ - (-3)\times360^\circ = -1050^\circ+1080^\circ = 30^\circ \quad\checkmark \]</div>
+  </div>
+
+  <h3 id="ch1-3">1.3　弧度制</h3>
+
+  <div class="box def">
+    <span class="tag">定义</span>
+    <p>长度等于<strong>半径</strong>的圆弧所对的圆心角叫做 <strong>1 弧度的角</strong>，记作 \(1\,\text{rad}\)（通常省略"rad"不写）。用弧度作为单位来度量角的制度叫做<strong>弧度制</strong>。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导：为什么 \(180^\circ=\pi\) 弧度</span>
+    <p><strong>第一步：算一个整圆（周角）是多少弧度。</strong></p>
+    <p>半径为 \(r\) 的圆，周长是 \(C=2\pi r\)。用"弧长 ÷ 半径"来度量这个周角：</p>
+    <div class="formula">
+      \[ \text{周角的弧度数} = \frac{\text{弧长}}{\text{半径}} = \frac{2\pi r}{r} = 2\pi \]
+    </div>
+    <p><strong>第二步：周角用角度制表示是 \(360^\circ\)。</strong>两种制度描述的是同一个角，所以：</p>
+    <div class="formula">
+      \[ 360^\circ = 2\pi\ \text{rad} \]
+    </div>
+    <p><strong>第三步：两边同除以 2。</strong></p>
+    <div class="formula">
+      \[ \boxed{\ 180^\circ = \pi\ \text{rad}\ } \]
+    </div>
+    <p>由此得到两个换算关系：</p>
+    <div class="formula">
+      \[ 1^\circ = \frac{\pi}{180}\ \text{rad}\approx0.01745\ \text{rad},\qquad 1\ \text{rad}=\frac{180^\circ}{\pi}\approx57.30^\circ \]
+    </div>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">换算技巧：抓住"\(180^\circ\leftrightarrow\pi\)"这一对</span>
+    <p>不需要记上面两个小公式，只要记住 <strong>\(180^\circ\) 对应 \(\pi\)</strong>，然后用比例算：</p>
+    <ul>
+      <li>角度 → 弧度：乘以 \(\dfrac{\pi}{180^\circ}\)。例如 \(60^\circ=60\times\dfrac{\pi}{180}=\dfrac{\pi}{3}\)。</li>
+      <li>弧度 → 角度：乘以 \(\dfrac{180^\circ}{\pi}\)。例如 \(\dfrac{\pi}{4}=\dfrac{\pi}{4}\times\dfrac{180^\circ}{\pi}=45^\circ\)。</li>
+    </ul>
+    <p><strong>常用对应要背熟：</strong></p>
+    <div class="formula">
+      \[
+      30^\circ=\frac{\pi}{6},\quad
+      45^\circ=\frac{\pi}{4},\quad
+      60^\circ=\frac{\pi}{3},\quad
+      90^\circ=\frac{\pi}{2},\quad
+      120^\circ=\frac{2\pi}{3},\quad
+      180^\circ=\pi,\quad
+      270^\circ=\frac{3\pi}{2},\quad
+      360^\circ=2\pi
+      \]
+    </div>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">弧度制下写角的三个习惯</span>
+    <ul>
+      <li>弧度单位通常<strong>省略不写</strong>：写 \(\dfrac{\pi}{3}\)，不写 \(\dfrac{\pi}{3}\ \text{rad}\)。</li>
+      <li>用弧度制时，角是一个<strong>实数</strong>，所以可以参与运算（比如 \(2\pi+3\) 是有意义的）。这是弧度制最大的好处——把三角函数变成实数的函数。</li>
+      <li><strong>同一个式子里不要混用两种制度</strong>。写 \(\alpha=\dfrac{\pi}{6}+k\cdot360^\circ\) 是错的。</li>
+    </ul>
+  </div>
+
+  <h3 id="ch1-4">1.4　弧长公式与扇形面积公式</h3>
+
+  <div class="formula">
+    <span class="cap">两个必记公式（其中 \(\alpha\) 必须用弧度制）</span>
+    \[ l = |\alpha|\,r \qquad\qquad S = \frac12 lr = \frac12|\alpha|r^{2} \]
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导一：弧长公式 \(l=|\alpha|r\)</span>
+    <p><strong>用比例关系。</strong>圆心角为 \(\alpha\) 的弧长 \(l\)，与整个圆的关系是"角占多少比例，弧长就占多少比例"：</p>
+    <div class="formula">
+      \[ \frac{l}{2\pi r} = \frac{\alpha}{2\pi} \]
+    </div>
+    <p>左边是"弧长占周长的比例"，右边是"圆心角占周角的比例"，两者相等。</p>
+    <p>两边同乘 \(2\pi r\)：</p>
+    <div class="formula">
+      \[ l = \frac{\alpha}{2\pi}\cdot 2\pi r = \alpha r \]
+    </div>
+    <p>如果 \(\alpha\) 是负角（顺时针转），弧长取正值，所以加绝对值：\(l=|\alpha|r\)。∎</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导二：扇形面积公式 \(S=\dfrac12 lr=\dfrac12|\alpha|r^{2}\)</span>
+    <p><strong>同样用比例关系。</strong>扇形面积占整个圆面积的比例，等于圆心角占周角的比例：</p>
+    <div class="formula">
+      \[ \frac{S}{\pi r^{2}} = \frac{\alpha}{2\pi} \]
+    </div>
+    <p>两边同乘 \(\pi r^2\)：</p>
+    <div class="formula">
+      \[ S = \frac{\alpha}{2\pi}\cdot\pi r^{2} = \frac{1}{2}\alpha r^{2} \]
+    </div>
+    <p>再把 \(l=\alpha r\) 代入，即 \(\alpha r=l\)，得到另一个形式：</p>
+    <div class="formula">
+      \[ S = \frac12(\alpha r)\cdot r = \frac12 lr \quad\checkmark \]
+    </div>
+    <p><strong>对比记忆：</strong>三角形面积公式是 \(S=\dfrac12\times\text{底}\times\text{高}\)，扇形面积是 \(S=\dfrac12\times\text{弧长}\times\text{半径}\)——结构完全一样，把"底"换成"弧长"、"高"换成"半径"。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 2</span>
+    <p>已知扇形的圆心角为 \(\dfrac{2\pi}{3}\)，半径为 6。求扇形的弧长和面积。</p>
+
+    <h4>解析</h4>
+    <p><strong>弧长：</strong></p>
+    <div class="formula">
+      \[ l = |\alpha|r = \frac{2\pi}{3}\times 6 = 4\pi \]
+    </div>
+    <p><strong>面积（用两个公式分别算，互相验证）：</strong></p>
+    <div class="formula">
+      \[ S = \frac12|\alpha|r^{2} = \frac12\times\frac{2\pi}{3}\times36 = \frac12\times24\pi = 12\pi \]
+    </div>
+    <div class="formula">
+      \[ S = \frac12 lr = \frac12\times4\pi\times6 = 12\pi \quad\checkmark \]
+    </div>
+    <p><strong>答案：</strong>\(l=4\pi\)，\(S=12\pi\)。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 3（扇形周长固定求最大面积）</span>
+    <p>已知扇形的周长为 8，求它的面积的最大值。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：设变量。</strong>设半径为 \(r\)，弧长为 \(l\)。</p>
+    <p><strong>第二步：用周长条件建立关系。</strong>扇形周长 = 两条半径 + 弧长：</p>
+    <div class="formula">
+      \[ 2r+l = 8 \quad\Longrightarrow\quad l = 8-2r \]
+    </div>
+    <p><strong>第三步：写出面积关于 \(r\) 的表达式。</strong></p>
+    <div class="formula">
+      \[ S = \frac12 lr = \frac12(8-2r)r = 4r-r^{2} \]
+    </div>
+    <p><strong>第四步：求最大值。</strong>这是关于 \(r\) 的二次函数，开口向下：</p>
+    <div class="formula">
+      \[ S = -(r^{2}-4r) = -(r-2)^{2}+4 \]
+    </div>
+    <p>所以当 \(r=2\) 时，\(S\) 取最大值 4。</p>
+    <p><strong>验算：</strong>\(r=2\) 时 \(l=8-4=4\)，\(S=\dfrac12\times4\times2=4\) ✓。且此时圆心角 \(\alpha=\dfrac lr=2\) rad \(\approx114.6^\circ&lt;2\pi\)，扇形是合法的 ✓。</p>
+    <p><strong>答案：</strong>面积最大值为 \(\boxed{4}\)。</p>
+  </div>
+
+  <!-- ==================== 第 2 章 ==================== -->
+  <h2 id="ch2"><span class="num">2</span>任意角的三角函数与同角关系</h2>
+  <p class="lead">用单位圆定义三角函数，是整章最关键的"思想起点"。后面的所有公式都从这里长出来。</p>
+
+  <h3 id="ch2-1">2.1　单位圆定义</h3>
+
+  <div class="box def">
+    <span class="tag">定义（★ 整章的地基）</span>
+    <p>以原点为圆心、半径为 1 的圆叫做<strong>单位圆</strong>。设任意角 \(\alpha\) 的终边与单位圆交于点 \(P(x,y)\)，规定：</p>
+    <div class="formula">
+      \[ \sin\alpha = y,\qquad \cos\alpha = x,\qquad \tan\alpha=\frac{y}{x}\ (x\ne0) \]
+    </div>
+    <p>即：<strong>纵坐标是正弦，横坐标是余弦，纵坐标除以横坐标是正切。</strong></p>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">为什么要用单位圆定义</span>
+    <p>初中是用直角三角形定义三角函数的（对边比斜边等），但那种定义<strong>只能处理 \(0^\circ\sim90^\circ\) 的锐角</strong>——三角形里没有钝角，更没有负角。</p>
+    <p>用单位圆定义就突破了限制：<strong>不管角多大、是正还是负，终边总会和单位圆交于一点 \(P\)</strong>，这个点的坐标就给出了三个函数值。所以单位圆定义能处理任意角。</p>
+  </div>
+
+  <h3 id="ch2-2">2.2　三角函数在各象限的符号</h3>
+
+  <p>由定义直接得出：\(\sin\alpha\) 的符号 = \(P\) 点纵坐标的符号；\(\cos\alpha\) 的符号 = 横坐标的符号。所以：</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>象限</th><th>\(P\) 点坐标</th><th>\(\sin\alpha\)</th><th>\(\cos\alpha\)</th><th>\(\tan\alpha\)</th></tr></thead>
+      <tbody>
+        <tr><td>第一象限</td><td>\((+,\ +)\)</td><td>\(+\)</td><td>\(+\)</td><td>\(+\)</td></tr>
+        <tr><td>第二象限</td><td>\((-,\ +)\)</td><td>\(+\)</td><td>\(-\)</td><td>\(-\)</td></tr>
+        <tr><td>第三象限</td><td>\((-,\ -)\)</td><td>\(-\)</td><td>\(-\)</td><td>\(+\)</td></tr>
+        <tr><td>第四象限</td><td>\((+,\ -)\)</td><td>\(-\)</td><td>\(+\)</td><td>\(-\)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">记忆口诀</span>
+    <p><strong>"一全正、二正弦、三正切、四余弦"</strong></p>
+    <p>意思是：第一象限三个都正；第二象限只有正弦（\(\sin\)）为正；第三象限只有正切（\(\tan\)）为正；第四象限只有余弦（\(\cos\)）为正。</p>
+    <p><strong>更好的办法：直接画单位圆。</strong>在圆上取四个象限各一点，看坐标的正负，一目了然，不需要背。</p>
+  </div>
+
+  <h3 id="ch2-3">2.3　特殊角的三角函数值</h3>
+
+  <div class="box tip">
+    <span class="tag">先说明：这张表只需要记第一象限</span>
+    <p>下表列出了 \(0^\circ\sim180^\circ\) 的特殊角。但<strong>你只需要记住第一象限（\(0^\circ,30^\circ,45^\circ,60^\circ,90^\circ\)）的值</strong>——第二象限（\(120^\circ,135^\circ,150^\circ\)）和 \(180^\circ\) 的值都可以用第 3 章的诱导公式从第一象限推出来，<strong>不需要单独背</strong>。</p>
+    <p>表格的结构是：<strong>每一列是一个角</strong>，<strong>每一行是函数的名称</strong>（弧度、正弦、余弦、正切）。</p>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>函数 \ 角</th><th>\(0^\circ\)</th><th>\(30^\circ\)</th><th>\(45^\circ\)</th><th>\(60^\circ\)</th><th>\(90^\circ\)</th><th>\(120^\circ\)</th><th>\(135^\circ\)</th><th>\(150^\circ\)</th><th>\(180^\circ\)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>弧度</strong></td><td>\(0\)</td><td>\(\frac{\pi}{6}\)</td><td>\(\frac{\pi}{4}\)</td><td>\(\frac{\pi}{3}\)</td><td>\(\frac{\pi}{2}\)</td><td>\(\frac{2\pi}{3}\)</td><td>\(\frac{3\pi}{4}\)</td><td>\(\frac{5\pi}{6}\)</td><td>\(\pi\)</td>
+        </tr>
+        <tr>
+          <td><strong>\(\sin\)</strong></td><td>\(0\)</td><td>\(\frac12\)</td><td>\(\frac{\sqrt2}{2}\)</td><td>\(\frac{\sqrt3}{2}\)</td><td>\(1\)</td><td>\(\frac{\sqrt3}{2}\)</td><td>\(\frac{\sqrt2}{2}\)</td><td>\(\frac12\)</td><td>\(0\)</td>
+        </tr>
+        <tr>
+          <td><strong>\(\cos\)</strong></td><td>\(1\)</td><td>\(\frac{\sqrt3}{2}\)</td><td>\(\frac{\sqrt2}{2}\)</td><td>\(\frac12\)</td><td>\(0\)</td><td>\(-\frac12\)</td><td>\(-\frac{\sqrt2}{2}\)</td><td>\(-\frac{\sqrt3}{2}\)</td><td>\(-1\)</td>
+        </tr>
+        <tr>
+          <td><strong>\(\tan\)</strong></td><td>\(0\)</td><td>\(\frac{\sqrt3}{3}\)</td><td>\(1\)</td><td>\(\sqrt3\)</td><td>不存在</td><td>\(-\sqrt3\)</td><td>\(-1\)</td><td>\(-\frac{\sqrt3}{3}\)</td><td>\(0\)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">怎么记这张表（不用死背）</span>
+    <p><strong>只记第一象限 \(0^\circ,30^\circ,45^\circ,60^\circ,90^\circ\) 的正弦值：</strong></p>
+    <div class="formula">
+      \[ \frac{\sqrt0}{2},\quad \frac{\sqrt1}{2},\quad \frac{\sqrt2}{2},\quad \frac{\sqrt3}{2},\quad \frac{\sqrt4}{2} \]
+    </div>
+    <p>也就是 \(0,\ \dfrac12,\ \dfrac{\sqrt2}{2},\ \dfrac{\sqrt3}{2},\ 1\)。<strong>分子就是 \(\sqrt{0},\sqrt{1},\sqrt{2},\sqrt{3},\sqrt{4}\)，分母都是 2。</strong></p>
+    <p>余弦值就是正弦值<strong>倒过来排</strong>：\(1,\ \dfrac{\sqrt3}{2},\ \dfrac{\sqrt2}{2},\ \dfrac12,\ 0\)。</p>
+    <p>正切值 = 正弦 ÷ 余弦，现算即可。\(90^\circ\) 时余弦为 0，所以正切不存在。</p>
+    <p><strong>第二象限（\(120^\circ,135^\circ,150^\circ\)）</strong>用诱导公式从第一象限推（第 3 章），不需要单独背。</p>
+  </div>
+
+  <h3 id="ch2-4">2.4　同角三角函数的基本关系</h3>
+
+  <div class="formula">
+    <span class="cap">两个基本关系</span>
+    \[ \sin^{2}\alpha+\cos^{2}\alpha=1 \qquad\qquad \tan\alpha=\frac{\sin\alpha}{\cos\alpha}\ \ (\cos\alpha\ne0) \]
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导一：\(\sin^2\alpha+\cos^2\alpha=1\)</span>
+    <p><strong>只用一句话：\(P\) 点在单位圆上。</strong></p>
+    <p>设 \(P(x,y)\) 是角 \(\alpha\) 的终边与单位圆的交点。由定义，\(x=\cos\alpha\)，\(y=\sin\alpha\)。</p>
+    <p>而 \(P\) 在单位圆上，单位圆的方程是（圆心在原点、半径为 1）：</p>
+    <div class="formula">\[ x^{2}+y^{2}=1 \]</div>
+    <p>把 \(x=\cos\alpha\)、\(y=\sin\alpha\) 代入：</p>
+    <div class="formula">
+      \[ \cos^{2}\alpha+\sin^{2}\alpha=1 \quad\checkmark \]
+    </div>
+    <p><strong>几何解释：</strong>点 \(P\) 到原点的距离恒为 1（半径）。由勾股定理，横坐标的平方加纵坐标的平方就等于斜边（半径）的平方。这个关系式其实就是<strong>勾股定理</strong>。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导二：\(\tan\alpha=\dfrac{\sin\alpha}{\cos\alpha}\)</span>
+    <p>由定义直接得：</p>
+    <div class="formula">
+      \[ \tan\alpha = \frac{y}{x} = \frac{\sin\alpha}{\cos\alpha} \quad\checkmark \]
+    </div>
+    <p>这就是定义式的改写，只是把 \(y\)、\(x\) 换成了 \(\sin\alpha\)、\(\cos\alpha\)。</p>
+    <p><strong>注意条件 \(\cos\alpha\ne0\)</strong>，即 \(\alpha\ne\dfrac{\pi}{2}+k\pi\)。这些点上正切不存在。</p>
+  </div>
+
+  <h3 id="ch2-5">2.5　应用：知一求二</h3>
+
+  <div class="box proof">
+    <span class="tag">标准解法（三步）</span>
+    <ol class="steps">
+      <li><strong>用平方关系求出另一个函数的<strong>平方</strong>。</strong>由 \(\sin^2\alpha+\cos^2\alpha=1\) 解出未知那个的平方。</li>
+      <li><strong>由象限确定符号。</strong>开方时会出现正负两个值，用"第几象限"这个条件筛掉一个。</li>
+      <li><strong>用商关系求正切。</strong>\(\tan\alpha=\dfrac{\sin\alpha}{\cos\alpha}\)。</li>
+    </ol>
+    <p><strong>关键：符号是由象限决定的，不是随便取。</strong>这一步是本题唯一的难点。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 4</span>
+    <p>已知 \(\sin\alpha=\dfrac35\)，且 \(\alpha\) 是第二象限角，求 \(\cos\alpha\) 和 \(\tan\alpha\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：用平方关系求 \(\cos^2\alpha\)。</strong></p>
+    <div class="formula">
+      \[ \cos^{2}\alpha = 1-\sin^{2}\alpha = 1-\left(\frac35\right)^{2} = 1-\frac{9}{25} = \frac{16}{25} \]
+    </div>
+
+    <p><strong>第二步：由象限确定符号。</strong>\(\alpha\) 是第二象限角，查 2.2 节的表，第二象限<strong>余弦为负</strong>。所以：</p>
+    <div class="formula">
+      \[ \cos\alpha = -\sqrt{\frac{16}{25}} = -\frac45 \]
+    </div>
+
+    <p><strong>第三步：求正切。</strong></p>
+    <div class="formula">
+      \[ \tan\alpha = \frac{\sin\alpha}{\cos\alpha} = \frac{\ \frac35\ }{-\frac45} = \frac35\times\left(-\frac54\right) = -\frac34 \]
+    </div>
+
+    <p><strong>验算：</strong>\(\sin^2\alpha+\cos^2\alpha=\dfrac{9}{25}+\dfrac{16}{25}=1\) ✓；\(\tan\alpha=\dfrac{3/5}{-4/5}=-\dfrac34\) ✓；第二象限 \(\sin>0\)、\(\cos&lt;0\)、\(\tan&lt;0\)，与结果一致 ✓。</p>
+
+    <p><strong>答案：</strong>\(\boxed{\cos\alpha=-\dfrac45,\quad \tan\alpha=-\dfrac34}\)</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 5（已知 \(\tan\alpha\) 求齐次式）</span>
+    <p>已知 \(\tan\alpha=2\)，求 \(\dfrac{\sin\alpha+2\cos\alpha}{3\sin\alpha-\cos\alpha}\) 的值。</p>
+
+    <h4>解析</h4>
+    <p><strong>观察：</strong>分子分母都是 \(\sin\alpha\) 和 \(\cos\alpha\) 的<strong>一次齐次式</strong>（每项都是 1 次）。这种式子可以<strong>上下同除以 \(\cos\alpha\)</strong>，把 \(\sin/\cos\) 换成 \(\tan\)。</p>
+    <p><strong>第一步：分子分母同除以 \(\cos\alpha\)。</strong></p>
+    <div class="formula">
+      \[
+      \frac{\sin\alpha+2\cos\alpha}{3\sin\alpha-\cos\alpha}
+      = \frac{\dfrac{\sin\alpha}{\cos\alpha}+2}{3\cdot\dfrac{\sin\alpha}{\cos\alpha}-1}
+      = \frac{\tan\alpha+2}{3\tan\alpha-1}
+      \]
+    </div>
+    <p><strong>第二步：代入 \(\tan\alpha=2\)。</strong></p>
+    <div class="formula">
+      \[ = \frac{2+2}{3\times2-1} = \frac{4}{5} \]
+    </div>
+    <p><strong>答案：</strong>\(\boxed{\dfrac45}\)</p>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">这个技巧的适用范围</span>
+      <p>只要是关于 \(\sin\alpha\)、\(\cos\alpha\) 的<strong>齐次式</strong>（每一项的次数都相同），都可以同除以 \(\cos^n\alpha\) 化成 \(\tan\alpha\) 的式子。</p>
+      <ul>
+        <li>一次齐次式（如 \(a\sin\alpha+b\cos\alpha\)）→ 除以 \(\cos\alpha\)</li>
+        <li>二次齐次式（如 \(\sin^2\alpha+\sin\alpha\cos\alpha\)）→ 除以 \(\cos^2\alpha\)</li>
+      </ul>
+      <p>对于二次齐次式，如果分母是 1，可以先把 1 换成 \(\sin^2\alpha+\cos^2\alpha\)，凑成齐次式再处理。</p>
+    </div>
+  </div>
+
+  <!-- ==================== 第 3 章 ==================== -->
+  <h2 id="ch3"><span class="num">3</span>诱导公式</h2>
+  <p class="lead">这一章有十几条公式，但只需要记住"一个圆 + 一句话"。所有公式都能在 30 秒内推出来。</p>
+
+  <h3 id="ch3-1">3.1　推导工具：单位圆的对称性</h3>
+
+  <div class="box proof">
+    <span class="tag">核心思想（先看懂这一段，后面就简单了）</span>
+    <p>设角 \(\alpha\) 的终边与单位圆交于点 \(P(x,y)\)，由定义 \(x=\cos\alpha\)，\(y=\sin\alpha\)。</p>
+    <p><strong>现在关键的一步：</strong>如果另一个角 \(\beta\) 的终边与 \(P\) 点有某种<strong>对称关系</strong>，那么 \(\beta\) 的终边与单位圆的交点 \(P'\) 的坐标就能用 \(x,y\) 表示出来。再用定义读出 \(\sin\beta\)、\(\cos\beta\) 即可。</p>
+    <p>所以诱导公式的推导只有两步：<strong>①找出对称关系 → ②写出 \(P'\) 的坐标 → ③用定义读出结果。</strong></p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">公式一：角相差 \(2k\pi\)（终边重合）</span>
+    <p>角 \(\alpha+2k\pi\) 与 \(\alpha\) 的终边<strong>完全相同</strong>，所以交点还是 \(P(x,y)\)：</p>
+    <div class="formula">
+      \[ \sin(\alpha+2k\pi)=\sin\alpha,\qquad \cos(\alpha+2k\pi)=\cos\alpha,\qquad \tan(\alpha+2k\pi)=\tan\alpha \]
+    </div>
+    <p>这组公式说明三角函数是<strong>周期函数</strong>——这就是周期性的来源。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">公式二：\(\pi+\alpha\)（关于原点对称）</span>
+    <p><strong>第一步：找对称关系。</strong>角 \(\alpha\) 和 \(\pi+\alpha\) 相差半圈（\(180^\circ\)）。转半圈后，点 \(P(x,y)\) 会跑到它关于<strong>原点</strong>的对称点。</p>
+    <p><strong>第二步：写出对称点坐标。</strong>点 \((x,y)\) 关于原点的对称点是 \((-x,-y)\)，所以 \(P'(-x,-y)\)。</p>
+    <p><strong>第三步：用定义读出。</strong>\(P'\) 的横坐标是 \(\cos(\pi+\alpha)\)，纵坐标是 \(\sin(\pi+\alpha)\)：</p>
+    <div class="formula">
+      \[ \sin(\pi+\alpha)=-y=-\sin\alpha,\qquad \cos(\pi+\alpha)=-x=-\cos\alpha \]
+    </div>
+    <div class="formula">
+      \[ \tan(\pi+\alpha)=\frac{-y}{-x}=\frac{y}{x}=\tan\alpha \]
+    </div>
+    <p>注意正切：两个负号相除变正，所以 \(\tan(\pi+\alpha)=\tan\alpha\)。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">公式三：\(-\alpha\)（关于 \(x\) 轴对称）</span>
+    <p><strong>对称关系：</strong>角 \(-\alpha\) 与 \(\alpha\) 的终边关于 \(x\) 轴对称（顺时针转 \(\alpha\) 与逆时针转 \(\alpha\)，落点关于横轴对称）。</p>
+    <p><strong>对称点：</strong>\((x,y)\) 关于 \(x\) 轴的对称点是 \((x,-y)\)。</p>
+    <div class="formula">
+      \[ \sin(-\alpha)=-y=-\sin\alpha,\qquad \cos(-\alpha)=x=\cos\alpha \]
+    </div>
+    <div class="formula">
+      \[ \tan(-\alpha)=\frac{-y}{x}=-\tan\alpha \]
+    </div>
+    <p>这组公式说明：\(\cos\) 是<strong>偶函数</strong>，\(\sin\) 和 \(\tan\) 是<strong>奇函数</strong>。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">公式四：\(\pi-\alpha\)（关于 \(y\) 轴对称）</span>
+    <p><strong>对称关系：</strong>角 \(\pi-\alpha\) 与 \(\alpha\) 的终边关于 \(y\) 轴对称。</p>
+    <p><strong>对称点：</strong>\((x,y)\) 关于 \(y\) 轴的对称点是 \((-x,y)\)。</p>
+    <div class="formula">
+      \[ \sin(\pi-\alpha)=y=\sin\alpha,\qquad \cos(\pi-\alpha)=-x=-\cos\alpha \]
+    </div>
+    <div class="formula">
+      \[ \tan(\pi-\alpha)=\frac{y}{-x}=-\tan\alpha \]
+    </div>
+    <p><strong>这一组最常用。</strong>比如把第二象限的角化到第一象限：\(\sin150^\circ=\sin(180^\circ-30^\circ)=\sin30^\circ=\dfrac12\)。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">公式五：\(\dfrac{\pi}{2}-\alpha\)（关于直线 \(y=x\) 对称）</span>
+    <p><strong>对称关系：</strong>角 \(\dfrac{\pi}{2}-\alpha\) 与 \(\alpha\) 的终边关于直线 \(y=x\) 对称。（因为两者之和为 \(\dfrac{\pi}{2}\)，即互余。）</p>
+    <p><strong>对称点：</strong>点 \((x,y)\) 关于直线 \(y=x\) 的对称点是 \((y,x)\)——横纵坐标互换。</p>
+    <div class="formula">
+      \[ \sin\!\left(\frac{\pi}{2}-\alpha\right)=x=\cos\alpha,\qquad \cos\!\left(\frac{\pi}{2}-\alpha\right)=y=\sin\alpha \]
+    </div>
+    <p><strong>这就是"函数名改变"的来源！</strong>正弦变成了余弦，余弦变成了正弦。</p>
+    <p>正切：</p>
+    <div class="formula">
+      \[ \tan\!\left(\frac{\pi}{2}-\alpha\right)=\frac{x}{y}=\frac{1}{\tan\alpha} \]
+    </div>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">公式六：\(\dfrac{\pi}{2}+\alpha\)（拆成两步）</span>
+    <p>把 \(\dfrac{\pi}{2}+\alpha\) 写成 \(\dfrac{\pi}{2}-(-\alpha)\)，然后连续用公式五和公式三：</p>
+    <div class="formula">
+      \[ \sin\!\left(\frac{\pi}{2}+\alpha\right)=\sin\!\left[\frac{\pi}{2}-(-\alpha)\right]=\cos(-\alpha)=\cos\alpha \]
+    </div>
+    <div class="formula">
+      \[ \cos\!\left(\frac{\pi}{2}+\alpha\right)=\cos\!\left[\frac{\pi}{2}-(-\alpha)\right]=\sin(-\alpha)=-\sin\alpha \]
+    </div>
+    <div class="formula">
+      \[ \tan\!\left(\frac{\pi}{2}+\alpha\right)=\frac{\cos\alpha}{-\sin\alpha}=-\frac{1}{\tan\alpha} \]
+    </div>
+    <p><strong>注意符号的差别：</strong>\(\dfrac{\pi}{2}-\alpha\) 时 \(\cos\) 变成 \(+\sin\alpha\)；\(\dfrac{\pi}{2}+\alpha\) 时 \(\cos\) 变成 \(-\sin\alpha\)。这正是口诀里"符号看象限"要处理的事。</p>
+  </div>
+
+  <h3 id="ch3-2">3.2　口诀："奇变偶不变，符号看象限"</h3>
+
+  <div class="box tip">
+    <span class="tag">逐字拆解这句口诀</span>
+    <p>当要处理形如 \(\dfrac{k\pi}{2}\pm\alpha\)（\(k\in\mathbb{Z}\)）的角时，用这两句话：</p>
+
+    <p><strong>第一句：奇变偶不变。</strong></p>
+    <p>看 \(\dfrac{\pi}{2}\) 前面的整数系数 \(k\)：</p>
+    <ul>
+      <li>\(k\) 是<strong>奇数</strong>（\(\dfrac{\pi}{2}\)、\(\dfrac{3\pi}{2}\)、\(-\dfrac{\pi}{2}\)……）→ 函数名要<strong>变</strong>：\(\sin\leftrightarrow\cos\)（\(\tan\) 由 \(\dfrac{\sin}{\cos}\) 直接得到，不用单独记）。</li>
+      <li>\(k\) 是<strong>偶数</strong>（\(\pi\)、\(2\pi\)、\(0\)、\(-\pi\)……）→ 函数名<strong>不变</strong>。</li>
+    </ul>
+    <p><strong>为什么？</strong>看第 3.1 节的推导就明白了：\(k\) 是奇数时用到的是"关于 \(y=x\) 对称"，坐标互换，所以函数名变了；\(k\) 是偶数时用到的是"关于原点或坐标轴对称"，坐标只是变号，函数名不变。</p>
+
+    <p><strong>第二句：符号看象限。</strong></p>
+    <p>把 \(\alpha\) <strong>当作锐角</strong>（不管它实际是多少），判断<strong>整个角</strong> \(\dfrac{k\pi}{2}\pm\alpha\) 落在第几象限，然后看<strong>原函数</strong>在那个象限的符号，把这个符号作为结果的符号。</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">最容易搞错的一点</span>
+      <p><strong>"符号看象限"看的是<u>原函数</u>的符号，不是变形后函数的符号。</strong></p>
+      <p>例如 \(\sin\left(\dfrac{3\pi}{2}+\alpha\right)\)：把 \(\alpha\) 当锐角，则 \(\dfrac{3\pi}{2}+\alpha\) 在第四象限；\(\sin\) 在第四象限是<strong>负</strong>的，所以结果是负号。因为 \(k=3\) 是奇数，函数名要变：</p>
+      <div class="formula">\[ \sin\!\left(\frac{3\pi}{2}+\alpha\right)=-\cos\alpha \]</div>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 6（用口诀求值）</span>
+    <p>求下列各式的值：</p>
+    <p>(1) \(\sin 210^\circ\)　　(2) \(\cos 300^\circ\)　　(3) \(\tan 225^\circ\)　　(4) \(\sin\!\left(-\dfrac{11\pi}{6}\right)\)</p>
+
+    <h4>解析</h4>
+    <p><strong>(1)</strong> 把 \(210^\circ\) 写成 \(180^\circ+30^\circ\)（\(k=2\) 为偶数，函数名不变）：</p>
+    <div class="formula">
+      \[ \sin210^\circ=\sin(180^\circ+30^\circ)=-\sin30^\circ=-\frac12 \]
+    </div>
+    <p>符号判断：把 \(30^\circ\) 当锐角，\(180^\circ+30^\circ=210^\circ\) 在第三象限，\(\sin\) 在第三象限为负，所以取负号。</p>
+
+    <p><strong>(2)</strong> 把 \(300^\circ\) 写成 \(360^\circ-60^\circ\)：</p>
+    <div class="formula">
+      \[ \cos300^\circ=\cos(360^\circ-60^\circ)=\cos(-60^\circ)=\cos60^\circ=\frac12 \]
+    </div>
+    <p>符号判断：\(360^\circ-60^\circ=300^\circ\) 在第四象限，\(\cos\) 在第四象限为正，取正号。</p>
+
+    <p><strong>(3)</strong> 把 \(225^\circ\) 写成 \(180^\circ+45^\circ\)：</p>
+    <div class="formula">
+      \[ \tan225^\circ=\tan(180^\circ+45^\circ)=\tan45^\circ=1 \]
+    </div>
+    <p>符号判断：\(225^\circ\) 在第三象限，\(\tan\) 在第三象限为<strong>正</strong>，取正号。</p>
+
+    <p><strong>(4)</strong> 分两步处理：先化负角，再化到第一象限。</p>
+    <div class="formula">
+      \[ \sin\!\left(-\frac{11\pi}{6}\right)=-\sin\frac{11\pi}{6} \]
+    </div>
+    <p>（用公式三：\(\sin(-\alpha)=-\sin\alpha\)。）再处理 \(\dfrac{11\pi}{6}\)，把它写成 \(2\pi-\dfrac{\pi}{6}\)：</p>
+    <div class="formula">
+      \[ \sin\frac{11\pi}{6}=\sin\!\left(2\pi-\frac{\pi}{6}\right)=\sin\!\left(-\frac{\pi}{6}\right)=-\sin\frac{\pi}{6}=-\frac12 \]
+    </div>
+    <p>所以：</p>
+    <div class="formula">
+      \[ \sin\!\left(-\frac{11\pi}{6}\right)=-\left(-\frac12\right)=\boxed{\frac12} \]
+    </div>
+
+    <p><strong>验算：</strong>\(-\dfrac{11\pi}{6}\) 与 \(\dfrac{\pi}{6}\) 相差 \(2\pi\)（\(-\dfrac{11\pi}{6}+2\pi=\dfrac{\pi}{6}\)），终边相同，所以函数值应该相等。\(\sin\dfrac{\pi}{6}=\dfrac12\) ✓。</p>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">化任意角到第一象限的通用流程</span>
+    <ol class="steps">
+      <li><strong>去负号：</strong>用 \(\sin(-\alpha)=-\sin\alpha\)、\(\cos(-\alpha)=\cos\alpha\)、\(\tan(-\alpha)=-\tan\alpha\)。</li>
+      <li><strong>去整圈：</strong>用周期性，减去 \(2k\pi\)（或 \(360^\circ\) 的整数倍），把角化到 \([0,2\pi)\) 内。</li>
+      <li><strong>化到锐角：</strong>根据角所在的象限，用 \(\pi-\alpha\)、\(\pi+\alpha\)、\(2\pi-\alpha\) 化到第一象限。</li>
+      <li><strong>查表或计算。</strong></li>
+    </ol>
+  </div>
+
+  <!-- ==================== 第 4 章 ==================== -->
+  <h2 id="ch4"><span class="num">4</span>图象与性质</h2>
+  <p class="lead">图象是"三角函数性质的可视化"。这一章的重点是 \(y=A\sin(\omega x+\varphi)\) 的图象变换。</p>
+
+  <h3 id="ch4-1">4.1　三个基本函数的图象与性质</h3>
+
+  <div class="box def">
+    <span class="tag">对照表（建议自己动手画一遍）</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>项目</th><th>\(y=\sin x\)</th><th>\(y=\cos x\)</th><th>\(y=\tan x\)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>定义域</strong></td><td>\(\mathbb{R}\)</td><td>\(\mathbb{R}\)</td><td>\(x\ne\dfrac{\pi}{2}+k\pi\)</td></tr>
+          <tr><td><strong>值域</strong></td><td>\([-1,1]\)</td><td>\([-1,1]\)</td><td>\(\mathbb{R}\)</td></tr>
+          <tr><td><strong>最小正周期</strong></td><td>\(2\pi\)</td><td>\(2\pi\)</td><td>\(\pi\)</td></tr>
+          <tr><td><strong>奇偶性</strong></td><td>奇函数</td><td>偶函数</td><td>奇函数</td></tr>
+          <tr><td><strong>递增区间</strong></td><td>\(\left[-\dfrac{\pi}{2}+2k\pi,\ \dfrac{\pi}{2}+2k\pi\right]\)</td><td>\([-\pi+2k\pi,\ 2k\pi]\)</td><td>\(\left(-\dfrac{\pi}{2}+k\pi,\ \dfrac{\pi}{2}+k\pi\right)\)</td></tr>
+          <tr><td><strong>递减区间</strong></td><td>\(\left[\dfrac{\pi}{2}+2k\pi,\ \dfrac{3\pi}{2}+2k\pi\right]\)</td><td>\([2k\pi,\ \pi+2k\pi]\)</td><td>无</td></tr>
+          <tr><td><strong>对称轴</strong></td><td>\(x=\dfrac{\pi}{2}+k\pi\)</td><td>\(x=k\pi\)</td><td><strong>无</strong></td></tr>
+          <tr><td><strong>对称中心</strong></td><td>\((k\pi,\ 0)\)</td><td>\(\left(\dfrac{\pi}{2}+k\pi,\ 0\right)\)</td><td>\(\left(\dfrac{k\pi}{2},\ 0\right)\)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>以上 \(k\in\mathbb{Z}\)。</p>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">关于正切函数的三个特别提醒</span>
+    <ul>
+      <li><strong>正切函数没有对称轴，也没有单调区间上的"最大值最小值"。</strong>它的图象是一段一段被"断开"的曲线（在 \(x=\dfrac{\pi}{2}+k\pi\) 处有无穷间断点）。</li>
+      <li><strong>正切的周期是 \(\pi\)，不是 \(2\pi\)。</strong>这是最容易记错的地方。</li>
+      <li><strong>"在每一个区间 \(\left(-\dfrac{\pi}{2}+k\pi,\dfrac{\pi}{2}+k\pi\right)\) 上递增"不等于"在定义域上递增"。</strong>因为区间之间被断开了，整体不是递增的。</li>
+    </ul>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">周期性公式的推导</span>
+    <p>对 \(y=A\sin(\omega x+\varphi)\)（\(\omega>0\)），求周期：</p>
+    <p>设周期为 \(T\)，则对任意 \(x\) 都有 \(f(x+T)=f(x)\)：</p>
+    <div class="formula">
+      \[ A\sin\bigl[\omega(x+T)+\varphi\bigr]=A\sin(\omega x+\varphi) \]
+    </div>
+    <p>即 \(\sin(\omega x+\omega T+\varphi)=\sin(\omega x+\varphi)\)。因为 \(\sin\) 的周期是 \(2\pi\)，所以括号里的差必须是 \(2\pi\) 的整数倍，最小正周期对应：</p>
+    <div class="formula">\[ \omega T = 2\pi \quad\Longrightarrow\quad \boxed{\ T=\frac{2\pi}{|\omega|}\ } \]</div>
+    <p><strong>结论：</strong>周期只由 \(\omega\) 决定，与 \(A\)、\(\varphi\) 无关。<strong>\(\omega\) 越大，周期越小，图象越"密"。</strong></p>
+    <p>同理，\(y=A\tan(\omega x+\varphi)\) 的周期是 \(T=\dfrac{\pi}{|\omega|}\)。</p>
+  </div>
+
+  <h3 id="ch4-2">4.2　\(y=A\sin(\omega x+\varphi)\) 中各字母的含义</h3>
+
+  <div class="box def">
+    <span class="tag">四个参数的物理意义</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>参数</th><th>名称</th><th>作用</th></tr></thead>
+        <tbody>
+          <tr><td>\(A\)</td><td>振幅</td><td>决定最大值 \(A\)、最小值 \(-A\)（设 \(A&gt;0\)）。\(A\) 越大，波峰越高、波谷越低</td></tr>
+          <tr><td>\(\omega\)</td><td>角频率</td><td>决定周期 \(T=\dfrac{2\pi}{|\omega|}\)。\(\omega\) 越大，图象越密</td></tr>
+          <tr><td>\(\varphi\)</td><td>初相</td><td>决定图象左右平移的位置</td></tr>
+          <tr><td>\(\omega x+\varphi\)</td><td>相位</td><td>整体作为"内部变量"</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>值域是 \([-A,A]\)，最大值在 \(\omega x+\varphi=\dfrac{\pi}{2}+2k\pi\) 处取得。</p>
+  </div>
+
+  <h3 id="ch4-3">4.3　★ 图象变换（本章头号易错点）</h3>
+
+  <p>目标：从 \(y=\sin x\) 得到 \(y=A\sin(\omega x+\varphi)\)（设 \(A>0\)，\(\omega>0\)）。</p>
+
+  <div class="box proof">
+    <span class="tag">路径一：先平移，后伸缩（推荐）</span>
+    <ol class="steps">
+      <li><strong>左右平移：</strong>\(y=\sin x \ \longrightarrow\ y=\sin(x+\varphi)\)。左移 \(\varphi\) 个单位（\(\varphi>0\) 时）。</li>
+      <li><strong>横向伸缩：</strong>\(y=\sin(x+\varphi)\ \longrightarrow\ y=\sin(\omega x+\varphi)\)。横坐标<strong>缩短</strong>为原来的 \(\dfrac{1}{\omega}\)（\(\omega>1\) 时）。</li>
+      <li><strong>纵向伸缩：</strong>\(y=\sin(\omega x+\varphi)\ \longrightarrow\ y=A\sin(\omega x+\varphi)\)。纵坐标伸长为原来的 \(A\) 倍。</li>
+    </ol>
+    <p><strong>为什么这条路径"友好"？</strong>因为第 1 步的平移量就是 \(\varphi\)，不用做任何换算。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">路径二：先伸缩，后平移（★ 容易出错）</span>
+    <ol class="steps">
+      <li><strong>横向伸缩：</strong>\(y=\sin x\ \longrightarrow\ y=\sin(\omega x)\)。横坐标缩短为原来的 \(\dfrac{1}{\omega}\)。</li>
+      <li><strong>左右平移：</strong>\(y=\sin(\omega x)\ \longrightarrow\ y=\sin(\omega x+\varphi)\)。此时要<strong>左移 \(\dfrac{\varphi}{\omega}\) 个单位</strong>，<strong>不是 \(\varphi\)！</strong></li>
+      <li><strong>纵向伸缩：</strong>得到 \(y=A\sin(\omega x+\varphi)\)。</li>
+    </ol>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">为什么路径二的平移量要除以 \(\omega\)（重要论证）</span>
+    <p><strong>核心事实：平移变换是对"自变量 \(x\)"本身做的。</strong></p>
+    <p><strong>第一步：把平移写成替换的形式。</strong>把函数 \(y=\sin(\omega x)\) 的图象左移 \(h\) 个单位，等价于把式子里的每个 \(x\) 都换成 \(x+h\)：</p>
+    <div class="formula">
+      \[ y = \sin\bigl[\omega(x+h)\bigr] \]
+    </div>
+    <p><strong>第二步：展开括号，看希望得到什么。</strong>我们想要的结果是 \(\sin(\omega x+\varphi)\)，也就是要满足：</p>
+    <div class="formula">
+      \[ \sin\bigl[\omega(x+h)\bigr] = \sin(\omega x+\varphi) \]
+    </div>
+    <p>即 \(\omega x+\omega h=\omega x+\varphi\)，所以</p>
+    <div class="formula">
+      \[ \omega h=\varphi \quad\Longrightarrow\quad \boxed{\ h=\frac{\varphi}{\omega}\ } \]
+    </div>
+    <p><strong>第三步：理解为什么要除。</strong>因为括号里 \(\omega\) 把 \(x\) 放大了 \(\omega\) 倍，所以"\(x\) 需要移动多少"就被压缩了 \(\omega\) 倍。要在括号内产生 \(\varphi\) 的变化，\(x\) 只需移动 \(\dfrac{\varphi}{\omega}\)。</p>
+    <p><strong>反例对照：</strong>如果是先平移后伸缩（路径一），第一步 \(y=\sin x\to y=\sin(x+\varphi)\)，这里的平移量就是 \(\varphi\)（因为 \(\omega=1\)，除 1 不变）。之后再横向伸缩时，横坐标变化不会改变"已经平移好"这件事在括号里的效果。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 7（两种路径对照）</span>
+    <p>说明如何由 \(y=\sin x\) 的图象得到 \(y=2\sin\!\left(2x+\dfrac{\pi}{3}\right)\) 的图象。</p>
+
+    <h4>解析</h4>
+    <p><strong>方法一（先平移后伸缩）：</strong></p>
+    <ol class="steps">
+      <li>把 \(y=\sin x\) 的图象向<strong>左平移 \(\dfrac{\pi}{3}\) 个单位</strong>，得 \(y=\sin\!\left(x+\dfrac{\pi}{3}\right)\)。</li>
+      <li>把所得图象上各点的<strong>横坐标缩短为原来的 \(\dfrac12\)</strong>（纵坐标不变），得 \(y=\sin\!\left(2x+\dfrac{\pi}{3}\right)\)。</li>
+      <li>把所得图象上各点的<strong>纵坐标伸长为原来的 2 倍</strong>（横坐标不变），得 \(y=2\sin\!\left(2x+\dfrac{\pi}{3}\right)\)。</li>
+    </ol>
+
+    <p><strong>方法二（先伸缩后平移）：</strong></p>
+    <ol class="steps">
+      <li>把 \(y=\sin x\) 的图象上各点的<strong>横坐标缩短为原来的 \(\dfrac12\)</strong>，得 \(y=\sin 2x\)。</li>
+      <li>把所得图象向<strong>左平移 \(\dfrac{\pi}{6}\) 个单位</strong>，得 \(y=\sin\!\left[2\left(x+\dfrac{\pi}{6}\right)\right]=\sin\!\left(2x+\dfrac{\pi}{3}\right)\)。
+        <br><strong>注意：平移量是 \(\dfrac{\pi}{3}\div2=\dfrac{\pi}{6}\)，不是 \(\dfrac{\pi}{3}\)！</strong></li>
+      <li>把所得图象上各点的<strong>纵坐标伸长为原来的 2 倍</strong>，得 \(y=2\sin\!\left(2x+\dfrac{\pi}{3}\right)\)。</li>
+    </ol>
+
+    <p><strong>验算（验证两条路径结果一致）：</strong>取 \(x=0\)。方法一：先平移得 \(\sin\dfrac{\pi}{3}=\dfrac{\sqrt3}{2}\)，再横向压缩（\(x=0\) 处值不变），最后乘 2 得 \(\sqrt3\)。方法二：\(\sin0=0\to\) 压缩后 \(x=0\) 处仍为 \(0\)，再平移得 \(\sin\left[2\cdot\dfrac{\pi}{6}\right]=\sin\dfrac{\pi}{3}=\dfrac{\sqrt3}{2}\)，最后乘 2 得 \(\sqrt3\) ✓ 一致。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 8（逆向：由图象求解析式）</span>
+    <p>已知函数 \(y=A\sin(\omega x+\varphi)\)（\(A>0\)，\(\omega>0\)，\(|\varphi|&lt;\dfrac{\pi}{2}\)）的图象的一个最高点为 \(\left(\dfrac{\pi}{6},\,2\right)\)，且相邻两条对称轴之间的距离为 \(\dfrac{\pi}{2}\)。求其解析式。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：求 \(A\)。</strong>图象的最高点是 \(\left(\dfrac{\pi}{6},2\right)\)，所以最大值是 2，即 \(A=2\)。</p>
+
+    <p><strong>第二步：求 \(\omega\)。</strong>相邻两条对称轴之间的距离是<strong>半个周期</strong>（从一个波峰到相邻的波谷，正好是半周期），所以：</p>
+    <div class="formula">
+      \[ \frac{T}{2}=\frac{\pi}{2} \quad\Longrightarrow\quad T=\pi \]
+    </div>
+    <p>由 \(T=\dfrac{2\pi}{\omega}\) 得：</p>
+    <div class="formula">
+      \[ \omega = \frac{2\pi}{T} = \frac{2\pi}{\pi} = 2 \]
+    </div>
+
+    <p><strong>第三步：求 \(\varphi\)（用最高点，最可靠）。</strong></p>
+    <p>函数在相位 \(\omega x+\varphi=\dfrac{\pi}{2}+2k\pi\) 时取到最大值。把 \(x=\dfrac{\pi}{6}\)、\(\omega=2\) 代入：</p>
+    <div class="formula">
+      \[ 2\times\frac{\pi}{6}+\varphi=\frac{\pi}{2}+2k\pi \quad\Longrightarrow\quad \frac{\pi}{3}+\varphi=\frac{\pi}{2}+2k\pi \]
+    </div>
+    <div class="formula">
+      \[ \varphi=\frac{\pi}{2}-\frac{\pi}{3}+2k\pi=\frac{\pi}{6}+2k\pi \]
+    </div>
+    <p>由 \(|\varphi|&lt;\dfrac{\pi}{2}\) 得 \(k=0\)，所以 \(\varphi=\dfrac{\pi}{6}\)。</p>
+
+    <p><strong>第四步：写出解析式并代回检验。</strong></p>
+    <div class="formula">
+      \[ y=2\sin\!\left(2x+\frac{\pi}{6}\right) \]
+    </div>
+    <p>检验最高点：\(x=\dfrac{\pi}{6}\) 时，</p>
+    <div class="formula">
+      \[ 2\sin\!\left(2\times\frac{\pi}{6}+\frac{\pi}{6}\right)=2\sin\!\left(\frac{\pi}{3}+\frac{\pi}{6}\right)=2\sin\frac{\pi}{2}=2\times1=2 \quad\checkmark \]
+    </div>
+    <p>检验周期：\(T=\dfrac{2\pi}{2}=\pi\) ✓，与"相邻对称轴间距 \(\dfrac{\pi}{2}\)"一致。</p>
+
+    <p><strong>答案：</strong>\(\boxed{y=2\sin\!\left(2x+\dfrac{\pi}{6}\right)}\)</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">为什么用"最高点"求 \(\varphi\) 最可靠</span>
+      <p>因为"最高点"同时给出了<strong>两条信息</strong>：函数值等于 \(A\)（定出 \(A\)），且相位正好等于 \(\dfrac{\pi}{2}+2k\pi\)（定出 \(\varphi\)）。</p>
+      <p>如果改用"过某点"这种条件，只能得到 \(\sin(\omega x_0+\varphi)=\text{某个值}\)，会解出多个候选相位，还要再筛选，容易出错。</p>
+      <p><strong>所以：能用最高点/最低点就用它。</strong></p>
+    </div>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">求解析式的标准流程</span>
+    <ol class="steps">
+      <li><strong>\(A\)：</strong>由最大值或最小值确定。\(A=\dfrac{y_{\max}-y_{\min}}{2}\)。</li>
+      <li><strong>\(\omega\)：</strong>由周期确定。已知周期用 \(T=\dfrac{2\pi}{\omega}\)；已知"相邻对称轴间距"用 \(T=2\times\) 间距；已知"相邻零点间距"用 \(T=2\times\) 间距。</li>
+      <li><strong>\(\varphi\)：</strong>用<strong>最高点</strong>或<strong>最低点</strong>的坐标代入（令相位等于 \(\dfrac{\pi}{2}+2k\pi\) 或 \(-\dfrac{\pi}{2}+2k\pi\)），再结合 \(|\varphi|\) 的范围确定 \(k\)。</li>
+      <li><strong>代回检验：</strong>把求出的解析式代入题目的每个条件，逐一验证。</li>
+    </ol>
+  </div>
+
+  <h3 id="ch4-4">4.4　五点法作图</h3>
+
+  <div class="box proof">
+    <span class="tag">五个关键点</span>
+    <p>对 \(y=\sin x\) 在一个周期 \([0,2\pi]\) 内，取相位为 \(0,\dfrac{\pi}{2},\pi,\dfrac{3\pi}{2},2\pi\) 的五个点：</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>\(x\)</th><th>\(0\)</th><th>\(\dfrac{\pi}{2}\)</th><th>\(\pi\)</th><th>\(\dfrac{3\pi}{2}\)</th><th>\(2\pi\)</th></tr></thead>
+        <tbody>
+          <tr><td>\(y=\sin x\)</td><td>\(0\)</td><td>\(1\)</td><td>\(0\)</td><td>\(-1\)</td><td>\(0\)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>对一般形式 \(y=A\sin(\omega x+\varphi)\)，令 \(\omega x+\varphi\) 依次等于上面五个值，反解出对应的 \(x\)：</p>
+    <div class="formula">
+      \[ \omega x+\varphi = 0,\ \frac{\pi}{2},\ \pi,\ \frac{3\pi}{2},\ 2\pi \]
+    </div>
+    <p>解出的五个 \(x\) 就是作图的关键点，对应的 \(y\) 值是 \(0,A,0,-A,0\)。</p>
+  </div>
+
+  <!-- ==================== 第 5 章 ==================== -->
+  <h2 id="ch5"><span class="num">5</span>三角恒等变换</h2>
+  <p class="lead">这一章公式最多，但推导链最短：一个差角余弦公式，推出全部。</p>
+
+  <h3 id="ch5-1">5.1　两角和与差公式</h3>
+
+  <div class="formula">
+    <span class="cap">六条公式（只需要记住第一条的推导，其余全部能推）</span>
+    \[
+    \begin{aligned}
+    \cos(\alpha-\beta) &= \cos\alpha\cos\beta+\sin\alpha\sin\beta \\[4pt]
+    \cos(\alpha+\beta) &= \cos\alpha\cos\beta-\sin\alpha\sin\beta \\[4pt]
+    \sin(\alpha+\beta) &= \sin\alpha\cos\beta+\cos\alpha\sin\beta \\[4pt]
+    \sin(\alpha-\beta) &= \sin\alpha\cos\beta-\cos\alpha\sin\beta \\[4pt]
+    \tan(\alpha+\beta) &= \frac{\tan\alpha+\tan\beta}{1-\tan\alpha\tan\beta} \\[4pt]
+    \tan(\alpha-\beta) &= \frac{\tan\alpha-\tan\beta}{1+\tan\alpha\tan\beta}
+    \end{aligned}
+    \]
+  </div>
+
+  <div class="box proof">
+    <span class="tag">★ 核心推导：\(\cos(\alpha-\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta\)</span>
+    <p><strong>思路：用同一段距离的两种算法，得出一个等式。</strong></p>
+
+    <p><strong>第一步：在单位圆上标出两个点。</strong>设角 \(\alpha\) 的终边交单位圆于 \(P_1\)，角 \(\beta\) 的终边交单位圆于 \(P_2\)。由定义：</p>
+    <div class="formula">
+      \[ P_1(\cos\alpha,\ \sin\alpha),\qquad P_2(\cos\beta,\ \sin\beta) \]
+    </div>
+
+    <p><strong>第二步：用两点间距离公式算 \(|P_1P_2|^2\)。</strong>两点距离公式是 \(d^2=(x_1-x_2)^2+(y_1-y_2)^2\)：</p>
+    <div class="formula">
+      \[ |P_1P_2|^{2} = (\cos\alpha-\cos\beta)^{2}+(\sin\alpha-\sin\beta)^{2} \]
+    </div>
+    <p>展开两个完全平方：</p>
+    <div class="formula">
+      \[
+      = \bigl(\cos^{2}\alpha-2\cos\alpha\cos\beta+\cos^{2}\beta\bigr) + \bigl(\sin^{2}\alpha-2\sin\alpha\sin\beta+\sin^{2}\beta\bigr)
+      \]
+    </div>
+    <p>重新分组，把 \(\cos^2\alpha+\sin^2\alpha\) 放在一起，\(\cos^2\beta+\sin^2\beta\) 放在一起：</p>
+    <div class="formula">
+      \[
+      = \underbrace{\bigl(\cos^{2}\alpha+\sin^{2}\alpha\bigr)}_{=1} + \underbrace{\bigl(\cos^{2}\beta+\sin^{2}\beta\bigr)}_{=1} - 2\bigl(\cos\alpha\cos\beta+\sin\alpha\sin\beta\bigr)
+      \]
+    </div>
+    <p>这里用了同角关系 \(\sin^2\theta+\cos^2\theta=1\)：</p>
+    <div class="formula">
+      \[ |P_1P_2|^{2} = 2-2\bigl(\cos\alpha\cos\beta+\sin\alpha\sin\beta\bigr) \tag{①} \]
+    </div>
+
+    <p><strong>第三步：用余弦定理再算一次 \(|P_1P_2|^2\)。</strong></p>
+    <p>在三角形 \(OP_1P_2\) 中，\(OP_1=OP_2=1\)（都是单位圆半径），\(\angle P_1OP_2=|\alpha-\beta|\)。由余弦定理：</p>
+    <div class="formula">
+      \[ |P_1P_2|^{2} = 1^{2}+1^{2}-2\cdot1\cdot1\cdot\cos(\alpha-\beta) = 2-2\cos(\alpha-\beta) \tag{②} \]
+    </div>
+
+    <p><strong>第四步：①和②算的是同一个量，令它们相等。</strong></p>
+    <div class="formula">
+      \[ 2-2\bigl(\cos\alpha\cos\beta+\sin\alpha\sin\beta\bigr) = 2-2\cos(\alpha-\beta) \]
+    </div>
+    <p>两边同时减 2，再同除以 \(-2\)：</p>
+    <div class="formula">
+      \[ \boxed{\ \cos(\alpha-\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta\ } \]
+    </div>
+    <p><strong>这条公式是整个三角恒等变换的"种子"</strong>，下面所有公式都从它长出来。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">从种子长出 \(\cos(\alpha+\beta)\)</span>
+    <p><strong>技巧：把 \(\beta\) 换成 \(-\beta\)。</strong></p>
+    <p>因为公式对任意角都成立，所以把其中的 \(\beta\) 全部替换成 \(-\beta\)：</p>
+    <div class="formula">
+      \[ \cos\bigl(\alpha-(-\beta)\bigr)=\cos\alpha\cos(-\beta)+\sin\alpha\sin(-\beta) \]
+    </div>
+    <p>用诱导公式 \(\cos(-\beta)=\cos\beta\)、\(\sin(-\beta)=-\sin\beta\)：</p>
+    <div class="formula">
+      \[ \cos(\alpha+\beta)=\cos\alpha\cos\beta+\sin\alpha\cdot(-\sin\beta)=\cos\alpha\cos\beta-\sin\alpha\sin\beta \quad\checkmark \]
+    </div>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">从种子长出 \(\sin(\alpha+\beta)\)</span>
+    <p><strong>技巧：用诱导公式 \(\sin\theta=\cos\left(\dfrac{\pi}{2}-\theta\right)\) 把正弦变余弦。</strong></p>
+    <p><strong>第一步：</strong></p>
+    <div class="formula">
+      \[ \sin(\alpha+\beta)=\cos\left[\frac{\pi}{2}-(\alpha+\beta)\right] \]
+    </div>
+    <p><strong>第二步：把括号里整理成"差"的形式。</strong>\(\dfrac{\pi}{2}-(\alpha+\beta)=\left(\dfrac{\pi}{2}-\alpha\right)-\beta\)，于是：</p>
+    <div class="formula">
+      \[ = \cos\left[\left(\frac{\pi}{2}-\alpha\right)-\beta\right] \]
+    </div>
+    <p><strong>第三步：套差角余弦公式。</strong>把 \(\dfrac{\pi}{2}-\alpha\) 整体当作第一个角：</p>
+    <div class="formula">
+      \[ = \cos\!\left(\frac{\pi}{2}-\alpha\right)\cos\beta+\sin\!\left(\frac{\pi}{2}-\alpha\right)\sin\beta \]
+    </div>
+    <p><strong>第四步：用诱导公式（公式五）代入。</strong>\(\cos\!\left(\dfrac{\pi}{2}-\alpha\right)=\sin\alpha\)，\(\sin\!\left(\dfrac{\pi}{2}-\alpha\right)=\cos\alpha\)：</p>
+    <div class="formula">
+      \[ \boxed{\ \sin(\alpha+\beta)=\sin\alpha\cos\beta+\cos\alpha\sin\beta\ } \]
+    </div>
+    <p>再把 \(\beta\) 换成 \(-\beta\)，即得 \(\sin(\alpha-\beta)=\sin\alpha\cos\beta-\cos\alpha\sin\beta\)。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">从种子长出正切公式</span>
+    <p><strong>技巧：用商关系 \(\tan=\dfrac{\sin}{\cos}\)，再上下同除。</strong></p>
+    <div class="formula">
+      \[ \tan(\alpha+\beta)=\frac{\sin(\alpha+\beta)}{\cos(\alpha+\beta)}=\frac{\sin\alpha\cos\beta+\cos\alpha\sin\beta}{\cos\alpha\cos\beta-\sin\alpha\sin\beta} \]
+    </div>
+    <p><strong>关键一步：分子分母同除以 \(\cos\alpha\cos\beta\)</strong>（要求 \(\cos\alpha\ne0\) 且 \(\cos\beta\ne0\)）：</p>
+    <div class="formula">
+      \[
+      =\frac{\dfrac{\sin\alpha\cos\beta}{\cos\alpha\cos\beta}+\dfrac{\cos\alpha\sin\beta}{\cos\alpha\cos\beta}}{\dfrac{\cos\alpha\cos\beta}{\cos\alpha\cos\beta}-\dfrac{\sin\alpha\sin\beta}{\cos\alpha\cos\beta}}
+      =\frac{\tan\alpha+\tan\beta}{1-\tan\alpha\tan\beta} \quad\checkmark
+      \]
+    </div>
+    <p>把 \(\beta\) 换成 \(-\beta\)，得 \(\tan(\alpha-\beta)=\dfrac{\tan\alpha-\tan\beta}{1+\tan\alpha\tan\beta}\)。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 9</span>
+    <p>求 \(\cos 15^\circ\) 和 \(\sin 75^\circ\) 的值。</p>
+
+    <h4>解析</h4>
+    <p><strong>思路：把 \(15^\circ\) 拆成两个特殊角的差。</strong>\(15^\circ=45^\circ-30^\circ\)。</p>
+    <div class="formula">
+      \[
+      \begin{aligned}
+      \cos15^\circ &= \cos(45^\circ-30^\circ) \\
+      &= \cos45^\circ\cos30^\circ+\sin45^\circ\sin30^\circ \\
+      &= \frac{\sqrt2}{2}\times\frac{\sqrt3}{2}+\frac{\sqrt2}{2}\times\frac12 \\
+      &= \frac{\sqrt6}{4}+\frac{\sqrt2}{4} = \frac{\sqrt6+\sqrt2}{4}
+      \end{aligned}
+      \]
+    </div>
+    <p>对于 \(\sin75^\circ\)：\(75^\circ=45^\circ+30^\circ\)。</p>
+    <div class="formula">
+      \[
+      \begin{aligned}
+      \sin75^\circ &= \sin(45^\circ+30^\circ) \\
+      &= \sin45^\circ\cos30^\circ+\cos45^\circ\sin30^\circ \\
+      &= \frac{\sqrt2}{2}\times\frac{\sqrt3}{2}+\frac{\sqrt2}{2}\times\frac12 = \frac{\sqrt6+\sqrt2}{4}
+      \end{aligned}
+      \]
+    </div>
+    <p><strong>验算（用余角关系）：</strong>\(\sin75^\circ=\cos(90^\circ-75^\circ)=\cos15^\circ\) ✓，两者结果相同，符合预期。</p>
+  </div>
+
+  <h3 id="ch5-2">5.2　二倍角公式</h3>
+
+  <div class="box proof">
+    <span class="tag">推导：在和角公式中令 \(\beta=\alpha\)</span>
+    <p><strong>这是最省力的推导方式——不需要新方法，只需"取特殊值"。</strong></p>
+
+    <p><strong>正弦：</strong>在 \(\sin(\alpha+\beta)=\sin\alpha\cos\beta+\cos\alpha\sin\beta\) 中令 \(\beta=\alpha\)：</p>
+    <div class="formula">
+      \[ \sin(2\alpha)=\sin\alpha\cos\alpha+\cos\alpha\sin\alpha = \boxed{2\sin\alpha\cos\alpha} \]
+    </div>
+
+    <p><strong>余弦：</strong>在 \(\cos(\alpha+\beta)=\cos\alpha\cos\beta-\sin\alpha\sin\beta\) 中令 \(\beta=\alpha\)：</p>
+    <div class="formula">
+      \[ \cos2\alpha=\cos^{2}\alpha-\sin^{2}\alpha \]
+    </div>
+    <p>再用同角关系 \(\sin^2\alpha=1-\cos^2\alpha\) 或 \(\cos^2\alpha=1-\sin^2\alpha\) 变形，得到三个等价形式：</p>
+    <div class="formula">
+      \[
+      \cos2\alpha=\cos^{2}\alpha-\sin^{2}\alpha
+      \;\overset{\text{用 }\sin^2=1-\cos^2}{=}\; 2\cos^{2}\alpha-1
+      \;\overset{\text{用 }\cos^2=1-\sin^2}{=}\; 1-2\sin^{2}\alpha
+      \]
+    </div>
+    <p>验证一下第二种变形：\(\cos^2\alpha-\sin^2\alpha=\cos^2\alpha-(1-\cos^2\alpha)=2\cos^2\alpha-1\) ✓。</p>
+
+    <p><strong>正切：</strong>在 \(\tan(\alpha+\beta)=\dfrac{\tan\alpha+\tan\beta}{1-\tan\alpha\tan\beta}\) 中令 \(\beta=\alpha\)：</p>
+    <div class="formula">
+      \[ \tan2\alpha=\frac{2\tan\alpha}{1-\tan^{2}\alpha} \]
+    </div>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">余弦二倍角的三个形式，什么时候用哪个</span>
+      <ul>
+        <li>要<strong>求值</strong>（已知 \(\cos\alpha\) 或 \(\sin\alpha\)）→ 用对应的那个：已知余弦用 \(2\cos^2\alpha-1\)，已知正弦用 \(1-2\sin^2\alpha\)。</li>
+        <li>要<strong>降幂</strong>（把平方变成一次）→ 反解出降幂公式（见 5.3）。</li>
+        <li>要<strong>证明恒等式</strong>→ 看哪边更简单就用哪个。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 10</span>
+    <p>已知 \(\sin\alpha=\dfrac35\)，\(\alpha\in\left(0,\dfrac{\pi}{2}\right)\)，求 \(\sin2\alpha\)、\(\cos2\alpha\)、\(\tan2\alpha\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：先求 \(\cos\alpha\)。</strong>由平方关系：</p>
+    <div class="formula">
+      \[ \cos^{2}\alpha=1-\frac{9}{25}=\frac{16}{25} \]
+    </div>
+    <p>因为 \(\alpha\in\left(0,\dfrac{\pi}{2}\right)\)（第一象限），余弦为正，所以 \(\cos\alpha=\dfrac45\)。</p>
+
+    <p><strong>第二步：求 \(\sin2\alpha\)。</strong></p>
+    <div class="formula">
+      \[ \sin2\alpha=2\sin\alpha\cos\alpha=2\times\frac35\times\frac45=\frac{24}{25} \]
+    </div>
+
+    <p><strong>第三步：求 \(\cos2\alpha\)（用两个公式互相验证）。</strong></p>
+    <div class="formula">
+      \[ \cos2\alpha=2\cos^{2}\alpha-1=2\times\frac{16}{25}-1=\frac{32}{25}-\frac{25}{25}=\frac{7}{25} \]
+    </div>
+    <div class="formula">
+      \[ \cos2\alpha=1-2\sin^{2}\alpha=1-2\times\frac{9}{25}=1-\frac{18}{25}=\frac{7}{25} \quad\checkmark \]
+    </div>
+
+    <p><strong>第四步：求 \(\tan2\alpha\)。</strong></p>
+    <div class="formula">
+      \[ \tan2\alpha=\frac{\sin2\alpha}{\cos2\alpha}=\frac{\ \frac{24}{25}\ }{\frac{7}{25}}=\frac{24}{7} \]
+    </div>
+
+    <p><strong>验算（用万能公式思路）：</strong>\(\tan\alpha=\dfrac{3/5}{4/5}=\dfrac34\)，则 \(\tan2\alpha=\dfrac{2\times\frac34}{1-\frac{9}{16}}=\dfrac{\frac32}{\frac{7}{16}}=\dfrac32\times\dfrac{16}{7}=\dfrac{24}{7}\) ✓ 一致。</p>
+  </div>
+
+  <h3 id="ch5-3">5.3　降幂公式</h3>
+
+  <div class="box proof">
+    <span class="tag">推导：从余弦二倍角公式反解</span>
+    <p><strong>目标：把 \(\cos^2\alpha\) 和 \(\sin^2\alpha\) 表示成一次式。</strong></p>
+
+    <p><strong>降余弦的幂：</strong>从 \(\cos2\alpha=2\cos^2\alpha-1\) 出发，解出 \(\cos^2\alpha\)：</p>
+    <div class="formula">
+      \[ 2\cos^{2}\alpha=1+\cos2\alpha \quad\Longrightarrow\quad \boxed{\cos^{2}\alpha=\frac{1+\cos2\alpha}{2}} \]
+    </div>
+
+    <p><strong>降正弦的幂：</strong>从 \(\cos2\alpha=1-2\sin^2\alpha\) 出发，解出 \(\sin^2\alpha\)：</p>
+    <div class="formula">
+      \[ 2\sin^{2}\alpha=1-\cos2\alpha \quad\Longrightarrow\quad \boxed{\sin^{2}\alpha=\frac{1-\cos2\alpha}{2}} \]
+    </div>
+
+    <p><strong>怎么记这两个式子？</strong>记住"<strong>余弦配加号，正弦配减号</strong>"：</p>
+    <ul>
+      <li>\(\cos^2\) 的分子是 \(1+\cos2\alpha\)（<strong>加</strong>）</li>
+      <li>\(\sin^2\) 的分子是 \(1-\cos2\alpha\)（<strong>减</strong>）</li>
+    </ul>
+    <p>为什么？因为 \(\cos2\alpha\) 在 \(\alpha\) 接近 0 时接近 1，此时 \(\cos^2\alpha\) 接近 1 而 \(\sin^2\alpha\) 接近 0。检验：\(\alpha\to0\) 时，\(\dfrac{1+\cos2\alpha}{2}\to\dfrac{1+1}{2}=1\) ✓，\(\dfrac{1-\cos2\alpha}{2}\to0\) ✓。这个"代入特殊值检验"的方法可以用来记任何容易混的公式。</p>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">降幂公式的用途</span>
+    <p>降幂公式的核心作用是<strong>把平方变成一次</strong>，从而：</p>
+    <ul>
+      <li>求 \(y=\sin^2x\) 或 \(y=\cos^2x\) 的周期、单调区间、最值——化一次之后就是标准的 \(y=A\sin(\omega x+\varphi)+B\) 形式。</li>
+      <li>处理 \(\sin^2x+\sin x\cos x\) 这类二次齐次式的化简。</li>
+    </ul>
+    <p><strong>典型例题：</strong>求 \(y=\sin^2x+\sqrt3\sin x\cos x\) 的最小正周期和值域。</p>
+    <p>用降幂公式和倍角公式：</p>
+    <div class="formula">
+      \[ y=\frac{1-\cos2x}{2}+\frac{\sqrt3}{2}\sin2x=\frac12-\frac12\cos2x+\frac{\sqrt3}{2}\sin2x \]
+    </div>
+    <p>再用辅助角公式（见 5.4）：</p>
+    <div class="formula">
+      \[ y=\frac12+\sin\!\left(2x-\frac{\pi}{6}\right) \]
+    </div>
+    <p>所以最小正周期 \(T=\pi\)，值域为 \(\left[-\dfrac12,\ \dfrac32\right]\)。</p>
+  </div>
+
+  <h3 id="ch5-4">5.4　辅助角公式</h3>
+
+  <div class="box def">
+    <span class="tag">公式</span>
+    <div class="formula">
+      \[ \boxed{\ a\sin x+b\cos x=\sqrt{a^{2}+b^{2}}\,\sin(x+\varphi)\ } \]
+    </div>
+    <p>其中 \(\varphi\) 由 \(\cos\varphi=\dfrac{a}{\sqrt{a^2+b^2}}\)、\(\sin\varphi=\dfrac{b}{\sqrt{a^2+b^2}}\) 确定，即 \(\tan\varphi=\dfrac{b}{a}\)。</p>
+    <p>（也可以写成 \(\sqrt{a^2+b^2}\cos(x-\theta)\) 的形式，视题目方便选用。）</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导：提取公因式 + 用和角公式</span>
+    <p><strong>核心想法：想办法把 \(a\sin x+b\cos x\) 凑成 \(\sin x\cos\varphi+\cos x\sin\varphi\) 的形式。</strong></p>
+
+    <p><strong>第一步：提出 \(\sqrt{a^2+b^2}\)。</strong></p>
+    <div class="formula">
+      \[ a\sin x+b\cos x=\sqrt{a^{2}+b^{2}}\left(\frac{a}{\sqrt{a^{2}+b^{2}}}\sin x+\frac{b}{\sqrt{a^{2}+b^{2}}}\cos x\right) \]
+    </div>
+    <p><strong>第二步：验证括号里两个系数满足"平方和为 1"。</strong></p>
+    <div class="formula">
+      \[ \left(\frac{a}{\sqrt{a^{2}+b^{2}}}\right)^{2}+\left(\frac{b}{\sqrt{a^{2}+b^{2}}}\right)^{2}=\frac{a^{2}+b^{2}}{a^{2}+b^{2}}=1 \]
+    </div>
+    <p><strong>这是最关键的一步。</strong>平方和为 1 意味着：这两个数可以<strong>看作某个角的余弦和正弦</strong>（因为单位圆上点的坐标平方和就是 1）。</p>
+
+    <p><strong>第三步：设角 \(\varphi\)。</strong>令</p>
+    <div class="formula">
+      \[ \cos\varphi=\frac{a}{\sqrt{a^{2}+b^{2}}},\qquad \sin\varphi=\frac{b}{\sqrt{a^{2}+b^{2}}} \]
+    </div>
+    <p>这样的 \(\varphi\) 一定存在（由第二步的平方和关系保证），且 \(\tan\varphi=\dfrac{b}{a}\)。</p>
+
+    <p><strong>第四步：代入并套和角公式。</strong></p>
+    <div class="formula">
+      \[
+      a\sin x+b\cos x=\sqrt{a^{2}+b^{2}}\bigl(\sin x\cos\varphi+\cos x\sin\varphi\bigr)=\sqrt{a^{2}+b^{2}}\sin(x+\varphi) \quad\checkmark
+      \]
+    </div>
+    <p><strong>为什么要这样做？</strong>因为 \(\sin x\) 和 \(\cos x\) 的<strong>线性组合</strong>不好处理（周期、最值都不直观），但变成<strong>单个正弦函数</strong>后，周期、值域、单调性全都一目了然。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 11</span>
+    <p>把下列式子化成 \(A\sin(x+\varphi)\) 的形式：</p>
+    <p>(1) \(\sin x+\sqrt3\cos x\)　　(2) \(\sqrt3\sin x-\cos x\)</p>
+
+    <h4>解析</h4>
+    <p><strong>(1)</strong> 这里 \(a=1\)，\(b=\sqrt3\)，所以：</p>
+    <div class="formula">
+      \[ \sqrt{a^{2}+b^{2}}=\sqrt{1+3}=2 \]
+    </div>
+    <p>则 \(\cos\varphi=\dfrac12\)，\(\sin\varphi=\dfrac{\sqrt3}{2}\)，所以 \(\varphi=\dfrac{\pi}{3}\)。因此：</p>
+    <div class="formula">
+      \[ \sin x+\sqrt3\cos x=2\sin\!\left(x+\frac{\pi}{3}\right) \]
+    </div>
+    <p><strong>验算：</strong>取 \(x=0\)，左边 \(=0+\sqrt3=\sqrt3\)；右边 \(=2\sin\dfrac{\pi}{3}=2\times\dfrac{\sqrt3}{2}=\sqrt3\) ✓。</p>
+
+    <p><strong>(2)</strong> 这里 \(a=\sqrt3\)，\(b=-1\)，所以：</p>
+    <div class="formula">
+      \[ \sqrt{a^{2}+b^{2}}=\sqrt{3+1}=2 \]
+    </div>
+    <p>则 \(\cos\varphi=\dfrac{\sqrt3}{2}\)，\(\sin\varphi=-\dfrac12\)，所以 \(\varphi=-\dfrac{\pi}{6}\)。因此：</p>
+    <div class="formula">
+      \[ \sqrt3\sin x-\cos x=2\sin\!\left(x-\frac{\pi}{6}\right) \]
+    </div>
+    <p><strong>验算：</strong>取 \(x=0\)，左边 \(=0-1=-1\)；右边 \(=2\sin\left(-\dfrac{\pi}{6}\right)=2\times\left(-\dfrac12\right)=-1\) ✓。</p>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">\(b\) 是负数怎么办</span>
+      <p>不要慌，按公式老老实实写 \(\sin\varphi=\dfrac{b}{\sqrt{a^2+b^2}}\)，\(\varphi\) 自然会是负角（第四象限角）。<strong>不要因为怕负号就把 \(b\) 当成正的</strong>，那样结果会错。</p>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 12（辅助角公式的典型应用）</span>
+    <p>求函数 \(f(x)=\sin x+\sqrt3\cos x\) 的最大值、最小值，以及取得最大值时 \(x\) 的集合。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：化成单个正弦函数。</strong>由例题 11 的结果：</p>
+    <div class="formula">
+      \[ f(x)=2\sin\!\left(x+\frac{\pi}{3}\right) \]
+    </div>
+
+    <p><strong>第二步：求最值。</strong>因为 \(\sin\) 的取值范围是 \([-1,1]\)，所以：</p>
+    <div class="formula">
+      \[ f(x)_{\max}=2\times1=2,\qquad f(x)_{\min}=2\times(-1)=-2 \]
+    </div>
+
+    <p><strong>第三步：求取最大值时的 \(x\)。</strong>要求 \(\sin\!\left(x+\dfrac{\pi}{3}\right)=1\)，即相位等于 \(\dfrac{\pi}{2}+2k\pi\)：</p>
+    <div class="formula">
+      \[ x+\frac{\pi}{3}=\frac{\pi}{2}+2k\pi \quad\Longrightarrow\quad x=\frac{\pi}{6}+2k\pi \]
+    </div>
+    <p><strong>答案：</strong>最大值为 \(2\)，最小值为 \(-2\)；取最大值时 \(x\) 的集合为</p>
+    <div class="formula">
+      \[ \boxed{\left\{\,x\ \middle|\ x=\frac{\pi}{6}+2k\pi,\ k\in\mathbb{Z}\,\right\}} \]
+    </div>
+
+    <p><strong>验算：</strong>取 \(k=0\)，\(x=\dfrac{\pi}{6}\)。\(f\left(\dfrac{\pi}{6}\right)=\sin\dfrac{\pi}{6}+\sqrt3\cos\dfrac{\pi}{6}=\dfrac12+\sqrt3\times\dfrac{\sqrt3}{2}=\dfrac12+\dfrac32=2\) ✓。</p>
+  </div>
+
+  <h3 id="ch5-5">5.5　半角公式</h3>
+
+  <p class="lead">降幂公式的"逆向使用"：知道 \(\cos\alpha\)，就能求出 \(\dfrac{\alpha}{2}\) 的正弦、余弦、正切。化简 \(1+\cos\alpha\)、\(1-\cos\alpha\) 这类式子时非常好用，是高考小题的高频工具。</p>
+
+  <div class="box def">
+    <span class="tag">公式</span>
+    <p>把降幂公式（5.3 节）里的角"减半"，就得到<strong>半角公式</strong>的平方形式：</p>
+    <div class="formula">
+      \[ \sin^{2}\frac{\alpha}{2}=\frac{1-\cos\alpha}{2},\qquad \cos^{2}\frac{\alpha}{2}=\frac{1+\cos\alpha}{2} \]
+    </div>
+    <p>开方就得到一次形式（<strong>正负号由 \(\dfrac{\alpha}{2}\) 所在象限决定</strong>）：</p>
+    <div class="formula">
+      \[ \sin\frac{\alpha}{2}=\pm\sqrt{\frac{1-\cos\alpha}{2}},\qquad \cos\frac{\alpha}{2}=\pm\sqrt{\frac{1+\cos\alpha}{2}} \]
+    </div>
+    <p>正切用"正弦 ÷ 余弦"，整理后有<strong>三个等价形式</strong>：</p>
+    <div class="formula">
+      \[ \tan\frac{\alpha}{2}=\pm\sqrt{\frac{1-\cos\alpha}{1+\cos\alpha}}=\frac{1-\cos\alpha}{\sin\alpha}=\frac{\sin\alpha}{1+\cos\alpha} \]
+    </div>
+    <p><strong>★ 后两个形式没有根号、也没有 \(\pm\)</strong>，是考试里最常用的。用的时候只要注意分母不为 0：第一个要求 \(\sin\alpha\ne0\)，第二个要求 \(1+\cos\alpha\ne0\)。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导：为什么 \(\tan\dfrac{\alpha}{2}=\dfrac{1-\cos\alpha}{\sin\alpha}\)</span>
+
+    <p><strong>第一步：把降幂公式的角减半。</strong>降幂公式（5.3 节）是：</p>
+    <div class="formula">
+      \[ \cos^{2}\theta=\frac{1+\cos 2\theta}{2},\qquad \sin^{2}\theta=\frac{1-\cos 2\theta}{2} \]
+    </div>
+    <p>把 \(\theta\) 换成 \(\dfrac{\alpha}{2}\)（于是 \(2\theta=\alpha\)）：</p>
+    <div class="formula">
+      \[ \cos^{2}\frac{\alpha}{2}=\frac{1+\cos\alpha}{2},\qquad \sin^{2}\frac{\alpha}{2}=\frac{1-\cos\alpha}{2} \]
+    </div>
+    <p>这两式<strong>开方</strong>就是上面公式表里带 \(\pm\) 的那两行。下面重点推正切。</p>
+
+    <p><strong>第二步：把 \(1-\cos\alpha\) 和 \(\sin\alpha\) 都写成"半角的式子"。</strong>由第一步两式各乘 2：</p>
+    <div class="formula">
+      \[ 1-\cos\alpha=2\sin^{2}\frac{\alpha}{2} \]
+    </div>
+    <p>再由二倍角公式 \(\sin 2\theta=2\sin\theta\cos\theta\)（取 \(\theta=\dfrac{\alpha}{2}\)）：</p>
+    <div class="formula">
+      \[ \sin\alpha=2\sin\frac{\alpha}{2}\cos\frac{\alpha}{2} \]
+    </div>
+
+    <p><strong>第三步：相除，约掉公因式。</strong></p>
+    <div class="formula">
+      \[ \frac{1-\cos\alpha}{\sin\alpha}=\frac{2\sin^{2}\dfrac{\alpha}{2}}{2\sin\dfrac{\alpha}{2}\cos\dfrac{\alpha}{2}}=\frac{\sin\dfrac{\alpha}{2}}{\cos\dfrac{\alpha}{2}}=\tan\frac{\alpha}{2} \quad\checkmark \]
+    </div>
+    <p><strong>注意：这里没有出现 \(\pm\)。</strong>因为这是"整式相除"，正负号已经自动由 \(\sin\alpha\) 的符号带上了——这正是它比根号形式好用的原因。</p>
+
+    <p><strong>第四步：另一个形式同理。</strong>这次用 \(1+\cos\alpha=2\cos^{2}\dfrac{\alpha}{2}\)，再与 \(\sin\alpha=2\sin\dfrac{\alpha}{2}\cos\dfrac{\alpha}{2}\) 相除：</p>
+    <div class="formula">
+      \[ \frac{\sin\alpha}{1+\cos\alpha}=\frac{2\sin\dfrac{\alpha}{2}\cos\dfrac{\alpha}{2}}{2\cos^{2}\dfrac{\alpha}{2}}=\frac{\sin\dfrac{\alpha}{2}}{\cos\dfrac{\alpha}{2}}=\tan\frac{\alpha}{2} \quad\checkmark \]
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题（半角公式的三种考法）</span>
+    <p>(1) 已知 \(\cos\alpha=-\dfrac{3}{5}\)，且 \(\alpha\in\left(\dfrac{\pi}{2},\pi\right)\)，求 \(\sin\dfrac{\alpha}{2}\)。</p>
+    <p>(2) 化简 \(\dfrac{1-\cos\alpha}{\sin\alpha}\)。</p>
+    <p>(3) 求证 \(\tan\left(\dfrac{\pi}{4}-\dfrac{A}{2}\right)=\dfrac{1-\sin A}{\cos A}\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>(1) 先定象限，再定符号。</strong>因为 \(\alpha\in\left(\dfrac{\pi}{2},\pi\right)\)，所以</p>
+    <div class="formula">
+      \[ \frac{\alpha}{2}\in\left(\frac{\pi}{4},\frac{\pi}{2}\right) \]
+    </div>
+    <p>即 \(\dfrac{\alpha}{2}\) 在<strong>第一象限</strong>，\(\sin\dfrac{\alpha}{2}&gt;0\)，取正号：</p>
+    <div class="formula">
+      \[ \sin\frac{\alpha}{2}=\sqrt{\frac{1-\cos\alpha}{2}}=\sqrt{\frac{1-\left(-\dfrac35\right)}{2}}=\sqrt{\frac{8/5}{2}}=\sqrt{\frac45}=\frac{2\sqrt5}{5} \]
+    </div>
+    <p><strong>答案：</strong>\(\boxed{\dfrac{2\sqrt5}{5}}\)</p>
+    <p><strong>验算：</strong>\(\dfrac{2\sqrt5}{5}\approx0.894\)。由 \(\cos\alpha=-\dfrac35\) 得 \(\alpha\approx126.87^\circ\)，\(\dfrac{\alpha}{2}\approx63.43^\circ\)，\(\sin63.43^\circ\approx0.894\) ✓。</p>
+
+    <p><strong>(2)</strong> 直接套第三步的结论：</p>
+    <div class="formula">
+      \[ \frac{1-\cos\alpha}{\sin\alpha}=\tan\frac{\alpha}{2} \]
+    </div>
+    <p><strong>这就是半角公式最常见的"认出题"方式</strong>——看到"\(1-\cos\alpha\) 除以 \(\sin\alpha\)"，立刻想到它等于 \(\tan\dfrac{\alpha}{2}\)。同理，"\(\sin\alpha\) 除以 \(1+\cos\alpha\)"也等于 \(\tan\dfrac{\alpha}{2}\)。</p>
+
+    <p><strong>(3) 把 \(\dfrac{\pi}{4}-\dfrac{A}{2}\) 看成"半个角"。</strong>令 \(\alpha=\dfrac{\pi}{2}-A\)，则 \(\dfrac{\alpha}{2}=\dfrac{\pi}{4}-\dfrac{A}{2}\)。代入 \(\tan\dfrac{\alpha}{2}=\dfrac{1-\cos\alpha}{\sin\alpha}\)：</p>
+    <div class="formula">
+      \[ \tan\left(\frac{\pi}{4}-\frac{A}{2}\right)=\frac{1-\cos\alpha}{\sin\alpha}=\frac{1-\cos\left(\dfrac{\pi}{2}-A\right)}{\sin\left(\dfrac{\pi}{2}-A\right)}=\frac{1-\sin A}{\cos A} \quad\checkmark \]
+    </div>
+    <p>（这里用了诱导公式 \(\cos\left(\dfrac{\pi}{2}-A\right)=\sin A\)、\(\sin\left(\dfrac{\pi}{2}-A\right)=\cos A\)，见 3.1 节。）</p>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">易错点</span>
+    <ul>
+      <li><strong>\(\pm\) 不能"随便取"。</strong>必须由 \(\dfrac{\alpha}{2}\) 所在象限决定。题目不告诉象限时就要分类讨论。</li>
+      <li><strong>不要和降幂公式记混。</strong>降幂公式右边是 \(\dfrac{1+\cos 2\alpha}{2}\)（角<strong>加倍</strong>），半角公式右边是 \(\dfrac{1+\cos\alpha}{2}\)（角<strong>减半</strong>）。<strong>看角是加倍还是减半，就知道用哪个。</strong></li>
+      <li><strong>用分式形式要检查分母。</strong>\(\tan\dfrac{\alpha}{2}=\dfrac{1-\cos\alpha}{\sin\alpha}\) 要求 \(\alpha\ne k\pi\)；\(\tan\dfrac{\alpha}{2}=\dfrac{\sin\alpha}{1+\cos\alpha}\) 要求 \(\alpha\ne\pi+2k\pi\)。<strong>哪个分母不为 0 就用哪个。</strong></li>
+    </ul>
+  </div>
+
+  <!-- ==================== 第 6 章 ==================== -->
+  <h2 id="ch6"><span class="num">6</span>解三角形</h2>
+  <p class="lead">两个定理 + 一个面积公式，就能解决大部分三角形问题。关键是把定理的推导看懂，知道什么时候用哪个。</p>
+
+  <h3 id="ch6-1">6.1　正弦定理</h3>
+
+  <div class="box def">
+    <span class="tag">定理</span>
+    <p>在 \(\triangle ABC\) 中，角 \(A,B,C\) 所对的边分别是 \(a,b,c\)，外接圆半径为 \(R\)，则</p>
+    <div class="formula">
+      \[ \boxed{\ \frac{a}{\sin A}=\frac{b}{\sin B}=\frac{c}{\sin C}=2R\ } \]
+    </div>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导：用外接圆和直径所对的圆周角</span>
+    <p><strong>目标：证明 \(\dfrac{a}{\sin A}=2R\)。</strong>（其余两个同理。）</p>
+
+    <p><strong>第一步：构造直径。</strong>作 \(\triangle ABC\) 的外接圆（圆心 \(O\)，半径 \(R\)）。连接 \(BO\) 并延长，交圆于点 \(D\)，则 \(BD\) 是<strong>直径</strong>，长度为 \(2R\)。</p>
+
+    <p><strong>第二步：利用"直径所对的圆周角是直角"。</strong>因为 \(BD\) 是直径，所以 \(\angle BCD=90^\circ\)。于是三角形 \(BCD\) 是直角三角形，且 \(BD\) 是斜边。</p>
+
+    <p><strong>第三步：利用"同弧所对的圆周角相等"。</strong>\(\angle D\) 和 \(\angle A\) 都是弧 \(BC\) 所对的圆周角，所以 \(\angle D=\angle A\)。</p>
+
+    <p><strong>第四步：在直角三角形 \(BCD\) 中用锐角三角函数。</strong></p>
+    <div class="formula">
+      \[ \sin D=\frac{\text{对边}}{\text{斜边}}=\frac{BC}{BD}=\frac{a}{2R} \]
+    </div>
+    <p>因为 \(\angle D=\angle A\)，所以 \(\sin A=\dfrac{a}{2R}\)，即</p>
+    <div class="formula">
+      \[ \frac{a}{\sin A}=2R \quad\checkmark \]
+    </div>
+    <p>同理可证 \(\dfrac{b}{\sin B}=2R\)、\(\dfrac{c}{\sin C}=2R\)。</p>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">当 \(A\) 是钝角时怎么办</span>
+      <p>上面的证明假设 \(A\) 是锐角。如果 \(A\) 是钝角，\(A\) 与 \(D\) 就分居 \(BC\) 的两侧，此时 \(ABDC\) 是圆内接四边形，<strong>对角互补</strong>，所以 \(\angle D=180^\circ-A\)。又因为 \(BD\) 是直径，\(\angle BCD=90^\circ\)，所以 \(\angle D\) 一定是锐角（\(\angle D&lt;90^\circ\)），不可能取到钝角——这与 \(A\) 为钝角并不矛盾。</p>
+      <p>于是 \(\sin D=\sin(180^\circ-A)=\sin A\)，代入 \(a=BD\cdot\sin D=2R\sin A\) 仍然成立，结论不变。</p>
+      <p><strong>考试中不需要写这种分类讨论</strong>，直接使用定理即可。</p>
+    </div>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">正弦定理的三种用法（看已知什么）</span>
+    <div class="tbl-wrap" style="margin:0;">
+      <table>
+        <thead><tr><th>已知条件</th><th>求什么</th><th>怎么用</th></tr></thead>
+        <tbody>
+          <tr><td>两角 + 一边（AAS / ASA）</td><td>其余边</td><td>直接用 \(\dfrac{a}{\sin A}=\dfrac{b}{\sin B}\)</td></tr>
+          <tr><td>两边 + 其中一边的对角（SSA）</td><td>其余角</td><td>用 \(\dfrac{a}{\sin A}=\dfrac{b}{\sin B}\) 求角。<strong>★ 可能有 0、1、2 个解</strong></td></tr>
+          <tr><td>边角混合的等式</td><td>判断形状 / 求角</td><td>把边都换成 \(\sin\)（用 \(a=2R\sin A\)），统一成角的关系</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">★ 正弦定理最大的坑：SSA 的多解问题</span>
+    <p>已知两边和其中一边的对角（如已知 \(a,b,A\)）时，求 \(B\) 会出现 \(B\) 和 \(180^\circ-B\) 两个候选值（因为 \(\sin B=\sin(180^\circ-B)\)）。<strong>必须检验两个值是否都满足 \(A+B&lt;180^\circ\)。</strong></p>
+    <p><strong>检验方法：</strong>算出 \(B\) 的两个候选值，分别算 \(A+B\)，只有 \(A+B&lt;180^\circ\) 的才保留。</p>
+    <p><strong>为什么？</strong>因为三角形内角和必须是 \(180^\circ\)。如果 \(A+B\ge180^\circ\)，那么 \(C\le0\)，三角形不存在。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 13（正弦定理基本用法）</span>
+    <p>在 \(\triangle ABC\) 中，已知 \(a=2\)，\(A=30^\circ\)，\(B=45^\circ\)。求 \(b\)。</p>
+
+    <h4>解析</h4>
+    <p>由正弦定理：</p>
+    <div class="formula">
+      \[ \frac{a}{\sin A}=\frac{b}{\sin B} \quad\Longrightarrow\quad \frac{2}{\sin30^\circ}=\frac{b}{\sin45^\circ} \]
+    </div>
+    <p>因为 \(\sin30^\circ=\dfrac12\)、\(\sin45^\circ=\dfrac{\sqrt2}{2}\)：</p>
+    <div class="formula">
+      \[ \frac{2}{\frac12}=\frac{b}{\frac{\sqrt2}{2}} \quad\Longrightarrow\quad 4=\frac{2b}{\sqrt2} \quad\Longrightarrow\quad b=\frac{4\sqrt2}{2}=2\sqrt2 \]
+    </div>
+    <p><strong>答案：</strong>\(\boxed{b=2\sqrt2}\)</p>
+
+    <p><strong>验算：</strong>\(\dfrac{b}{\sin B}=\dfrac{2\sqrt2}{\frac{\sqrt2}{2}}=2\sqrt2\times\dfrac{2}{\sqrt2}=4=\dfrac{a}{\sin A}\) ✓，比值相等。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 14（SSA 多解问题）</span>
+    <p>在 \(\triangle ABC\) 中，已知 \(a=\sqrt2\)，\(b=2\)，\(A=30^\circ\)。求 \(B\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：用正弦定理求 \(\sin B\)。</strong></p>
+    <div class="formula">
+      \[ \frac{a}{\sin A}=\frac{b}{\sin B} \quad\Longrightarrow\quad \frac{\sqrt2}{\sin30^\circ}=\frac{2}{\sin B} \]
+    </div>
+    <div class="formula">
+      \[ \frac{\sqrt2}{\frac12}=\frac{2}{\sin B} \quad\Longrightarrow\quad 2\sqrt2=\frac{2}{\sin B} \quad\Longrightarrow\quad \sin B=\frac{2}{2\sqrt2}=\frac{\sqrt2}{2} \]
+    </div>
+
+    <p><strong>第二步：解出 \(B\) 的所有候选值。</strong>因为 \(\sin B=\dfrac{\sqrt2}{2}\)，所以在 \((0^\circ,180^\circ)\) 内 \(B\) 有两个可能：</p>
+    <div class="formula">
+      \[ B=45^\circ \quad\text{或}\quad B=135^\circ \]
+    </div>
+
+    <p><strong>第三步：逐一检验 \(A+B&lt;180^\circ\)。</strong></p>
+    <ul>
+      <li>若 \(B=45^\circ\)：\(A+B=30^\circ+45^\circ=75^\circ&lt;180^\circ\) ✓ <strong>可行</strong>，此时 \(C=105^\circ\)。</li>
+      <li>若 \(B=135^\circ\)：\(A+B=30^\circ+135^\circ=165^\circ&lt;180^\circ\) ✓ <strong>也可行</strong>，此时 \(C=15^\circ\)。</li>
+    </ul>
+    <p><strong>两个解都成立！</strong></p>
+
+    <p><strong>第四步：进一步检验（重要）。</strong>还需要检查大边对大角是否合理。因为 \(b=2>a=\sqrt2\)，所以应有 \(B>A=30^\circ\)，两个候选值都满足 ✓。</p>
+
+    <p><strong>答案：</strong>\(\boxed{B=45^\circ\ \text{或}\ B=135^\circ}\)</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">这道题的启示</span>
+      <p>SSA 情形下出现两个解<strong>不是错误，而是几何事实</strong>：同样的两条边和夹角条件，可以构造出两个不同的三角形。</p>
+      <p><strong>所以做这类题必须：①解出所有候选值 ②逐一检验 \(A+B&lt;180^\circ\) ③必要时用"大边对大角"辅助筛选。</strong></p>
+      <p>如果题目明确说"\(B\) 是锐角"或"三角形是钝角三角形"，就能筛掉一个。</p>
+    </div>
+  </div>
+
+  <h3 id="ch6-2">6.2　余弦定理</h3>
+
+  <div class="box def">
+    <span class="tag">定理</span>
+    <p>在 \(\triangle ABC\) 中：</p>
+    <div class="formula">
+      \[
+      \begin{aligned}
+      a^{2} &= b^{2}+c^{2}-2bc\cos A \\
+      b^{2} &= a^{2}+c^{2}-2ac\cos B \\
+      c^{2} &= a^{2}+b^{2}-2ab\cos C
+      \end{aligned}
+      \]
+    </div>
+    <p>变形（用来求角）：</p>
+    <div class="formula">
+      \[ \cos A=\frac{b^{2}+c^{2}-a^{2}}{2bc},\qquad \cos B=\frac{a^{2}+c^{2}-b^{2}}{2ac},\qquad \cos C=\frac{a^{2}+b^{2}-c^{2}}{2ab} \]
+    </div>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导：用向量（最简洁）</span>
+    <p><strong>第一步：把边长写成向量的模。</strong>设 \(\overrightarrow{AB}\)、\(\overrightarrow{AC}\)、\(\overrightarrow{BC}\) 是从同一点出发的向量。由向量加法的三角形法则：</p>
+    <div class="formula">
+      \[ \overrightarrow{BC}=\overrightarrow{AC}-\overrightarrow{AB} \]
+    </div>
+    <p>两边取模长的平方：</p>
+    <div class="formula">
+      \[ |\overrightarrow{BC}|^{2}=|\overrightarrow{AC}-\overrightarrow{AB}|^{2} \]
+    </div>
+
+    <p><strong>第二步：展开右边。</strong>利用 \(|u-v|^2=|u|^2+|v|^2-2u\cdot v\)：</p>
+    <div class="formula">
+      \[ |\overrightarrow{BC}|^{2}=|\overrightarrow{AC}|^{2}+|\overrightarrow{AB}|^{2}-2\,\overrightarrow{AC}\cdot\overrightarrow{AB} \]
+    </div>
+
+    <p><strong>第三步：把每个量换成边长和角。</strong></p>
+    <ul>
+      <li>\(|\overrightarrow{BC}|=a\)，所以 \(|\overrightarrow{BC}|^2=a^2\)</li>
+      <li>\(|\overrightarrow{AC}|=b\)，所以 \(|\overrightarrow{AC}|^2=b^2\)</li>
+      <li>\(|\overrightarrow{AB}|=c\)，所以 \(|\overrightarrow{AB}|^2=c^2\)</li>
+      <li>\(\overrightarrow{AC}\cdot\overrightarrow{AB}=|\overrightarrow{AC}||\overrightarrow{AB}|\cos A=bc\cos A\)（数量积定义，夹角就是 \(\angle A\)）</li>
+    </ul>
+    <p>代入：</p>
+    <div class="formula">
+      \[ \boxed{\ a^{2}=b^{2}+c^{2}-2bc\cos A\ } \]
+    </div>
+    <p>同理可证另外两个。∎</p>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">不用向量的推导（坐标法）</span>
+      <p>把点 \(A\) 放在原点，\(AB\) 沿 \(x\) 轴，则 \(B(c,0)\)，\(C(b\cos A,\ b\sin A)\)。用两点间距离公式算 \(BC\)：</p>
+      <div class="formula">
+        \[ a^{2}=BC^{2}=(b\cos A-c)^{2}+(b\sin A)^{2}=b^{2}\cos^{2}A-2bc\cos A+c^{2}+b^{2}\sin^{2}A \]
+      </div>
+      <p>用 \(\cos^2A+\sin^2A=1\) 合并：\(a^{2}=b^{2}+c^{2}-2bc\cos A\) ✓ 同样得到结论。</p>
+    </div>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">余弦定理的用法</span>
+    <div class="tbl-wrap" style="margin:0;">
+      <table>
+        <thead><tr><th>已知条件</th><th>求什么</th><th>怎么用</th></tr></thead>
+        <tbody>
+          <tr><td>两边 + 夹角（SAS）</td><td>第三边</td><td>直接用 \(a^2=b^2+c^2-2bc\cos A\)</td></tr>
+          <tr><td>三边（SSS）</td><td>角</td><td>用 \(\cos A=\dfrac{b^2+c^2-a^2}{2bc}\)</td></tr>
+          <tr><td>边角混合等式</td><td>求角 / 判断形状</td><td>把角换成边（或反过来），统一后再用</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>与正弦定理的分工：</strong></p>
+    <ul>
+      <li><strong>已知"角对角"的关系</strong>（两角一边、两边一对角）→ 正弦定理。</li>
+      <li><strong>已知"边夹边"或"三边"</strong>（SAS、SSS）→ 余弦定理。</li>
+    </ul>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 15</span>
+    <p>在 \(\triangle ABC\) 中，已知 \(a=3\)，\(b=4\)，\(C=60^\circ\)。求 \(c\)。</p>
+
+    <h4>解析</h4>
+    <p>这是 SAS 情形，用余弦定理：</p>
+    <div class="formula">
+      \[ c^{2}=a^{2}+b^{2}-2ab\cos C=3^{2}+4^{2}-2\times3\times4\times\cos60^\circ \]
+    </div>
+    <div class="formula">
+      \[ c^{2}=9+16-24\times\frac12=25-12=13 \]
+    </div>
+    <p>因为边长必须为正，所以：</p>
+    <div class="formula">
+      \[ \boxed{c=\sqrt{13}} \]
+    </div>
+    <p><strong>验算：</strong>检验三角形不等式 \(a+b>c\)：\(3+4=7>\sqrt{13}\approx3.61\) ✓；\(|a-b|&lt;c\)：\(1&lt;3.61\) ✓。三角形存在。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 16（判断三角形形状）</span>
+    <p>在 \(\triangle ABC\) 中，已知 \(a\cos B=b\cos A\)。判断 \(\triangle ABC\) 的形状。</p>
+
+    <h4>解析</h4>
+    <p><strong>思路：把边换成角，用正弦定理。</strong>由 \(\dfrac{a}{\sin A}=\dfrac{b}{\sin B}=2R\)，得</p>
+    <div class="formula">
+      \[ a=2R\sin A,\qquad b=2R\sin B \]
+    </div>
+    <p>代入已知条件 \(a\cos B=b\cos A\)：</p>
+    <div class="formula">
+      \[ 2R\sin A\cos B=2R\sin B\cos A \]
+    </div>
+    <p>两边约去 \(2R\)（\(R>0\)）：</p>
+    <div class="formula">
+      \[ \sin A\cos B=\sin B\cos A \]
+    </div>
+    <p>移项：</p>
+    <div class="formula">
+      \[ \sin A\cos B-\cos A\sin B=0 \]
+    </div>
+    <p><strong>关键：识别出这是差角正弦公式。</strong>由 \(\sin(\alpha-\beta)=\sin\alpha\cos\beta-\cos\alpha\sin\beta\)，左边就是 \(\sin(A-B)\)：</p>
+    <div class="formula">
+      \[ \sin(A-B)=0 \]
+    </div>
+    <p>因为 \(A,B\) 是三角形内角，都在 \((0,\pi)\) 内，所以 \(A-B\in(-\pi,\pi)\)。在这个范围内 \(\sin(A-B)=0\) 意味着：</p>
+    <div class="formula">
+      \[ A-B=0 \quad\Longrightarrow\quad A=B \]
+    </div>
+    <p>所以 \(a=b\)（等角对等边）。</p>
+
+    <p><strong>答案：</strong>\(\triangle ABC\) 是<strong>等腰三角形</strong>（\(a=b\)，即 \(A=B\)）。</p>
+
+    <p><strong>验算（用余弦定理的另一条路）：</strong>把 \(\cos A=\dfrac{b^2+c^2-a^2}{2bc}\)、\(\cos B=\dfrac{a^2+c^2-b^2}{2ac}\) 代入原式：</p>
+    <div class="formula">
+      \[ a\cdot\frac{a^{2}+c^{2}-b^{2}}{2ac}=b\cdot\frac{b^{2}+c^{2}-a^{2}}{2bc} \quad\Longrightarrow\quad \frac{a^{2}+c^{2}-b^{2}}{2c}=\frac{b^{2}+c^{2}-a^{2}}{2c} \]
+    </div>
+    <div class="formula">
+      \[ a^{2}+c^{2}-b^{2}=b^{2}+c^{2}-a^{2} \quad\Longrightarrow\quad 2a^{2}=2b^{2} \quad\Longrightarrow\quad a=b \quad\checkmark \]
+    </div>
+    <p>两条路得到同样的结论。</p>
+  </div>
+
+  <h3 id="ch6-3">6.3　三角形面积公式</h3>
+
+  <div class="box def">
+    <span class="tag">公式</span>
+    <div class="formula">
+      \[ S=\frac12 ab\sin C=\frac12 bc\sin A=\frac12 ac\sin B \]
+    </div>
+    <p><strong>规律：</strong>两边之积乘以它们的夹角的正弦，再除以 2。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导：用"底 × 高 ÷ 2"</span>
+    <p><strong>第一步：以 \(BC\) 为底。</strong>取边 \(BC\) 作为底边，长度是 \(a\)。</p>
+    <p><strong>第二步：求这条底边上的高。</strong>过点 \(A\) 作 \(BC\) 的垂线，垂足为 \(D\)，则高 \(h=AD\)。</p>
+    <p>在直角三角形 \(ACD\) 中，斜边是 \(AC=b\)，\(\angle ACD=C\)（当 \(C\) 为锐角时），所以：</p>
+    <div class="formula">
+      \[ h=AD=AC\cdot\sin C=b\sin C \]
+    </div>
+    <p>（当 \(C\) 为钝角时，\(\sin C=\sin(180^\circ-C)\)，结论仍然成立。）</p>
+
+    <p><strong>第三步：代入三角形面积公式。</strong></p>
+    <div class="formula">
+      \[ S=\frac12\times\text{底}\times\text{高}=\frac12\times a\times b\sin C=\frac12 ab\sin C \quad\checkmark \]
+    </div>
+    <p>同理，换一个底边就能得到另外两个形式。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 17</span>
+    <p>在 \(\triangle ABC\) 中，已知 \(b=2\)，\(c=3\)，\(A=60^\circ\)。求三角形的面积 \(S\) 和边 \(a\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>求面积：</strong>已知的是 \(b\)、\(c\) 和它们的夹角 \(A\)，直接用面积公式：</p>
+    <div class="formula">
+      \[ S=\frac12 bc\sin A=\frac12\times2\times3\times\sin60^\circ=3\times\frac{\sqrt3}{2}=\frac{3\sqrt3}{2} \]
+    </div>
+
+    <p><strong>求边 \(a\)：</strong>用余弦定理（SAS 情形）：</p>
+    <div class="formula">
+      \[ a^{2}=b^{2}+c^{2}-2bc\cos A=4+9-2\times2\times3\times\frac12=13-6=7 \]
+    </div>
+    <div class="formula">
+      \[ a=\sqrt7 \]
+    </div>
+
+    <p><strong>答案：</strong>\(\boxed{S=\dfrac{3\sqrt3}{2},\quad a=\sqrt7}\)</p>
+
+    <p><strong>验算（用面积公式的另一个形式反推）：</strong>\(S=\dfrac12 ab\sin C\)，需要先求 \(\sin C\)。由正弦定理 \(\dfrac{a}{\sin A}=\dfrac{c}{\sin C}\)：</p>
+    <div class="formula">
+      \[ \frac{\sqrt7}{\frac{\sqrt3}{2}}=\frac{3}{\sin C} \quad\Longrightarrow\quad \sin C=\frac{3\times\frac{\sqrt3}{2}}{\sqrt7}=\frac{3\sqrt3}{2\sqrt7} \]
+    </div>
+    <p>则 \(S=\dfrac12\times\sqrt7\times2\times\dfrac{3\sqrt3}{2\sqrt7}=\dfrac{3\sqrt3}{2}\) ✓ 一致。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 18（已知三边求面积）</span>
+    <p>在 \(\triangle ABC\) 中，已知 \(a=3\)，\(b=4\)，\(c=\sqrt{13}\)。求角 \(C\) 和面积 \(S\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：用余弦定理求角。</strong>求 \(C\) 就用含 \(C\) 的那条：</p>
+    <div class="formula">
+      \[ \cos C=\frac{a^{2}+b^{2}-c^{2}}{2ab}=\frac{9+16-13}{2\times3\times4}=\frac{12}{24}=\frac12 \]
+    </div>
+    <p>因为 \(C\in(0,\pi)\)，所以 \(C=\dfrac{\pi}{3}=60^\circ\)。</p>
+
+    <p><strong>第二步：求面积。</strong>现在有了 \(a\)、\(b\) 和夹角 \(C\)：</p>
+    <div class="formula">
+      \[ S=\frac12 ab\sin C=\frac12\times3\times4\times\sin60^\circ=6\times\frac{\sqrt3}{2}=3\sqrt3 \]
+    </div>
+
+    <p><strong>答案：</strong>\(\boxed{C=60^\circ,\quad S=3\sqrt3}\)</p>
+
+    <p><strong>验算：</strong>这与例题 15、17 的数据其实是同一组（\(a=3,b=4,C=60^\circ\Rightarrow c=\sqrt{13}\)），结果一致 ✓。</p>
+  </div>
+
+  <h3 id="ch6-4">6.4　三角形中的常用关系</h3>
+
+  <div class="box tip">
+    <span class="tag">四条必须记住的"内角和"推论</span>
+    <p>因为 \(A+B+C=\pi\)，所以 \(A+B=\pi-C\)：</p>
+    <div class="formula">
+      \[
+      \begin{aligned}
+      \sin(A+B) &= \sin(\pi-C)=\sin C \\[4pt]
+      \cos(A+B) &= \cos(\pi-C)=-\cos C \\[4pt]
+      \tan(A+B) &= \tan(\pi-C)=-\tan C \\[4pt]
+      \sin\frac{A+B}{2} &= \sin\left(\frac{\pi}{2}-\frac{C}{2}\right)=\cos\frac{C}{2}
+      \end{aligned}
+      \]
+    </div>
+    <p><strong>用途：</strong>题目里出现 \(\sin(A+B)\)、\(\cos(A+B)\) 这类式子时，立刻换成含 \(C\) 的式子，就能化简。</p>
+    <p><strong>常见搭配：</strong>在 \(\triangle ABC\) 中，"\(\sin(A+B)=\sin C\)"和"\(\cos(A+B)=-\cos C\)"这两个等式在边角互化时用得极多。</p>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">判断三角形形状的常用结论</span>
+    <div class="tbl-wrap" style="margin:0;">
+      <table>
+        <thead><tr><th>条件</th><th>结论</th></tr></thead>
+        <tbody>
+          <tr><td>\(a^2+b^2=c^2\)</td><td>直角三角形（\(C=90^\circ\)）</td></tr>
+          <tr><td>\(a^2+b^2>c^2\)</td><td>\(C\) 为锐角</td></tr>
+          <tr><td>\(a^2+b^2&lt;c^2\)</td><td>\(C\) 为钝角</td></tr>
+          <tr><td>\(a=b\) 或 \(A=B\)</td><td>等腰三角形</td></tr>
+          <tr><td>\(a=b=c\) 或 \(A=B=C\)</td><td>等边三角形</td></tr>
+          <tr><td>\(\sin2A=\sin2B\)</td><td>\(A=B\) 或 \(A+B=90^\circ\)，即等腰<strong>或</strong>直角</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>最后一条要特别注意：</strong>由 \(\sin2A=\sin2B\) 推出的是 \(2A=2B\) 或 \(2A+2B=180^\circ\)，即 \(A=B\) 或 \(A+B=90^\circ\)。两种都可能，<strong>不能只写一种</strong>。</p>
+  </div>
+
+  <!-- ==================== 第 7 章 ==================== -->
+  <h2 id="ch7"><span class="num">7</span>易错点清单、知识地图与自测</h2>
+  <p class="lead">考前必看。三角函数是"细节决定成败"最典型的章节。</p>
+
+  <h3 id="ch7-1">7.1　易错点清单</h3>
+
+  <div class="box warn">
+    <span class="tag">三角函数易错点 · 16 条</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>#</th><th>易错点</th><th>正确做法</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>弧长、扇形面积公式里用角度制</td><td>这两个公式<strong>必须用弧度制</strong>，\(\alpha\) 要化成弧度</td></tr>
+          <tr><td>2</td><td>同一个式子里混用角度和弧度</td><td>同一个式子要么全用弧度、要么全用角度。弧度制写 \(\dfrac{\pi}{6}+2k\pi\)，角度制写 \(30^\circ+k\cdot360^\circ\)；不要写 \(\dfrac{\pi}{6}+k\cdot360^\circ\) 这种半弧度半角度的混合式</td></tr>
+          <tr><td>3</td><td>由 \(\sin\alpha\) 求 \(\cos\alpha\) 时忽略符号</td><td>开方有正负两个值，必须由<strong>象限</strong>筛选</td></tr>
+          <tr><td>4</td><td>不写定义域就求 \(\tan\alpha\)</td><td>\(\tan\alpha\) 在 \(\alpha=\dfrac{\pi}{2}+k\pi\) 处无意义</td></tr>
+          <tr><td>5</td><td>诱导公式的符号搞错</td><td>"符号看象限"看的是<strong>原函数</strong>在原角所在象限的符号</td></tr>
+          <tr><td>6</td><td>把 \(\tan\) 的周期当成 \(2\pi\)</td><td>\(\tan\) 的周期是 \(\pi\)</td></tr>
+          <tr><td>7</td><td>认为 \(\tan\) 有对称轴</td><td>\(\tan\) 只有对称中心 \(\left(\dfrac{k\pi}{2},0\right)\)，<strong>没有对称轴</strong></td></tr>
+          <tr><td>8</td><td>单调区间写"\(y=\tan x\) 在定义域上递增"</td><td>只能说"在每个区间 \(\left(-\dfrac{\pi}{2}+k\pi,\dfrac{\pi}{2}+k\pi\right)\) 上递增"</td></tr>
+          <tr><td>9</td><td>★ 图象变换：先伸缩后平移时平移量写 \(\varphi\)</td><td>应为 \(\dfrac{\varphi}{\omega}\)（因为平移是对 \(x\) 本身做的）</td></tr>
+          <tr><td>10</td><td>把"相邻对称轴间距"当成周期</td><td>相邻对称轴间距 = \(\dfrac{T}{2}\)；相邻零点间距也 = \(\dfrac{T}{2}\)</td></tr>
+          <tr><td>11</td><td>求解析式解出参数后不检验</td><td>必须把结果代回题目每个条件逐一验证</td></tr>
+          <tr><td>12</td><td>辅助角公式中 \(b&lt;0\) 时强行取正</td><td>老老实实写 \(\sin\varphi=\dfrac{b}{\sqrt{a^2+b^2}}\)，\(\varphi\) 可以是负角</td></tr>
+          <tr><td>13</td><td>降幂公式正负号搞混</td><td>\(\cos^2=\dfrac{1+\cos2\alpha}{2}\)（加），\(\sin^2=\dfrac{1-\cos2\alpha}{2}\)（减）</td></tr>
+          <tr><td>14</td><td>SSA 情形只取一个解</td><td>解出 \(B\) 的两个候选值，逐一检验 \(A+B&lt;180^\circ\)</td></tr>
+          <tr><td>15</td><td>由 \(\sin2A=\sin2B\) 只推出 \(A=B\)</td><td>还有 \(A+B=90^\circ\) 的可能，两种都要写</td></tr>
+          <tr><td>16</td><td>余弦定理里把 \(2bc\cos A\) 的符号写错</td><td>公式里是<strong>减号</strong>：\(a^2=b^2+c^2-2bc\cos A\)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">解题流程自检表</span>
+    <ul>
+      <li>□ 角度和弧度统一了吗？</li>
+      <li>□ 求三角函数值时，符号由象限确定了吗？</li>
+      <li>□ 用诱导公式时，函数名变不变、符号取什么，都核对了吗？</li>
+      <li>□ 图象变换是"先平移"还是"先伸缩"？平移量算对了吗？</li>
+      <li>□ 辅助角公式里 \(\varphi\) 所在的象限和 \(b\) 的符号一致吗？</li>
+      <li>□ 解三角形的多解问题检验了吗？</li>
+      <li>□ 结果代回原题验算了吗？</li>
+    </ul>
+  </div>
+
+  <h3 id="ch7-2">7.2　知识地图</h3>
+
+  <div class="map">
+    <div class="node">
+      <b>① 角与弧度</b>
+      <span>任意角、终边相同的角<br>\(180^\circ=\pi\) rad<br>\(l=|\alpha|r\)，\(S=\frac12 lr\)</span>
+    </div>
+    <div class="node">
+      <b>② 单位圆定义</b>
+      <span>\(\sin\alpha=y\)，\(\cos\alpha=x\)<br>\(\sin^2+\cos^2=1\)<br>\(\tan\alpha=\dfrac{\sin\alpha}{\cos\alpha}\)</span>
+    </div>
+    <div class="node">
+      <b>③ 诱导公式</b>
+      <span>对称性 → 公式<br>奇变偶不变，符号看象限<br>化任意角到锐角</span>
+    </div>
+    <div class="node">
+      <b>④ 图象与性质</b>
+      <span>三个基本函数对照表<br>\(T=\dfrac{2\pi}{|\omega|}\)<br>\(y=A\sin(\omega x+\varphi)\) 变换</span>
+    </div>
+    <div class="node">
+      <b>⑤ 恒等变换</b>
+      <span>差角余弦（种子公式）<br>→ 和差角 → 二倍角<br>→ 降幂 → 辅助角</span>
+    </div>
+    <div class="node">
+      <b>⑥ 解三角形</b>
+      <span>正弦定理 \(\frac{a}{\sin A}=2R\)<br>余弦定理 \(a^2=b^2+c^2-2bc\cos A\)<br>\(S=\frac12 ab\sin C\)</span>
+    </div>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">把整章串成一条推导链（这是本册的核心价值）</span>
+    <p>如果你只记住一件事，就记这条链：</p>
+    <ol class="steps">
+      <li><strong>单位圆</strong> → 定义出 \(\sin\alpha=y\)、\(\cos\alpha=x\)（第 2 章）。</li>
+      <li><strong>单位圆的对称性</strong> → 推出全部<strong>诱导公式</strong>（第 3 章）。</li>
+      <li><strong>单位圆上两点的距离</strong>（两种算法）→ 推出 \(\cos(\alpha-\beta)\)（第 5 章）。</li>
+      <li><strong>把 \(\beta\) 换成 \(\pm\beta\)</strong> → 得到全部<strong>和差角公式</strong>。</li>
+      <li><strong>令 \(\beta=\alpha\)</strong> → 得到全部<strong>二倍角公式</strong>。</li>
+      <li><strong>反解余弦二倍角</strong> → 得到<strong>降幂公式</strong>。</li>
+      <li><strong>提取 \(\sqrt{a^2+b^2}\)</strong> → 得到<strong>辅助角公式</strong>。</li>
+      <li><strong>外接圆 + 余弦定理（向量）</strong> → 得到<strong>正弦定理与余弦定理</strong>（第 6 章）。</li>
+    </ol>
+    <p><strong>整章几十条公式，只需要一个单位圆。</strong>这就是"理解"和"背诵"的区别。</p>
+  </div>
+
+  <h3 id="ch7-3">7.3　自测清单</h3>
+  <p>下面每一条，能<strong>不看讲义完整写出来</strong>就打勾。</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:44px;">✓</th><th>自测项</th></tr></thead>
+      <tbody>
+        <tr><td>☐</td><td>能推出 \(180^\circ=\pi\) rad，并熟练换算常用特殊角</td></tr>
+        <tr><td>☐</td><td>能推出弧长公式 \(l=|\alpha|r\) 和扇形面积公式 \(S=\frac12 lr\)</td></tr>
+        <tr><td>☐</td><td>能说出为什么用单位圆定义三角函数（而不是直角三角形）</td></tr>
+        <tr><td>☐</td><td>能默写三个函数的符号规律，并能用单位圆解释</td></tr>
+        <tr><td>☐</td><td>能用勾股定理推出 \(\sin^2\alpha+\cos^2\alpha=1\)</td></tr>
+        <tr><td>☐</td><td>能根据象限正确确定开方后的符号（知一求二）</td></tr>
+        <tr><td>☐</td><td>能说出"奇变偶不变，符号看象限"每个字的含义</td></tr>
+        <tr><td>☐</td><td>能用单位圆对称性推出 \(\pi+\alpha\)、\(-\alpha\)、\(\pi-\alpha\)、\(\frac{\pi}{2}-\alpha\) 四组诱导公式</td></tr>
+        <tr><td>☐</td><td>能画出三个基本函数的图象，并说出周期、奇偶性、对称轴、对称中心</td></tr>
+        <tr><td>☐</td><td>能推出周期公式 \(T=\frac{2\pi}{|\omega|}\)</td></tr>
+        <tr><td>☐</td><td>★ 能说明"先伸缩后平移"时平移量为什么要除以 \(\omega\)，并写出完整论证</td></tr>
+        <tr><td>☐</td><td>能用"两种距离算法"推出 \(\cos(\alpha-\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta\)</td></tr>
+        <tr><td>☐</td><td>能从差角余弦公式推出其余五条和差角公式</td></tr>
+        <tr><td>☐</td><td>能由和角公式令 \(\beta=\alpha\) 推出二倍角公式（含余弦的三种形式）</td></tr>
+        <tr><td>☐</td><td>能反解出降幂公式，并说清"余弦配加号、正弦配减号"</td></tr>
+        <tr><td>☐</td><td>能推出辅助角公式，并说清为什么提取 \(\sqrt{a^2+b^2}\)</td></tr>
+        <tr><td>☐</td><td>能用外接圆推出正弦定理，用向量推出余弦定理</td></tr>
+        <tr><td>☐</td><td>能用"底 × 高 ÷ 2"推出面积公式 \(S=\frac12 ab\sin C\)</td></tr>
+        <tr><td>☐</td><td>能正确处理 SSA 情形的多解问题</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">学完本册，你应该达到什么水平</span>
+    <p><strong>如果这一册学到位了，你应该能独立完成下面这些事：</strong></p>
+    <ul>
+      <li>用诱导公式把<strong>任意角</strong>化到第一象限，并正确判断符号；</li>
+      <li>写出 \(y=A\sin(\omega x+\varphi)\) 的周期、单调区间、对称轴与对称中心；</li>
+      <li>正确处理图象变换，特别是"<strong>先伸缩后平移</strong>"时平移量要除以 \(\omega\)；</li>
+      <li>用和差角、二倍角、降幂、辅助角公式完成三角式的化简与求值；</li>
+      <li>用正弦定理、余弦定理解决解三角形问题，并正确处理 SSA 的多解情况。</li>
+    </ul>
+    <p><strong>如果还有困难，对照下面定位问题：</strong></p>
+    <ul>
+      <li><strong>公式记不住</strong> → 说明没有理解"从单位圆推出全部公式"这条链，还在死记硬背。回到第 3.1 节和第 5.1 节，把推导自己走一遍；</li>
+      <li><strong>图象变换总错</strong> → 回去重读 4.3 节关于"平移量为什么除以 \(\omega\)"的论证；</li>
+      <li><strong>解三角形总漏解</strong> → 忘了 SSA 情形要检验 \(A+B&lt;180^\circ\)。</li>
+    </ul>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">下一步学什么</span>
+    <p>三角函数这一章到这里结束。后续册次规划：</p>
+    <ul>
+      <li><strong>第四册　立体几何</strong>——空间几何体、点线面位置关系、空间向量法、距离与夹角。</li>
+      <li><strong>第五册　解析几何</strong>——直线与圆、椭圆双曲线抛物线、弦长与面积。</li>
+      <li><strong>第六册　概率统计</strong>——分布列、期望方差、统计案例。</li>
+    </ul>
+    <p>需要哪一册，直接说编号即可。</p>
+  </div>
+
+  <div class="foot">
+    <span>高考数学重点章节梳理 · 第三册 三角函数</span>
+    <span>建议配合课本与近 5 年真题同步使用</span>
+  </div>
+
+  <!-- ==================== 第 8 章：真题题型精讲 ==================== -->
+  <h2 id="ch8"><span class="num">8</span>高考真题题型精讲（2016—2025）</h2>
+  <p class="lead">前面七章解决"会不会"，这一章解决"考不考得出分"。十年真题按题型归类，每题给出完整解答与提分要点。</p>
+
+  <div class="box tip">
+    <span class="tag">本章说明：真题来源与使用方式</span>
+    <p><strong>题目来源：</strong>本章全部题目取自 2016—2025 年高考数学真题（全国卷 I/II/III 卷、全国甲/乙卷、新高考 I/II 卷、北京/天津/浙江卷等），题干保持原貌，只做必要的符号统一。</p>
+    <p><strong>解答说明：</strong>解答按本册前七章的方法体系重新组织，分步写清每一步的依据，并补充"官方答案未展开的中间步骤"。</p>
+    <p><strong>使用方法：</strong>每道真题遮住解答，限时 12 分钟独立完成。做错了回到对应章节重读。</p>
+  </div>
+
+  <div class="box def">
+    <span class="tag">十年考情速览：三角函数题的三种出场方式</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>出场位置</th><th>分值</th><th>常见考法</th><th>难度</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>解答题第 1 题</strong>（最常见）</td>
+            <td>10~12 分</td>
+            <td><strong>解三角形</strong>：求角、求边、求面积、求范围</td>
+            <td>中等，<strong>属于必拿分</strong></td>
+          </tr>
+          <tr>
+            <td><strong>解答题（部分地区）</strong></td>
+            <td>12~13 分</td>
+            <td>三角恒等变换 + 图象性质（周期、单调区间、最值）</td>
+            <td>中等</td>
+          </tr>
+          <tr>
+            <td><strong>小题（选择/填空）</strong></td>
+            <td>5 分</td>
+            <td>诱导公式、图象变换、化简求值</td>
+            <td>容易到中等</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>结论：</strong>近十年三角函数大题以<strong>解三角形</strong>为绝对主流（本章 8.2~8.4 节），恒等变换与图象性质作为"另一条腿"在部分地区考卷中出现（8.1 节）。<strong>解三角形是必拿分板块。</strong></p>
+  </div>
+
+  <h3 id="ch8-1">8.1　题型一：恒等变换 + 图象性质</h3>
+
+  <div class="box tip">
+    <span class="tag">题型特征与解题套路</span>
+    <p><strong>特征：</strong>给出一个三角式（含平方、乘积、不同角），要求周期、单调区间、最值。</p>
+    <p><strong>套路（三步走）：</strong></p>
+    <ol class="steps">
+      <li><strong>降幂：</strong>把 \(\sin^2\)、\(\cos^2\) 用降幂公式化成一次（见 5.3 节）。</li>
+      <li><strong>合角：</strong>把 \(\sin 2x\)、\(\cos 2x\) 用<strong>辅助角公式</strong>合成一个正弦（见 5.4 节）。</li>
+      <li><strong>读性质：</strong>化成 \(y=A\sin(\omega x+\varphi)+B\) 之后，周期、单调区间、最值全部可以直读。</li>
+    </ol>
+    <p><strong>口诀：先降幂，再合角，最后读性质。</strong>这三步是固定的，看到这类题就照做。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 1 · 2016 北京卷（文）</span>
+    <p>已知函数 \(f(x)=2\sin\omega x\cos\omega x+\cos 2\omega x\)（\(\omega>0\)）的最小正周期为 \(\pi\)。</p>
+    <p>（1）求 \(\omega\) 的值；</p>
+    <p>（2）求 \(f(x)\) 的单调递增区间。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：化简。</strong>第一项用二倍角公式 \(\sin 2\theta=2\sin\theta\cos\theta\)（取 \(\theta=\omega x\)）：</p>
+    <div class="formula">
+      \[ 2\sin\omega x\cos\omega x=\sin 2\omega x \]
+    </div>
+    <p>所以：</p>
+    <div class="formula">
+      \[ f(x)=\sin 2\omega x+\cos 2\omega x \]
+    </div>
+
+    <p><strong>第二步：用辅助角公式合成。</strong>这里 \(a=1\)、\(b=1\)，所以 \(\sqrt{a^2+b^2}=\sqrt2\)：</p>
+    <div class="formula">
+      \[ f(x)=\sqrt2\left(\frac{\sqrt2}{2}\sin 2\omega x+\frac{\sqrt2}{2}\cos 2\omega x\right)=\sqrt2\sin\left(2\omega x+\frac{\pi}{4}\right) \]
+    </div>
+    <p>（因为 \(\cos\dfrac{\pi}{4}=\sin\dfrac{\pi}{4}=\dfrac{\sqrt2}{2}\)，符合辅助角公式里 \(\varphi=\dfrac{\pi}{4}\)。）</p>
+
+    <p><strong>第三步：用周期条件求 \(\omega\)。</strong>对 \(y=A\sin(\omega_0 x+\varphi)\)，最小正周期是 \(T=\dfrac{2\pi}{|\omega_0|}\)。这里 \(\omega_0=2\omega\)，所以：</p>
+    <div class="formula">
+      \[ T=\frac{2\pi}{2\omega}=\frac{\pi}{\omega} \]
+    </div>
+    <p>由题意 \(T=\pi\)：</p>
+    <div class="formula">
+      \[ \frac{\pi}{\omega}=\pi \quad\Longrightarrow\quad \boxed{\ \omega=1\ } \]
+    </div>
+
+    <p><strong>（2）第一步：写出 \(\omega=1\) 时的函数。</strong></p>
+    <div class="formula">\[ f(x)=\sqrt2\sin\left(2x+\frac{\pi}{4}\right) \]</div>
+
+    <p><strong>第二步：用正弦函数的单调性列不等式。</strong>\(\sin u\) 的递增区间是 \(\left[-\dfrac{\pi}{2}+2k\pi,\ \dfrac{\pi}{2}+2k\pi\right]\)。令 \(u=2x+\dfrac{\pi}{4}\)：</p>
+    <div class="formula">
+      \[ -\frac{\pi}{2}+2k\pi\le 2x+\frac{\pi}{4}\le\frac{\pi}{2}+2k\pi \]
+    </div>
+
+    <p><strong>第三步：解出 \(x\)。</strong>三个部分同时减去 \(\dfrac{\pi}{4}\)：</p>
+    <div class="formula">
+      \[ -\frac{3\pi}{4}+2k\pi\le 2x\le\frac{\pi}{4}+2k\pi \]
+    </div>
+    <p>再同时除以 2：</p>
+    <div class="formula">
+      \[ -\frac{3\pi}{8}+k\pi\le x\le\frac{\pi}{8}+k\pi \]
+    </div>
+
+    <div class="formula">
+      \[ \boxed{\ f(x)\text{ 的单调递增区间为}\left[-\frac{3\pi}{8}+k\pi,\ \frac{\pi}{8}+k\pi\right],\ k\in\mathbb{Z}\ } \]
+    </div>
+
+    <p><strong>验算：</strong>取 \(k=0\)，得区间 \(\left[-\dfrac{3\pi}{8},\dfrac{\pi}{8}\right]\)。取其中点 \(x=-\dfrac{\pi}{8}\)，则 \(u=2\left(-\dfrac{\pi}{8}\right)+\dfrac{\pi}{4}=0\)，此时 \(\sin u=0\)，位于递增段的中间位置 ✓ 合理。</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>第一步永远是化简。</strong>看到 \(2\sin\theta\cos\theta\) 立刻换成 \(\sin 2\theta\)；看到 \(\sin^2\theta\)、\(\cos^2\theta\) 立刻降幂。</li>
+        <li><strong>辅助角公式要熟练：\(a\sin\theta+b\cos\theta=\sqrt{a^2+b^2}\sin(\theta+\varphi)\)。</strong>本题 \(a=b=1\) 是最简单的情形。</li>
+        <li><strong>求单调区间时，"\(2x+\frac{\pi}{4}\)"是一个整体。</strong>先把整个区间解出来，再解 \(x\)。不要漏掉 \(k\in\mathbb{Z}\)。</li>
+        <li>周期公式里用的是"\(x\) 的系数"（本题是 \(2\omega\)），<strong>不要漏乘 \(\omega\)</strong>。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 2 · 2018 北京卷（文）</span>
+    <p>已知函数 \(f(x)=\sin^{2}x+\sqrt3\sin x\cos x\)。</p>
+    <p>（1）求 \(f(x)\) 的最小正周期；</p>
+    <p>（2）若 \(f(x)\) 在区间 \(\left[-\dfrac{\pi}{3},m\right]\) 上的最大值为 \(\dfrac32\)，求 \(m\) 的最小值。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：降幂 + 合角。</strong></p>
+    <p>\(\sin^2x\) 用降幂公式（见 5.3 节）：</p>
+    <div class="formula">
+      \[ \sin^{2}x=\frac{1-\cos 2x}{2} \]
+    </div>
+    <p>\(\sqrt3\sin x\cos x\) 用二倍角公式：</p>
+    <div class="formula">
+      \[ \sqrt3\sin x\cos x=\frac{\sqrt3}{2}\cdot2\sin x\cos x=\frac{\sqrt3}{2}\sin 2x \]
+    </div>
+    <p>所以：</p>
+    <div class="formula">
+      \[ f(x)=\frac{1-\cos 2x}{2}+\frac{\sqrt3}{2}\sin 2x=\frac12+\left(\frac{\sqrt3}{2}\sin 2x-\frac12\cos 2x\right) \]
+    </div>
+
+    <p><strong>第二步：对括号里的部分用辅助角公式。</strong>这里 \(a=\dfrac{\sqrt3}{2}\)、\(b=-\dfrac12\)，所以：</p>
+    <div class="formula">
+      \[ \sqrt{a^{2}+b^{2}}=\sqrt{\frac34+\frac14}=1 \]
+    </div>
+    <p>由 \(\cos\varphi=\dfrac{\sqrt3}{2}\)、\(\sin\varphi=-\dfrac12\) 得 \(\varphi=-\dfrac{\pi}{6}\)，于是：</p>
+    <div class="formula">
+      \[ f(x)=\frac12+\sin\left(2x-\frac{\pi}{6}\right) \]
+    </div>
+
+    <p><strong>第三步：读周期。</strong>\(x\) 的系数是 2，所以：</p>
+    <div class="formula">
+      \[ T=\frac{2\pi}{2}=\boxed{\pi} \]
+    </div>
+
+    <p><strong>（2）第一步：先看 \(f(x)\) 的最大值是多少。</strong>由化简结果，因为 \(\sin\left(2x-\dfrac{\pi}{6}\right)\le1\)，所以：</p>
+    <div class="formula">
+      \[ f(x)\le\frac12+1=\frac32 \]
+    </div>
+    <p>题目要求区间上的最大值恰好是 \(\dfrac32\)，也就是要求<strong>区间内必须存在使 \(\sin\) 取到 1 的点</strong>。</p>
+
+    <p><strong>第二步：求出使 \(\sin\left(2x-\dfrac{\pi}{6}\right)=1\) 的 \(x\)。</strong></p>
+    <div class="formula">
+      \[ 2x-\frac{\pi}{6}=\frac{\pi}{2}+2k\pi \quad\Longrightarrow\quad 2x=\frac{2\pi}{3}+2k\pi \quad\Longrightarrow\quad x=\frac{\pi}{3}+k\pi \]
+    </div>
+    <p>所以所有"峰值点"是 \(x=\dots,-\dfrac{2\pi}{3},\dfrac{\pi}{3},\dfrac{4\pi}{3},\dots\)</p>
+
+    <p><strong>第三步：找区间左端点右侧的第一个峰值点。</strong>区间是 \(\left[-\dfrac{\pi}{3},\ m\right]\)，左端点是 \(-\dfrac{\pi}{3}\approx-1.047\)。</p>
+    <p>峰值点中，\(-\dfrac{2\pi}{3}\approx-2.094\) 在左端点<strong>左侧</strong>；\(\dfrac{\pi}{3}\approx1.047\) 在左端点<strong>右侧</strong>。</p>
+    <p>所以要让区间内出现峰值点，必须有：</p>
+    <div class="formula">
+      \[ m\ge\frac{\pi}{3} \]
+    </div>
+
+    <p><strong>第四步：验证 \(m=\dfrac{\pi}{3}\) 时确实取到最大值。</strong>此时 \(x=\dfrac{\pi}{3}\) 恰好在区间右端点上，且</p>
+    <div class="formula">
+      \[ f\left(\frac{\pi}{3}\right)=\frac12+\sin\left(2\cdot\frac{\pi}{3}-\frac{\pi}{6}\right)=\frac12+\sin\frac{\pi}{2}=\frac12+1=\frac32 \]
+    </div>
+    <p>最大值确实等于 \(\dfrac32\) ✓</p>
+
+    <div class="formula">
+      \[ \boxed{\ m\text{ 的最小值为 }\frac{\pi}{3}\ } \]
+    </div>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>第（2）问的思路："最大值等于某个值" ⟹ "区间内存在使函数取到该值的点"。</strong>先算出 \(f\) 的最大值是多少（这里是 \(\dfrac32\)），再看区间里能不能取到。</li>
+        <li><strong>求峰值点 \(x\) 时，把 \(2x-\dfrac{\pi}{6}\) 整体设为 \(\dfrac{\pi}{2}+2k\pi\)。</strong>解出的 \(x=\dfrac{\pi}{3}+k\pi\) 是一串等间隔的点，然后找"左端点右侧第一个"。</li>
+        <li>本题的关键是<strong>看清左端点 \(-\dfrac{\pi}{3}\) 的位置</strong>：它右侧的第一个峰值点是 \(\dfrac{\pi}{3}\)，所以 \(m\) 至少要等于 \(\dfrac{\pi}{3}\)。</li>
+        <li>辅助角公式里 \(b=-\dfrac12\) 是负数，\(\varphi=-\dfrac{\pi}{6}\)。不要因为怕负号就把它当成正的（见 5.4 节的提醒）。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="ch8-2">8.2　题型二：解三角形——求角</h3>
+
+  <div class="box tip">
+    <span class="tag">题型特征与解题套路</span>
+    <p><strong>特征：</strong>给出一个含边和角的等式，要求某个角。</p>
+    <p><strong>两条路（看等式的形式选）：</strong></p>
+    <ul>
+      <li><strong>统一成角：</strong>用正弦定理 \(a=2R\sin A\) 把边换成 \(\sin\)，得到纯角的关系式。适用于等式中"边角的次数相同"的情况。</li>
+      <li><strong>统一成边：</strong>用余弦定理 \(\cos A=\dfrac{b^2+c^2-a^2}{2bc}\) 把角换成边。适用于等式里有 \(\cos\) 且有平方项的情况。</li>
+    </ul>
+    <p><strong>常用关系：</strong>\(A+B+C=\pi\)，所以 \(\sin(A+B)=\sin C\)、\(\cos(A+B)=-\cos C\)（见 6.4 节）。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 3 · 2019 全国III卷（理）</span>
+    <p>\(\triangle ABC\) 的内角 \(A\)、\(B\)、\(C\) 的对边分别为 \(a\)、\(b\)、\(c\)。已知 \(a\sin\dfrac{A+C}{2}=b\sin A\)。</p>
+    <p>（1）求 \(B\)；</p>
+    <p>（2）若 \(\triangle ABC\) 为锐角三角形，且 \(c=1\)，求 \(\triangle ABC\) 面积的取值范围。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：把 \(\dfrac{A+C}{2}\) 化成含 \(B\) 的式子。</strong>因为 \(A+B+C=\pi\)，所以 \(A+C=\pi-B\)，于是：</p>
+    <div class="formula">
+      \[ \frac{A+C}{2}=\frac{\pi-B}{2}=\frac{\pi}{2}-\frac{B}{2} \]
+    </div>
+    <p>用诱导公式：</p>
+    <div class="formula">
+      \[ \sin\frac{A+C}{2}=\sin\left(\frac{\pi}{2}-\frac{B}{2}\right)=\cos\frac{B}{2} \]
+    </div>
+    <p>所以条件化为：</p>
+    <div class="formula">\[ a\cos\frac{B}{2}=b\sin A \tag{①} \]</div>
+
+    <p><strong>第二步：用正弦定理把边换成角。</strong>由 \(\dfrac{a}{\sin A}=\dfrac{b}{\sin B}=2R\)，得 \(a=2R\sin A\)、\(b=2R\sin B\)。代入①：</p>
+    <div class="formula">
+      \[ 2R\sin A\cos\frac{B}{2}=2R\sin B\sin A \]
+    </div>
+    <p>因为 \(A\in(0,\pi)\)，所以 \(\sin A\ne0\)，两边约去 \(2R\sin A\)（\(R>0\)）：</p>
+    <div class="formula">
+      \[ \cos\frac{B}{2}=\sin B \]
+    </div>
+
+    <p><strong>第三步：用二倍角公式解出 \(B\)。</strong>\(\sin B=2\sin\dfrac{B}{2}\cos\dfrac{B}{2}\)：</p>
+    <div class="formula">
+      \[ \cos\frac{B}{2}=2\sin\frac{B}{2}\cos\frac{B}{2} \]
+    </div>
+    <p>因为 \(B\in(0,\pi)\)，所以 \(\dfrac{B}{2}\in\left(0,\dfrac{\pi}{2}\right)\)，从而 \(\cos\dfrac{B}{2}\ne0\)。两边约去：</p>
+    <div class="formula">
+      \[ 1=2\sin\frac{B}{2} \quad\Longrightarrow\quad \sin\frac{B}{2}=\frac12 \]
+    </div>
+    <p>因为 \(\dfrac{B}{2}\in\left(0,\dfrac{\pi}{2}\right)\)，所以 \(\dfrac{B}{2}=\dfrac{\pi}{6}\)，即：</p>
+    <div class="formula">
+      \[ \boxed{\ B=\frac{\pi}{3}=60^{\circ}\ } \]
+    </div>
+
+    <p><strong>（2）第一步：用正弦定理把面积表示成关于 \(C\) 的式子。</strong>已知 \(B=\dfrac{\pi}{3}\)、\(c=1\)。</p>
+    <p>由正弦定理 \(\dfrac{a}{\sin A}=\dfrac{c}{\sin C}=\dfrac{1}{\sin C}\)，得：</p>
+    <div class="formula">\[ a=\frac{\sin A}{\sin C} \]</div>
+    <p>三角形面积：</p>
+    <div class="formula">
+      \[ S=\frac12 ac\sin B=\frac12\cdot\frac{\sin A}{\sin C}\cdot1\cdot\frac{\sqrt3}{2}=\frac{\sqrt3}{4}\cdot\frac{\sin A}{\sin C} \]
+    </div>
+
+    <p><strong>第二步：把 \(A\) 换成 \(C\)。</strong>因为 \(A+C=\pi-B=\dfrac{2\pi}{3}\)，所以 \(A=\dfrac{2\pi}{3}-C\)，于是：</p>
+    <div class="formula">
+      \[
+      \begin{aligned}
+      \sin A &= \sin\left(\frac{2\pi}{3}-C\right)=\sin\frac{2\pi}{3}\cos C-\cos\frac{2\pi}{3}\sin C \\
+      &= \frac{\sqrt3}{2}\cos C+\frac12\sin C
+      \end{aligned}
+      \]
+    </div>
+    <p>代入面积式：</p>
+    <div class="formula">
+      \[ S=\frac{\sqrt3}{4}\cdot\frac{\frac{\sqrt3}{2}\cos C+\frac12\sin C}{\sin C}=\frac{\sqrt3}{4}\left(\frac{\sqrt3}{2}\cdot\frac{\cos C}{\sin C}+\frac12\right)=\frac38\cot C+\frac{\sqrt3}{8} \]
+    </div>
+
+    <p><strong>第三步：确定 \(C\) 的范围。</strong>"锐角三角形"意味着三个角都小于 \(\dfrac{\pi}{2}\)：</p>
+    <ul>
+      <li>\(B=\dfrac{\pi}{3}&lt;\dfrac{\pi}{2}\) ✓ 自动满足；</li>
+      <li>\(A=\dfrac{2\pi}{3}-C&lt;\dfrac{\pi}{2}\ \Longrightarrow\ C>\dfrac{2\pi}{3}-\dfrac{\pi}{2}=\dfrac{\pi}{6}\)；</li>
+      <li>\(C&lt;\dfrac{\pi}{2}\)。</li>
+    </ul>
+    <div class="formula">\[ C\in\left(\frac{\pi}{6},\ \frac{\pi}{2}\right) \]</div>
+
+    <p><strong>第四步：求 \(\cot C\) 的范围。</strong>\(\cot C=\dfrac{\cos C}{\sin C}\) 在 \(\left(0,\pi\right)\) 上是<strong>单调递减</strong>的（这也可以由 \(\cot C=\dfrac{1}{\tan C}\) 且 \(\tan C\) 递增看出）。</p>
+    <p>计算两端：</p>
+    <div class="formula">
+      \[ \cot\frac{\pi}{6}=\sqrt3,\qquad \cot\frac{\pi}{2}=0 \]
+    </div>
+    <p>所以当 \(C\in\left(\dfrac{\pi}{6},\dfrac{\pi}{2}\right)\) 时：</p>
+    <div class="formula">\[ \cot C\in\left(0,\ \sqrt3\right) \]</div>
+
+    <p><strong>第五步：求 \(S\) 的范围。</strong></p>
+    <div class="formula">
+      \[ S=\frac38\cot C+\frac{\sqrt3}{8}\in\left(\frac38\times0+\frac{\sqrt3}{8},\ \frac38\times\sqrt3+\frac{\sqrt3}{8}\right)=\left(\frac{\sqrt3}{8},\ \frac{\sqrt3}{2}\right) \]
+    </div>
+
+    <div class="formula">
+      \[ \boxed{\ S\in\left(\frac{\sqrt3}{8},\ \frac{\sqrt3}{2}\right)\ } \]
+    </div>
+
+    <p><strong>验算（取特殊值）：</strong>取 \(C=\dfrac{\pi}{3}\)（在区间内），则 \(A=\dfrac{\pi}{3}\)，三角形是等边三角形，\(a=c=1\)，</p>
+    <div class="formula">
+      \[ S=\frac12\times1\times1\times\sin\frac{\pi}{3}=\frac{\sqrt3}{4}\approx0.433 \]
+    </div>
+    <p>而区间 \(\left(\dfrac{\sqrt3}{8},\dfrac{\sqrt3}{2}\right)\approx(0.217,\ 0.866)\) 包含 \(0.433\) ✓</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>看到 \(\sin\dfrac{A+C}{2}\) 要立刻想到 \(A+C=\pi-B\)</strong>，把它化成 \(\cos\dfrac{B}{2}\)。这是解三角形的常用转化。</li>
+        <li><strong>"锐角三角形"是求范围的关键条件，要翻译成三个不等式。</strong>本题由 \(A&lt;\dfrac{\pi}{2}\) 得到 \(C>\dfrac{\pi}{6}\)，这一步最容易漏。</li>
+        <li><strong>求面积范围的通用思路：</strong>用正弦定理把 \(S\) 表示成<strong>某一个角</strong>的函数（本题是 \(C\)），再求这个角的范围，最后用单调性求 \(S\) 的范围。</li>
+        <li>\(\cot C\) 在 \((0,\pi)\) 上单调递减，且 \(\cot\dfrac{\pi}{6}=\sqrt3\)、\(\cot\dfrac{\pi}{2}=0\)。这两个值要熟。</li>
+        <li>本题答案是<strong>开区间</strong>（因为三角形是"锐角"，取不到直角），<strong>端点的开闭是重要的得分点</strong>。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 4 · 2024 新高考I卷</span>
+    <p>记 \(\triangle ABC\) 的内角 \(A\)、\(B\)、\(C\) 的对边分别为 \(a\)、\(b\)、\(c\)。已知 \(\sin C=\sqrt2\cos B\)，\(a^{2}+b^{2}-c^{2}=\sqrt2\,ab\)。</p>
+    <p>（1）求 \(B\)；</p>
+    <p>（2）若 \(\triangle ABC\) 的面积为 \(3+\sqrt3\)，求 \(c\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：用余弦定理处理第二个条件。</strong>余弦定理给出 \(c^{2}=a^{2}+b^{2}-2ab\cos C\)，移项得：</p>
+    <div class="formula">\[ a^{2}+b^{2}-c^{2}=2ab\cos C \]</div>
+    <p>与已知 \(a^{2}+b^{2}-c^{2}=\sqrt2\,ab\) 对比（\(ab>0\)）：</p>
+    <div class="formula">
+      \[ 2ab\cos C=\sqrt2\,ab \quad\Longrightarrow\quad \cos C=\frac{\sqrt2}{2} \]
+    </div>
+
+    <p><strong>第二步：确定 \(C\)。</strong>因为 \(C\in(0,\pi)\)，而 \(\cos C=\dfrac{\sqrt2}{2}>0\)，所以 \(C\) 是锐角：</p>
+    <div class="formula">
+      \[ C=\frac{\pi}{4},\qquad \sin C=\frac{\sqrt2}{2} \]
+    </div>
+
+    <p><strong>第三步：用第一个条件求 \(B\)。</strong></p>
+    <div class="formula">
+      \[ \sin C=\sqrt2\cos B \quad\Longrightarrow\quad \frac{\sqrt2}{2}=\sqrt2\cos B \quad\Longrightarrow\quad \cos B=\frac12 \]
+    </div>
+    <p>因为 \(B\in(0,\pi)\)，所以：</p>
+    <div class="formula">
+      \[ \boxed{\ B=\frac{\pi}{3}\ } \]
+    </div>
+    <p><strong>合理性检查：</strong>\(B+C=\dfrac{\pi}{3}+\dfrac{\pi}{4}=\dfrac{7\pi}{12}&lt;\pi\) ✓ 三角形存在。</p>
+
+    <p><strong>（2）第一步：求 \(A\)。</strong></p>
+    <div class="formula">
+      \[ A=\pi-B-C=\pi-\frac{\pi}{3}-\frac{\pi}{4}=\frac{5\pi}{12} \]
+    </div>
+
+    <p><strong>第二步：用正弦定理把 \(a\)、\(b\) 用 \(c\) 表示。</strong>设 \(\dfrac{a}{\sin A}=\dfrac{b}{\sin B}=\dfrac{c}{\sin C}\)，则：</p>
+    <div class="formula">
+      \[ a=\frac{c\sin A}{\sin C},\qquad b=\frac{c\sin B}{\sin C} \]
+    </div>
+    <p>先算 \(\sin\dfrac{5\pi}{12}\)（用 \(\dfrac{5\pi}{12}=\dfrac{\pi}{4}+\dfrac{\pi}{6}\)）：</p>
+    <div class="formula">
+      \[
+      \sin\frac{5\pi}{12}=\sin\left(\frac{\pi}{4}+\frac{\pi}{6}\right)=\sin\frac{\pi}{4}\cos\frac{\pi}{6}+\cos\frac{\pi}{4}\sin\frac{\pi}{6}=\frac{\sqrt2}{2}\cdot\frac{\sqrt3}{2}+\frac{\sqrt2}{2}\cdot\frac12=\frac{\sqrt6+\sqrt2}{4}
+      \]
+    </div>
+    <p>代入：</p>
+    <div class="formula">
+      \[ a=c\cdot\frac{\frac{\sqrt6+\sqrt2}{4}}{\frac{\sqrt2}{2}}=c\cdot\frac{\sqrt6+\sqrt2}{4}\cdot\frac{2}{\sqrt2}=c\cdot\frac{\sqrt6+\sqrt2}{2\sqrt2}=c\cdot\frac{\sqrt3+1}{2} \]
+    </div>
+    <p>（最后一步：\(\dfrac{\sqrt6}{2\sqrt2}=\dfrac{\sqrt3}{2}\)、\(\dfrac{\sqrt2}{2\sqrt2}=\dfrac12\)。）</p>
+    <div class="formula">
+      \[ b=c\cdot\frac{\frac{\sqrt3}{2}}{\frac{\sqrt2}{2}}=c\cdot\frac{\sqrt3}{\sqrt2}=c\cdot\frac{\sqrt6}{2} \]
+    </div>
+
+    <p><strong>第三步：用面积条件列方程。</strong></p>
+    <div class="formula">
+      \[ S=\frac12 ab\sin C=\frac12\cdot c\cdot\frac{\sqrt3+1}{2}\cdot c\cdot\frac{\sqrt6}{2}\cdot\frac{\sqrt2}{2} \]
+    </div>
+    <p>把常数部分整理：</p>
+    <div class="formula">
+      \[ \frac12\cdot\frac{\sqrt3+1}{2}\cdot\frac{\sqrt6}{2}\cdot\frac{\sqrt2}{2}=\frac{(\sqrt3+1)\sqrt{12}}{16}=\frac{(\sqrt3+1)\cdot2\sqrt3}{16}=\frac{3+\sqrt3}{8} \]
+    </div>
+    <p>所以：</p>
+    <div class="formula">
+      \[ S=\frac{3+\sqrt3}{8}\,c^{2} \]
+    </div>
+    <p>由 \(S=3+\sqrt3\)：</p>
+    <div class="formula">
+      \[ \frac{3+\sqrt3}{8}c^{2}=3+\sqrt3 \quad\Longrightarrow\quad c^{2}=8 \]
+    </div>
+
+    <p><strong>第四步：取正根。</strong>因为 \(c\) 是边长，必须为正：</p>
+    <div class="formula">
+      \[ \boxed{\ c=2\sqrt2\ } \]
+    </div>
+
+    <p><strong>验算：</strong>\(c=2\sqrt2\approx2.828\)，则 \(a=\dfrac{\sqrt3+1}{2}\times2\sqrt2=(\sqrt3+1)\sqrt2\approx3.864\)，\(b=\dfrac{\sqrt6}{2}\times2\sqrt2=\sqrt{12}=2\sqrt3\approx3.464\)。</p>
+    <p>用余弦定理验算 \(B\)：\(\cos B=\dfrac{a^2+c^2-b^2}{2ac}=\dfrac{14.93+8-12}{2\times3.864\times2.828}=\dfrac{10.93}{21.85}\approx0.5\) ✓</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>看到 \(a^2+b^2-c^2\) 要立刻联想到余弦定理。</strong>它正好等于 \(2ab\cos C\)，这是"由边的关系求角"的标准入口。</li>
+        <li><strong>本题两次用到"由等式求角"：</strong>第一次由边的关系求出 \(\cos C\)，第二次由 \(\sin C=\sqrt2\cos B\) 求出 \(\cos B\)。</li>
+        <li><strong>求 \(c\) 的通用思路：把 \(a\)、\(b\) 都用 \(c\) 表示，再代入面积条件。</strong>这样只剩一个未知数 \(c\)。</li>
+        <li>\(\sin\dfrac{5\pi}{12}=\dfrac{\sqrt6+\sqrt2}{4}\) 是常用值（相当于 \(\sin 75^\circ\)），建议记住。</li>
+        <li><strong>最后别忘了"边长为正"</strong>，舍去负根。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="ch8-3">8.3　题型三：解三角形——求边与面积</h3>
+
+  <div class="box eg">
+    <span class="tag">真题 5 · 2019 北京卷（理）</span>
+    <p>在 \(\triangle ABC\) 中，\(a=3\)，\(b-c=2\)，\(\cos B=-\dfrac12\)。</p>
+    <p>（1）求 \(b\)，\(c\) 的值；</p>
+    <p>（2）求 \(\sin(B-C)\) 的值。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：用余弦定理建立方程。</strong>角 \(B\) 的对边是 \(b\)，由余弦定理：</p>
+    <div class="formula">
+      \[ b^{2}=a^{2}+c^{2}-2ac\cos B \]
+    </div>
+    <p>代入 \(a=3\)、\(\cos B=-\dfrac12\)：</p>
+    <div class="formula">
+      \[ b^{2}=9+c^{2}-2\times3\times c\times\left(-\frac12\right)=9+c^{2}+3c \tag{①} \]
+    </div>
+
+    <p><strong>第二步：用 \(b-c=2\) 消去一个未知数。</strong>由 \(b-c=2\) 得 \(b=c+2\)，代入①：</p>
+    <div class="formula">
+      \[ (c+2)^{2}=9+c^{2}+3c \]
+    </div>
+    <div class="formula">
+      \[ c^{2}+4c+4=9+c^{2}+3c \]
+    </div>
+    <p>两边消去 \(c^2\)：</p>
+    <div class="formula">
+      \[ 4c+4=9+3c \quad\Longrightarrow\quad c=5 \]
+    </div>
+    <p>所以 \(b=c+2=7\)。</p>
+    <div class="formula">
+      \[ \boxed{\ b=7,\quad c=5\ } \]
+    </div>
+
+    <p><strong>（2）第一步：先求出 \(\sin B\)。</strong>因为 \(\cos B=-\dfrac12&lt;0\)，所以 \(B\) 是钝角，\(B\in\left(\dfrac{\pi}{2},\pi\right)\)，从而 \(\sin B>0\)：</p>
+    <div class="formula">
+      \[ \sin B=\sqrt{1-\cos^{2}B}=\sqrt{1-\frac14}=\frac{\sqrt3}{2} \]
+    </div>
+
+    <p><strong>第二步：用正弦定理求 \(\sin C\)。</strong>由 \(\dfrac{b}{\sin B}=\dfrac{c}{\sin C}\)：</p>
+    <div class="formula">
+      \[ \frac{7}{\frac{\sqrt3}{2}}=\frac{5}{\sin C} \quad\Longrightarrow\quad \frac{14}{\sqrt3}=\frac{5}{\sin C} \quad\Longrightarrow\quad \sin C=\frac{5\sqrt3}{14} \]
+    </div>
+
+    <p><strong>第三步：确定 \(\cos C\) 的符号。</strong>因为 \(b=7>c=5\)，由"大边对大角"得 \(B>C\)。而 \(B\) 是钝角，所以 \(C\) 一定是<strong>锐角</strong>，因此 \(\cos C>0\)：</p>
+    <div class="formula">
+      \[ \cos C=\sqrt{1-\sin^{2}C}=\sqrt{1-\frac{75}{196}}=\sqrt{\frac{121}{196}}=\frac{11}{14} \]
+    </div>
+
+    <p><strong>第四步：用差角公式求 \(\sin(B-C)\)。</strong></p>
+    <div class="formula">
+      \[ \sin(B-C)=\sin B\cos C-\cos B\sin C \]
+    </div>
+    <div class="formula">
+      \[ =\frac{\sqrt3}{2}\cdot\frac{11}{14}-\left(-\frac12\right)\cdot\frac{5\sqrt3}{14}=\frac{11\sqrt3}{28}+\frac{5\sqrt3}{28}=\frac{16\sqrt3}{28} \]
+    </div>
+    <div class="formula">
+      \[ \boxed{\ \sin(B-C)=\frac{4\sqrt3}{7}\ } \]
+    </div>
+
+    <p><strong>验算（检查 \(\cos C\) 的符号判断）：</strong>由余弦定理算 \(C\)：</p>
+    <div class="formula">
+      \[ \cos C=\frac{a^{2}+b^{2}-c^{2}}{2ab}=\frac{9+49-25}{2\times3\times7}=\frac{33}{42}=\frac{11}{14}>0 \quad\checkmark \]
+    </div>
+    <p>与上面的判断一致 ✓</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>已知"一边 + 另两边之差 + 一个角"，标准做法是用余弦定理。</strong>本题把 \(b=c+2\) 代入余弦定理，得到关于 \(c\) 的一次方程，非常干净。</li>
+        <li><strong>\(\cos B&lt;0\) 说明 \(B\) 是钝角，\(\sin B\) 取正。</strong>这一步是常识但必须写。</li>
+        <li><strong>求 \(\cos C\) 时要判断符号。</strong>方法有两个：① 用"大边对大角"（\(b>c\) ⟹ \(B>C\)，而 \(B\) 是钝角，所以 \(C\) 是锐角）；② 直接用余弦定理算（本题验算用的就是这一招）。<strong>两种方法都要会。</strong></li>
+        <li>\(\sin(B-C)\) 用差角公式展开，注意 \(\cos B\) 是负数，<strong>"减负得正"</strong>这一步最容易错。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 6 · 2021 新高考I卷　<span class="lv-hard">★★</span></span>
+    <p>记 \(\triangle ABC\) 的内角 \(A\)、\(B\)、\(C\) 的对边分别为 \(a\)、\(b\)、\(c\)。已知 \(b^{2}=ac\)，点 \(D\) 在边 \(AC\) 上，且 \(BD\sin\angle ABC=a\sin C\)。</p>
+    <p>（1）证明：\(BD=b\)；</p>
+    <p>（2）若 \(AD=2DC\)，求 \(\cos\angle ABC\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：把 \(a\sin C\) 用正弦定理转化。</strong>由正弦定理 \(\dfrac{a}{\sin A}=\dfrac{c}{\sin C}=2R\)，得 \(\sin A=\dfrac{a}{2R}\)、\(\sin C=\dfrac{c}{2R}\)。</p>
+    <p>所以：</p>
+    <div class="formula">\[ a\sin C=a\cdot\frac{c}{2R}=\frac{ac}{2R} \]</div>
+    <p>同理 \(\sin B=\dfrac{b}{2R}\)。</p>
+
+    <p><strong>第二步：代入已知条件。</strong></p>
+    <div class="formula">
+      \[ BD\cdot\frac{b}{2R}=\frac{ac}{2R} \quad\Longrightarrow\quad BD\cdot b=ac \]
+    </div>
+
+    <p><strong>第三步：用 \(b^2=ac\) 得结论。</strong>把 \(ac=b^2\) 代入：</p>
+    <div class="formula">
+      \[ BD\cdot b=b^{2} \quad\Longrightarrow\quad BD=b \quad\checkmark \]
+    </div>
+    <p>（因为 \(b>0\)，可以两边约去 \(b\)。）∎</p>
+
+    <p><strong>（2）第一步：把已知条件翻译成边长。</strong>\(AC=b\)，且 \(AD=2DC\)，所以：</p>
+    <div class="formula">
+      \[ AD=\frac{2}{3}b,\qquad DC=\frac13 b \]
+    </div>
+    <p>又由（1）\(BD=b\)。记 \(u=\cos\angle ADB\)（即 \(\cos\angle BDC\) 的相反数，因为 \(D\) 在 \(AC\) 上，\(\angle ADB+\angle BDC=\pi\)）。</p>
+
+    <p><strong>第二步：在两个小三角形里各用一次余弦定理。</strong></p>
+    <p><strong>在 \(\triangle ABD\) 中</strong>（\(AB=c\)，\(AD=\dfrac{2b}{3}\)，\(BD=b\)，夹角是 \(\angle ADB\)）：</p>
+    <div class="formula">
+      \[ c^{2}=AD^{2}+BD^{2}-2\cdot AD\cdot BD\cos u=\frac{4b^{2}}{9}+b^{2}-\frac{4b^{2}}{3}u=\frac{13b^{2}}{9}-\frac{4b^{2}}{3}u \tag{①} \]
+    </div>
+    <p><strong>在 \(\triangle BDC\) 中</strong>（\(BC=a\)，\(DC=\dfrac b3\)，\(BD=b\)，夹角是 \(\angle BDC=\pi-\angle ADB\)，其余弦为 \(-\cos u\)）：</p>
+    <div class="formula">
+      \[ a^{2}=DC^{2}+BD^{2}-2\cdot DC\cdot BD\cos(\pi-u)=\frac{b^{2}}{9}+b^{2}+\frac{2b^{2}}{3}u=\frac{10b^{2}}{9}+\frac{2b^{2}}{3}u \tag{②} \]
+    </div>
+
+    <p><strong>第三步：用 \(b^2=ac\) 建立方程。</strong>由②×①并利用 \(ac=b^2\)（两边平方得 \(a^2c^2=b^4\)）：</p>
+    <div class="formula">
+      \[ \left(\frac{10b^{2}}{9}+\frac{2b^{2}}{3}u\right)\left(\frac{13b^{2}}{9}-\frac{4b^{2}}{3}u\right)=b^{4} \]
+    </div>
+    <p>两边除以 \(b^4\)（\(b>0\)）：</p>
+    <div class="formula">
+      \[ \left(\frac{10}{9}+\frac{2u}{3}\right)\left(\frac{13}{9}-\frac{4u}{3}\right)=1 \]
+    </div>
+    <p>展开左边：</p>
+    <div class="formula">
+      \[ \frac{130}{81}-\frac{40u}{27}+\frac{26u}{27}-\frac{8u^{2}}{9}=1 \]
+    </div>
+    <div class="formula">
+      \[ \frac{130}{81}-\frac{14u}{27}-\frac{8u^{2}}{9}=1 \]
+    </div>
+    <p>两边乘 81：</p>
+    <div class="formula">
+      \[ 130-42u-72u^{2}=81 \quad\Longrightarrow\quad 72u^{2}+42u-49=0 \]
+    </div>
+
+    <p><strong>第四步：解这个一元二次方程。</strong></p>
+    <div class="formula">
+      \[ u=\frac{-42\pm\sqrt{42^{2}-4\times72\times(-49)}}{2\times72}=\frac{-42\pm\sqrt{1764+14112}}{144}=\frac{-42\pm\sqrt{15876}}{144} \]
+    </div>
+    <p>因为 \(126^{2}=15876\)，所以 \(\sqrt{15876}=126\)：</p>
+    <div class="formula">
+      \[ u=\frac{-42\pm126}{144} \]
+    </div>
+    <p>取正号：\(u=\dfrac{84}{144}=\dfrac{7}{12}\)；取负号：\(u=-\dfrac{168}{144}=-\dfrac76\)。</p>
+    <p>因为 \(|\cos\theta|\le1\)，所以 \(u=-\dfrac76\) 舍去。故</p>
+    <div class="formula">\[ \cos\angle ADB=\frac{7}{12} \]</div>
+
+    <p><strong>第五步：求 \(\cos\angle ABC\)。</strong>在 \(\triangle ABC\) 中用余弦定理：</p>
+    <div class="formula">
+      \[ \cos\angle ABC=\frac{a^{2}+c^{2}-b^{2}}{2ac} \]
+    </div>
+    <p>由①②相加：</p>
+    <div class="formula">
+      \[ a^{2}+c^{2}=\frac{13b^{2}}{9}-\frac{4b^{2}}{3}u+\frac{10b^{2}}{9}+\frac{2b^{2}}{3}u=\frac{23b^{2}}{9}-\frac{2b^{2}}{3}u \]
+    </div>
+    <p>所以：</p>
+    <div class="formula">
+      \[ a^{2}+c^{2}-b^{2}=\frac{23b^{2}}{9}-b^{2}-\frac{2b^{2}}{3}u=\frac{14b^{2}}{9}-\frac{2b^{2}}{3}u \]
+    </div>
+    <p>又 \(ac=b^2\)，所以 \(2ac=2b^2\)：</p>
+    <div class="formula">
+      \[ \cos\angle ABC=\frac{\frac{14b^{2}}{9}-\frac{2b^{2}}{3}u}{2b^{2}}=\frac{7}{9}-\frac{u}{3} \]
+    </div>
+    <p>代入 \(u=\dfrac{7}{12}\)：</p>
+    <div class="formula">
+      \[ \cos\angle ABC=\frac79-\frac{1}{3}\times\frac{7}{12}=\frac79-\frac{7}{36}=\frac{28}{36}-\frac{7}{36}=\frac{21}{36} \]
+    </div>
+    <div class="formula">
+      \[ \boxed{\ \cos\angle ABC=\frac{7}{12}\ } \]
+    </div>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>第（1）问的关键：把 \(a\sin C\) 用 \(2R\) 表示。</strong>由正弦定理 \(a=2R\sin A\)、\(\sin C=\dfrac{c}{2R}\)，所以 \(a\sin C=\dfrac{ac}{2R}\)。这个"用 \(2R\) 统一"的手法在解三角形里很常用。</li>
+        <li><strong>第（2）问的难点是"两个未知数 \(a\)、\(c\)"，要靠 \(b^2=ac\) 消掉。</strong>方法是把 \(a^2\)、\(c^2\) 用 \(b\) 和 \(u=\cos\angle ADB\) 表示，再代入 \(a^2c^2=b^4\)。</li>
+        <li><strong>注意 \(\angle ADB+\angle BDC=\pi\)</strong>，所以它们的余弦互为相反数。这是"点在边上"类问题的通用关系。</li>
+        <li>解出 \(u=\dfrac{7}{12}\) 或 \(-\dfrac76\) 后，<strong>必须用 \(|\cos\theta|\le1\) 舍去不合理的根</strong>。</li>
+        <li>最后求 \(\cos\angle ABC\) 时，把 \(a^2+c^2\) 整体算出来，比分别求 \(a\)、\(c\) 简单得多。</li>
+      </ul>
+    </div>
+  </div>
+
+  
+
+  <h3 id="ch8-4">8.4　题型四：解三角形——范围、最值与结构不良题</h3>
+
+  <div class="box tip">
+    <span class="tag">题型特征与解题套路</span>
+    <p><strong>特征：</strong>求某个量的取值范围（面积范围、周长范围、三角函数式的范围）。</p>
+    <p><strong>套路（三步走）：</strong></p>
+    <ol class="steps">
+      <li><strong>用一个角（或一条边）表示所有量。</strong>通常用正弦定理把边都换成角，或者用余弦定理把角换成边。</li>
+      <li><strong>确定这个角（或边）的范围。</strong>范围往往来自"锐角三角形"、"A 为钝角"这类条件，或者来自三角形不等式。</li>
+      <li><strong>用单调性或基本不等式求最值。</strong></li>
+    </ol>
+    <p><strong>★ 最容易漏的一步是第 2 步</strong>——把"锐角三角形"翻译成三个不等式，这一步直接决定答案的端点是开还是闭。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 7 · 2022 新高考I卷　<span class="lv-hard">★★</span></span>
+    <p>记 \(\triangle ABC\) 的内角 \(A\)、\(B\)、\(C\) 的对边分别为 \(a\)、\(b\)、\(c\)，已知 \(\dfrac{\cos A}{1+\sin A}=\dfrac{\sin 2B}{1+\cos 2B}\)。</p>
+    <p>（1）若 \(C=\dfrac{2\pi}{3}\)，求 \(B\)；</p>
+    <p>（2）求 \(\dfrac{a^{2}+b^{2}}{c^{2}}\) 的最小值。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：化简右边的式子。</strong>用二倍角公式：</p>
+    <div class="formula">
+      \[ \sin 2B=2\sin B\cos B,\qquad 1+\cos 2B=1+(2\cos^{2}B-1)=2\cos^{2}B \]
+    </div>
+    <p>所以：</p>
+    <div class="formula">
+      \[ \frac{\sin 2B}{1+\cos 2B}=\frac{2\sin B\cos B}{2\cos^{2}B}=\frac{\sin B}{\cos B}=\tan B \]
+    </div>
+    <p>（这里要求 \(\cos B\ne0\)，即 \(B\ne\dfrac{\pi}{2}\)；由后面的结果会看到 \(B&lt;\dfrac{\pi}{2}\)，所以这个化简是合法的。）</p>
+
+    <p><strong>第二步：化简左边的式子。</strong>左边的结构让人联想到半角公式（见 5.5 节）：</p>
+    <div class="formula">
+      \[ \tan\left(\frac{\pi}{4}-\frac{A}{2}\right)=\frac{1-\sin A}{\cos A} \]
+    </div>
+    <p>把它与左边对照，会发现左边正好是右边取倒数，所以更直接的做法是<strong>交叉相乘</strong>：</p>
+    <div class="formula">
+      \[ \cos A\cos B=\sin B(1+\sin A)=\sin B+\sin A\sin B \]
+    </div>
+    <p>移项：</p>
+    <div class="formula">
+      \[ \cos A\cos B-\sin A\sin B=\sin B \]
+    </div>
+    <p><strong>第三步：认出左边是差角余弦公式。</strong>由 \(\cos(\alpha+\beta)=\cos\alpha\cos\beta-\sin\alpha\sin\beta\)：</p>
+    <div class="formula">
+      \[ \cos(A+B)=\sin B \]
+    </div>
+    <p>因为 \(A+B=\pi-C\)，所以 \(\cos(A+B)=\cos(\pi-C)=-\cos C\)：</p>
+    <div class="formula">
+      \[ -\cos C=\sin B \tag{①} \]
+    </div>
+
+    <p><strong>第四步：代入 \(C=\dfrac{2\pi}{3}\)。</strong></p>
+    <div class="formula">
+      \[ \sin B=-\cos\frac{2\pi}{3}=-\left(-\frac12\right)=\frac12 \]
+    </div>
+    <p>因为 \(A+B=\pi-C=\dfrac{\pi}{3}\)，所以 \(0&lt;B&lt;\dfrac{\pi}{3}&lt;\dfrac{\pi}{2}\)，从而 \(B\) 是锐角：</p>
+    <div class="formula">
+      \[ \boxed{\ B=\frac{\pi}{6}\ } \]
+    </div>
+
+    <p><strong>（2）第一步：由①确定 \(B\) 与 \(C\) 的关系。</strong>由①，\(\sin B=-\cos C>0\)（因为 \(\sin B>0\)），所以 \(\cos C&lt;0\)，即 \(C\in\left(\dfrac{\pi}{2},\pi\right)\)。</p>
+    <p>用诱导公式：</p>
+    <div class="formula">
+      \[ \sin B=-\cos C=\sin\left(C-\frac{\pi}{2}\right) \]
+    </div>
+    <p>现在要由 \(\sin B=\sin\left(C-\dfrac{\pi}{2}\right)\) 反解 \(B\)。<strong>不能直接"两边去 \(\sin\)"</strong>，因为满足条件的 \(B\) 有两个候选：</p>
+    <div class="formula">
+      \[ B=C-\frac{\pi}{2} \qquad\text{或}\qquad B=\pi-\left(C-\frac{\pi}{2}\right)=\frac{3\pi}{2}-C \]
+    </div>
+    <p><strong>用内角和排除第二个。</strong>若 \(B=\dfrac{3\pi}{2}-C\)，则</p>
+    <div class="formula">
+      \[ A=\pi-B-C=\pi-\left(\frac{3\pi}{2}-C\right)-C=-\frac{\pi}{2}&lt;0 \]
+    </div>
+    <p>与 \(A&gt;0\) 矛盾，所以第二个候选不成立。故只能取</p>
+    <div class="formula">\[ B=C-\frac{\pi}{2} \quad\Longrightarrow\quad C=\frac{\pi}{2}+B \]</div>
+
+    <p><strong>第二步：确定 \(B\) 的范围。</strong></p>
+    <div class="formula">
+      \[ A=\pi-B-C=\pi-B-\left(\frac{\pi}{2}+B\right)=\frac{\pi}{2}-2B \]
+    </div>
+    <p>因为 \(A>0\)，所以 \(\dfrac{\pi}{2}-2B>0\)，即 \(B&lt;\dfrac{\pi}{4}\)。又 \(B>0\)，所以：</p>
+    <div class="formula">\[ B\in\left(0,\ \frac{\pi}{4}\right) \]</div>
+
+    <p><strong>第三步：用正弦定理把目标式化成关于 \(B\) 的式子。</strong>由 \(\dfrac{a}{\sin A}=\dfrac{b}{\sin B}=\dfrac{c}{\sin C}\)，设比值为 \(k\)，则 \(a=k\sin A\)、\(b=k\sin B\)、\(c=k\sin C\)。所以：</p>
+    <div class="formula">
+      \[ \frac{a^{2}+b^{2}}{c^{2}}=\frac{\sin^{2}A+\sin^{2}B}{\sin^{2}C} \]
+    </div>
+    <p>把 \(A=\dfrac{\pi}{2}-2B\)、\(C=\dfrac{\pi}{2}+B\) 代入：</p>
+    <div class="formula">
+      \[ \sin A=\sin\left(\frac{\pi}{2}-2B\right)=\cos 2B,\qquad \sin C=\sin\left(\frac{\pi}{2}+B\right)=\cos B \]
+    </div>
+    <p>所以：</p>
+    <div class="formula">
+      \[ \frac{a^{2}+b^{2}}{c^{2}}=\frac{\cos^{2}2B+\sin^{2}B}{\cos^{2}B} \]
+    </div>
+
+    <p><strong>第四步：换元。</strong>令 \(s=\sin^{2}B\)，则 \(\cos^{2}B=1-s\)，且</p>
+    <div class="formula">
+      \[ \cos 2B=1-2\sin^{2}B=1-2s \quad\Longrightarrow\quad \cos^{2}2B=(1-2s)^{2} \]
+    </div>
+    <p>代入：</p>
+    <div class="formula">
+      \[ \frac{a^{2}+b^{2}}{c^{2}}=\frac{(1-2s)^{2}+s}{1-s}=\frac{1-4s+4s^{2}+s}{1-s}=\frac{4s^{2}-3s+1}{1-s} \]
+    </div>
+    <p>由 \(B\in\left(0,\dfrac{\pi}{4}\right)\) 得 \(s\in\left(0,\dfrac12\right)\)。</p>
+
+    <p><strong>第五步：求最小值。</strong>设 \(F(s)=\dfrac{4s^{2}-3s+1}{1-s}\)，\(s\in\left(0,\dfrac12\right)\)。用商法则求导：</p>
+    <div class="formula">
+      \[ F'(s)=\frac{(8s-3)(1-s)-(4s^{2}-3s+1)\cdot(-1)}{(1-s)^{2}} \]
+    </div>
+    <p>分子整理：</p>
+    <div class="formula">
+      \[ (8s-3)(1-s)+4s^{2}-3s+1=8s-8s^{2}-3+3s+4s^{2}-3s+1=-4s^{2}+8s-2 \]
+    </div>
+    <p>所以：</p>
+    <div class="formula">
+      \[ F'(s)=\frac{-4s^{2}+8s-2}{(1-s)^{2}}=\frac{-2(2s^{2}-4s+1)}{(1-s)^{2}} \]
+    </div>
+    <p>令 \(2s^{2}-4s+1=0\)：</p>
+    <div class="formula">
+      \[ s=\frac{4\pm\sqrt{16-8}}{4}=\frac{4\pm2\sqrt2}{4}=1\pm\frac{\sqrt2}{2} \]
+    </div>
+    <p>在 \(\left(0,\dfrac12\right)\) 内的根是 \(s_{0}=1-\dfrac{\sqrt2}{2}\approx0.293\)。</p>
+    <p>因为分母 \((1-s)^2>0\)，所以 \(F'(s)\) 的符号由 \(-2(2s^2-4s+1)\) 决定：</p>
+    <ul>
+      <li>\(s&lt;s_0\) 时 \(2s^2-4s+1>0\)（取 \(s=0\) 验：\(1>0\) ✓），故 \(F'(s)&lt;0\)，\(F\) 递减；</li>
+      <li>\(s>s_0\) 时 \(F'(s)>0\)，\(F\) 递增。</li>
+    </ul>
+    <p>所以 \(F\) 在 \(s=s_0\) 处取到<strong>最小值</strong>。</p>
+
+    <p><strong>第六步：算最小值。</strong>把 \(s_0=1-\dfrac{\sqrt2}{2}\) 代入。先算 \(s_0^2\)：</p>
+    <div class="formula">
+      \[ s_0^{2}=\left(1-\frac{\sqrt2}{2}\right)^{2}=1-\sqrt2+\frac12=\frac32-\sqrt2 \]
+    </div>
+    <p>分子：</p>
+    <div class="formula">
+      \[ 4s_0^{2}-3s_0+1=4\left(\frac32-\sqrt2\right)-3\left(1-\frac{\sqrt2}{2}\right)+1=6-4\sqrt2-3+\frac{3\sqrt2}{2}+1=4-\frac{5\sqrt2}{2} \]
+    </div>
+    <p>分母：</p>
+    <div class="formula">\[ 1-s_0=\frac{\sqrt2}{2} \]</div>
+    <p>所以：</p>
+    <div class="formula">
+      \[ F_{\min}=\frac{4-\frac{5\sqrt2}{2}}{\frac{\sqrt2}{2}}=\frac{8-5\sqrt2}{\sqrt2}=\frac{8}{\sqrt2}-5=4\sqrt2-5 \]
+    </div>
+
+    <div class="formula">
+      \[ \boxed{\ \frac{a^{2}+b^{2}}{c^{2}}\text{ 的最小值为 }4\sqrt2-5\ } \]
+    </div>
+
+    <p><strong>验算：</strong>取 \(s=\dfrac14\)（即 \(B=\dfrac{\pi}{6}\)，在区间内），则</p>
+    <div class="formula">
+      \[ F=\frac{4\times\frac1{16}-\frac34+1}{1-\frac14}=\frac{\frac14-\frac34+1}{\frac34}=\frac{\frac12}{\frac34}=\frac23\approx0.667 \]
+    </div>
+    <p>而 \(4\sqrt2-5\approx5.657-5=0.657&lt;0.667\) ✓ 最小值小于该点的值，合理。</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>化简 \(\dfrac{\sin 2B}{1+\cos 2B}\) 是本题的突破口。</strong>它等于 \(\tan B\)，这是二倍角公式的直接应用。</li>
+        <li><strong>交叉相乘后认出 \(\cos(A+B)\)</strong> 是关键一步。这类"看起来陌生的等式"往往就是差角/和角公式的变形。</li>
+        <li><strong>由 \(\sin B=-\cos C\) 推出 \(C=\dfrac{\pi}{2}+B\) 时，要说明 \(\sin\) 的单调性</strong>，不能直接写等号。</li>
+        <li><strong>求范围的通用思路：把目标式化成关于某一个角（本题是 \(B\)）的函数，再求这个角的范围。</strong>这里用 \(\sin^2B\) 换元后变成了有理函数，便于求导。</li>
+        <li><strong>换元后一定要算出新变量的范围</strong>（本题 \(s\in\left(0,\dfrac12\right)\)），否则求最值时容易出错。</li>
+        <li>最后算 \(4\sqrt2-5\) 时要细心：\(\dfrac{8-5\sqrt2}{\sqrt2}=\dfrac{8}{\sqrt2}-5=4\sqrt2-5\)。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 8 · 2020 浙江卷</span>
+    <p>在锐角 \(\triangle ABC\) 中，角 \(A\)、\(B\)、\(C\) 的对边分别为 \(a\)、\(b\)、\(c\)，且 \(2b\sin A=\sqrt3\,a\)。</p>
+    <p>（1）求角 \(B\)；</p>
+    <p>（2）求 \(\cos A+\cos B+\cos C\) 的取值范围。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：用正弦定理把边换成角。</strong>由 \(\dfrac{a}{\sin A}=\dfrac{b}{\sin B}\)，得 \(a=\dfrac{b\sin A}{\sin B}\)。代入条件：</p>
+    <div class="formula">
+      \[ 2b\sin A=\sqrt3\cdot\frac{b\sin A}{\sin B} \]
+    </div>
+    <p>因为 \(b>0\)、\(A\in(0,\pi)\) 所以 \(\sin A>0\)，两边约去 \(b\sin A\)：</p>
+    <div class="formula">
+      \[ 2=\frac{\sqrt3}{\sin B} \quad\Longrightarrow\quad \sin B=\frac{\sqrt3}{2} \]
+    </div>
+
+    <p><strong>第二步：用"锐角"确定 \(B\)。</strong>\(\sin B=\dfrac{\sqrt3}{2}\) 给出 \(B=\dfrac{\pi}{3}\) 或 \(B=\dfrac{2\pi}{3}\)。但三角形是<strong>锐角</strong>三角形，\(B&lt;\dfrac{\pi}{2}\)，所以：</p>
+    <div class="formula">
+      \[ \boxed{\ B=\frac{\pi}{3}\ } \]
+    </div>
+
+    <p><strong>（2）第一步：把目标式化成关于 \(A\) 的式子。</strong>因为 \(A+B+C=\pi\) 且 \(B=\dfrac{\pi}{3}\)：</p>
+    <div class="formula">
+      \[ C=\pi-A-\frac{\pi}{3}=\frac{2\pi}{3}-A \]
+    </div>
+    <p>所以：</p>
+    <div class="formula">
+      \[ \cos A+\cos B+\cos C=\cos A+\frac12+\cos\left(\frac{2\pi}{3}-A\right) \]
+    </div>
+
+    <p><strong>第二步：展开 \(\cos\left(\dfrac{2\pi}{3}-A\right)\)。</strong>用差角余弦公式：</p>
+    <div class="formula">
+      \[ \cos\left(\frac{2\pi}{3}-A\right)=\cos\frac{2\pi}{3}\cos A+\sin\frac{2\pi}{3}\sin A=-\frac12\cos A+\frac{\sqrt3}{2}\sin A \]
+    </div>
+    <p>代入：</p>
+    <div class="formula">
+      \[ \cos A+\frac12-\frac12\cos A+\frac{\sqrt3}{2}\sin A=\frac12+\left(\frac12\cos A+\frac{\sqrt3}{2}\sin A\right) \]
+    </div>
+
+    <p><strong>第三步：用辅助角公式合并。</strong>括号里 \(a=\dfrac12\)、\(b=\dfrac{\sqrt3}{2}\)，所以 \(\sqrt{a^2+b^2}=1\)，且 \(\cos\varphi=\dfrac12\)、\(\sin\varphi=\dfrac{\sqrt3}{2}\)，即 \(\varphi=\dfrac{\pi}{3}\)：</p>
+    <div class="formula">
+      \[ \frac12\cos A+\frac{\sqrt3}{2}\sin A=\cos\left(A-\frac{\pi}{3}\right) \]
+    </div>
+    <p>所以：</p>
+    <div class="formula">
+      \[ \cos A+\cos B+\cos C=\frac12+\cos\left(A-\frac{\pi}{3}\right) \]
+    </div>
+
+    <p><strong>第四步：确定 \(A\) 的范围（关键）。</strong>"锐角三角形"要求三个角都小于 \(\dfrac{\pi}{2}\)：</p>
+    <ul>
+      <li>\(B=\dfrac{\pi}{3}&lt;\dfrac{\pi}{2}\) ✓ 自动满足；</li>
+      <li>\(A&lt;\dfrac{\pi}{2}\)；</li>
+      <li>\(C=\dfrac{2\pi}{3}-A&lt;\dfrac{\pi}{2}\ \Longrightarrow\ A>\dfrac{2\pi}{3}-\dfrac{\pi}{2}=\dfrac{\pi}{6}\)。</li>
+    </ul>
+    <div class="formula">
+      \[ A\in\left(\frac{\pi}{6},\ \frac{\pi}{2}\right) \]
+    </div>
+    <p>所以：</p>
+    <div class="formula">
+      \[ A-\frac{\pi}{3}\in\left(-\frac{\pi}{6},\ \frac{\pi}{6}\right) \]
+    </div>
+
+    <p><strong>第五步：求 \(\cos\left(A-\dfrac{\pi}{3}\right)\) 的范围。</strong>在这个区间上，\(\cos\) 的最大值在 \(A-\dfrac{\pi}{3}=0\) 处取到（此时 \(A=\dfrac{\pi}{3}\)，在区间内），值为 1；</p>
+    <p>两端 \(A-\dfrac{\pi}{3}=\pm\dfrac{\pi}{6}\) 处，\(\cos\left(\pm\dfrac{\pi}{6}\right)=\dfrac{\sqrt3}{2}\)。因为区间是<strong>开区间</strong>，端点取不到，所以：</p>
+    <div class="formula">
+      \[ \cos\left(A-\frac{\pi}{3}\right)\in\left(\frac{\sqrt3}{2},\ 1\right] \]
+    </div>
+
+    <p><strong>第六步：得最终范围。</strong></p>
+    <div class="formula">
+      \[ \cos A+\cos B+\cos C\in\left(\frac12+\frac{\sqrt3}{2},\ \frac12+1\right]=\left(\frac{1+\sqrt3}{2},\ \frac32\right] \]
+    </div>
+
+    <div class="formula">
+      \[ \boxed{\ \cos A+\cos B+\cos C\in\left(\frac{1+\sqrt3}{2},\ \frac32\right]\ } \]
+    </div>
+
+    <p><strong>验算：</strong>取 \(A=\dfrac{\pi}{3}\)（在区间内），则 \(C=\dfrac{\pi}{3}\)，三角形是等边三角形：</p>
+    <div class="formula">
+      \[ \cos A+\cos B+\cos C=3\times\frac12=\frac32 \]
+    </div>
+    <p>正好是右端点（可以取到）✓</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>"锐角三角形"必须翻译成三个不等式。</strong>本题由 \(C&lt;\dfrac{\pi}{2}\) 得到 \(A>\dfrac{\pi}{6}\)，这是最容易漏的一步。<strong>漏了这一步，答案会写成 \(\left(\dfrac{1+\sqrt3}{2},\dfrac32\right]\) 变成 \(\left[\dfrac12+\dfrac{\sqrt3}{2},\dfrac32\right]\) 之类的错误形式。</strong></li>
+        <li><strong>把三个角化成一个角</strong>（本题是 \(A\)）是求范围的通用手法。</li>
+        <li>展开 \(\cos\left(\dfrac{2\pi}{3}-A\right)\) 后用辅助角公式合并，这是"三角式求和范围"的标准套路。</li>
+        <li><strong>注意端点的开闭：</strong>\(A=\dfrac{\pi}{3}\) 在区间内，所以最大值 \(\dfrac32\) <strong>可以取到</strong>（闭）；而 \(A=\dfrac{\pi}{6}\)、\(A=\dfrac{\pi}{2}\) 取不到，所以下端点<strong>开</strong>。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 9 · 2021 新高考II卷</span>
+    <p>在 \(\triangle ABC\) 中，角 \(A\)、\(B\)、\(C\) 所对的边长分别为 \(a\)、\(b\)、\(c\)，\(b=a+1\)，\(c=a+2\)。</p>
+    <p>（1）若 \(2\sin C=3\sin A\)，求 \(\triangle ABC\) 的面积；</p>
+    <p>（2）是否存在正整数 \(a\)，使得 \(\triangle ABC\) 为钝角三角形？若存在，求出 \(a\) 的值；若不存在，说明理由。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：用正弦定理把角的关系变成边的关系。</strong>由正弦定理 \(\dfrac{\sin C}{\sin A}=\dfrac{c}{a}\)。已知 \(2\sin C=3\sin A\)，即 \(\dfrac{\sin C}{\sin A}=\dfrac32\)，所以：</p>
+    <div class="formula">
+      \[ \frac ca=\frac32 \]
+    </div>
+    <p>代入 \(c=a+2\)：</p>
+    <div class="formula">
+      \[ \frac{a+2}{a}=\frac32 \quad\Longrightarrow\quad 2a+4=3a \quad\Longrightarrow\quad a=4 \]
+    </div>
+    <p>所以 \(b=5\)、\(c=6\)。</p>
+
+    <p><strong>第二步：用余弦定理求一个角，再算面积。</strong>先用余弦定理求 \(\cos B\)：</p>
+    <div class="formula">
+      \[ \cos B=\frac{a^{2}+c^{2}-b^{2}}{2ac}=\frac{16+36-25}{2\times4\times6}=\frac{27}{48}=\frac{9}{16} \]
+    </div>
+    <p>所以 \(\sin B=\sqrt{1-\dfrac{81}{256}}=\sqrt{\dfrac{175}{256}}=\dfrac{5\sqrt7}{16}\)。</p>
+    <p>面积：</p>
+    <div class="formula">
+      \[ S=\frac12 ac\sin B=\frac12\times4\times6\times\frac{5\sqrt7}{16}=12\times\frac{5\sqrt7}{16}=\frac{15\sqrt7}{4} \]
+    </div>
+    <div class="formula">
+      \[ \boxed{\ S=\frac{15\sqrt7}{4}\ } \]
+    </div>
+
+    <p><strong>（2）第一步：确定最大边。</strong>因为 \(c=a+2>b=a+1>a\)（\(a>0\)），所以 \(c\) 是最大边。</p>
+
+    <p><strong>第二步：三角形存在的条件。</strong>三边要能构成三角形，需要 \(a+b>c\)：</p>
+    <div class="formula">
+      \[ a+(a+1)>a+2 \quad\Longrightarrow\quad a>1 \]
+    </div>
+    <p>因为 \(a\) 是正整数，所以 \(a\ge2\)。</p>
+
+    <p><strong>第三步：钝角三角形的条件。</strong>三角形为钝角三角形，当且仅当<strong>最大边所对的角是钝角</strong>，即 \(c\) 所对的角 \(C\) 满足 \(C>\dfrac{\pi}{2}\)。</p>
+    <p>由余弦定理，\(C>\dfrac{\pi}{2}\) 等价于 \(\cos C&lt;0\)，即：</p>
+    <div class="formula">
+      \[ \cos C=\frac{a^{2}+b^{2}-c^{2}}{2ab}&lt;0 \quad\Longleftrightarrow\quad c^{2}>a^{2}+b^{2} \]
+    </div>
+    <p>代入 \(b=a+1\)、\(c=a+2\)：</p>
+    <div class="formula">
+      \[ (a+2)^{2}>a^{2}+(a+1)^{2} \]
+    </div>
+    <div class="formula">
+      \[ a^{2}+4a+4>a^{2}+a^{2}+2a+1 \]
+    </div>
+    <div class="formula">
+      \[ 4a+4>a^{2}+2a+1 \quad\Longrightarrow\quad 0>a^{2}-2a-3 \quad\Longrightarrow\quad (a-3)(a+1)&lt;0 \]
+    </div>
+    <p>所以 \(-1&lt;a&lt;3\)。</p>
+
+    <p><strong>第四步：取正整数解。</strong>结合 \(a\ge2\)：</p>
+    <div class="formula">
+      \[ a=2 \]
+    </div>
+    <p><strong>验证：</strong>\(a=2\) 时三边为 \(2,3,4\)。检查三角形不等式：\(2+3=5>4\) ✓；检查钝角：\(4^{2}=16>2^{2}+3^{2}=13\) ✓</p>
+
+    <div class="formula">
+      \[ \boxed{\ \text{存在，}a=2\ } \]
+    </div>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>"钝角三角形"的判定用最大边：</strong>只要最大边的平方大于另外两边的平方和，就是钝角三角形。不需要真的去算哪个角。</li>
+        <li><strong>必须先检查三角形存在（\(a+b>c\)）</strong>，否则解出来的 \(a\) 可能构不成三角形。</li>
+        <li>本题也可以用海伦公式算面积，但<strong>用余弦定理求一个角再算面积更快</strong>——因为 \(\sin B\) 可以直接由 \(\cos B\) 得到。</li>
+        <li>解不等式 \((a-3)(a+1)&lt;0\) 得到 \(-1&lt;a&lt;3\)，再与 \(a\ge2\) 取交集，这一步要写清楚。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 10 · 2024 北京卷</span>
+    <p>在 \(\triangle ABC\) 中，内角 \(A\)、\(B\)、\(C\) 的对边分别为 \(a\)、\(b\)、\(c\)，\(\angle A\) 为钝角，\(a=7\)，\(\sin 2B=\dfrac{\sqrt3}{7}b\cos B\)。</p>
+    <p>（1）求 \(\angle A\)；</p>
+    <p>（2）从下列三个条件中选择一个作为已知，使得 \(\triangle ABC\) 存在，求 \(\triangle ABC\) 的面积。</p>
+    <p>① \(b=7\)；　② \(\cos B=\dfrac{13}{14}\)；　③ \(c\sin A=\dfrac{5\sqrt3}{2}\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：化简已知条件。</strong>用二倍角公式 \(\sin 2B=2\sin B\cos B\)：</p>
+    <div class="formula">
+      \[ 2\sin B\cos B=\frac{\sqrt3}{7}b\cos B \]
+    </div>
+    <p>因为 \(\angle A\) 为钝角，所以 \(A>\dfrac{\pi}{2}\)，从而 \(B+C&lt;\dfrac{\pi}{2}\)，故 \(B&lt;\dfrac{\pi}{2}\)，于是 \(\cos B\ne0\)。两边约去 \(\cos B\)：</p>
+    <div class="formula">
+      \[ 2\sin B=\frac{\sqrt3}{7}b \tag{①} \]
+    </div>
+
+    <p><strong>第二步：用正弦定理把 \(b\) 换成 \(\sin B\)。</strong>由 \(\dfrac{a}{\sin A}=\dfrac{b}{\sin B}\)，得 \(b=\dfrac{a\sin B}{\sin A}=\dfrac{7\sin B}{\sin A}\)。代入①：</p>
+    <div class="formula">
+      \[ 2\sin B=\frac{\sqrt3}{7}\cdot\frac{7\sin B}{\sin A}=\frac{\sqrt3\sin B}{\sin A} \]
+    </div>
+    <p>因为 \(B\in(0,\pi)\) 所以 \(\sin B>0\)，两边约去 \(\sin B\)：</p>
+    <div class="formula">
+      \[ 2=\frac{\sqrt3}{\sin A} \quad\Longrightarrow\quad \sin A=\frac{\sqrt3}{2} \]
+    </div>
+
+    <p><strong>第三步：用"钝角"确定 \(A\)。</strong>\(\sin A=\dfrac{\sqrt3}{2}\) 给出 \(A=\dfrac{\pi}{3}\) 或 \(A=\dfrac{2\pi}{3}\)。因为 \(A\) 是钝角（\(A>\dfrac{\pi}{2}\)），所以：</p>
+    <div class="formula">
+      \[ \boxed{\ A=\frac{2\pi}{3}=120^{\circ}\ } \]
+    </div>
+
+    <p><strong>（2）条件①：\(b=7\)。</strong></p>
+    <p>此时 \(a=b=7\)，所以 \(A=B\)。但 \(A=\dfrac{2\pi}{3}\)，于是 \(B=\dfrac{2\pi}{3}\)，两个角之和已经 \(\dfrac{4\pi}{3}>\pi\)，<strong>矛盾</strong>。</p>
+    <p>所以条件①<strong>不能</strong>使三角形存在。</p>
+
+    <p><strong>条件②：\(\cos B=\dfrac{13}{14}\)。</strong></p>
+    <p><strong>第一步：求 \(\sin B\)。</strong>因为 \(B&lt;\dfrac{\pi}{2}\)（由 \(A\) 钝角），所以 \(\sin B>0\)：</p>
+    <div class="formula">
+      \[ \sin B=\sqrt{1-\left(\frac{13}{14}\right)^{2}}=\sqrt{\frac{196-169}{196}}=\sqrt{\frac{27}{196}}=\frac{3\sqrt3}{14} \]
+    </div>
+
+    <p><strong>第二步：用正弦定理求 \(b\)。</strong></p>
+    <div class="formula">
+      \[ b=\frac{a\sin B}{\sin A}=7\times\frac{\frac{3\sqrt3}{14}}{\frac{\sqrt3}{2}}=7\times\frac{3\sqrt3}{14}\times\frac{2}{\sqrt3}=7\times\frac37=3 \]
+    </div>
+
+    <p><strong>第三步：求 \(C\) 和 \(c\)。</strong></p>
+    <div class="formula">
+      \[ C=\pi-A-B=\pi-\frac{2\pi}{3}-B=\frac{\pi}{3}-B \]
+    </div>
+    <div class="formula">
+      \[
+      \begin{aligned}
+      \sin C &=\sin\left(\frac{\pi}{3}-B\right)=\sin\frac{\pi}{3}\cos B-\cos\frac{\pi}{3}\sin B \\
+      &=\frac{\sqrt3}{2}\times\frac{13}{14}-\frac12\times\frac{3\sqrt3}{14}=\frac{13\sqrt3}{28}-\frac{3\sqrt3}{28}=\frac{10\sqrt3}{28}=\frac{5\sqrt3}{14}
+      \end{aligned}
+      \]
+    </div>
+    <div class="formula">
+      \[ c=\frac{a\sin C}{\sin A}=7\times\frac{\frac{5\sqrt3}{14}}{\frac{\sqrt3}{2}}=7\times\frac{5\sqrt3}{14}\times\frac{2}{\sqrt3}=7\times\frac57=5 \]
+    </div>
+
+    <p><strong>第四步：求面积。</strong></p>
+    <div class="formula">
+      \[ S=\frac12 ab\sin C=\frac12\times7\times3\times\frac{5\sqrt3}{14}=\frac{21}{2}\times\frac{5\sqrt3}{14}=\frac{105\sqrt3}{28}=\frac{15\sqrt3}{4} \]
+    </div>
+    <p>所以条件②给出 \(\boxed{S=\dfrac{15\sqrt3}{4}}\)。</p>
+
+    <p><strong>条件③：\(c\sin A=\dfrac{5\sqrt3}{2}\)。</strong></p>
+    <p><strong>第一步：求 \(c\)。</strong>因为 \(\sin A=\dfrac{\sqrt3}{2}\)：</p>
+    <div class="formula">
+      \[ c\cdot\frac{\sqrt3}{2}=\frac{5\sqrt3}{2} \quad\Longrightarrow\quad c=5 \]
+    </div>
+    <p><strong>第二步：求 \(b\) 和 \(B\)。</strong>由正弦定理 \(\dfrac{b}{\sin B}=\dfrac{c}{\sin C}\)，而 \(\dfrac{a}{\sin A}=\dfrac{7}{\frac{\sqrt3}{2}}=\dfrac{14}{\sqrt3}\)。</p>
+    <p>所以 \(\dfrac{b}{\sin B}=\dfrac{14}{\sqrt3}\)，即 \(b=\dfrac{14\sin B}{\sqrt3}\)。</p>
+    <p>用余弦定理 \(a^2=b^2+c^2-2bc\cos A\)：</p>
+    <div class="formula">
+      \[ 49=b^{2}+25-2\times b\times5\times\left(-\frac12\right)=b^{2}+25+5b \]
+    </div>
+    <div class="formula">
+      \[ b^{2}+5b-24=0 \quad\Longrightarrow\quad (b+8)(b-3)=0 \quad\Longrightarrow\quad b=3 \]
+    </div>
+    <p>（因为 \(b>0\)，舍去 \(b=-8\)。）</p>
+    <p>这与条件②的结果一致（\(b=3\)、\(c=5\)）。所以面积也是</p>
+    <div class="formula">
+      \[ \boxed{\ S=\frac{15\sqrt3}{4}\ } \]
+    </div>
+
+    <p><strong>验算：</strong>取 \(a=7\)、\(b=3\)、\(c=5\)，检查 \(A\)：</p>
+    <div class="formula">
+      \[ \cos A=\frac{b^{2}+c^{2}-a^{2}}{2bc}=\frac{9+25-49}{2\times3\times5}=\frac{-15}{30}=-\frac12 \quad\Longrightarrow\quad A=\frac{2\pi}{3}\ \checkmark \]
+    </div>
+    <p>三边 \(3,5,7\) 满足三角形不等式（\(3+5=8>7\)）✓</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>看到 \(\sin 2B\) 与 \(\cos B\) 同时出现，先约去 \(\cos B\)</strong>（但要说明 \(\cos B\ne0\)）。这是本题的关键动作。</li>
+        <li><strong>"\(\angle A\) 为钝角"这个条件用了两次：</strong>第一次用于说明 \(\cos B\ne0\)（因为 \(B&lt;\dfrac{\pi}{2}\)），第二次用于从 \(\sin A=\dfrac{\sqrt3}{2}\) 的两个解中选出 \(A=\dfrac{2\pi}{3}\)。</li>
+        <li><strong>结构不良题的判断方法：把条件代入，看是否与已知矛盾。</strong>本题条件①导致 \(A=B\)，与 \(A\) 钝角矛盾，所以三角形不存在。</li>
+        <li>条件②和③虽然形式不同，但解出的三边相同（\(3,5,7\)），所以面积相同。这说明出题人设计了两个等价条件。</li>
+        <li>用余弦定理列方程解 \(b\) 时，注意 \(\cos A=-\dfrac12\) 是负数，<strong>"减负得正"</strong>。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 11 · 2020 新高考I卷（结构不良题）</span>
+    <p>在条件 ① \(ac=\sqrt3\)，② \(c\sin A=3\)，③ \(c=\sqrt3\,b\) 这三个条件中任选一个，补充在下面问题中。若问题中的三角形存在，求 \(c\) 的值；若问题中的三角形不存在，说明理由。</p>
+    <p><strong>问题：</strong>是否存在 \(\triangle ABC\)，它的内角 \(A\)、\(B\)、\(C\) 的对边分别为 \(a\)、\(b\)、\(c\)，且 \(\sin A=\sqrt3\sin B\)，\(C=\dfrac{\pi}{6}\)，______？</p>
+
+    <h4>解析</h4>
+    <p><strong>共同的第一步：把公共条件翻译出来。</strong></p>
+    <p>由 \(\sin A=\sqrt3\sin B\)，用正弦定理（\(a=2R\sin A\)、\(b=2R\sin B\)）：</p>
+    <div class="formula">
+      \[ a=\sqrt3\,b \tag{甲} \]
+    </div>
+    <p>又 \(C=\dfrac{\pi}{6}\)，所以 \(A+B=\pi-\dfrac{\pi}{6}=\dfrac{5\pi}{6}\)，且 \(\sin C=\dfrac12\)。</p>
+
+    <p><strong>再求 \(A\) 和 \(B\) 的具体值（这是关键准备）。</strong>由 \(\sin A=\sqrt3\sin B\) 且 \(A+B=\dfrac{5\pi}{6}\)，得 \(A=\dfrac{5\pi}{6}-B\)：</p>
+    <div class="formula">
+      \[ \sin\left(\frac{5\pi}{6}-B\right)=\sqrt3\sin B \]
+    </div>
+    <div class="formula">
+      \[ \sin\frac{5\pi}{6}\cos B-\cos\frac{5\pi}{6}\sin B=\sqrt3\sin B \]
+    </div>
+    <div class="formula">
+      \[ \frac12\cos B+\frac{\sqrt3}{2}\sin B=\sqrt3\sin B \]
+    </div>
+    <div class="formula">
+      \[ \frac12\cos B=\frac{\sqrt3}{2}\sin B \quad\Longrightarrow\quad \tan B=\frac{1}{\sqrt3}=\frac{\sqrt3}{3} \]
+    </div>
+    <p>因为 \(B\in\left(0,\dfrac{5\pi}{6}\right)\)，所以 \(B=\dfrac{\pi}{6}\)，于是：</p>
+    <div class="formula">
+      \[ A=\frac{5\pi}{6}-\frac{\pi}{6}=\frac{2\pi}{3} \]
+    </div>
+    <p><strong>所以公共条件确定了一个形状固定的三角形：\(A=\dfrac{2\pi}{3}\)、\(B=C=\dfrac{\pi}{6}\)，即等腰三角形（\(b=c\)）。</strong></p>
+
+    <p><strong>选条件①：\(ac=\sqrt3\)。</strong></p>
+    <p>由正弦定理 \(\dfrac{a}{\sin A}=\dfrac{c}{\sin C}\)，得：</p>
+    <div class="formula">
+      \[ a=c\cdot\frac{\sin A}{\sin C}=c\cdot\frac{\frac{\sqrt3}{2}}{\frac12}=\sqrt3\,c \]
+    </div>
+    <p>代入 \(ac=\sqrt3\)：</p>
+    <div class="formula">
+      \[ \sqrt3\,c\cdot c=\sqrt3 \quad\Longrightarrow\quad c^{2}=1 \quad\Longrightarrow\quad c=1 \]
+    </div>
+    <p>（\(c>0\)，舍去负根。）</p>
+    <p><strong>检验：</strong>\(c=1\)、\(a=\sqrt3\)、\(b=\dfrac{a}{\sqrt3}=1\)。所以 \(b=c=1\) ✓ 符合 \(B=C\)。</p>
+    <div class="formula">
+      \[ \boxed{\ \text{三角形存在，}c=1\ } \]
+    </div>
+
+    <p><strong>选条件②：\(c\sin A=3\)。</strong></p>
+    <p>由 \(a=\sqrt3\,c\)（上面已得），再用正弦定理 \(c=a\cdot\dfrac{\sin C}{\sin A}=a\cdot\dfrac{\frac12}{\frac{\sqrt3}{2}}=\dfrac{a}{\sqrt3}\)，与 \(a=\sqrt3c\) 一致 ✓</p>
+    <p>由 \(c\sin A=3\)，即 \(c\cdot\dfrac{\sqrt3}{2}=3\)：</p>
+    <div class="formula">
+      \[ c=\frac{3}{\frac{\sqrt3}{2}}=\frac{6}{\sqrt3}=2\sqrt3 \]
+    </div>
+    <p><strong>检验：</strong>\(c=2\sqrt3\)、\(a=\sqrt3\times2\sqrt3=6\)、\(b=\dfrac{a}{\sqrt3}=\dfrac{6}{\sqrt3}=2\sqrt3\)。所以 \(b=c=2\sqrt3\) ✓</p>
+    <p>再验证 \(c\sin A=2\sqrt3\times\dfrac{\sqrt3}{2}=3\) ✓</p>
+    <div class="formula">
+      \[ \boxed{\ \text{三角形存在，}c=2\sqrt3\ } \]
+    </div>
+
+    <p><strong>选条件③：\(c=\sqrt3\,b\)。</strong></p>
+    <p>由正弦定理 \(\dfrac{c}{b}=\dfrac{\sin C}{\sin B}\)：</p>
+    <div class="formula">
+      \[ \frac{c}{b}=\frac{\sin C}{\sin B}=\frac{\frac12}{\sin B}=\frac{1}{2\sin B} \]
+    </div>
+    <p>已知 \(c=\sqrt3\,b\)，即 \(\dfrac cb=\sqrt3\)，所以：</p>
+    <div class="formula">
+      \[ \sqrt3=\frac{1}{2\sin B} \quad\Longrightarrow\quad \sin B=\frac{1}{2\sqrt3}=\frac{\sqrt3}{6} \]
+    </div>
+    <p>但前面已经算出 \(B=\dfrac{\pi}{6}\)，此时 \(\sin B=\dfrac12\)。<strong>两者矛盾</strong>（\(\dfrac{\sqrt3}{6}\approx0.289\ne\dfrac12=0.5\)）。</p>
+    <p>换一个角度验证：由公共条件 \(b=c\)（因为 \(B=C\)），而条件③要求 \(c=\sqrt3\,b\)，即 \(b=\sqrt3 b\)，得 \(b=0\)，与 \(b>0\) 矛盾。</p>
+    <div class="formula">
+      \[ \boxed{\ \text{三角形不存在}\ } \]
+    </div>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>结构不良题的解法：先把"公共条件"完全解出来，再逐个代入选项。</strong>本题的公共条件已经确定三角形形状（\(A=\dfrac{2\pi}{3}\)，\(B=C=\dfrac{\pi}{6}\)，即 \(b=c\)），所以三个选项的判断都很快。</li>
+        <li><strong>判断"三角形不存在"最简洁的方法：找矛盾。</strong>本题条件③要求 \(c=\sqrt3b\)，但公共条件已经推出 \(b=c\)，两者矛盾。</li>
+        <li>求 \(A\)、\(B\) 时用"和角公式展开 \(\sin\left(\dfrac{5\pi}{6}-B\right)\)"，再用 \(\tan B\) 求出 \(B\)。这是"已知两边角关系求角"的标准手法。</li>
+        <li><strong>选完条件后要"检验"</strong>，确认解出的边长确实满足所有条件（包括三角形不等式）。</li>
+        <li>三个选项中，①②都能算出确定的 \(c\)，③矛盾。这类题目的设计通常如此——有一个"陷阱选项"。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="ch8-5">8.5　提分要点总结</h3>
+
+  <div class="box proof">
+    <span class="tag">十年真题告诉我们的五件事</span>
+    <ol class="steps">
+      <li><strong>解三角形是绝对主流，必须拿满。</strong>十年里三角函数大题几乎都是解三角形。核心工具只有两个：<strong>正弦定理</strong>（边角互化）和<strong>余弦定理</strong>（已知三边或两边夹角）。</li>
+      <li><strong>"由等式求角"的两条路：统一成角，或统一成边。</strong>等式里全是 \(\sin\)、\(\cos\) 就统一成角（用正弦定理）；等式里有平方项和 \(\cos\) 就统一成边（用余弦定理）。真题 3、4、7、8 都用到了这个判断。</li>
+      <li><strong>求范围/最值的关键是"用一个角表示所有量"。</strong>把边都换成角，或者把角都换成一个角，再求这个角的范围。<strong>本题型的失分点几乎全在"角的范围没找全"。</strong></li>
+      <li><strong>"锐角三角形""钝角三角形"必须翻译成不等式。</strong>锐角三角形：三个角都小于 \(\dfrac{\pi}{2}\)（真题 3、8）；钝角三角形：最大边的平方大于另外两边平方和（真题 9）。<strong>这一步直接决定答案端点的开闭。</strong></li>
+      <li><strong>新高考的结构不良题要"先解公共条件，再逐项代入"。</strong>真题 10、11 都是这种题型。判断"不存在"的最快方法是<strong>找矛盾</strong>（如与已知角冲突、与三角形不等式冲突）。</li>
+    </ol>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">考场时间分配建议</span>
+    <ul>
+      <li><strong>解三角形大题：限时 10 分钟，目标满分。</strong>第一问 3~4 分钟（求角），第二问 5~6 分钟（求边/面积/范围）。</li>
+      <li><strong>恒等变换 + 图象题：限时 10 分钟。</strong>化简占一半时间，求性质占一半。<strong>化简不出来，后面全错</strong>，所以这一步要慢一点、检查一遍。</li>
+      <li><strong>求范围题的"保分动作"：</strong>先把目标量用一个角表示出来（这一步有分），再写这个角的范围（这一步也有分），最后才是求最值。</li>
+      <li><strong>验算技巧：</strong>把解出的边长代回余弦定理，算一遍已知角的余弦值，看是否与题目给出的一致。这 30 秒能救回整道题。</li>
+      <li><strong>常用特殊值要背熟：</strong>\(\sin 75^\circ=\dfrac{\sqrt6+\sqrt2}{4}\)、\(\sin 15^\circ=\dfrac{\sqrt6-\sqrt2}{4}\)、\(\tan 15^\circ=2-\sqrt3\)。</li>
+    </ul>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">本章真题索引（按题型查）</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>题型</th><th>真题</th><th>考查点</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="2"><strong>恒等变换 + 图象</strong></td><td>2016 北京卷（文）</td><td>二倍角 + 辅助角；周期与单调区间</td></tr>
+          <tr><td>2018 北京卷（文）</td><td>降幂 + 辅助角；区间最大值定参数</td></tr>
+          <tr><td rowspan="2"><strong>解三角形 · 求角</strong></td><td>2019 全国III卷（理）</td><td>\(\sin\frac{A+C}{2}\) 化为 \(\cos\frac B2\)；面积范围</td></tr>
+          <tr><td>2024 新高考I卷</td><td>余弦定理求 \(\cos C\)；两次求角</td></tr>
+          <tr><td rowspan="2"><strong>解三角形 · 求边与面积</strong></td><td>2019 北京卷（理）</td><td>余弦定理求边；\(\sin(B-C)\) 的符号判断</td></tr>
+          <tr><td>2021 新高考I卷</td><td>用 \(2R\) 转化；边上的点 \(D\)；两次余弦定理</td></tr>
+          <tr><td rowspan="3"><strong>解三角形 · 范围与最值</strong></td><td>2022 新高考I卷</td><td>\(\tan B\) 化简；\(\cos(A+B)=\sin B\)；换元求最小值</td></tr>
+          <tr><td>2020 浙江卷</td><td>锐角条件定 \(A\) 的范围；辅助角求范围</td></tr>
+          <tr><td>2021 新高考II卷</td><td>三边成等差；最大边判钝角；正整数解</td></tr>
+          <tr><td rowspan="2"><strong>结构不良题</strong></td><td>2024 北京卷</td><td>钝角定 \(A\)；三选一，须判断哪个条件使三角形存在</td></tr>
+          <tr><td>2020 新高考I卷</td><td>先解公共条件定形状；逐项判断存在性</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  </main>
+</div>
+
+<button class="print-btn" onclick="window.print()">打印 / 存为 PDF</button>
+
+<script>
+(function(){
+  // 公式渲染依赖 MathJax CDN（需联网）。若超时仍未就绪，提示读者。
+  var shown = false;
+  function check(){
+    var ok = window.MathJax && window.MathJax.startup && window.MathJax.startup.document;
+    if (!ok && !shown){
+      shown = true;
+      var el = document.getElementById('mathjax-warn');
+      if (el) el.style.display = 'block';
+    }
+  }
+  setTimeout(check, 4000);
+  setTimeout(check, 9000);
+})();
+</script>
+
+<script>
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('.sidenav a'));
+  if (!links.length) return;
+  var targets = links.map(function(a){
+    return document.getElementById(decodeURIComponent(a.getAttribute('href').slice(1)));
+  });
+  var ticking = false;
+  function update(){
+    ticking = false;
+    var idx = 0;
+    for (var i = 0; i < targets.length; i++){
+      if (targets[i] && targets[i].getBoundingClientRect().top <= 100) idx = i;
+    }
+    for (var j = 0; j < links.length; j++){
+      links[j].classList.toggle('active', j === idx);
+    }
+  }
+  function onScroll(){
+    if (!ticking){ ticking = true; window.requestAnimationFrame(update); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+  update();
+})();
+</script>
+</body>
+</html>

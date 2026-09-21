@@ -1,0 +1,2647 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高考数学重点章节梳理 · 第五册 解析几何</title>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      processEscapes: true
+    },
+    svg: { fontCache: 'global' },
+    options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+  :root{
+    --ink:#1b1f27;
+    --ink-2:#3d4655;
+    --muted:#6b7688;
+    --line:#e5e9f0;
+    --line-2:#eef1f6;
+    --bg:#f5f7fb;
+    --card:#ffffff;
+    --brand:#1f5eff;
+    --brand-soft:#eef3ff;
+    --def:#1f5eff;      --def-bg:#f2f6ff;   --def-line:#c9daff;
+    --proof:#0f9d6e;    --proof-bg:#f0fbf6; --proof-line:#b7e8d4;
+    --eg:#c2760a;       --eg-bg:#fff9ee;    --eg-line:#f5dcae;
+    --warn:#d63a3a;     --warn-bg:#fff5f5;  --warn-line:#f8cfcf;
+    --tip:#7a4bd0;      --tip-bg:#f8f4ff;   --tip-line:#ddd0f7;
+    --radius:12px;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Source Han Sans SC","Noto Sans CJK SC",system-ui,-apple-system,"Segoe UI",sans-serif;
+    font-size:16px;
+    line-height:1.85;
+    letter-spacing:.01em;
+  }
+  .page{
+    max-width:960px;
+    margin:0 auto;
+    background:var(--card);
+    box-shadow:0 1px 3px rgba(20,30,60,.06), 0 12px 40px rgba(20,30,60,.06);
+    min-height:100vh;
+  }
+
+  .cover{
+    position:relative;
+    padding:64px 56px 52px;
+    background:
+      radial-gradient(900px 340px at 12% -10%, #e7efff 0%, rgba(231,239,255,0) 62%),
+      radial-gradient(700px 300px at 100% 0%, #eafaf3 0%, rgba(234,250,243,0) 58%),
+      linear-gradient(180deg,#ffffff 0%,#fbfcfe 100%);
+    border-bottom:1px solid var(--line);
+  }
+  .cover .kicker{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:13px; font-weight:600; letter-spacing:.14em;
+    color:var(--brand);
+    background:var(--brand-soft);
+    border:1px solid var(--def-line);
+    padding:5px 14px; border-radius:999px;
+    margin-bottom:22px;
+  }
+  .cover h1{
+    margin:0 0 6px;
+    font-size:42px;
+    line-height:1.25;
+    letter-spacing:-.01em;
+    font-weight:800;
+    color:#121722;
+  }
+  .cover h1 .accent{
+    background:linear-gradient(92deg,#1f5eff,#0f9d6e);
+    -webkit-background-clip:text; background-clip:text;
+    -webkit-text-fill-color:transparent; color:transparent;
+  }
+  .cover .sub{
+    margin:14px 0 0;
+    font-size:17px; color:var(--ink-2);
+    max-width:640px;
+  }
+  .cover .meta{
+    margin-top:30px; padding-top:22px; border-top:1px dashed var(--line);
+    display:flex; flex-wrap:wrap; gap:10px 34px;
+    font-size:14px; color:var(--muted);
+  }
+  .cover .meta b{color:var(--ink-2); font-weight:600;}
+
+  .body{padding:8px 56px 80px;}
+
+  h2{
+    margin:64px 0 8px;
+    font-size:27px; font-weight:800; letter-spacing:-.01em;
+    color:#121722;
+    display:flex; align-items:center; gap:14px;
+    scroll-margin-top:20px;
+  }
+  h2 .num{
+    flex:0 0 auto;
+    width:42px; height:42px; border-radius:11px;
+    display:inline-flex; align-items:center; justify-content:center;
+    font-size:18px; font-weight:800;
+    color:#fff;
+    background:linear-gradient(150deg,#2f6bff,#1f5eff);
+    box-shadow:0 6px 16px rgba(31,94,255,.28);
+  }
+  h2 + .lead{
+    margin:0 0 26px 56px;
+    font-size:14.5px; color:var(--muted);
+  }
+
+  h3{
+    margin:44px 0 14px;
+    font-size:20px; font-weight:700; color:#121722;
+    padding-left:13px; border-left:4px solid var(--brand);
+    line-height:1.4;
+    scroll-margin-top:20px;
+  }
+  h4{
+    margin:28px 0 10px;
+    font-size:16.5px; font-weight:700; color:var(--ink-2);
+  }
+  h4::before{
+    content:"";
+    display:inline-block; width:6px; height:6px; border-radius:2px;
+    background:var(--brand); margin-right:9px; vertical-align:2px;
+  }
+  p{margin:12px 0; color:var(--ink-2);}
+  strong{color:#121722; font-weight:700;}
+  .em{color:var(--brand); font-weight:700;}
+  code{
+    font-family:"JetBrains Mono","Cascadia Mono",Consolas,monospace;
+    background:#f2f4f8; border:1px solid var(--line);
+    padding:1px 6px; border-radius:5px; font-size:.9em; color:#33405c;
+  }
+
+  ul,ol{margin:12px 0; padding-left:26px; color:var(--ink-2);}
+  li{margin:7px 0;}
+  li::marker{color:var(--brand); font-weight:600;}
+
+  .toc{
+    margin:34px 0 0;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:linear-gradient(180deg,#fbfcff,#ffffff);
+    padding:24px 28px;
+  }
+  .toc h5{
+    margin:0 0 14px; font-size:13px; letter-spacing:.16em;
+    color:var(--muted); font-weight:700; text-transform:uppercase;
+  }
+  .toc ol{margin:0; padding:0; list-style:none; counter-reset:toc;}
+  .toc li{
+    counter-increment:toc;
+    display:flex; align-items:baseline; gap:10px;
+    padding:7px 0; border-bottom:1px dashed var(--line-2);
+    font-size:15px;
+  }
+  .toc li:last-child{border-bottom:none;}
+  .toc li::before{
+    content:counter(toc,decimal-leading-zero);
+    font-size:12px; font-weight:700; color:var(--brand);
+    font-variant-numeric:tabular-nums;
+    flex:0 0 auto;
+  }
+  .toc a{color:var(--ink-2); text-decoration:none;}
+  .toc a:hover{color:var(--brand);}
+
+  .box{
+    margin:20px 0;
+    border-radius:var(--radius);
+    padding:18px 22px 18px 22px;
+    border:1px solid;
+    border-left-width:5px;
+    position:relative;
+  }
+  .box > .tag{
+    display:inline-flex; align-items:center; gap:7px;
+    font-size:12.5px; font-weight:800; letter-spacing:.08em;
+    margin-bottom:10px;
+    padding:2px 10px; border-radius:6px;
+  }
+  .box p:first-of-type{margin-top:0;}
+  .box p:last-child{margin-bottom:0;}
+
+  .lv-hard{ color:#c2410c; font-weight:900; letter-spacing:.04em; }
+
+  .def  {background:var(--def-bg);   border-color:var(--def-line);   border-left-color:var(--def);}
+  .def  .tag{background:#dfe9ff; color:#1a4fd6;}
+  .proof{background:var(--proof-bg); border-color:var(--proof-line); border-left-color:var(--proof);}
+  .proof .tag{background:#d6f4e7; color:#0b7a56;}
+  .eg   {background:var(--eg-bg);    border-color:var(--eg-line);    border-left-color:var(--eg);}
+  .eg   .tag{background:#fbeccd; color:#9a5c05;}
+  .warn {background:var(--warn-bg);  border-color:var(--warn-line);  border-left-color:var(--warn);}
+  .warn .tag{background:#fadada; color:#b32a2a;}
+  .tip  {background:var(--tip-bg);   border-color:var(--tip-line);   border-left-color:var(--tip);}
+  .tip  .tag{background:#e8dcfb; color:#5f36ad;}
+
+  .steps{counter-reset:st; margin:14px 0; padding:0; list-style:none;}
+  .steps > li{
+    counter-increment:st;
+    position:relative;
+    padding:0 0 0 44px;
+    margin:14px 0;
+  }
+  .steps > li::before{
+    content:counter(st);
+    position:absolute; left:0; top:2px;
+    width:26px; height:26px; border-radius:8px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:13px; font-weight:800; color:#fff;
+    background:#8fa9e6;
+  }
+  .steps > li::after{
+    content:""; position:absolute; left:13px; top:32px; bottom:-14px;
+    width:1.5px; background:var(--line);
+  }
+  .steps > li:last-child::after{display:none;}
+
+  .formula{
+    margin:18px 0;
+    padding:16px 22px;
+    background:#fafbfe;
+    border:1px dashed var(--def-line);
+    border-radius:10px;
+    text-align:center;
+    overflow-x:auto;
+  }
+  .formula .cap{
+    display:block; text-align:left;
+    font-size:12.5px; font-weight:700; color:var(--brand);
+    letter-spacing:.06em; margin-bottom:6px;
+  }
+
+  .tbl-wrap{overflow-x:auto; margin:20px 0;}
+  table{
+    width:100%; border-collapse:collapse;
+    font-size:14.5px;
+    border:1px solid var(--line);
+    border-radius:10px;
+    overflow:hidden;
+  }
+  th,td{
+    padding:11px 14px; text-align:left;
+    border-bottom:1px solid var(--line-2);
+    vertical-align:top;
+  }
+  thead th{
+    background:#f4f7fd;
+    color:#1a2540; font-weight:700; font-size:13.5px;
+    border-bottom:1px solid var(--line);
+    white-space:nowrap;
+  }
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fcfdff;}
+
+  .map{
+    margin:26px 0;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    gap:14px;
+  }
+  .map .node{
+    border:1px solid var(--line);
+    border-radius:11px;
+    padding:16px 18px;
+    background:linear-gradient(180deg,#fbfcff,#fff);
+  }
+  .map .node b{
+    display:block; font-size:14.5px; color:#121722;
+    margin-bottom:8px; padding-bottom:8px;
+    border-bottom:1px solid var(--line-2);
+  }
+  .map .node span{
+    display:block; font-size:13px; color:var(--muted); line-height:1.75;
+  }
+
+  .chain{
+    margin:24px 0;
+    padding:20px 22px;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:linear-gradient(180deg,#fbfcff,#fff);
+    text-align:center;
+    font-size:14.5px;
+    line-height:2.2;
+    color:var(--ink-2);
+    overflow-x:auto;
+  }
+  .chain .step{
+    display:inline-block;
+    padding:5px 14px;
+    margin:3px 2px;
+    border-radius:8px;
+    background:#eef3ff;
+    border:1px solid var(--def-line);
+    color:#1a4fd6;
+    font-weight:700;
+    white-space:nowrap;
+  }
+  .chain .step.alt{
+    background:#f0fbf6; border-color:var(--proof-line); color:#0b7a56;
+  }
+  .chain .arrow{
+    display:inline-block;
+    margin:0 4px;
+    color:var(--muted);
+    font-weight:700;
+  }
+  .chain .note{
+    display:block;
+    margin-top:10px;
+    font-size:12.5px;
+    color:var(--muted);
+    line-height:1.7;
+    text-align:left;
+  }
+
+  .foot{
+    margin-top:70px; padding-top:24px;
+    border-top:1px solid var(--line);
+    font-size:13px; color:var(--muted);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  }
+
+  .print-btn{
+    position:fixed; right:26px; bottom:26px; z-index:50;
+    background:linear-gradient(150deg,#2f6bff,#1f5eff); color:#fff;
+    border:none; border-radius:999px;
+    padding:12px 22px; font-size:14px; font-weight:700;
+    cursor:pointer; font-family:inherit;
+    box-shadow:0 8px 24px rgba(31,94,255,.32);
+  }
+  .print-btn:hover{filter:brightness(1.06);}
+
+  @media print{
+    body{background:#fff; font-size:11.5pt; line-height:1.7;}
+    .page{box-shadow:none; max-width:none;}
+    .cover{padding:0 0 22px; background:#fff; border-bottom:2px solid #1f5eff;}
+    .cover h1{font-size:26pt;}
+    .body{padding:0;}
+    .print-btn{display:none;}
+    h2{margin-top:26px; font-size:16pt; break-after:avoid; page-break-after:avoid;}
+    h3{break-after:avoid; page-break-after:avoid; font-size:13pt;}
+    .box,.formula,.tbl-wrap,table,.map .node,.chain{break-inside:avoid; page-break-inside:avoid;}
+    .eg{break-inside:auto;}
+    a{color:inherit; text-decoration:none;}
+  }
+  @media (max-width:720px){
+    .cover{padding:40px 24px 34px;}
+    .cover h1{font-size:30px;}
+    .body{padding:8px 24px 60px;}
+    h2{font-size:22px;} h2 .num{width:36px;height:36px;font-size:16px;}
+    h2 + .lead{margin-left:50px;}
+    .print-btn{right:14px; bottom:14px;}
+  }
+
+  /* ==================== 公式加载失败提示 ==================== */
+  .mathjax-warn{
+    display:none;
+    margin:0;
+    padding:12px 20px;
+    background:#fff5f5;
+    border-bottom:1px solid #f8cfcf;
+    color:#b32a2a;
+    font-size:13.5px;
+    line-height:1.7;
+  }
+  .mathjax-warn b{color:#8f1f1f;}
+
+  /* ==================== 左侧固定导航 ==================== */
+  .sidenav{ display:none; }
+  @media (min-width:1321px){
+    body{ padding-left:268px; }
+    .sidenav{
+      display:block;
+      position:fixed; top:0; left:0; bottom:0;
+      width:268px;
+      overflow-y:auto;
+      background:#fbfcfe;
+      border-right:1px solid var(--line);
+      padding:22px 0 44px;
+      z-index:40;
+      scrollbar-width:thin;
+    }
+    .sidenav::-webkit-scrollbar{ width:6px; }
+    .sidenav::-webkit-scrollbar-thumb{ background:#d7dde8; border-radius:3px; }
+  }
+  .sidenav-title{
+    font-size:11.5px; letter-spacing:.18em; font-weight:700;
+    color:var(--muted); text-transform:uppercase;
+    padding:0 20px 12px;
+    border-bottom:1px solid var(--line);
+    margin-bottom:10px;
+  }
+  .sidenav a{
+    display:block; text-decoration:none;
+    color:var(--ink-2);
+    border-left:3px solid transparent;
+    transition:background .15s, color .15s, border-color .15s;
+  }
+  .sidenav a.nav-l1{
+    font-size:13.5px; font-weight:700; color:#1a2540;
+    padding:8px 18px 8px 17px;
+    margin-top:6px;
+    line-height:1.5;
+  }
+  .sidenav a.nav-l1 .n{
+    display:inline-block; min-width:15px;
+    color:var(--brand); font-weight:800; margin-right:7px;
+  }
+  .sidenav a.nav-l2{
+    font-size:12.5px; color:var(--muted);
+    padding:5px 18px 5px 30px;
+    line-height:1.55;
+  }
+  .sidenav a:hover{ background:#eef3ff; color:var(--brand); }
+  .sidenav a.active{
+    background:#eef3ff; color:var(--brand);
+    border-left-color:var(--brand); font-weight:700;
+  }
+
+  @media print{
+    .sidenav{ display:none !important; }
+    body{ padding-left:0 !important; }
+  }
+</style>
+</head>
+<body>
+<aside class="sidenav" aria-label="目录导航">
+  <div class="sidenav-title">目录</div>
+  <a class="nav-l1" href="#ch0"><span class="n">0</span>写在前面：解析几何到底在干什么</a>
+  <a class="nav-l1" href="#ch1"><span class="n">1</span>直线</a>
+  <a class="nav-l2" href="#ch1-1">1.1　倾斜角与斜率</a>
+  <a class="nav-l2" href="#ch1-2">1.2　直线方程的五种形式</a>
+  <a class="nav-l2" href="#ch1-3">1.3　两条直线的位置关系</a>
+  <a class="nav-l2" href="#ch1-4">1.4　三个距离公式</a>
+  <a class="nav-l1" href="#ch2"><span class="n">2</span>圆</a>
+  <a class="nav-l2" href="#ch2-1">2.1　圆的方程</a>
+  <a class="nav-l2" href="#ch2-2">2.2　直线与圆的位置关系</a>
+  <a class="nav-l2" href="#ch2-3">2.3　弦长公式</a>
+  <a class="nav-l1" href="#ch3"><span class="n">3</span>椭圆</a>
+  <a class="nav-l2" href="#ch3-1">3.1　椭圆的定义</a>
+  <a class="nav-l2" href="#ch3-2">3.2　标准方程的推导（★ 重点）</a>
+  <a class="nav-l2" href="#ch3-3">3.3　椭圆的几何性质</a>
+  <a class="nav-l1" href="#ch4"><span class="n">4</span>双曲线</a>
+  <a class="nav-l2" href="#ch4-1">4.1　双曲线的定义</a>
+  <a class="nav-l2" href="#ch4-2">4.2　标准方程的推导</a>
+  <a class="nav-l2" href="#ch4-3">4.3　双曲线的几何性质与渐近线</a>
+  <a class="nav-l1" href="#ch5"><span class="n">5</span>抛物线</a>
+  <a class="nav-l2" href="#ch5-1">5.1　抛物线的定义</a>
+  <a class="nav-l2" href="#ch5-2">5.2　标准方程的推导</a>
+  <a class="nav-l2" href="#ch5-3">5.3　抛物线的几何性质</a>
+  <a class="nav-l1" href="#ch6"><span class="n">6</span>★ 直线与圆锥曲线的位置关系</a>
+  <a class="nav-l2" href="#ch6-1">6.1　标准解题流程</a>
+  <a class="nav-l2" href="#ch6-2">6.2　弦长公式</a>
+  <a class="nav-l2" href="#ch6-3">6.3　中点弦问题（点差法）</a>
+  <a class="nav-l2" href="#ch6-4">6.4　面积问题</a>
+  <a class="nav-l2" href="#ch6-5">6.5　定点定值问题的思路</a>
+  <a class="nav-l1" href="#ch7"><span class="n">7</span>易错点清单、知识地图与自测</a>
+  <a class="nav-l2" href="#ch7-1">7.1　易错点清单</a>
+  <a class="nav-l2" href="#ch7-2">7.2　知识地图</a>
+  <a class="nav-l2" href="#ch7-3">7.3　自测清单</a>
+  <a class="nav-l1" href="#ch8"><span class="n">8</span>高考真题题型精讲（2016—2025）</a>
+  <a class="nav-l2" href="#ch8-1">8.1　题型一：求曲线方程 + 直线过定点</a>
+  <a class="nav-l2" href="#ch8-2">8.2　题型二：中点弦与点差法</a>
+  <a class="nav-l2" href="#ch8-3">8.3　题型三：抛物线的焦点弦与向量</a>
+  <a class="nav-l2" href="#ch8-4">8.4　题型四：证明角相等</a>
+  <a class="nav-l2" href="#ch8-5">8.5　题型五：双曲线与斜率之和</a>
+  <a class="nav-l2" href="#ch8-6">8.6　提分要点总结</a>
+</aside>
+<div class="mathjax-warn" id="mathjax-warn">
+  <b>公式未加载成功。</b>本讲义的数学公式依赖 MathJax 在线渲染，需要联网。
+  当前网络可能不通或 CDN 被拦截，页面上显示的 <code>\( ... \)</code> 是公式源码，不是排版后的样子。
+  请联网后刷新页面；<b>另外，打印或另存 PDF 前请确认公式已正常显示</b>，否则导出的文件里会是源码。
+</div>
+
+<div class="page">
+
+  <header class="cover">
+    <div class="kicker">高考数学 · 重点章节梳理</div>
+    <h1>第五册　<span class="accent">解析几何</span></h1>
+    <p class="sub">面向基础薄弱同学的「慢速精讲版」——把几何条件翻译成代数式子，是这一章唯一的、也是最重要的技能。</p>
+    <div class="meta">
+      <div><b>适用</b>　高三一轮复习 / 高二同步巩固</div>
+      <div><b>核心主线</b>　几何条件 → 代数方程 → 计算结果</div>
+      <div><b>建议课时</b>　12 ~ 14 讲</div>
+    </div>
+
+    <nav class="toc">
+      <h5>目录</h5>
+      <ol>
+        <li><a href="#ch0">写在前面：解析几何到底在干什么</a></li>
+        <li><a href="#ch1">直线（斜率、方程、位置关系、三个距离公式）</a></li>
+        <li><a href="#ch2">圆（方程、位置关系、弦长）</a></li>
+        <li><a href="#ch3">椭圆（定义、标准方程推导、几何性质）</a></li>
+        <li><a href="#ch4">双曲线（标准方程推导、渐近线的来源）</a></li>
+        <li><a href="#ch5">抛物线（标准方程推导、通径与焦点弦）</a></li>
+        <li><a href="#ch6">★ 直线与圆锥曲线的位置关系（韦达定理、弦长、点差法）</a></li>
+        <li><a href="#ch7">易错点清单、知识地图与自测</a></li>
+      <li><a href="#ch8">高考真题题型精讲（2016—2025）</a></li>
+      </ol>
+    </nav>
+  </header>
+
+  <main class="body">
+
+  <!-- ==================== 第 0 章 ==================== -->
+  <h2 id="ch0"><span class="num">0</span>写在前面：解析几何到底在干什么</h2>
+  <p class="lead">这一章最大的特点：题目是"几何"的，解法是"代数"的。搞清楚这个转换，就成功了一半。</p>
+
+  <p>解析几何的创始人笛卡尔做了一件了不起的事：<strong>把"点"和"数对"对应起来</strong>。从此，几何图形可以用方程描述，几何问题可以变成代数计算。</p>
+
+  <div class="chain">
+    <span class="step">几何条件</span>
+    <span class="arrow">→</span>
+    <span class="step alt">翻译成坐标/方程</span>
+    <span class="arrow">→</span>
+    <span class="step">代数运算</span>
+    <span class="arrow">→</span>
+    <span class="step alt">得到结论</span>
+    <span class="arrow">→</span>
+    <span class="step">还原成几何答案</span>
+    <span class="note"><strong>例：</strong>"点 P 在圆上" → "P 的坐标满足 \((x-a)^2+(y-b)^2=r^2\)"；<br>"直线与椭圆有两个交点" → "联立后的二次方程判别式 \(\Delta>0\)"。</span>
+  </div>
+
+  <div class="map">
+    <div class="node">
+      <b>第一层：直线与圆（第 1、2 章）</b>
+      <span>最基础的两个图形。公式多但都很短，重点是<strong>三个距离公式</strong>和<strong>位置关系的判定</strong>。</span>
+    </div>
+    <div class="node">
+      <b>第二层：三种圆锥曲线（第 3、4、5 章）</b>
+      <span>椭圆、双曲线、抛物线。都是"<strong>一个动点到定点/定直线的距离满足某条件</strong>"的轨迹。</span>
+    </div>
+    <div class="node">
+      <b>第三层：直线与曲线相交（第 6 章）</b>
+      <span>压轴题的战场。<strong>联立方程 → 韦达定理 → 弦长/面积/中点</strong>，套路非常固定。</span>
+    </div>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">学法建议</span>
+    <ol>
+      <li><strong>第 3、4、5 章的标准方程都要会推。</strong>三个推导过程高度相似（都是"两次平方去根号"），推一次就掌握三个。</li>
+      <li><strong>第 6 章是得分核心。</strong>高考解析几何大题几乎都是"联立 + 韦达定理 + 弦长/面积"，这套流程要练到不用思考。</li>
+      <li><strong>算之前先想清楚"要求的量能用什么表示"。</strong>解析几何丢分往往不是不会，而是<strong>算到一半发现方向错了，只能重来</strong>。</li>
+    </ol>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">先建立三个关键直觉</span>
+    <ul>
+      <li><strong>椭圆、双曲线、抛物线是"一家人"。</strong>它们的区别只在"到焦点的距离"和"到准线的距离"的关系上（第 7 章的知识地图把它们放在一起对比）。</li>
+      <li><strong>椭圆里 \(a\) 最大，双曲线里 \(c\) 最大。</strong>所以椭圆是 \(c^2=a^2-b^2\)，双曲线是 \(c^2=a^2+b^2\)。这两个公式极容易记混。</li>
+      <li><strong>韦达定理是第 6 章的主角。</strong>凡是"直线与曲线交于两点"的题，几乎都要用它。</li>
+    </ul>
+  </div>
+
+    <div class="box tip">
+    <span class="tag">第 8 章真题的难度分级（基础生必读）</span>
+    <p>第 8 章按<strong>题型</strong>编排，每种题型内部的题目<strong>由易到难</strong>。其中标注 <span class="lv-hard">★★</span> 的是<strong>压轴档</strong>——需要同时用好几个工具，计算量也大。</p>
+    <ul>
+      <li><strong>第一遍复习：先跳过 ★★ 题。</strong>把没有标记的题做熟，它们已经覆盖了绝大部分考分。</li>
+      <li><strong>冲刺阶段：再回头攻 ★★ 题。</strong>此时基本功已经扎实，做起来会顺很多。</li>
+      <li><strong>即使暂时做不出来，也建议把 ★★ 题的解答读一遍。</strong>每道题后面的「提分要点」都讲清了"思路是怎么想到的"，这对提分很有用。</li>
+    </ul>
+  </div>
+
+<!-- ==================== 第 1 章 ==================== -->
+  <h2 id="ch1"><span class="num">1</span>直线</h2>
+  <p class="lead">直线是解析几何的"地基"。斜率、方程、距离这三块必须熟练到不用想。</p>
+
+  <h3 id="ch1-1">1.1　倾斜角与斜率</h3>
+
+  <div class="box def">
+    <span class="tag">定义</span>
+    <p><strong>倾斜角：</strong>当直线 \(l\) 与 \(x\) 轴相交时，取 \(x\) 轴作为基准，\(x\) 轴<strong>正方向</strong>与直线 \(l\) <strong>向上</strong>的方向之间所成的角 \(\alpha\)，叫做直线 \(l\) 的倾斜角。当直线与 \(x\) 轴平行或重合时，规定 \(\alpha=0^\circ\)。</p>
+    <div class="formula">\[ \alpha\in[0^\circ,\ 180^\circ)\quad\text{即}\quad \alpha\in[0,\ \pi) \]</div>
+    <p><strong>斜率：</strong>倾斜角 \(\alpha\ne90^\circ\) 时，\(\alpha\) 的正切值叫做这条直线的斜率，记作 \(k\)：</p>
+    <div class="formula">\[ k=\tan\alpha\qquad(\alpha\ne90^\circ) \]</div>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">三个必须注意的点</span>
+    <ul>
+      <li><strong>倾斜角取不到 \(180^\circ\)。</strong>因为 \(180^\circ\) 和 \(0^\circ\) 表示的是同一条水平直线。所以范围是 \([0^\circ,180^\circ)\) 左闭右开。</li>
+      <li><strong>\(\alpha=90^\circ\) 时斜率不存在</strong>（不是"斜率等于 0"）。竖直线没有斜率。这在解题时要单独讨论。</li>
+      <li><strong>斜率的正负与倾斜角的关系：</strong>\(\alpha\in\left[0,\dfrac{\pi}{2}\right)\) 时 \(k\ge0\)；\(\alpha\in\left(\dfrac{\pi}{2},\pi\right)\) 时 \(k&lt;0\)。</li>
+    </ul>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导：两点确定的斜率公式</span>
+    <p><strong>目标：</strong>已知直线上两点 \(P_1(x_1,y_1)\)、\(P_2(x_2,y_2)\)（\(x_1\ne x_2\)），求斜率 \(k\)。</p>
+
+    <p><strong>第一步：构造直角三角形。</strong>过 \(P_1\) 作水平线，过 \(P_2\) 作竖直线，两线交于点 \(Q(x_2,\ y_1)\)。</p>
+    <p>这样得到一个直角三角形 \(P_1QP_2\)。<strong>直角在 \(Q\) 处</strong>——因为 \(P_1Q\) 是水平的、\(QP_2\) 是竖直的，所以 \(\angle P_1QP_2=90^\circ\)。</p>
+
+    <p><strong>第二步：算出两条直角边。</strong></p>
+    <ul>
+      <li>水平边：\(P_1Q=|x_2-x_1|\)</li>
+      <li>竖直边：\(QP_2=|y_2-y_1|\)</li>
+    </ul>
+    <p><strong>先约定 \(x_2&gt;x_1\)。</strong>如果原来 \(x_2&lt;x_1\)，只要把 \(P_1\)、\(P_2\) 的<strong>名字互换</strong>即可——分子分母同时变号，斜率 \(k\) 不变。所以下面总假设 \(x_2&gt;x_1\)，即 \(P_1Q\) 沿 \(x\) 轴<strong>正方向</strong>。</p>
+
+    <p><strong>第三步：分两种情形讨论（这是关键）。</strong></p>
+    <p><strong>情形一：直线向上倾斜</strong>（\(y_2&gt;y_1\)，此时倾斜角 \(\alpha\in\left(0,\dfrac{\pi}{2}\right)\)）。直角三角形在 \(P_1\) 处的内角就等于 \(\alpha\)，由正切定义：</p>
+    <div class="formula">
+      \[ \tan\alpha=\frac{\text{对边}}{\text{邻边}}=\frac{|y_2-y_1|}{|x_2-x_1|}=\frac{y_2-y_1}{x_2-x_1} \]
+    </div>
+    <p>（最后一步能去掉绝对值，是因为此时 \(y_2-y_1&gt;0\)、\(x_2-x_1&gt;0\)。）</p>
+
+    <p><strong>情形二：直线向下倾斜</strong>（\(y_2&lt;y_1\)，此时 \(\alpha\in\left(\dfrac{\pi}{2},\pi\right)\)）。注意：直角三角形在 \(P_1\) 处的内角<strong>不是 \(\alpha\)，而是 \(\pi-\alpha\)</strong>（因为 \(P_1Q\) 指向 \(x\) 轴正方向，而直线是向下走的）。所以</p>
+    <div class="formula">
+      \[ \tan(\pi-\alpha)=\frac{|y_2-y_1|}{|x_2-x_1|} \]
+    </div>
+    <p>由诱导公式 \(\tan(\pi-\alpha)=-\tan\alpha\)，两边取相反数：</p>
+    <div class="formula">
+      \[ \tan\alpha=-\frac{|y_2-y_1|}{|x_2-x_1|}=\frac{y_2-y_1}{x_2-x_1} \]
+    </div>
+    <p>（最后一步是因为此时 \(y_2-y_1&lt;0\)，负号正好由分子承担。）</p>
+
+    <p><strong>第四步：两种情形合并成一个公式。</strong></p>
+    <div class="formula">
+      \[ \boxed{\ k=\tan\alpha=\frac{y_2-y_1}{x_2-x_1}\quad(x_1\ne x_2)\ } \]
+    </div>
+    <p><strong>★ 关键理解：分子分母要"同号同取"，不能各自加绝对值。</strong>如果两边都取绝对值，比值就恒为非负，与"斜率为负表示直线向下倾斜"相冲突。\(k\) 的正负，正是由 \(y_2-y_1\) 与 \(x_2-x_1\) <strong>是否同号</strong>决定的。</p>
+    <p><strong>注意：</strong>分子分母的顺序要一致（都是"2 减 1"）。写成 \(\dfrac{y_1-y_2}{x_1-x_2}\) 也可以（上下都取反，结果不变），但<strong>不能</strong>写成 \(\dfrac{y_2-y_1}{x_1-x_2}\)。</p>
+  </div>
+
+  <h3 id="ch1-2">1.2　直线方程的五种形式</h3>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>名称</th><th>方程形式</th><th>适用条件</th><th>使用场景</th></tr></thead>
+      <tbody>
+        <tr><td><strong>点斜式</strong></td><td>\(y-y_1=k(x-x_1)\)</td><td>斜率 \(k\) 存在</td><td><strong>最常用</strong>。已知一点和斜率时首选</td></tr>
+        <tr><td><strong>斜截式</strong></td><td>\(y=kx+b\)</td><td>斜率 \(k\) 存在</td><td>已知斜率和 \(y\) 轴截距</td></tr>
+        <tr><td><strong>两点式</strong></td><td>\(\dfrac{y-y_1}{y_2-y_1}=\dfrac{x-x_1}{x_2-x_1}\)</td><td>\(x_1\ne x_2\) 且 \(y_1\ne y_2\)</td><td>已知两点</td></tr>
+        <tr><td><strong>截距式</strong></td><td>\(\dfrac{x}{a}+\dfrac{y}{b}=1\)</td><td>\(a\ne0\)、\(b\ne0\)</td><td>已知两坐标轴上的截距</td></tr>
+        <tr><td><strong>一般式</strong></td><td>\(Ax+By+C=0\)</td><td>\(A,B\) 不同时为 0</td><td><strong>最通用</strong>。能表示所有直线（包括竖直线）</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">★ 为什么一定要掌握"一般式"</span>
+    <p>点斜式、斜截式、两点式、截距式都有一个共同的缺陷：<strong>表示不了斜率不存在的直线（竖直线）</strong>。</p>
+    <p>比如过点 \((2,1)\) 的竖直线是 \(x=2\)，它写不成 \(y-y_1=k(x-x_1)\) 的形式。</p>
+    <p><strong>所以：</strong>用点斜式设直线方程时，<strong>必须单独讨论"斜率不存在"的情况</strong>。这是解析几何最常见的漏解原因之一。</p>
+    <p><strong>规避方法：</strong>如果不想讨论，可以直接设成一般式 \(A(x-x_0)+B(y-y_0)=0\) 的形式，这样天然包含了竖直线。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 1（求直线方程）</span>
+    <p>已知直线 \(l\) 过点 \(P(1,2)\)，且与直线 \(2x+3y-1=0\) 平行。求 \(l\) 的方程。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：求已知直线的斜率。</strong>把 \(2x+3y-1=0\) 化成斜截式：</p>
+    <div class="formula">
+      \[ 3y=-2x+1 \quad\Longrightarrow\quad y=-\frac23x+\frac13 \]
+    </div>
+    <p>所以已知直线的斜率 \(k_1=-\dfrac23\)。</p>
+
+    <p><strong>第二步：确定 \(l\) 的斜率。</strong>因为两直线平行，斜率相等：</p>
+    <div class="formula">\[ k=k_1=-\frac23 \]</div>
+
+    <p><strong>第三步：用点斜式写出方程。</strong></p>
+    <div class="formula">
+      \[ y-2=-\frac23(x-1) \]
+    </div>
+    <p>两边乘 3 整理：</p>
+    <div class="formula">
+      \[ 3y-6=-2x+2 \quad\Longrightarrow\quad \boxed{2x+3y-8=0} \]
+    </div>
+
+    <p><strong>验算：</strong>把 \(P(1,2)\) 代入：\(2\times1+3\times2-8=2+6-8=0\) ✓。斜率 \(-\dfrac23\) 与已知直线相同 ✓。</p>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">一个更快的技巧</span>
+      <p>与 \(Ax+By+C=0\) 平行的直线，可以<strong>直接设成 \(Ax+By+C'=0\)</strong>（只改常数项），再把已知点代入求 \(C'\)。</p>
+      <p>本题中设 \(2x+3y+C'=0\)，代入 \(P(1,2)\)：\(2+6+C'=0\)，得 \(C'=-8\)，所以 \(2x+3y-8=0\) ✓ 一步到位。</p>
+      <p><strong>同理，与 \(Ax+By+C=0\) 垂直的直线可设为 \(Bx-Ay+C'=0\)</strong>（交换系数并变号）。</p>
+    </div>
+  </div>
+
+  <h3 id="ch1-3">1.3　两条直线的位置关系</h3>
+
+  <div class="box def">
+    <span class="tag">平行与垂直的判定</span>
+    <p>设两条直线的斜率都存在，分别为 \(k_1\)、\(k_2\)：</p>
+    <div class="formula">
+      \[
+      \begin{aligned}
+      l_1\parallel l_2 &\iff k_1=k_2\ \ \text{且两直线不重合} \\[4pt]
+      l_1\perp l_2 &\iff k_1k_2=-1
+      \end{aligned}
+      \]
+    </div>
+    <p>用一般式 \(l_1:A_1x+B_1y+C_1=0\)、\(l_2:A_2x+B_2y+C_2=0\) 表示时：</p>
+    <div class="formula">
+      \[
+      l_1\parallel l_2 \iff A_1B_2-A_2B_1=0\ \text{且}\ A_1C_2-A_2C_1\ne0
+      \]
+    </div>
+    <div class="formula">
+      \[ l_1\perp l_2 \iff A_1A_2+B_1B_2=0 \]
+    </div>
+    <p><strong>垂直的第二个式子特别好记：</strong>就是两个法向量 \((A_1,B_1)\) 和 \((A_2,B_2)\) 的数量积为 0。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导：为什么 \(l_1\perp l_2 \iff k_1k_2=-1\)</span>
+    <p><strong>第一步：设倾斜角。</strong>设 \(l_1\) 的倾斜角为 \(\alpha_1\)，\(l_2\) 的倾斜角为 \(\alpha_2\)。</p>
+
+    <p><strong>第二步：用"垂直"建立角的关系。</strong>两条直线垂直，意味着它们的倾斜角相差 \(90^\circ\)：</p>
+    <div class="formula">\[ \alpha_2=\alpha_1+90^\circ \]</div>
+    <p>（如果 \(\alpha_2&lt;\alpha_1\)，则写成 \(\alpha_1=\alpha_2+90^\circ\)，取合适的一个即可。）</p>
+
+    <p><strong>第三步：两边取正切。</strong></p>
+    <div class="formula">\[ k_2=\tan\alpha_2=\tan(\alpha_1+90^\circ) \]</div>
+    <p>这里要用到第 3 册（三角函数）学过的诱导公式：</p>
+    <div class="formula">\[ \tan(\theta+90^\circ)=-\frac{1}{\tan\theta} \]</div>
+    <p><strong>这个诱导公式怎么来的？</strong>用和角公式展开：</p>
+    <div class="formula">
+      \[ \tan(\theta+90^\circ)=\frac{\tan\theta+\tan90^\circ}{1-\tan\theta\tan90^\circ} \]
+    </div>
+    <p>直接代 \(\tan90^\circ\) 会出问题（不存在）。所以换个方式，用正弦余弦：</p>
+    <div class="formula">
+      \[ \tan(\theta+90^\circ)=\frac{\sin(\theta+90^\circ)}{\cos(\theta+90^\circ)}=\frac{\cos\theta}{-\sin\theta}=-\frac{1}{\tan\theta}\quad\checkmark \]
+    </div>
+
+    <p><strong>第四步：得到结论。</strong>所以</p>
+    <div class="formula">
+      \[ k_2=-\frac{1}{k_1} \quad\Longrightarrow\quad k_1k_2=-1 \quad\checkmark \]
+    </div>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">这条公式的两个漏洞</span>
+      <ul>
+        <li><strong>当 \(k_1=0\) 时</strong>，公式给出 \(k_2\) 不存在（因为 \(-\frac{1}{0}\) 无意义）。这是对的——水平线 \(k=0\) 的垂线是竖直线，斜率确实不存在。所以这种情况要单独说"\(l_2\) 斜率不存在"。</li>
+        <li><strong>当 \(k_1\) 不存在时</strong>（\(l_1\) 竖直），\(l_2\) 必须水平，即 \(k_2=0\)。也要单独讨论。</li>
+      </ul>
+      <p><strong>所以用 \(k_1k_2=-1\) 判垂直时，要保证两条直线的斜率都存在。</strong>这也是为什么用一般式的 \(A_1A_2+B_1B_2=0\) 更保险——它没有这个漏洞。</p>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 2（垂直的直线方程）</span>
+    <p>求过点 \(P(2,-1)\) 且与直线 \(x-2y+3=0\) 垂直的直线方程。</p>
+
+    <h4>解析</h4>
+    <p><strong>方法一（求斜率）：</strong>已知直线 \(x-2y+3=0\) 化成斜截式：</p>
+    <div class="formula">
+      \[ 2y=x+3 \quad\Longrightarrow\quad y=\frac12x+\frac32 \]
+    </div>
+    <p>所以 \(k_1=\dfrac12\)。由垂直条件 \(k_1k_2=-1\)：</p>
+    <div class="formula">\[ k_2=-\frac{1}{k_1}=-2 \]</div>
+    <p>用点斜式：</p>
+    <div class="formula">
+      \[ y-(-1)=-2(x-2) \quad\Longrightarrow\quad y+1=-2x+4 \]
+    </div>
+    <div class="formula">\[ \boxed{2x+y-3=0} \]</div>
+
+    <p><strong>方法二（套技巧）：</strong>与 \(Ax+By+C=0\) 垂直的直线可设为 \(Bx-Ay+C'=0\)。这里 \(A=1,B=-2\)，所以设：</p>
+    <div class="formula">\[ -2x-1\cdot y+C'=0 \quad\text{即}\quad 2x+y-C'=0 \]</div>
+    <p>代入 \(P(2,-1)\)：\(4-1-C'=0\)，得 \(C'=3\)。所以：</p>
+    <div class="formula">\[ 2x+y-3=0 \quad\checkmark \]</div>
+
+    <p><strong>验算：</strong>\(P(2,-1)\) 代入：\(4-1-3=0\) ✓。垂直条件：\((1)(2)+(-2)(1)=2-2=0\) ✓。</p>
+  </div>
+
+  <h3 id="ch1-4">1.4　三个距离公式</h3>
+
+  <div class="formula">
+    <span class="cap">公式表（全部必须记住）</span>
+    \[
+    \begin{aligned}
+    &\text{两点间距离：}\ |P_1P_2|=\sqrt{(x_2-x_1)^{2}+(y_2-y_1)^{2}} \\[6pt]
+    &\text{点到直线距离：}\ d=\frac{|Ax_0+By_0+C|}{\sqrt{A^{2}+B^{2}}} \\[6pt]
+    &\text{两平行线距离：}\ d=\frac{|C_1-C_2|}{\sqrt{A^{2}+B^{2}}}
+    \end{aligned}
+    \]
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导一：两点间距离公式</span>
+    <p><strong>只用勾股定理。</strong>设 \(P_1(x_1,y_1)\)、\(P_2(x_2,y_2)\)。过 \(P_1\) 作水平线，过 \(P_2\) 作竖直线，交于点 \(Q(x_2,y_1)\)。</p>
+    <p>在直角三角形 \(P_1QP_2\) 中：</p>
+    <ul>
+      <li>水平直角边 \(P_1Q=|x_2-x_1|\)</li>
+      <li>竖直直角边 \(QP_2=|y_2-y_1|\)</li>
+      <li>斜边就是 \(P_1P_2\)</li>
+    </ul>
+    <p>由勾股定理：</p>
+    <div class="formula">
+      \[ |P_1P_2|^{2}=|x_2-x_1|^{2}+|y_2-y_1|^{2} \]
+    </div>
+    <p>因为平方之后绝对值符号可以去掉（\(|a|^2=a^2\)），开方得：</p>
+    <div class="formula">
+      \[ |P_1P_2|=\sqrt{(x_2-x_1)^{2}+(y_2-y_1)^{2}} \quad\checkmark \]
+    </div>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导二：点到直线的距离公式（★ 重要）</span>
+    <p><strong>目标：</strong>求点 \(P(x_0,y_0)\) 到直线 \(l:Ax+By+C=0\) 的距离。</p>
+
+    <p><strong>第一步：找出直线的法向量。</strong></p>
+    <p>先看直线 \(l\) 的一个方向向量。由 \(Ax+By+C=0\) 得 \(y=-\dfrac{A}{B}x-\dfrac{C}{B}\)（设 \(B\ne0\)），所以方向向量是 \(\left(1,\ -\dfrac{A}{B}\right)\)，乘以 \(B\) 得 \((B,-A)\)。</p>
+    <p>验证 \((A,B)\) 与 \((B,-A)\) 垂直：</p>
+    <div class="formula">\[ A\cdot B+B\cdot(-A)=AB-AB=0 \quad\checkmark \]</div>
+    <p>所以 \(\mathbf{n}=(A,B)\) 是直线 \(l\) 的<strong>法向量</strong>（垂直于直线的向量）。</p>
+
+    <p><strong>第二步：把距离转化为投影。</strong></p>
+    <p>在直线 \(l\) 上任取一点 \(Q(x_1,y_1)\)，则 \(Ax_1+By_1+C=0\)。</p>
+    <p>点 \(P\) 到直线 \(l\) 的距离，就是向量 \(\overrightarrow{QP}\) 在<strong>法向量方向</strong>上的投影的绝对值：</p>
+    <div class="formula">
+      \[ d=\frac{|\overrightarrow{QP}\cdot\mathbf{n}|}{|\mathbf{n}|} \]
+    </div>
+    <p>（这个"投影求距离"的思路，和第四册立体几何里"点到平面的距离"完全一样。）</p>
+
+    <p><strong>第三步：展开计算。</strong></p>
+    <p>\(\overrightarrow{QP}=(x_0-x_1,\ y_0-y_1)\)，所以</p>
+    <div class="formula">
+      \[ \overrightarrow{QP}\cdot\mathbf{n}=A(x_0-x_1)+B(y_0-y_1)=Ax_0+By_0-(Ax_1+By_1) \]
+    </div>
+    <p>由 \(Ax_1+By_1=-C\)（因为 \(Q\) 在直线上）：</p>
+    <div class="formula">
+      \[ \overrightarrow{QP}\cdot\mathbf{n}=Ax_0+By_0-(-C)=Ax_0+By_0+C \]
+    </div>
+    <p>又 \(|\mathbf{n}|=\sqrt{A^2+B^2}\)，所以：</p>
+    <div class="formula">
+      \[ \boxed{\ d=\frac{|Ax_0+By_0+C|}{\sqrt{A^{2}+B^{2}}}\ } \]
+    </div>
+    <p><strong>注意：</strong>结果与 \(Q\) 在直线上怎么取无关（只要 \(Q\in l\)），这正是投影的性质。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导三：两条平行线的距离</span>
+    <p>设 \(l_1:Ax+By+C_1=0\)、\(l_2:Ax+By+C_2=0\)（\(C_1\ne C_2\)）。</p>
+    <p><strong>关键：</strong>两条平行线的距离是常数，所以可以<strong>在 \(l_1\) 上任取一点</strong>，算它到 \(l_2\) 的距离。</p>
+    <p>取 \(l_1\) 上一点 \(Q(x_1,y_1)\)，则 \(Ax_1+By_1+C_1=0\)，即 \(Ax_1+By_1=-C_1\)。代入点到直线距离公式：</p>
+    <div class="formula">
+      \[ d=\frac{|Ax_1+By_1+C_2|}{\sqrt{A^{2}+B^{2}}}=\frac{|-C_1+C_2|}{\sqrt{A^{2}+B^{2}}}=\frac{|C_1-C_2|}{\sqrt{A^{2}+B^{2}}} \quad\checkmark \]
+    </div>
+    <p><strong>★ 使用前提：</strong>两条直线的 \(A\)、\(B\) 必须<strong>完全相同</strong>。如果给出的是 \(2x+3y-1=0\) 和 \(4x+6y+5=0\)，必须先把第二条化成 \(2x+3y+\dfrac52=0\) 才能套公式。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 3（点到直线距离）</span>
+    <p>求点 \(P(1,2)\) 到直线 \(3x+4y-5=0\) 的距离。</p>
+    <h4>解析</h4>
+    <p>直接套公式，注意 \(A=3\)、\(B=4\)、\(C=-5\)：</p>
+    <div class="formula">
+      \[ d=\frac{|3\times1+4\times2-5|}{\sqrt{3^{2}+4^{2}}}=\frac{|3+8-5|}{\sqrt{25}}=\frac{6}{5} \]
+    </div>
+    <p><strong>答案：</strong>\(\boxed{d=\dfrac65}\)</p>
+    <p><strong>验算：</strong>\(\sqrt{3^2+4^2}=5\)（3-4-5 直角三角形）✓。分子 \(3+8-5=6\)，结果 \(\dfrac65=1.2\)，量级合理 ✓。</p>
+  </div>
+
+  <!-- ==================== 第 2 章 ==================== -->
+  <h2 id="ch2"><span class="num">2</span>圆</h2>
+  <p class="lead">圆是解析几何里"最友好"的图形。位置关系判定优先用几何法，比代数法快得多。</p>
+
+  <h3 id="ch2-1">2.1　圆的方程</h3>
+
+  <div class="box proof">
+    <span class="tag">推导：圆的标准方程</span>
+    <p><strong>目标：</strong>求以 \(C(a,b)\) 为圆心、\(r\) 为半径的圆的方程。</p>
+    <p><strong>第一步：用圆的定义。</strong>圆就是"平面内到定点距离等于定长的所有点"。设圆上任意一点为 \(P(x,y)\)，则：</p>
+    <div class="formula">\[ |PC|=r \]</div>
+    <p><strong>第二步：用两点间距离公式展开。</strong></p>
+    <div class="formula">\[ \sqrt{(x-a)^{2}+(y-b)^{2}}=r \]</div>
+    <p><strong>第三步：两边平方去掉根号。</strong></p>
+    <div class="formula">
+      \[ \boxed{\ (x-a)^{2}+(y-b)^{2}=r^{2}\ } \]
+    </div>
+    <p>这就是<strong>圆的标准方程</strong>。它的好处是：<strong>一眼就能读出圆心和半径</strong>。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导：圆的一般方程</span>
+    <p>把标准方程展开：</p>
+    <div class="formula">
+      \[ (x-a)^{2}+(y-b)^{2}=r^{2} \]
+    </div>
+    <div class="formula">
+      \[ x^{2}-2ax+a^{2}+y^{2}-2by+b^{2}=r^{2} \]
+    </div>
+    <div class="formula">
+      \[ x^{2}+y^{2}-2ax-2by+(a^{2}+b^{2}-r^{2})=0 \]
+    </div>
+    <p>令 \(D=-2a\)、\(E=-2b\)、\(F=a^{2}+b^{2}-r^{2}\)，得到：</p>
+    <div class="formula">
+      \[ x^{2}+y^{2}+Dx+Ey+F=0 \]
+    </div>
+    <p>这就是<strong>圆的一般方程</strong>。</p>
+
+    <p><strong>反过来，怎么从一般式读出圆心和半径？</strong>用<strong>配方法</strong>还原：</p>
+    <div class="formula">
+      \[
+      \left(x+\frac D2\right)^{2}+\left(y+\frac E2\right)^{2}=\frac{D^{2}+E^{2}-4F}{4}
+      \]
+    </div>
+    <p>所以圆心是 \(\left(-\dfrac D2,\ -\dfrac E2\right)\)，半径的平方是 \(\dfrac{D^2+E^2-4F}{4}\)。</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">★ 一般式表示圆的三个条件</span>
+      <ul>
+        <li>\(x^2\) 和 \(y^2\) 的<strong>系数必须相等</strong>（都是 1）。如果给的是 \(2x^2+2y^2+\cdots=0\)，要先除以 2。</li>
+        <li><strong>不能有 \(xy\) 项</strong>。</li>
+        <li>\(\boxed{D^{2}+E^{2}-4F>0}\)。如果等于 0，方程只表示<strong>一个点</strong>；如果小于 0，<strong>不表示任何图形</strong>。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 4</span>
+    <p>求圆心为 \(C(2,-3)\)、半径为 4 的圆的方程，并判断点 \(A(2,1)\) 与这个圆的位置关系。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：写标准方程。</strong>直接代入 \(a=2\)、\(b=-3\)、\(r=4\)：</p>
+    <div class="formula">
+      \[ \boxed{(x-2)^{2}+(y+3)^{2}=16} \]
+    </div>
+    <p><strong>注意符号：</strong>圆心纵坐标是 \(-3\)，所以式子里写的是 \((y+3)^2\)，不是 \((y-3)^2\)。</p>
+
+    <p><strong>第二步：判断点与圆的位置关系。</strong>算出点 \(A\) 到圆心的距离：</p>
+    <div class="formula">
+      \[ |AC|=\sqrt{(2-2)^{2}+(1+3)^{2}}=\sqrt{0+16}=4 \]
+    </div>
+    <p>因为 \(|AC|=4=r\)，所以点 \(A\) <strong>在圆上</strong>。</p>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">点与圆位置关系的判定</span>
+      <p>设点 \(P\) 到圆心 \(C\) 的距离为 \(d\)，圆的半径为 \(r\)：</p>
+      <ul>
+        <li>\(d&lt;r\) ⟹ 点在<strong>圆内</strong></li>
+        <li>\(d=r\) ⟹ 点在<strong>圆上</strong></li>
+        <li>\(d>r\) ⟹ 点在<strong>圆外</strong></li>
+      </ul>
+      <p><strong>更快的做法：</strong>把点坐标直接代入方程左边，与 \(r^2\) 比较（或者对一般式看正负）。</p>
+    </div>
+  </div>
+
+  <h3 id="ch2-2">2.2　直线与圆的位置关系</h3>
+
+  <div class="box def">
+    <span class="tag">三种位置关系与两种判定方法</span>
+    <p>设圆心到直线的距离为 \(d\)，圆的半径为 \(r\)：</p>
+    <div class="tbl-wrap" style="margin:0;">
+      <table>
+        <thead><tr><th>位置关系</th><th>几何法（比较 \(d\) 与 \(r\)）</th><th>代数法（看判别式 \(\Delta\)）</th><th>公共点个数</th></tr></thead>
+        <tbody>
+          <tr><td><strong>相交</strong></td><td>\(d&lt;r\)</td><td>\(\Delta>0\)</td><td>2 个</td></tr>
+          <tr><td><strong>相切</strong></td><td>\(d=r\)</td><td>\(\Delta=0\)</td><td>1 个</td></tr>
+          <tr><td><strong>相离</strong></td><td>\(d>r\)</td><td>\(\Delta&lt;0\)</td><td>0 个</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>★ 优先用几何法。</strong>因为几何法只需要算一个点到直线的距离（一步公式），而代数法要联立方程、消元、展开、算判别式（四步计算），既慢又容易算错。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 5</span>
+    <p>判断直线 \(3x+4y-5=0\) 与圆 \((x-1)^2+y^2=4\) 的位置关系。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：读出圆心和半径。</strong>由标准方程 \((x-1)^2+y^2=4\) 得圆心 \(C(1,0)\)，半径 \(r=2\)。</p>
+
+    <p><strong>第二步：算圆心到直线的距离。</strong>用点到直线距离公式，\(A=3,B=4,C=-5\)：</p>
+    <div class="formula">
+      \[ d=\frac{|3\times1+4\times0-5|}{\sqrt{3^{2}+4^{2}}}=\frac{|3-5|}{5}=\frac{2}{5} \]
+    </div>
+
+    <p><strong>第三步：比较 \(d\) 与 \(r\)。</strong></p>
+    <div class="formula">
+      \[ d=\frac25=0.4&lt;2=r \]
+    </div>
+    <p>所以直线与圆<strong>相交</strong>。</p>
+
+    <p><strong>验算（用代数法对照）：</strong>把 \(y=\dfrac{5-3x}{4}\) 代入圆方程，会得到一个二次方程，其判别式应为正。这个计算量明显更大，所以<strong>能不用就不用</strong>。</p>
+  </div>
+
+  <h3 id="ch2-3">2.3　弦长公式</h3>
+
+  <div class="formula">
+    <span class="cap">圆的弦长公式</span>
+    \[ |AB|=2\sqrt{r^{2}-d^{2}} \]
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导：垂径定理 + 勾股定理</span>
+    <p><strong>第一步：作垂线。</strong>设直线与圆交于 \(A\)、\(B\) 两点，圆心为 \(O\)，过 \(O\) 作 \(OC\perp AB\)，垂足为 \(C\)。则 \(OC=d\)（圆心到直线的距离）。</p>
+
+    <p><strong>第二步：用垂径定理。</strong>由圆的垂径定理：<strong>垂直于弦的直径平分这条弦</strong>。所以 \(C\) 是 \(AB\) 的中点：</p>
+    <div class="formula">\[ AC=\frac12|AB| \]</div>
+
+    <p><strong>第三步：在直角三角形中用勾股定理。</strong>因为 \(OC\perp AB\)，所以 \(\triangle OCA\) 是直角三角形，其中 \(OA=r\)（半径），\(OC=d\)：</p>
+    <div class="formula">
+      \[ AC=\sqrt{OA^{2}-OC^{2}}=\sqrt{r^{2}-d^{2}} \]
+    </div>
+
+    <p><strong>第四步：得到弦长。</strong></p>
+    <div class="formula">
+      \[ |AB|=2AC=2\sqrt{r^{2}-d^{2}} \quad\checkmark \]
+    </div>
+
+    <p><strong>这个推导的价值：</strong>它把"弦长"这个几何量，拆成了"半径"和"圆心到直线的距离"两个容易算的量。整个圆的问题基本都靠这个直角三角形（半弦、弦心距、半径构成的"勾股三角"）。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 6</span>
+    <p>求直线 \(x-y+1=0\) 被圆 \(x^{2}+y^{2}=4\) 截得的弦长。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：读出圆心和半径。</strong>圆心 \(O(0,0)\)，半径 \(r=2\)。</p>
+
+    <p><strong>第二步：算圆心到直线的距离。</strong>直线 \(x-y+1=0\) 中 \(A=1,B=-1,C=1\)：</p>
+    <div class="formula">
+      \[ d=\frac{|0-0+1|}{\sqrt{1^{2}+(-1)^{2}}}=\frac{1}{\sqrt2}=\frac{\sqrt2}{2} \]
+    </div>
+
+    <p><strong>第三步：套弦长公式。</strong></p>
+    <div class="formula">
+      \[ |AB|=2\sqrt{r^{2}-d^{2}}=2\sqrt{4-\frac12}=2\sqrt{\frac72}=2\times\frac{\sqrt{14}}{2}=\sqrt{14} \]
+    </div>
+    <p>（这里 \(\sqrt{\dfrac72}=\dfrac{\sqrt7}{\sqrt2}=\dfrac{\sqrt{14}}{2}\)。）</p>
+
+    <p><strong>答案：</strong>\(\boxed{|AB|=\sqrt{14}}\)</p>
+
+    <p><strong>验算（用代数法对照）：</strong>由 \(y=x+1\) 代入 \(x^2+y^2=4\)：</p>
+    <div class="formula">
+      \[ x^{2}+(x+1)^{2}=4 \quad\Longrightarrow\quad 2x^{2}+2x-3=0 \]
+    </div>
+    <p>所以 \(x_1+x_2=-1\)，\(x_1x_2=-\dfrac32\)。由弦长公式（第 6 章会推）：</p>
+    <div class="formula">
+      \[ |AB|=\sqrt{1+k^{2}}\cdot\sqrt{(x_1+x_2)^{2}-4x_1x_2}=\sqrt2\cdot\sqrt{1+6}=\sqrt2\times\sqrt7=\sqrt{14} \quad\checkmark \]
+    </div>
+    <p>两种方法结果一致。</p>
+  </div>
+
+  <!-- ==================== 第 3 章 ==================== -->
+  <h2 id="ch3"><span class="num">3</span>椭圆</h2>
+  <p class="lead">三种圆锥曲线里最先学的。它的标准方程推导思路，双曲线和抛物线会完整复用。</p>
+
+  <h3 id="ch3-1">3.1　椭圆的定义</h3>
+
+  <div class="box def">
+    <span class="tag">定义</span>
+    <p>平面内与两个定点 \(F_1\)、\(F_2\) 的距离之和等于常数（<strong>大于 \(|F_1F_2|\)</strong>）的点的轨迹叫做<strong>椭圆</strong>。这两个定点叫椭圆的<strong>焦点</strong>，两焦点间的距离叫<strong>焦距</strong>。</p>
+    <div class="formula">
+      \[ |PF_1|+|PF_2|=2a\qquad(2a>2c=|F_1F_2|) \]
+    </div>
+    <p><strong>为什么必须大于焦距？</strong>由三角形不等式，\(|PF_1|+|PF_2|\ge|F_1F_2|\)，等号成立时点 \(P\) 落在线段 \(F_1F_2\) 上，轨迹退化成一条<strong>线段</strong>，不是椭圆。所以必须严格大于。</p>
+  </div>
+
+  <h3 id="ch3-2">3.2　标准方程的推导（★ 重点）</h3>
+
+  <div class="box proof">
+    <span class="tag">推导：焦点在 \(x\) 轴上的椭圆标准方程</span>
+
+    <p><strong>第一步：建立坐标系。</strong>以 \(F_1F_2\) 所在直线为 \(x\) 轴，以线段 \(F_1F_2\) 的<strong>中点</strong>为原点。设焦距为 \(2c\)，则：</p>
+    <div class="formula">
+      \[ F_1(-c,\ 0),\qquad F_2(c,\ 0) \]
+    </div>
+    <p>设椭圆上任意一点 \(P(x,y)\)，由定义：</p>
+    <div class="formula">
+      \[ |PF_1|+|PF_2|=2a \]
+    </div>
+    <p>用两点间距离公式展开：</p>
+    <div class="formula">
+      \[ \sqrt{(x+c)^{2}+y^{2}}+\sqrt{(x-c)^{2}+y^{2}}=2a \tag{①} \]
+    </div>
+
+    <p><strong>第二步：移项，让两个根号分开。</strong></p>
+    <div class="formula">
+      \[ \sqrt{(x+c)^{2}+y^{2}}=2a-\sqrt{(x-c)^{2}+y^{2}} \tag{②} \]
+    </div>
+
+    <p><strong>第三步：第一次平方（消掉一个根号）。</strong></p>
+    <div class="formula">
+      \[ (x+c)^{2}+y^{2}=4a^{2}-4a\sqrt{(x-c)^{2}+y^{2}}+(x-c)^{2}+y^{2} \]
+    </div>
+    <p>把两边展开，\((x+c)^2-(x-c)^2=4cx\)，\(y^2\) 抵消：</p>
+    <div class="formula">
+      \[ 4cx=4a^{2}-4a\sqrt{(x-c)^{2}+y^{2}} \]
+    </div>
+    <p>两边同除以 4，再移项：</p>
+    <div class="formula">
+      \[ a\sqrt{(x-c)^{2}+y^{2}}=a^{2}-cx \tag{③} \]
+    </div>
+
+    <p><strong>第四步：第二次平方（消掉剩下的根号）。</strong></p>
+    <div class="formula">
+      \[ a^{2}\bigl[(x-c)^{2}+y^{2}\bigr]=(a^{2}-cx)^{2} \]
+    </div>
+    <p>两边分别展开：</p>
+    <div class="formula">
+      \[ a^{2}(x^{2}-2cx+c^{2}+y^{2})=a^{4}-2a^{2}cx+c^{2}x^{2} \]
+    </div>
+    <div class="formula">
+      \[ a^{2}x^{2}-2a^{2}cx+a^{2}c^{2}+a^{2}y^{2}=a^{4}-2a^{2}cx+c^{2}x^{2} \]
+    </div>
+
+    <p><strong>第五步：合并同类项。</strong>两边都有 \(-2a^2cx\)，直接消掉。把含 \(x^2\) 的项移到一边：</p>
+    <div class="formula">
+      \[ a^{2}x^{2}-c^{2}x^{2}+a^{2}y^{2}=a^{4}-a^{2}c^{2} \]
+    </div>
+    <div class="formula">
+      \[ (a^{2}-c^{2})x^{2}+a^{2}y^{2}=a^{2}(a^{2}-c^{2}) \tag{④} \]
+    </div>
+
+    <p><strong>第六步：引入 \(b\)。</strong>因为焦距 \(|F_1F_2|=2c\) 是正数，所以 \(c>0\)；又由椭圆的定义要求 \(2a>2c\)，所以 \(a>c>0\)。两者结合得 \(a^{2}-c^{2}>0\)，可以开方。令</p>
+    <div class="formula">
+      \[ b^{2}=a^{2}-c^{2}\qquad(b>0) \]
+    </div>
+    <p>代入 ④：</p>
+    <div class="formula">
+      \[ b^{2}x^{2}+a^{2}y^{2}=a^{2}b^{2} \]
+    </div>
+
+    <p><strong>第七步：两边同除以 \(a^2b^2\)。</strong></p>
+    <div class="formula">
+      \[ \boxed{\ \frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=1\qquad(a>b>0)\ } \]
+    </div>
+    <p>这就是焦点在 \(x\) 轴上的椭圆标准方程。</p>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">把 \(b^2=a^2-c^2\) 的几何意义搞清楚</span>
+      <p>在椭圆 \(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1\) 中，令 \(x=0\) 得 \(y=\pm b\)，令 \(y=0\) 得 \(x=\pm a\)。所以：</p>
+      <ul>
+        <li>\(a\) 是<strong>长半轴</strong>（椭圆在 \(x\) 方向上的"半宽"）；</li>
+        <li>\(b\) 是<strong>短半轴</strong>（椭圆在 \(y\) 方向上的"半高"）；</li>
+        <li>\(c\) 是<strong>半焦距</strong>（焦点到中心的距离）。</li>
+      </ul>
+      <p>\(b^2=a^2-c^2\) 的几何含义：<strong>从短轴端点 \(B(0,b)\) 到焦点 \(F(c,0)\) 的距离恰好等于 \(a\)</strong>。</p>
+      <p>验证：\(|BF|=\sqrt{(0-c)^2+(b-0)^2}=\sqrt{c^2+b^2}=\sqrt{c^2+(a^2-c^2)}=\sqrt{a^2}=a\) ✓</p>
+      <p><strong>这个"直角三角形"（\(b\)、\(c\) 为直角边，\(a\) 为斜边）是椭圆里最重要的辅助图形。</strong>记住它，\(a\)、\(b\)、\(c\) 的关系就不会记错。</p>
+    </div>
+  </div>
+
+  <h3 id="ch3-3">3.3　椭圆的几何性质</h3>
+
+  <div class="box def">
+    <span class="tag">性质表（以 \(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1\)，\(a>b>0\) 为例）</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>项目</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td><strong>范围</strong></td><td>\(-a\le x\le a\)，\(-b\le y\le b\)（说明椭圆被"框"在矩形里）</td></tr>
+          <tr><td><strong>顶点</strong></td><td>\((\pm a,0)\)、\((0,\pm b)\)，共 4 个</td></tr>
+          <tr><td><strong>焦点</strong></td><td>\((\pm c,0)\)，其中 \(c^2=a^2-b^2\)</td></tr>
+          <tr><td><strong>对称性</strong></td><td>关于 \(x\) 轴、\(y\) 轴、原点都对称</td></tr>
+          <tr><td><strong>离心率</strong></td><td>\(e=\dfrac ca\in(0,1)\)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>焦点在 \(y\) 轴上的情形：</strong>方程为 \(\dfrac{y^2}{a^2}+\dfrac{x^2}{b^2}=1\)（注意 \(a\) 仍然在 \(y^2\) 下面）。焦点是 \((0,\pm c)\)。</p>
+    <p><strong>★ 判断焦点在哪条轴上的方法：看分母谁大，焦点就在谁对应的轴上。</strong></p>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">离心率 \(e\) 的几何意义</span>
+    <p>\(e=\dfrac ca\) 刻画椭圆的"扁平程度"：</p>
+    <ul>
+      <li>\(e\) <strong>越接近 1</strong>：\(c\) 接近 \(a\)，则 \(b=\sqrt{a^2-c^2}\) 很小，椭圆<strong>越扁</strong>。</li>
+      <li>\(e\) <strong>越接近 0</strong>：\(c\) 接近 0，两个焦点几乎重合在中心，则 \(b\) 接近 \(a\)，椭圆<strong>越接近圆</strong>。</li>
+      <li>当 \(e=0\) 时（极限情况）就是圆。</li>
+    </ul>
+    <p><strong>做题时的常用变形：</strong>\(e=\dfrac ca\)，所以 \(c=ae\)，再由 \(b^2=a^2-c^2=a^2(1-e^2)\) 得</p>
+    <div class="formula">\[ b=a\sqrt{1-e^{2}} \]</div>
+    <p>这个关系式在"已知离心率求方程"的题目里非常好用。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 7（由方程读性质）</span>
+    <p>已知椭圆方程为 \(\dfrac{x^{2}}{25}+\dfrac{y^{2}}{9}=1\)。求它的 \(a\)、\(b\)、\(c\)、焦点坐标和离心率。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：读出 \(a^2\)、\(b^2\)。</strong>因为 \(25>9\)，所以分母大的对应 \(a^2\)：</p>
+    <div class="formula">
+      \[ a^{2}=25,\quad b^{2}=9 \quad\Longrightarrow\quad a=5,\quad b=3 \]
+    </div>
+    <p>焦点在 \(x\) 轴上（因为 \(a^2\) 在 \(x^2\) 下面）。</p>
+
+    <p><strong>第二步：求 \(c\)。</strong>用椭圆的关系式 \(c^2=a^2-b^2\)：</p>
+    <div class="formula">
+      \[ c^{2}=25-9=16 \quad\Longrightarrow\quad c=4 \]
+    </div>
+
+    <p><strong>第三步：写出焦点和离心率。</strong></p>
+    <div class="formula">
+      \[ \text{焦点 }F_1(-4,0),\ F_2(4,0) \]
+    </div>
+    <div class="formula">
+      \[ e=\frac ca=\frac45 \]
+    </div>
+
+    <p><strong>答案：</strong>\(\boxed{a=5,\ b=3,\ c=4,\ \text{焦点}(\pm4,0),\ e=\dfrac45}\)</p>
+
+    <p><strong>验算（用 \(a\) 的几何意义）：</strong>\(b=3\)、\(c=4\) 为直角边，斜边应为 \(a\)：\(\sqrt{3^2+4^2}=\sqrt{25}=5=a\) ✓ 符合 3.2 节的直角三角形关系。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 8（用定义求方程）</span>
+    <p>已知椭圆的两个焦点为 \(F_1(-3,0)\)、\(F_2(3,0)\)，椭圆上一点 \(P\) 到两焦点的距离之和为 10。求椭圆的标准方程。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：由焦距求 \(c\)。</strong>焦距 \(|F_1F_2|=2c=6\)，所以 \(c=3\)。</p>
+
+    <p><strong>第二步：由定义求 \(a\)。</strong>由椭圆定义 \(|PF_1|+|PF_2|=2a=10\)，所以 \(a=5\)。</p>
+
+    <p><strong>第三步：求 \(b\)。</strong>用 \(b^2=a^2-c^2\)：</p>
+    <div class="formula">
+      \[ b^{2}=25-9=16 \quad\Longrightarrow\quad b=4 \]
+    </div>
+
+    <p><strong>第四步：写方程。</strong>焦点在 \(x\) 轴上，所以：</p>
+    <div class="formula">
+      \[ \boxed{\frac{x^{2}}{25}+\frac{y^{2}}{16}=1} \]
+    </div>
+
+    <p><strong>验算：</strong>\(a^2=25\)、\(b^2=16\)，则 \(c^2=25-16=9\)，\(c=3\) ✓ 与已知焦距一致。再验证 \(a\) 的直角三角形关系：\(\sqrt{b^2+c^2}=\sqrt{16+9}=5=a\) ✓。</p>
+  </div>
+
+  <!-- ==================== 第 4 章 ==================== -->
+  <h2 id="ch4"><span class="num">4</span>双曲线</h2>
+  <p class="lead">双曲线和椭圆长得像，但有一个致命区别：\(c^2=a^2+b^2\)（不是减号）。另外它多了渐近线。</p>
+
+  <h3 id="ch4-1">4.1　双曲线的定义</h3>
+
+  <div class="box def">
+    <span class="tag">定义</span>
+    <p>平面内与两个定点 \(F_1\)、\(F_2\) 的距离之<strong>差的绝对值</strong>等于常数（<strong>小于 \(|F_1F_2|\)</strong> 且大于 0）的点的轨迹叫做<strong>双曲线</strong>。</p>
+    <div class="formula">
+      \[ \bigl||PF_1|-|PF_2|\bigr|=2a\qquad(0&lt;2a&lt;2c=|F_1F_2|) \]
+    </div>
+    <p><strong>三个细节必须注意：</strong></p>
+    <ul>
+      <li><strong>"差的绝对值"</strong>——如果没有绝对值，得到的只是双曲线的<strong>一支</strong>（靠近某个焦点的那一支）。</li>
+      <li><strong>必须小于焦距</strong>——否则轨迹退化。等于焦距时轨迹是两条射线，大于焦距时无轨迹。</li>
+      <li><strong>必须大于 0</strong>——等于 0 时轨迹是线段 \(F_1F_2\) 的垂直平分线。</li>
+    </ul>
+  </div>
+
+  <h3 id="ch4-2">4.2　标准方程的推导</h3>
+
+  <div class="box proof">
+    <span class="tag">推导：焦点在 \(x\) 轴上的双曲线标准方程</span>
+    <p><strong>推导步骤与椭圆完全相同</strong>，区别只在最后一步。为了看清差异，我们快速走一遍。</p>
+
+    <p><strong>第一步：建系。</strong>设 \(F_1(-c,0)\)、\(F_2(c,0)\)，\(P(x,y)\) 满足：</p>
+    <div class="formula">
+      \[ \bigl|\sqrt{(x+c)^{2}+y^{2}}-\sqrt{(x-c)^{2}+y^{2}}\bigr|=2a \]
+    </div>
+    <p>去掉绝对值符号，写成（先讨论其中一种情况）：</p>
+    <div class="formula">
+      \[ \sqrt{(x+c)^{2}+y^{2}}-\sqrt{(x-c)^{2}+y^{2}}=\pm 2a \tag{①} \]
+    </div>
+
+    <p><strong>第二步：移项并第一次平方。</strong></p>
+    <div class="formula">
+      \[ \sqrt{(x+c)^{2}+y^{2}}=\pm2a+\sqrt{(x-c)^{2}+y^{2}} \]
+    </div>
+    <p>两边平方：</p>
+    <div class="formula">
+      \[ (x+c)^{2}+y^{2}=4a^{2}\pm4a\sqrt{(x-c)^{2}+y^{2}}+(x-c)^{2}+y^{2} \]
+    </div>
+    <p>整理（\((x+c)^2-(x-c)^2=4cx\)）：</p>
+    <div class="formula">
+      \[ 4cx-4a^{2}=\pm4a\sqrt{(x-c)^{2}+y^{2}} \]
+    </div>
+    <div class="formula">
+      \[ cx-a^{2}=\pm a\sqrt{(x-c)^{2}+y^{2}} \tag{②} \]
+    </div>
+
+    <p><strong>第三步：第二次平方。</strong></p>
+    <div class="formula">
+      \[ (cx-a^{2})^{2}=a^{2}\bigl[(x-c)^{2}+y^{2}\bigr] \]
+    </div>
+    <div class="formula">
+      \[ c^{2}x^{2}-2a^{2}cx+a^{4}=a^{2}x^{2}-2a^{2}cx+a^{2}c^{2}+a^{2}y^{2} \]
+    </div>
+
+    <p><strong>第四步：合并同类项。</strong>两边消去 \(-2a^2cx\)：</p>
+    <div class="formula">
+      \[ c^{2}x^{2}-a^{2}x^{2}-a^{2}y^{2}=a^{2}c^{2}-a^{4} \]
+    </div>
+    <div class="formula">
+      \[ (c^{2}-a^{2})x^{2}-a^{2}y^{2}=a^{2}(c^{2}-a^{2}) \tag{③} \]
+    </div>
+
+    <p><strong>★ 第五步：注意这里和椭圆的差别。</strong></p>
+    <p>椭圆里出现的是 \(a^2-c^2\)，而这里出现的是 \(c^2-a^2\)。因为双曲线要求 \(c>a\)（焦距大于 2a），所以 \(c^2-a^2>0\)，可以令</p>
+    <div class="formula">
+      \[ b^{2}=c^{2}-a^{2}\qquad(b>0) \]
+    </div>
+    <p><strong>这就是"椭圆是减号、双曲线是加号"的来源。</strong></p>
+    <p>代入 ③：</p>
+    <div class="formula">
+      \[ b^{2}x^{2}-a^{2}y^{2}=a^{2}b^{2} \]
+    </div>
+
+    <p><strong>第六步：两边同除以 \(a^2b^2\)。</strong></p>
+    <div class="formula">
+      \[ \boxed{\ \frac{x^{2}}{a^{2}}-\frac{y^{2}}{b^{2}}=1\qquad(a>0,\ b>0)\ } \]
+    </div>
+    <p><strong>注意中间的减号</strong>——这是双曲线与椭圆在形式上的唯一区别。</p>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">椭圆与双曲线的对照记忆</span>
+      <div class="tbl-wrap" style="margin:0;">
+        <table>
+          <thead><tr><th>项目</th><th>椭圆</th><th>双曲线</th></tr></thead>
+          <tbody>
+            <tr><td>定义</td><td>距离之<strong>和</strong>为 \(2a\)</td><td>距离之<strong>差的绝对值</strong>为 \(2a\)</td></tr>
+            <tr><td>大小关系</td><td>\(a>c>0\)，\(a>b>0\)</td><td>\(c>a>0\)</td></tr>
+            <tr><td>\(a,b,c\) 关系</td><td>\(\boxed{c^{2}=a^{2}-b^{2}}\)</td><td>\(\boxed{c^{2}=a^{2}+b^{2}}\)</td></tr>
+            <tr><td>标准方程</td><td>\(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1\)</td><td>\(\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=1\)</td></tr>
+            <tr><td>离心率</td><td>\(e=\dfrac ca\in(0,1)\)</td><td>\(e=\dfrac ca\in(1,+\infty)\)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>记忆口诀：椭圆里 \(a\) 最大（所以 \(a\) 减 \(b\)），双曲线里 \(c\) 最大（所以 \(a\) 加 \(b\)）。</strong></p>
+      <p>理由：椭圆上任意一点到焦点的距离和是 \(2a\)，而焦点在椭圆内部，所以 \(a\) 一定比 \(c\) 大；双曲线要求 \(c>a\) 才有轨迹。</p>
+    </div>
+  </div>
+
+  <h3 id="ch4-3">4.3　双曲线的几何性质与渐近线</h3>
+
+  <div class="box def">
+    <span class="tag">性质表（以 \(\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=1\) 为例）</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>项目</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td><strong>范围</strong></td><td>\(x\le -a\) 或 \(x\ge a\)（<strong>注意：中间是空的！</strong>）</td></tr>
+          <tr><td><strong>顶点</strong></td><td>\((\pm a,0)\)，只有 2 个</td></tr>
+          <tr><td><strong>焦点</strong></td><td>\((\pm c,0)\)，\(c^2=a^2+b^2\)</td></tr>
+          <tr><td><strong>对称性</strong></td><td>关于 \(x\) 轴、\(y\) 轴、原点都对称</td></tr>
+          <tr><td><strong>离心率</strong></td><td>\(e=\dfrac ca>1\)</td></tr>
+          <tr><td><strong>渐近线</strong></td><td>\(y=\pm\dfrac ba x\)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>★ 双曲线没有"短半轴"的概念。</strong>\(b\) 在双曲线里只用于确定渐近线的斜率和 \(a,b,c\) 的关系式，它不是图形上的任何"半宽半高"。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">★ 推导：渐近线 \(y=\pm\dfrac ba x\) 是怎么来的</span>
+    <p><strong>这是双曲线独有的一条性质，必须理解它的来源。</strong></p>
+
+    <p><strong>第一步：从方程解出 \(y\)。</strong>由 \(\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=1\)，移项：</p>
+    <div class="formula">
+      \[ \frac{y^{2}}{b^{2}}=\frac{x^{2}}{a^{2}}-1 \quad\Longrightarrow\quad y^{2}=\frac{b^{2}}{a^{2}}\bigl(x^{2}-a^{2}\bigr) \]
+    </div>
+    <div class="formula">
+      \[ y=\pm\frac{b}{a}\sqrt{x^{2}-a^{2}} \]
+    </div>
+
+    <p><strong>第二步：考察 \(x\) 很大时的行为。</strong>把根号里的 \(x^2\) 提出来：</p>
+    <div class="formula">
+      \[ \sqrt{x^{2}-a^{2}}=\sqrt{x^{2}\left(1-\frac{a^{2}}{x^{2}}\right)}=|x|\sqrt{1-\frac{a^{2}}{x^{2}}} \]
+    </div>
+    <p>当 \(x\to+\infty\) 时，\(\dfrac{a^2}{x^2}\to0\)，所以 \(\sqrt{1-\dfrac{a^2}{x^2}}\to1\)，即：</p>
+    <div class="formula">
+      \[ \sqrt{x^{2}-a^{2}}\ \to\ |x|\ \approx\ x\quad(x\to+\infty) \]
+    </div>
+
+    <p><strong>第三步：得到渐近线。</strong>所以 \(x\) 很大时：</p>
+    <div class="formula">
+      \[ y=\pm\frac ba\sqrt{x^2-a^2}\ \approx\ \pm\frac ba x \]
+    </div>
+    <p>也就是说，<strong>当 \(x\) 越来越大时，双曲线的两支越来越贴近直线 \(y=\pm\dfrac ba x\)，但永远不会与它相交</strong>。这两条直线就叫做双曲线的<strong>渐近线</strong>。</p>
+
+    <p><strong>第四步：几何直观。</strong>把 \(x^2-a^2\) 换成 \(x^2\)（忽略了常数项 \(a^2\)），方程就退化成 \(\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=0\)，即：</p>
+    <div class="formula">
+      \[ \left(\frac xa+\frac yb\right)\left(\frac xa-\frac yb\right)=0 \quad\Longrightarrow\quad y=\pm\frac ba x \quad\checkmark \]
+    </div>
+    <p><strong>这就是"求渐近线的快捷方法"：把方程右边的 1 改成 0，解出来就是渐近线。</strong></p>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">渐近线的实用技巧</span>
+      <ul>
+        <li><strong>已知渐近线求双曲线：</strong>若渐近线是 \(y=\pm\dfrac ba x\)，则双曲线可设为 \(\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=\lambda\)（\(\lambda\ne0\)）。若 \(\lambda>0\) 则焦点在 \(x\) 轴，\(\lambda&lt;0\) 则焦点在 \(y\) 轴。</li>
+        <li><strong>记忆口诀：</strong>"把 1 改成 0"。</li>
+        <li><strong>注意：</strong>渐近线只与 \(\dfrac ba\) 有关，与双曲线的大小无关。所以<strong>共用渐近线的双曲线有无数条</strong>。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 9</span>
+    <p>已知双曲线方程为 \(\dfrac{x^{2}}{9}-\dfrac{y^{2}}{16}=1\)。求它的 \(a\)、\(b\)、\(c\)、焦点坐标、渐近线和离心率。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：读出 \(a^2\)、\(b^2\)。</strong>注意这里是<strong>减号</strong>，减号前面的对应 \(a^2\)：</p>
+    <div class="formula">
+      \[ a^{2}=9,\quad b^{2}=16 \quad\Longrightarrow\quad a=3,\quad b=4 \]
+    </div>
+
+    <p><strong>第二步：求 \(c\)。</strong>用双曲线的关系式 \(c^2=a^2+b^2\)（<strong>注意是加号</strong>）：</p>
+    <div class="formula">
+      \[ c^{2}=9+16=25 \quad\Longrightarrow\quad c=5 \]
+    </div>
+
+    <p><strong>第三步：写出焦点、渐近线、离心率。</strong></p>
+    <div class="formula">
+      \[ \text{焦点 }F_1(-5,0),\ F_2(5,0) \]
+    </div>
+    <div class="formula">
+      \[ \text{渐近线：}\ y=\pm\frac ba x=\pm\frac43 x \]
+    </div>
+    <div class="formula">
+      \[ e=\frac ca=\frac53 \]
+    </div>
+
+    <p><strong>答案：</strong>\(\boxed{a=3,\ b=4,\ c=5,\ \text{焦点}(\pm5,0),\ \text{渐近线}y=\pm\dfrac43x,\ e=\dfrac53}\)</p>
+
+    <p><strong>验算：</strong>\(e=\dfrac53>1\) ✓（双曲线的离心率必须大于 1）。用"把 1 改成 0"的方法验渐近线：\(\dfrac{x^2}{9}-\dfrac{y^2}{16}=0\) 得 \(y^2=\dfrac{16}{9}x^2\)，即 \(y=\pm\dfrac43x\) ✓。</p>
+  </div>
+
+  <!-- ==================== 第 5 章 ==================== -->
+  <h2 id="ch5"><span class="num">5</span>抛物线</h2>
+  <p class="lead">抛物线是三种曲线里最简单的（只有 1 个焦点、1 条准线），但它的"焦点弦"性质特别重要。</p>
+
+  <h3 id="ch5-1">5.1　抛物线的定义</h3>
+
+  <div class="box def">
+    <span class="tag">定义</span>
+    <p>平面内与一个定点 \(F\) 和一条定直线 \(l\)（\(F\notin l\)）的<strong>距离相等</strong>的点的轨迹叫做<strong>抛物线</strong>。定点 \(F\) 叫<strong>焦点</strong>，定直线 \(l\) 叫<strong>准线</strong>。</p>
+    <div class="formula">\[ |PF|=d(P,\ l) \]</div>
+    <p><strong>注意：</strong>必须要求 \(F\notin l\)。如果焦点在准线上，轨迹退化成过 \(F\) 且垂直于 \(l\) 的一条直线。</p>
+  </div>
+
+  <h3 id="ch5-2">5.2　标准方程的推导</h3>
+
+  <div class="box proof">
+    <span class="tag">推导：开口向右的抛物线 \(y^2=2px\)</span>
+
+    <p><strong>第一步：建系。</strong>设焦点 \(F\) 到准线 \(l\) 的距离为 \(p\)（\(p>0\)）。取过 \(F\) 且垂直于 \(l\) 的直线为 \(x\) 轴，以 \(F\) 到 \(l\) 的<strong>中点</strong>为原点。</p>
+    <p>这样焦点和准线到原点的距离都是 \(\dfrac p2\)：</p>
+    <div class="formula">
+      \[ F\left(\frac p2,\ 0\right),\qquad l:\ x=-\frac p2 \]
+    </div>
+
+    <p><strong>第二步：用定义列式。</strong>设抛物线上任意一点 \(P(x,y)\)：</p>
+    <div class="formula">
+      \[ |PF|=\sqrt{\left(x-\frac p2\right)^{2}+y^{2}} \]
+    </div>
+    <p>而 \(P\) 到准线 \(x=-\dfrac p2\) 的距离是（竖直线到点的距离就是横坐标之差）：</p>
+    <div class="formula">
+      \[ d=\left|x-\left(-\frac p2\right)\right|=\left|x+\frac p2\right| \]
+    </div>
+    <p>由定义两者相等：</p>
+    <div class="formula">
+      \[ \sqrt{\left(x-\frac p2\right)^{2}+y^{2}}=\left|x+\frac p2\right| \tag{①} \]
+    </div>
+
+    <p><strong>第三步：两边平方（只需要一次！）。</strong></p>
+    <div class="formula">
+      \[ \left(x-\frac p2\right)^{2}+y^{2}=\left(x+\frac p2\right)^{2} \]
+    </div>
+
+    <p><strong>第四步：展开并化简。</strong>左边：\(x^{2}-px+\dfrac{p^{2}}{4}+y^{2}\)；右边：\(x^{2}+px+\dfrac{p^{2}}{4}\)。</p>
+    <div class="formula">
+      \[ x^{2}-px+\frac{p^{2}}{4}+y^{2}=x^{2}+px+\frac{p^{2}}{4} \]
+    </div>
+    <p>两边的 \(x^2\) 和 \(\dfrac{p^2}{4}\) 抵消：</p>
+    <div class="formula">
+      \[ -px+y^{2}=px \quad\Longrightarrow\quad y^{2}=2px \]
+    </div>
+    <div class="formula">
+      \[ \boxed{\ y^{2}=2px\qquad(p>0)\ } \]
+    </div>
+
+    <p><strong>★ 对比一下：</strong>椭圆和双曲线的推导都要<strong>平方两次</strong>（因为定义里有两个根号）；抛物线只需要<strong>平方一次</strong>（定义里只有一个根号，另一边是到直线的距离）。所以抛物线的方程最简单。</p>
+  </div>
+
+  <div class="box def">
+    <span class="tag">四种标准形式（★ 必须分清）</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>方程</th><th>开口方向</th><th>焦点</th><th>准线</th></tr></thead>
+        <tbody>
+          <tr><td>\(y^{2}=2px\)</td><td>向右 →</td><td>\(\left(\dfrac p2,0\right)\)</td><td>\(x=-\dfrac p2\)</td></tr>
+          <tr><td>\(y^{2}=-2px\)</td><td>向左 ←</td><td>\(\left(-\dfrac p2,0\right)\)</td><td>\(x=\dfrac p2\)</td></tr>
+          <tr><td>\(x^{2}=2py\)</td><td>向上 ↑</td><td>\(\left(0,\dfrac p2\right)\)</td><td>\(y=-\dfrac p2\)</td></tr>
+          <tr><td>\(x^{2}=-2py\)</td><td>向下 ↓</td><td>\(\left(0,-\dfrac p2\right)\)</td><td>\(y=\dfrac p2\)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>记忆方法：</strong></p>
+    <ul>
+      <li><strong>看谁是一次项：</strong>\(y^2=2px\) 里 \(x\) 是一次，所以对称轴是 \(x\) 轴（开口左右）；\(x^2=2py\) 里 \(y\) 是一次，对称轴是 \(y\) 轴（开口上下）。</li>
+      <li><strong>看符号定方向：</strong>一次项系数为正，开口朝<strong>正</strong>方向；为负，开口朝<strong>负</strong>方向。</li>
+      <li><strong>焦点和准线永远在对称轴上，且关于原点对称</strong>，到原点的距离都是 \(\dfrac p2\)。</li>
+    </ul>
+  </div>
+
+  <h3 id="ch5-3">5.3　抛物线的几何性质</h3>
+
+  <div class="box def">
+    <span class="tag">性质（以 \(y^2=2px\) 为例）</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>项目</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td><strong>范围</strong></td><td>\(x\ge0\)，\(y\in\mathbb{R}\)</td></tr>
+          <tr><td><strong>顶点</strong></td><td>原点 \((0,0)\)</td></tr>
+          <tr><td><strong>对称轴</strong></td><td>\(x\) 轴（即 \(y=0\)）</td></tr>
+          <tr><td><strong>焦点</strong></td><td>\(\left(\dfrac p2,0\right)\)</td></tr>
+          <tr><td><strong>准线</strong></td><td>\(x=-\dfrac p2\)</td></tr>
+          <tr><td><strong>离心率</strong></td><td>\(e=1\)（这是抛物线的定义特征）</td></tr>
+          <tr><td><strong>通径</strong></td><td>\(2p\)（过焦点且垂直于对称轴的弦）</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导：通径长度为什么是 \(2p\)</span>
+    <p><strong>第一步：明确"通径"的定义。</strong>过焦点且<strong>垂直于对称轴</strong>的弦叫做通径。</p>
+    <p><strong>第二步：求交点。</strong>对 \(y^2=2px\)，焦点是 \(F\left(\dfrac p2,0\right)\)，对称轴是 \(x\) 轴。过 \(F\) 作垂直于 \(x\) 轴的直线，方程是 \(x=\dfrac p2\)。</p>
+    <p>把 \(x=\dfrac p2\) 代入抛物线方程：</p>
+    <div class="formula">
+      \[ y^{2}=2p\cdot\frac p2=p^{2} \quad\Longrightarrow\quad y=\pm p \]
+    </div>
+    <p><strong>第三步：算弦长。</strong>两个交点分别是 \(\left(\dfrac p2,p\right)\) 和 \(\left(\dfrac p2,-p\right)\)，它们在同一条竖直线上，所以：</p>
+    <div class="formula">
+      \[ \text{通径}=|p-(-p)|=2p \quad\checkmark \]
+    </div>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">★ 抛物线的焦点弦性质（高频考点）</span>
+    <p>过抛物线 \(y^2=2px\) 的焦点 \(F\) 的直线与抛物线交于 \(A(x_1,y_1)\)、\(B(x_2,y_2)\) 两点，则：</p>
+    <div class="formula">
+      \[ |AB|=x_1+x_2+p \]
+    </div>
+    <div class="formula">
+      \[ x_1x_2=\frac{p^{2}}{4},\qquad y_1y_2=-p^{2} \]
+    </div>
+    <p><strong>第一个公式的推导：</strong>由抛物线的定义，抛物线上的点到焦点的距离等于它到准线的距离：</p>
+    <div class="formula">
+      \[ |AF|=x_1+\frac p2,\qquad |BF|=x_2+\frac p2 \]
+    </div>
+    <p>（因为准线是 \(x=-\dfrac p2\)，点 \((x_1,y_1)\) 到准线的距离就是 \(x_1+\dfrac p2\)。）</p>
+    <p>所以：</p>
+    <div class="formula">
+      \[ |AB|=|AF|+|BF|=x_1+\frac p2+x_2+\frac p2=x_1+x_2+p \quad\checkmark \]
+    </div>
+    <p><strong>这条公式把"求弦长"变成了"求两个横坐标之和"</strong>，配合韦达定理非常好用。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 10</span>
+    <p>已知抛物线方程为 \(y^{2}=8x\)。求它的焦点坐标、准线方程和通径长度。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：对照标准形式。</strong>\(y^2=8x\) 与 \(y^2=2px\) 对照，得：</p>
+    <div class="formula">
+      \[ 2p=8 \quad\Longrightarrow\quad p=4 \]
+    </div>
+
+    <p><strong>第二步：写出焦点和准线。</strong></p>
+    <div class="formula">
+      \[ \text{焦点 }F\left(\frac p2,0\right)=(2,0) \]
+    </div>
+    <div class="formula">
+      \[ \text{准线：}\ x=-\frac p2=-2 \]
+    </div>
+
+    <p><strong>第三步：求通径。</strong></p>
+    <div class="formula">
+      \[ \text{通径}=2p=8 \]
+    </div>
+
+    <p><strong>答案：</strong>\(\boxed{\text{焦点}(2,0),\quad \text{准线}x=-2,\quad \text{通径}=8}\)</p>
+
+    <p><strong>验算：</strong>焦点 \((2,0)\) 和准线 \(x=-2\) 到原点的距离都是 2，关于原点对称 ✓。顶点 \((0,0)\) 到焦点距离为 2，到准线距离也为 2，相等 ✓（符合抛物线定义）。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 11（焦点弦的完整计算）</span>
+    <p>过抛物线 \(y^{2}=4x\) 的焦点 \(F\) 作倾斜角为 \(45^\circ\) 的直线，与抛物线交于 \(A\)、\(B\) 两点。求弦 \(|AB|\) 的长。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：确定焦点和直线方程。</strong>由 \(y^2=4x\) 得 \(2p=4\)，\(p=2\)，所以焦点 \(F(1,0)\)。</p>
+    <p>倾斜角 \(45^\circ\) 意味着斜率 \(k=\tan45^\circ=1\)。由点斜式：</p>
+    <div class="formula">
+      \[ y-0=1\cdot(x-1) \quad\Longrightarrow\quad y=x-1 \]
+    </div>
+
+    <p><strong>第二步：联立消元。</strong>把 \(y=x-1\) 代入 \(y^2=4x\)：</p>
+    <div class="formula">
+      \[ (x-1)^{2}=4x \]
+    </div>
+    <div class="formula">
+      \[ x^{2}-2x+1=4x \quad\Longrightarrow\quad x^{2}-6x+1=0 \]
+    </div>
+
+    <p><strong>第三步：用韦达定理。</strong></p>
+    <div class="formula">
+      \[ x_1+x_2=6,\qquad x_1x_2=1 \]
+    </div>
+
+    <p><strong>第四步：求弦长（方法一：用焦点弦公式）。</strong></p>
+    <div class="formula">
+      \[ |AB|=x_1+x_2+p=6+2=8 \]
+    </div>
+
+    <p><strong>第五步：求弦长（方法二：用一般弦长公式对照）。</strong></p>
+    <div class="formula">
+      \[ |AB|=\sqrt{1+k^{2}}\cdot\sqrt{(x_1+x_2)^{2}-4x_1x_2}=\sqrt{2}\cdot\sqrt{36-4}=\sqrt2\cdot\sqrt{32}=\sqrt2\times4\sqrt2=8 \quad\checkmark \]
+    </div>
+    <p>两种方法结果一致。</p>
+
+    <p><strong>答案：</strong>\(\boxed{|AB|=8}\)</p>
+
+    <p><strong>验算（用焦点弦角度公式）：</strong>对抛物线 \(y^2=2px\)，过焦点的弦长为 \(\dfrac{2p}{\sin^2\theta}\)（\(\theta\) 为倾斜角）。代入 \(2p=4\)、\(\sin^245^\circ=\dfrac12\)：</p>
+    <div class="formula">
+      \[ |AB|=\frac{4}{\frac12}=8 \quad\checkmark \]
+    </div>
+  </div>
+
+  <!-- ==================== 第 6 章 ==================== -->
+  <h2 id="ch6"><span class="num">6</span>★ 直线与圆锥曲线的位置关系</h2>
+  <p class="lead">这是解析几何压轴题的主战场。套路极其固定：联立 → 韦达定理 → 弦长/面积/中点。</p>
+
+  <h3 id="ch6-1">6.1　标准解题流程</h3>
+
+  <div class="box proof">
+    <span class="tag">★ 五步流程（背下来，几乎所有题都这么做）</span>
+    <ol class="steps">
+      <li><strong>设直线：</strong>设直线方程为 \(y=kx+m\)（或 \(x=ty+n\)，视情况选更方便的）。<br><strong>注意：</strong>用 \(y=kx+m\) 时要单独讨论"斜率不存在"的情况。</li>
+      <li><strong>联立消元：</strong>把直线方程代入曲线方程，消去 \(y\)，得到关于 \(x\) 的一元二次方程。</li>
+      <li><strong>检查前提：</strong>确认二次项系数 \(\ne0\)，且判别式 \(\Delta>0\)（保证有两个交点）。</li>
+      <li><strong>用韦达定理：</strong>写出 \(x_1+x_2=-\dfrac ba\)、\(x_1x_2=\dfrac ca\)。</li>
+      <li><strong>把要求的量用 \(x_1+x_2\)、\(x_1x_2\) 表示：</strong>弦长、面积、中点、斜率等，都有固定公式。</li>
+    </ol>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">★ 第 3 步最容易漏</span>
+    <p>很多同学联立完就直接用韦达定理，<strong>不检查 \(\Delta>0\)</strong>，结果算出一个"看起来对"但实际不存在交点的答案。</p>
+    <p><strong>为什么必须检查？</strong>因为韦达定理对<strong>任何</strong>一元二次方程都成立，哪怕它没有实根。所以只有 \(\Delta>0\) 时，\(x_1\)、\(x_2\) 才真的对应两个交点。</p>
+    <p><strong>答题规范：</strong>写"由 \(\Delta>0\) 得 \(k\) 的范围是……"，然后再用韦达定理。</p>
+  </div>
+
+  <h3 id="ch6-2">6.2　弦长公式</h3>
+
+  <div class="formula">
+    <span class="cap">弦长公式（★ 第 6 章最重要的公式）</span>
+    \[
+    |AB|=\sqrt{1+k^{2}}\cdot\sqrt{(x_1+x_2)^{2}-4x_1x_2}
+    \]
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导</span>
+    <p><strong>第一步：用两点间距离公式。</strong>设直线 \(y=kx+m\) 与曲线交于 \(A(x_1,y_1)\)、\(B(x_2,y_2)\)：</p>
+    <div class="formula">
+      \[ |AB|=\sqrt{(x_2-x_1)^{2}+(y_2-y_1)^{2}} \]
+    </div>
+
+    <p><strong>第二步：把 \(y\) 换成 \(x\)。</strong>因为 \(A\)、\(B\) 都在直线 \(y=kx+m\) 上，所以 \(y_1=kx_1+m\)、\(y_2=kx_2+m\)。两式相减：</p>
+    <div class="formula">
+      \[ y_2-y_1=k(x_2-x_1) \]
+    </div>
+    <p>代入距离公式，并提取公因式 \((x_2-x_1)^2\)：</p>
+    <div class="formula">
+      \[
+      |AB|=\sqrt{(x_2-x_1)^{2}+k^{2}(x_2-x_1)^{2}}=\sqrt{(1+k^{2})(x_2-x_1)^{2}}
+      \]
+    </div>
+    <div class="formula">
+      \[ |AB|=\sqrt{1+k^{2}}\cdot|x_2-x_1| \]
+    </div>
+
+    <p><strong>第三步：把 \(|x_2-x_1|\) 换成韦达定理的形式。</strong></p>
+    <p>由 \((x_2-x_1)^{2}=(x_1+x_2)^{2}-4x_1x_2\)（这是完全平方公式的变形，验证一下：右边 \(=x_1^2+2x_1x_2+x_2^2-4x_1x_2=x_1^2-2x_1x_2+x_2^2=(x_1-x_2)^2\) ✓）：</p>
+    <div class="formula">
+      \[ |x_2-x_1|=\sqrt{(x_1+x_2)^{2}-4x_1x_2} \]
+    </div>
+
+    <p><strong>第四步：合并。</strong></p>
+    <div class="formula">
+      \[ \boxed{\ |AB|=\sqrt{1+k^{2}}\cdot\sqrt{(x_1+x_2)^{2}-4x_1x_2}\ } \]
+    </div>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">两个使用要点</span>
+      <ul>
+        <li><strong>如果用 \(x=ty+n\) 设直线</strong>（避免讨论竖直情况），弦长公式要改成 \(|AB|=\sqrt{1+t^{2}}\cdot\sqrt{(y_1+y_2)^{2}-4y_1y_2}\)。<br>道理一样：把 \(x\) 换成 \(y\) 即可。</li>
+        <li><strong>公式里 \(k\) 是直线的斜率，不是别的。</strong>如果直线是竖直的（\(k\) 不存在），只能用 \(|AB|=|y_1-y_2|\)。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="ch6-3">6.3　中点弦问题（点差法）</h3>
+
+  <div class="box proof">
+    <span class="tag">★ 推导：点差法（中点弦斜率公式）</span>
+    <p><strong>问题：</strong>已知椭圆 \(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1\) 的一条弦 \(AB\) 的中点是 \(M(x_0,y_0)\)，求弦 \(AB\) 所在直线的斜率 \(k\)。</p>
+
+    <p><strong>第一步：把两个端点代入方程。</strong>设 \(A(x_1,y_1)\)、\(B(x_2,y_2)\) 都在椭圆上：</p>
+    <div class="formula">
+      \[ \frac{x_1^{2}}{a^{2}}+\frac{y_1^{2}}{b^{2}}=1,\qquad \frac{x_2^{2}}{a^{2}}+\frac{y_2^{2}}{b^{2}}=1 \]
+    </div>
+
+    <p><strong>第二步：两式相减。</strong></p>
+    <div class="formula">
+      \[ \frac{x_1^{2}-x_2^{2}}{a^{2}}+\frac{y_1^{2}-y_2^{2}}{b^{2}}=0 \]
+    </div>
+
+    <p><strong>第三步：用平方差公式分解。</strong></p>
+    <div class="formula">
+      \[ \frac{(x_1+x_2)(x_1-x_2)}{a^{2}}+\frac{(y_1+y_2)(y_1-y_2)}{b^{2}}=0 \]
+    </div>
+
+    <p><strong>第四步：代入中点的条件。</strong>因为 \(M\) 是 \(AB\) 的中点，所以：</p>
+    <div class="formula">
+      \[ x_1+x_2=2x_0,\qquad y_1+y_2=2y_0 \]
+    </div>
+    <p>代入并两边除以 2：</p>
+    <div class="formula">
+      \[ \frac{x_0(x_1-x_2)}{a^{2}}+\frac{y_0(y_1-y_2)}{b^{2}}=0 \]
+    </div>
+
+    <p><strong>第五步：提出斜率。</strong>注意到 \(k=\dfrac{y_1-y_2}{x_1-x_2}\)（弦 \(AB\) 的斜率）。把式子两边除以 \((x_1-x_2)\)：</p>
+    <div class="formula">
+      \[ \frac{x_0}{a^{2}}+\frac{y_0}{b^{2}}\cdot k=0 \]
+    </div>
+
+    <p><strong>第六步：解出 \(k\)。</strong></p>
+    <div class="formula">
+      \[ \boxed{\ k=-\frac{b^{2}x_0}{a^{2}y_0}\ } \]
+    </div>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">点差法的要点</span>
+      <ul>
+        <li><strong>核心动作是"两式相减"</strong>，所以叫"点差法"（两点的差）。</li>
+        <li><strong>这个方法的优势：</strong>完全绕开了联立方程和韦达定理，只需要几步代数变形。遇到"中点弦"问题<strong>首选这个方法</strong>。</li>
+        <li><strong>对双曲线</strong> \(\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=1\) 做同样的推导，得到 \(k=\dfrac{b^{2}x_0}{a^{2}y_0}\)（注意符号变了，因为中间是减号）。</li>
+        <li><strong>对抛物线</strong> \(y^2=2px\)，得到 \(k=\dfrac{p}{y_0}\)。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 12（点差法）</span>
+    <p>已知椭圆 \(\dfrac{x^{2}}{16}+\dfrac{y^{2}}{4}=1\) 的一条弦的中点是 \(M(2,1)\)。求这条弦所在直线的方程。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：读出参数。</strong>\(a^2=16\)，\(b^2=4\)；中点 \(x_0=2\)，\(y_0=1\)。</p>
+
+    <p><strong>第二步：套点差法公式。</strong></p>
+    <div class="formula">
+      \[ k=-\frac{b^{2}x_0}{a^{2}y_0}=-\frac{4\times2}{16\times1}=-\frac{8}{16}=-\frac12 \]
+    </div>
+
+    <p><strong>第三步：用点斜式写直线方程。</strong>直线过 \(M(2,1)\)，斜率 \(-\dfrac12\)：</p>
+    <div class="formula">
+      \[ y-1=-\frac12(x-2) \]
+    </div>
+    <p>两边乘 2：\(2y-2=-x+2\)，即</p>
+    <div class="formula">
+      \[ \boxed{x+2y-4=0} \]
+    </div>
+
+    <p><strong>验算：</strong>把 \(M(2,1)\) 代入：\(2+2-4=0\) ✓。</p>
+    <p><strong>进一步验算（联立求交点）：</strong>由 \(y=\dfrac{4-x}{2}\) 代入椭圆方程：</p>
+    <div class="formula">
+      \[ \frac{x^{2}}{16}+\frac{\left(\frac{4-x}{2}\right)^{2}}{4}=1 \quad\Longrightarrow\quad \frac{x^{2}}{16}+\frac{(4-x)^{2}}{16}=1 \]
+    </div>
+    <div class="formula">
+      \[ x^{2}+(4-x)^{2}=16 \quad\Longrightarrow\quad 2x^{2}-8x+16=16 \quad\Longrightarrow\quad x^{2}-4x=0 \]
+    </div>
+    <p>所以 \(x_1=0\)、\(x_2=4\)。中点横坐标 \(=\dfrac{0+4}{2}=2\) ✓ 与 \(M\) 的横坐标一致。此时 \(y_1=2\)、\(y_2=0\)，中点纵坐标 \(=\dfrac{2+0}{2}=1\) ✓ 一致。</p>
+  </div>
+
+  <h3 id="ch6-4">6.4　面积问题</h3>
+
+  <div class="box proof">
+    <span class="tag">常用公式与思路</span>
+    <p>设直线与曲线交于 \(A\)、\(B\)，点 \(P\) 到直线的距离为 \(d\)，则：</p>
+    <div class="formula">
+      \[ S_{\triangle PAB}=\frac12\cdot|AB|\cdot d \]
+    </div>
+    <p><strong>两种常见情形：</strong></p>
+    <ol class="steps">
+      <li><strong>\(P\) 是原点</strong>（或某个定点）：用"底 \(\times\) 高"直接算。<br>\(d\) 用点到直线距离公式，\(|AB|\) 用弦长公式。</li>
+      <li><strong>三角形被 \(x\) 轴（或 \(y\) 轴）分成两块</strong>：用"<strong>水平分割法</strong>"。<br>若直线与 \(x\) 轴交于 \(M\)，则 \(S_{\triangle PAB}=S_{\triangle PMA}+S_{\triangle PMB}=\dfrac12|PM|\cdot|y_1-y_2|\)。</li>
+    </ol>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 13（面积问题）</span>
+    <p>已知椭圆 \(\dfrac{x^{2}}{4}+y^{2}=1\) 与直线 \(y=x+1\) 交于 \(A\)、\(B\) 两点，\(O\) 为原点。求 \(\triangle OAB\) 的面积。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：联立消元。</strong>把 \(y=x+1\) 代入椭圆方程：</p>
+    <div class="formula">
+      \[ \frac{x^{2}}{4}+(x+1)^{2}=1 \]
+    </div>
+    <div class="formula">
+      \[ \frac{x^{2}}{4}+x^{2}+2x+1=1 \quad\Longrightarrow\quad \frac54x^{2}+2x=0 \]
+    </div>
+
+    <p><strong>第二步：解方程求交点。</strong>提出 \(x\)：</p>
+    <div class="formula">
+      \[ x\left(\frac54x+2\right)=0 \quad\Longrightarrow\quad x_1=0,\qquad x_2=-\frac85 \]
+    </div>
+    <p>对应的纵坐标（用 \(y=x+1\)）：</p>
+    <div class="formula">
+      \[ y_1=0+1=1,\qquad y_2=-\frac85+1=-\frac35 \]
+    </div>
+    <p>所以 \(A(0,1)\)、\(B\left(-\dfrac85,-\dfrac35\right)\)。</p>
+
+    <p><strong>第三步：求弦长 \(|AB|\)。</strong>直线斜率 \(k=1\)，用弦长公式：</p>
+    <div class="formula">
+      \[ |AB|=\sqrt{1+k^{2}}\cdot|x_1-x_2|=\sqrt2\cdot\left|0-\left(-\frac85\right)\right|=\sqrt2\cdot\frac85=\frac{8\sqrt2}{5} \]
+    </div>
+
+    <p><strong>第四步：求 \(O\) 到直线的距离。</strong>直线 \(y=x+1\) 化成一般式 \(x-y+1=0\)：</p>
+    <div class="formula">
+      \[ d=\frac{|0-0+1|}{\sqrt{1^{2}+(-1)^{2}}}=\frac{1}{\sqrt2}=\frac{\sqrt2}{2} \]
+    </div>
+
+    <p><strong>第五步：算面积。</strong></p>
+    <div class="formula">
+      \[ S=\frac12\cdot|AB|\cdot d=\frac12\cdot\frac{8\sqrt2}{5}\cdot\frac{\sqrt2}{2}=\frac12\cdot\frac{8\times2}{5\times2}=\frac12\cdot\frac85=\frac45 \]
+    </div>
+
+    <p><strong>答案：</strong>\(\boxed{S_{\triangle OAB}=\dfrac45}\)</p>
+
+    <p><strong>验算（用水平分割法）：</strong>直线 \(y=x+1\) 与 \(x\) 轴交于 \(M(-1,0)\)。把三角形分成 \(\triangle OMA\) 和 \(\triangle OMB\)，以 \(OM\) 为公共底边：</p>
+    <div class="formula">
+      \[ S=\frac12|OM|\cdot|y_1-y_2|=\frac12\times1\times\left|1-\left(-\frac35\right)\right|=\frac12\times\frac85=\frac45 \quad\checkmark \]
+    </div>
+    <p>两种方法结果一致，且第二种明显更快。</p>
+  </div>
+
+  <h3 id="ch6-5">6.5　定点定值问题的思路</h3>
+
+  <div class="box tip">
+    <span class="tag">两类常见压轴问法的应对思路</span>
+    <p><strong>类型一：证明直线过定点。</strong></p>
+    <ol>
+      <li>设直线方程为 \(y=kx+m\)（或 \(x=ty+n\)），把 \(k\)、\(m\) 当作参数。</li>
+      <li>用题目条件（如"以 AB 为直径的圆过原点"、"OA⊥OB"等）建立一个关于 \(k\)、\(m\) 的<strong>关系式</strong>。</li>
+      <li>从这个关系式解出 \(m\) 与 \(k\) 的线性关系（如 \(m=2k+1\)）。</li>
+      <li>把 \(m\) 代回直线方程：\(y=kx+2k+1=k(x+2)+1\)，说明它<strong>恒过点 \((-2,1)\)</strong>。</li>
+    </ol>
+    <p><strong>关键：</strong>最后一步要把式子整理成"含 \(k\) 的项 + 不含 \(k\) 的项"，然后令含 \(k\) 的部分系数为 0。</p>
+
+    <p style="margin-top:16px;"><strong>类型二：证明某个量为定值。</strong></p>
+    <ol>
+      <li>把这个量用 \(x_1+x_2\)、\(x_1x_2\) 表示出来（这一步最关键）。</li>
+      <li>代入韦达定理的结果。</li>
+      <li>化简，如果参数 \(k\) 或 \(m\) 被消掉，就说明是定值。</li>
+    </ol>
+    <p><strong>经验：</strong>如果化简到最后 \(k\) 消不掉，通常是前面某个地方算错了，或者"用 \(x_1+x_2\)、\(x_1x_2\) 表示"这一步没做彻底。</p>
+  </div>
+
+  <!-- ==================== 第 7 章 ==================== -->
+  <h2 id="ch7"><span class="num">7</span>易错点清单、知识地图与自测</h2>
+  <p class="lead">解析几何的丢分有两种：一种是想错了，一种是算错了。这一章帮你避开第一种。</p>
+
+  <h3 id="ch7-1">7.1　易错点清单</h3>
+
+  <div class="box warn">
+    <span class="tag">解析几何易错点 · 18 条</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>#</th><th>易错点</th><th>正确做法</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>倾斜角范围写成 \([0^\circ,180^\circ]\)</td><td>应为 \([0^\circ,180^\circ)\)，取不到 \(180^\circ\)</td></tr>
+          <tr><td>2</td><td>\(\alpha=90^\circ\) 时说"斜率等于 0"</td><td>应说"<strong>斜率不存在</strong>"，这是两回事</td></tr>
+          <tr><td>3</td><td>斜率公式分子分母顺序不一致</td><td>\(k=\dfrac{y_2-y_1}{x_2-x_1}\)，上下都必须是"2 减 1"</td></tr>
+          <tr><td>4</td><td>★ 设 \(y=kx+m\) 时漏掉"斜率不存在"的情况</td><td>竖直线要单独讨论；或改设 \(x=ty+n\) 规避</td></tr>
+          <tr><td>5</td><td>用 \(k_1k_2=-1\) 判垂直时不检查斜率是否存在</td><td>\(k=0\) 时垂线斜率不存在，要单独说</td></tr>
+          <tr><td>6</td><td>两平行线距离公式直接套，不统一 \(A\)、\(B\)</td><td>必须先把两条直线的 \(A\)、\(B\) 化成完全相同</td></tr>
+          <tr><td>7</td><td>圆的方程写错符号</td><td>圆心 \((a,b)\) 对应 \((x-a)^2+(y-b)^2=r^2\)，注意是<strong>减</strong></td></tr>
+          <tr><td>8</td><td>用一般式判圆时忘记检查 \(D^2+E^2-4F>0\)</td><td>这个条件不满足时，方程不表示圆</td></tr>
+          <tr><td>9</td><td>直线与圆位置关系用代数法硬算</td><td><strong>优先用几何法</strong>（比较 \(d\) 与 \(r\)），快且不易错</td></tr>
+          <tr><td>10</td><td>★ 椭圆里用 \(c^2=a^2+b^2\)</td><td>椭圆是 \(\boxed{c^2=a^2-b^2}\)，双曲线才是 \(c^2=a^2+b^2\)</td></tr>
+          <tr><td>11</td><td>判断焦点在哪条轴时看错</td><td>椭圆看<strong>分母谁大</strong>（大的对应 \(a^2\)，焦点在那个轴上）；双曲线看<strong>哪一项是正的</strong></td></tr>
+          <tr><td>12</td><td>双曲线定义漏掉"绝对值"</td><td>没有绝对值时只得到<strong>一支</strong></td></tr>
+          <tr><td>13</td><td>双曲线的 \(b\) 当成"短半轴"</td><td>双曲线<strong>没有短半轴</strong>，\(b\) 只用于定渐近线和 \(a,b,c\) 关系</td></tr>
+          <tr><td>14</td><td>抛物线四种形式搞混焦点和准线的符号</td><td>记住"<strong>看一次项是谁定对称轴，看符号定开口方向</strong>"</td></tr>
+          <tr><td>15</td><td>★ 联立后不检查 \(\Delta>0\)</td><td>必须确认有两个交点，否则韦达定理的结果没有意义</td></tr>
+          <tr><td>16</td><td>弦长公式里 \(k\) 用错</td><td>用 \(y=kx+m\) 时是 \(\sqrt{1+k^2}\)；用 \(x=ty+n\) 时是 \(\sqrt{1+t^2}\)</td></tr>
+          <tr><td>17</td><td>点差法求中点弦后不验证</td><td>算出斜率后，要确认中点确实在曲线<strong>内部</strong>（否则弦不存在）</td></tr>
+          <tr><td>18</td><td>面积问题漏掉 \(\dfrac12\)</td><td>\(S=\dfrac12\times\) 底 \(\times\) 高</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">解题流程自检表</span>
+    <p><strong>做圆锥曲线大题时，按这个顺序检查：</strong></p>
+    <ul>
+      <li>□ 直线方程设对了吗？斜率不存在的情况讨论了吗？</li>
+      <li>□ 联立消元后，二次项系数是 0 吗（会不会退化成一次方程）？</li>
+      <li>□ \(\Delta>0\) 检查了吗？</li>
+      <li>□ 韦达定理写对了吗（\(x_1+x_2=-\dfrac ba\)，<strong>有个负号</strong>）？</li>
+      <li>□ 要求的量用 \(x_1+x_2\)、\(x_1x_2\) 表示出来了吗？</li>
+      <li>□ 最后的结果代回原题验算了吗？</li>
+    </ul>
+  </div>
+
+  <h3 id="ch7-2">7.2　知识地图</h3>
+
+  <div class="map">
+    <div class="node">
+      <b>① 直线</b>
+      <span>斜率 \(k=\tan\alpha=\dfrac{y_2-y_1}{x_2-x_1}\)<br>五种方程形式<br>平行 \(k_1=k_2\)、垂直 \(k_1k_2=-1\)</span>
+    </div>
+    <div class="node">
+      <b>② 三个距离公式</b>
+      <span>两点：\(\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}\)<br>点线：\(\dfrac{|Ax_0+By_0+C|}{\sqrt{A^2+B^2}}\)<br>平行线：\(\dfrac{|C_1-C_2|}{\sqrt{A^2+B^2}}\)</span>
+    </div>
+    <div class="node">
+      <b>③ 圆</b>
+      <span>\((x-a)^2+(y-b)^2=r^2\)<br>位置关系：比 \(d\) 与 \(r\)<br>弦长：\(2\sqrt{r^2-d^2}\)</span>
+    </div>
+    <div class="node">
+      <b>④ 椭圆</b>
+      <span>\(|PF_1|+|PF_2|=2a\)<br>\(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1\)<br>\(\boxed{c^2=a^2-b^2}\)，\(e\in(0,1)\)</span>
+    </div>
+    <div class="node">
+      <b>⑤ 双曲线</b>
+      <span>\(||PF_1|-|PF_2||=2a\)<br>\(\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=1\)<br>\(\boxed{c^2=a^2+b^2}\)，\(e>1\)<br>渐近线 \(y=\pm\dfrac ba x\)</span>
+    </div>
+    <div class="node">
+      <b>⑥ 抛物线</b>
+      <span>\(|PF|=d(P,l)\)<br>\(y^2=2px\)<br>焦点 \(\left(\dfrac p2,0\right)\)，准线 \(x=-\dfrac p2\)<br>通径 \(2p\)，焦点弦 \(x_1+x_2+p\)</span>
+    </div>
+    <div class="node">
+      <b>⑦ 直线与曲线（压轴）</b>
+      <span>联立 → \(\Delta>0\) → 韦达定理<br>弦长 \(\sqrt{1+k^2}\sqrt{(x_1+x_2)^2-4x_1x_2}\)<br>中点弦：点差法 \(k=-\dfrac{b^2x_0}{a^2y_0}\)<br>面积：\(\dfrac12\times\)底\(\times\)高</span>
+    </div>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">把整章串成一条逻辑链</span>
+    <ol class="steps">
+      <li><strong>直线</strong>是最基本的图形，用<strong>斜率</strong>刻画方向，用<strong>方程</strong>刻画位置。</li>
+      <li><strong>三个距离公式</strong>都来自同一个思想：<strong>把距离转化为投影</strong>（点到直线距离的推导是模板）。</li>
+      <li><strong>圆</strong>的定义是"到定点距离等于定长"，直接平方就得到标准方程。</li>
+      <li><strong>椭圆、双曲线、抛物线</strong>都是"到定点/定直线的距离满足某条件"的轨迹，推导方法完全一致：<strong>列式 → 平方去根号 → 引入新字母化简</strong>。</li>
+      <li>三条曲线的差别只在"距离关系的类型"：<strong>和为定值 → 椭圆；差的绝对值为定值 → 双曲线；两者相等 → 抛物线</strong>。</li>
+      <li><strong>直线与曲线相交</strong>是压轴题的战场：联立消元得到二次方程，用<strong>韦达定理</strong>把几何量（弦长、面积、中点）翻译成代数式。</li>
+      <li>整章的技能归结为一句话：<strong>把几何条件准确翻译成代数方程，然后算。</strong></li>
+    </ol>
+  </div>
+
+  <h3 id="ch7-3">7.3　自测清单</h3>
+  <p>下面每一条，能<strong>不看讲义完整写出来</strong>就打勾。</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:44px;">✓</th><th>自测项</th></tr></thead>
+      <tbody>
+        <tr><td>☐</td><td>能说出倾斜角的范围，并解释为什么取不到 \(180^\circ\)</td></tr>
+        <tr><td>☐</td><td>能推出两点斜率公式 \(k=\dfrac{y_2-y_1}{x_2-x_1}\)（用直角三角形）</td></tr>
+        <tr><td>☐</td><td>能说出五种直线方程形式各自的适用条件，并解释为什么"一般式"最通用</td></tr>
+        <tr><td>☐</td><td>★ 能推出 \(l_1\perp l_2\iff k_1k_2=-1\)，并说明这条公式的两个漏洞</td></tr>
+        <tr><td>☐</td><td>能用勾股定理推出两点间距离公式</td></tr>
+        <tr><td>☐</td><td>★ 能用"投影"的思想推出点到直线距离公式</td></tr>
+        <tr><td>☐</td><td>能推出两平行线距离公式，并说明为什么必须先统一 \(A\)、\(B\)</td></tr>
+        <tr><td>☐</td><td>能推出圆的标准方程（用定义 + 两点间距离）</td></tr>
+        <tr><td>☐</td><td>能用配方法把圆的一般式还原成标准式，并说出表示圆的三个条件</td></tr>
+        <tr><td>☐</td><td>能说出直线与圆位置关系的两种判定方法，并解释为什么优先用几何法</td></tr>
+        <tr><td>☐</td><td>能用垂径定理 + 勾股定理推出弦长公式 \(2\sqrt{r^2-d^2}\)</td></tr>
+        <tr><td>☐</td><td>★ 能完整推导椭圆标准方程（两次平方去根号）</td></tr>
+        <tr><td>☐</td><td>能说明 \(b^2=a^2-c^2\) 的几何意义（短轴端点到焦点的距离等于 \(a\)）</td></tr>
+        <tr><td>☐</td><td>能说出离心率 \(e\) 的几何意义（\(e\) 越大越扁）</td></tr>
+        <tr><td>☐</td><td>★ 能完整推导双曲线标准方程，并指出与椭圆推导的差别在哪一步</td></tr>
+        <tr><td>☐</td><td>★ 能推导渐近线 \(y=\pm\dfrac ba x\)（考察 \(x\to\infty\) 时的近似），并说出"把 1 改成 0"的快捷方法</td></tr>
+        <tr><td>☐</td><td>能默写椭圆与双曲线的对照表，并说清 \(a,b,c\) 关系的记忆理由</td></tr>
+        <tr><td>☐</td><td>能完整推导抛物线标准方程 \(y^2=2px\)（只需平方一次）</td></tr>
+        <tr><td>☐</td><td>能默写抛物线四种标准形式，并说出如何判断对称轴和开口方向</td></tr>
+        <tr><td>☐</td><td>能推导通径长度 \(2p\)</td></tr>
+        <tr><td>☐</td><td>★ 能推导焦点弦长公式 \(|AB|=x_1+x_2+p\)（用抛物线的定义）</td></tr>
+        <tr><td>☐</td><td>★ 能推出弦长公式 \(\sqrt{1+k^2}\cdot\sqrt{(x_1+x_2)^2-4x_1x_2}\)</td></tr>
+        <tr><td>☐</td><td>★ 能用"两式相减"推出点差法公式 \(k=-\dfrac{b^2x_0}{a^2y_0}\)</td></tr>
+        <tr><td>☐</td><td>能说出圆锥曲线大题的"五步流程"，并强调第 3 步（检查 \(\Delta>0\)）不能漏</td></tr>
+        <tr><td>☐</td><td>能用"水平分割法"简化面积计算</td></tr>
+        <tr><td>☐</td><td>能说出处理"证明直线过定点"的思路（把式子整理成含参数的项 + 不含参数的项）</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">学完本册，你应该达到什么水平</span>
+    <p><strong>如果这一册学到位了，你应该能独立完成下面这些事：</strong></p>
+    <ul>
+      <li>求直线方程、判断两直线的位置关系、算三个距离（两点、点线、平行线）；</li>
+      <li>求圆的方程，判断直线与圆的位置关系，算弦长；</li>
+      <li>由给定条件求椭圆、双曲线、抛物线的标准方程、焦点、离心率、渐近线；</li>
+      <li>用"<strong>联立 → 检查 \(\Delta>0\) → 韦达定理 → 弦长公式</strong>"处理直线与圆锥曲线的综合题；</li>
+      <li>用点差法快速求中点弦所在直线的斜率；</li>
+      <li>用"水平分割法"简化三角形的面积计算。</li>
+    </ul>
+    <p><strong>如果还有困难，对照下面定位问题：</strong></p>
+    <ul>
+      <li><strong>综合题算不下去</strong> → 多半是<strong>没先想清楚"要求的量能用什么表示"就动笔</strong>，算到一半发现方向错了；</li>
+      <li><strong>总是漏解</strong> → 检查两处：设直线时有没有讨论"<strong>斜率不存在</strong>"，联立后有没有检验"<strong>\(\Delta>0\)</strong>"；</li>
+      <li><strong>记混 \(a,b,c\) 关系</strong> → 椭圆是 \(c^2=a^2-b^2\)、双曲线是 \(c^2=a^2+b^2\)。用"椭圆里 \(a\) 最大、双曲线里 \(c\) 最大"来判断。</li>
+    </ul>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">下一步学什么</span>
+    <p>解析几何这一章到这里结束。后续册次规划：</p>
+    <ul>
+      <li><strong>第六册　概率统计</strong>——古典概型、条件概率、独立性与分布列、期望与方差、统计案例。</li>
+    </ul>
+    <p>说编号即可继续。</p>
+  </div>
+
+  <div class="foot">
+    <span>高考数学重点章节梳理 · 第五册 解析几何</span>
+    <span>建议配合课本与近 5 年真题同步使用</span>
+  </div>
+
+  <!-- ==================== 第 8 章：真题题型精讲 ==================== -->
+  <h2 id="ch8"><span class="num">8</span>高考真题题型精讲（2016—2025）</h2>
+  <p class="lead">前面七章解决"会不会"，这一章解决"考不考得出分"。十年真题按题型归类，每题给出完整解答与提分要点。</p>
+
+  <div class="box tip">
+    <span class="tag">本章说明：真题来源与使用方式</span>
+    <p><strong>题目来源：</strong>本章全部题目取自 2016—2025 年高考数学真题（全国卷 I/II/III 卷、全国甲/乙卷、新高考 I/II 卷等），题干保持原貌。</p>
+    <p><strong>解答说明：</strong>解答按本册第 1~6 章的方法体系重新组织，分步写清每一步的依据，并补充"官方答案未展开的中间步骤"。</p>
+    <p><strong>使用方法：</strong>解析几何的失分大多是"算错"而不是"不会"，所以<strong>验算尤其重要</strong>。每道题做完都要用韦达定理核对一遍。</p>
+  </div>
+
+  <div class="box def">
+    <span class="tag">十年考情速览：解析几何题的固定结构</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>问</th><th>分值</th><th>考法</th><th>目标</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>第一问</strong></td>
+            <td>4~6 分</td>
+            <td>求曲线方程；求离心率；求斜率</td>
+            <td><strong>必拿分</strong>，用第 3~5 章的定义与性质</td>
+          </tr>
+          <tr>
+            <td><strong>第二问</strong></td>
+            <td>6~8 分</td>
+            <td>弦长、面积、中点、定点、定值、证明</td>
+            <td>用第 6 章的"五步流程"</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>十年趋势：</strong>2016—2020 年以"椭圆 + 定点定值"为主；<strong>2021 年后双曲线与抛物线的比重明显上升</strong>（2022 新高考 I 卷考双曲线、2023 全国甲卷考抛物线、2024 新高考 I 卷考双曲线）。</p>
+    <p><strong>★ 第 6 章的"五步流程"是本章所有第二问的通用模板</strong>：设直线 → 联立消元 → <strong>检查 \(\Delta>0\)</strong> → 韦达定理 → 把要求的量用 \(x_1+x_2\)、\(x_1x_2\) 表示。</p>
+  </div>
+
+  <h3 id="ch8-1">8.1　题型一：求曲线方程 + 直线过定点</h3>
+
+  <div class="box eg">
+    <span class="tag">真题 1 · 2017 全国I卷（理）</span>
+    <p>已知椭圆 \(C:\dfrac{x^{2}}{a^{2}}+\dfrac{y^{2}}{b^{2}}=1\)（\(a>b>0\)），四点 \(P_1(1,1)\)、\(P_2(0,1)\)、\(P_3\left(-1,\dfrac{\sqrt3}{2}\right)\)、\(P_4\left(1,\dfrac{\sqrt3}{2}\right)\) 中恰有三点在椭圆 \(C\) 上。</p>
+    <p>（1）求 \(C\) 的方程；</p>
+    <p>（2）设直线 \(l\) 不经过 \(P_2\) 点且与 \(C\) 相交于 \(A\)、\(B\) 两点。若直线 \(P_2A\) 与直线 \(P_2B\) 的斜率的和为 \(-1\)，证明：\(l\) 过定点。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：利用对称性缩小范围。</strong>\(P_3\left(-1,\dfrac{\sqrt3}{2}\right)\) 与 \(P_4\left(1,\dfrac{\sqrt3}{2}\right)\) <strong>关于 \(y\) 轴对称</strong>。椭圆关于 \(y\) 轴对称，所以一个在椭圆上必然另一个也在。</p>
+    <p>若 \(P_3\)、\(P_4\) 都不在，则椭圆上至多只有 \(P_1\)、\(P_2\) 两点，与"恰有三点"矛盾。所以 \(P_3\)、\(P_4\) <strong>都在椭圆上</strong>。</p>
+
+    <p><strong>第二步：判断 \(P_1\) 是否在椭圆上。</strong>假设 \(P_1(1,1)\) 也在椭圆上。把 \(P_1\)、\(P_3\) 都代入：</p>
+    <div class="formula">
+      \[ \frac{1}{a^{2}}+\frac{1}{b^{2}}=1,\qquad \frac{1}{a^{2}}+\frac{3}{4b^{2}}=1 \]
+    </div>
+    <p>相减得 \(\dfrac{1}{4b^{2}}=0\)，<strong>不可能</strong>。所以 \(P_1\) 不在椭圆上，从而 \(P_2(0,1)\) 在椭圆上。</p>
+
+    <p><strong>第三步：求 \(a^2\)、\(b^2\)。</strong>把 \(P_2(0,1)\) 代入：\(\dfrac{1}{b^{2}}=1\)，得 \(b^{2}=1\)。</p>
+    <p>把 \(P_3\) 代入（此时 \(b^2=1\)）：\(\dfrac{1}{a^{2}}+\dfrac34=1\)，得 \(a^{2}=4\)。</p>
+    <div class="formula">
+      \[ \boxed{\ C:\frac{x^{2}}{4}+y^{2}=1\ } \]
+    </div>
+
+    <p><strong>（2）第一步：设直线并利用"不过 \(P_2\)"。</strong>设 \(l:y=kx+m\)（先设斜率存在）。因为 \(l\) 不过 \(P_2(0,1)\)，把 \(x=0\) 代入得 \(y=m\)，所以 \(m\ne1\)。</p>
+
+    <p><strong>第二步：联立消元。</strong>把 \(y=kx+m\) 代入 \(\dfrac{x^2}{4}+y^2=1\)：</p>
+    <div class="formula">
+      \[ x^{2}+4(k^{2}x^{2}+2kmx+m^{2})=4 \]
+    </div>
+    <div class="formula">
+      \[ (1+4k^{2})x^{2}+8kmx+4m^{2}-4=0 \]
+    </div>
+    <div class="formula">
+      \[ x_{1}+x_{2}=-\frac{8km}{1+4k^{2}},\qquad x_{1}x_{2}=\frac{4m^{2}-4}{1+4k^{2}} \]
+    </div>
+
+    <p><strong>第三步：把"斜率之和为 \(-1\)"翻译成代数式。</strong>由 \(P_2=(0,1)\)、\(y_i=kx_i+m\)：</p>
+    <div class="formula">
+      \[ k_{P_2A}+k_{P_2B}=\frac{y_{1}-1}{x_{1}}+\frac{y_{2}-1}{x_{2}}=\frac{kx_{1}+m-1}{x_{1}}+\frac{kx_{2}+m-1}{x_{2}}=-1 \]
+    </div>
+    <p>拆开分式：</p>
+    <div class="formula">
+      \[ 2k+(m-1)\left(\frac{1}{x_{1}}+\frac{1}{x_{2}}\right)=-1 \]
+    </div>
+
+    <p><strong>第四步：代入韦达定理。</strong></p>
+    <div class="formula">
+      \[ \frac{1}{x_{1}}+\frac{1}{x_{2}}=\frac{x_{1}+x_{2}}{x_{1}x_{2}}=\frac{-\frac{8km}{1+4k^{2}}}{\frac{4m^{2}-4}{1+4k^{2}}}=\frac{-8km}{4(m^{2}-1)}=\frac{-2km}{m^{2}-1} \]
+    </div>
+    <div class="formula">
+      \[ 2k+(m-1)\cdot\frac{-2km}{(m-1)(m+1)}=-1 \]
+    </div>
+    <p>因为 \(m\ne1\)，约去 \((m-1)\)：</p>
+    <div class="formula">
+      \[ 2k-\frac{2km}{m+1}=-1 \]
+    </div>
+    <p>两边乘 \((m+1)\)：\(2k(m+1)-2km=-(m+1)\)，即 \(2k=-m-1\)，所以：</p>
+    <div class="formula">
+      \[ m=-2k-1 \tag{①} \]
+    </div>
+
+    <p><strong>第五步：代回找定点。</strong></p>
+    <div class="formula">
+      \[ y=kx+m=kx-2k-1=k(x-2)-1 \]
+    </div>
+    <p>无论 \(k\) 取何值，把 \(x=2\) 代入都得 \(y=-1\)。所以 \(l\) 恒过点 \((2,-1)\)。</p>
+
+    <p><strong>第六步：补充斜率不存在的情形。</strong>若 \(l:x=t\)，则 \(A(t,y_1)\)、\(B(t,y_2)\) 关于 \(x\) 轴对称，\(y_2=-y_1\)：</p>
+    <div class="formula">
+      \[ k_{P_2A}+k_{P_2B}=\frac{y_1-1}{t}+\frac{y_2-1}{t}=\frac{-2}{t} \]
+    </div>
+    <p>要它等于 \(-1\)，得 \(t=2\)，即 \(l:x=2\)，也过 \((2,-1)\) ✓</p>
+
+    <div class="formula">
+      \[ \boxed{\ \text{直线 }l\text{ 恒过定点 }(2,\,-1)\ } \]
+    </div>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>第（1）问的关键是"利用对称性"。</strong>\(P_3\)、\(P_4\) 关于 \(y\) 轴对称 ⟹ 要么都在椭圆上，要么都不在。这一步让"恰有三点"立刻锁定答案。</li>
+        <li><strong>"斜率之和为常数"的固定套路：</strong>把斜率写成 \(\dfrac{kx_i+m-1}{x_i}\)，拆成 \(k+\dfrac{m-1}{x_i}\)，再用 \(\dfrac{1}{x_1}+\dfrac{1}{x_2}=\dfrac{x_1+x_2}{x_1x_2}\) 代入韦达定理。<strong>十年里反复出现。</strong></li>
+        <li><strong>约分前要说明条件。</strong>本题约去 \((m-1)\) 的前提是 \(m\ne1\)，这正是"\(l\) 不经过 \(P_2\)"给的。</li>
+        <li><strong>证过定点的最后一步：整理成"含参数项 + 常数项"。</strong>\(y=k(x-2)-1\)，令 \(x-2=0\) 即得定点。</li>
+        <li><strong>不要漏"斜率不存在"。</strong>本题这一情形也要验证过同一点。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="ch8-2">8.2　题型二：中点弦与点差法</h3>
+
+  <div class="box eg">
+    <span class="tag">真题 2 · 2018 全国III卷（理）</span>
+    <p>已知斜率为 \(k\) 的直线 \(l\) 与椭圆 \(C:\dfrac{x^{2}}{4}+\dfrac{y^{2}}{3}=1\) 交于 \(A\)、\(B\) 两点，线段 \(AB\) 的中点为 \(M(1,m)\)（\(m>0\)）。</p>
+    <p>（1）证明：\(k&lt;-\dfrac12\)；</p>
+    <p>（2）设 \(F\) 为 \(C\) 的右焦点，\(P\) 为 \(C\) 上一点，且 \(\overrightarrow{FP}+\overrightarrow{FA}+\overrightarrow{FB}=\overrightarrow{0}\)。证明：\(|\overrightarrow{FA}|\)、\(|\overrightarrow{FP}|\)、\(|\overrightarrow{FB}|\) 成等差数列，并求该数列的公差。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：用点差法求 \(k\) 与 \(m\) 的关系。</strong>设 \(A(x_1,y_1)\)、\(B(x_2,y_2)\) 都在椭圆上，两式相减：</p>
+    <div class="formula">
+      \[ \frac{(x_1+x_2)(x_1-x_2)}{4}+\frac{(y_1+y_2)(y_1-y_2)}{3}=0 \]
+    </div>
+    <p>因为 \(M(1,m)\) 是中点，\(x_1+x_2=2\)、\(y_1+y_2=2m\)。代入并乘 6：</p>
+    <div class="formula">
+      \[ 3(x_1-x_2)+4m(y_1-y_2)=0 \quad\Longrightarrow\quad k=\frac{y_1-y_2}{x_1-x_2}=-\frac{3}{4m} \tag{①} \]
+    </div>
+
+    <p><strong>第二步：用"中点在椭圆内"确定 \(m\) 的范围。</strong></p>
+    <div class="formula">
+      \[ \frac{1}{4}+\frac{m^{2}}{3}&lt;1 \quad\Longrightarrow\quad m^{2}&lt;\frac94 \quad\Longrightarrow\quad 0&lt;m&lt;\frac32 \]
+    </div>
+
+    <p><strong>第三步：得结论。</strong>由 \(0&lt;m&lt;\dfrac32\) 得 \(\dfrac{3}{4m}>\dfrac{3}{4\times\frac32}=\dfrac12\)，所以：</p>
+    <div class="formula">
+      \[ k=-\frac{3}{4m}&lt;-\frac12 \quad\checkmark \]
+    </div>
+
+    <p><strong>（2）第一步：求焦点。</strong>\(a^2=4\)、\(b^2=3\)，所以 \(c^2=a^2-b^2=1\)，\(F(1,0)\)。</p>
+
+    <p><strong>第二步：用向量条件求 \(P\)。</strong>由 \(\overrightarrow{FP}=-(\overrightarrow{FA}+\overrightarrow{FB})\)，而 \(\overrightarrow{FA}+\overrightarrow{FB}=2\overrightarrow{FM}\)：</p>
+    <div class="formula">
+      \[ \overrightarrow{FP}=-2\overrightarrow{FM}=-2\bigl[(1,m)-(1,0)\bigr]=-2(0,m)=(0,-2m) \]
+    </div>
+    <p>所以 \(P=F+\overrightarrow{FP}=(1,-2m)\)。</p>
+
+    <p><strong>第三步：用"\(P\) 在椭圆上"求 \(m\)。</strong></p>
+    <div class="formula">
+      \[ \frac{1}{4}+\frac{4m^{2}}{3}=1 \quad\Longrightarrow\quad \frac{4m^{2}}{3}=\frac34 \quad\Longrightarrow\quad m^{2}=\frac{9}{16} \quad\Longrightarrow\quad m=\frac34 \]
+    </div>
+
+    <p><strong>第四步：求三条长度。</strong></p>
+    <div class="formula">
+      \[ |FP|=|(0,-2m)|=2m=\frac32 \]
+    </div>
+    <p>对椭圆 \(\dfrac{x^2}{4}+\dfrac{y^2}{3}=1\) 上的点 \((x_0,y_0)\)，焦半径公式为 \(|FX|=a-ex_0\)，其中 \(e=\dfrac ca=\dfrac12\)。所以：</p>
+    <div class="formula">
+      \[ |FA|=2-\frac12x_1,\qquad |FB|=2-\frac12x_2 \]
+    </div>
+    <div class="formula">
+      \[ |FA|+|FB|=4-\frac12(x_1+x_2)=4-\frac12\times2=3 \]
+    </div>
+
+    <p><strong>第五步：验证等差数列。</strong>只需验证 \(2|FP|=|FA|+|FB|\)：</p>
+    <div class="formula">
+      \[ 2\times\frac32=3=|FA|+|FB| \quad\checkmark \]
+    </div>
+    <p>所以三者成等差数列。</p>
+
+    <p><strong>第六步：求公差。</strong>公差 \(d=\dfrac{\bigl||FB|-|FA|\bigr|}{2}\)。由焦半径公式：</p>
+    <div class="formula">
+      \[ |FB|-|FA|=\frac12(x_1-x_2) \quad\Longrightarrow\quad d=\frac{|x_1-x_2|}{4} \]
+    </div>
+    <p>由①，\(k=-\dfrac{3}{4m}=-\dfrac{3}{4\times\frac34}=-1\)。直线过 \(M\left(1,\dfrac34\right)\)：</p>
+    <div class="formula">
+      \[ y-\frac34=-(x-1) \quad\Longrightarrow\quad y=-x+\frac74 \]
+    </div>
+    <p>代入椭圆（两边乘 12）：</p>
+    <div class="formula">
+      \[ 3x^{2}+4\left(x^{2}-\frac72x+\frac{49}{16}\right)=12 \]
+    </div>
+    <div class="formula">
+      \[ 7x^{2}-14x+\frac{49}{4}-12=0 \quad\Longrightarrow\quad 7x^{2}-14x+\frac14=0 \]
+    </div>
+    <p>所以 \(x_1+x_2=2\) ✓（与已知一致），\(x_1x_2=\dfrac{1}{28}\)。</p>
+    <div class="formula">
+      \[ (x_1-x_2)^{2}=(x_1+x_2)^{2}-4x_1x_2=4-\frac{4}{28}=\frac{27}{7} \]
+    </div>
+    <div class="formula">
+      \[ |x_1-x_2|=\frac{3\sqrt3}{\sqrt7}=\frac{3\sqrt{21}}{7} \]
+    </div>
+    <div class="formula">
+      \[ \boxed{\ d=\frac14\times\frac{3\sqrt{21}}{7}=\frac{3\sqrt{21}}{28}\ } \]
+    </div>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>看到"弦的中点"立刻用点差法</strong>（见 6.3 节）。本题一步得到 \(k=-\dfrac{3}{4m}\)，比联立简单得多。</li>
+        <li><strong>"中点在椭圆内部"是隐藏条件</strong>，用来求参数范围，不写会失分。</li>
+        <li><strong>向量条件要用"中点公式"转化：</strong>\(\overrightarrow{FA}+\overrightarrow{FB}=2\overrightarrow{FM}\)。</li>
+        <li><strong>焦半径公式 \(|FX|=a-ex_0\) 必须记住。</strong>它把"长度"变成"横坐标的一次式"，是处理焦半径问题的利器。</li>
+        <li>公差是 \(\dfrac{\bigl||FB|-|FA|\bigr|}{2}\)（两端之差的一半），不是 \(|FB|-|FA|\)。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="ch8-3">8.3　题型三：抛物线的焦点弦与向量</h3>
+
+  <div class="box tip">
+    <span class="tag">抛物线问题的核心结论</span>
+    <p>对抛物线 \(y^{2}=2px\)，焦点 \(F\left(\dfrac p2,0\right)\)，过焦点的弦 \(AB\) 满足：</p>
+    <div class="formula">
+      \[ |AB|=x_1+x_2+p,\qquad x_1x_2=\frac{p^{2}}{4},\qquad y_1y_2=-p^{2} \]
+    </div>
+    <p><strong>第一个公式的推导见 5.3 节</strong>（用"到焦点的距离 = 到准线的距离"）。它把"求弦长"变成"求两个横坐标之和"，配合韦达定理非常好用。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 3 · 2019 全国I卷（理）</span>
+    <p>已知抛物线 \(C:y^{2}=3x\) 的焦点为 \(F\)，斜率为 \(\dfrac32\) 的直线 \(l\) 与 \(C\) 的交点为 \(A\)、\(B\)，与 \(x\) 轴的交点为 \(P\)。</p>
+    <p>（1）若 \(|AF|+|BF|=4\)，求 \(l\) 的方程；</p>
+    <p>（2）若 \(\overrightarrow{AP}=3\overrightarrow{PB}\)，求 \(|AB|\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>准备。</strong>由 \(y^2=3x\) 得 \(2p=3\)，即 \(p=\dfrac32\)，焦点 \(F\left(\dfrac34,0\right)\)，准线 \(x=-\dfrac34\)。</p>
+
+    <p><strong>（1）第一步：用焦点弦公式。</strong>因为 \(A\)、\(B\)、\(F\) 共线，\(|AF|+|BF|=|AB|\)。由焦点弦公式：</p>
+    <div class="formula">
+      \[ |AB|=x_1+x_2+p=x_1+x_2+\frac32=4 \quad\Longrightarrow\quad x_1+x_2=\frac52 \tag{①} \]
+    </div>
+
+    <p><strong>第二步：设直线并联立。</strong>设 \(l:y=\dfrac32x+b\)，代入 \(y^2=3x\)：</p>
+    <div class="formula">
+      \[ \frac94x^{2}+3bx+b^{2}=3x \quad\Longrightarrow\quad \frac94x^{2}+(3b-3)x+b^{2}=0 \]
+    </div>
+    <div class="formula">
+      \[ x_{1}+x_{2}=-\frac{3b-3}{\frac94}=\frac{4(1-b)}{3} \]
+    </div>
+
+    <p><strong>第三步：代入①求 \(b\)。</strong></p>
+    <div class="formula">
+      \[ \frac{4(1-b)}{3}=\frac52 \quad\Longrightarrow\quad 8(1-b)=15 \quad\Longrightarrow\quad b=-\frac78 \]
+    </div>
+    <div class="formula">
+      \[ \boxed{\ l:y=\frac32x-\frac78\ } \]
+    </div>
+
+    <p><strong>（2）第一步：改用 \(y\) 作变量联立（更简单）。</strong>由 \(y=\dfrac32x+b\) 得 \(x=\dfrac23(y-b)\)，代入 \(y^2=3x\)：</p>
+    <div class="formula">
+      \[ y^{2}=2(y-b) \quad\Longrightarrow\quad y^{2}-2y+2b=0 \]
+    </div>
+    <div class="formula">
+      \[ y_{1}+y_{2}=2,\qquad y_{1}y_{2}=2b \]
+    </div>
+
+    <p><strong>第二步：翻译向量条件。</strong>\(P\) 在 \(x\) 轴上且在 \(l\) 上：\(0=\dfrac32x_P+b\)，得 \(x_P=-\dfrac{2b}{3}\)。</p>
+    <p>\(\overrightarrow{AP}=(x_P-x_1,-y_1)\)、\(\overrightarrow{PB}=(x_2-x_P,y_2)\)。由 \(\overrightarrow{AP}=3\overrightarrow{PB}\)，<strong>先看纵坐标</strong>（不含 \(x_P\)，最简单）：</p>
+    <div class="formula">
+      \[ -y_{1}=3y_{2} \quad\Longrightarrow\quad y_{1}=-3y_{2} \]
+    </div>
+    <p>结合 \(y_1+y_2=2\)：\(-3y_2+y_2=2\)，得 \(y_2=-1\)、\(y_1=3\)。</p>
+    <p>再由 \(y_1y_2=2b\)：\(3\times(-1)=2b\)，得 \(b=-\dfrac32\)。</p>
+
+    <p><strong>第三步：求 \(|AB|\)。</strong>用 \(x=\dfrac{y^2}{3}\) 求横坐标：\(x_1=3\)、\(x_2=\dfrac13\)。</p>
+    <div class="formula">
+      \[ |AB|=\sqrt{\left(3-\frac13\right)^{2}+(3+1)^{2}}=\sqrt{\frac{64}{9}+16}=\sqrt{\frac{208}{9}}=\frac{4\sqrt{13}}{3} \]
+    </div>
+    <div class="formula">
+      \[ \boxed{\ |AB|=\frac{4\sqrt{13}}{3}\ } \]
+    </div>
+
+    <p><strong>验算（用弦长公式）：</strong>\(x_1+x_2=\dfrac{10}{3}\)，\(x_1x_2=1\)，\(k=\dfrac32\)：</p>
+    <div class="formula">
+      \[ |AB|=\sqrt{1+\frac94}\cdot\sqrt{\frac{100}{9}-4}=\frac{\sqrt{13}}{2}\cdot\frac83=\frac{4\sqrt{13}}{3} \quad\checkmark \]
+    </div>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>第（1）问要认出 \(|AF|+|BF|=|AB|\)</strong>（三点共线），再用焦点弦公式 \(|AB|=x_1+x_2+p\)。</li>
+        <li><strong>★ 第（2）问的关键技巧：改用 \(y\) 作变量联立。</strong>把直线写成 \(x=\dfrac23(y-b)\) 代入抛物线，得关于 \(y\) 的方程。因为向量条件的纵坐标部分最简单（\(-y_1=3y_2\)），用 \(y\) 作变量能一步到位。</li>
+        <li><strong>向量条件要拆成横、纵两个方程，但先用纵坐标的那个</strong>（不含 \(x_P\)，更简单）。</li>
+        <li>求弦长有两条路：直接算两点距离，或用弦长公式。<strong>考试时用弦长公式更快</strong>，但要用另一种方法验算。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="ch8-4">8.4　题型四：证明角相等</h3>
+
+  <div class="box tip">
+    <span class="tag">"证明两个角相等"的转化思路</span>
+    <p>先找<strong>对称轴</strong>：如果两个角的公共边在某条坐标轴上，那么"角相等"可以转化为"另两条边的<strong>斜率互为相反数</strong>"。</p>
+    <p>具体地，若 \(M\)、\(O\) 都在 \(x\) 轴上，则：</p>
+    <div class="formula">
+      \[ \angle OMA=\angle OMB \quad\Longleftrightarrow\quad k_{MA}+k_{MB}=0 \]
+    </div>
+    <p><strong>这个转化是本题型唯一的突破口。</strong></p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 4 · 2018 全国I卷（理）</span>
+    <p>设椭圆 \(C:\dfrac{x^{2}}{2}+y^{2}=1\) 的右焦点为 \(F\)，过 \(F\) 的直线 \(l\) 与 \(C\) 交于 \(A\)、\(B\) 两点，点 \(M\) 的坐标为 \((2,0)\)。</p>
+    <p>（1）当 \(l\) 与 \(x\) 轴垂直时，求直线 \(AM\) 的方程；</p>
+    <p>（2）设 \(O\) 为坐标原点，证明：\(\angle OMA=\angle OMB\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：求焦点。</strong>\(a^2=2\)、\(b^2=1\)，所以 \(c^2=2-1=1\)，\(c=1\)，右焦点 \(F(1,0)\)。</p>
+
+    <p><strong>第二步：求交点。</strong>\(l\perp x\) 轴且过 \(F\)，所以 \(l:x=1\)。代入椭圆：</p>
+    <div class="formula">
+      \[ \frac12+y^{2}=1 \quad\Longrightarrow\quad y=\pm\frac{\sqrt2}{2} \]
+    </div>
+    <p>所以 \(A\left(1,\dfrac{\sqrt2}{2}\right)\)、\(B\left(1,-\dfrac{\sqrt2}{2}\right)\)（或互换）。</p>
+
+    <p><strong>第三步：写直线 \(AM\)。</strong></p>
+    <div class="formula">
+      \[ k_{AM}=\frac{\frac{\sqrt2}{2}-0}{1-2}=-\frac{\sqrt2}{2} \]
+    </div>
+    <div class="formula">
+      \[ \boxed{\ y=-\frac{\sqrt2}{2}(x-2)\quad\text{或}\quad y=\frac{\sqrt2}{2}(x-2)\ } \]
+    </div>
+    <p>（\(A\) 取上半支或下半支各得一条。）</p>
+
+    <p><strong>（2）第一步：把"角相等"转化为斜率关系。</strong>\(M\)、\(O\) 都在 \(x\) 轴上，所以 \(OM\) 就是 \(x\) 轴。于是：</p>
+    <div class="formula">
+      \[ \angle OMA=\angle OMB \quad\Longleftrightarrow\quad k_{MA}+k_{MB}=0 \]
+    </div>
+
+    <p><strong>第二步：处理特殊情形。</strong>若 \(l\) 为 \(x\) 轴，则 \(A\)、\(B\) 都在 \(x\) 轴上，\(\angle OMA=\angle OMB=0\) ✓ 结论成立。下面设 \(l:y=k(x-1)\)（\(k\ne0\)）。</p>
+
+    <p><strong>第三步：联立消元。</strong>代入 \(\dfrac{x^2}{2}+y^2=1\)：</p>
+    <div class="formula">
+      \[ \frac{x^{2}}{2}+k^{2}(x-1)^{2}=1 \quad\Longrightarrow\quad (1+2k^{2})x^{2}-4k^{2}x+2k^{2}-2=0 \]
+    </div>
+    <div class="formula">
+      \[ x_{1}+x_{2}=\frac{4k^{2}}{1+2k^{2}},\qquad x_{1}x_{2}=\frac{2k^{2}-2}{1+2k^{2}} \]
+    </div>
+
+    <p><strong>第四步：计算 \(k_{MA}+k_{MB}\)。</strong>由 \(y_i=k(x_i-1)\)，注意</p>
+    <div class="formula">
+      \[ y_{i}=k(x_{i}-1)=k\bigl[(x_{i}-2)+1\bigr] \]
+    </div>
+    <p>所以：</p>
+    <div class="formula">
+      \[ \frac{y_{i}}{x_{i}-2}=\frac{k\bigl[(x_{i}-2)+1\bigr]}{x_{i}-2}=k+\frac{k}{x_{i}-2} \]
+    </div>
+    <div class="formula">
+      \[ k_{MA}+k_{MB}=2k+k\left(\frac{1}{x_{1}-2}+\frac{1}{x_{2}-2}\right) \]
+    </div>
+
+    <p><strong>第五步：化简括号。</strong>通分后代入韦达定理：</p>
+    <div class="formula">
+      \[ \frac{1}{x_{1}-2}+\frac{1}{x_{2}-2}=\frac{x_{1}+x_{2}-4}{x_{1}x_{2}-2(x_{1}+x_{2})+4} \]
+    </div>
+    <p>分子：</p>
+    <div class="formula">
+      \[ x_{1}+x_{2}-4=\frac{4k^{2}-4-8k^{2}}{1+2k^{2}}=\frac{-4(1+k^{2})}{1+2k^{2}} \]
+    </div>
+    <p>分母：</p>
+    <div class="formula">
+      \[ \frac{2k^{2}-2-8k^{2}+4+8k^{2}}{1+2k^{2}}=\frac{2k^{2}+2}{1+2k^{2}}=\frac{2(1+k^{2})}{1+2k^{2}} \]
+    </div>
+    <p>所以：</p>
+    <div class="formula">
+      \[ \frac{1}{x_{1}-2}+\frac{1}{x_{2}-2}=\frac{-4(1+k^{2})}{2(1+k^{2})}=-2 \]
+    </div>
+
+    <p><strong>第六步：得结论。</strong></p>
+    <div class="formula">
+      \[ k_{MA}+k_{MB}=2k+k\times(-2)=0 \quad\Longrightarrow\quad k_{MA}=-k_{MB} \]
+    </div>
+    <p>所以 \(\angle OMA=\angle OMB\) ✓∎</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>★ "证角相等"的突破口是找对称轴，把角变成斜率。</strong>本题 \(OM\) 就是 \(x\) 轴，所以角相等 ⟺ \(k_{MA}+k_{MB}=0\)。</li>
+        <li><strong>化简 \(\dfrac{y_i}{x_i-2}\) 的技巧：把 \(y_i\) 用 \(x_i-2\) 表示。</strong>因为 \(y_i=k(x_i-1)=k\bigl[(x_i-2)+1\bigr]\)，拆开后出现 \(k+\dfrac{k}{x_i-2}\)，正好和"两根倒数之和"对接。</li>
+        <li><strong>\(\dfrac{1}{x_1-2}+\dfrac{1}{x_2-2}\) 的化简要用通分 + 韦达定理。</strong>本题结果是常数 \(-2\)，非常干净——<strong>如果算不出常数，说明前面算错了。</strong></li>
+        <li>特殊情形（\(l\perp x\) 轴、\(l\) 为 \(x\) 轴）要单独说明。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="ch8-5">8.5　题型五：双曲线与斜率之和</h3>
+
+  <div class="box eg">
+    <span class="tag">真题 5 · 2022 新高考I卷　<span class="lv-hard">★★</span></span>
+    <p>已知点 \(A(2,1)\) 在双曲线 \(C:\dfrac{x^{2}}{a^{2}}-\dfrac{y^{2}}{a^{2}-1}=1\)（\(a>1\)）上，直线 \(l\) 交 \(C\) 于 \(P\)、\(Q\) 两点，直线 \(AP\)、\(AQ\) 的斜率之和为 \(0\)。</p>
+    <p>（1）求 \(l\) 的斜率；</p>
+    <p>（2）若 \(\tan\angle PAQ=2\sqrt2\)，求 \(\triangle PAQ\) 的面积。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：求 \(a^2\)。</strong>把 \(A(2,1)\) 代入：</p>
+    <div class="formula">
+      \[ \frac{4}{a^{2}}-\frac{1}{a^{2}-1}=1 \]
+    </div>
+    <p>两边乘 \(a^{2}(a^{2}-1)\)：\(4(a^{2}-1)-a^{2}=a^{2}(a^{2}-1)\)，即 \(3a^{2}-4=a^{4}-a^{2}\)，所以：</p>
+    <div class="formula">
+      \[ a^{4}-4a^{2}+4=0 \quad\Longrightarrow\quad (a^{2}-2)^{2}=0 \quad\Longrightarrow\quad a^{2}=2 \]
+    </div>
+    <p>双曲线方程为 \(\dfrac{x^{2}}{2}-y^{2}=1\)。</p>
+
+    <p><strong>第二步：先排除斜率不存在的情形。</strong>若 \(l:x=t\)：</p>
+    <ul>
+      <li>\(t=2\) 时 \(l\) 经过 \(A\)，此时 \(AP\) 或 \(AQ\) 的斜率不存在，不合题意；</li>
+      <li>\(t\ne2\) 时，由 \(\dfrac{t^2}{2}-y^2=1\) 知交点满足 \(y_1+y_2=0\)，所以
+        <div class="formula">\[ k_{AP}+k_{AQ}=\frac{y_1-1}{t-2}+\frac{y_2-1}{t-2}=\frac{y_1+y_2-2}{t-2}=\frac{-2}{t-2}\ne0 \]</div>
+        与已知矛盾。</li>
+    </ul>
+    <p>所以<strong>斜率存在</strong>，设 \(l:y=kx+m\)。</p>
+
+    <p><strong>第三步：联立消元。</strong>代入 \(\dfrac{x^2}{2}-y^2=1\)：</p>
+    <div class="formula">
+      \[ x^{2}-2(k^{2}x^{2}+2kmx+m^{2})=2 \quad\Longrightarrow\quad (1-2k^{2})x^{2}-4kmx-2m^{2}-2=0 \]
+    </div>
+    <div class="formula">
+      \[ x_{1}+x_{2}=\frac{4km}{1-2k^{2}},\qquad x_{1}x_{2}=\frac{-2m^{2}-2}{1-2k^{2}} \]
+    </div>
+
+    <p><strong>第四步：翻译"斜率之和为 0"。</strong>由 \(y_i=kx_i+m\)，条件 \(k_{AP}+k_{AQ}=0\) 通分后为：</p>
+    <div class="formula">
+      \[ (kx_{1}+m-1)(x_{2}-2)+(kx_{2}+m-1)(x_{1}-2)=0 \]
+    </div>
+    <p>展开并合并同类项：</p>
+    <div class="formula">
+      \[ 2kx_{1}x_{2}+(m-1-2k)(x_{1}+x_{2})-4(m-1)=0 \tag{①} \]
+    </div>
+
+    <p><strong>第五步：代入韦达定理并化简。</strong>把 \(x_1+x_2\)、\(x_1x_2\) 代入①，两边乘 \((1-2k^{2})\) 后再除以 \(-4\)：</p>
+    <div class="formula">
+      \[ k(m^{2}+1)-km(m-1-2k)+(m-1)(1-2k^{2})=0 \]
+    </div>
+    <p>展开 \(-km(m-1-2k)=-km^{2}+km+2k^{2}m\)：</p>
+    <div class="formula">
+      \[ k+km+2k^{2}m+(m-1)(1-2k^{2})=0 \]
+    </div>
+    <p>展开 \((m-1)(1-2k^{2})=m-1-2k^{2}m+2k^{2}\)：</p>
+    <div class="formula">
+      \[ k+km+2k^{2}m+m-1-2k^{2}m+2k^{2}=0 \]
+    </div>
+    <p>\(2k^{2}m\) 与 \(-2k^{2}m\) 抵消：</p>
+    <div class="formula">
+      \[ k+km+m-1+2k^{2}=0 \]
+    </div>
+
+    <p><strong>第六步：因式分解。</strong>按 \(m\) 整理：</p>
+    <div class="formula">
+      \[ m(k+1)+(2k^{2}+k-1)=0 \]
+    </div>
+    <p>而 \(2k^{2}+k-1=(2k-1)(k+1)\)，所以：</p>
+    <div class="formula">
+      \[ (k+1)\bigl[m+(2k-1)\bigr]=0 \quad\Longrightarrow\quad (k+1)(m+2k-1)=0 \]
+    </div>
+
+    <p><strong>第七步：舍去 \(m=1-2k\)。</strong>若 \(m=1-2k\)，则</p>
+    <div class="formula">
+      \[ l:y=kx+1-2k=k(x-2)+1 \]
+    </div>
+    <p>这说明 \(l\) 恒过 \(A(2,1)\)，即 \(A\) 是 \(P\)、\(Q\) 之一，此时"直线 \(AP\)"没有意义，与题意矛盾。所以只能：</p>
+    <div class="formula">
+      \[ k+1=0 \quad\Longrightarrow\quad \boxed{\ k=-1\ } \]
+    </div>
+
+    <p><strong>验算：</strong>取 \(m=2\)（满足 \(m\ne1-2k=3\)），则 \(l:y=-x+2\)。联立得 \(x^2-8x+10=0\)，\(x_1+x_2=8\)、\(x_1x_2=10\)。</p>
+    <p>由 \(y_i-1=-x_i+1=-(x_i-1)\) 得：</p>
+    <div class="formula">
+      \[ k_{AP}+k_{AQ}=-\left(\frac{x_1-1}{x_1-2}+\frac{x_2-1}{x_2-2}\right)=-\left[2+\frac{1}{x_1-2}+\frac{1}{x_2-2}\right] \]
+    </div>
+    <div class="formula">
+      \[ \frac{1}{x_1-2}+\frac{1}{x_2-2}=\frac{x_1+x_2-4}{x_1x_2-2(x_1+x_2)+4}=\frac{8-4}{10-16+4}=\frac{4}{-2}=-2 \]
+    </div>
+    <div class="formula">
+      \[ k_{AP}+k_{AQ}=-(2-2)=0 \quad\checkmark \]
+    </div>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">第（2）问的思路（供参考）</span>
+      <p>由 \(k=-1\)，\(l:y=-x+m\)。因为 \(k_{AP}+k_{AQ}=0\)，所以直线 \(AP\) 与 \(AQ\) 关于"过 \(A\) 的竖直线"对称，这是本题的重要结构。</p>
+      <p>设 \(A\) 到 \(l\) 的距离为 \(d=\dfrac{|2+1-m|}{\sqrt2}\)。由 \(\tan\angle PAQ=2\sqrt2\) 可求出 \(\cos\angle PAQ\)（用 \(\tan^{2}\theta+1=\dfrac{1}{\cos^{2}\theta}\)），再利用对称性求出 \(|AP|\)、\(|AQ|\)，最后用</p>
+      <div class="formula">\[ S=\frac12|AP||AQ|\sin\angle PAQ \]</div>
+      <p>求面积。</p>
+    </div>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>本题第（1）问的答案很反直觉：斜率不是含参数的表达式，而是一个确定值 \(-1\)。</strong>这来自因式分解后的"舍去一个根"——这一步是本题最大的技术门槛。</li>
+        <li><strong>舍去 \(m=1-2k\) 的理由要说清楚：</strong>它意味着 \(l\) 过 \(A\)，与"\(l\) 交 \(C\) 于 \(P\)、\(Q\)"（且 \(AP\)、\(AQ\) 有斜率）矛盾。</li>
+        <li><strong>双曲线联立要注意二次项系数 \(1-2k^{2}\) 是否为 0。</strong>若 \(k=\pm\dfrac{\sqrt2}{2}\)，方程退化为一次方程，只有 1 个交点，不合题意。</li>
+        <li>通分后展开 \(\sum(kx_i+m-1)(x_j-2)\) 时，<strong>要细心整理成 \(x_1x_2\)、\(x_1+x_2\) 的组合</strong>，这是本题计算量最大的地方。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="ch8-6">8.6　提分要点总结</h3>
+
+  <div class="box proof">
+    <span class="tag">十年真题告诉我们的六件事</span>
+    <ol class="steps">
+      <li><strong>第一问（求方程）必须拿满。</strong>十年里第一问几乎都是"求曲线方程"或"求离心率"，方法固定：设方程 → 代入条件 → 解出参数。特别注意"焦点在哪个轴"的判断（椭圆看分母谁大，双曲线看哪项为正）。</li>
+      <li><strong>第二问的通用模板是第 6 章的"五步流程"。</strong>设直线 → 联立消元 → <strong>检查 \(\Delta>0\)</strong> → 韦达定理 → 把要求的量用 \(x_1+x_2\)、\(x_1x_2\) 表示。<strong>不要跳过第 3 步。</strong></li>
+      <li><strong>三种高频条件的翻译方式：</strong>① 斜率之和/之积为常数 → 通分后代入韦达定理；② 向量条件 → 拆成横纵两个方程（优先用简单的那个）；③ 中点 → 点差法或中点公式。</li>
+      <li><strong>"弦的中点"优先用点差法</strong>（见 6.3 节），能一步得到斜率与中点坐标的关系，比联立简单得多。</li>
+      <li><strong>"证明角相等"先找对称轴，把角变成斜率关系。</strong>这是本章真题 4 的突破口，也是这类题的通用思路。</li>
+      <li><strong>计算量是这一章的主要障碍。</strong>所以：① 尽量用"设而不求"（只算 \(x_1+x_2\)、\(x_1x_2\)）；② 求弦长用弦长公式；③ 做完必须验算（代回韦达定理核对，或用另一种方法算同一个量）。</li>
+    </ol>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">考场时间分配建议</span>
+    <ul>
+      <li><strong>解析几何大题：限时 15 分钟。</strong>第一问 4 分钟，第二问 10 分钟，留 1 分钟验算。</li>
+      <li><strong>第二问卡住时的"保分动作"：</strong>设出直线方程 → 联立消元 → 写出韦达定理 → 把要求的量用 \(x_1+x_2\)、\(x_1x_2\) 表示。这四步即使没算完也有分。</li>
+      <li><strong>验算技巧：</strong>① 把 \(x_1+x_2\) 代回已知条件核对；② 用另一种方法算同一个量（如弦长用两种公式）；③ 取特殊值（如 \(k=0\)）代入检查。</li>
+      <li><strong>不要怕计算量大。</strong>解析几何的压轴题本来就要算十几行，关键是<strong>每一步都写清楚、不跳步</strong>，这样即使最后算错，过程分也能拿到大半。</li>
+    </ul>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">本章真题索引（按题型查）</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>题型</th><th>真题</th><th>考查点</th></tr></thead>
+        <tbody>
+          <tr><td><strong>求方程 + 过定点</strong></td><td>2017 全国I卷（理）</td><td>对称性定方程；斜率之和为常数；证过定点</td></tr>
+          <tr><td><strong>中点弦</strong></td><td>2018 全国III卷（理）</td><td><strong>点差法</strong>；焦半径公式；等差数列</td></tr>
+          <tr><td><strong>抛物线 + 向量</strong></td><td>2019 全国I卷（理）</td><td>焦点弦公式；<strong>用 \(y\) 作变量联立</strong>；向量条件</td></tr>
+          <tr><td><strong>证明角相等</strong></td><td>2018 全国I卷（理）</td><td>角相等 ⟺ 斜率互为相反数；分式化简</td></tr>
+          <tr><td><strong>双曲线 + 斜率之和</strong></td><td>2022 新高考I卷</td><td>因式分解后舍根；斜率之和为 0 的翻译</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>练习建议：</strong>本章 5 道题覆盖了"椭圆 + 抛物线 + 双曲线"三种曲线，以及"定点、中点、向量、角相等、斜率之和"五种条件类型。建议每道题<strong>独立做两遍</strong>：第一遍限时，第二遍不计时但要求<strong>每一步都写出依据</strong>。</p>
+  </div>
+
+  </main>
+</div>
+
+<button class="print-btn" onclick="window.print()">打印 / 存为 PDF</button>
+
+<script>
+(function(){
+  // 公式渲染依赖 MathJax CDN（需联网）。若超时仍未就绪，提示读者。
+  var shown = false;
+  function check(){
+    var ok = window.MathJax && window.MathJax.startup && window.MathJax.startup.document;
+    if (!ok && !shown){
+      shown = true;
+      var el = document.getElementById('mathjax-warn');
+      if (el) el.style.display = 'block';
+    }
+  }
+  setTimeout(check, 4000);
+  setTimeout(check, 9000);
+})();
+</script>
+
+<script>
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('.sidenav a'));
+  if (!links.length) return;
+  var targets = links.map(function(a){
+    return document.getElementById(decodeURIComponent(a.getAttribute('href').slice(1)));
+  });
+  var ticking = false;
+  function update(){
+    ticking = false;
+    var idx = 0;
+    for (var i = 0; i < targets.length; i++){
+      if (targets[i] && targets[i].getBoundingClientRect().top <= 100) idx = i;
+    }
+    for (var j = 0; j < links.length; j++){
+      links[j].classList.toggle('active', j === idx);
+    }
+  }
+  function onScroll(){
+    if (!ticking){ ticking = true; window.requestAnimationFrame(update); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+  update();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,3469 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高考数学重点章节梳理 · 第一册 数列</title>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      processEscapes: true
+    },
+    svg: { fontCache: 'global' },
+    options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+  :root{
+    --ink:#1b1f27;
+    --ink-2:#3d4655;
+    --muted:#6b7688;
+    --line:#e5e9f0;
+    --line-2:#eef1f6;
+    --bg:#f5f7fb;
+    --card:#ffffff;
+    --brand:#1f5eff;
+    --brand-soft:#eef3ff;
+    --def:#1f5eff;      --def-bg:#f2f6ff;   --def-line:#c9daff;
+    --proof:#0f9d6e;    --proof-bg:#f0fbf6; --proof-line:#b7e8d4;
+    --eg:#c2760a;       --eg-bg:#fff9ee;    --eg-line:#f5dcae;
+    --warn:#d63a3a;     --warn-bg:#fff5f5;  --warn-line:#f8cfcf;
+    --tip:#7a4bd0;      --tip-bg:#f8f4ff;   --tip-line:#ddd0f7;
+    --radius:12px;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Source Han Sans SC","Noto Sans CJK SC",system-ui,-apple-system,"Segoe UI",sans-serif;
+    font-size:16px;
+    line-height:1.85;
+    letter-spacing:.01em;
+  }
+  .page{
+    max-width:960px;
+    margin:0 auto;
+    background:var(--card);
+    box-shadow:0 1px 3px rgba(20,30,60,.06), 0 12px 40px rgba(20,30,60,.06);
+    min-height:100vh;
+  }
+
+  /* ============ 封面 ============ */
+  .cover{
+    position:relative;
+    padding:64px 56px 52px;
+    background:
+      radial-gradient(900px 340px at 12% -10%, #e7efff 0%, rgba(231,239,255,0) 62%),
+      radial-gradient(700px 300px at 100% 0%, #eafaf3 0%, rgba(234,250,243,0) 58%),
+      linear-gradient(180deg,#ffffff 0%,#fbfcfe 100%);
+    border-bottom:1px solid var(--line);
+  }
+  .cover .kicker{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:13px; font-weight:600; letter-spacing:.14em;
+    color:var(--brand);
+    background:var(--brand-soft);
+    border:1px solid var(--def-line);
+    padding:5px 14px; border-radius:999px;
+    margin-bottom:22px;
+  }
+  .cover h1{
+    margin:0 0 6px;
+    font-size:42px;
+    line-height:1.25;
+    letter-spacing:-.01em;
+    font-weight:800;
+    color:#121722;
+  }
+  .cover h1 .accent{
+    background:linear-gradient(92deg,#1f5eff,#0f9d6e);
+    -webkit-background-clip:text; background-clip:text;
+    -webkit-text-fill-color:transparent; color:transparent;
+  }
+  .cover .sub{
+    margin:14px 0 0;
+    font-size:17px; color:var(--ink-2);
+    max-width:640px;
+  }
+  .cover .meta{
+    margin-top:30px; padding-top:22px; border-top:1px dashed var(--line);
+    display:flex; flex-wrap:wrap; gap:10px 34px;
+    font-size:14px; color:var(--muted);
+  }
+  .cover .meta b{color:var(--ink-2); font-weight:600;}
+
+  /* ============ 正文容器 ============ */
+  .body{padding:8px 56px 80px;}
+
+  h2{
+    margin:64px 0 8px;
+    font-size:27px; font-weight:800; letter-spacing:-.01em;
+    color:#121722;
+    display:flex; align-items:center; gap:14px;
+    scroll-margin-top:20px;
+  }
+  h2 .num{
+    flex:0 0 auto;
+    width:42px; height:42px; border-radius:11px;
+    display:inline-flex; align-items:center; justify-content:center;
+    font-size:18px; font-weight:800;
+    color:#fff;
+    background:linear-gradient(150deg,#2f6bff,#1f5eff);
+    box-shadow:0 6px 16px rgba(31,94,255,.28);
+  }
+  h2 + .lead{
+    margin:0 0 26px 56px;
+    font-size:14.5px; color:var(--muted);
+  }
+
+  h3{
+    margin:44px 0 14px;
+    font-size:20px; font-weight:700; color:#121722;
+    padding-left:13px; border-left:4px solid var(--brand);
+    line-height:1.4;
+    scroll-margin-top:20px;
+  }
+  h4{
+    margin:28px 0 10px;
+    font-size:16.5px; font-weight:700; color:var(--ink-2);
+  }
+  h4::before{
+    content:"";
+    display:inline-block; width:6px; height:6px; border-radius:2px;
+    background:var(--brand); margin-right:9px; vertical-align:2px;
+  }
+  p{margin:12px 0; color:var(--ink-2);}
+  strong{color:#121722; font-weight:700;}
+  .em{color:var(--brand); font-weight:700;}
+  code{
+    font-family:"JetBrains Mono","Cascadia Mono",Consolas,monospace;
+    background:#f2f4f8; border:1px solid var(--line);
+    padding:1px 6px; border-radius:5px; font-size:.9em; color:#33405c;
+  }
+
+  ul,ol{margin:12px 0; padding-left:26px; color:var(--ink-2);}
+  li{margin:7px 0;}
+  li::marker{color:var(--brand); font-weight:600;}
+
+  /* ============ 目录 ============ */
+  .toc{
+    margin:34px 0 0;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:linear-gradient(180deg,#fbfcff,#ffffff);
+    padding:24px 28px;
+  }
+  .toc h5{
+    margin:0 0 14px; font-size:13px; letter-spacing:.16em;
+    color:var(--muted); font-weight:700; text-transform:uppercase;
+  }
+  .toc ol{margin:0; padding:0; list-style:none; counter-reset:toc;}
+  .toc li{
+    counter-increment:toc;
+    display:flex; align-items:baseline; gap:10px;
+    padding:7px 0; border-bottom:1px dashed var(--line-2);
+    font-size:15px;
+  }
+  .toc li:last-child{border-bottom:none;}
+  .toc li::before{
+    content:counter(toc,decimal-leading-zero);
+    font-size:12px; font-weight:700; color:var(--brand);
+    font-variant-numeric:tabular-nums;
+    flex:0 0 auto;
+  }
+  .toc a{color:var(--ink-2); text-decoration:none;}
+  .toc a:hover{color:var(--brand);}
+
+  /* ============ 提示框 ============ */
+  .box{
+    margin:20px 0;
+    border-radius:var(--radius);
+    padding:18px 22px 18px 22px;
+    border:1px solid;
+    border-left-width:5px;
+    position:relative;
+  }
+  .box > .tag{
+    display:inline-flex; align-items:center; gap:7px;
+    font-size:12.5px; font-weight:800; letter-spacing:.08em;
+    margin-bottom:10px;
+    padding:2px 10px; border-radius:6px;
+  }
+  .box p:first-of-type{margin-top:0;}
+  .box p:last-child{margin-bottom:0;}
+
+  .lv-hard{ color:#c2410c; font-weight:900; letter-spacing:.04em; }
+
+  .def  {background:var(--def-bg);   border-color:var(--def-line);   border-left-color:var(--def);}
+  .def  .tag{background:#dfe9ff; color:#1a4fd6;}
+  .proof{background:var(--proof-bg); border-color:var(--proof-line); border-left-color:var(--proof);}
+  .proof .tag{background:#d6f4e7; color:#0b7a56;}
+  .eg   {background:var(--eg-bg);    border-color:var(--eg-line);    border-left-color:var(--eg);}
+  .eg   .tag{background:#fbeccd; color:#9a5c05;}
+  .warn {background:var(--warn-bg);  border-color:var(--warn-line);  border-left-color:var(--warn);}
+  .warn .tag{background:#fadada; color:#b32a2a;}
+  .tip  {background:var(--tip-bg);   border-color:var(--tip-line);   border-left-color:var(--tip);}
+  .tip  .tag{background:#e8dcfb; color:#5f36ad;}
+
+  /* 推导步骤条 */
+  .steps{counter-reset:st; margin:14px 0; padding:0; list-style:none;}
+  .steps > li{
+    counter-increment:st;
+    position:relative;
+    padding:0 0 0 44px;
+    margin:14px 0;
+  }
+  .steps > li::before{
+    content:counter(st);
+    position:absolute; left:0; top:2px;
+    width:26px; height:26px; border-radius:8px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:13px; font-weight:800; color:#fff;
+    background:#8fa9e6;
+  }
+  .steps > li::after{
+    content:""; position:absolute; left:13px; top:32px; bottom:-14px;
+    width:1.5px; background:var(--line);
+  }
+  .steps > li:last-child::after{display:none;}
+
+  /* ============ 公式展示 ============ */
+  .formula{
+    margin:18px 0;
+    padding:16px 22px;
+    background:#fafbfe;
+    border:1px dashed var(--def-line);
+    border-radius:10px;
+    text-align:center;
+    overflow-x:auto;
+  }
+  .formula .cap{
+    display:block; text-align:left;
+    font-size:12.5px; font-weight:700; color:var(--brand);
+    letter-spacing:.06em; margin-bottom:6px;
+  }
+
+  /* ============ 表格 ============ */
+  .tbl-wrap{overflow-x:auto; margin:20px 0;}
+  table{
+    width:100%; border-collapse:collapse;
+    font-size:14.5px;
+    border:1px solid var(--line);
+    border-radius:10px;
+    overflow:hidden;
+  }
+  th,td{
+    padding:11px 14px; text-align:left;
+    border-bottom:1px solid var(--line-2);
+    vertical-align:top;
+  }
+  thead th{
+    background:#f4f7fd;
+    color:#1a2540; font-weight:700; font-size:13.5px;
+    border-bottom:1px solid var(--line);
+    white-space:nowrap;
+  }
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fcfdff;}
+
+  /* ============ 知识地图 ============ */
+  .map{
+    margin:26px 0;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    gap:14px;
+  }
+  .map .node{
+    border:1px solid var(--line);
+    border-radius:11px;
+    padding:16px 18px;
+    background:linear-gradient(180deg,#fbfcff,#fff);
+  }
+  .map .node b{
+    display:block; font-size:14.5px; color:#121722;
+    margin-bottom:8px; padding-bottom:8px;
+    border-bottom:1px solid var(--line-2);
+  }
+  .map .node span{
+    display:block; font-size:13px; color:var(--muted); line-height:1.75;
+  }
+
+  /* ============ 页脚 ============ */
+  .foot{
+    margin-top:70px; padding-top:24px;
+    border-top:1px solid var(--line);
+    font-size:13px; color:var(--muted);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  }
+
+  /* ============ 打印 ============ */
+  .print-btn{
+    position:fixed; right:26px; bottom:26px; z-index:50;
+    background:linear-gradient(150deg,#2f6bff,#1f5eff); color:#fff;
+    border:none; border-radius:999px;
+    padding:12px 22px; font-size:14px; font-weight:700;
+    cursor:pointer; font-family:inherit;
+    box-shadow:0 8px 24px rgba(31,94,255,.32);
+  }
+  .print-btn:hover{filter:brightness(1.06);}
+
+  @media print{
+    body{background:#fff; font-size:11.5pt; line-height:1.7;}
+    .page{box-shadow:none; max-width:none;}
+    .cover{padding:0 0 22px; background:#fff; border-bottom:2px solid #1f5eff;}
+    .cover h1{font-size:26pt;}
+    .body{padding:0;}
+    .print-btn{display:none;}
+    h2{margin-top:26px; font-size:16pt; break-after:avoid; page-break-after:avoid;}
+    h3{break-after:avoid; page-break-after:avoid; font-size:13pt;}
+    .box,.formula,.tbl-wrap,table,.map .node{break-inside:avoid; page-break-inside:avoid;}
+    .eg{break-inside:auto;}
+    a{color:inherit; text-decoration:none;}
+  }
+  @media (max-width:720px){
+    .cover{padding:40px 24px 34px;}
+    .cover h1{font-size:30px;}
+    .body{padding:8px 24px 60px;}
+    h2{font-size:22px;} h2 .num{width:36px;height:36px;font-size:16px;}
+    h2 + .lead{margin-left:50px;}
+    .print-btn{right:14px; bottom:14px;}
+  }
+
+  /* ==================== 公式加载失败提示 ==================== */
+  .mathjax-warn{
+    display:none;
+    margin:0;
+    padding:12px 20px;
+    background:#fff5f5;
+    border-bottom:1px solid #f8cfcf;
+    color:#b32a2a;
+    font-size:13.5px;
+    line-height:1.7;
+  }
+  .mathjax-warn b{color:#8f1f1f;}
+
+  /* ==================== 左侧固定导航 ==================== */
+  .sidenav{ display:none; }
+  @media (min-width:1321px){
+    body{ padding-left:268px; }
+    .sidenav{
+      display:block;
+      position:fixed; top:0; left:0; bottom:0;
+      width:268px;
+      overflow-y:auto;
+      background:#fbfcfe;
+      border-right:1px solid var(--line);
+      padding:22px 0 44px;
+      z-index:40;
+      scrollbar-width:thin;
+    }
+    .sidenav::-webkit-scrollbar{ width:6px; }
+    .sidenav::-webkit-scrollbar-thumb{ background:#d7dde8; border-radius:3px; }
+  }
+  .sidenav-title{
+    font-size:11.5px; letter-spacing:.18em; font-weight:700;
+    color:var(--muted); text-transform:uppercase;
+    padding:0 20px 12px;
+    border-bottom:1px solid var(--line);
+    margin-bottom:10px;
+  }
+  .sidenav a{
+    display:block; text-decoration:none;
+    color:var(--ink-2);
+    border-left:3px solid transparent;
+    transition:background .15s, color .15s, border-color .15s;
+  }
+  .sidenav a.nav-l1{
+    font-size:13.5px; font-weight:700; color:#1a2540;
+    padding:8px 18px 8px 17px;
+    margin-top:6px;
+    line-height:1.5;
+  }
+  .sidenav a.nav-l1 .n{
+    display:inline-block; min-width:15px;
+    color:var(--brand); font-weight:800; margin-right:7px;
+  }
+  .sidenav a.nav-l2{
+    font-size:12.5px; color:var(--muted);
+    padding:5px 18px 5px 30px;
+    line-height:1.55;
+  }
+  .sidenav a:hover{ background:#eef3ff; color:var(--brand); }
+  .sidenav a.active{
+    background:#eef3ff; color:var(--brand);
+    border-left-color:var(--brand); font-weight:700;
+  }
+
+  @media print{
+    .sidenav{ display:none !important; }
+    body{ padding-left:0 !important; }
+  }
+</style>
+</head>
+<body>
+<aside class="sidenav" aria-label="目录导航">
+  <div class="sidenav-title">目录</div>
+  <a class="nav-l1" href="#ch0"><span class="n">0</span>写在前面：这份讲义怎么用</a>
+  <a class="nav-l1" href="#ch1"><span class="n">1</span>数列的基础概念</a>
+  <a class="nav-l2" href="#ch1-1">1.1　什么是数列</a>
+  <a class="nav-l2" href="#ch1-2">1.2　通项公式</a>
+  <a class="nav-l2" href="#ch1-3">1.3　前 \(n\) 项和 \(S_n\)</a>
+  <a class="nav-l2" href="#ch1-4">1.4　★ 核心关系：\(a_n\) 与 \(S_n\) 的关系</a>
+  <a class="nav-l1" href="#ch2"><span class="n">2</span>等差数列</a>
+  <a class="nav-l2" href="#ch2-1">2.1　定义</a>
+  <a class="nav-l2" href="#ch2-2">2.2　通项公式的推导（累加法）</a>
+  <a class="nav-l2" href="#ch2-3">2.3　前 \(n\) 项和公式的推导（倒序相加法）</a>
+  <a class="nav-l2" href="#ch2-4">2.4　等差数列的四条重要性质</a>
+  <a class="nav-l2" href="#ch2-5">2.5　判定等差数列的三种方法</a>
+  <a class="nav-l2" href="#ch2-6">2.6　\(S_n\) 的最大值与最小值</a>
+  <a class="nav-l1" href="#ch3"><span class="n">3</span>等比数列</a>
+  <a class="nav-l2" href="#ch3-1">3.1　定义</a>
+  <a class="nav-l2" href="#ch3-2">3.2　通项公式的推导（累乘法）</a>
+  <a class="nav-l2" href="#ch3-3">3.3　前 \(n\) 项和公式的推导（错位相减法）</a>
+  <a class="nav-l2" href="#ch3-4">3.4　等比数列的四条重要性质</a>
+  <a class="nav-l2" href="#ch3-5">3.5　判定等比数列的三种方法</a>
+  <a class="nav-l1" href="#ch4"><span class="n">4</span>求通项公式的六种方法</a>
+  <a class="nav-l2" href="#ch4-1">4.1　公式法</a>
+  <a class="nav-l2" href="#ch4-2">4.2　累加法</a>
+  <a class="nav-l2" href="#ch4-3">4.3　累乘法</a>
+  <a class="nav-l2" href="#ch4-4">4.4　构造法（待定系数）</a>
+  <a class="nav-l2" href="#ch4-5">4.5　\(S_n\) 转化法</a>
+  <a class="nav-l2" href="#ch4-6">4.6　取倒数法</a>
+  <a class="nav-l1" href="#ch5"><span class="n">5</span>求前 \(n\) 项和的五种方法</a>
+  <a class="nav-l2" href="#ch5-1">5.1　公式法</a>
+  <a class="nav-l2" href="#ch5-2">5.2　分组求和法</a>
+  <a class="nav-l2" href="#ch5-3">5.3　裂项相消法（重点）</a>
+  <a class="nav-l2" href="#ch5-4">5.4　错位相减法</a>
+  <a class="nav-l2" href="#ch5-5">5.5　倒序相加法</a>
+  <a class="nav-l1" href="#ch6"><span class="n">6</span>常见题型与易错点清单</a>
+  <a class="nav-l2" href="#ch6-1">6.1　易错点总清单</a>
+  <a class="nav-l2" href="#ch6-2">6.2　常见题型：奇偶项分类讨论</a>
+  <a class="nav-l2" href="#ch6-3">6.3　常见题型：数列与不等式（恒成立）</a>
+  <a class="nav-l1" href="#ch7"><span class="n">7</span>本章知识地图与自测</a>
+  <a class="nav-l2" href="#ch7-1">7.1　知识地图</a>
+  <a class="nav-l2" href="#ch7-2">7.2　自测清单</a>
+  <a class="nav-l1" href="#ch8"><span class="n">8</span>高考真题题型精讲（2016—2025）</a>
+  <a class="nav-l2" href="#ch8-1">8.1　题型一：等差、等比基本量计算</a>
+  <a class="nav-l2" href="#ch8-2">8.2　题型二：\(a_n\) 与 \(S_n\) 的关系</a>
+  <a class="nav-l2" href="#ch8-3">8.3　题型三：构造法求通项</a>
+  <a class="nav-l2" href="#ch8-4">8.4　题型四：先猜后证（数学归纳法）</a>
+  <a class="nav-l2" href="#ch8-5">8.5　题型五：数列求和（裂项相消）</a>
+  <a class="nav-l2" href="#ch8-6">8.6　题型六：奇偶项分类讨论（压轴方向）</a>
+  <a class="nav-l2" href="#ch8-7">8.7　提分要点总结</a>
+</aside>
+<div class="mathjax-warn" id="mathjax-warn">
+  <b>公式未加载成功。</b>本讲义的数学公式依赖 MathJax 在线渲染，需要联网。
+  当前网络可能不通或 CDN 被拦截，页面上显示的 <code>\( ... \)</code> 是公式源码，不是排版后的样子。
+  请联网后刷新页面；<b>另外，打印或另存 PDF 前请确认公式已正常显示</b>，否则导出的文件里会是源码。
+</div>
+
+<div class="page">
+
+  <!-- ==================== 封面 ==================== -->
+  <header class="cover">
+    <div class="kicker">高考数学 · 重点章节梳理</div>
+    <h1>第一册　<span class="accent">数列</span></h1>
+    <p class="sub">面向基础薄弱同学的「慢速精讲版」——每个公式都从零推给你看，每个结论都告诉你它从哪来、什么时候能用、什么时候会踩坑。</p>
+    <div class="meta">
+      <div><b>适用</b>　高三一轮复习 / 高二同步巩固</div>
+      <div><b>核心主线</b>　通项 \(a_n\)　与　前 \(n\) 项和 \(S_n\)</div>
+      <div><b>建议课时</b>　6 ~ 8 讲</div>
+    </div>
+
+    <nav class="toc">
+      <h5>目录</h5>
+      <ol>
+        <li><a href="#ch0">写在前面：这份讲义怎么用</a></li>
+        <li><a href="#ch1">数列的基础概念（含 \(a_n\) 与 \(S_n\) 关系的完整论证）</a></li>
+        <li><a href="#ch2">等差数列（通项与求和公式的两种推导）</a></li>
+        <li><a href="#ch3">等比数列（错位相减法的完整论证）</a></li>
+        <li><a href="#ch4">求通项公式的六种方法</a></li>
+        <li><a href="#ch5">求前 \(n\) 项和的五种方法</a></li>
+        <li><a href="#ch6">常见题型与易错点清单</a></li>
+        <li><a href="#ch7">本章知识地图与自测</a></li>
+      <li><a href="#ch8">高考真题题型精讲（2016—2025）</a></li>
+      </ol>
+    </nav>
+  </header>
+
+  <main class="body">
+
+  <!-- ==================== 第 0 章 ==================== -->
+  <h2 id="ch0"><span class="num">0</span>写在前面：这份讲义怎么用</h2>
+  <p class="lead">先花三分钟看懂学习方法，比直接背公式有用得多。</p>
+
+  <p>数列这一章，很多同学觉得"公式都认识，题就是不会做"。根本原因只有一个：<strong>把公式当成了要背的结论，而不是能推出来的结果。</strong>公式记混的时候，如果会推，30 秒就能救回来；不会推，就只能干瞪眼。</p>
+
+  <div class="box tip">
+    <span class="tag">学法建议</span>
+    <ol>
+      <li><strong>第一遍：只看绿色「推导」框。</strong>把每个公式自己动手推一遍，推不出来再看。这一步最慢，但最值钱。</li>
+      <li><strong>第二遍：做橙色「例题」。</strong>先盖住解答自己做，做不出来再看，看完再独立重做一遍。</li>
+      <li><strong>第三遍：读红色「易错」框。</strong>这些是阅卷场上真正扣分的地方，比多做十道题有用。</li>
+    </ol>
+  </div>
+
+  <p>数列整章其实只有<strong>两个核心问题</strong>：</p>
+  <div class="map">
+    <div class="node">
+      <b>问题一：通项 \(a_n\) 是什么？</b>
+      <span>也就是"第 \(n\) 项长什么样"。有了它，数列就完全确定了。对应第 4 章的六种求法。</span>
+    </div>
+    <div class="node">
+      <b>问题二：前 \(n\) 项和 \(S_n\) 是多少？</b>
+      <span>也就是"前 \(n\) 项加起来等于几"。对应第 5 章的五种求法。</span>
+    </div>
+    <div class="node">
+      <b>桥梁：\(a_n\) 与 \(S_n\) 的关系</b>
+      <span>这两个问题之间有一座桥：\(a_n=S_n-S_{n-1}\)。高考最爱考的就是在这座桥上来回走。</span>
+    </div>
+  </div>
+
+    <div class="box tip">
+    <span class="tag">第 8 章真题的难度分级（基础生必读）</span>
+    <p>第 8 章按<strong>题型</strong>编排，每种题型内部的题目<strong>由易到难</strong>。其中标注 <span class="lv-hard">★★</span> 的是<strong>压轴档</strong>——需要同时用好几个工具，计算量也大。</p>
+    <ul>
+      <li><strong>第一遍复习：先跳过 ★★ 题。</strong>把没有标记的题做熟，它们已经覆盖了绝大部分考分。</li>
+      <li><strong>冲刺阶段：再回头攻 ★★ 题。</strong>此时基本功已经扎实，做起来会顺很多。</li>
+      <li><strong>即使暂时做不出来，也建议把 ★★ 题的解答读一遍。</strong>每道题后面的「提分要点」都讲清了"思路是怎么想到的"，这对提分很有用。</li>
+    </ul>
+  </div>
+
+<!-- ==================== 第 1 章 ==================== -->
+  <h2 id="ch1"><span class="num">1</span>数列的基础概念</h2>
+  <p class="lead">这一章概念不难，但第 1.4 节的 \(a_n\) 与 \(S_n\) 关系是整章的地基，务必推熟。</p>
+
+  <h3 id="ch1-1">1.1　什么是数列</h3>
+
+  <div class="box def">
+    <span class="tag">定义</span>
+    <p>按照<strong>一定次序</strong>排列的一列数叫做<strong>数列</strong>。数列中的每一个数叫做这个数列的<strong>项</strong>，排在第一位的数叫<strong>首项</strong>，记为 \(a_1\)；排在第 \(n\) 位的数叫第 \(n\) 项，记为 \(a_n\)。</p>
+  </div>
+
+  <p>关键要把数列理解成<strong>函数</strong>：</p>
+
+  <div class="box proof">
+    <span class="tag">换个角度理解</span>
+    <p>数列 \(\{a_n\}\) 本质上是一个定义在<strong>正整数集</strong>上的函数：</p>
+    <div class="formula">
+      \[ a_n = f(n),\qquad n\in \mathbb{N}^* \]
+    </div>
+    <p>也就是说：<strong>数列就是"自变量只能取正整数"的函数</strong>。这一句话解释了很多事：</p>
+    <ul>
+      <li>为什么数列的图象是<strong>一堆孤立的点</strong>，而不是一条连续的线？因为 \(n\) 只能取 1、2、3……</li>
+      <li>为什么等差数列的通项 \(a_n=a_1+(n-1)d\) 是<strong>一次函数</strong>的样子？因为它确实就是一次函数 \(y=dx+(a_1-d)\) 在正整数处的取值。</li>
+      <li>为什么求 \(S_n\) 最大值可以用<strong>二次函数</strong>的方法？因为 \(S_n\) 确实是 \(n\) 的二次函数。</li>
+    </ul>
+    <p>把"数列 = 特殊函数"这件事记住，后面所有性质都能自己推出来。</p>
+  </div>
+
+  <h4>数列的三种表示方法</h4>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>表示方法</th><th>形式</th><th>例子</th><th>特点</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>通项公式法</strong></td>
+          <td>用 \(n\) 的式子表示 \(a_n\)</td>
+          <td>\(a_n=2n-1\)</td>
+          <td>最常用，能直接算任意一项</td>
+        </tr>
+        <tr>
+          <td><strong>递推公式法</strong></td>
+          <td>用前面的项表示后面的项</td>
+          <td>\(a_1=1,\ a_{n+1}=a_n+2\)</td>
+          <td>要算第 100 项得一项一项推</td>
+        </tr>
+        <tr>
+          <td><strong>列表 / 图象法</strong></td>
+          <td>把点列出来或画出来</td>
+          <td>\((1,1),(2,3),(3,5)\dots\)</td>
+          <td>直观，但不够精确</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">易错点</span>
+    <p>数列中的数可以<strong>重复</strong>（如 \(1,1,1,1,\dots\)），但<strong>次序不能换</strong>。\(1,2,3\) 和 \(3,2,1\) 是两个不同的数列。这和"集合"有本质区别——集合里元素无序且不重复。</p>
+  </div>
+
+  <h3 id="ch1-2">1.2　通项公式</h3>
+
+  <div class="box def">
+    <span class="tag">定义</span>
+    <p>如果数列 \(\{a_n\}\) 的第 \(n\) 项 \(a_n\) 与序号 \(n\) 之间的关系可以用一个式子表示，那么这个式子就叫做这个数列的<strong>通项公式</strong>。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 1</span>
+    <p>写出下列数列的一个通项公式：</p>
+    <p>(1) \(1,\ 3,\ 5,\ 7,\ 9,\ \dots\)　　(2) \(2,\ 4,\ 8,\ 16,\ 32,\ \dots\)　　(3) \(\dfrac{1}{2},\ \dfrac{2}{3},\ \dfrac{3}{4},\ \dfrac{4}{5},\ \dots\)</p>
+    <h4>解析</h4>
+    <p><strong>(1)</strong> 每一项比前一项大 2，是奇数。第 \(n\) 个奇数为：</p>
+    <div class="formula">\[ a_n = 2n-1 \]</div>
+    <p>检验：\(n=1\) 得 \(1\) ✓，\(n=4\) 得 \(7\) ✓。</p>
+
+    <p><strong>(2)</strong> 每一项是前一项的 2 倍，是 2 的幂：</p>
+    <div class="formula">\[ a_n = 2^n \]</div>
+    <p>检验：\(n=1\) 得 \(2\) ✓，\(n=5\) 得 \(32\) ✓。</p>
+
+    <p><strong>(3)</strong> 观察分子分母：分子是 \(1,2,3,4\)，分母是 \(2,3,4,5\)，分子总比分母小 1：</p>
+    <div class="formula">\[ a_n = \frac{n}{n+1} \]</div>
+    <p>检验：\(n=3\) 得 \(\dfrac{3}{4}\) ✓。</p>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">找通项的思路</span>
+      <p>先看<strong>相邻两项的差</strong>（是常数？→ 等差）或<strong>相邻两项的比</strong>（是常数？→ 等比）；都不是就拆成"符号、分子、分母、指数"几部分分别找规律。<strong>最后一定要代 \(n=1,2,3\) 检验。</strong></p>
+    </div>
+  </div>
+
+  <h3 id="ch1-3">1.3　前 \(n\) 项和 \(S_n\)</h3>
+
+  <div class="box def">
+    <span class="tag">定义</span>
+    <p>数列 \(\{a_n\}\) 的前 \(n\) 项的和，记作 \(S_n\)，即</p>
+    <div class="formula">\[ S_n = a_1 + a_2 + a_3 + \cdots + a_n \]</div>
+    <p><strong>注意：不存在 \(S_0\)。</strong>因为数列是从第 1 项开始的，所以求和只能从第 1 项起，\(S_0\) 没有意义。这直接导致一个后果：\(a_1\) 不能用 \(S_1-S_0\) 来求，只能由 \(a_1=S_1\) 单独算出。这一点在 1.4 节会详细说明。</p>
+  </div>
+
+  <p>注意：\(S_1, S_2, S_3, \dots, S_n, \dots\) <strong>本身也构成一个新的数列</strong>，称为"部分和数列"。这一点在解题时非常有用。</p>
+
+  <h3 id="ch1-4">1.4　★ 核心关系：\(a_n\) 与 \(S_n\) 的关系</h3>
+
+  <p>这是整章最重要的一个结论，几乎每年高考都要用到。我们完整地推一遍。</p>
+
+  <div class="box proof">
+    <span class="tag">推导（务必自己动手推一遍）</span>
+
+    <p><strong>已知：</strong>\(S_n = a_1+a_2+a_3+\cdots+a_{n-1}+a_n\)</p>
+
+    <p>把它往前退一项，即求 \(S_{n-1}\)：</p>
+    <div class="formula">\[ S_{n-1} = a_1+a_2+a_3+\cdots+a_{n-1} \]</div>
+
+    <p><strong>第一步：两式相减。</strong>用上面第一式减去第二式，左边是 \(S_n-S_{n-1}\)，右边是：</p>
+    <div class="formula">
+      \[ (a_1+a_2+\cdots+a_{n-1}+a_n) - (a_1+a_2+\cdots+a_{n-1}) = a_n \]
+    </div>
+    <p>前面的 \(a_1\) 到 \(a_{n-1}\) <strong>完全一样，被减掉了</strong>，只剩下孤零零的 \(a_n\)。于是得到：</p>
+    <div class="formula">\[ a_n = S_n - S_{n-1} \]</div>
+
+    <p><strong>第二步：检查这个式子的适用条件。</strong>这一步是绝大多数同学丢分的地方。</p>
+    <p>要让 \(S_{n-1}\) 有意义，下标 \(n-1\) 必须<strong>至少是 1</strong>（因为数列从第 1 项开始，不存在 \(S_0\)）。所以：</p>
+    <div class="formula">\[ n-1 \ge 1 \quad\Longrightarrow\quad n \ge 2 \]</div>
+    <p>也就是说，\(a_n = S_n - S_{n-1}\) <strong>只在 \(n\ge 2\) 时成立</strong>。\(n=1\) 的情况必须单独算：</p>
+    <div class="formula">\[ a_1 = S_1 \]</div>
+
+    <p><strong>第三步：合并结果。</strong>最终公式为：</p>
+    <div class="formula">
+      \[
+      a_n =
+      \begin{cases}
+      S_1, & n=1 \\[6pt]
+      S_n - S_{n-1}, & n \ge 2
+      \end{cases}
+      \]
+    </div>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">规范答题模板（照抄这个格式）</span>
+    <ol class="steps">
+      <li>当 \(n=1\) 时，\(a_1 = S_1 = \underline{\qquad}\)（把 \(n=1\) 代入 \(S_n\) 算出具体值）</li>
+      <li>当 \(n\ge 2\) 时，\(a_n = S_n - S_{n-1} = \underline{\qquad}\)（把两个式子代入化简）</li>
+      <li><strong>检验：</strong>把 \(n=1\) 代入第 2 步得到的式子，看结果是否等于第 1 步的 \(a_1\)。
+        <ul>
+          <li>若<strong>相等</strong> → 说明两种情况可以统一，直接写 \(a_n = \cdots\ (n\in\mathbb{N}^*)\)</li>
+          <li>若<strong>不相等</strong> → 必须<strong>分段写</strong>，写成上面那个大括号的形式</li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">为什么必须检验 \(n=1\)？</span>
+    <p>因为 \(a_n=S_n-S_{n-1}\) 这个式子是在 \(n\ge2\) 的前提下推出来的。它在 \(n=1\) 时<strong>根本没有被证明过</strong>，可能对也可能不对。数学上没被证明的东西不能直接用，所以必须回头验证一次。</p>
+    <p><strong>记住这句话：不检验 \(n=1\)，这道题最多拿一半分。</strong></p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 2（能合并的情形）</span>
+    <p>已知数列 \(\{a_n\}\) 的前 \(n\) 项和 \(S_n = n^2+2n\)，求 \(a_n\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>当 \(n=1\) 时：</strong></p>
+    <div class="formula">\[ a_1 = S_1 = 1^2 + 2\times 1 = 3 \]</div>
+
+    <p><strong>当 \(n\ge 2\) 时：</strong>先写出 \(S_{n-1}\)，把 \(S_n\) 中的每个 \(n\) 都换成 \(n-1\)：</p>
+    <div class="formula">
+      \[ S_{n-1} = (n-1)^2 + 2(n-1) = n^2-2n+1+2n-2 = n^2-1 \]
+    </div>
+    <p>再相减：</p>
+    <div class="formula">
+      \[ a_n = S_n - S_{n-1} = (n^2+2n) - (n^2-1) = 2n+1 \]
+    </div>
+
+    <p><strong>检验：</strong>把 \(n=1\) 代入 \(2n+1\)，得 \(2\times1+1=3\)，恰好等于 \(a_1=3\)。</p>
+    <p>说明两种情况可以统一，所以：</p>
+    <div class="formula">\[ \boxed{\,a_n = 2n+1\quad (n\in\mathbb{N}^*)\,} \]</div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 3（不能合并、必须分段的情形）</span>
+    <p>已知数列 \(\{a_n\}\) 的前 \(n\) 项和 \(S_n = n^2+1\)，求 \(a_n\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>当 \(n=1\) 时：</strong>\(a_1 = S_1 = 1^2+1 = 2\)。</p>
+
+    <p><strong>当 \(n\ge 2\) 时：</strong></p>
+    <div class="formula">
+      \[ S_{n-1} = (n-1)^2+1 = n^2-2n+2 \]
+    </div>
+    <div class="formula">
+      \[ a_n = S_n - S_{n-1} = (n^2+1)-(n^2-2n+2) = 2n-1 \]
+    </div>
+
+    <p><strong>检验：</strong>把 \(n=1\) 代入 \(2n-1\)，得 \(1\)，但 \(a_1=2\)，<strong>两者不相等！</strong></p>
+    <p>所以不能合并，必须分段写：</p>
+    <div class="formula">
+      \[
+      \boxed{\;
+      a_n =
+      \begin{cases}
+      2, & n=1 \\[4pt]
+      2n-1, & n\ge 2
+      \end{cases}
+      \;}
+      \]
+    </div>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">怎么预判"能不能合并"？</span>
+    <p>看 \(S_n\) 里<strong>有没有常数项</strong>：</p>
+    <ul>
+      <li>若把 \(n=0\) 代入 \(S_n\) 得 \(0\)（即 \(S_0=0\)），通常<strong>能合并</strong>；</li>
+      <li>若把 \(n=0\) 代入 \(S_n\) 得<strong>非零值</strong>，通常<strong>不能合并</strong>。</li>
+    </ul>
+    <p><strong>为什么这样判断？</strong>\(S_n-S_{n-1}\) 相当于把 \(S_n\) 里的"常数部分"减掉了，所以 \(n\ge2\) 的通项里<strong>不含常数项</strong>；而 \(a_1=S_1\) 里<strong>含着</strong>常数项。两者自然对不上。当 \(S_0=0\) 时，说明 \(S_n\) 本身就没有常数部分，两种情况就能统一。</p>
+    <p><strong>用这个判据检验：</strong>\(S_n=2^n-1\) 中令 \(n=0\) 得 \(2^0-1=0\)，所以<strong>能合并</strong>（与例题 13 的结论一致 ✓）；而 \(S_n=n^2+1\) 中令 \(n=0\) 得 \(1\ne0\)，所以<strong>不能合并</strong>（与例题 3 的结论一致 ✓）。</p>
+    <p>但<strong>这只是预判，考场上仍然要老老实实检验</strong>。</p>
+  </div>
+
+  <!-- ==================== 第 2 章 ==================== -->
+  <h2 id="ch2"><span class="num">2</span>等差数列</h2>
+  <p class="lead">两个公式、四条性质。公式要会推，性质要会证。</p>
+
+  <h3 id="ch2-1">2.1　定义</h3>
+
+  <div class="box def">
+    <span class="tag">定义</span>
+    <p>如果一个数列从第 2 项起，<strong>每一项与它前一项的差</strong>都等于<strong>同一个常数</strong>，那么这个数列叫做<strong>等差数列</strong>，这个常数叫做<strong>公差</strong>，通常用 \(d\) 表示。用符号写就是：</p>
+    <div class="formula">\[ a_{n+1} - a_n = d \quad (\text{常数}),\qquad n\in\mathbb{N}^* \]</div>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">读定义时要注意的三个词</span>
+    <ul>
+      <li><strong>"从第 2 项起"</strong>——所以 \(a_1\) 不参与这个差，定义里 \(n\) 从 1 开始写只是为了方便。</li>
+      <li><strong>"每一项与它前一项"</strong>——顺序是 \(a_{n+1}-a_n\)，不能反着减（反着减得到 \(-d\)，也是常数，但不符合定义的标准写法）。</li>
+      <li><strong>"同一个常数"</strong>——这是最关键的一句。公差必须对所有 \(n\) 都相同，不能 \(a_2-a_1=2\) 而 \(a_3-a_2=3\)。凡是要证明等差数列，都要回到这句话上。</li>
+    </ul>
+  </div>
+
+  <p>公差 \(d\) 决定了数列的走向：</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>\(d\) 的符号</th><th>数列的变化趋势</th><th>例子</th></tr></thead>
+      <tbody>
+        <tr><td>\(d>0\)</td><td>递增数列（越往后越大）</td><td>\(1,3,5,7,\dots\)</td></tr>
+        <tr><td>\(d&lt;0\)</td><td>递减数列（越往后越小）</td><td>\(10,7,4,1,\dots\)</td></tr>
+        <tr><td>\(d=0\)</td><td>常数列（每项都相等）</td><td>\(5,5,5,5,\dots\)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 id="ch2-2">2.2　通项公式的推导（累加法）</h3>
+
+  <p>先给结论，再给完整推导。</p>
+
+  <div class="formula">
+    <span class="cap">等差数列通项公式</span>
+    \[ a_n = a_1 + (n-1)d \]
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导：累加法</span>
+    <p>由等差数列的定义 \(a_{n+1}-a_n=d\)，我们把 \(n\) 依次取 \(1,2,3,\dots,n-1\)，可以写出<strong>一长串</strong>等式：</p>
+    <div class="formula">
+      \[
+      \begin{aligned}
+      a_2 - a_1 &= d \\
+      a_3 - a_2 &= d \\
+      a_4 - a_3 &= d \\
+      &\ \ \vdots \\
+      a_n - a_{n-1} &= d
+      \end{aligned}
+      \]
+    </div>
+
+    <p><strong>关键一步：把这 \(n-1\) 个等式全部加起来。</strong></p>
+    <p>看左边：\((a_2-a_1)+(a_3-a_2)+(a_4-a_3)+\cdots+(a_n-a_{n-1})\)。展开后会发现——</p>
+    <ul>
+      <li>\(-a_1\) 留下；</li>
+      <li>\(+a_2\) 和 \(-a_2\) 抵消；</li>
+      <li>\(+a_3\) 和 \(-a_3\) 抵消；</li>
+      <li>……中间的项<strong>两两抵消，全部消失</strong>；</li>
+      <li>最后 \(+a_n\) 留下。</li>
+    </ul>
+    <p>所以左边只剩 \(a_n - a_1\)。右边是 \(n-1\) 个 \(d\) 相加，即 \((n-1)d\)。于是：</p>
+    <div class="formula">\[ a_n - a_1 = (n-1)d \]</div>
+    <p>移项即得：</p>
+    <div class="formula">\[ \boxed{\,a_n = a_1 + (n-1)d\,} \]</div>
+    <p><strong>检验：</strong>令 \(n=1\)，右边 \(=a_1+0=a_1\) ✓。</p>
+    <p>这种方法叫<strong>累加法</strong>——把相邻项的关系式一个个列出来，再全部加起来让中间项抵消。它是求通项最重要的思想之一，第 4 章还会反复用到。</p>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">从函数角度看通项公式</span>
+    <p>把 \(a_n=a_1+(n-1)d\) 整理一下：</p>
+    <div class="formula">\[ a_n = dn + (a_1-d) \]</div>
+    <p>这是关于 \(n\) 的<strong>一次函数</strong>（\(d\ne0\) 时）。于是得到一个非常有用的结论：</p>
+    <p><strong>若 \(a_n = kn+b\)（\(k,b\) 为常数），则 \(\{a_n\}\) 是等差数列，且公差 \(d=k\)。</strong></p>
+    <p>这给我们提供了一条"秒判"等差数列的通道——看到通项是关于 \(n\) 的一次式，直接下结论。</p>
+  </div>
+
+  <h4>通项公式的推广形式</h4>
+  <p>把 \(n=1\) 换成任意一项 \(a_m\)，同样用累加法可以推出：</p>
+  <div class="formula">
+    \[ a_n = a_m + (n-m)d \]
+  </div>
+  <div class="box proof">
+    <span class="tag">推导</span>
+    <p>从 \(a_m\) 到 \(a_n\) 一共有 \(n-m\) 个"间隔"，每个间隔差 \(d\)，累加得 \(a_n-a_m=(n-m)d\)，移项即得。</p>
+    <p><strong>用途：</strong>题目给的是 \(a_3\) 和 \(a_7\) 时，直接用 \(a_7=a_3+4d\) 比"设 \(a_1\) 和 \(d\) 列方程组"快得多。</p>
+  </div>
+
+  <h3 id="ch2-3">2.3　前 \(n\) 项和公式的推导（倒序相加法）</h3>
+
+  <div class="formula">
+    <span class="cap">等差数列前 n 项和公式（两种形式）</span>
+    \[ S_n = \frac{n(a_1+a_n)}{2} \qquad\text{或}\qquad S_n = na_1 + \frac{n(n-1)}{2}d \]
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导：倒序相加法</span>
+
+    <p><strong>第一步：正着写一遍。</strong></p>
+    <div class="formula">
+      \[ S_n = a_1 + a_2 + a_3 + \cdots + a_{n-1} + a_n \tag{①} \]
+    </div>
+
+    <p><strong>第二步：倒着再写一遍。</strong>把①中各项从后往前排列：</p>
+    <div class="formula">
+      \[ S_n = a_n + a_{n-1} + a_{n-2} + \cdots + a_2 + a_1 \tag{②} \]
+    </div>
+
+    <p><strong>第三步：① + ②。</strong>左边是 \(S_n+S_n=2S_n\)。右边把上下对应的项配对相加：</p>
+    <div class="formula">
+      \[
+      2S_n = (a_1+a_n) + (a_2+a_{n-1}) + (a_3+a_{n-2}) + \cdots + (a_n+a_1)
+      \]
+    </div>
+
+    <p><strong>第四步：证明每一对都相等。</strong>这是本推导的灵魂所在。</p>
+    <p>看第 \(k\) 对：\(a_k + a_{n+1-k}\)。利用通项公式 \(a_k=a_1+(k-1)d\)：</p>
+    <div class="formula">
+      \[
+      \begin{aligned}
+      a_k + a_{n+1-k} &= \bigl[a_1+(k-1)d\bigr] + \bigl[a_1+(n+1-k-1)d\bigr] \\[4pt]
+      &= 2a_1 + \bigl[(k-1)+(n-k)\bigr]d \\[4pt]
+      &= 2a_1 + (n-1)d
+      \end{aligned}
+      \]
+    </div>
+    <p>你会发现，这个结果里<strong>完全没有 \(k\)</strong>！这说明无论 \(k\) 取几，每一对的和都等于同一个值 \(2a_1+(n-1)d\)。</p>
+    <p>再验证一下，这个值正好就是 \(a_1+a_n\)：</p>
+    <div class="formula">
+      \[ a_1 + a_n = a_1 + \bigl[a_1+(n-1)d\bigr] = 2a_1+(n-1)d \quad\checkmark \]
+    </div>
+
+    <p><strong>第五步：求和。</strong>一共有 \(n\) 对，每对都是 \(a_1+a_n\)，所以：</p>
+    <div class="formula">
+      \[ 2S_n = n(a_1+a_n) \quad\Longrightarrow\quad \boxed{\,S_n = \frac{n(a_1+a_n)}{2}\,} \]
+    </div>
+
+    <p><strong>第六步：换成含 \(d\) 的形式。</strong>把 \(a_n=a_1+(n-1)d\) 代入上式：</p>
+    <div class="formula">
+      \[
+      S_n = \frac{n\bigl[a_1 + a_1 + (n-1)d\bigr]}{2} = \frac{n\bigl[2a_1+(n-1)d\bigr]}{2} = na_1 + \frac{n(n-1)}{2}d
+      \]
+    </div>
+    <p>两个公式都是对的，区别在于<strong>已知什么用哪个</strong>：</p>
+    <ul>
+      <li>已知 \(a_1\) 和 \(a_n\) → 用 \(S_n=\dfrac{n(a_1+a_n)}{2}\)</li>
+      <li>已知 \(a_1\) 和 \(d\) → 用 \(S_n=na_1+\dfrac{n(n-1)}{2}d\)</li>
+    </ul>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">从函数角度看求和公式</span>
+    <p>把 \(S_n=na_1+\dfrac{n(n-1)}{2}d\) 整理成按 \(n\) 的降幂排列：</p>
+    <div class="formula">
+      \[ S_n = \frac{d}{2}n^2 + \left(a_1-\frac{d}{2}\right)n \]
+    </div>
+    <p>这是关于 \(n\) 的<strong>二次函数</strong>，而且<strong>常数项为 0</strong>。这引出两条重要结论：</p>
+    <ul>
+      <li><strong>判定用：</strong>若 \(S_n=An^2+Bn\)（没有常数项），则 \(\{a_n\}\) 是等差数列。</li>
+      <li><strong>求最值用：</strong>求 \(S_n\) 的最大/最小值，可以转化为求二次函数在正整数上的最值（见 2.6）。</li>
+    </ul>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 4</span>
+    <p>已知等差数列 \(\{a_n\}\) 中，\(a_3=7\)，\(a_7=19\)。求 \(a_1\)、\(d\) 以及通项 \(a_n\)。</p>
+
+    <h4>解析</h4>
+    <p>用推广形式 \(a_n=a_m+(n-m)d\) 直接列式：</p>
+    <div class="formula">\[ a_7 = a_3 + (7-3)d \quad\Longrightarrow\quad 19 = 7 + 4d \quad\Longrightarrow\quad d = 3 \]</div>
+    <p>再由 \(a_3=a_1+2d\)：</p>
+    <div class="formula">\[ 7 = a_1 + 2\times3 \quad\Longrightarrow\quad a_1 = 1 \]</div>
+    <p>所以通项为：</p>
+    <div class="formula">\[ \boxed{\,a_n = 1+(n-1)\times 3 = 3n-2\,} \]</div>
+    <p><strong>检验：</strong>\(n=3\) 得 \(3\times3-2=7\) ✓；\(n=7\) 得 \(3\times7-2=19\) ✓。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 5</span>
+    <p>已知等差数列 \(\{a_n\}\) 中，\(a_1=2\)，\(d=3\)，\(n=10\)。求 \(S_{10}\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>方法一（用含 \(d\) 的公式）：</strong></p>
+    <div class="formula">
+      \[ S_{10} = 10\times 2 + \frac{10\times 9}{2}\times 3 = 20 + 45\times 3 = 20+135 = 155 \]
+    </div>
+    <p><strong>方法二（用含 \(a_n\) 的公式）：</strong>先求 \(a_{10}\)：</p>
+    <div class="formula">\[ a_{10} = 2 + 9\times3 = 29 \]</div>
+    <div class="formula">\[ S_{10} = \frac{10\times(2+29)}{2} = \frac{10\times31}{2} = 155 \quad\checkmark \]</div>
+    <p>两种方法结果一致。考场上选<strong>计算量小</strong>的那个。</p>
+  </div>
+
+  <h3 id="ch2-4">2.4　等差数列的四条重要性质</h3>
+
+  <h4>性质一：等差中项</h4>
+  <div class="box def">
+    <span class="tag">性质</span>
+    <p>如果 \(a\)、\(A\)、\(b\) 三个数成等差数列，那么 \(A\) 叫做 \(a\) 与 \(b\) 的<strong>等差中项</strong>，且</p>
+    <div class="formula">\[ 2A = a+b \qquad\text{即}\qquad A = \frac{a+b}{2} \]</div>
+  </div>
+  <div class="box proof">
+    <span class="tag">推导</span>
+    <p>由等差数列定义，三项成等差意味着"中间项减前一项"等于"后一项减中间项"：</p>
+    <div class="formula">\[ A - a = b - A \]</div>
+    <p>移项得 \(2A=a+b\)，即 \(A=\dfrac{a+b}{2}\)。</p>
+    <p><strong>反向也成立：</strong>若 \(2A=a+b\)，则 \(A-a=b-A\)，即三项成等差数列。所以这是一个<strong>充要条件</strong>，可以用来判定。</p>
+  </div>
+  <p>推广到数列中，对任意 \(n\ge2\)：</p>
+  <div class="formula">\[ 2a_n = a_{n-1}+a_{n+1} \]</div>
+
+  <h4>性质二：下标和性质（最常用）</h4>
+  <div class="box def">
+    <span class="tag">性质</span>
+    <p>在等差数列 \(\{a_n\}\) 中，若 \(m+n=p+q\)（\(m,n,p,q\in\mathbb{N}^*\)），则</p>
+    <div class="formula">\[ a_m + a_n = a_p + a_q \]</div>
+    <p>特别地，当 \(m+n=2p\) 时，有 \(a_m+a_n=2a_p\)。</p>
+  </div>
+  <div class="box proof">
+    <span class="tag">推导</span>
+    <p>用通项公式把四个都展开：</p>
+    <div class="formula">
+      \[
+      \begin{aligned}
+      a_m+a_n &= \bigl[a_1+(m-1)d\bigr]+\bigl[a_1+(n-1)d\bigr] = 2a_1+(m+n-2)d \\[4pt]
+      a_p+a_q &= \bigl[a_1+(p-1)d\bigr]+\bigl[a_1+(q-1)d\bigr] = 2a_1+(p+q-2)d
+      \end{aligned}
+      \]
+    </div>
+    <p>因为已知 \(m+n=p+q\)，所以两个结果完全相等。∎</p>
+    <p><strong>关键观察：</strong>结果只依赖于<strong>下标之和</strong>，与下标具体是什么无关。这就是这条性质的全部秘密。</p>
+  </div>
+
+  <h4>性质三：片段和性质</h4>
+  <div class="box def">
+    <span class="tag">性质</span>
+    <p>若 \(\{a_n\}\) 是等差数列，则</p>
+    <div class="formula">\[ S_n,\quad S_{2n}-S_n,\quad S_{3n}-S_{2n},\quad S_{4n}-S_{3n},\ \dots \]</div>
+    <p>仍然构成<strong>等差数列</strong>，且公差为 \(n^2d\)。</p>
+  </div>
+  <div class="box proof">
+    <span class="tag">推导</span>
+    <p><strong>第一步：看每一项的含义。</strong></p>
+    <div class="formula">
+      \[
+      \begin{aligned}
+      S_n &= a_1+a_2+\cdots+a_n \\
+      S_{2n}-S_n &= a_{n+1}+a_{n+2}+\cdots+a_{2n} \\
+      S_{3n}-S_{2n} &= a_{2n+1}+a_{2n+2}+\cdots+a_{3n}
+      \end{aligned}
+      \]
+    </div>
+    <p>也就是说，这三项分别是"第 1 段的和""第 2 段的和""第 3 段的和"（每段 \(n\) 项）。</p>
+
+    <p><strong>第二步：把第 2 段每项都减去对应的第 1 段项。</strong></p>
+    <div class="formula">
+      \[
+      \begin{aligned}
+      a_{n+1}-a_1 &= nd \\
+      a_{n+2}-a_2 &= nd \\
+      &\ \ \vdots \\
+      a_{2n}-a_n &= nd
+      \end{aligned}
+      \]
+    </div>
+    <p>每一组差都是 \(nd\)（因为下标正好相差 \(n\)）。把 \(n\) 个式子相加：</p>
+    <div class="formula">\[ (S_{2n}-S_n) - S_n = n\cdot nd = n^2d \]</div>
+    <p>同理，第 3 段减第 2 段也等于 \(n^2d\)。所以这三项构成公差为 \(n^2d\) 的等差数列。∎</p>
+  </div>
+  <div class="box warn">
+    <span class="tag">注意</span>
+    <p>这条性质是<strong>等差</strong>数列专属的。等比数列有类似的结论，但要把"公差 \(n^2d\)"换成"<strong>公比</strong> \(q^n\)"（见 3.4 节），<strong>不能混用</strong>。</p>
+  </div>
+
+  <h4>性质四：奇偶项和</h4>
+  <div class="box def">
+    <span class="tag">性质</span>
+    <p>在等差数列中，设 \(S_{\text{奇}}\) 为所有奇数项之和，\(S_{\text{偶}}\) 为所有偶数项之和：</p>
+    <ul>
+      <li>当项数为 \(2n\)（偶数）时：\(S_{\text{偶}}-S_{\text{奇}}=nd\)，且 \(\dfrac{S_{\text{偶}}}{S_{\text{奇}}}=\dfrac{a_{n+1}}{a_n}\)。</li>
+      <li>当项数为 \(2n+1\)（奇数）时：\(S_{\text{奇}}-S_{\text{偶}}=a_{n+1}\)（即中间项），且 \(S_{\text{奇}}=(n+1)a_{n+1}\)，\(S_{\text{偶}}=na_{n+1}\)。</li>
+    </ul>
+  </div>
+  <div class="box proof">
+    <span class="tag">推导（以 \(2n+1\) 项为例）</span>
+    <p>奇数项有 \(n+1\) 个：\(a_1,a_3,a_5,\dots,a_{2n+1}\)；偶数项有 \(n\) 个：\(a_2,a_4,\dots,a_{2n}\)。</p>
+    <p>由下标和性质，首尾两项之和为定值：</p>
+    <div class="formula">
+      \[ a_1+a_{2n+1}=2a_{n+1} \quad(\text{因为 } 1+(2n+1)=2(n+1)) \]
+    </div>
+    <div class="formula">
+      \[ a_2+a_{2n}=2a_{n+1} \quad(\text{因为 } 2+2n=2(n+1)) \]
+    </div>
+    <p>于是可以直接套等差数列求和公式（首项加末项，乘项数，除以 2）。<strong>奇数项</strong>共 \(n+1\) 项，首项 \(a_1\)、末项 \(a_{2n+1}\)：</p>
+    <div class="formula">
+      \[
+      S_{\text{奇}} = \frac{(n+1)\bigl(a_1+a_{2n+1}\bigr)}{2} = \frac{(n+1)\cdot 2a_{n+1}}{2} = (n+1)a_{n+1}
+      \]
+    </div>
+    <div class="formula">
+      \[
+      S_{\text{偶}} = \frac{n\bigl(a_2+a_{2n}\bigr)}{2} = \frac{n\cdot 2a_{n+1}}{2} = n\,a_{n+1}
+      \]
+    </div>
+    <p>两式相减：\(S_{\text{奇}}-S_{\text{偶}}=(n+1)a_{n+1}-na_{n+1}=a_{n+1}\)。∎</p>
+    <p>这个推导的关键，仍然是<strong>下标和性质</strong> \(a_1+a_{2n+1}=2a_{n+1}\)。</p>
+  </div>
+
+  <h3 id="ch2-5">2.5　判定等差数列的三种方法</h3>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>方法</th><th>依据</th><th>怎么用</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>定义法</strong>（首选）</td>
+          <td>\(a_{n+1}-a_n=d\)（常数）</td>
+          <td>算出 \(a_{n+1}-a_n\)，看结果里<strong>有没有 \(n\)</strong>。没有 \(n\) 就是常数，即为等差数列。</td>
+        </tr>
+        <tr>
+          <td><strong>中项法</strong></td>
+          <td>\(2a_{n+1}=a_n+a_{n+2}\)</td>
+          <td>验证相邻三项的关系（\(n\ge1\)）。</td>
+        </tr>
+        <tr>
+          <td><strong>通项/求和形式法</strong></td>
+          <td>\(a_n=kn+b\) 或 \(S_n=An^2+Bn\)</td>
+          <td>看到这种形式直接下结论，用于选择题秒杀。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 6（证明题的标准写法）</span>
+    <p>已知数列 \(\{a_n\}\) 满足 \(a_1=1\)，\(a_{n+1}=\dfrac{a_n}{2a_n+1}\)。令 \(b_n=\dfrac{1}{a_n}\)，证明 \(\{b_n\}\) 是等差数列，并求 \(b_n\) 与 \(a_n\)。</p>
+
+    <h4>解析</h4>
+    <p>要证明等差数列，就回到定义——<strong>算 \(b_{n+1}-b_n\)，看它是不是常数</strong>。</p>
+    <p>由 \(b_n=\dfrac{1}{a_n}\) 得 \(b_{n+1}=\dfrac{1}{a_{n+1}}\)。把已知条件代入：</p>
+    <div class="formula">
+      \[ b_{n+1} = \frac{1}{a_{n+1}} = \frac{1}{\ \dfrac{a_n}{2a_n+1}\ } = \frac{2a_n+1}{a_n} = 2 + \frac{1}{a_n} = 2 + b_n \]
+    </div>
+    <p>所以：</p>
+    <div class="formula">\[ b_{n+1}-b_n = 2 \quad(\text{常数}) \]</div>
+    <p>由定义知 \(\{b_n\}\) 是公差 \(d=2\) 的等差数列。</p>
+    <p>又 \(b_1=\dfrac{1}{a_1}=1\)，由通项公式：</p>
+    <div class="formula">\[ b_n = 1 + (n-1)\times 2 = 2n-1 \]</div>
+    <p>最后回代求 \(a_n\)：</p>
+    <div class="formula">\[ \boxed{\,a_n = \frac{1}{b_n} = \frac{1}{2n-1}\,} \]</div>
+    <p><strong>检验：</strong>\(n=1\) 得 \(1\) ✓；由 \(a_2=\dfrac{1}{3}\) 验证 \(a_2=\dfrac{a_1}{2a_1+1}=\dfrac{1}{3}\) ✓。</p>
+  </div>
+
+  <h3 id="ch2-6">2.6　\(S_n\) 的最大值与最小值</h3>
+
+  <p>这是等差数列的高频考点，有两种方法，建议都掌握。</p>
+
+  <div class="box proof">
+    <span class="tag">方法一：邻项变号法（推荐，不易错）</span>
+    <p><strong>思路：</strong>\(S_n\) 每次增加的量就是 \(a_n\)。所以：</p>
+    <ul>
+      <li>只要 \(a_n>0\)，\(S_n\) 就在<strong>变大</strong>；</li>
+      <li>一旦 \(a_n&lt;0\)，\(S_n\) 就开始<strong>变小</strong>。</li>
+    </ul>
+    <p>因此 \(S_n\) 取最大值的位置，就是"\(a_n\) 由正转负"的<strong>分界处</strong>。</p>
+    <p><strong>操作步骤：</strong></p>
+    <ol class="steps">
+      <li>写出通项 \(a_n\)。</li>
+      <li>解不等式组 \(\begin{cases}a_n\ge0\\ a_{n+1}\le0\end{cases}\)（求最大值用），或 \(\begin{cases}a_n\le0\\ a_{n+1}\ge0\end{cases}\)（求最小值用）。</li>
+      <li>解出的 \(n\) 就是最值点，代入 \(S_n\) 公式算值。</li>
+    </ol>
+    <p><strong>为什么是这个不等式组？</strong>\(a_n\ge0\) 说明第 \(n\) 项还在往上加（或刚好加 0），\(a_{n+1}\le0\) 说明从第 \(n+1\) 项开始往下减。所以 \(S_n\) 在这一点达到最大。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">方法二：二次函数法</span>
+    <p>因为 \(S_n=\dfrac{d}{2}n^2+\left(a_1-\dfrac{d}{2}\right)n\) 是二次函数，可以直接求它的对称轴：</p>
+    <div class="formula">\[ n_0 = -\frac{a_1-\frac{d}{2}}{2\cdot\frac{d}{2}} = \frac{1}{2}-\frac{a_1}{d} \]</div>
+    <p>最值点就在离 \(n_0\) 最近的<strong>正整数</strong>处。若 \(n_0\) 正好是正整数，则 \(S_{n_0}\) 与 \(S_{n_0\pm1}\) 都取到最值。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 7</span>
+    <p>已知等差数列 \(\{a_n\}\) 中 \(a_1=20\)，\(d=-3\)。求 \(S_n\) 的最大值及此时 \(n\) 的值。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：写出通项。</strong></p>
+    <div class="formula">\[ a_n = 20 + (n-1)(-3) = 23-3n \]</div>
+
+    <p><strong>第二步：找分界点。</strong>解 \(a_n\ge0\)：</p>
+    <div class="formula">\[ 23-3n\ge0 \quad\Longrightarrow\quad n\le\frac{23}{3}\approx 7.67 \]</div>
+    <p>因为 \(n\) 是正整数，所以 \(n\le7\)。再检查 \(a_8\)：</p>
+    <div class="formula">\[ a_7 = 23-21=2>0,\qquad a_8=23-24=-1&lt;0 \]</div>
+    <p>说明前 7 项都是正数，从第 8 项起变负。所以 \(S_n\) 在 \(n=7\) 时取到最大值。</p>
+
+    <p><strong>第三步：算值。</strong></p>
+    <div class="formula">
+      \[ S_7 = \frac{7(a_1+a_7)}{2} = \frac{7\times(20+2)}{2} = \frac{7\times22}{2} = 77 \]
+    </div>
+    <p><strong>答案：</strong>当 \(n=7\) 时，\(S_n\) 取最大值 \(\boxed{77}\)。</p>
+
+    <p><strong>验算（用另一个公式）：</strong></p>
+    <div class="formula">\[ S_7 = 7\times20+\frac{7\times6}{2}\times(-3) = 140-63 = 77 \quad\checkmark \]</div>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">易错点</span>
+    <ul>
+      <li>解出 \(n\le7.67\) 后，<strong>不要直接写 \(n=7.67\)</strong>，要取正整数。</li>
+      <li>如果 \(a_n\) 恰好有一项等于 0（例如 \(a_7=0\)），那么 \(S_6=S_7\)，<strong>最值同时取在两个位置</strong>，两个都要写。</li>
+      <li>求最小值时，不等式方向要反过来，别照抄。</li>
+    </ul>
+  </div>
+
+  <!-- ==================== 第 3 章 ==================== -->
+  <h2 id="ch3"><span class="num">3</span>等比数列</h2>
+  <p class="lead">公式结构和等差很像，但多了一个"分类讨论"，这是本章最大的陷阱。</p>
+
+  <h3 id="ch3-1">3.1　定义</h3>
+
+  <div class="box def">
+    <span class="tag">定义</span>
+    <p>如果一个数列从第 2 项起，<strong>每一项与它前一项的比</strong>都等于<strong>同一个常数</strong>，那么这个数列叫做<strong>等比数列</strong>，这个常数叫做<strong>公比</strong>，通常用 \(q\) 表示。用符号写就是：</p>
+    <div class="formula">\[ \frac{a_{n+1}}{a_n} = q \quad (\text{常数}),\qquad n\in\mathbb{N}^* \]</div>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">定义里的隐藏条件（非常重要）</span>
+    <p>因为式子里出现了<strong>分母 \(a_n\)</strong>，所以必须保证 \(a_n\ne0\)。由 \(a_{n+1}=a_n q\) 还可以推出：<strong>等比数列的每一项都不为 0，首项 \(a_1\ne0\)，公比 \(q\ne0\)。</strong></p>
+    <p>这两条在做题时经常成为"隐藏条件"。比如题目说"\(a_2\) 是 \(a_1\) 和 \(a_3\) 的等比中项"，你要立刻想到 \(a_2\ne0\)。</p>
+  </div>
+
+  <p>公比 \(q\) 决定数列走向（设 \(a_1>0\)）：</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>\(q\) 的范围</th><th>数列的走向</th><th>例子</th></tr></thead>
+      <tbody>
+        <tr><td>\(q>1\)</td><td>递增（越来越大）</td><td>\(1,2,4,8,\dots\)</td></tr>
+        <tr><td>\(q=1\)</td><td>常数列</td><td>\(3,3,3,3,\dots\)</td></tr>
+        <tr><td>\(0&lt;q&lt;1\)</td><td>递减（越来越小，趋向 0）</td><td>\(1,\tfrac12,\tfrac14,\dots\)</td></tr>
+        <tr><td>\(q&lt;0\)</td><td>摆动数列（正负交替）</td><td>\(1,-2,4,-8,\dots\)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>注意 \(q&lt;0\) 时正负交替，这是等比数列独有的现象，等差数列不会出现。</p>
+
+  <h3 id="ch3-2">3.2　通项公式的推导（累乘法）</h3>
+
+  <div class="formula">
+    <span class="cap">等比数列通项公式</span>
+    \[ a_n = a_1 q^{\,n-1} \]
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导：累乘法</span>
+    <p>由定义 \(\dfrac{a_{n+1}}{a_n}=q\)，把 \(n\) 依次取 \(1,2,3,\dots,n-1\)，写出：</p>
+    <div class="formula">
+      \[
+      \frac{a_2}{a_1}=q,\quad
+      \frac{a_3}{a_2}=q,\quad
+      \frac{a_4}{a_3}=q,\quad \dots,\quad
+      \frac{a_n}{a_{n-1}}=q
+      \]
+    </div>
+    <p><strong>关键一步：把这 \(n-1\) 个等式全部乘起来。</strong></p>
+    <p>左边是 \(\dfrac{a_2}{a_1}\cdot\dfrac{a_3}{a_2}\cdot\dfrac{a_4}{a_3}\cdots\dfrac{a_n}{a_{n-1}}\)。观察分子分母——</p>
+    <ul>
+      <li>分母的 \(a_2\) 和分子的 \(a_2\) 约掉；</li>
+      <li>分母的 \(a_3\) 和分子的 \(a_3\) 约掉；</li>
+      <li>……中间的项<strong>两两约掉，全部消失</strong>；</li>
+      <li>最后分母只剩 \(a_1\)，分子只剩 \(a_n\)。</li>
+    </ul>
+    <p>所以左边只剩 \(\dfrac{a_n}{a_1}\)。右边是 \(n-1\) 个 \(q\) 相乘，即 \(q^{n-1}\)。于是：</p>
+    <div class="formula">\[ \frac{a_n}{a_1} = q^{\,n-1} \quad\Longrightarrow\quad \boxed{\,a_n=a_1q^{\,n-1}\,} \]</div>
+    <p><strong>检验：</strong>令 \(n=1\)，右边 \(=a_1q^0=a_1\) ✓。</p>
+    <p>累乘法与累加法是一对孪生方法：<strong>看到"差"用累加，看到"比"用累乘。</strong></p>
+  </div>
+
+  <h4>通项公式的推广形式</h4>
+  <div class="formula">\[ a_n = a_m\, q^{\,n-m} \]</div>
+  <p>推导思路同等差：从 \(a_m\) 到 \(a_n\) 有 \(n-m\) 个"倍率"，累乘得 \(\dfrac{a_n}{a_m}=q^{n-m}\)。</p>
+
+  <div class="box eg">
+    <span class="tag">例题 8</span>
+    <p>已知等比数列 \(\{a_n\}\) 中 \(a_2=6\)，\(a_5=162\)。求 \(a_1\)、\(q\) 和 \(a_n\)。</p>
+
+    <h4>解析</h4>
+    <p>用推广形式：</p>
+    <div class="formula">\[ \frac{a_5}{a_2} = q^{\,5-2} = q^3 = \frac{162}{6} = 27 \]</div>
+    <p>所以 \(q^3=27=3^3\)，得 \(q=3\)。</p>
+    <p>再由 \(a_2=a_1q\)：</p>
+    <div class="formula">\[ 6 = a_1\times3 \quad\Longrightarrow\quad a_1=2 \]</div>
+    <p>所以：</p>
+    <div class="formula">\[ \boxed{\,a_n = 2\times 3^{\,n-1}\,} \]</div>
+    <p><strong>检验：</strong>\(n=5\) 得 \(2\times3^4=2\times81=162\) ✓。</p>
+  </div>
+
+  <h3 id="ch3-3">3.3　前 \(n\) 项和公式的推导（错位相减法）</h3>
+
+  <p>这是本章<strong>最需要理解</strong>的一段。很多同学记不住公式，或者忘记讨论 \(q=1\)，根源都在于没推过。</p>
+
+  <div class="formula">
+    <span class="cap">等比数列前 n 项和公式</span>
+    \[
+    S_n =
+    \begin{cases}
+    na_1, & q=1 \\[6pt]
+    \dfrac{a_1(1-q^{\,n})}{1-q}, & q\ne1
+    \end{cases}
+    \]
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导：错位相减法</span>
+
+    <p><strong>第一步：先处理最简单的情况 \(q=1\)。</strong></p>
+    <p>若 \(q=1\)，则每一项都等于 \(a_1\)，数列是 \(a_1,a_1,a_1,\dots\)。前 \(n\) 项和就是 \(n\) 个 \(a_1\) 相加：</p>
+    <div class="formula">\[ S_n = \underbrace{a_1+a_1+\cdots+a_1}_{n\ \text{个}} = na_1 \]</div>
+    <p>这一支先解决掉，下面只讨论 \(q\ne1\)。</p>
+
+    <p><strong>第二步：把 \(S_n\) 展开写出来。</strong>利用通项 \(a_k=a_1q^{k-1}\)：</p>
+    <div class="formula">
+      \[ S_n = a_1 + a_1q + a_1q^2 + a_1q^3 + \cdots + a_1q^{\,n-1} \tag{①} \]
+    </div>
+
+    <p><strong>第三步：两边同乘 \(q\)。</strong>这一步叫"错位"——乘完之后，右边每一项的次数都升高 1，于是整体向右"错开一位"：</p>
+    <div class="formula">
+      \[ qS_n = a_1q + a_1q^2 + a_1q^3 + \cdots + a_1q^{\,n-1} + a_1q^{\,n} \tag{②} \]
+    </div>
+
+    <p><strong>第四步：① − ②。</strong>这是本方法的核心，我们一项一项对齐着看：</p>
+    <div class="formula">
+      \[
+      \begin{aligned}
+      S_n &= a_1 + a_1q + a_1q^2 + \cdots + a_1q^{\,n-1} \\
+      qS_n &= \phantom{a_1 + {}} a_1q + a_1q^2 + \cdots + a_1q^{\,n-1} + a_1q^{\,n} \\[8pt]
+      \Rightarrow\quad S_n - qS_n &= a_1 - a_1q^{\,n}
+      \end{aligned}
+      \]
+    </div>
+    <p>看出来了吗？<strong>中间那些项两两完全一样，全部抵消了</strong>，只剩下第一项 \(a_1\)（① 有而 ② 没有）和最后一项 \(-a_1q^n\)（② 有而 ① 没有）。</p>
+
+    <p><strong>第五步：解出 \(S_n\)。</strong></p>
+    <div class="formula">\[ (1-q)S_n = a_1 - a_1q^{\,n} = a_1\bigl(1-q^{\,n}\bigr) \]</div>
+    <p>到这里要<strong>除以 \((1-q)\)</strong>——但除数不能为 0！这就是为什么前面必须先单独讨论 \(q=1\)。既然现在 \(q\ne1\)，就有 \(1-q\ne0\)，可以放心除：</p>
+    <p><strong>逻辑上要交代一句：</strong>\(q=1\) 的情形已经在第一步单独算过（得 \(S_n=na_1\)），所以现在只讨论 \(q\ne1\) <strong>是完备的</strong>——两种情况合起来覆盖了全部可能。</p>
+    <div class="formula">
+      \[ \boxed{\,S_n = \frac{a_1(1-q^{\,n})}{1-q}\,} \]
+    </div>
+
+    <p><strong>第六步：写成另一种等价形式。</strong>把分子分母同时乘 \(-1\)：</p>
+    <div class="formula">\[ S_n = \frac{a_1(q^{\,n}-1)}{q-1} \]</div>
+    <p>两个形式完全等价。当 \(q>1\) 时用第二个（分子分母都是正数，不容易算错符号）。</p>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">为什么必须讨论 \(q=1\)？</span>
+    <p>因为在第五步要把 \((1-q)\) 除过去。如果 \(q=1\)，那么 \(1-q=0\)，<strong>除以 0 是没有意义的</strong>，整个推导链就断了。</p>
+    <p>所以在数学上，只要解题过程中出现"除以某个含参数的式子"，就必须先确认它不为 0。</p>
+    <p><strong>考场提醒：</strong>只要题目里 \(q\) 的值不确定（比如"已知等比数列的公比为 \(q\)"而没给具体值），用求和公式前就必须先讨论 \(q=1\)。这是等比数列最经典的丢分点。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 9（分类讨论的规范写法）</span>
+    <p>已知等比数列 \(\{a_n\}\) 的首项 \(a_1=1\)，前 3 项和 \(S_3=7\)。求公比 \(q\)。</p>
+
+    <h4>解析</h4>
+    <p>因为 \(q\) 的取值不确定，<strong>必须分两种情况</strong>。</p>
+
+    <p><strong>情况一：\(q=1\)。</strong>此时数列为 \(1,1,1\)，所以</p>
+    <div class="formula">\[ S_3 = 3 \ne 7 \]</div>
+    <p>不符合题意，舍去。</p>
+
+    <p><strong>情况二：\(q\ne1\)。</strong>用求和公式：</p>
+    <div class="formula">
+      \[ S_3 = \frac{a_1(1-q^3)}{1-q} = \frac{1-q^3}{1-q} \]
+    </div>
+    <p>注意到 \(1-q^3=(1-q)(1+q+q^2)\)，约分得：</p>
+    <div class="formula">\[ S_3 = 1+q+q^2 \]</div>
+    <p>由题意 \(1+q+q^2=7\)，即</p>
+    <div class="formula">\[ q^2+q-6=0 \quad\Longrightarrow\quad (q+3)(q-2)=0 \quad\Longrightarrow\quad q=-3 \ \text{或}\ q=2 \]</div>
+    <p>两个解都满足 \(q\ne1\)，所以都可以取。</p>
+    <p><strong>答案：</strong>\(\boxed{q=2\ \text{或}\ q=-3}\)</p>
+
+    <p><strong>验算：</strong>\(q=2\) 时数列为 \(1,2,4\)，和为 7 ✓；\(q=-3\) 时数列为 \(1,-3,9\)，和为 7 ✓。</p>
+  </div>
+
+  <h3 id="ch3-4">3.4　等比数列的四条重要性质</h3>
+
+  <h4>性质一：等比中项</h4>
+  <div class="box def">
+    <span class="tag">性质</span>
+    <p>如果 \(a\)、\(G\)、\(b\) 三个数成等比数列，那么 \(G\) 叫做 \(a\) 与 \(b\) 的<strong>等比中项</strong>，且</p>
+    <div class="formula">\[ G^2 = ab \qquad\text{即}\qquad G = \pm\sqrt{ab} \]</div>
+  </div>
+  <div class="box warn">
+    <span class="tag">两个必须注意的地方</span>
+    <ul>
+      <li><strong>有正负两个值。</strong>比如 1 和 4 的等比中项是 \(2\) 或 \(-2\)（因为 \(1,2,4\) 和 \(1,-2,4\) 都是等比数列）。这一点和等差中项（只有一个值）完全不同。</li>
+      <li><strong>要求 \(ab>0\)。</strong>如果 \(ab&lt;0\)，则 \(G^2=ab\) 无实数解，此时不存在等比中项。比如 \(-1\) 和 \(4\) 就没有等比中项。</li>
+    </ul>
+  </div>
+  <p>推广到数列中，对任意 \(n\ge2\)：</p>
+  <div class="formula">\[ a_n^2 = a_{n-1}\cdot a_{n+1} \]</div>
+
+  <h4>性质二：下标和性质</h4>
+  <div class="box def">
+    <span class="tag">性质</span>
+    <p>在等比数列 \(\{a_n\}\) 中，若 \(m+n=p+q\)，则</p>
+    <div class="formula">\[ a_m \cdot a_n = a_p \cdot a_q \]</div>
+  </div>
+  <div class="box proof">
+    <span class="tag">推导（与等差完全平行）</span>
+    <p>用通项 \(a_k=a_1q^{k-1}\) 展开：</p>
+    <div class="formula">
+      \[
+      \begin{aligned}
+      a_m\cdot a_n &= a_1q^{m-1}\cdot a_1q^{n-1} = a_1^2 q^{\,m+n-2} \\[4pt]
+      a_p\cdot a_q &= a_1q^{p-1}\cdot a_1q^{q-1} = a_1^2 q^{\,p+q-2}
+      \end{aligned}
+      \]
+    </div>
+    <p>因为 \(m+n=p+q\)，所以指数相同，两式相等。∎</p>
+    <p><strong>对比记忆：</strong>等差是<strong>和</strong>相等（\(a_m+a_n=a_p+a_q\)），等比是<strong>积</strong>相等（\(a_m\cdot a_n=a_p\cdot a_q\)）。<strong>等差对应加，等比对应乘</strong>，这是贯穿整章的对应关系。</p>
+  </div>
+
+  <h4>性质三：片段和性质</h4>
+  <div class="box def">
+    <span class="tag">性质</span>
+    <p>若 \(\{a_n\}\) 是等比数列（各项不为 0），则</p>
+    <div class="formula">\[ S_n,\quad S_{2n}-S_n,\quad S_{3n}-S_{2n},\ \dots \]</div>
+    <p>构成<strong>等比数列</strong>，公比为 \(q^{\,n}\)。</p>
+  </div>
+  <div class="box proof">
+    <span class="tag">推导</span>
+    <p>第 2 段的和可以提取公因式：</p>
+    <div class="formula">
+      \[
+      \begin{aligned}
+      S_{2n}-S_n &= a_{n+1}+a_{n+2}+\cdots+a_{2n} \\
+      &= a_1q^{\,n}+a_1q^{\,n+1}+\cdots+a_1q^{\,2n-1} \\
+      &= q^{\,n}\bigl(a_1+a_1q+\cdots+a_1q^{\,n-1}\bigr) \\
+      &= q^{\,n}\,S_n
+      \end{aligned}
+      \]
+    </div>
+    <p>同理 \(S_{3n}-S_{2n}=q^{\,n}(S_{2n}-S_n)\)。所以相邻两段的比值恒为 \(q^n\)，构成等比数列。∎</p>
+    <p><strong>关键技巧：</strong>提公因式 \(q^n\)。这个"整体提取"的动作在等比数列里出现得非常频繁。</p>
+  </div>
+
+  <h4>性质四：通项是指数型函数</h4>
+  <div class="box proof">
+    <span class="tag">从函数角度看</span>
+    <p>把通项改写一下：</p>
+    <div class="formula">\[ a_n = a_1q^{\,n-1} = \frac{a_1}{q}\cdot q^{\,n} \]</div>
+    <p>这是关于 \(n\) 的<strong>指数型函数</strong>（\(y=k\cdot q^x\) 的形式）。所以：</p>
+    <ul>
+      <li>\(q>1\) 时，\(a_n\) 随 \(n\) 指数级增长，增长极快；</li>
+      <li>\(0&lt;q&lt;1\) 时，\(a_n\) 随 \(n\) 指数级衰减，迅速趋向 0。</li>
+    </ul>
+    <p><strong>判定用：</strong>若 \(a_n = c\cdot q^{\,n}\)（\(c\ne0\)，\(q>0\)，\(q\ne1\)），则 \(\{a_n\}\) 是等比数列，公比为 \(q\)。</p>
+  </div>
+
+  <h3 id="ch3-5">3.5　判定等比数列的三种方法</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>方法</th><th>依据</th><th>怎么用</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>定义法</strong>（首选）</td>
+          <td>\(\dfrac{a_{n+1}}{a_n}=q\)（常数）</td>
+          <td>算比值，看结果里有没有 \(n\)。<strong>同时要说明 \(a_n\ne0\)。</strong></td>
+        </tr>
+        <tr>
+          <td><strong>中项法</strong></td>
+          <td>\(a_{n+1}^2=a_n\cdot a_{n+2}\)</td>
+          <td>验证相邻三项。注意此时还要保证 \(a_{n+1}\ne0\)。</td>
+        </tr>
+        <tr>
+          <td><strong>通项形式法</strong></td>
+          <td>\(a_n=cq^{\,n}\)</td>
+          <td>看到指数形式直接下结论。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="box warn">
+    <span class="tag">中项法的陷阱</span>
+    <p>\(a_{n+1}^2=a_na_{n+2}\) 只说明"等比中项关系"，它<strong>不能排除数列中有 0</strong>。例如 \(1,0,0,0,\dots\) 满足 \(a_2^2=a_1a_3\)（\(0=0\)），但它不是等比数列。</p>
+    <p>所以用中项法时，必须<strong>额外说明各项不为 0</strong>，或者干脆用定义法。</p>
+  </div>
+
+  <!-- ==================== 第 4 章 ==================== -->
+  <h2 id="ch4"><span class="num">4</span>求通项公式的六种方法</h2>
+  <p class="lead">这是数列大题的第一问，几乎是必考。方法一共就这几种，认准"式子的样子"直接对号入座。</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>序号</th><th>方法</th><th>识别的信号（题目的样子）</th></tr></thead>
+      <tbody>
+        <tr><td>方法一</td><td>公式法</td><td>题目直接说是等差/等比，或给了 \(a_1\) 和 \(d\) / \(q\)</td></tr>
+        <tr><td>方法二</td><td>累加法</td><td>\(a_{n+1}-a_n = f(n)\)（差是 \(n\) 的式子）</td></tr>
+        <tr><td>方法三</td><td>累乘法</td><td>\(\dfrac{a_{n+1}}{a_n}=f(n)\)（比是 \(n\) 的式子）</td></tr>
+        <tr><td>方法四</td><td>构造法（待定系数）</td><td>\(a_{n+1}=p\,a_n+q\)（\(p\ne1\)，\(q\) 是常数）</td></tr>
+        <tr><td>方法五</td><td>\(S_n\) 转化法</td><td>题目给的是 \(S_n\) 的表达式，或给 \(a_n\) 与 \(S_n\) 的关系式</td></tr>
+        <tr><td>方法六</td><td>取倒数法</td><td>\(a_{n+1}=\dfrac{a_n}{p\,a_n+q}\)（\(a_n\) 出现在分母）</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 id="ch4-1">4.1　公式法</h3>
+  <p>最基础的一种。判断出数列是等差或等比后，直接用公式。</p>
+  <div class="box proof">
+    <span class="tag">要点</span>
+    <ul>
+      <li>等差数列：\(a_n=a_1+(n-1)d\)</li>
+      <li>等比数列：\(a_n=a_1q^{\,n-1}\)（<strong>要讨论 \(q=1\)</strong>）</li>
+      <li>题目给的不是首项时，用推广形式 \(a_n=a_m+(n-m)d\) 或 \(a_n=a_mq^{\,n-m}\) 更快。</li>
+    </ul>
+  </div>
+
+  <h3 id="ch4-2">4.2　累加法</h3>
+  <div class="box def">
+    <span class="tag">适用形式</span>
+    <div class="formula">\[ a_{n+1}-a_n = f(n) \]</div>
+    <p>其中 \(f(n)\) 是 \(n\) 的式子（可以是常数，也可以含 \(n\)）。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导（与等差通项推导同源）</span>
+    <p>把 \(n\) 依次取 \(1,2,\dots,n-1\)，得到 \(n-1\) 个等式：</p>
+    <div class="formula">
+      \[
+      a_2-a_1=f(1),\quad a_3-a_2=f(2),\quad \dots,\quad a_n-a_{n-1}=f(n-1)
+      \]
+    </div>
+    <p>全部相加，中间项抵消，得：</p>
+    <div class="formula">
+      \[ a_n - a_1 = f(1)+f(2)+\cdots+f(n-1) = \sum_{k=1}^{n-1}f(k) \]
+    </div>
+    <p>所以：</p>
+    <div class="formula">
+      \[ \boxed{\,a_n = a_1 + \sum_{k=1}^{n-1}f(k)\,} \]
+    </div>
+    <p>如果 \(f(k)\) 是等差或等比，这个和可以直接用求和公式算出来。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 10</span>
+    <p>已知数列 \(\{a_n\}\) 满足 \(a_1=1\)，\(a_{n+1}=a_n+2n\)。求 \(a_n\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：识别形式。</strong>移项得 \(a_{n+1}-a_n=2n\)，右边是 \(n\) 的式子，<strong>用累加法</strong>。</p>
+
+    <p><strong>第二步：列式相加。</strong>把 \(n\) 取 \(1,2,\dots,n-1\)：</p>
+    <div class="formula">
+      \[
+      a_2-a_1=2\times1,\quad a_3-a_2=2\times2,\quad \dots,\quad a_n-a_{n-1}=2(n-1)
+      \]
+    </div>
+    <p>全部相加，左边中间项抵消得 \(a_n-a_1\)，右边是 \(2(1+2+\cdots+(n-1))\)：</p>
+    <div class="formula">
+      \[ a_n - a_1 = 2\cdot\frac{(n-1)n}{2} = n(n-1) \]
+    </div>
+    <p>这里用到了等差数列求和 \(1+2+\cdots+(n-1)=\dfrac{(n-1)n}{2}\)。</p>
+
+    <p><strong>第三步：代入 \(a_1\)。</strong></p>
+    <div class="formula">
+      \[ a_n = a_1 + n(n-1) = 1 + n^2-n = n^2-n+1 \]
+    </div>
+
+    <p><strong>第四步：检验。</strong>\(n=1\) 时 \(1-1+1=1=a_1\) ✓。</p>
+    <p><strong>答案：</strong>\(\boxed{a_n=n^2-n+1}\)</p>
+
+    <p><strong>验算第二项：</strong>由递推 \(a_2=a_1+2\times1=3\)；由通项 \(2^2-2+1=3\) ✓。</p>
+  </div>
+
+  <h3 id="ch4-3">4.3　累乘法</h3>
+  <div class="box def">
+    <span class="tag">适用形式</span>
+    <div class="formula">\[ \frac{a_{n+1}}{a_n} = f(n) \]</div>
+  </div>
+  <div class="box proof">
+    <span class="tag">推导</span>
+    <p>把 \(n\) 取 \(1,2,\dots,n-1\) 写出 \(n-1\) 个等式，全部相乘：</p>
+    <div class="formula">
+      \[ \frac{a_n}{a_1} = f(1)\cdot f(2)\cdots f(n-1) = \prod_{k=1}^{n-1}f(k) \]
+    </div>
+    <div class="formula">
+      \[ \boxed{\,a_n = a_1\prod_{k=1}^{n-1}f(k)\,} \]
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 11</span>
+    <p>已知数列 \(\{a_n\}\) 满足 \(a_1=1\)，\(a_{n+1}=2^{\,n}\cdot a_n\)。求 \(a_n\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：识别。</strong>两边除以 \(a_n\) 得 \(\dfrac{a_{n+1}}{a_n}=2^n\)，比值是 \(n\) 的式子，<strong>用累乘法</strong>。</p>
+
+    <p><strong>第二步：列式相乘。</strong></p>
+    <div class="formula">
+      \[
+      \frac{a_2}{a_1}=2^1,\quad \frac{a_3}{a_2}=2^2,\quad \dots,\quad \frac{a_n}{a_{n-1}}=2^{\,n-1}
+      \]
+    </div>
+    <p>全部相乘，左边约分得 \(\dfrac{a_n}{a_1}\)，右边是指数相加：</p>
+    <div class="formula">
+      \[ \frac{a_n}{a_1} = 2^{\,1+2+3+\cdots+(n-1)} = 2^{\frac{n(n-1)}{2}} \]
+    </div>
+    <p>这里用到 \(1+2+\cdots+(n-1)=\dfrac{n(n-1)}{2}\)。</p>
+
+    <p><strong>第三步：代入 \(a_1=1\)。</strong></p>
+    <div class="formula">
+      \[ \boxed{\,a_n = 2^{\frac{n(n-1)}{2}}\,} \]
+    </div>
+
+    <p><strong>检验：</strong>\(n=1\) 时指数为 \(0\)，\(2^0=1=a_1\) ✓。</p>
+  </div>
+
+  <h3 id="ch4-4">4.4　构造法（待定系数）</h3>
+  <div class="box def">
+    <span class="tag">适用形式</span>
+    <div class="formula">\[ a_{n+1} = p\,a_n + q \qquad (p\ne1,\ q\ne0) \]</div>
+    <p>这种形式不能直接累加也不能直接累乘，需要"<strong>构造</strong>"出一个等比数列。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导：为什么要加一个 λ</span>
+    <p><strong>核心想法：</strong>我们希望把 \(a_{n+1}=pa_n+q\) 改造成<strong>等比数列</strong>的样子，也就是形如</p>
+    <div class="formula">\[ a_{n+1}+\lambda = p\bigl(a_n+\lambda\bigr) \]</div>
+    <p>这样 \(\{a_n+\lambda\}\) 就是以 \(p\) 为公比的等比数列，问题就解决了。关键是求出这个 \(\lambda\)。</p>
+
+    <p><strong>第一步：把设的式子展开。</strong></p>
+    <div class="formula">
+      \[ a_{n+1}+\lambda = p\,a_n + p\lambda \quad\Longrightarrow\quad a_{n+1} = p\,a_n + p\lambda - \lambda \]
+    </div>
+
+    <p><strong>第二步：和原式对比。</strong>原式是 \(a_{n+1}=pa_n+q\)。两式对照，常数部分必须相等：</p>
+    <div class="formula">\[ p\lambda - \lambda = q \quad\Longrightarrow\quad (p-1)\lambda = q \]</div>
+
+    <p><strong>第三步：解出 \(\lambda\)。</strong>因为已知 \(p\ne1\)，所以 \(p-1\ne0\)，可以除：</p>
+    <div class="formula">\[ \boxed{\,\lambda = \frac{q}{p-1}\,} \]</div>
+
+    <p><strong>第四步：结论。</strong>于是 \(\{a_n+\lambda\}\) 是首项为 \(a_1+\lambda\)、公比为 \(p\) 的等比数列，从而</p>
+    <div class="formula">
+      \[ a_n + \lambda = (a_1+\lambda)\,p^{\,n-1} \quad\Longrightarrow\quad a_n = (a_1+\lambda)p^{\,n-1} - \lambda \]
+    </div>
+    <p>这就是通项公式。</p>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">考场上可以这样写（更快）</span>
+    <p>不用每次从 \(\lambda\) 推一遍，直接<strong>设 \(a_{n+1}+\lambda=p(a_n+\lambda)\)，展开对比常数项解出 \(\lambda\)</strong>，写出"所以 \(\{a_n+\lambda\}\) 是等比数列"即可。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 12</span>
+    <p>已知数列 \(\{a_n\}\) 满足 \(a_1=1\)，\(a_{n+1}=2a_n+3\)。求 \(a_n\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：设 \(\lambda\)。</strong>令</p>
+    <div class="formula">\[ a_{n+1}+\lambda = 2\bigl(a_n+\lambda\bigr) \]</div>
+    <p>展开：\(a_{n+1}=2a_n+2\lambda-\lambda=2a_n+\lambda\)。</p>
+
+    <p><strong>第二步：对比原式 \(a_{n+1}=2a_n+3\)。</strong>得 \(\lambda=3\)。</p>
+
+    <p><strong>第三步：写出等比数列。</strong>所以</p>
+    <div class="formula">\[ a_{n+1}+3 = 2\bigl(a_n+3\bigr) \]</div>
+    <p>即 \(\{a_n+3\}\) 是等比数列，公比 \(q=2\)。</p>
+
+    <p><strong>第四步：求首项。</strong>首项为 \(a_1+3=1+3=4\)。</p>
+
+    <p><strong>第五步：用等比通项公式。</strong></p>
+    <div class="formula">
+      \[ a_n+3 = 4\times 2^{\,n-1} = 2^2\times 2^{\,n-1} = 2^{\,n+1} \]
+    </div>
+    <div class="formula">
+      \[ \boxed{\,a_n = 2^{\,n+1}-3\,} \]
+    </div>
+
+    <p><strong>检验：</strong>\(n=1\) 时 \(2^2-3=1=a_1\) ✓。再用递推验 \(a_2\)：由递推 \(a_2=2\times1+3=5\)；由通项 \(2^3-3=5\) ✓。</p>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">推广：\(a_{n+1}=p\,a_n+q^{\,n}\) 怎么办？</span>
+    <p>如果 \(q\) 不是常数而是 \(q^n\)，思路类似但要多一步。两边同除以 \(p^{\,n+1}\)（或 \(q^{\,n+1}\)，视情况），把它转化成等差或等比。这类题属于提高题，基础阶段先掌握常数 \(q\) 的情形。</p>
+  </div>
+
+  <h3 id="ch4-5">4.5　\(S_n\) 转化法</h3>
+  <p>题目给的是 \(S_n\) 的表达式，或者给的是同时含 \(a_n\) 和 \(S_n\) 的关系式。核心武器就是第 1.4 节的公式：</p>
+  <div class="formula">
+    \[ a_n = \begin{cases} S_1, & n=1 \\ S_n-S_{n-1}, & n\ge2 \end{cases} \]
+  </div>
+  <div class="box proof">
+    <span class="tag">操作要点</span>
+    <ol class="steps">
+      <li><strong>先看能不能直接消掉 \(S_n\)。</strong>如果关系式里同时有 \(a_n\) 和 \(S_n\)，通常用 \(a_n=S_n-S_{n-1}\)（\(n\ge2\)）把 \(a_n\) 换成 \(S_n\)，得到只含 \(S_n\) 的式子。</li>
+      <li><strong>如果消不掉，就消 \(S_n\)。</strong>有时候反过来，把 \(S_n\) 换成 \(a_n\) 更好算。</li>
+      <li><strong>单独处理 \(n=1\)。</strong>无论哪种路径，都要单独算 \(a_1=S_1\)。</li>
+      <li><strong>检验、合并。</strong>最后检查 \(n=1\) 能否并入。</li>
+    </ol>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 13（直接给 \(S_n\)）</span>
+    <p>已知数列 \(\{a_n\}\) 的前 \(n\) 项和 \(S_n=2^n-1\)。求 \(a_n\)，并判断 \(\{a_n\}\) 是否为等比数列。</p>
+
+    <h4>解析</h4>
+    <p><strong>当 \(n=1\) 时：</strong>\(a_1=S_1=2^1-1=1\)。</p>
+
+    <p><strong>当 \(n\ge2\) 时：</strong>先求 \(S_{n-1}\)：</p>
+    <div class="formula">\[ S_{n-1}=2^{\,n-1}-1 \]</div>
+    <div class="formula">
+      \[ a_n = S_n - S_{n-1} = (2^n-1)-(2^{\,n-1}-1) = 2^n-2^{\,n-1} = 2^{\,n-1}(2-1)=2^{\,n-1} \]
+    </div>
+
+    <p><strong>检验：</strong>\(n=1\) 时 \(2^{0}=1=a_1\) ✓，可以合并。</p>
+    <div class="formula">\[ \boxed{\,a_n = 2^{\,n-1}\,} \]</div>
+
+    <p><strong>判断等比：</strong>计算相邻两项的比：</p>
+    <div class="formula">\[ \frac{a_{n+1}}{a_n} = \frac{2^{\,n}}{2^{\,n-1}} = 2 \quad(\text{常数}) \]</div>
+    <p>且各项均不为 0（都是 \(2\) 的正整数次幂），所以 \(\{a_n\}\) 是首项为 1、公比为 2 的等比数列。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 14（给的是 \(a_n\) 与 \(S_n\) 的关系式）</span>
+    <p>已知数列 \(\{a_n\}\) 满足 \(a_1=1\)，且 \(S_n=2a_n-1\)（\(n\ge1\)）。求 \(a_n\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：写出 \(n-1\) 时的式子。</strong>原式对 \(n\ge1\) 成立，把 \(n\) 换成 \(n-1\)（要求 \(n\ge2\)）：</p>
+    <div class="formula">\[ S_{n-1} = 2a_{n-1}-1 \tag{①} \]</div>
+    <p>原式：</p>
+    <div class="formula">\[ S_n = 2a_n - 1 \tag{②} \]</div>
+
+    <p><strong>第二步：② − ①。</strong></p>
+    <div class="formula">
+      \[ S_n - S_{n-1} = 2a_n - 2a_{n-1} \]
+    </div>
+    <p>左边 \(S_n-S_{n-1}=a_n\)（\(n\ge2\)），所以：</p>
+    <div class="formula">
+      \[ a_n = 2a_n - 2a_{n-1} \quad\Longrightarrow\quad a_n = 2a_{n-1} \qquad (n\ge2) \]
+    </div>
+
+    <p><strong>第三步：判断类型。</strong>由 \(a_n=2a_{n-1}\) 知 \(\{a_n\}\) 是等比数列，公比 \(q=2\)。</p>
+
+    <p><strong>第四步：求首项并检验。</strong>在原式 \(S_n=2a_n-1\) 中令 \(n=1\)：</p>
+    <div class="formula">\[ S_1 = 2a_1-1 \quad\Longrightarrow\quad a_1 = 2a_1-1 \quad\Longrightarrow\quad a_1=1 \]</div>
+    <p>与已知 \(a_1=1\) 一致 ✓。且 \(a_1=1\ne0\)，满足等比数列要求。</p>
+
+    <p><strong>第五步：写通项。</strong></p>
+    <div class="formula">\[ \boxed{\,a_n = 1\times 2^{\,n-1} = 2^{\,n-1}\,} \]</div>
+
+    <p><strong>验算：</strong>\(a_1=1,a_2=2,a_3=4\)。\(S_3=1+2+4=7\)，而 \(2a_3-1=8-1=7\) ✓。</p>
+  </div>
+
+  <h3 id="ch4-6">4.6　取倒数法</h3>
+  <div class="box def">
+    <span class="tag">适用形式</span>
+    <div class="formula">\[ a_{n+1} = \frac{a_n}{p\,a_n + q} \]</div>
+    <p>特征是 \(a_n\) 跑到了<strong>分母</strong>上。这时候"取倒数"往往能把分式变成线性形式。</p>
+    <p><strong>前提检查：</strong>既然 \(a_n\) 在分母上，就必须保证 \(a_n\ne0\)。通常题目会通过 \(a_1\) 和递推式保证这一点（例如 \(a_1>0\) 且递推式中分子分母同号，则各项恒正）。<strong>用取倒数法之前，先说明这一点</strong>，这是判分的规范要求。</p>
+  </div>
+  <div class="box proof">
+    <span class="tag">推导思路</span>
+    <p>两边取倒数：</p>
+    <div class="formula">
+      \[ \frac{1}{a_{n+1}} = \frac{p\,a_n+q}{a_n} = p + \frac{q}{a_n} \]
+    </div>
+    <p>令 \(b_n=\dfrac{1}{a_n}\)，则上式变成：</p>
+    <div class="formula">\[ b_{n+1} = q\,b_n + p \]</div>
+    <p>这就回到了<strong>方法四（构造法）</strong>的形式！按构造法的步骤处理即可。</p>
+    <p>特别地，如果 \(p=q=1\)，即 \(a_{n+1}=\dfrac{a_n}{a_n+1}\)，则 \(b_{n+1}=b_n+1\)，\(\{b_n\}\) 直接就是等差数列。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 15（已在例题 6 出现过，这里看完整链路）</span>
+    <p>已知 \(a_1=1\)，\(a_{n+1}=\dfrac{a_n}{2a_n+1}\)。求 \(a_n\)。</p>
+    <h4>解析</h4>
+    <p>两边取倒数：</p>
+    <div class="formula">
+      \[ \frac{1}{a_{n+1}} = \frac{2a_n+1}{a_n} = 2 + \frac{1}{a_n} \]
+    </div>
+    <p>令 \(b_n=\dfrac{1}{a_n}\)，则 \(b_{n+1}=b_n+2\)，即 \(\{b_n\}\) 是公差为 2 的等差数列，首项 \(b_1=\dfrac{1}{a_1}=1\)。</p>
+    <div class="formula">\[ b_n = 1+(n-1)\times2 = 2n-1 \]</div>
+    <div class="formula">\[ \boxed{\,a_n = \frac{1}{2n-1}\,} \]</div>
+    <p><strong>检验：</strong>\(n=1\) 得 1 ✓；\(n=2\) 得 \(\dfrac13\)，与 \(a_2=\dfrac{1}{2+1}=\dfrac13\) ✓。</p>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">六种方法速查</span>
+    <div class="tbl-wrap" style="margin:0;">
+      <table>
+        <thead><tr><th>看到什么</th><th>用什么</th></tr></thead>
+        <tbody>
+          <tr><td>\(a_{n+1}-a_n=f(n)\)</td><td>累加法</td></tr>
+          <tr><td>\(\dfrac{a_{n+1}}{a_n}=f(n)\)</td><td>累乘法</td></tr>
+          <tr><td>\(a_{n+1}=pa_n+q\)</td><td>构造法（加 \(\lambda=\frac{q}{p-1}\)）</td></tr>
+          <tr><td>出现 \(S_n\)</td><td>\(S_n\) 转化法（\(a_n=S_n-S_{n-1}\)）</td></tr>
+          <tr><td>\(a_n\) 在分母上</td><td>取倒数法</td></tr>
+          <tr><td>题目明说是等差/等比</td><td>公式法</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ==================== 第 5 章 ==================== -->
+  <h2 id="ch5"><span class="num">5</span>求前 \(n\) 项和的五种方法</h2>
+  <p class="lead">这是数列大题的"第二问"，难度更高。方法选择同样看式子的样子。</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>序号</th><th>方法</th><th>识别的信号</th></tr></thead>
+      <tbody>
+        <tr><td>方法一</td><td>公式法</td><td>数列本身就是等差或等比</td></tr>
+        <tr><td>方法二</td><td>分组求和</td><td>通项是"两块加起来"（如 \(a_n=2n+3^n\)）</td></tr>
+        <tr><td>方法三</td><td>裂项相消</td><td>通项是<strong>分式</strong>，分母是两项之积（如 \(\frac{1}{n(n+1)}\)）</td></tr>
+        <tr><td>方法四</td><td>错位相减</td><td>通项是"<strong>等差 × 等比</strong>"（如 \(n\cdot 2^n\)）</td></tr>
+        <tr><td>方法五</td><td>倒序相加</td><td>通项满足"首尾配对和为定值"</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 id="ch5-1">5.1　公式法</h3>
+  <p>直接用等差、等比求和公式。要点：<strong>先判断类型，再选公式</strong>。</p>
+  <div class="formula">
+    \[
+    \text{等差：}\ S_n=\frac{n(a_1+a_n)}{2}=na_1+\frac{n(n-1)}{2}d
+    \]
+  </div>
+  <div class="formula">
+    \[
+    \text{等比：}\ S_n=
+    \begin{cases} na_1, & q=1 \\[4pt] \dfrac{a_1(1-q^{\,n})}{1-q}, & q\ne1 \end{cases}
+    \]
+  </div>
+  <p>另外，几个常用的小结论要背熟：</p>
+  <div class="formula">
+    \[
+    1+2+\cdots+n=\frac{n(n+1)}{2},\qquad
+    1^2+2^2+\cdots+n^2=\frac{n(n+1)(2n+1)}{6}
+    \]
+  </div>
+
+  <h3 id="ch5-2">5.2　分组求和法</h3>
+  <div class="box def">
+    <span class="tag">适用形式</span>
+    <p>通项可以拆成<strong>几块</strong>，每一块分别是等差或等比，例如</p>
+    <div class="formula">\[ a_n = b_n + c_n \]</div>
+    <p>其中 \(\{b_n\}\) 是等差，\(\{c_n\}\) 是等比。</p>
+  </div>
+  <div class="box proof">
+    <span class="tag">原理</span>
+    <p>利用求和的<strong>可拆分性</strong>（加法交换律与结合律）：</p>
+    <div class="formula">
+      \[
+      \sum_{k=1}^{n}(b_k+c_k) = (b_1+c_1)+(b_2+c_2)+\cdots+(b_n+c_n) = \sum_{k=1}^{n}b_k + \sum_{k=1}^{n}c_k
+      \]
+    </div>
+    <p>即：<strong>和的分块 = 分块的和</strong>。于是分别用等差、等比公式算两块，再加起来。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 16</span>
+    <p>求数列 \(a_n = n + 3^{\,n-1}\) 的前 \(n\) 项和 \(S_n\)。</p>
+    <h4>解析</h4>
+    <p>通项分成两块：\(n\)（等差）和 \(3^{n-1}\)（等比，首项 \(3^0=1\)，公比 3）。</p>
+    <p><strong>第一块：</strong></p>
+    <div class="formula">
+      \[ 1+2+3+\cdots+n = \frac{n(n+1)}{2} \]
+    </div>
+    <p><strong>第二块：</strong>首项 \(3^0=1\)，公比 \(q=3\ne1\)，共 \(n\) 项：</p>
+    <div class="formula">
+      \[ 3^0+3^1+\cdots+3^{\,n-1} = \frac{1\cdot(3^{\,n}-1)}{3-1} = \frac{3^{\,n}-1}{2} \]
+    </div>
+    <p><strong>合并：</strong></p>
+    <div class="formula">
+      \[ \boxed{\,S_n = \frac{n(n+1)}{2} + \frac{3^{\,n}-1}{2} = \frac{n(n+1)+3^{\,n}-1}{2}\,} \]
+    </div>
+    <p><strong>验算：</strong>\(n=2\) 时，直接算 \(a_1+a_2=(1+1)+(2+3)=2+5=7\)；用公式 \(\dfrac{2\times3+9-1}{2}=\dfrac{6+8}{2}=7\) ✓。</p>
+  </div>
+
+  <h3 id="ch5-3">5.3　裂项相消法（重点）</h3>
+
+  <div class="box def">
+    <span class="tag">适用形式</span>
+    <p>通项是<strong>分式</strong>，且分母可以写成<strong>两个因子相乘</strong>，例如</p>
+    <div class="formula">\[ a_n = \frac{1}{n(n+1)},\qquad a_n=\frac{1}{(2n-1)(2n+1)},\qquad a_n=\frac{1}{\sqrt{n+1}+\sqrt{n}} \]</div>
+  </div>
+
+  <p>核心思想只有一句话：<strong>把一项拆成两项之差，求和时让中间项两两抵消。</strong></p>
+
+  <h4>裂项公式一：\(\dfrac{1}{n(n+1)}\)</h4>
+  <div class="box proof">
+    <span class="tag">推导：这个拆分是怎么想出来的</span>
+    <p>我们希望把 \(\dfrac{1}{n(n+1)}\) 写成 \(\dfrac{1}{n}-\dfrac{1}{n+1}\) 的形式。先<strong>通分验证</strong>一下：</p>
+    <div class="formula">
+      \[ \frac{1}{n}-\frac{1}{n+1} = \frac{(n+1)-n}{n(n+1)} = \frac{1}{n(n+1)} \quad\checkmark \]
+    </div>
+    <p>成立！所以：</p>
+    <div class="formula">
+      \[ \boxed{\ \frac{1}{n(n+1)} = \frac{1}{n}-\frac{1}{n+1}\ } \]
+    </div>
+    <p><strong>怎么想到的？</strong>反过来想：如果两个分式相减后分母变成 \(n(n+1)\)，那么原来两个分母最可能就是 \(n\) 和 \(n+1\)。这是个经验性的思路，做题多了自然有感觉。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">求和：看抵消过程</span>
+    <p>把每一项都裂开：</p>
+    <div class="formula">
+      \[
+      \begin{aligned}
+      S_n &= \left(\frac{1}{1}-\frac{1}{2}\right) + \left(\frac{1}{2}-\frac{1}{3}\right) + \left(\frac{1}{3}-\frac{1}{4}\right) + \cdots + \left(\frac{1}{n}-\frac{1}{n+1}\right)
+      \end{aligned}
+      \]
+    </div>
+    <p>现在一项一项看抵消：</p>
+    <ul>
+      <li>第一个括号里的 \(-\dfrac12\) 和第二个括号里的 \(+\dfrac12\) 抵消；</li>
+      <li>第二个括号里的 \(-\dfrac13\) 和第三个括号里的 \(+\dfrac13\) 抵消；</li>
+      <li>……</li>
+      <li>最后只剩<strong>第一项的头 \(\dfrac11\)</strong> 和 <strong>最后一项的尾 \(-\dfrac{1}{n+1}\)</strong>。</li>
+    </ul>
+    <div class="formula">
+      \[ S_n = 1 - \frac{1}{n+1} = \frac{n+1-1}{n+1} = \boxed{\frac{n}{n+1}} \]
+    </div>
+    <p><strong>规律：</strong>裂项相消之后，永远剩下"<strong>前剩头、后剩尾</strong>"。数一下剩下的项数——这里剩 2 项。</p>
+  </div>
+
+  <h4>裂项公式二：\(\dfrac{1}{n(n+k)}\)（分母两因子相差 \(k\)）</h4>
+  <div class="box proof">
+    <span class="tag">推导</span>
+    <p>尝试同样的拆分，先通分看看差多少：</p>
+    <div class="formula">
+      \[ \frac{1}{n}-\frac{1}{n+k} = \frac{(n+k)-n}{n(n+k)} = \frac{k}{n(n+k)} \]
+    </div>
+    <p>结果多了个 \(k\)。所以要把两边都除以 \(k\) 修正回来：</p>
+    <div class="formula">
+      \[ \boxed{\ \frac{1}{n(n+k)} = \frac{1}{k}\left(\frac{1}{n}-\frac{1}{n+k}\right)\ } \]
+    </div>
+    <p><strong>口诀：分母两因子差几，前面就提几分之一。</strong></p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 17</span>
+    <p>求数列 \(a_n=\dfrac{1}{(2n-1)(2n+1)}\) 的前 \(n\) 项和 \(S_n\)。</p>
+    <h4>解析</h4>
+    <p>分母两个因子 \(2n-1\) 与 \(2n+1\) 相差 \(2\)，所以提出 \(\dfrac12\)：</p>
+    <div class="formula">
+      \[ a_n = \frac{1}{2}\left(\frac{1}{2n-1}-\frac{1}{2n+1}\right) \]
+    </div>
+    <p><strong>验证：</strong>右边通分 \(=\dfrac12\cdot\dfrac{(2n+1)-(2n-1)}{(2n-1)(2n+1)}=\dfrac12\cdot\dfrac{2}{(2n-1)(2n+1)}=\dfrac{1}{(2n-1)(2n+1)}\) ✓。</p>
+    <p>求和时把 \(\dfrac12\) 提到最外面：</p>
+    <div class="formula">
+      \[
+      S_n = \frac{1}{2}\left[\left(\frac11-\frac13\right)+\left(\frac13-\frac15\right)+\cdots+\left(\frac{1}{2n-1}-\frac{1}{2n+1}\right)\right]
+      \]
+    </div>
+    <p>中间项全部抵消，只剩头尾：</p>
+    <div class="formula">
+      \[ S_n = \frac{1}{2}\left(1-\frac{1}{2n+1}\right) = \frac{1}{2}\cdot\frac{2n+1-1}{2n+1} = \boxed{\frac{n}{2n+1}} \]
+    </div>
+    <p><strong>验算：</strong>\(n=1\) 时 \(S_1=a_1=\dfrac{1}{1\times3}=\dfrac13\)；公式 \(\dfrac{1}{3}\) ✓。</p>
+  </div>
+
+  <h4>裂项公式三：根式型</h4>
+  <div class="box proof">
+    <span class="tag">推导（分母有理化）</span>
+    <p>要处理 \(\dfrac{1}{\sqrt{n+1}+\sqrt{n}}\)，注意到分母是"\(\sqrt{a}+\sqrt{b}\)"的形式，可以用<strong>平方差公式</strong>有理化。分子分母同乘 \(\bigl(\sqrt{n+1}-\sqrt{n}\bigr)\)：</p>
+    <div class="formula">
+      \[
+      \frac{1}{\sqrt{n+1}+\sqrt{n}} = \frac{\sqrt{n+1}-\sqrt{n}}{\bigl(\sqrt{n+1}+\sqrt{n}\bigr)\bigl(\sqrt{n+1}-\sqrt{n}\bigr)}
+      \]
+    </div>
+    <p>分母用平方差：\(\bigl(\sqrt{n+1}\bigr)^2-\bigl(\sqrt{n}\bigr)^2=(n+1)-n=1\)。所以分母变成 1：</p>
+    <div class="formula">
+      \[ \boxed{\ \frac{1}{\sqrt{n+1}+\sqrt{n}} = \sqrt{n+1}-\sqrt{n}\ } \]
+    </div>
+    <p>求和时同样逐项抵消，最后只剩 \(-\sqrt{1}\) 和 \(+\sqrt{n+1}\)：</p>
+    <div class="formula">
+      \[ S_n = (\sqrt2-\sqrt1)+(\sqrt3-\sqrt2)+\cdots+(\sqrt{n+1}-\sqrt n) = \sqrt{n+1}-1 \]
+    </div>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">裂项相消的三个易错点</span>
+    <ol>
+      <li><strong>漏掉系数。</strong>分母两因子相差 \(k\) 时，前面必须乘 \(\dfrac1k\)。这个 \(\dfrac1k\) 最后还要跟着提出来。</li>
+      <li><strong>数不清剩下几项。</strong>抵消后剩几项要<strong>具体数</strong>，不能想当然。建议在草稿上把 \(n=1,2,3\) 和 \(n\) 的情况都写出来对照。</li>
+      <li><strong>符号搞错。</strong>裂项后是"减"，所以最后一项通常带负号。写成 \(1-\dfrac{1}{n+1}\) 而不是 \(1+\dfrac{1}{n+1}\)。</li>
+    </ol>
+  </div>
+
+  <h3 id="ch5-4">5.4　错位相减法</h3>
+
+  <div class="box def">
+    <span class="tag">适用形式</span>
+    <p>通项是"<strong>等差数列 × 等比数列</strong>"的形式：</p>
+    <div class="formula">\[ a_n = (\text{关于 }n\text{ 的一次式})\times q^{\,n}\quad\text{或}\quad a_n=b_n\cdot c_n \]</div>
+    <p>其中 \(\{b_n\}\) 是等差，\(\{c_n\}\) 是等比。典型例子：\(a_n=n\cdot2^n\)、\(a_n=(2n-1)\cdot3^n\)。</p>
+    <p>注意：这个方法我们在 3.3 节推等比求和公式时已经用过一次了——那里其实就是 \(a_n=a_1q^{n-1}=a_1\times1\times q^{n-1}\) 的特例。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">方法步骤</span>
+    <ol class="steps">
+      <li>写出 \(S_n=a_1+a_2+\cdots+a_n\)，记为①。</li>
+      <li>两边同乘等比部分的公比 \(q\)，得到②。此时②整体向右"错开一位"。</li>
+      <li>① − ②，中间项两两抵消，剩下一个<strong>等比数列</strong>和<strong>首尾各一项</strong>。</li>
+      <li>对剩下的等比部分用求和公式，整理出 \(S_n\)。</li>
+    </ol>
+    <p><strong>为什么能抵消？</strong>因为通项里的等差部分在①、②中相差 1（比如 \(n\) 和 \(n+1\)），相减后正好变成一个常数，这就把"等差 × 等比"变成了"纯等比"，问题就简单了。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 18（必考题型，逐步演示）</span>
+    <p>求数列 \(a_n=n\cdot 2^{\,n}\) 的前 \(n\) 项和 \(S_n\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：写出 \(S_n\)。</strong></p>
+    <div class="formula">
+      \[ S_n = 1\cdot2^1 + 2\cdot2^2 + 3\cdot2^3 + \cdots + n\cdot2^{\,n} \tag{①} \]
+    </div>
+
+    <p><strong>第二步：两边同乘公比 \(q=2\)。</strong></p>
+    <div class="formula">
+      \[ 2S_n = 1\cdot2^2 + 2\cdot2^3 + 3\cdot2^4 + \cdots + (n-1)\cdot2^{\,n} + n\cdot2^{\,n+1} \tag{②} \]
+    </div>
+    <p>注意②的写法：它就是把①中每一项的 \(2\) 次幂升高一次，于是每一项都向右移了一位。第一项变成了 \(1\cdot2^2\)，最后多出来一项 \(n\cdot2^{n+1}\)。</p>
+
+    <p><strong>第三步：① − ②。</strong>我们把它们上下对齐写清楚：</p>
+    <div class="formula">
+      \[
+      \begin{aligned}
+      S_n &= 1\cdot2^1 + 2\cdot2^2 + 3\cdot2^3 + \cdots + n\cdot2^{\,n} \\
+      2S_n &= \phantom{1\cdot2^1 + {}} 1\cdot2^2 + 2\cdot2^3 + \cdots + (n-1)\cdot2^{\,n} + n\cdot2^{\,n+1} \\[8pt]
+      \Rightarrow\quad -S_n &= 1\cdot2^1 + 2^2 + 2^3 + \cdots + 2^{\,n} - n\cdot2^{\,n+1}
+      \end{aligned}
+      \]
+    </div>
+    <p>逐项看怎么来的：</p>
+    <ul>
+      <li>\(2^1\) 这一列：① 有 \(1\cdot2^1\)，② 没有 → 剩下 \(1\cdot2^1=2\)；</li>
+      <li>\(2^2\) 这一列：① 是 \(2\cdot2^2\)，② 是 \(1\cdot2^2\)，相减得 \((2-1)\cdot2^2=2^2\)；</li>
+      <li>\(2^3\) 这一列：相减得 \((3-2)\cdot2^3=2^3\)；</li>
+      <li>…… 中间的每一列相减后都是 \(2^k\)，<strong>等差部分被减掉了，只剩纯等比</strong>；</li>
+      <li>最后一列：① 没有，② 有 \(n\cdot2^{n+1}\) → 剩下 \(-n\cdot2^{n+1}\)。</li>
+    </ul>
+
+    <p><strong>第四步：对等比部分求和。</strong>中间的 \(2^2+2^3+\cdots+2^n\) 是等比数列，首项 \(2^2=4\)，公比 2，共 \(n-1\) 项：</p>
+    <div class="formula">
+      \[ 2^2+2^3+\cdots+2^{\,n} = \frac{4(2^{\,n-1}-1)}{2-1} = 4\cdot2^{\,n-1}-4 = 2^{\,n+1}-4 \]
+    </div>
+
+    <p><strong>第五步：合并整理。</strong></p>
+    <div class="formula">
+      \[
+      \begin{aligned}
+      -S_n &= 2 + \bigl(2^{\,n+1}-4\bigr) - n\cdot2^{\,n+1} \\
+      &= 2^{\,n+1}-2 - n\cdot2^{\,n+1} \\
+      &= (1-n)\cdot2^{\,n+1} - 2
+      \end{aligned}
+      \]
+    </div>
+    <p>两边同乘 \(-1\)：</p>
+    <div class="formula">
+      \[ \boxed{\,S_n = (n-1)\cdot2^{\,n+1} + 2\,} \]
+    </div>
+
+    <p><strong>验算（必做）：</strong></p>
+    <ul>
+      <li>\(n=1\)：公式给 \((1-1)\cdot2^2+2=2\)；直接算 \(S_1=1\times2^1=2\) ✓</li>
+      <li>\(n=2\)：公式给 \((2-1)\cdot2^3+2=8+2=10\)；直接算 \(S_2=1\times2+2\times4=2+8=10\) ✓</li>
+      <li>\(n=3\)：公式给 \((3-1)\cdot2^4+2=32+2=34\)；直接算 \(S_3=2+8+3\times8=2+8+24=34\) ✓</li>
+    </ul>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">错位相减的三个易错点</span>
+    <ol>
+      <li><strong>②的末项写错。</strong>②的最后一项是 \(n\cdot q^{\,n+1}\)（次数比①的末项多 1），容易漏写或多写。</li>
+      <li><strong>中间等比数列的项数数错。</strong>要具体数：从 \(2^2\) 到 \(2^n\) 一共 \(n-1\) 项，不是 \(n\) 项。</li>
+      <li><strong>忘验算。</strong>错位相减计算量大，几乎人人都会算错一次。<strong>做完一定代 \(n=1,2\) 验证</strong>，这是最有效的检查手段。</li>
+    </ol>
+  </div>
+
+  <h3 id="ch5-5">5.5　倒序相加法</h3>
+  <p>这个方法我们已经在 2.3 节推等差数列求和公式时用过了。它的适用条件是：<strong>数列的首尾配对之和为定值</strong>。</p>
+  <div class="box proof">
+    <span class="tag">适用条件与原理</span>
+    <p>若对任意 \(k\)，都有 \(a_k+a_{n+1-k}=C\)（常数），则：</p>
+    <div class="formula">
+      \[ S_n=\frac{nC}{2} \]
+    </div>
+    <p>推导完全同 2.3 节：正着写①，倒着写②，两式相加，得到 \(n\) 个 \(C\)，除以 2 即可。</p>
+    <p><strong>典型场景：</strong>题目给的 \(a_n\) 含 \(\sin\)、\(\cos\) 或对称结构时，常常能发现首尾配对为定值。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 19</span>
+    <p>已知 \(f(x)=\dfrac{1}{4^x+2}\)，求 \(f\left(\dfrac1{10}\right)+f\left(\dfrac2{10}\right)+\cdots+f\left(\dfrac9{10}\right)\)。</p>
+    <h4>解析</h4>
+    <p>设 \(a_k=f\left(\dfrac{k}{10}\right)\)，观察首尾配对 \(a_k+a_{10-k}\)：</p>
+    <div class="formula">
+      \[ a_k + a_{10-k} = \frac{1}{4^{k/10}+2} + \frac{1}{4^{(10-k)/10}+2} \]
+    </div>
+    <p>记 \(t=4^{k/10}\)，则 \(4^{(10-k)/10}=4^{1-k/10}=\dfrac{4}{t}\)。于是：</p>
+    <div class="formula">
+      \[
+      \frac{1}{t+2} + \frac{1}{\frac4t+2} = \frac{1}{t+2} + \frac{t}{4+2t} = \frac{1}{t+2} + \frac{t}{2(t+2)} = \frac{2+t}{2(t+2)} = \frac12
+      \]
+    </div>
+    <p>每一对的和都是常数 \(\dfrac12\)！共 9 项，可以配成 \(4\) 对（\(a_1\) 配 \(a_9\)，\(a_2\) 配 \(a_8\)，\(a_3\) 配 \(a_7\)，\(a_4\) 配 \(a_6\)），剩下中间一项 \(a_5\)。</p>
+    <p>计算 \(a_5\)：</p>
+    <div class="formula">
+      \[ a_5 = f\left(\frac12\right) = \frac{1}{4^{1/2}+2} = \frac{1}{2+2} = \frac14 \]
+    </div>
+    <p>所以总和为：</p>
+    <div class="formula">
+      \[ 4\times\frac12 + \frac14 = 2+\frac14 = \boxed{\frac94} \]
+    </div>
+  </div>
+
+  <!-- ==================== 第 6 章 ==================== -->
+  <h2 id="ch6"><span class="num">6</span>常见题型与易错点清单</h2>
+  <p class="lead">这一章是"考前必看"。所有内容都是考场上真正扣分的地方。</p>
+
+  <h3 id="ch6-1">6.1　易错点总清单</h3>
+
+  <div class="box warn">
+    <span class="tag">数列易错点 · 共 12 条</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>#</th><th>易错点</th><th>正确做法</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>用 \(a_n=S_n-S_{n-1}\) 后不检验 \(n=1\)</td>
+            <td>必须单独算 \(a_1=S_1\)，再回头验证能否合并</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>等比数列求和时不讨论 \(q=1\)</td>
+            <td>只要 \(q\) 的值不确定，就先讨论 \(q=1\) 再讨论 \(q\ne1\)</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>等比数列中忘记各项不为 0</td>
+            <td>用定义法判定时要说明 \(a_n\ne0\)；用中项法时尤其要注意</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>等比中项只取正值</td>
+            <td>等比中项有正负两个：\(G=\pm\sqrt{ab}\)（且要求 \(ab>0\)）</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>裂项时漏掉系数 \(\frac1k\)</td>
+            <td>分母两因子相差 \(k\)，前面必须乘 \(\frac1k\)</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>错位相减后数错等比部分的项数</td>
+            <td>逐项数清楚，必要时用 \(n=2\) 的小例子对照</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>求 \(S_n\) 最值时把 \(n\) 取成小数</td>
+            <td>\(n\) 必须是正整数；若 \(n_0\) 不是整数，取离它最近的两个整数比较</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>\(a_n=0\) 时漏掉一个最值点</td>
+            <td>若 \(a_k=0\)，则 \(S_{k-1}=S_k\)，两个位置都取到最值</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>证明等差数列时只验证了前几项</td>
+            <td>必须用字母 \(n\) 算出 \(a_{n+1}-a_n\)，证明它对<strong>任意</strong> \(n\) 都是同一个常数</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>把等差的下标和性质套到等比上</td>
+            <td>等差是 \(a_m+a_n=a_p+a_q\)，等比是 \(a_m\cdot a_n=a_p\cdot a_q\)，不能混</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>递推式中的下标范围写错</td>
+            <td>把 \(n\) 换成 \(n-1\) 时，条件要从 \(n\ge1\) 变成 \(n\ge2\)，写清楚</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>算完不验算</td>
+            <td>用 \(n=1,2,3\) 代入通项或求和公式，与直接计算的结果对照</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <h3 id="ch6-2">6.2　常见题型：奇偶项分类讨论</h3>
+
+  <p>当递推式中出现 \((-1)^n\) 或题目要求"求前 \(n\) 项和"但项数奇偶不同时，需要分情况。</p>
+
+  <div class="box eg">
+    <span class="tag">例题 20</span>
+    <p>已知数列 \(a_n=(-1)^n\cdot n\)，求其前 \(n\) 项和 \(S_n\)。</p>
+    <h4>解析</h4>
+    <p>先写出前几项看看：\(-1,\ 2,\ -3,\ 4,\ -5,\ 6,\ \dots\)</p>
+    <p>观察规律：相邻两项的和是常数。</p>
+    <div class="formula">
+      \[ a_{2k-1}+a_{2k} = -(2k-1)+2k = 1 \]
+    </div>
+    <p>所以把相邻两项<strong>两两配对</strong>，每对的和都是 1。</p>
+
+    <p><strong>情况一：\(n\) 为偶数。</strong>设 \(n=2m\)，正好配成 \(m=\dfrac n2\) 对：</p>
+    <div class="formula">
+      \[ S_n = \underbrace{1+1+\cdots+1}_{\frac n2\ \text{个}} = \frac{n}{2} \]
+    </div>
+
+    <p><strong>情况二：\(n\) 为奇数。</strong>设 \(n=2m-1\)，前面 \(2m-2=n-1\) 项配成 \(\dfrac{n-1}{2}\) 对，再加上最后一项 \(a_n=(-1)^n\cdot n=-n\)：</p>
+    <div class="formula">
+      \[ S_n = \frac{n-1}{2}\times 1 + (-n) = \frac{n-1-2n}{2} = \frac{-n-1}{2} = -\frac{n+1}{2} \]
+    </div>
+
+    <p><strong>合并写法：</strong></p>
+    <div class="formula">
+      \[
+      \boxed{\;
+      S_n =
+      \begin{cases}
+      \dfrac{n}{2}, & n\ \text{为偶数} \\[8pt]
+      -\dfrac{n+1}{2}, & n\ \text{为奇数}
+      \end{cases}
+      \;}
+      \]
+    </div>
+    <p><strong>验算：</strong>\(n=1\) 时 \(-\dfrac{2}{2}=-1=a_1\) ✓；\(n=2\) 时 \(\dfrac22=1=-1+2\) ✓；\(n=3\) 时 \(-\dfrac42=-2=-1+2-3\) ✓。</p>
+  </div>
+
+  <h3 id="ch6-3">6.3　常见题型：数列与不等式（恒成立）</h3>
+  <div class="box proof">
+    <span class="tag">解题思路</span>
+    <p>若要求"\(S_n&lt;m\) 对一切 \(n\in\mathbb{N}^*\) 恒成立"，则等价于</p>
+    <div class="formula">\[ m > \max_{n\in\mathbb{N}^*}\{S_n\} \]</div>
+    <p>所以问题转化为求 \(S_n\) 的最大值。反过来，"\(S_n>m\) 恒成立"就是求最小值。</p>
+    <p><strong>常用手段：</strong>作差法 \(S_{n+1}-S_n=a_{n+1}\)，判断 \(S_n\) 的单调性，找到最大值点。</p>
+  </div>
+
+  <!-- ==================== 第 7 章 ==================== -->
+  <h2 id="ch7"><span class="num">7</span>本章知识地图与自测</h2>
+
+  <h3 id="ch7-1">7.1　知识地图</h3>
+
+  <div class="map">
+    <div class="node">
+      <b>① 基础概念</b>
+      <span>数列 = 定义在 \(\mathbb{N}^*\) 上的函数<br>通项 \(a_n=f(n)\)<br><strong>核心：</strong>\(a_n=S_n-S_{n-1}\,(n\ge2)\)，\(a_1=S_1\)</span>
+    </div>
+    <div class="node">
+      <b>② 等差数列</b>
+      <span>\(a_{n+1}-a_n=d\)<br>\(a_n=a_1+(n-1)d\)<br>\(S_n=\dfrac{n(a_1+a_n)}{2}\)<br>性质：下标和、片段和</span>
+    </div>
+    <div class="node">
+      <b>③ 等比数列</b>
+      <span>\(\dfrac{a_{n+1}}{a_n}=q\)<br>\(a_n=a_1q^{\,n-1}\)<br>\(S_n\) 要分 \(q=1\) 与 \(q\ne1\)<br>性质：下标积、片段比</span>
+    </div>
+    <div class="node">
+      <b>④ 求通项 \(a_n\)</b>
+      <span>公式法 / 累加法 / 累乘法<br>构造法（待定系数）<br>\(S_n\) 转化法 / 取倒数法</span>
+    </div>
+    <div class="node">
+      <b>⑤ 求前 \(n\) 项和 \(S_n\)</b>
+      <span>公式法 / 分组求和<br>裂项相消 / 错位相减<br>倒序相加</span>
+    </div>
+    <div class="node">
+      <b>⑥ 综合应用</b>
+      <span>\(S_n\) 最值（邻项变号）<br>奇偶项分类讨论<br>恒成立与不等式</span>
+    </div>
+  </div>
+
+  <h3 id="ch7-2">7.2　自测清单</h3>
+  <p>下面每一条，如果你能<strong>不看讲义、在纸上完整写出来</strong>，就打勾。全部打勾，说明这一章的基础已经过关。</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:44px;">✓</th><th>自测项</th></tr></thead>
+      <tbody>
+        <tr><td>☐</td><td>能说出数列为什么是"定义在正整数集上的函数"</td></tr>
+        <tr><td>☐</td><td>能独立推导 \(a_n=S_n-S_{n-1}\ (n\ge2)\)，并解释为什么要单独讨论 \(n=1\)</td></tr>
+        <tr><td>☐</td><td>能独立用<strong>累加法</strong>推出等差数列通项公式</td></tr>
+        <tr><td>☐</td><td>能独立用<strong>倒序相加法</strong>推出等差数列求和公式，并说清"每一对为什么相等"</td></tr>
+        <tr><td>☐</td><td>能独立用<strong>累乘法</strong>推出等比数列通项公式</td></tr>
+        <tr><td>☐</td><td>能独立用<strong>错位相减法</strong>推出等比数列求和公式，并说清"为什么必须讨论 \(q=1\)"</td></tr>
+        <tr><td>☐</td><td>能默写等差、等比的下标和性质，并说清它们为什么"形式不同"</td></tr>
+        <tr><td>☐</td><td>能独立推导片段和性质（等差公差 \(n^2d\)，等比公比 \(q^n\)）</td></tr>
+        <tr><td>☐</td><td>看到 \(a_{n+1}=pa_n+q\) 能立刻想到构造法，并写出 \(\lambda=\dfrac{q}{p-1}\)</td></tr>
+        <tr><td>☐</td><td>能默写三个常用裂项公式</td></tr>
+        <tr><td>☐</td><td>能用邻项变号法求 \(S_n\) 的最大值</td></tr>
+        <tr><td>☐</td><td>能在解题后主动用 \(n=1,2\) 验算</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">学完本册，你应该达到什么水平</span>
+    <p><strong>如果这一册学到位了，你应该能独立完成下面这些事：</strong></p>
+    <ul>
+      <li>给出等差数列或等比数列的<strong>任意两个独立条件</strong>，能求出通项公式与前 \(n\) 项和；</li>
+      <li>看到含 \(S_n\) 的条件，能按"写出 \(n-1\) 式 → 相减 → 单独算 \(a_1\) → 检验"的流程求出通项；</li>
+      <li>看到 \(a_{n+1}=pa_n+q\) 能立刻想到构造法，并写出 \(\lambda=\dfrac{q}{p-1}\)；</li>
+      <li>看到分式通项能裂项相消，看到"等差 × 等比"能错位相减，并能正确数出中间的项数；</li>
+      <li>能判断 \(S_n\) 的最大值或最小值出现在第几项，并说明理由；</li>
+      <li>能处理含绝对值、含 \((-1)^n\) 的求和问题（先分类，再计算）。</li>
+    </ul>
+    <p><strong>如果还有困难，对照下面定位问题：</strong></p>
+    <ul>
+      <li><strong>"求通项"卡住</strong> → 第 4 章的六种方法没有形成条件反射，重点补<strong>构造法</strong>和 <strong>\(S_n\) 转化法</strong>；</li>
+      <li><strong>"求和"卡住</strong> → 裂项相消的<strong>系数</strong>处理不对，或错位相减的<strong>项数</strong>数错；</li>
+      <li><strong>答案总是漏一种情况</strong> → 忘了检验 \(n=1\)，或忘了讨论 \(q=1\)。</li>
+    </ul>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">下一步学什么</span>
+    <p>数列这一章的核心就到这里。接下来的重点章节建议按这个顺序推进：</p>
+    <ul>
+      <li><strong>第二册　导数</strong>——导数的计算（各类函数的求导法则）、几何意义、单调性与极值、切线问题、零点问题。你提到的"导数计算的各种类型"会在这一册里专门做一节。</li>
+      <li><strong>第三册　三角函数</strong>——诱导公式、图象变换、解三角形。</li>
+      <li><strong>第四册　立体几何</strong>——空间向量法、平行与垂直的证明。</li>
+      <li><strong>第五册　解析几何</strong>——直线与圆、圆锥曲线。</li>
+      <li><strong>第六册　概率统计</strong>——分布列、期望方差、统计案例。</li>
+    </ul>
+    <p>需要哪一册，直接说编号即可。</p>
+  </div>
+
+  <div class="foot">
+    <span>高考数学重点章节梳理 · 第一册 数列</span>
+    <span>建议配合课本与近 5 年真题同步使用</span>
+  </div>
+
+  <!-- ==================== 第 8 章：真题题型精讲 ==================== -->
+  <h2 id="ch8"><span class="num">8</span>高考真题题型精讲（2016—2025）</h2>
+  <p class="lead">前面七章解决"会不会"，这一章解决"考不考得出分"。十年真题按题型归类，每题给出完整解答与提分要点。</p>
+
+  <div class="box tip">
+    <span class="tag">本章说明：真题来源与使用方式</span>
+    <p><strong>题目来源：</strong>本章全部题目取自 2016—2025 年高考数学真题（全国卷 I/II/III 卷、全国甲/乙卷、新高考 I/II 卷等），题干保持原貌，只做必要的符号统一。</p>
+    <p><strong>解答说明：</strong>解答按本册前七章的方法体系重新组织，分步写清每一步的依据，并补充"官方答案未展开的中间步骤"。</p>
+    <p><strong>使用方法：</strong></p>
+    <ol>
+      <li><strong>先做题，再看答案。</strong>每道真题都遮住解答，限时 12 分钟独立完成。</li>
+      <li><strong>对答案时重点看"卡在哪一步"。</strong>是想不到方法，还是算错了？两种问题的补救方式完全不同。</li>
+      <li><strong>做完后回到对应章节。</strong>每道真题后面都标了"对应章节"，做错了就回去重读那几节。</li>
+    </ol>
+  </div>
+
+  <div class="box def">
+    <span class="tag">十年考情速览：数列题的三种出场方式</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>出场位置</th><th>分值</th><th>常见考法</th><th>难度</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>解答题第 1 题</strong>（最常见）</td>
+            <td>10~12 分</td>
+            <td>第一问求通项，第二问求和或证明</td>
+            <td>中等，<strong>属于必拿分</strong></td>
+          </tr>
+          <tr>
+            <td><strong>小题（选择/填空）</strong></td>
+            <td>5 分</td>
+            <td>等差等比基本量、S<sub>n</sub> 最值、简单递推</td>
+            <td>容易到中等</td>
+          </tr>
+          <tr>
+            <td><strong>压轴题的"外壳"</strong></td>
+            <td>12 分</td>
+            <td>概率递推、数列与不等式、数列与导数结合</td>
+            <td>难，<strong>冲刺高分才需要</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>结论：</strong>数列的"基本盘"是解答题第一题，这是必须拿满的部分。本章 8.1~8.5 节覆盖的就是这一块；8.6 节是压轴方向的拓展。</p>
+  </div>
+
+  <h3 id="ch8-1">8.1　题型一：等差、等比基本量计算</h3>
+
+  <div class="box tip">
+    <span class="tag">题型特征与解题套路</span>
+    <p><strong>特征：</strong>题目直接给出等差/等比的若干条件（如 \(a_2=11\)、\(S_{10}=40\)），要求通项公式。</p>
+    <p><strong>套路：</strong>设 \(a_1\) 和 \(d\)（或 \(q\)），把每个条件翻译成一个方程，<strong>联立求解</strong>。这是数列题中最机械、也最不该丢分的一类。</p>
+    <p><strong>两个提速技巧：</strong></p>
+    <ul>
+      <li>等差数列用 \(a_n=a_m+(n-m)d\) 代替 \(a_n=a_1+(n-1)d\)，可以减少未知数个数。</li>
+      <li>等比数列先用两式相除消去 \(a_1\)，先解出 \(q\)。</li>
+    </ul>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 1 · 2018 全国II卷（理）</span>
+    <p>记 \(S_n\) 为等差数列 \(\{a_n\}\) 的前 \(n\) 项和，已知 \(a_1=-7\)，\(S_3=-15\)。</p>
+    <p>（1）求 \(\{a_n\}\) 的通项公式；</p>
+    <p>（2）求 \(S_n\)，并求 \(S_n\) 的最小值。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：由 \(S_3\) 求公差。</strong>等差数列前 \(n\) 项和公式 \(S_n=na_1+\dfrac{n(n-1)}{2}d\)，取 \(n=3\)：</p>
+    <div class="formula">
+      \[ S_3=3a_1+\frac{3\times2}{2}d=3a_1+3d \]
+    </div>
+    <p>代入已知：</p>
+    <div class="formula">
+      \[ 3\times(-7)+3d=-15 \quad\Longrightarrow\quad -21+3d=-15 \quad\Longrightarrow\quad d=2 \]
+    </div>
+
+    <p><strong>第二步：写通项。</strong></p>
+    <div class="formula">
+      \[ a_n=a_1+(n-1)d=-7+2(n-1)=2n-9 \]
+    </div>
+    <p><strong>检验：</strong>\(n=1\) 得 \(-7\) ✓；\(n=3\) 得 \(-3\)，则 \(S_3=-7+(-5)+(-3)=-15\) ✓。</p>
+
+    <p><strong>（2）第一步：写出 \(S_n\)。</strong></p>
+    <div class="formula">
+      \[ S_n=\frac{n\bigl[2a_1+(n-1)d\bigr]}{2}=\frac{n\bigl[-14+2(n-1)\bigr]}{2}=\frac{n(2n-16)}{2}=n^{2}-8n \]
+    </div>
+
+    <p><strong>第二步：配方求最值。</strong></p>
+    <div class="formula">
+      \[ S_n=n^{2}-8n=(n-4)^{2}-16 \]
+    </div>
+    <p>因为 \((n-4)^2\ge0\)，且 \(n=4\) 是正整数，所以当 \(n=4\) 时取到最小值：</p>
+    <div class="formula">
+      \[ \boxed{\ S_n=n^{2}-8n,\qquad S_n\text{ 的最小值为 }-16\ } \]
+    </div>
+
+    <p><strong>验算（用邻项变号法，见 2.6 节）：</strong>\(a_n=2n-9\)，令 \(a_n\ge0\) 得 \(n\ge4.5\)，即 \(a_4=-1&lt;0\)、\(a_5=1>0\)。所以 \(S_n\) 在 \(n=4\) 时最小 ✓ 与配方结果一致。</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>配方后要说明"\(n\) 是正整数"。</strong>本题中顶点 \(n=4\) 恰是正整数，所以直接取到；如果顶点不是整数，就要取最接近的两个整数比较（见 2.6 节）。</li>
+        <li>求 \(S_n\) 最值有<strong>两条路</strong>：配方（二次函数）和邻项变号。本题两条路都通，但邻项变号对 \(S_n\) 不能配方的题更通用。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 2 · 2023 全国乙卷（文）</span>
+    <p>记 \(S_n\) 为等差数列 \(\{a_n\}\) 的前 \(n\) 项和，已知 \(a_2=11\)，\(S_{10}=40\)。</p>
+    <p>（1）求 \(\{a_n\}\) 的通项公式；</p>
+    <p>（2）求数列 \(\{|a_n|\}\) 的前 \(n\) 项和 \(T_n\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：列方程组。</strong>设首项为 \(a_1\)，公差为 \(d\)。</p>
+    <p>由 \(a_2=11\)：</p>
+    <div class="formula">\[ a_1+d=11 \tag{①} \]</div>
+    <p>由 \(S_{10}=40\)：</p>
+    <div class="formula">
+      \[ S_{10}=\frac{10(2a_1+9d)}{2}=5(2a_1+9d)=40 \quad\Longrightarrow\quad 2a_1+9d=8 \tag{②} \]
+    </div>
+
+    <p><strong>第二步：解方程组。</strong>由①得 \(a_1=11-d\)，代入②：</p>
+    <div class="formula">
+      \[ 2(11-d)+9d=8 \quad\Longrightarrow\quad 22-2d+9d=8 \quad\Longrightarrow\quad 7d=-14 \quad\Longrightarrow\quad d=-2 \]
+    </div>
+    <p>于是 \(a_1=11-(-2)=13\)。所以：</p>
+    <div class="formula">
+      \[ a_n=13+(n-1)(-2)=15-2n \]
+    </div>
+
+    <p><strong>（2）第一步：找出 \(a_n\) 变号的位置。</strong>这是本题的关键——加绝对值之后，正负项要<strong>分开处理</strong>。</p>
+    <p>令 \(a_n>0\)：\(15-2n>0\)，得 \(n&lt;7.5\)，所以</p>
+    <div class="formula">
+      \[ a_1,\dots,a_7>0,\qquad a_8,a_9,\dots&lt;0 \]
+    </div>
+    <p>（验算：\(a_7=15-14=1>0\)，\(a_8=15-16=-1&lt;0\) ✓）</p>
+
+    <p><strong>第二步：分两种情况求和。</strong></p>
+    <p><strong>当 \(1\le n\le7\) 时</strong>，所有项都非负，\(|a_k|=a_k\)：</p>
+    <div class="formula">
+      \[ T_n=\sum_{k=1}^{n}(15-2k)=15n-2\cdot\frac{n(n+1)}{2}=15n-n(n+1)=14n-n^{2}=n(14-n) \]
+    </div>
+
+    <p><strong>当 \(n\ge8\) 时</strong>，前 7 项取正、第 8 项起取负，所以要分段：</p>
+    <div class="formula">
+      \[ T_n=\sum_{k=1}^{7}(15-2k)+\sum_{k=8}^{n}(2k-15) \]
+    </div>
+    <p>前半段：\(\displaystyle\sum_{k=1}^{7}(15-2k)=7(14-7)=49\)。</p>
+    <p>后半段：\(\displaystyle\sum_{k=8}^{n}(2k-15)=2\sum_{k=8}^{n}k-15(n-7)\)。其中</p>
+    <div class="formula">
+      \[ \sum_{k=8}^{n}k=\frac{n(n+1)}{2}-\frac{7\times8}{2}=\frac{n(n+1)}{2}-28 \]
+    </div>
+    <p>代入：</p>
+    <div class="formula">
+      \[ \sum_{k=8}^{n}(2k-15)=2\left[\frac{n(n+1)}{2}-28\right]-15(n-7)=n^{2}+n-56-15n+105=n^{2}-14n+49=(n-7)^{2} \]
+    </div>
+    <p>所以：</p>
+    <div class="formula">
+      \[ T_n=49+(n-7)^{2} \]
+    </div>
+
+    <p><strong>第三步：写成分段形式。</strong></p>
+    <div class="formula">
+      \[
+      \boxed{\;
+      T_n=\begin{cases}
+      n(14-n), & 1\le n\le7,\\[4pt]
+      49+(n-7)^{2}, & n\ge8.
+      \end{cases}
+      \;}
+      \]
+    </div>
+
+    <p><strong>验算：</strong>取 \(n=8\)，两段应衔接得上。</p>
+    <ul>
+      <li>用第一段（令 \(n=8\)）：\(8\times(14-8)=48\)。但这个式子只在 \(n\le7\) 时有效，不能直接用。</li>
+      <li>用第二段：\(49+(8-7)^2=50\)。</li>
+      <li>直接算：\(T_8=T_7+|a_8|=49+1=50\) ✓ 与第二段一致。</li>
+    </ul>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>看到 \(|a_n|\) 或"绝对值和"，第一反应就是"找变号点、分段求和"。</strong>这是固定套路。</li>
+        <li><strong>分段点必须验证。</strong>两段的表达式在分界处应当能对上（本题 \(n=8\) 时，第二段给 50，直接算也是 50）。</li>
+        <li>如果 \(a_n\) 中恰好有一项等于 0，那一项归到哪一段都不影响结果，但要在解答里说明。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 3 · 2020 全国III卷（文）</span>
+    <p>设等比数列 \(\{a_n\}\) 满足 \(a_1+a_2=4\)，\(a_3-a_1=8\)。</p>
+    <p>（1）求 \(\{a_n\}\) 的通项公式；</p>
+    <p>（2）记 \(S_n\) 为数列 \(\{\log_3 a_n\}\) 的前 \(n\) 项和，若 \(S_m+S_{m+1}=S_{m+3}\)，求 \(m\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：两式相除消去 \(a_1\)。</strong>设公比为 \(q\)，则 \(a_2=a_1q\)，\(a_3=a_1q^2\)。两个条件写成：</p>
+    <div class="formula">
+      \[ a_1(1+q)=4 \tag{①} \]
+    </div>
+    <div class="formula">
+      \[ a_1(q^{2}-1)=8 \quad\text{即}\quad a_1(q-1)(q+1)=8 \tag{②} \]
+    </div>
+    <p>② ÷ ①（注意 \(q\ne-1\)，否则①左边为 0）：</p>
+    <div class="formula">
+      \[ \frac{a_1(q-1)(q+1)}{a_1(1+q)}=q-1=\frac{8}{4}=2 \quad\Longrightarrow\quad q=3 \]
+    </div>
+
+    <p><strong>第二步：求 \(a_1\)。</strong>代回①：\(a_1(1+3)=4\)，所以 \(a_1=1\)。</p>
+    <div class="formula">
+      \[ \boxed{\ a_n=1\times3^{\,n-1}=3^{\,n-1}\ } \]
+    </div>
+
+    <p><strong>（2）第一步：化简 \(\log_3 a_n\)。</strong></p>
+    <div class="formula">
+      \[ \log_3 a_n=\log_3 3^{\,n-1}=n-1 \]
+    </div>
+    <p>所以数列 \(\{\log_3 a_n\}\) 就是 \(0,1,2,3,\dots\)，是首项为 0、公差为 1 的等差数列。</p>
+
+    <p><strong>第二步：写出 \(S_n\)。</strong></p>
+    <div class="formula">
+      \[ S_n=\sum_{k=1}^{n}(k-1)=0+1+2+\cdots+(n-1)=\frac{n(n-1)}{2} \]
+    </div>
+
+    <p><strong>第三步：代入条件解方程。</strong></p>
+    <div class="formula">
+      \[ S_m+S_{m+1}=S_{m+3} \]
+    </div>
+    <div class="formula">
+      \[ \frac{m(m-1)}{2}+\frac{(m+1)m}{2}=\frac{(m+3)(m+2)}{2} \]
+    </div>
+    <p>两边同乘 2：</p>
+    <div class="formula">
+      \[ m(m-1)+m(m+1)=(m+3)(m+2) \]
+    </div>
+    <div class="formula">
+      \[ m^{2}-m+m^{2}+m=m^{2}+5m+6 \]
+    </div>
+    <div class="formula">
+      \[ 2m^{2}=m^{2}+5m+6 \quad\Longrightarrow\quad m^{2}-5m-6=0 \quad\Longrightarrow\quad (m-6)(m+1)=0 \]
+    </div>
+    <p>因为 \(m\) 是正整数，所以 \(m=-1\) 舍去：</p>
+    <div class="formula">
+      \[ \boxed{\,m=6\,} \]
+    </div>
+
+    <p><strong>验算：</strong>\(S_6=15\)，\(S_7=21\)，\(S_9=36\)。左边 \(=15+21=36\)，右边 \(=36\) ✓。</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>等比数列"两式相除"是消去 \(a_1\) 的标准手法。</strong>相除之前要确认分母不为 0。</li>
+        <li>解出 \(m\) 后<strong>必须用"正整数"筛掉负根</strong>，这是最常见的漏步。</li>
+        <li>\(\log_3 3^{\,n-1}=n-1\) 这一步用到了"对数的基本性质"，属于必会的基本功。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="ch8-2">8.2　题型二：\(a_n\) 与 \(S_n\) 的关系</h3>
+
+  <div class="box tip">
+    <span class="tag">题型特征与解题套路</span>
+    <p><strong>特征：</strong>题目给的条件里同时出现 \(a_n\) 和 \(S_n\)，或者只给 \(S_n\) 的表达式。</p>
+    <p><strong>套路（严格照做）：</strong></p>
+    <ol class="steps">
+      <li><strong>先看能不能"消掉一边"。</strong>通常用 \(a_n=S_n-S_{n-1}\)（\(n\ge2\)）把 \(a_n\) 换成 \(S_n\)，或者反过来把 \(S_n\) 换成 \(a_n\)。</li>
+      <li><strong>把 \(n\) 换成 \(n-1\) 再写一遍</strong>，得到第二个式子。</li>
+      <li><strong>两式相减</strong>，消去 \(S\)，得到关于 \(a_n\) 的递推关系。</li>
+      <li><strong>单独算 \(a_1=S_1\)</strong>，并检验它是否符合第 3 步得到的通项。</li>
+      <li><strong>检验、合并</strong>，写出最终通项。</li>
+    </ol>
+    <p><strong>这一套流程在近十年的真题里反复出现，必须练到条件反射。</strong></p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 4 · 2022 全国甲卷（理）</span>
+    <p>记 \(S_n\) 为数列 \(\{a_n\}\) 的前 \(n\) 项和，已知 \(\dfrac{2S_n}{n}+n=2a_n+1\)。</p>
+    <p>（1）证明：\(\{a_n\}\) 是等差数列；</p>
+    <p>（2）若 \(a_4\)，\(a_7\)，\(a_9\) 成等比数列，求 \(S_n\) 的最小值。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：把式子整理成 \(S_n\) 的表达式。</strong>两边同乘 \(n\)：</p>
+    <div class="formula">
+      \[ 2S_n+n^{2}=2na_n+n \quad\Longrightarrow\quad 2S_n=2na_n+n-n^{2} \]
+    </div>
+    <div class="formula">
+      \[ S_n=na_n-\frac{n(n-1)}{2} \tag{①} \]
+    </div>
+    <p>（验证一下最后一步：\(\dfrac{n-n^2}{2}=-\dfrac{n(n-1)}{2}\) ✓）</p>
+
+    <p><strong>第二步：把 \(n\) 换成 \(n-1\)。</strong>对 \(n\ge2\)：</p>
+    <div class="formula">
+      \[ S_{n-1}=(n-1)a_{n-1}-\frac{(n-1)(n-2)}{2} \tag{②} \]
+    </div>
+
+    <p><strong>第三步：① − ②。</strong>左边 \(S_n-S_{n-1}=a_n\)（\(n\ge2\)）：</p>
+    <div class="formula">
+      \[ a_n=na_n-(n-1)a_{n-1}-\left[\frac{n(n-1)}{2}-\frac{(n-1)(n-2)}{2}\right] \]
+    </div>
+    <p>方括号里先通分：</p>
+    <div class="formula">
+      \[ \frac{n(n-1)-(n-1)(n-2)}{2}=\frac{(n-1)\bigl[n-(n-2)\bigr]}{2}=\frac{(n-1)\times2}{2}=n-1 \]
+    </div>
+    <p>所以：</p>
+    <div class="formula">
+      \[ a_n=na_n-(n-1)a_{n-1}-(n-1) \]
+    </div>
+
+    <p><strong>第四步：整理出递推关系。</strong>把含 \(a_n\) 的项移到左边：</p>
+    <div class="formula">
+      \[ a_n-na_n=-(n-1)a_{n-1}-(n-1) \]
+    </div>
+    <div class="formula">
+      \[ (1-n)a_n=-(n-1)\bigl(a_{n-1}+1\bigr) \]
+    </div>
+    <p>因为 \(1-n=-(n-1)\)，两边同除以 \(-(n-1)\)（\(n\ge2\) 时 \(n-1\ne0\)）：</p>
+    <div class="formula">
+      \[ a_n=a_{n-1}+1 \qquad(n\ge2) \]
+    </div>
+    <p>即 \(a_n-a_{n-1}=1\)（常数）。由等差数列的定义，\(\{a_n\}\) 是等差数列，公差 \(d=1\)。∎</p>
+
+    <p><strong>（2）第一步：用等比条件求 \(a_1\)。</strong>设 \(a_1=u\)，则 \(a_n=u+(n-1)\)。所以</p>
+    <div class="formula">
+      \[ a_4=u+3,\qquad a_7=u+6,\qquad a_9=u+8 \]
+    </div>
+    <p>由 \(a_4\)、\(a_7\)、\(a_9\) 成等比数列（即 \(a_7\) 是 \(a_4\) 与 \(a_9\) 的等比中项）：</p>
+    <div class="formula">
+      \[ a_7^{2}=a_4\cdot a_9 \quad\Longrightarrow\quad (u+6)^{2}=(u+3)(u+8) \]
+    </div>
+    <div class="formula">
+      \[ u^{2}+12u+36=u^{2}+11u+24 \quad\Longrightarrow\quad u=-12 \]
+    </div>
+    <p>所以 \(a_n=n-13\)。</p>
+
+    <p><strong>第二步：写出 \(S_n\)。</strong></p>
+    <div class="formula">
+      \[ S_n=\frac{n(a_1+a_n)}{2}=\frac{n\bigl(-12+(n-13)\bigr)}{2}=\frac{n(n-25)}{2} \]
+    </div>
+
+    <p><strong>第三步：求最小值。</strong>这是关于 \(n\) 的二次函数，开口向上，对称轴在 \(n=\dfrac{25}{2}=12.5\)。</p>
+    <p>因为 \(n\) 必须是正整数，所以最小值在离对称轴最近的<strong>两个整数</strong> \(n=12\) 和 \(n=13\) 处取到：</p>
+    <div class="formula">
+      \[ S_{12}=\frac{12\times(12-25)}{2}=\frac{12\times(-13)}{2}=-78 \]
+    </div>
+    <div class="formula">
+      \[ S_{13}=\frac{13\times(13-25)}{2}=\frac{13\times(-12)}{2}=-78 \]
+    </div>
+    <p>两者相等，所以：</p>
+    <div class="formula">
+      \[ \boxed{\ S_n\text{ 的最小值为 }-78\ } \]
+    </div>
+
+    <p><strong>验算（用邻项变号法）：</strong>\(a_n=n-13\)，所以 \(a_{12}=-1&lt;0\)、\(a_{13}=0\)、\(a_{14}=1>0\)。因为 \(a_{13}=0\)，加到第 12 项和第 13 项时总和相同，所以 \(S_{12}=S_{13}\) 都是最小值 ✓ 与上面一致。</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>整理式子时不要怕繁琐。</strong>本题的难点全在"① − ②"之后的那次通分，把方括号里的东西算清楚，后面就顺了。</li>
+        <li><strong>对称轴不是整数时，要取左右两个整数比较。</strong>本题两边恰好相等（因为 \(a_{13}=0\)），答案要写"最小值是 \(-78\)"，而不是只写一个 \(n\)。</li>
+        <li>第（1）问的"证明等差数列"<strong>必须落到"\(a_n-a_{n-1}=\) 常数"</strong>上，不能只算出 \(a_n\) 的表达式就完事。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 5 · 2024 全国甲卷（理）</span>
+    <p>记 \(S_n\) 为数列 \(\{a_n\}\) 的前 \(n\) 项和，且 \(4S_n=3a_n+4\)。</p>
+    <p>（1）求 \(\{a_n\}\) 的通项公式；</p>
+    <p>（2）设 \(b_n=(-1)^{\,n-1}na_n\)，求数列 \(\{b_n\}\) 的前 \(n\) 项和 \(T_n\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：先算 \(a_1\)。</strong>令 \(n=1\)，此时 \(S_1=a_1\)：</p>
+    <div class="formula">
+      \[ 4a_1=3a_1+4 \quad\Longrightarrow\quad a_1=4 \]
+    </div>
+
+    <p><strong>第二步：\(n\ge2\) 时两式相减。</strong>把原式的 \(n\) 换成 \(n-1\)：</p>
+    <div class="formula">
+      \[ 4S_{n-1}=3a_{n-1}+4 \]
+    </div>
+    <p>与原式相减（左边 \(4S_n-4S_{n-1}=4a_n\)）：</p>
+    <div class="formula">
+      \[ 4a_n=3a_n-3a_{n-1} \quad\Longrightarrow\quad a_n=-3a_{n-1} \]
+    </div>
+
+    <p><strong>第三步：判定等比并求通项。</strong>因为 \(a_1=4\ne0\)，由 \(a_n=-3a_{n-1}\) 可知每一项都不为 0，所以 \(\dfrac{a_n}{a_{n-1}}=-3\)（常数）。</p>
+    <p>所以 \(\{a_n\}\) 是首项 4、公比 \(-3\) 的等比数列：</p>
+    <div class="formula">
+      \[ \boxed{\ a_n=4\cdot(-3)^{\,n-1}\ } \]
+    </div>
+    <p><strong>检验：</strong>\(n=1\) 得 4 ✓。且 \(S_2=4+(-12)=-8\)，代入 \(4S_2=-32\) 与 \(3a_2+4=-36+4=-32\) ✓。</p>
+
+    <p><strong>（2）第一步：化简 \(b_n\)。</strong></p>
+    <div class="formula">
+      \[ b_n=(-1)^{\,n-1}\cdot n\cdot 4(-3)^{\,n-1}=4n\cdot\bigl[(-1)(-3)\bigr]^{\,n-1}=4n\cdot3^{\,n-1} \]
+    </div>
+    <p><strong>这一步是关键</strong>——两个负号相乘变正，把交替符号消掉了，于是问题变成标准的"等差 × 等比"求和。</p>
+
+    <p><strong>第二步：错位相减。</strong></p>
+    <div class="formula">
+      \[ T_n=4\cdot3^{0}+8\cdot3^{1}+12\cdot3^{2}+\cdots+4n\cdot3^{\,n-1} \tag{①} \]
+    </div>
+    <p>两边同乘公比 3：</p>
+    <div class="formula">
+      \[ 3T_n=4\cdot3^{1}+8\cdot3^{2}+\cdots+4(n-1)\cdot3^{\,n-1}+4n\cdot3^{\,n} \tag{②} \]
+    </div>
+
+    <p><strong>第三步：① − ②。</strong></p>
+    <div class="formula">
+      \[ -2T_n=4+4\cdot3^{1}+4\cdot3^{2}+\cdots+4\cdot3^{\,n-1}-4n\cdot3^{\,n} \]
+    </div>
+    <p>中间的 \(4\cdot3^1+4\cdot3^2+\cdots+4\cdot3^{n-1}\) 是等比数列，首项 \(4\times3=12\)，公比 3，共 \(n-2\) 项：</p>
+    <div class="formula">
+      \[ 4\cdot3^{1}+4\cdot3^{2}+\cdots+4\cdot3^{\,n-1}=\frac{12(3^{\,n-2}-1)}{3-1}=6\cdot3^{\,n-2}-6=2\cdot3^{\,n-1}-6 \]
+    </div>
+    <p>（最后一步：\(6\cdot3^{n-2}=2\cdot3\cdot3^{n-2}=2\cdot3^{n-1}\)。）</p>
+    <p>所以：</p>
+    <div class="formula">
+      \[ -2T_n=4+\bigl(2\cdot3^{\,n-1}-6\bigr)-4n\cdot3^{\,n}=2\cdot3^{\,n-1}-2-4n\cdot3^{\,n} \]
+    </div>
+    <p>把 \(2\cdot3^{n-1}\) 统一成含 \(3^n\) 的形式：\(2\cdot3^{n-1}=\dfrac{2}{3}\cdot3^{n}\)。为方便合并，改写成：</p>
+    <div class="formula">
+      \[ -2T_n=2\cdot3^{\,n-1}-2-4n\cdot3^{\,n}=(2-12n)\cdot3^{\,n-1}-2 \]
+    </div>
+    <p>两边同除以 \(-2\)：</p>
+    <div class="formula">
+      \[ T_n=(6n-1)\cdot3^{\,n-1}+1 \]
+    </div>
+    <p>把 \(3^{n-1}\) 改写成 \(3^n/3\)，整理成更整齐的形式：</p>
+    <div class="formula">
+      \[ \boxed{\ T_n=(2n-1)\cdot3^{\,n}+1\ } \]
+    </div>
+
+    <p><strong>验算：</strong></p>
+    <ul>
+      <li>\(n=1\)：公式给 \((2-1)\times3+1=4\)；直接算 \(T_1=b_1=4\times1\times3^0=4\) ✓</li>
+      <li>\(n=2\)：公式给 \((4-1)\times9+1=28\)；直接算 \(4+8\times3=28\) ✓</li>
+      <li>\(n=3\)：公式给 \((6-1)\times27+1=136\)；直接算 \(28+12\times9=136\) ✓</li>
+    </ul>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>看到 \((-1)^{\,n-1}\) 先别慌，先化简。</strong>本题中它与 \((-3)^{n-1}\) 相乘，负号抵消，问题立刻变简单。这一步"化简符号"往往比后面的计算更重要。</li>
+        <li>错位相减后<strong>中间等比数列的项数要数清楚</strong>（本题是 \(n-2\) 项）。数错项数是这类题最常见的错误。</li>
+        <li>整理到最后，把 \(3^{n-1}\) 统一成 \(3^n\) 或反之，<strong>选一种写法并保持一致</strong>，否则很容易算错系数。</li>
+        <li><strong>做完一定代 \(n=1,2\) 验算</strong>——错位相减几乎人人都会算错一次。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 6 · 2023 全国甲卷（理）</span>
+    <p>设 \(S_n\) 为数列 \(\{a_n\}\) 的前 \(n\) 项和，已知 \(a_2=1\)，\(2S_n=na_n\)。</p>
+    <p>（1）求 \(\{a_n\}\) 的通项公式；</p>
+    <p>（2）求数列 \(\left\{\dfrac{a_{n+1}}{2^{n}}\right\}\) 的前 \(n\) 项和 \(T_n\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：先算 \(a_1\)。</strong>令 \(n=1\)，此时 \(S_1=a_1\)：</p>
+    <div class="formula">
+      \[ 2a_1=a_1 \quad\Longrightarrow\quad a_1=0 \]
+    </div>
+
+    <p><strong>第二步：\(n\ge2\) 时两式相减。</strong>把 \(n\) 换成 \(n-1\)：</p>
+    <div class="formula">
+      \[ 2S_{n-1}=(n-1)a_{n-1} \]
+    </div>
+    <p>相减（左边 \(2S_n-2S_{n-1}=2a_n\)）：</p>
+    <div class="formula">
+      \[ 2a_n=na_n-(n-1)a_{n-1} \]
+    </div>
+    <div class="formula">
+      \[ (n-2)a_n=(n-1)a_{n-1} \]
+    </div>
+
+    <p><strong>第三步：分情况处理。</strong></p>
+    <p>当 \(n=2\) 时，上式变成 \(0\cdot a_2=1\cdot a_1=0\)，恒成立，<strong>没有提供新信息</strong>，所以 \(a_2\) 要用题目给的 \(a_2=1\)。</p>
+    <p>当 \(n\ge3\) 时，\(n-2\ne0\)，可以两边除以 \((n-2)(n-1)\)：</p>
+    <div class="formula">
+      \[ \frac{a_n}{n-1}=\frac{a_{n-1}}{n-2} \]
+    </div>
+    <p>这说明 \(\dfrac{a_n}{n-1}\) 对一切 \(n\ge3\) 都是同一个常数。取 \(n=3\)：</p>
+    <div class="formula">
+      \[ \frac{a_3}{2}=\frac{a_2}{1}=1 \quad\Longrightarrow\quad a_3=2 \]
+    </div>
+    <p>所以 \(\dfrac{a_n}{n-1}=1\)，即 \(a_n=n-1\)（\(n\ge2\)）。</p>
+    <p>最后检验 \(n=1\)：\(a_1=0=1-1\) ✓ 也符合。</p>
+    <div class="formula">
+      \[ \boxed{\ a_n=n-1\quad(n\in\mathbb{N}^{*})\ } \]
+    </div>
+
+    <p><strong>（2）第一步：化简通项。</strong>由 \(a_{n+1}=(n+1)-1=n\)：</p>
+    <div class="formula">
+      \[ \frac{a_{n+1}}{2^{n}}=\frac{n}{2^{n}} \]
+    </div>
+    <p>所以 \(T_n=\displaystyle\sum_{k=1}^{n}\frac{k}{2^{k}}=\frac12+\frac{2}{2^{2}}+\frac{3}{2^{3}}+\cdots+\frac{n}{2^{n}}\)。</p>
+
+    <p><strong>第二步：错位相减。</strong>公比是 \(\dfrac12\)：</p>
+    <div class="formula">
+      \[ T_n=\frac{1}{2}+\frac{2}{2^{2}}+\frac{3}{2^{3}}+\cdots+\frac{n}{2^{n}} \tag{①} \]
+    </div>
+    <div class="formula">
+      \[ \frac12 T_n=\frac{1}{2^{2}}+\frac{2}{2^{3}}+\cdots+\frac{n-1}{2^{n}}+\frac{n}{2^{\,n+1}} \tag{②} \]
+    </div>
+    <p>① − ②：</p>
+    <div class="formula">
+      \[ \frac12 T_n=\frac12+\frac{1}{2^{2}}+\frac{1}{2^{3}}+\cdots+\frac{1}{2^{n}}-\frac{n}{2^{\,n+1}} \]
+    </div>
+    <p>中间是首项 \(\dfrac12\)、公比 \(\dfrac12\)、共 \(n\) 项的等比数列：</p>
+    <div class="formula">
+      \[ \frac12+\frac{1}{2^{2}}+\cdots+\frac{1}{2^{n}}=\frac{\frac12\left(1-\frac{1}{2^{n}}\right)}{1-\frac12}=1-\frac{1}{2^{n}} \]
+    </div>
+    <p>所以：</p>
+    <div class="formula">
+      \[ \frac12 T_n=1-\frac{1}{2^{n}}-\frac{n}{2^{\,n+1}} \]
+    </div>
+    <p>两边同乘 2，并把 \(\dfrac{1}{2^{n}}\) 统一成 \(\dfrac{1}{2^{\,n+1}}\)：</p>
+    <div class="formula">
+      \[ T_n=2-\frac{2}{2^{n}}-\frac{n}{2^{n}}=2-\frac{n+2}{2^{\,n}} \]
+    </div>
+    <div class="formula">
+      \[ \boxed{\ T_n=2-\frac{n+2}{2^{\,n}}\ } \]
+    </div>
+
+    <p><strong>验算：</strong>\(n=1\) 时公式给 \(2-\dfrac32=\dfrac12\)，直接算 \(T_1=\dfrac12\) ✓；\(n=2\) 时公式给 \(2-\dfrac{4}{4}=1\)，直接算 \(\dfrac12+\dfrac12=1\) ✓。</p>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">一个更快的技巧：裂项（官方解法）</span>
+      <p>本题还有一条更巧的路——注意到</p>
+      <div class="formula">
+        \[ \frac{k}{2^{k}}=\frac{k+1}{2^{\,k-1}}-\frac{k+2}{2^{\,k}} \]
+      </div>
+      <p><strong>验证：</strong>右边 \(=\dfrac{2(k+1)}{2^{k}}-\dfrac{k+2}{2^{k}}=\dfrac{2k+2-k-2}{2^{k}}=\dfrac{k}{2^{k}}\) ✓</p>
+      <p>于是求和时<strong>逐项相消</strong>：</p>
+      <div class="formula">
+        \[ T_n=\left(\frac{2}{2^{0}}-\frac{3}{2^{1}}\right)+\left(\frac{3}{2^{1}}-\frac{4}{2^{2}}\right)+\cdots+\left(\frac{n+1}{2^{\,n-1}}-\frac{n+2}{2^{\,n}}\right)=2-\frac{n+2}{2^{\,n}} \]
+      </div>
+      <p><strong>结论：</strong>\(\dfrac{k}{2^k}\) 这类"等差 ÷ 等比"的求和，<strong>既可以用错位相减，也可以裂项</strong>。错位相减是通用方法，裂项更快但需要一点"凑"的灵感。考试时优先用错位相减，因为它不需要灵感。</p>
+    </div>
+  </div>
+
+  <h3 id="ch8-3">8.3　题型三：构造法求通项</h3>
+
+  <div class="box tip">
+    <span class="tag">题型特征与解题套路</span>
+    <p><strong>特征：</strong>给出的是递推关系（不是 \(S_n\)），需要构造一个新数列来求通项。</p>
+    <p><strong>三种最常见的构造：</strong></p>
+    <div class="tbl-wrap" style="margin:0;">
+      <table>
+        <thead><tr><th>递推形式</th><th>构造方法</th><th>新数列</th></tr></thead>
+        <tbody>
+          <tr><td>\(\dfrac{a_{n+1}}{n+1}=\dfrac{a_n}{n}\times(\text{常数})\)</td><td>两边同除以 \(n(n+1)\) 或直接观察</td><td>\(\left\{\dfrac{a_n}{n}\right\}\)</td></tr>
+          <tr><td>\((n+1)a_{n+1}-na_n=(\text{常数})\)</td><td>整体作差</td><td>\(\{na_n\}\)</td></tr>
+          <tr><td>\(a_{n+1}=pa_n+q\)</td><td>加常数 \(\lambda=\dfrac{q}{p-1}\)</td><td>\(\{a_n+\lambda\}\)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>核心思路：</strong>题目让你求什么，往往就暗示了要构造什么。<strong>题目里出现 \(\dfrac{a_n}{n}\) 就构造 \(\left\{\dfrac{a_n}{n}\right\}\)，出现 \(na_n\) 就构造 \(\{na_n\}\)。</strong></p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 7 · 2018 全国I卷（文）</span>
+    <p>已知数列 \(\{a_n\}\) 满足 \(a_1=1\)，\(na_{n+1}=2(n+1)a_n\)，设 \(b_n=\dfrac{a_n}{n}\)。</p>
+    <p>（1）求 \(b_1\)，\(b_2\)，\(b_3\)；</p>
+    <p>（2）判断数列 \(\{b_n\}\) 是否为等比数列，并说明理由；</p>
+    <p>（3）求 \(\{a_n\}\) 的通项公式。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）逐步算。</strong></p>
+    <ul>
+      <li>\(b_1=\dfrac{a_1}{1}=1\)。</li>
+      <li>在 \(na_{n+1}=2(n+1)a_n\) 中令 \(n=1\)：\(1\cdot a_2=2\times2\times a_1=4\)，所以 \(a_2=4\)，\(b_2=\dfrac{a_2}{2}=2\)。</li>
+      <li>令 \(n=2\)：\(2a_3=2\times3\times a_2=6\times4=24\)，所以 \(a_3=12\)，\(b_3=\dfrac{a_3}{3}=4\)。</li>
+    </ul>
+    <p>所以 \(b_1=1\)，\(b_2=2\)，\(b_3=4\)。</p>
+    <p><strong>观察：</strong>\(1,2,4\) 正好是 \(2^0,2^1,2^2\)，强烈提示公比为 2 的等比数列。</p>
+
+    <p><strong>（2）证明是等比数列。</strong>回到定义——<strong>算 \(\dfrac{b_{n+1}}{b_n}\)，看是不是常数</strong>。</p>
+    <p>由 \(na_{n+1}=2(n+1)a_n\)，两边同除以 \(n(n+1)\)（\(n\ge1\)，不为 0）：</p>
+    <div class="formula">
+      \[ \frac{a_{n+1}}{n+1}=2\cdot\frac{a_n}{n} \]
+    </div>
+    <p>而 \(\dfrac{a_{n+1}}{n+1}=b_{n+1}\)、\(\dfrac{a_n}{n}=b_n\)，所以：</p>
+    <div class="formula">
+      \[ b_{n+1}=2b_n \quad\Longrightarrow\quad \frac{b_{n+1}}{b_n}=2\ (\text{常数}) \]
+    </div>
+    <p>且 \(b_1=1\ne0\)，所以 \(\{b_n\}\) 是首项 1、公比 2 的<strong>等比数列</strong>。∎</p>
+
+    <p><strong>（3）先求 \(b_n\)，再求 \(a_n\)。</strong></p>
+    <div class="formula">
+      \[ b_n=b_1\cdot2^{\,n-1}=2^{\,n-1} \]
+    </div>
+    <p>由 \(b_n=\dfrac{a_n}{n}\) 得 \(a_n=n\,b_n\)，所以：</p>
+    <div class="formula">
+      \[ \boxed{\ a_n=n\cdot2^{\,n-1}\ } \]
+    </div>
+
+    <p><strong>验算：</strong>\(n=1\) 得 \(1\times1=1=a_1\) ✓；\(n=2\) 得 \(2\times2=4=a_2\) ✓；\(n=3\) 得 \(3\times4=12=a_3\) ✓。</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>第（1）问看似"送分"，其实是在提示方向。</strong>算出 \(b_1,b_2,b_3=1,2,4\) 之后，公比为 2 就呼之欲出了。考试时不要嫌它简单而跳过。</li>
+        <li><strong>证明等比数列必须落到"比值是常数"</strong>，并说明首项不为 0。</li>
+        <li>注意本题的顺序是"<strong>先求 \(b_n\)，再回代求 \(a_n\)</strong>"，不要直接去求 \(a_n\)。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 8 · 2025 全国I卷　<span class="lv-hard">★★</span></span>
+    <p>设数列 \(\{a_n\}\) 满足 \(a_1=3\)，\(\dfrac{a_{n+1}}{n}=\dfrac{a_n}{n+1}+\dfrac{1}{n(n+1)}\)。</p>
+    <p>（1）证明：\(\{na_n\}\) 为等差数列；</p>
+    <p>（2）给定正整数 \(m\)，设函数 \(f(x)=a_1x+a_2x^{2}+\cdots+a_mx^{m}\)，求 \(f'(-2)\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：去分母。</strong>两边同乘 \(n(n+1)\)（\(n\ge1\)，不为 0）：</p>
+    <div class="formula">
+      \[ (n+1)a_{n+1}=n\,a_n+1 \]
+    </div>
+
+    <p><strong>第二步：移项，凑成"作差"的形式。</strong></p>
+    <div class="formula">
+      \[ (n+1)a_{n+1}-n\,a_n=1 \]
+    </div>
+    <p>记 \(c_n=n\,a_n\)，则上式就是</p>
+    <div class="formula">
+      \[ c_{n+1}-c_n=1\ (\text{常数}) \]
+    </div>
+    <p>由等差数列的定义，\(\{c_n\}=\{na_n\}\) 是等差数列，公差为 1。∎</p>
+
+    <p><strong>（2）第一步：求 \(a_n\)。</strong>\(c_1=1\times a_1=3\)，公差 1，所以</p>
+    <div class="formula">
+      \[ c_n=3+(n-1)\times1=n+2 \quad\Longrightarrow\quad a_n=\frac{n+2}{n}=1+\frac{2}{n} \]
+    </div>
+
+    <p><strong>第二步：写出 \(f(x)\) 并求导。</strong></p>
+    <div class="formula">
+      \[ f(x)=\sum_{k=1}^{m}\left(1+\frac{2}{k}\right)x^{k}=\sum_{k=1}^{m}\frac{k+2}{k}x^{k} \]
+    </div>
+    <p>逐项求导（第 \(k\) 项求导得 \(k\cdot\dfrac{k+2}{k}x^{k-1}=(k+2)x^{k-1}\)）：</p>
+    <div class="formula">
+      \[ f'(x)=\sum_{k=1}^{m}(k+2)x^{\,k-1}=3+4x+5x^{2}+\cdots+(m+2)x^{\,m-1} \]
+    </div>
+
+    <p><strong>第三步：代入 \(x=-2\)。</strong>记</p>
+    <div class="formula">
+      \[ f'(-2)=3+4(-2)+5(-2)^{2}+\cdots+(m+2)(-2)^{\,m-1} \]
+    </div>
+    <p>把它拆成两部分：</p>
+    <div class="formula">
+      \[ f'(-2)=\underbrace{\sum_{k=1}^{m}k(-2)^{\,k-1}}_{A}+2\underbrace{\sum_{k=1}^{m}(-2)^{\,k-1}}_{B} \]
+    </div>
+
+    <p><strong>第四步：分别求 \(A\) 和 \(B\)。</strong></p>
+    <p>\(B\) 是等比数列求和（首项 1，公比 \(-2\)，共 \(m\) 项）：</p>
+    <div class="formula">
+      \[ B=\frac{1-(-2)^{\,m}}{1-(-2)}=\frac{1-(-2)^{\,m}}{3} \]
+    </div>
+
+    <p>\(A\) 是"等差 × 等比"，用错位相减。记 \(A=1+2(-2)+3(-2)^2+\cdots+m(-2)^{m-1}\)，两边乘 \(-2\)：</p>
+    <div class="formula">
+      \[ -2A=(-2)+2(-2)^{2}+\cdots+(m-1)(-2)^{\,m-1}+m(-2)^{\,m} \]
+    </div>
+    <p>相减（\(A-(-2A)=3A\)）：</p>
+    <div class="formula">
+      \[ 3A=1+(-2)+(-2)^{2}+\cdots+(-2)^{\,m-1}-m(-2)^{\,m}=\frac{1-(-2)^{\,m}}{3}-m(-2)^{\,m} \]
+    </div>
+    <div class="formula">
+      \[ A=\frac{1-(-2)^{\,m}}{9}-\frac{m(-2)^{\,m}}{3} \]
+    </div>
+
+    <p><strong>第五步：合并。</strong></p>
+    <div class="formula">
+      \[ f'(-2)=A+2B=\frac{1-(-2)^{\,m}}{9}-\frac{m(-2)^{\,m}}{3}+\frac{2\bigl[1-(-2)^{\,m}\bigr]}{3} \]
+    </div>
+    <p>统一分母为 9：</p>
+    <div class="formula">
+      \[ f'(-2)=\frac{1-(-2)^{\,m}}{9}-\frac{3m(-2)^{\,m}}{9}+\frac{6-6(-2)^{\,m}}{9}=\frac{7-(3m+7)(-2)^{\,m}}{9} \]
+    </div>
+    <div class="formula">
+      \[ \boxed{\ f'(-2)=\frac{7-(3m+7)(-2)^{\,m}}{9}\ } \]
+    </div>
+
+    <p><strong>验算（取小的 \(m\) 直接算）：</strong></p>
+    <ul>
+      <li>\(m=1\)：\(f'(x)=3\)，所以 \(f'(-2)=3\)。公式给 \(\dfrac{7-(3+7)(-2)}{9}=\dfrac{7+20}{9}=3\) ✓</li>
+      <li>\(m=2\)：\(f'(-2)=3+4(-2)=-5\)。公式给 \(\dfrac{7-(6+7)\times4}{9}=\dfrac{7-52}{9}=-5\) ✓</li>
+      <li>\(m=3\)：\(f'(-2)=3-8+20=15\)。公式给 \(\dfrac{7-(9+7)(-8)}{9}=\dfrac{7+128}{9}=15\) ✓</li>
+    </ul>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>第（1）问的"两边同乘 \(n(n+1)\)"是关键动作。</strong>看到分式递推，第一反应就是去分母。</li>
+        <li>去分母之后要<strong>主动往"整体作差"上凑</strong>：本题凑出 \((n+1)a_{n+1}-na_n=1\)，而题目恰好问 \(\{na_n\}\)，方向完全对上。</li>
+        <li>第（2）问把 \(f'(-2)\) 拆成 \(A+2B\) 之后，\(A\) 用错位相减、\(B\) 用等比公式，<strong>两块分开算再合并</strong>，比整体处理清楚得多。</li>
+        <li>本题是 2025 年新题，把<strong>数列与导数结合</strong>，属于近年新高考的命题趋势，值得重点体会。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="ch8-4">8.4　题型四：先猜后证（数学归纳法）</h3>
+
+  <div class="box def">
+    <span class="tag">数学归纳法（本册补充工具）</span>
+    <p>要证明一个关于正整数 \(n\) 的命题 \(P(n)\) 对一切 \(n\in\mathbb{N}^{*}\) 成立，只需两步：</p>
+    <ol>
+      <li><strong>奠基（归纳基础）：</strong>证明 \(n=1\)（或第一个允许的 \(n\)）时命题成立；</li>
+      <li><strong>归纳（递推）：</strong>假设 \(n=k\) 时命题成立（这叫做<strong>归纳假设</strong>），在这个前提下证明 \(n=k+1\) 时命题也成立。</li>
+    </ol>
+    <p>两步都完成，命题就对一切正整数成立。</p>
+    <p><strong>为什么两步就够了？</strong>把它想象成多米诺骨牌：奠基说明"第一块会倒"，归纳说明"只要前一块倒，后一块一定会倒"。两者结合，所有骨牌都会倒。</p>
+    <p><strong>使用要点：</strong>归纳步骤里<strong>必须用到归纳假设</strong>（即"\(a_k=2k+1\)"这个条件），否则证明是无效的。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 9 · 2020 全国III卷（理）</span>
+    <p>设数列 \(\{a_n\}\) 满足 \(a_1=3\)，\(a_{n+1}=3a_n-4n\)。</p>
+    <p>（1）计算 \(a_2\)，\(a_3\)，猜想 \(\{a_n\}\) 的通项公式并加以证明；</p>
+    <p>（2）求数列 \(\{2^{\,n}a_n\}\) 的前 \(n\) 项和 \(S_n\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：算前几项找规律。</strong></p>
+    <div class="formula">
+      \[ a_2=3a_1-4\times1=9-4=5 \]
+    </div>
+    <div class="formula">
+      \[ a_3=3a_2-4\times2=15-8=7 \]
+    </div>
+    <p>得到 \(3,5,7,\dots\)——都是奇数且依次加 2，猜想：</p>
+    <div class="formula">\[ a_n=2n+1 \]</div>
+
+    <p><strong>第二步：用数学归纳法证明。</strong></p>
+    <p><strong>① 奠基：</strong>当 \(n=1\) 时，\(a_1=3=2\times1+1\) ✓ 成立。</p>
+    <p><strong>② 归纳：</strong>假设 \(n=k\) 时命题成立，即 \(a_k=2k+1\)。证明 \(n=k+1\) 时也成立：</p>
+    <div class="formula">
+      \[ a_{k+1}=3a_k-4k=3(2k+1)-4k=6k+3-4k=2k+3 \]
+    </div>
+    <p>而</p>
+    <div class="formula">
+      \[ 2(k+1)+1=2k+3 \]
+    </div>
+    <p>两者相等，所以 \(a_{k+1}=2(k+1)+1\)，即 \(n=k+1\) 时命题也成立。</p>
+    <p>由①②，对一切 \(n\in\mathbb{N}^{*}\) 都有 \(a_n=2n+1\)。∎</p>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">注意"归纳假设"在哪一步被用到</span>
+      <p>上面 \(a_{k+1}=3a_k-4k\) 这一步，正是<strong>把 \(a_k\) 换成了 \(2k+1\)</strong>——这就是在使用归纳假设。如果不用归纳假设就能直接算出结果，那说明这个证明根本不需要归纳法。</p>
+    </div>
+
+    <p style="margin-top:16px;"><strong>（2）第一步：写出通项。</strong>令 \(b_n=2^{\,n}a_n=(2n+1)\cdot2^{\,n}\)。</p>
+
+    <p><strong>第二步：错位相减。</strong></p>
+    <div class="formula">
+      \[ S_n=3\cdot2^{1}+5\cdot2^{2}+7\cdot2^{3}+\cdots+(2n+1)\cdot2^{\,n} \tag{①} \]
+    </div>
+    <div class="formula">
+      \[ 2S_n=3\cdot2^{2}+5\cdot2^{3}+\cdots+(2n-1)\cdot2^{\,n}+(2n+1)\cdot2^{\,n+1} \tag{②} \]
+    </div>
+    <p>① − ②：</p>
+    <div class="formula">
+      \[ -S_n=3\cdot2+2\cdot2^{2}+2\cdot2^{3}+\cdots+2\cdot2^{\,n}-(2n+1)\cdot2^{\,n+1} \]
+    </div>
+    <p>中间部分 \(2\cdot2^{2}+2\cdot2^{3}+\cdots+2\cdot2^{n}\) 是等比数列，首项 \(2\times2^2=8\)，公比 2，共 \(n-1\) 项：</p>
+    <div class="formula">
+      \[ 2\cdot2^{2}+\cdots+2\cdot2^{\,n}=\frac{8(2^{\,n-1}-1)}{2-1}=8\cdot2^{\,n-1}-8=2^{\,n+2}-8 \]
+    </div>
+    <p>所以：</p>
+    <div class="formula">
+      \[ -S_n=6+\bigl(2^{\,n+2}-8\bigr)-(2n+1)\cdot2^{\,n+1}=2^{\,n+2}-2-(2n+1)\cdot2^{\,n+1} \]
+    </div>
+    <p>把 \(2^{\,n+2}\) 统一成 \(2\cdot2^{\,n+1}\)：</p>
+    <div class="formula">
+      \[ -S_n=2\cdot2^{\,n+1}-2-(2n+1)\cdot2^{\,n+1}=(1-2n)\cdot2^{\,n+1}-2 \]
+    </div>
+    <p>两边同乘 \(-1\)：</p>
+    <div class="formula">
+      \[ \boxed{\ S_n=(2n-1)\cdot2^{\,n+1}+2\ } \]
+    </div>
+
+    <p><strong>验算：</strong></p>
+    <ul>
+      <li>\(n=1\)：公式给 \((2-1)\times4+2=6\)；直接算 \(S_1=3\times2=6\) ✓</li>
+      <li>\(n=2\)：公式给 \((4-1)\times8+2=26\)；直接算 \(6+5\times4=26\) ✓</li>
+      <li>\(n=3\)：公式给 \((6-1)\times16+2=82\)；直接算 \(26+7\times8=82\) ✓</li>
+    </ul>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>"计算—猜想—证明"是数列题的固定三段式。</strong>看到题目说"计算 \(a_2,a_3\)，猜想通项并证明"，就按这三步走。</li>
+        <li><strong>数学归纳法的归纳步骤必须用到归纳假设。</strong>这是判分的关键点，也是本题第（1）问的考查重点。</li>
+        <li>本题的错位相减中，中间等比数列是 \(n-1\) 项（不是 \(n\) 项），<strong>项数一定要数清楚</strong>。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="ch8-5">8.5　题型五：数列求和（裂项相消）</h3>
+
+  <div class="box eg">
+    <span class="tag">真题 10 · 2017 全国III卷（文）</span>
+    <p>设数列 \(\{a_n\}\) 满足 \(a_1+3a_2+\cdots+(2n-1)a_n=2n\)。</p>
+    <p>（1）求 \(\{a_n\}\) 的通项公式；</p>
+    <p>（2）求数列 \(\left\{\dfrac{a_n}{2n+1}\right\}\) 的前 \(n\) 项和。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：识别这是"错位型"的和式。</strong>题目给的等式左边是一个<strong>和</strong>，记作</p>
+    <div class="formula">
+      \[ T_n=a_1+3a_2+\cdots+(2n-1)a_n=2n \tag{①} \]
+    </div>
+    <p>把 \(n\) 换成 \(n-1\)（要求 \(n\ge2\)）：</p>
+    <div class="formula">
+      \[ T_{n-1}=a_1+3a_2+\cdots+(2n-3)a_{n-1}=2(n-1) \tag{②} \]
+    </div>
+
+    <p><strong>第二步：① − ②。</strong>左边前面的项全部抵消，只剩下最后一项：</p>
+    <div class="formula">
+      \[ (2n-1)a_n=2n-2(n-1)=2 \]
+    </div>
+    <p>所以（\(n\ge2\)）：</p>
+    <div class="formula">
+      \[ a_n=\frac{2}{2n-1} \]
+    </div>
+
+    <p><strong>第三步：检验 \(n=1\)。</strong>在①中令 \(n=1\)：\(a_1=2\)。而 \(\dfrac{2}{2\times1-1}=2\) ✓ 也符合。</p>
+    <div class="formula">
+      \[ \boxed{\ a_n=\frac{2}{2n-1}\quad(n\in\mathbb{N}^{*})\ } \]
+    </div>
+
+    <p><strong>（2）第一步：化简通项。</strong>设 \(b_n=\dfrac{a_n}{2n+1}\)：</p>
+    <div class="formula">
+      \[ b_n=\frac{\dfrac{2}{2n-1}}{2n+1}=\frac{2}{(2n-1)(2n+1)} \]
+    </div>
+
+    <p><strong>第二步：裂项。</strong>分母两个因子 \(2n-1\) 与 \(2n+1\) 相差 2，所以提出 \(\dfrac12\)（见 5.3 节的"分母差几提几分之一"）：</p>
+    <div class="formula">
+      \[ b_n=\frac{2}{(2n-1)(2n+1)}=\frac{1}{2n-1}-\frac{1}{2n+1} \]
+    </div>
+    <p><strong>验证：</strong>右边 \(=\dfrac{(2n+1)-(2n-1)}{(2n-1)(2n+1)}=\dfrac{2}{(2n-1)(2n+1)}\) ✓</p>
+
+    <p><strong>第三步：相消求和。</strong></p>
+    <div class="formula">
+      \[
+      \begin{aligned}
+      S_n &=\left(\frac11-\frac13\right)+\left(\frac13-\frac15\right)+\cdots+\left(\frac{1}{2n-1}-\frac{1}{2n+1}\right) \\
+      &=1-\frac{1}{2n+1}=\frac{2n}{2n+1}
+      \end{aligned}
+      \]
+    </div>
+    <div class="formula">
+      \[ \boxed{\ S_n=\frac{2n}{2n+1}\ } \]
+    </div>
+
+    <p><strong>验算：</strong>\(n=1\) 时 \(S_1=b_1=\dfrac{2}{1\times3}=\dfrac23\)，公式给 \(\dfrac{2}{3}\) ✓。</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>看到"\(a_1+3a_2+\cdots+(2n-1)a_n=\) 某式"，立刻想到"作差求通项"。</strong>这是与 \(S_n\) 关系同源的方法——只不过这里的"部分和"带了系数。</li>
+        <li>作差后<strong>必须单独检验 \(n=1\)</strong>（因为作差时要求 \(n\ge2\)）。</li>
+        <li>裂项时<strong>注意系数</strong>：本题分母两因子差 2，但分子恰好也是 2，正好约掉，所以裂项后<strong>不需要额外乘 \(\frac12\)</strong>。这是本题容易多算一步的地方。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 11 · 2021 全国乙卷（文）</span>
+    <p>设 \(\{a_n\}\) 是首项为 1 的等比数列，数列 \(\{b_n\}\) 满足 \(b_n=\dfrac{na_n}{3}\)。已知 \(a_1\)，\(3a_2\)，\(9a_3\) 成等差数列。</p>
+    <p>（1）求 \(\{a_n\}\) 和 \(\{b_n\}\) 的通项公式；</p>
+    <p>（2）记 \(S_n\) 和 \(T_n\) 分别为 \(\{a_n\}\) 和 \(\{b_n\}\) 的前 \(n\) 项和，证明：\(T_n&lt;\dfrac{S_n}{2}\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：由等差条件求公比。</strong>设公比为 \(q\)，则 \(a_1=1\)、\(a_2=q\)、\(a_3=q^{2}\)。</p>
+    <p>\(a_1\)、\(3a_2\)、\(9a_3\) 成等差数列，即 \(3a_2\) 是 \(a_1\) 与 \(9a_3\) 的等差中项：</p>
+    <div class="formula">
+      \[ 2\times(3a_2)=a_1+9a_3 \quad\Longrightarrow\quad 6q=1+9q^{2} \]
+    </div>
+    <div class="formula">
+      \[ 9q^{2}-6q+1=0 \quad\Longrightarrow\quad (3q-1)^{2}=0 \quad\Longrightarrow\quad q=\frac13 \]
+    </div>
+
+    <p><strong>第二步：写通项。</strong></p>
+    <div class="formula">
+      \[ a_n=1\times\left(\frac13\right)^{n-1}=\left(\frac13\right)^{n-1}=\frac{1}{3^{\,n-1}} \]
+    </div>
+    <div class="formula">
+      \[ b_n=\frac{n\,a_n}{3}=\frac{n}{3}\cdot\frac{1}{3^{\,n-1}}=\frac{n}{3^{\,n}} \]
+    </div>
+    <div class="formula">
+      \[ \boxed{\ a_n=\left(\frac13\right)^{n-1},\qquad b_n=\frac{n}{3^{\,n}}\ } \]
+    </div>
+
+    <p><strong>（2）第一步：写出 \(S_n\)。</strong>等比数列，首项 1、公比 \(\dfrac13\)：</p>
+    <div class="formula">
+      \[ S_n=\frac{1-\left(\frac13\right)^{n}}{1-\frac13}=\frac32\left(1-\frac{1}{3^{\,n}}\right)=\frac32-\frac{1}{2\cdot3^{\,n-1}} \]
+    </div>
+    <p>所以</p>
+    <div class="formula">
+      \[ \frac{S_n}{2}=\frac34-\frac{1}{4\cdot3^{\,n-1}} \]
+    </div>
+
+    <p><strong>第二步：用错位相减求 \(T_n\)。</strong></p>
+    <div class="formula">
+      \[ T_n=\frac{1}{3}+\frac{2}{3^{2}}+\frac{3}{3^{3}}+\cdots+\frac{n}{3^{\,n}} \tag{①} \]
+    </div>
+    <div class="formula">
+      \[ \frac13T_n=\frac{1}{3^{2}}+\frac{2}{3^{3}}+\cdots+\frac{n-1}{3^{\,n}}+\frac{n}{3^{\,n+1}} \tag{②} \]
+    </div>
+    <p>① − ②：</p>
+    <div class="formula">
+      \[ \frac23T_n=\frac13+\frac{1}{3^{2}}+\frac{1}{3^{3}}+\cdots+\frac{1}{3^{\,n}}-\frac{n}{3^{\,n+1}} \]
+    </div>
+    <p>中间是首项 \(\dfrac13\)、公比 \(\dfrac13\)、共 \(n\) 项的等比数列：</p>
+    <div class="formula">
+      \[ \frac13+\frac{1}{3^{2}}+\cdots+\frac{1}{3^{\,n}}=\frac{\frac13\left(1-\frac{1}{3^{\,n}}\right)}{1-\frac13}=\frac12\left(1-\frac{1}{3^{\,n}}\right) \]
+    </div>
+    <p>所以：</p>
+    <div class="formula">
+      \[ \frac23T_n=\frac12\left(1-\frac{1}{3^{\,n}}\right)-\frac{n}{3^{\,n+1}} \]
+    </div>
+    <div class="formula">
+      \[ T_n=\frac32\cdot\frac12\left(1-\frac{1}{3^{\,n}}\right)-\frac32\cdot\frac{n}{3^{\,n+1}}=\frac34-\frac{3}{4\cdot3^{\,n}}-\frac{n}{2\cdot3^{\,n}} \]
+    </div>
+    <p>把 \(\dfrac{3}{4\cdot3^{n}}\) 统一成 \(\dfrac{1}{4\cdot3^{\,n-1}}\)：</p>
+    <div class="formula">
+      \[ T_n=\frac34-\frac{1}{4\cdot3^{\,n-1}}-\frac{n}{2\cdot3^{\,n}} \]
+    </div>
+
+    <p><strong>第三步：作差比较。</strong></p>
+    <div class="formula">
+      \[ T_n-\frac{S_n}{2}=\left(\frac34-\frac{1}{4\cdot3^{\,n-1}}-\frac{n}{2\cdot3^{\,n}}\right)-\left(\frac34-\frac{1}{4\cdot3^{\,n-1}}\right)=-\frac{n}{2\cdot3^{\,n}} \]
+    </div>
+    <p>因为 \(n\) 是正整数，所以 \(\dfrac{n}{2\cdot3^{\,n}}>0\)，因此</p>
+    <div class="formula">
+      \[ T_n-\frac{S_n}{2}=-\frac{n}{2\cdot3^{\,n}}&lt;0 \quad\Longrightarrow\quad \boxed{\ T_n&lt;\frac{S_n}{2}\ } \]
+    </div>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">这个解答的精妙之处</span>
+      <p>注意第（2）问的 \(S_n/2\) 与 \(T_n\) 的<strong>前面几项完全一样</strong>（都是 \(\dfrac34-\dfrac{1}{4\cdot3^{\,n-1}}\)），相减之后只剩下一项 \(-\dfrac{n}{2\cdot3^{\,n}}\)，符号一目了然。</p>
+      <p><strong>这不是巧合。</strong>出题人就是设计成"作差后只剩一项"，因为 \(b_n=\dfrac{na_n}{3}\) 这个系数恰好是这么凑的。</p>
+      <p><strong>启示：</strong>证明 \(T_n&lt;\dfrac{S_n}{2}\) 这类不等式，<strong>首选"作差"</strong>。如果能算出通项就作差；算不出通项才考虑放缩。</p>
+    </div>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li>"\(a_1,3a_2,9a_3\) 成等差数列"要翻译成 <strong>\(2\times(3a_2)=a_1+9a_3\)</strong>，别写成 \(a_1+3a_2=9a_3\)。</li>
+        <li>本题解出 \(q=\dfrac13\) 时判别式为 0（重根），这提示"公比唯一确定"，是出题人刻意设计。</li>
+        <li><strong>证明数列不等式，先试着算通项再作差。</strong>直接放缩（如用 \(\dfrac{n}{3^n}\le\dfrac{1}{3^n}\) 之类）反而绕远。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="ch8-6">8.6　题型六：奇偶项分类讨论（压轴方向）</h3>
+
+  <div class="box tip">
+    <span class="tag">题型特征</span>
+    <p><strong>特征：</strong>递推式里带 \((-1)^n\)，或者递推式对奇偶项给出<strong>不同的规则</strong>（如 \(a_{n+1}=a_n+1\) 当 \(n\) 为奇数、\(a_{n+1}=a_n+2\) 当 \(n\) 为偶数）。</p>
+    <p><strong>套路：</strong></p>
+    <ol>
+      <li><strong>把奇偶项分开</strong>，分别记为两个新数列（如 \(b_n=a_{2n}\)）。</li>
+      <li><strong>推导新数列的递推式</strong>：通常需要"跨两步"看（从 \(a_{2n}\) 到 \(a_{2n+1}\) 再到 \(a_{2n+2}\)）。</li>
+      <li><strong>分别求两个新数列的通项</strong>，再回到原数列。</li>
+    </ol>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 12 · 2021 新高考I卷　<span class="lv-hard">★★</span></span>
+    <p>已知数列 \(\{a_n\}\) 满足 \(a_1=1\)，且</p>
+    <div class="formula">
+      \[
+      a_{n+1}=
+      \begin{cases}
+      a_n+1, & n\text{ 为奇数},\\[4pt]
+      a_n+2, & n\text{ 为偶数}.
+      \end{cases}
+      \]
+    </div>
+    <p>（1）记 \(b_n=a_{2n}\)，写出 \(b_1\)，\(b_2\)，并求数列 \(\{b_n\}\) 的通项公式；</p>
+    <p>（2）求 \(\{a_n\}\) 的前 20 项和。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：逐项算出前几项。</strong></p>
+    <ul>
+      <li>\(a_1=1\)</li>
+      <li>\(n=1\) 为奇数：\(a_2=a_1+1=2\)</li>
+      <li>\(n=2\) 为偶数：\(a_3=a_2+2=4\)</li>
+      <li>\(n=3\) 为奇数：\(a_4=a_3+1=5\)</li>
+      <li>\(n=4\) 为偶数：\(a_5=a_4+2=7\)</li>
+      <li>\(n=5\) 为奇数：\(a_6=a_5+1=8\)</li>
+    </ul>
+    <p>所以 \(b_1=a_2=2\)，\(b_2=a_4=5\)。</p>
+
+    <p><strong>第二步：推导 \(\{b_n\}\) 的递推式（关键一步）。</strong></p>
+    <p>\(b_{n+1}=a_{2n+2}\)。要从 \(a_{2n}\) 走到 \(a_{2n+2}\)，中间隔了一个 \(a_{2n+1}\)，所以<strong>要跨两步</strong>：</p>
+    <ul>
+      <li>从 \(a_{2n}\) 到 \(a_{2n+1}\)：下标 \(2n\) 是<strong>偶数</strong>，用第二条规则：\(a_{2n+1}=a_{2n}+2\)；</li>
+      <li>从 \(a_{2n+1}\) 到 \(a_{2n+2}\)：下标 \(2n+1\) 是<strong>奇数</strong>，用第一条规则：\(a_{2n+2}=a_{2n+1}+1\)。</li>
+    </ul>
+    <p>把两式串起来：</p>
+    <div class="formula">
+      \[ a_{2n+2}=(a_{2n}+2)+1=a_{2n}+3 \]
+    </div>
+    <p>即</p>
+    <div class="formula">
+      \[ b_{n+1}=b_n+3 \]
+    </div>
+    <p>所以 \(\{b_n\}\) 是首项 \(b_1=2\)、公差 3 的<strong>等差数列</strong>：</p>
+    <div class="formula">
+      \[ \boxed{\ b_n=2+3(n-1)=3n-1\ } \]
+    </div>
+
+    <p><strong>（2）第一步：把前 20 项分成奇偶两组。</strong></p>
+    <ul>
+      <li><strong>偶数项</strong>：\(a_2,a_4,a_6,\dots,a_{20}\) 共 10 项，恰好是 \(b_1,b_2,\dots,b_{10}\)。</li>
+      <li><strong>奇数项</strong>：\(a_1,a_3,a_5,\dots,a_{19}\) 共 10 项。</li>
+    </ul>
+
+    <p><strong>第二步：算偶数项之和。</strong></p>
+    <div class="formula">
+      \[ \sum_{n=1}^{10}b_n=\sum_{n=1}^{10}(3n-1)=3\times\frac{10\times11}{2}-10=165-10=155 \]
+    </div>
+
+    <p><strong>第三步：算奇数项之和。</strong>由规则，当 \(n\) 为偶数时 \(a_{n+1}=a_n+2\)，取 \(n=2k\)：</p>
+    <div class="formula">
+      \[ a_{2k+1}=a_{2k}+2=b_k+2 \]
+    </div>
+    <p>所以奇数项（除 \(a_1\) 外）都可以用 \(b_k+2\) 表示：</p>
+    <div class="formula">
+      \[ a_3=b_1+2,\quad a_5=b_2+2,\quad \dots,\quad a_{19}=b_9+2 \]
+    </div>
+    <p>于是：</p>
+    <div class="formula">
+      \[ \sum_{\text{奇}}=a_1+\sum_{k=1}^{9}(b_k+2)=1+\sum_{k=1}^{9}(3k-1)+9\times2 \]
+    </div>
+    <div class="formula">
+      \[ \sum_{k=1}^{9}(3k-1)=3\times\frac{9\times10}{2}-9=135-9=126 \]
+    </div>
+    <div class="formula">
+      \[ \sum_{\text{奇}}=1+126+18=145 \]
+    </div>
+
+    <p><strong>第四步：求总和。</strong></p>
+    <div class="formula">
+      \[ S_{20}=\sum_{\text{奇}}+\sum_{\text{偶}}=145+155=\boxed{300} \]
+    </div>
+
+    <p><strong>验算（直接累加前几项对照）：</strong>数列前几项是 \(1,2,4,5,7,8,10,11,\dots\)，规律是"每两项一组，组内相差 1，组间相差 3"。</p>
+    <p>前 20 项 = 10 组，第 \(k\) 组是 \((3k-2,\ 3k-1)\)，组内和 \(=6k-3\)。</p>
+    <div class="formula">
+      \[ S_{20}=\sum_{k=1}^{10}(6k-3)=6\times\frac{10\times11}{2}-30=330-30=300 \quad\checkmark \]
+    </div>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>推导 \(b_{n+1}\) 与 \(b_n\) 的关系时，必须"跨两步"。</strong>因为中间夹着一个奇数下标项，这一步是本题的难点，也是最容易算错的地方（容易误算成 \(a_{2n+2}=a_{2n}+1\)）。</li>
+        <li><strong>写递推时要先判断下标奇偶</strong>，再选对应规则。\(2n\) 一定是偶数，\(2n+1\) 一定是奇数——这两个判断要写清楚。</li>
+        <li>求和时<strong>奇数项要单独处理</strong>：先算出偶数项的和，再用 \(a_{2k+1}=b_k+2\) 把奇数项转成 \(b_k\) 的形式。</li>
+        <li>本题还有一种更快的看法：把数列写成 \(1,2\,|\,4,5\,|\,7,8\,|\cdots\)，每两项一组，组内差 1、组间差 3。<strong>用分组法可以直接求和</strong>，比上面的做法更简洁。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="ch8-7">8.7　提分要点总结</h3>
+
+  <div class="box proof">
+    <span class="tag">十年真题告诉我们的五件事</span>
+    <ol class="steps">
+      <li><strong>"求通项"永远是第一问，且方法高度固定。</strong>十年真题里，第一问只有四种考法：基本量计算（8.1）、\(S_n\) 与 \(a_n\) 关系（8.2）、构造法（8.3）、先猜后证（8.4）。<strong>把这四种练熟，第一问就是稳拿的。</strong></li>
+      <li><strong>第二问的"求和"只有三种：错位相减、裂项相消、分组求和。</strong>其中<strong>错位相减出现频率最高</strong>（真题 5、9、11 都是）。判断依据看通项：等差×等比用错位相减，分式且分母可分解用裂项。</li>
+      <li><strong>\(S_n\) 与 \(a_n\) 的关系是"必考动作"。</strong>十年里几乎每年都有一道。核心就一句：<strong>\(a_n=S_n-S_{n-1}\)（\(n\ge2\)），且必须单独检验 \(n=1\)</strong>。</li>
+      <li><strong>奇偶项分类是新高考的明显趋势。</strong>2021 新高考 I 卷、2023 新高考 II 卷都考了这个（本章真题 12 即 2021 新高考 I 卷那道）。特征是递推式带 \((-1)^n\) 或分奇偶给规则，解法是"分开构造两个新数列"。<br><strong>同类练习：</strong>2023 新高考 II 卷考的是 \(b_n=a_n-6\)（\(n\) 为奇数）、\(b_n=2a_n\)（\(n\) 为偶数），思路完全一样，建议找来做一遍。</li>
+      <li><strong>数列正在与其他模块结合。</strong>2025 全国 I 卷把数列与<strong>导数</strong>结合（求 \(f'(-2)\)），2019 全国 I 卷把数列与<strong>概率递推</strong>结合。这类题的数列部分仍然是基本功，难点在"看懂题在问什么"。</li>
+    </ol>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">考场时间分配建议</span>
+    <ul>
+      <li><strong>解答题第一题（数列）：限时 10 分钟，目标满分。</strong>第一问 3~4 分钟，第二问 5~6 分钟，留 1 分钟验算。</li>
+      <li><strong>如果第二问卡住了，先把第一问的结论写下来。</strong>很多第二问会用到第一问的通项，写出来往往能启发思路。</li>
+      <li><strong>错位相减后一定要验算。</strong>代 \(n=1,2\) 到求和公式里，和直接累加的结果对照。这 30 秒能救回整道题。</li>
+      <li><strong>绝对值和、奇偶项、含参讨论这三类题，先分类再计算。</strong>不要在没想清楚分类标准的时候动笔算。</li>
+    </ul>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">本章真题索引（按题型查）</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>题型</th><th>真题</th><th>考查点</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="3"><strong>基本量计算</strong></td><td>2018 全国II卷（理）</td><td>由 \(a_1,S_3\) 求 \(d\)；\(S_n\) 最值</td></tr>
+          <tr><td>2023 全国乙卷（文）</td><td>联立求 \(a_1,d\)；绝对值和分段求和</td></tr>
+          <tr><td>2020 全国III卷（文）</td><td>等比两式相除求 \(q\)；对数化简后解方程</td></tr>
+          <tr><td rowspan="3"><strong>\(S_n\) 与 \(a_n\) 关系</strong></td><td>2022 全国甲卷（理）</td><td>证明等差；等比条件定 \(a_1\)；\(S_n\) 最值</td></tr>
+          <tr><td>2024 全国甲卷（理）</td><td>证等比；\((-1)^{n-1}\) 化简后错位相减</td></tr>
+          <tr><td>2023 全国甲卷（理）</td><td>\(n=2\) 需特殊处理；错位相减（或裂项）</td></tr>
+          <tr><td rowspan="2"><strong>构造法</strong></td><td>2018 全国I卷（文）</td><td>构造 \(\left\{\frac{a_n}{n}\right\}\)；先求 \(b_n\) 再回代</td></tr>
+          <tr><td>2025 全国I卷</td><td>构造 \(\{na_n\}\)；数列与导数结合</td></tr>
+          <tr><td><strong>先猜后证</strong></td><td>2020 全国III卷（理）</td><td>数学归纳法；错位相减</td></tr>
+          <tr><td rowspan="2"><strong>求和</strong></td><td>2017 全国III卷（文）</td><td>作差求通项；裂项相消</td></tr>
+          <tr><td>2021 全国乙卷（文）</td><td>错位相减；作差证明不等式</td></tr>
+          <tr><td><strong>奇偶项</strong></td><td>2021 新高考I卷</td><td>跨两步构造；分组求和</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  </main>
+</div>
+
+<button class="print-btn" onclick="window.print()">打印 / 存为 PDF</button>
+
+<script>
+(function(){
+  // 公式渲染依赖 MathJax CDN（需联网）。若超时仍未就绪，提示读者。
+  var shown = false;
+  function check(){
+    var ok = window.MathJax && window.MathJax.startup && window.MathJax.startup.document;
+    if (!ok && !shown){
+      shown = true;
+      var el = document.getElementById('mathjax-warn');
+      if (el) el.style.display = 'block';
+    }
+  }
+  setTimeout(check, 4000);
+  setTimeout(check, 9000);
+})();
+</script>
+
+<script>
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('.sidenav a'));
+  if (!links.length) return;
+  var targets = links.map(function(a){
+    return document.getElementById(decodeURIComponent(a.getAttribute('href').slice(1)));
+  });
+  var ticking = false;
+  function update(){
+    ticking = false;
+    var idx = 0;
+    for (var i = 0; i < targets.length; i++){
+      if (targets[i] && targets[i].getBoundingClientRect().top <= 100) idx = i;
+    }
+    for (var j = 0; j < links.length; j++){
+      links[j].classList.toggle('active', j === idx);
+    }
+  }
+  function onScroll(){
+    if (!ticking){ ticking = true; window.requestAnimationFrame(update); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+  update();
+})();
+</script>
+</body>
+</html>

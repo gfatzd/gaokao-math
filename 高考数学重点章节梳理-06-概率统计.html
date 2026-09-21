@@ -1,0 +1,2764 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高考数学重点章节梳理 · 第六册 概率统计</title>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      processEscapes: true
+    },
+    svg: { fontCache: 'global' },
+    options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+  :root{
+    --ink:#1b1f27;
+    --ink-2:#3d4655;
+    --muted:#6b7688;
+    --line:#e5e9f0;
+    --line-2:#eef1f6;
+    --bg:#f5f7fb;
+    --card:#ffffff;
+    --brand:#1f5eff;
+    --brand-soft:#eef3ff;
+    --def:#1f5eff;      --def-bg:#f2f6ff;   --def-line:#c9daff;
+    --proof:#0f9d6e;    --proof-bg:#f0fbf6; --proof-line:#b7e8d4;
+    --eg:#c2760a;       --eg-bg:#fff9ee;    --eg-line:#f5dcae;
+    --warn:#d63a3a;     --warn-bg:#fff5f5;  --warn-line:#f8cfcf;
+    --tip:#7a4bd0;      --tip-bg:#f8f4ff;   --tip-line:#ddd0f7;
+    --radius:12px;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Source Han Sans SC","Noto Sans CJK SC",system-ui,-apple-system,"Segoe UI",sans-serif;
+    font-size:16px;
+    line-height:1.85;
+    letter-spacing:.01em;
+  }
+  .page{
+    max-width:960px;
+    margin:0 auto;
+    background:var(--card);
+    box-shadow:0 1px 3px rgba(20,30,60,.06), 0 12px 40px rgba(20,30,60,.06);
+    min-height:100vh;
+  }
+
+  .cover{
+    position:relative;
+    padding:64px 56px 52px;
+    background:
+      radial-gradient(900px 340px at 12% -10%, #e7efff 0%, rgba(231,239,255,0) 62%),
+      radial-gradient(700px 300px at 100% 0%, #eafaf3 0%, rgba(234,250,243,0) 58%),
+      linear-gradient(180deg,#ffffff 0%,#fbfcfe 100%);
+    border-bottom:1px solid var(--line);
+  }
+  .cover .kicker{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:13px; font-weight:600; letter-spacing:.14em;
+    color:var(--brand);
+    background:var(--brand-soft);
+    border:1px solid var(--def-line);
+    padding:5px 14px; border-radius:999px;
+    margin-bottom:22px;
+  }
+  .cover h1{
+    margin:0 0 6px;
+    font-size:42px;
+    line-height:1.25;
+    letter-spacing:-.01em;
+    font-weight:800;
+    color:#121722;
+  }
+  .cover h1 .accent{
+    background:linear-gradient(92deg,#1f5eff,#0f9d6e);
+    -webkit-background-clip:text; background-clip:text;
+    -webkit-text-fill-color:transparent; color:transparent;
+  }
+  .cover .sub{
+    margin:14px 0 0;
+    font-size:17px; color:var(--ink-2);
+    max-width:640px;
+  }
+  .cover .meta{
+    margin-top:30px; padding-top:22px; border-top:1px dashed var(--line);
+    display:flex; flex-wrap:wrap; gap:10px 34px;
+    font-size:14px; color:var(--muted);
+  }
+  .cover .meta b{color:var(--ink-2); font-weight:600;}
+
+  .body{padding:8px 56px 80px;}
+
+  h2{
+    margin:64px 0 8px;
+    font-size:27px; font-weight:800; letter-spacing:-.01em;
+    color:#121722;
+    display:flex; align-items:center; gap:14px;
+    scroll-margin-top:20px;
+  }
+  h2 .num{
+    flex:0 0 auto;
+    width:42px; height:42px; border-radius:11px;
+    display:inline-flex; align-items:center; justify-content:center;
+    font-size:18px; font-weight:800;
+    color:#fff;
+    background:linear-gradient(150deg,#2f6bff,#1f5eff);
+    box-shadow:0 6px 16px rgba(31,94,255,.28);
+  }
+  h2 + .lead{
+    margin:0 0 26px 56px;
+    font-size:14.5px; color:var(--muted);
+  }
+
+  h3{
+    margin:44px 0 14px;
+    font-size:20px; font-weight:700; color:#121722;
+    padding-left:13px; border-left:4px solid var(--brand);
+    line-height:1.4;
+    scroll-margin-top:20px;
+  }
+  h4{
+    margin:28px 0 10px;
+    font-size:16.5px; font-weight:700; color:var(--ink-2);
+  }
+  h4::before{
+    content:"";
+    display:inline-block; width:6px; height:6px; border-radius:2px;
+    background:var(--brand); margin-right:9px; vertical-align:2px;
+  }
+  p{margin:12px 0; color:var(--ink-2);}
+  strong{color:#121722; font-weight:700;}
+  .em{color:var(--brand); font-weight:700;}
+  code{
+    font-family:"JetBrains Mono","Cascadia Mono",Consolas,monospace;
+    background:#f2f4f8; border:1px solid var(--line);
+    padding:1px 6px; border-radius:5px; font-size:.9em; color:#33405c;
+  }
+
+  ul,ol{margin:12px 0; padding-left:26px; color:var(--ink-2);}
+  li{margin:7px 0;}
+  li::marker{color:var(--brand); font-weight:600;}
+
+  .toc{
+    margin:34px 0 0;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:linear-gradient(180deg,#fbfcff,#ffffff);
+    padding:24px 28px;
+  }
+  .toc h5{
+    margin:0 0 14px; font-size:13px; letter-spacing:.16em;
+    color:var(--muted); font-weight:700; text-transform:uppercase;
+  }
+  .toc ol{margin:0; padding:0; list-style:none; counter-reset:toc;}
+  .toc li{
+    counter-increment:toc;
+    display:flex; align-items:baseline; gap:10px;
+    padding:7px 0; border-bottom:1px dashed var(--line-2);
+    font-size:15px;
+  }
+  .toc li:last-child{border-bottom:none;}
+  .toc li::before{
+    content:counter(toc,decimal-leading-zero);
+    font-size:12px; font-weight:700; color:var(--brand);
+    font-variant-numeric:tabular-nums;
+    flex:0 0 auto;
+  }
+  .toc a{color:var(--ink-2); text-decoration:none;}
+  .toc a:hover{color:var(--brand);}
+
+  .box{
+    margin:20px 0;
+    border-radius:var(--radius);
+    padding:18px 22px 18px 22px;
+    border:1px solid;
+    border-left-width:5px;
+    position:relative;
+  }
+  .box > .tag{
+    display:inline-flex; align-items:center; gap:7px;
+    font-size:12.5px; font-weight:800; letter-spacing:.08em;
+    margin-bottom:10px;
+    padding:2px 10px; border-radius:6px;
+  }
+  .box p:first-of-type{margin-top:0;}
+  .box p:last-child{margin-bottom:0;}
+
+  .lv-hard{ color:#c2410c; font-weight:900; letter-spacing:.04em; }
+
+  .def  {background:var(--def-bg);   border-color:var(--def-line);   border-left-color:var(--def);}
+  .def  .tag{background:#dfe9ff; color:#1a4fd6;}
+  .proof{background:var(--proof-bg); border-color:var(--proof-line); border-left-color:var(--proof);}
+  .proof .tag{background:#d6f4e7; color:#0b7a56;}
+  .eg   {background:var(--eg-bg);    border-color:var(--eg-line);    border-left-color:var(--eg);}
+  .eg   .tag{background:#fbeccd; color:#9a5c05;}
+  .warn {background:var(--warn-bg);  border-color:var(--warn-line);  border-left-color:var(--warn);}
+  .warn .tag{background:#fadada; color:#b32a2a;}
+  .tip  {background:var(--tip-bg);   border-color:var(--tip-line);   border-left-color:var(--tip);}
+  .tip  .tag{background:#e8dcfb; color:#5f36ad;}
+
+  .steps{counter-reset:st; margin:14px 0; padding:0; list-style:none;}
+  .steps > li{
+    counter-increment:st;
+    position:relative;
+    padding:0 0 0 44px;
+    margin:14px 0;
+  }
+  .steps > li::before{
+    content:counter(st);
+    position:absolute; left:0; top:2px;
+    width:26px; height:26px; border-radius:8px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:13px; font-weight:800; color:#fff;
+    background:#8fa9e6;
+  }
+  .steps > li::after{
+    content:""; position:absolute; left:13px; top:32px; bottom:-14px;
+    width:1.5px; background:var(--line);
+  }
+  .steps > li:last-child::after{display:none;}
+
+  .formula{
+    margin:18px 0;
+    padding:16px 22px;
+    background:#fafbfe;
+    border:1px dashed var(--def-line);
+    border-radius:10px;
+    text-align:center;
+    overflow-x:auto;
+  }
+  .formula .cap{
+    display:block; text-align:left;
+    font-size:12.5px; font-weight:700; color:var(--brand);
+    letter-spacing:.06em; margin-bottom:6px;
+  }
+
+  .tbl-wrap{overflow-x:auto; margin:20px 0;}
+  table{
+    width:100%; border-collapse:collapse;
+    font-size:14.5px;
+    border:1px solid var(--line);
+    border-radius:10px;
+    overflow:hidden;
+  }
+  th,td{
+    padding:11px 14px; text-align:left;
+    border-bottom:1px solid var(--line-2);
+    vertical-align:top;
+  }
+  thead th{
+    background:#f4f7fd;
+    color:#1a2540; font-weight:700; font-size:13.5px;
+    border-bottom:1px solid var(--line);
+    white-space:nowrap;
+  }
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fcfdff;}
+
+  .map{
+    margin:26px 0;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    gap:14px;
+  }
+  .map .node{
+    border:1px solid var(--line);
+    border-radius:11px;
+    padding:16px 18px;
+    background:linear-gradient(180deg,#fbfcff,#fff);
+  }
+  .map .node b{
+    display:block; font-size:14.5px; color:#121722;
+    margin-bottom:8px; padding-bottom:8px;
+    border-bottom:1px solid var(--line-2);
+  }
+  .map .node span{
+    display:block; font-size:13px; color:var(--muted); line-height:1.75;
+  }
+
+  .chain{
+    margin:24px 0;
+    padding:20px 22px;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:linear-gradient(180deg,#fbfcff,#fff);
+    text-align:center;
+    font-size:14.5px;
+    line-height:2.2;
+    color:var(--ink-2);
+    overflow-x:auto;
+  }
+  .chain .step{
+    display:inline-block;
+    padding:5px 14px;
+    margin:3px 2px;
+    border-radius:8px;
+    background:#eef3ff;
+    border:1px solid var(--def-line);
+    color:#1a4fd6;
+    font-weight:700;
+    white-space:nowrap;
+  }
+  .chain .step.alt{
+    background:#f0fbf6; border-color:var(--proof-line); color:#0b7a56;
+  }
+  .chain .arrow{
+    display:inline-block;
+    margin:0 4px;
+    color:var(--muted);
+    font-weight:700;
+  }
+  .chain .note{
+    display:block;
+    margin-top:10px;
+    font-size:12.5px;
+    color:var(--muted);
+    line-height:1.7;
+    text-align:left;
+  }
+
+  .foot{
+    margin-top:70px; padding-top:24px;
+    border-top:1px solid var(--line);
+    font-size:13px; color:var(--muted);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  }
+
+  .print-btn{
+    position:fixed; right:26px; bottom:26px; z-index:50;
+    background:linear-gradient(150deg,#2f6bff,#1f5eff); color:#fff;
+    border:none; border-radius:999px;
+    padding:12px 22px; font-size:14px; font-weight:700;
+    cursor:pointer; font-family:inherit;
+    box-shadow:0 8px 24px rgba(31,94,255,.32);
+  }
+  .print-btn:hover{filter:brightness(1.06);}
+
+  @media print{
+    body{background:#fff; font-size:11.5pt; line-height:1.7;}
+    .page{box-shadow:none; max-width:none;}
+    .cover{padding:0 0 22px; background:#fff; border-bottom:2px solid #1f5eff;}
+    .cover h1{font-size:26pt;}
+    .body{padding:0;}
+    .print-btn{display:none;}
+    h2{margin-top:26px; font-size:16pt; break-after:avoid; page-break-after:avoid;}
+    h3{break-after:avoid; page-break-after:avoid; font-size:13pt;}
+    .box,.formula,.tbl-wrap,table,.map .node,.chain{break-inside:avoid; page-break-inside:avoid;}
+    .eg{break-inside:auto;}
+    a{color:inherit; text-decoration:none;}
+  }
+  @media (max-width:720px){
+    .cover{padding:40px 24px 34px;}
+    .cover h1{font-size:30px;}
+    .body{padding:8px 24px 60px;}
+    h2{font-size:22px;} h2 .num{width:36px;height:36px;font-size:16px;}
+    h2 + .lead{margin-left:50px;}
+    .print-btn{right:14px; bottom:14px;}
+  }
+
+  /* ==================== 公式加载失败提示 ==================== */
+  .mathjax-warn{
+    display:none;
+    margin:0;
+    padding:12px 20px;
+    background:#fff5f5;
+    border-bottom:1px solid #f8cfcf;
+    color:#b32a2a;
+    font-size:13.5px;
+    line-height:1.7;
+  }
+  .mathjax-warn b{color:#8f1f1f;}
+
+  /* ==================== 左侧固定导航 ==================== */
+  .sidenav{ display:none; }
+  @media (min-width:1321px){
+    body{ padding-left:268px; }
+    .sidenav{
+      display:block;
+      position:fixed; top:0; left:0; bottom:0;
+      width:268px;
+      overflow-y:auto;
+      background:#fbfcfe;
+      border-right:1px solid var(--line);
+      padding:22px 0 44px;
+      z-index:40;
+      scrollbar-width:thin;
+    }
+    .sidenav::-webkit-scrollbar{ width:6px; }
+    .sidenav::-webkit-scrollbar-thumb{ background:#d7dde8; border-radius:3px; }
+  }
+  .sidenav-title{
+    font-size:11.5px; letter-spacing:.18em; font-weight:700;
+    color:var(--muted); text-transform:uppercase;
+    padding:0 20px 12px;
+    border-bottom:1px solid var(--line);
+    margin-bottom:10px;
+  }
+  .sidenav a{
+    display:block; text-decoration:none;
+    color:var(--ink-2);
+    border-left:3px solid transparent;
+    transition:background .15s, color .15s, border-color .15s;
+  }
+  .sidenav a.nav-l1{
+    font-size:13.5px; font-weight:700; color:#1a2540;
+    padding:8px 18px 8px 17px;
+    margin-top:6px;
+    line-height:1.5;
+  }
+  .sidenav a.nav-l1 .n{
+    display:inline-block; min-width:15px;
+    color:var(--brand); font-weight:800; margin-right:7px;
+  }
+  .sidenav a.nav-l2{
+    font-size:12.5px; color:var(--muted);
+    padding:5px 18px 5px 30px;
+    line-height:1.55;
+  }
+  .sidenav a:hover{ background:#eef3ff; color:var(--brand); }
+  .sidenav a.active{
+    background:#eef3ff; color:var(--brand);
+    border-left-color:var(--brand); font-weight:700;
+  }
+
+  @media print{
+    .sidenav{ display:none !important; }
+    body{ padding-left:0 !important; }
+  }
+</style>
+</head>
+<body>
+<aside class="sidenav" aria-label="目录导航">
+  <div class="sidenav-title">目录</div>
+  <a class="nav-l1" href="#ch0"><span class="n">0</span>写在前面：概率统计的三级台阶</a>
+  <a class="nav-l1" href="#ch1"><span class="n">1</span>计数原理</a>
+  <a class="nav-l2" href="#ch1-1">1.1　两个基本原理</a>
+  <a class="nav-l2" href="#ch1-2">1.2　排列与排列数</a>
+  <a class="nav-l2" href="#ch1-3">1.3　组合与组合数</a>
+  <a class="nav-l2" href="#ch1-4">1.4　二项式定理</a>
+  <a class="nav-l1" href="#ch2"><span class="n">2</span>古典概型与事件的关系</a>
+  <a class="nav-l2" href="#ch2-1">2.1　古典概型</a>
+  <a class="nav-l2" href="#ch2-2">2.2　事件的关系与运算</a>
+  <a class="nav-l1" href="#ch3"><span class="n">3</span>条件概率与全概率公式</a>
+  <a class="nav-l2" href="#ch3-1">3.1　条件概率</a>
+  <a class="nav-l2" href="#ch3-2">3.2　全概率公式</a>
+  <a class="nav-l2" href="#ch3-3">3.3　独立重复试验与二项分布</a>
+  <a class="nav-l1" href="#ch4"><span class="n">4</span>随机变量及其分布</a>
+  <a class="nav-l2" href="#ch4-1">4.1　离散型随机变量及其分布列</a>
+  <a class="nav-l2" href="#ch4-2">4.2　四种常见分布</a>
+  <a class="nav-l1" href="#ch5"><span class="n">5</span>期望与方差</a>
+  <a class="nav-l2" href="#ch5-1">5.1　期望</a>
+  <a class="nav-l2" href="#ch5-2">5.2　方差</a>
+  <a class="nav-l2" href="#ch5-3">5.3　期望与方差的性质</a>
+  <a class="nav-l1" href="#ch6"><span class="n">6</span>统计</a>
+  <a class="nav-l2" href="#ch6-1">6.1　抽样方法</a>
+  <a class="nav-l2" href="#ch6-2">6.2　用样本估计总体</a>
+  <a class="nav-l2" href="#ch6-3">6.3　线性回归</a>
+  <a class="nav-l2" href="#ch6-4">6.4　独立性检验</a>
+  <a class="nav-l1" href="#ch7"><span class="n">7</span>易错点清单、知识地图与自测</a>
+  <a class="nav-l2" href="#ch7-1">7.1　易错点清单</a>
+  <a class="nav-l2" href="#ch7-2">7.2　知识地图</a>
+  <a class="nav-l2" href="#ch7-3">7.3　自测清单</a>
+  <a class="nav-l1" href="#ch8"><span class="n">8</span>高考真题题型精讲（2016—2025）</a>
+  <a class="nav-l2" href="#ch8-1">8.1　题型一：独立性检验</a>
+  <a class="nav-l2" href="#ch8-2">8.2　题型二：分布列与期望</a>
+  <a class="nav-l2" href="#ch8-3">8.3　题型三：概率递推（新高考热点）</a>
+  <a class="nav-l2" href="#ch8-4">8.4　提分要点总结</a>
+</aside>
+<div class="mathjax-warn" id="mathjax-warn">
+  <b>公式未加载成功。</b>本讲义的数学公式依赖 MathJax 在线渲染，需要联网。
+  当前网络可能不通或 CDN 被拦截，页面上显示的 <code>\( ... \)</code> 是公式源码，不是排版后的样子。
+  请联网后刷新页面；<b>另外，打印或另存 PDF 前请确认公式已正常显示</b>，否则导出的文件里会是源码。
+</div>
+
+<div class="page">
+
+  <header class="cover">
+    <div class="kicker">高考数学 · 重点章节梳理</div>
+    <h1>第六册　<span class="accent">概率统计</span></h1>
+    <p class="sub">面向基础薄弱同学的「慢速精讲版」——把"该用加法还是乘法""该用排列还是组合"这些最容易混的地方，逐条讲清判据。</p>
+    <div class="meta">
+      <div><b>适用</b>　高三一轮复习 / 高二同步巩固</div>
+      <div><b>核心主线</b>　怎么数 → 怎么算概率 → 怎么描述随机变量</div>
+      <div><b>建议课时</b>　10 ~ 12 讲</div>
+    </div>
+
+    <nav class="toc">
+      <h5>目录</h5>
+      <ol>
+        <li><a href="#ch0">写在前面：概率统计的三级台阶</a></li>
+        <li><a href="#ch1">计数原理（两个原理、排列组合、二项式定理）</a></li>
+        <li><a href="#ch2">古典概型与事件的关系（互斥、对立、独立）</a></li>
+        <li><a href="#ch3">条件概率与全概率公式</a></li>
+        <li><a href="#ch4">随机变量及其分布（分布列、四种常见分布）</a></li>
+        <li><a href="#ch5">期望与方差（含二项分布期望的推导）</a></li>
+        <li><a href="#ch6">统计（抽样、线性回归、独立性检验）</a></li>
+        <li><a href="#ch7">易错点清单、知识地图与自测</a></li>
+      <li><a href="#ch8">高考真题题型精讲（2016—2025）</a></li>
+      </ol>
+    </nav>
+  </header>
+
+  <main class="body">
+
+  <!-- ==================== 第 0 章 ==================== -->
+  <h2 id="ch0"><span class="num">0</span>写在前面：概率统计的三级台阶</h2>
+  <p class="lead">这一章公式不算多，但"该用哪个"特别容易混。搞清楚三级台阶，就有判断依据了。</p>
+
+  <div class="chain">
+    <span class="step">第一级：怎么数</span>
+    <span class="arrow">→</span>
+    <span class="step alt">第二级：怎么算概率</span>
+    <span class="arrow">→</span>
+    <span class="step">第三级：怎么描述随机变量</span>
+    <span class="note"><strong>第一级（第 1 章）：</strong>把"有多少种可能"数清楚。用加法还是乘法？用排列还是组合？<br>
+    <strong>第二级（第 2、3 章）：</strong>把"数出来的结果"变成概率。互斥用加法，独立用乘法，有条件用条件概率。<br>
+    <strong>第三级（第 4、5 章）：</strong>用"分布列"完整描述一个随机变量，再用期望、方差概括它的特征。</span>
+  </div>
+
+  <div class="map">
+    <div class="node">
+      <b>计数（第 1 章）</b>
+      <span><strong>加法</strong>原理：分类，每类都能独立完成<br><strong>乘法</strong>原理：分步，每步只做一部分<br>排列计顺序，组合不计顺序</span>
+    </div>
+    <div class="node">
+      <b>概率（第 2、3 章）</b>
+      <span>古典概型：\(P=\dfrac{\text{有利结果数}}{\text{总结果数}}\)<br>互斥加、对立减、独立乘<br>条件概率会"缩小样本空间"</span>
+    </div>
+    <div class="node">
+      <b>随机变量（第 4、5 章）</b>
+      <span>分布列：列出所有取值和概率<br>期望 = 加权平均<br>方差 = 波动大小</span>
+    </div>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">学法建议</span>
+    <ol>
+      <li><strong>先判断"是什么类型"，再动笔。</strong>这一章最大的坑不是算错，而是<strong>用错了模型</strong>。第 4.2 节专门做了"二项分布 vs 超几何分布"的对照表。</li>
+      <li><strong>期望和方差的定义式要理解，不要只背公式。</strong>理解"期望是加权平均"这句话，很多性质就能自己推出来。</li>
+      <li><strong>统计部分（第 6 章）计算量大但套路固定</strong>，属于"送分题"，一定要练熟。线性回归和独立性检验的公式都要能默写。</li>
+    </ol>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">先破除两个常见误解</span>
+    <ul>
+      <li><strong>"互斥"和"独立"是完全不同的两件事。</strong>互斥是"不能同时发生"，独立是"一个发生不影响另一个发生的概率"。<strong>两个互斥的非零概率事件，一定不独立</strong>（因为一个发生了，另一个就绝不可能发生，这当然是"影响"）。</li>
+      <li><strong>"不放回"和"放回"决定了用哪个分布。</strong>有放回 → 二项分布；不放回 → 超几何分布。这是选择题的常见陷阱。</li>
+    </ul>
+  </div>
+
+    <div class="box tip">
+    <span class="tag">第 8 章真题的难度分级（基础生必读）</span>
+    <p>第 8 章按<strong>题型</strong>编排，每种题型内部的题目<strong>由易到难</strong>。其中标注 <span class="lv-hard">★★</span> 的是<strong>压轴档</strong>——需要同时用好几个工具，计算量也大。</p>
+    <ul>
+      <li><strong>第一遍复习：先跳过 ★★ 题。</strong>把没有标记的题做熟，它们已经覆盖了绝大部分考分。</li>
+      <li><strong>冲刺阶段：再回头攻 ★★ 题。</strong>此时基本功已经扎实，做起来会顺很多。</li>
+      <li><strong>即使暂时做不出来，也建议把 ★★ 题的解答读一遍。</strong>每道题后面的「提分要点」都讲清了"思路是怎么想到的"，这对提分很有用。</li>
+    </ul>
+  </div>
+
+<!-- ==================== 第 1 章 ==================== -->
+  <h2 id="ch1"><span class="num">1</span>计数原理</h2>
+  <p class="lead">这一章是"数数"的技术。核心是分清"分类"和"分步"。</p>
+
+  <h3 id="ch1-1">1.1　两个基本原理</h3>
+
+  <div class="box def">
+    <span class="tag">分类加法计数原理</span>
+    <p>完成一件事有 \(n\) 类<strong>不同</strong>的办法，第 1 类有 \(m_1\) 种方法，第 2 类有 \(m_2\) 种方法，……，第 \(n\) 类有 \(m_n\) 种方法，那么完成这件事共有</p>
+    <div class="formula">\[ N=m_1+m_2+\cdots+m_n \]</div>
+    <p>种不同方法。</p>
+    <p><strong>关键特征：</strong>每一类办法<strong>单独就能完成整件事</strong>。做完任意一类，事情就结束了。</p>
+  </div>
+
+  <div class="box def">
+    <span class="tag">分步乘法计数原理</span>
+    <p>完成一件事需要 \(n\) 个<strong>步骤</strong>，做第 1 步有 \(m_1\) 种方法，做第 2 步有 \(m_2\) 种方法，……，做第 \(n\) 步有 \(m_n\) 种方法，那么完成这件事共有</p>
+    <div class="formula">\[ N=m_1\times m_2\times\cdots\times m_n \]</div>
+    <p>种不同方法。</p>
+    <p><strong>关键特征：</strong>每一步只完成<strong>一部分</strong>，必须<strong>所有步骤都做完</strong>，事情才算完成。</p>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">★ 怎么判断用加法还是乘法（一句话判据）</span>
+    <p><strong>问自己：做完其中一种（或一步），事情完成了吗？</strong></p>
+    <ul>
+      <li><strong>完成了 → 用加法。</strong>因为这些办法是"并列的"，任选其一都行。</li>
+      <li><strong>没完成 → 用乘法。</strong>因为这些步骤是"串联的"，必须全做完。</li>
+    </ul>
+    <p><strong>口诀：分类用加法，分步用乘法。</strong></p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 1（加法与乘法的判断）</span>
+    <p>(1) 从甲地到乙地，可以坐火车（3 班次）、坐汽车（4 班次）或坐飞机（2 班次）。问共有多少种不同的走法？</p>
+    <p>(2) 从甲地到乙地有 3 条路，从乙地到丙地有 4 条路。问从甲地经乙地到丙地共有多少种不同走法？</p>
+
+    <h4>解析</h4>
+    <p><strong>(1)</strong> 判断：无论选火车、汽车还是飞机，<strong>都能直接从甲地到乙地</strong>，事情完成了。所以是<strong>分类</strong>问题，用加法：</p>
+    <div class="formula">\[ N=3+4+2=9 \]</div>
+
+    <p><strong>(2)</strong> 判断：只从甲地到乙地，<strong>事情还没完</strong>，还得继续走到丙地。所以是<strong>分步</strong>问题，用乘法：</p>
+    <div class="formula">\[ N=3\times4=12 \]</div>
+
+    <p><strong>对比总结：</strong>第 (1) 问里，"选火车"本身就完成了任务；第 (2) 问里，"从甲到乙"只是第一步。<strong>这个区别就是加法与乘法的分界线。</strong></p>
+  </div>
+
+  <h3 id="ch1-2">1.2　排列与排列数</h3>
+
+  <div class="box def">
+    <span class="tag">定义</span>
+    <p>从 \(n\) 个不同元素中取出 \(m\)（\(m\le n\)）个元素，按照<strong>一定的顺序</strong>排成一列，叫做从 \(n\) 个不同元素中取出 \(m\) 个元素的一个<strong>排列</strong>。所有不同排列的个数叫做<strong>排列数</strong>，记作 \(A_n^m\)。</p>
+    <p><strong>关键：排列是"计顺序"的。</strong>选出 \((a,b)\) 和 \((b,a)\) 是<strong>两个不同</strong>的排列。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导：排列数公式</span>
+    <p><strong>用分步乘法原理。</strong>想象有 \(m\) 个"位置"要填，每个位置放一个元素。</p>
+    <ol class="steps">
+      <li><strong>填第 1 个位置：</strong>\(n\) 个元素都还没用，有 \(n\) 种选法。</li>
+      <li><strong>填第 2 个位置：</strong>已经用掉 1 个，剩 \(n-1\) 个，有 \(n-1\) 种选法。</li>
+      <li><strong>填第 3 个位置：</strong>剩 \(n-2\) 个，有 \(n-2\) 种选法。</li>
+      <li>……</li>
+      <li><strong>填第 \(m\) 个位置：</strong>前面用掉了 \(m-1\) 个，剩 \(n-(m-1)=n-m+1\) 个，有 \(n-m+1\) 种选法。</li>
+    </ol>
+    <p>由分步乘法原理，把这些数乘起来：</p>
+    <div class="formula">
+      \[ \boxed{\ A_n^m=n(n-1)(n-2)\cdots(n-m+1)\ } \]
+    </div>
+    <p>这个式子从 \(n\) 开始，一共写了 \(m\) 个数连乘（每次减 1）。</p>
+
+    <p><strong>写成阶乘形式：</strong>在末尾补上 \((n-m)!\) 就能凑成 \(n!\)：</p>
+    <div class="formula">
+      \[ A_n^m=\frac{n(n-1)\cdots(n-m+1)\cdot(n-m)!}{(n-m)!}=\frac{n!}{(n-m)!} \]
+    </div>
+
+    <p><strong>特殊情况：</strong>当 \(m=n\) 时，就是把 \(n\) 个元素全部排列（称为"全排列"）：</p>
+    <div class="formula">
+      \[ A_n^n=n(n-1)(n-2)\cdots2\cdot1=n! \]
+    </div>
+    <p>另外规定 \(0!=1\)（这样公式在 \(m=n\) 时也成立）。</p>
+
+    <p><strong>验算：</strong>取 \(n=4\)、\(m=2\)。按公式 \(A_4^2=4\times3=12\)。手工验证：从 \(\{1,2,3,4\}\) 中选 2 个排列，共 \(12\) 个 ✓。</p>
+  </div>
+
+  <h3 id="ch1-3">1.3　组合与组合数</h3>
+
+  <div class="box def">
+    <span class="tag">定义</span>
+    <p>从 \(n\) 个不同元素中取出 \(m\)（\(m\le n\)）个元素<strong>合成一组</strong>，叫做从 \(n\) 个不同元素中取出 \(m\) 个元素的一个<strong>组合</strong>。所有不同组合的个数叫做<strong>组合数</strong>，记作 \(C_n^m\)。</p>
+    <p><strong>关键：组合是"不计顺序"的。</strong>选出 \(\{a,b\}\) 和 \(\{b,a\}\) 是<strong>同一个</strong>组合。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导：组合数公式（用"先选后排"）</span>
+    <p><strong>核心想法：把"排列"拆成"先组合，再内部排列"两步。</strong></p>
+
+    <p><strong>第一步：把同一件事用两种方式数。</strong></p>
+    <p>考虑"从 \(n\) 个元素中取出 \(m\) 个并排成一列"这件事：</p>
+    <ul>
+      <li><strong>方式一：</strong>直接算，就是排列数 \(A_n^m\)。</li>
+      <li><strong>方式二：</strong>分两步做——<strong>先选出</strong> \(m\) 个元素（有 \(C_n^m\) 种选法），<strong>再把这 \(m\) 个元素内部排列</strong>（有 \(A_m^m\) 种排法）。由分步乘法原理，共 \(C_n^m\times A_m^m\) 种。</li>
+    </ul>
+    <p>两种方式数的是同一件事，所以结果相等：</p>
+    <div class="formula">\[ A_n^m=C_n^m\times A_m^m \]</div>
+
+    <p><strong>第二步：解出 \(C_n^m\)。</strong></p>
+    <div class="formula">
+      \[ \boxed{\ C_n^m=\frac{A_n^m}{A_m^m}=\frac{n(n-1)\cdots(n-m+1)}{m!}=\frac{n!}{m!\,(n-m)!}\ } \]
+    </div>
+    <p><strong>这个推导的思路要记住：</strong>"先选后排"是处理排列组合问题的常用拆解方式。</p>
+
+    <p><strong>验算：</strong>取 \(n=4\)、\(m=2\)。\(C_4^2=\dfrac{4\times3}{2\times1}=6\)。手工验证：从 \(\{1,2,3,4\}\) 中选 2 个，有 \(\{1,2\},\{1,3\},\{1,4\},\{2,3\},\{2,4\},\{3,4\}\) 共 6 个 ✓。</p>
+    <p>再看 \(A_4^2=12=6\times2=C_4^2\times A_2^2\) ✓ 符合"先选后排"的关系。</p>
+  </div>
+
+  <div class="box def">
+    <span class="tag">组合数的两条重要性质</span>
+    <p><strong>性质一（对称性）：</strong></p>
+    <div class="formula">\[ C_n^m=C_n^{\,n-m} \]</div>
+    <p><strong>为什么？</strong>"选出 \(m\) 个"和"留下 \(n-m\) 个"是<strong>同一件事的两种说法</strong>——你选了哪 \(m\) 个，剩下的就是那 \(n-m\) 个；反之亦然。所以两者一一对应，数量相等。</p>
+    <p><strong>用途：</strong>当 \(m>\dfrac n2\) 时，用 \(C_n^{\,n-m}\) 计算会快很多。比如 \(C_{10}^8=C_{10}^2=45\)。</p>
+
+    <p style="margin-top:16px;"><strong>性质二（递推性）：</strong></p>
+    <div class="formula">\[ C_n^m+C_n^{\,m-1}=C_{n+1}^{\,m} \]</div>
+    <p><strong>为什么？</strong>看第 \(n+1\) 个元素（新加进来的那个）：</p>
+    <ul>
+      <li>从 \(n+1\) 个里选 \(m\) 个，可以分成两类：<strong>选了新元素</strong>（还需从原来 \(n\) 个里选 \(m-1\) 个，有 \(C_n^{m-1}\) 种）和<strong>没选新元素</strong>（从原来 \(n\) 个里选 \(m\) 个，有 \(C_n^m\) 种）。</li>
+      <li>由分类加法原理，两类相加即得。</li>
+    </ul>
+    <p>这正是"杨辉三角"中每个数等于它上方两数之和的来源。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 2（排列还是组合？）</span>
+    <p>从 5 名男生、4 名女生中选 3 人组成小组。</p>
+    <p>(1) 任选 3 人，有多少种选法？</p>
+    <p>(2) 恰好 2 名男生 1 名女生，有多少种选法？</p>
+    <p>(3) 至少有 1 名女生，有多少种选法？</p>
+
+    <h4>解析</h4>
+    <p><strong>关键判断：</strong>题目说的是"组成小组"，小组<strong>不讲究顺序</strong>，所以用<strong>组合</strong>。</p>
+
+    <p><strong>(1)</strong> 从 9 人中任选 3 人：</p>
+    <div class="formula">
+      \[ C_9^3=\frac{9\times8\times7}{3\times2\times1}=\frac{504}{6}=84 \]
+    </div>
+
+    <p><strong>(2)</strong> 分两步：先从 5 名男生中选 2 人，再从 4 名女生中选 1 人。<strong>用乘法</strong>（两步都做完才算完成）：</p>
+    <div class="formula">
+      \[ C_5^2\times C_4^1=\frac{5\times4}{2\times1}\times4=10\times4=40 \]
+    </div>
+
+    <p><strong>(3)</strong> "至少有 1 名女生"直接算要分三种情况（1 女 2 男、2 女 1 男、3 女），比较麻烦。</p>
+    <p><strong>用"对立事件"的思路：</strong>先算"全是男生"的情况，再用总数减去它。</p>
+    <div class="formula">
+      \[ \text{全是男生}=C_5^3=\frac{5\times4\times3}{3\times2\times1}=10 \]
+    </div>
+    <div class="formula">
+      \[ \text{至少 1 女}=C_9^3-C_5^3=84-10=74 \]
+    </div>
+
+    <p><strong>验算（用分类法对照）：</strong></p>
+    <ul>
+      <li>1 女 2 男：\(C_4^1\times C_5^2=4\times10=40\)</li>
+      <li>2 女 1 男：\(C_4^2\times C_5^1=6\times5=30\)</li>
+      <li>3 女：\(C_4^3=C_4^1=4\)</li>
+      <li>合计：\(40+30+4=74\) ✓ 与"总数减去全是男生"的结果一致。</li>
+    </ul>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">"至少"类问题的通用技巧</span>
+      <p>看到"<strong>至少</strong>""<strong>至多</strong>"，优先考虑用<strong>对立面</strong>做减法：</p>
+      <div class="formula">\[ \text{至少 1 个} = \text{总数} - \text{一个都没有} \]</div>
+      <p>这样往往能把"三种情况相加"变成"一次减法"，大幅减少计算量，也减少出错机会。</p>
+    </div>
+  </div>
+
+  <h3 id="ch1-4">1.4　二项式定理</h3>
+
+  <div class="formula">
+    <span class="cap">二项式定理</span>
+    \[ (a+b)^{n}=C_n^0a^{n}+C_n^1a^{n-1}b+C_n^2a^{n-2}b^{2}+\cdots+C_n^{\,n}b^{n} \]
+  </div>
+
+  <div class="box proof">
+    <span class="tag">★ 推导：展开式的系数是怎么来的</span>
+    <p><strong>第一步：把乘方还原成连乘。</strong></p>
+    <div class="formula">
+      \[ (a+b)^{n}=\underbrace{(a+b)(a+b)\cdots(a+b)}_{n\ \text{个括号}} \]
+    </div>
+
+    <p><strong>第二步：想清楚"展开"这个动作在做什么。</strong></p>
+    <p>要展开这个乘积，就要<strong>从每一个括号里各挑一个字母</strong>（挑 \(a\) 或挑 \(b\)），然后把挑出来的字母乘起来，最后把所有可能的挑法加起来。</p>
+    <p>比如 \(n=2\) 时，展开 \((a+b)(a+b)\) 需要从两个括号里各挑一个，共有 \(2\times2=4\) 种挑法：</p>
+    <ul>
+      <li>都挑 \(a\)：得到 \(a\cdot a=a^2\)</li>
+      <li>第 1 个挑 \(a\)、第 2 个挑 \(b\)：得到 \(ab\)</li>
+      <li>第 1 个挑 \(b\)、第 2 个挑 \(a\)：得到 \(ba=ab\)</li>
+      <li>都挑 \(b\)：得到 \(b\cdot b=b^2\)</li>
+    </ul>
+    <p>合并同类项：\(a^2+2ab+b^2\) ✓ 与 \((a+b)^2=a^2+2ab+b^2\) 一致。</p>
+
+    <p><strong>第三步：推广到一般情形，数一数有多少种挑法得到 \(a^{n-k}b^k\)。</strong></p>
+    <p>要得到 \(a^{n-k}b^k\)，需要：<strong>在 \(n\) 个括号中挑出 \(k\) 个来选 \(b\)</strong>（剩下的 \(n-k\) 个自动选 \(a\)）。</p>
+    <p>而"从 \(n\) 个括号中挑出 \(k\) 个"的方案数，就是组合数 \(C_n^k\)（因为只关心挑哪几个，不关心挑的顺序）。</p>
+
+    <p><strong>第四步：写出结论。</strong>把 \(k\) 从 \(0\) 到 \(n\) 累加：</p>
+    <div class="formula">
+      \[ \boxed{\ (a+b)^{n}=\sum_{k=0}^{n}C_n^k\,a^{\,n-k}b^{\,k}\ } \]
+    </div>
+    <p><strong>这就是二项式定理的全部来源</strong>——它本质上是在数"有多少种挑法"。</p>
+  </div>
+
+  <div class="box def">
+    <span class="tag">通项公式</span>
+    <p>展开式的第 \(k+1\) 项（注意下标从 1 开始，对应组合数的下标是 \(k\)）：</p>
+    <div class="formula">
+      \[ \boxed{\ T_{k+1}=C_n^k\,a^{\,n-k}b^{\,k}\qquad(k=0,1,2,\dots,n)\ } \]
+    </div>
+    <p><strong>★ 注意下标差 1：</strong>第 1 项对应 \(k=0\)，第 2 项对应 \(k=1\)，……，第 \(k+1\) 项对应 \(k\)。<strong>这是最容易写错的地方。</strong></p>
+    <p><strong>用途：</strong>求"展开式中含 \(x^3\) 的项"这类问题时，直接写通项，让指数等于 3，解出 \(k\) 即可。</p>
+  </div>
+
+  <div class="box def">
+    <span class="tag">二项式系数的三条性质</span>
+    <p><strong>性质一（总和）：</strong></p>
+    <div class="formula">\[ C_n^0+C_n^1+C_n^2+\cdots+C_n^{\,n}=2^{n} \]</div>
+    <p><strong>推导：</strong>在 \((a+b)^n=\sum C_n^k a^{n-k}b^k\) 中<strong>令 \(a=b=1\)</strong>，左边变成 \((1+1)^n=2^n\)，右边变成 \(\sum C_n^k\)。∎</p>
+
+    <p style="margin-top:16px;"><strong>性质二（奇偶项系数和相等）：</strong></p>
+    <div class="formula">
+      \[ C_n^0+C_n^2+C_n^4+\cdots=C_n^1+C_n^3+C_n^5+\cdots=2^{\,n-1} \]
+    </div>
+    <p><strong>推导：</strong>令 \(a=1\)、\(b=-1\)，左边变成 \((1-1)^n=0\)，右边变成 \(C_n^0-C_n^1+C_n^2-C_n^3+\cdots=0\)。移项得"正项和 = 负项和"。再由性质一（两者之和为 \(2^n\)），得每部分都是 \(2^{n-1}\)。∎</p>
+
+    <p style="margin-top:16px;"><strong>性质三（最大值）：</strong></p>
+    <ul>
+      <li>当 \(n\) 为<strong>偶数</strong>时，中间<strong>一项</strong> \(C_n^{n/2}\) 最大；</li>
+      <li>当 \(n\) 为<strong>奇数</strong>时，中间<strong>两项</strong> \(C_n^{(n-1)/2}\) 和 \(C_n^{(n+1)/2}\) 并列最大。</li>
+    </ul>
+    <p><strong>直观理解：</strong>看杨辉三角，每一行都是"从两边往中间递增，到中间达到最大，再对称递减"。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 3（求特定项的系数）</span>
+    <p>求 \((2x-1)^{6}\) 的展开式中 \(x^{3}\) 的系数。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：写出通项。</strong>这里 \(a=2x\)、\(b=-1\)、\(n=6\)：</p>
+    <div class="formula">
+      \[ T_{k+1}=C_6^k\,(2x)^{\,6-k}\,(-1)^{k} \]
+    </div>
+
+    <p><strong>第二步：让 \(x\) 的指数等于 3。</strong></p>
+    <div class="formula">
+      \[ 6-k=3 \quad\Longrightarrow\quad k=3 \]
+    </div>
+    <p>所以是第 \(k+1=4\) 项。</p>
+
+    <p><strong>第三步：算出系数。</strong></p>
+    <div class="formula">
+      \[ T_4=C_6^3\,(2x)^{3}\,(-1)^{3}=20\times 8x^{3}\times(-1)=-160x^{3} \]
+    </div>
+    <p>（其中 \(C_6^3=\dfrac{6\times5\times4}{3\times2\times1}=20\)。）</p>
+
+    <p><strong>答案：</strong>\(x^3\) 的系数是 \(\boxed{-160}\)</p>
+
+    <p><strong>验算（检查符号）：</strong>因为 \(b=-1\)，而 \(k=3\) 是<strong>奇数</strong>，所以 \((-1)^3=-1\)，结果为负 ✓。这个符号检查很快，能避免大量错误。</p>
+  </div>
+
+  <!-- ==================== 第 2 章 ==================== -->
+  <h2 id="ch2"><span class="num">2</span>古典概型与事件的关系</h2>
+  <p class="lead">这一章的核心是"分清事件之间是什么关系"，因为不同关系对应不同的运算法则。</p>
+
+  <h3 id="ch2-1">2.1　古典概型</h3>
+
+  <div class="box def">
+    <span class="tag">定义与公式</span>
+    <p>具有以下两个特征的随机试验模型叫做<strong>古典概型</strong>：</p>
+    <ol>
+      <li><strong>有限性：</strong>试验的所有可能结果（基本事件）只有<strong>有限个</strong>；</li>
+      <li><strong>等可能性：</strong>每个基本事件发生的可能性<strong>相等</strong>。</li>
+    </ol>
+    <p>在古典概型中，事件 \(A\) 的概率为：</p>
+    <div class="formula">
+      \[ \boxed{\ P(A)=\frac{\text{事件 }A\text{ 包含的基本事件数}}{\text{基本事件总数}}=\frac mn\ } \]
+    </div>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">两个条件必须同时满足</span>
+    <p>很多同学看到"概率"就用 \(\dfrac mn\)，但这是有前提的。<strong>必须"等可能"</strong>。</p>
+    <p><strong>反例：</strong>掷一枚不均匀的硬币，正面概率 0.7、反面 0.3。这时虽然结果只有 2 个（有限），但<strong>不等可能</strong>，所以不能用 \(P=\dfrac12\) 算正面概率。</p>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">★ 用古典概型的标准三步</span>
+    <ol class="steps">
+      <li><strong>数总结果数 \(n\)：</strong>把试验的所有可能结果数清楚（通常用排列组合）。</li>
+      <li><strong>数有利结果数 \(m\)：</strong>把事件 \(A\) 包含的结果数清楚。</li>
+      <li><strong>作商：</strong>\(P(A)=\dfrac mn\)。</li>
+    </ol>
+    <p><strong>关键提醒：</strong>第 1、2 步必须用<strong>同一个标准</strong>来数。也就是说，如果总数是按"有序"数的，有利数也必须按"有序"数；反之亦然。这是最常见的错误来源。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 4（古典概型）</span>
+    <p>袋中有 3 个红球、2 个白球，这些球除颜色外完全相同。从袋中任意取出 2 个球，求恰好取到 1 个红球的概率。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：数总结果数。</strong>从 5 个球中任取 2 个，取法有：</p>
+    <div class="formula">
+      \[ n=C_5^2=\frac{5\times4}{2\times1}=10 \]
+    </div>
+
+    <p><strong>第二步：数有利结果数。</strong>"恰好 1 红 1 白"，分两步：先从 3 个红球中取 1 个，再从 2 个白球中取 1 个：</p>
+    <div class="formula">
+      \[ m=C_3^1\times C_2^1=3\times2=6 \]
+    </div>
+
+    <p><strong>第三步：作商。</strong></p>
+    <div class="formula">
+      \[ P(A)=\frac mn=\frac{6}{10}=\boxed{\frac35} \]
+    </div>
+
+    <p><strong>验算（枚举法）：</strong>把 3 个红球记为 \(R_1,R_2,R_3\)，2 个白球记为 \(W_1,W_2\)。所有 10 种取法为：</p>
+    <p>\(R_1R_2,\ R_1R_3,\ R_2R_3\)（3 种，2 红）；\(R_1W_1,\ R_1W_2,\ R_2W_1,\ R_2W_2,\ R_3W_1,\ R_3W_2\)（6 种，1 红 1 白）；\(W_1W_2\)（1 种，2 白）。</p>
+    <p>合计 \(3+6+1=10\) ✓，恰好 1 红 1 白有 6 种 ✓，概率 \(\dfrac{6}{10}=\dfrac35\) ✓。</p>
+  </div>
+
+  <h3 id="ch2-2">2.2　事件的关系与运算</h3>
+
+  <div class="box def">
+    <span class="tag">三种关键关系（★ 必须分清）</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>关系</th><th>含义</th><th>概率公式</th><th>图示理解</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>互斥事件</strong></td>
+            <td>事件 \(A\) 与 \(B\) <strong>不能同时发生</strong>，即 \(A\cap B=\varnothing\)</td>
+            <td>\(P(A\cup B)=P(A)+P(B)\)</td>
+            <td>两个圆<strong>不相交</strong></td>
+          </tr>
+          <tr>
+            <td><strong>对立事件</strong></td>
+            <td>\(A\) 与 \(B\) <strong>互斥</strong>，且 \(A\) 与 \(B\) <strong>必有一个发生</strong></td>
+            <td>\(P(A)+P(\bar A)=1\)</td>
+            <td>两个圆<strong>拼成整个样本空间</strong></td>
+          </tr>
+          <tr>
+            <td><strong>相互独立事件</strong></td>
+            <td>\(A\) 发生<strong>不影响</strong> \(B\) 发生的概率</td>
+            <td>\(P(AB)=P(A)P(B)\)</td>
+            <td>——（不是集合关系）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导：为什么互斥用加法、独立用乘法</span>
+    <p><strong>互斥用加法：</strong>在古典概型中，若 \(A\)、\(B\) 互斥，则它们包含的基本事件<strong>没有重叠</strong>。所以 \(A\cup B\) 包含的基本事件数就是 \(A\) 的加上 \(B\) 的：</p>
+    <div class="formula">
+      \[ P(A\cup B)=\frac{n(A)+n(B)}{N}=\frac{n(A)}{N}+\frac{n(B)}{N}=P(A)+P(B) \quad\checkmark \]
+    </div>
+    <p><strong>独立用乘法：</strong>由条件概率公式 \(P(B|A)=\dfrac{P(AB)}{P(A)}\)，若 \(A\) 不影响 \(B\)，则 \(P(B|A)=P(B)\)，代入得 \(P(B)=\dfrac{P(AB)}{P(A)}\)，即：</p>
+    <div class="formula">
+      \[ P(AB)=P(A)P(B) \quad\checkmark \]
+    </div>
+    <p>（更详细的条件概率推导见第 3 章。）</p>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">★ 最容易错的一条：互斥 ≠ 独立</span>
+    <p>很多同学把这两个概念混为一谈，因为它们都涉及"两个事件"。</p>
+    <p><strong>它们的区别：</strong></p>
+    <ul>
+      <li><strong>互斥</strong>说的是"能不能同时发生"（是<strong>集合关系</strong>）。</li>
+      <li><strong>独立</strong>说的是"一个发生会不会改变另一个的概率"（是<strong>概率关系</strong>）。</li>
+    </ul>
+    <p><strong>一个重要结论：</strong>如果 \(A\)、\(B\) 互斥，且 \(P(A)>0\)、\(P(B)>0\)，那么它们<strong>一定不独立</strong>。</p>
+    <p><strong>为什么？</strong>因为 \(A\) 发生了，\(B\) 就<strong>绝不可能</strong>发生（这就是互斥的含义）。所以 \(P(B|A)=0\)，而 \(P(B)>0\)，两者不相等，说明 \(A\) 确实"影响"了 \(B\)。∎</p>
+    <p><strong>一句话记忆：互斥是"不能同时"，独立是"互不影响"。</strong></p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 5（独立事件的概率）</span>
+    <p>甲、乙两人独立地射击同一目标，命中率分别为 \(0.8\) 和 \(0.7\)。求：</p>
+    <p>(1) 两人都命中的概率；(2) 至少有一人命中的概率。</p>
+
+    <h4>解析</h4>
+    <p>设 \(A=\) "甲命中"，\(B=\) "乙命中"。由题意 \(P(A)=0.8\)，\(P(B)=0.7\)，且 \(A\)、\(B\) 相互独立。</p>
+
+    <p><strong>(1) 两人都命中。</strong>即 \(A\cap B\)，由独立性用<strong>乘法</strong>：</p>
+    <div class="formula">
+      \[ P(AB)=P(A)P(B)=0.8\times0.7=0.56 \]
+    </div>
+
+    <p><strong>(2) 至少有一人命中。</strong>直接算要分三种情况（甲中乙不中、甲不中乙中、两人都中），比较麻烦。</p>
+    <p><strong>用对立事件：</strong>"至少一人命中"的对立面是"两人都没命中"：</p>
+    <div class="formula">
+      \[ P(\bar A)=1-0.8=0.2,\qquad P(\bar B)=1-0.7=0.3 \]
+    </div>
+    <p>由独立性，两人都不命中的概率为：</p>
+    <div class="formula">
+      \[ P(\bar A\bar B)=P(\bar A)P(\bar B)=0.2\times0.3=0.06 \]
+    </div>
+    <p>所以：</p>
+    <div class="formula">
+      \[ P(\text{至少一人命中})=1-P(\bar A\bar B)=1-0.06=\boxed{0.94} \]
+    </div>
+
+    <p><strong>验算（用分类法对照）：</strong></p>
+    <ul>
+      <li>甲中乙不中：\(0.8\times0.3=0.24\)</li>
+      <li>甲不中乙中：\(0.2\times0.7=0.14\)</li>
+      <li>两人都中：\(0.8\times0.7=0.56\)</li>
+      <li>合计：\(0.24+0.14+0.56=0.94\) ✓ 一致。</li>
+    </ul>
+    <p><strong>注意：</strong>这里三种情况是<strong>互斥</strong>的（不可能同时发生），所以用<strong>加法</strong>。这正好体现了"互斥加、独立乘"的分工。</p>
+  </div>
+
+  <!-- ==================== 第 3 章 ==================== -->
+  <h2 id="ch3"><span class="num">3</span>条件概率与全概率公式</h2>
+  <p class="lead">条件概率的核心思想只有一句：已知某个条件后，样本空间缩小了。</p>
+
+  <h3 id="ch3-1">3.1　条件概率</h3>
+
+  <div class="box def">
+    <span class="tag">定义</span>
+    <p>设 \(A\)、\(B\) 是两个事件，且 \(P(A)>0\)，则称</p>
+    <div class="formula">
+      \[ \boxed{\ P(B|A)=\frac{P(AB)}{P(A)}\ } \]
+    </div>
+    <p>为在事件 \(A\) 发生的条件下，事件 \(B\) 发生的<strong>条件概率</strong>。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">★ 推导：这个公式是怎么来的</span>
+    <p><strong>第一步：想清楚"已知 \(A\) 发生"意味着什么。</strong></p>
+    <p>当我们已经知道 \(A\) 发生时，所有<strong>不在 \(A\) 里的结果都变得不可能了</strong>。所以样本空间从整个 \(\Omega\) <strong>缩小</strong>成了 \(A\)。</p>
+
+    <p><strong>第二步：在新的样本空间里数结果。</strong></p>
+    <ul>
+      <li>新的"总结果数"= \(A\) 包含的基本事件数 = \(n(A)\)</li>
+      <li>新的"有利结果数"= 在 \(A\) 内且属于 \(B\) 的结果 = \(AB\) 包含的基本事件数 = \(n(AB)\)</li>
+    </ul>
+    <p>所以：</p>
+    <div class="formula">
+      \[ P(B|A)=\frac{n(AB)}{n(A)} \]
+    </div>
+
+    <p><strong>第三步：把这个比值改写成概率的比值。</strong>分子分母同时除以样本空间的总数 \(N\)：</p>
+    <div class="formula">
+      \[ P(B|A)=\frac{n(AB)/N}{n(A)/N}=\frac{P(AB)}{P(A)} \quad\checkmark \]
+    </div>
+
+    <p><strong>这就是条件概率公式的完整来源。</strong>核心思想是"<strong>样本空间缩小为 \(A\)</strong>"。</p>
+  </div>
+
+  <div class="box def">
+    <span class="tag">乘法公式（由条件概率变形）</span>
+    <p>由 \(P(B|A)=\dfrac{P(AB)}{P(A)}\) 两边乘 \(P(A)\)：</p>
+    <div class="formula">
+      \[ P(AB)=P(A)\,P(B|A) \]
+    </div>
+    <p>对称地还有 \(P(AB)=P(B)\,P(A|B)\)。</p>
+    <p><strong>这条公式的用途：</strong>当"求同时发生的概率"比较难，但"分两步求"比较容易时，就用它。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 6（条件概率的经典题）</span>
+    <p>某个家庭有两个孩子。已知其中至少有一个是女孩，求两个都是女孩的概率。（假设生男生女等可能）</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：写出样本空间。</strong>两个孩子按"老大、老二"的顺序排列，共 4 种等可能的结果：</p>
+    <div class="formula">
+      \[ \Omega=\{(\text{男},\text{男}),\ (\text{男},\text{女}),\ (\text{女},\text{男}),\ (\text{女},\text{女})\} \]
+    </div>
+
+    <p><strong>第二步：明确两个事件。</strong></p>
+    <ul>
+      <li>\(A=\) "至少有一个是女孩" \(=\{(\text{男},\text{女}),(\text{女},\text{男}),(\text{女},\text{女})\}\)，所以 \(P(A)=\dfrac34\)。</li>
+      <li>\(B=\) "两个都是女孩" \(=\{(\text{女},\text{女})\}\)，所以 \(P(B)=\dfrac14\)。</li>
+    </ul>
+
+    <p><strong>第三步：求 \(P(AB)\)。</strong>\(AB\) 表示"至少一个是女孩"<strong>且</strong>"两个都是女孩"，后者已经蕴含前者，所以 \(AB=B\)：</p>
+    <div class="formula">
+      \[ P(AB)=P(B)=\frac14 \]
+    </div>
+
+    <p><strong>第四步：套条件概率公式。</strong></p>
+    <div class="formula">
+      \[ P(B|A)=\frac{P(AB)}{P(A)}=\frac{\frac14}{\frac34}=\boxed{\frac13} \]
+    </div>
+
+    <p><strong>验算（用"缩小样本空间"的思路）：</strong>已知至少有一个女孩，样本空间缩小为 \(A=\{(\text{男},\text{女}),(\text{女},\text{男}),(\text{女},\text{女})\}\)，共 3 种等可能结果。其中"两个都是女孩"只占 1 种，所以概率是 \(\dfrac13\) ✓。</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">★ 为什么答案不是 \(\dfrac12\)？</span>
+      <p>很多人会想："已知一个是女孩，那另一个要么是男要么是女，概率各一半，所以是 \(\dfrac12\)。"</p>
+      <p><strong>这个推理错在哪？</strong>错在把"已知至少有一个是女孩"误当成"已知<strong>某一个特定的</strong>孩子是女孩"。</p>
+      <p>如果题目改成"已知<strong>老大</strong>是女孩，求两个都是女孩的概率"，那答案确实是 \(\dfrac12\)（因为老二独立地有一半概率是女孩）。</p>
+      <p>但"至少有一个是女孩"<strong>没有指定是哪一个</strong>，它排除了"（男,男）"这一种情况，剩下的 3 种等可能情况中只有 1 种满足要求。</p>
+      <p><strong>关键区别：条件的表述方式不同，缩小后的样本空间也不同。</strong>这就是条件概率题最容易出错的地方。</p>
+    </div>
+  </div>
+
+  <h3 id="ch3-2">3.2　全概率公式</h3>
+
+  <div class="box proof">
+    <span class="tag">★ 推导：全概率公式</span>
+    <p><strong>第一步：设定"划分"。</strong>设 \(B_1,B_2,\dots,B_n\) 满足：</p>
+    <ul>
+      <li>两两<strong>互斥</strong>（\(B_i\cap B_j=\varnothing\)，\(i\ne j\)）；</li>
+      <li>并集是<strong>整个样本空间</strong>（\(B_1\cup B_2\cup\cdots\cup B_n=\Omega\)）。</li>
+    </ul>
+    <p>这样的 \(B_1,\dots,B_n\) 叫做样本空间的一个<strong>划分</strong>（可以理解成"把情况分成互不重叠的几类"）。</p>
+
+    <p><strong>第二步：把 \(A\) 按划分拆开。</strong></p>
+    <p>因为 \(B_1,\dots,B_n\) 覆盖了所有可能，所以事件 \(A\) 也一定被它们"切"成几块：</p>
+    <div class="formula">
+      \[ A=(A\cap B_1)\cup(A\cap B_2)\cup\cdots\cup(A\cap B_n) \]
+    </div>
+    <p><strong>为什么这些小块两两互斥？</strong>因为 \(B_i\) 之间互斥，所以 \(A\cap B_i\) 之间自然也互斥（不可能有一个结果同时落在两个不同的 \(B_i\) 里）。</p>
+
+    <p><strong>第三步：用互斥事件的加法公式。</strong></p>
+    <div class="formula">
+      \[ P(A)=P(A\cap B_1)+P(A\cap B_2)+\cdots+P(A\cap B_n) \]
+    </div>
+
+    <p><strong>第四步：对每一项用乘法公式。</strong>\(P(A\cap B_i)=P(B_i)P(A|B_i)\)：</p>
+    <div class="formula">
+      \[ \boxed{\ P(A)=P(B_1)P(A|B_1)+P(B_2)P(A|B_2)+\cdots+P(B_n)P(A|B_n)\ } \]
+    </div>
+
+    <p><strong>这就是全概率公式。</strong>它的思想是："<strong>把复杂情况按原因分类，分别算，再相加</strong>"。</p>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">什么时候用全概率公式</span>
+    <p>当你发现"事件 \(A\) 的结果取决于<strong>是哪一种前提</strong>"时，就用全概率公式。</p>
+    <p><strong>识别特征：</strong>题目里通常有"<strong>来自甲/乙</strong>""<strong>从第一/第二个箱子里取</strong>"这类<strong>分来源</strong>的描述。</p>
+    <p><strong>解题步骤：</strong></p>
+    <ol class="steps">
+      <li>把"来源"作为划分 \(B_1,B_2,\dots\)（"来自甲厂""来自乙厂"）。</li>
+      <li>写出每个来源的概率 \(P(B_i)\) 和每个来源下目标事件的概率 \(P(A|B_i)\)。</li>
+      <li>用全概率公式相加。</li>
+    </ol>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 7（全概率公式）</span>
+    <p>某工厂有甲、乙两条生产线，产量分别占总产量的 \(60\%\) 和 \(40\%\)。甲线的次品率为 \(2\%\)，乙线的次品率为 \(5\%\)。现从全部产品中任取一件，求它是次品的概率。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：确定划分。</strong>按"来源"划分：</p>
+    <ul>
+      <li>\(B_1=\) "产品来自甲线"，\(P(B_1)=0.6\)</li>
+      <li>\(B_2=\) "产品来自乙线"，\(P(B_2)=0.4\)</li>
+    </ul>
+    <p>这两个事件互斥（一件产品不可能同时来自两条线），且覆盖全部产品 ✓ 是合法的划分。</p>
+
+    <p><strong>第二步：写出条件概率。</strong>设 \(A=\) "取到次品"：</p>
+    <div class="formula">
+      \[ P(A|B_1)=0.02,\qquad P(A|B_2)=0.05 \]
+    </div>
+
+    <p><strong>第三步：套全概率公式。</strong></p>
+    <div class="formula">
+      \[
+      \begin{aligned}
+      P(A) &= P(B_1)P(A|B_1)+P(B_2)P(A|B_2) \\
+      &= 0.6\times0.02+0.4\times0.05 \\
+      &= 0.012+0.020 \\
+      &= \boxed{0.032}
+      \end{aligned}
+      \]
+    </div>
+
+    <p><strong>验算（用"加权平均"的直观理解）：</strong>次品率其实就是两条线次品率的<strong>加权平均</strong>，权重是产量占比：</p>
+    <div class="formula">
+      \[ 60\%\times2\%+40\%\times5\%=1.2\%+2.0\%=3.2\% \quad\checkmark \]
+    </div>
+    <p>结果 \(3.2\%\) 落在 \(2\%\) 和 \(5\%\) 之间，且更靠近 \(2\%\)（因为甲线产量多）✓ 量级合理。</p>
+  </div>
+
+  <h3 id="ch3-3">3.3　独立重复试验与二项分布</h3>
+
+  <div class="box def">
+    <span class="tag">定义</span>
+    <p>在<strong>相同条件</strong>下<strong>重复</strong>做 \(n\) 次试验，各次试验的<strong>结果互不影响</strong>（相互独立），这样的试验叫做<strong>\(n\) 次独立重复试验</strong>（也叫 \(n\) 重伯努利试验）。</p>
+    <p>若每次试验中事件 \(A\) 发生的概率都是 \(p\)，那么在 \(n\) 次试验中 \(A\) 恰好发生 \(k\) 次的概率为：</p>
+    <div class="formula">
+      \[ \boxed{\ P(X=k)=C_n^k\,p^{\,k}(1-p)^{\,n-k}\qquad(k=0,1,\dots,n)\ } \]
+    </div>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">★ 推导：这个公式的每一部分从哪来</span>
+    <p><strong>第一步：先算"某一种特定顺序"的概率。</strong></p>
+    <p>假设我们指定"前 \(k\) 次成功，后 \(n-k\) 次失败"，那么：</p>
+    <ul>
+      <li>前 \(k\) 次都成功，每次概率 \(p\)，由独立性相乘得 \(p^k\)；</li>
+      <li>后 \(n-k\) 次都失败，每次概率 \(1-p\)，相乘得 \((1-p)^{n-k}\)。</li>
+    </ul>
+    <p>整体概率（由独立性，各次相乘）：</p>
+    <div class="formula">\[ p^{\,k}(1-p)^{\,n-k} \]</div>
+
+    <p><strong>第二步：数一数有多少种这样的顺序。</strong></p>
+    <p>"恰好 \(k\) 次成功"只规定了成功的<strong>次数</strong>，没规定<strong>是哪几次</strong>成功。所以成功可以出现在 \(n\) 次中的任意 \(k\) 次。</p>
+    <p>"从 \(n\) 次中挑出 \(k\) 次作为成功"的方案数，就是组合数 \(C_n^k\)。</p>
+    <p><strong>注意这里为什么用组合而不是排列：</strong>因为这 \(k\) 次成功<strong>不分先后</strong>，我们只关心"哪几次"，不关心"排列顺序"。</p>
+    <p><strong>如果误用排列会怎样？</strong>假设用 \(A_n^k\) 来数顺序，那么"第 1、3、5 次成功"这一种方案会被<strong>重复计数</strong> \(k!\) 次（因为这 \(k\) 个位置的全排列都算作了不同的方案）。而 \(A_n^k=C_n^k\cdot k!\)，所以正确结果必须用 \(C_n^k\)。</p>
+
+    <p><strong>第三步：把这些情况加起来。</strong>每一种顺序的概率都是 \(p^k(1-p)^{n-k}\)（由第一步，与具体是哪几次无关），共有 \(C_n^k\) 种，且这些情况<strong>互斥</strong>（不可能有两种不同的成功位置同时发生）。所以用<strong>加法</strong>：</p>
+    <div class="formula">
+      \[ P(X=k)=\underbrace{C_n^k}_{\text{有多少种顺序}}\times\underbrace{p^{\,k}(1-p)^{\,n-k}}_{\text{每种顺序的概率}} \quad\checkmark \]
+    </div>
+
+    <p><strong>★ 这个推导完整体现了"分类加法 + 分步乘法"的配合：</strong>数顺序用组合（分步乘法算每种），再把各种顺序加起来（分类加法）。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 8（二项分布的应用）</span>
+    <p>某射手的命中率为 \(0.8\)，独立射击 5 次。求命中次数 \(X\) 的分布列，以及 \(P(X\ge4)\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：判断类型。</strong>5 次射击相互独立、条件相同、每次命中率都是 0.8，符合 \(n\) 次独立重复试验，所以：</p>
+    <div class="formula">\[ X\sim B(5,\ 0.8) \]</div>
+    <p>即 \(P(X=k)=C_5^k\,(0.8)^{k}(0.2)^{5-k}\)。</p>
+
+    <p><strong>第二步：逐项算出分布列。</strong></p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>\(X=k\)</th><th>计算过程</th><th>\(P(X=k)\)</th></tr></thead>
+        <tbody>
+          <tr><td>0</td><td>\(C_5^0(0.8)^0(0.2)^5\)</td><td>\(0.00032\)</td></tr>
+          <tr><td>1</td><td>\(5\times(0.8)^1(0.2)^4=5\times0.8\times0.0016\)</td><td>\(0.0064\)</td></tr>
+          <tr><td>2</td><td>\(10\times(0.8)^2(0.2)^3=10\times0.64\times0.008\)</td><td>\(0.0512\)</td></tr>
+          <tr><td>3</td><td>\(10\times(0.8)^3(0.2)^2=10\times0.512\times0.04\)</td><td>\(0.2048\)</td></tr>
+          <tr><td>4</td><td>\(5\times(0.8)^4(0.2)^1=5\times0.4096\times0.2\)</td><td>\(0.4096\)</td></tr>
+          <tr><td>5</td><td>\(C_5^5(0.8)^5(0.2)^0=(0.8)^5\)</td><td>\(0.32768\)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>第三步：验算概率之和为 1。</strong></p>
+    <div class="formula">
+      \[ 0.00032+0.0064+0.0512+0.2048+0.4096+0.32768=1.00000 \quad\checkmark \]
+    </div>
+    <p><strong>这一步必须做</strong>——如果和不为 1，说明计算有错。</p>
+
+    <p><strong>第四步：求 \(P(X\ge4)\)。</strong></p>
+    <div class="formula">
+      \[ P(X\ge4)=P(X=4)+P(X=5)=0.4096+0.32768=\boxed{0.73728} \]
+    </div>
+
+    <p><strong>答案：</strong>分布列如上表，\(P(X\ge4)=0.73728\)。</p>
+  </div>
+
+  <!-- ==================== 第 4 章 ==================== -->
+  <h2 id="ch4"><span class="num">4</span>随机变量及其分布</h2>
+  <p class="lead">这一章的核心是"分布列"——用一个表格完整描述随机变量。以及四种常见分布的识别。</p>
+
+  <h3 id="ch4-1">4.1　离散型随机变量及其分布列</h3>
+
+  <div class="box def">
+    <span class="tag">定义</span>
+    <p>随着试验结果变化而变化的变量叫做<strong>随机变量</strong>，常用 \(X\)、\(Y\)、\(\xi\)、\(\eta\) 表示。如果随机变量的所有取值可以<strong>一一列出</strong>，就叫做<strong>离散型随机变量</strong>。</p>
+    <p><strong>分布列：</strong>把离散型随机变量 \(X\) 的所有可能取值 \(x_1,x_2,\dots,x_n\) 及其对应的概率 \(p_1,p_2,\dots,p_n\) 列成表格，就叫做 \(X\) 的<strong>分布列</strong>。</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>\(X\)</th><th>\(x_1\)</th><th>\(x_2\)</th><th>\(\cdots\)</th><th>\(x_n\)</th></tr></thead>
+        <tbody>
+          <tr><td>\(P\)</td><td>\(p_1\)</td><td>\(p_2\)</td><td>\(\cdots\)</td><td>\(p_n\)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="box def">
+    <span class="tag">分布列的两条性质（★ 常用来验算）</span>
+    <div class="formula">
+      \[ \text{①}\ p_i\ge0\ (i=1,2,\dots,n);\qquad \text{②}\ \sum_{i=1}^{n}p_i=1 \]
+    </div>
+    <p><strong>第 ② 条是最实用的验算工具。</strong>每写完一个分布列，都把概率加起来看是不是等于 1。不等于 1 就一定算错了。</p>
+  </div>
+
+  <h3 id="ch4-2">4.2　四种常见分布</h3>
+
+  <div class="box def">
+    <span class="tag">一、两点分布</span>
+    <p>随机变量 \(X\) 只取 \(0\) 和 \(1\) 两个值，且 \(P(X=1)=p\)、\(P(X=0)=1-p\)。</p>
+    <div class="formula">
+      \[ E(X)=p,\qquad D(X)=p(1-p) \]
+    </div>
+    <p><strong>典型场景：</strong>一次试验只有"成功/失败"两种结果（如"射击一次是否命中"）。</p>
+  </div>
+
+  <div class="box def">
+    <span class="tag">二、二项分布</span>
+    <p>在 \(n\) 次独立重复试验中，事件发生的次数 \(X\) 服从二项分布，记作 \(X\sim B(n,p)\)：</p>
+    <div class="formula">
+      \[ P(X=k)=C_n^k\,p^{\,k}(1-p)^{\,n-k},\qquad k=0,1,\dots,n \]
+    </div>
+    <div class="formula">
+      \[ E(X)=np,\qquad D(X)=np(1-p) \]
+    </div>
+    <p><strong>典型场景：</strong>有放回地抽取、重复射击、重复投掷——<strong>各次试验相互独立</strong>。</p>
+  </div>
+
+  <div class="box def">
+    <span class="tag">三、超几何分布</span>
+    <p>在含有 \(M\) 件次品的 \(N\) 件产品中，<strong>不放回</strong>地抽取 \(n\) 件，其中次品数 \(X\) 服从超几何分布：</p>
+    <div class="formula">
+      \[ P(X=k)=\frac{C_M^k\,C_{N-M}^{\,n-k}}{C_N^{\,n}},\qquad k=0,1,\dots,\min(M,n) \]
+    </div>
+    <div class="formula">
+      \[ E(X)=\frac{nM}{N} \]
+    </div>
+    <p><strong>典型场景：</strong>不放回地抽取、从有限总体中抽样。</p>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">★ 二项分布 vs 超几何分布（最容易混的地方）</span>
+    <div class="tbl-wrap" style="margin:0;">
+      <table>
+        <thead><tr><th>对比项</th><th>二项分布 \(B(n,p)\)</th><th>超几何分布</th></tr></thead>
+        <tbody>
+          <tr><td><strong>抽取方式</strong></td><td><strong>有放回</strong>（或试验独立重复）</td><td><strong>不放回</strong></td></tr>
+          <tr><td><strong>各次是否独立</strong></td><td>独立</td><td><strong>不独立</strong>（取走一件会改变剩余产品的次品率）</td></tr>
+          <tr><td><strong>每次概率</strong></td><td>每次都相同，都是 \(p\)</td><td>每次都不同</td></tr>
+          <tr><td><strong>概率公式</strong></td><td>\(C_n^kp^k(1-p)^{n-k}\)</td><td>\(\dfrac{C_M^kC_{N-M}^{n-k}}{C_N^n}\)</td></tr>
+          <tr><td><strong>期望</strong></td><td>\(np\)</td><td>\(\dfrac{nM}{N}\)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>判断口诀：看"放回"还是"不放回"。</strong></p>
+    <p><strong>注意：</strong>当 \(N\) 很大而 \(n\) 相对很小时（比如从 10000 件中取 10 件），不放回和放回的差别很小，此时<strong>超几何分布可以近似为二项分布</strong>（取 \(p=\dfrac MN\)）。</p>
+  </div>
+
+  <div class="box def">
+    <span class="tag">四、正态分布（了解）</span>
+    <p>若随机变量 \(X\) 的概率密度函数为</p>
+    <div class="formula">
+      \[ f(x)=\frac{1}{\sqrt{2\pi}\,\sigma}e^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}},\qquad x\in\mathbb{R} \]
+    </div>
+    <p>则称 \(X\) 服从<strong>正态分布</strong>，记作 \(X\sim N(\mu,\sigma^2)\)。</p>
+    <p><strong>图象特征：</strong>关于直线 \(x=\mu\) 对称的"钟形曲线"，在 \(x=\mu\) 处最高。</p>
+    <p><strong>三个关键数据（"\(3\sigma\) 原则"）：</strong></p>
+    <div class="formula">
+      \[
+      \begin{aligned}
+      P(\mu-\sigma&lt;X\le\mu+\sigma)&\approx0.6827 \\
+      P(\mu-2\sigma&lt;X\le\mu+2\sigma)&\approx0.9545 \\
+      P(\mu-3\sigma&lt;X\le\mu+3\sigma)&\approx0.9973
+      \end{aligned}
+      \]
+    </div>
+    <p><strong>标准正态分布：</strong>当 \(\mu=0\)、\(\sigma=1\) 时，记作 \(N(0,1)\)。任何正态分布都可以通过 \(Z=\dfrac{X-\mu}{\sigma}\) 化成标准正态分布。</p>
+    <p>正态分布的性质：\(E(X)=\mu\)，\(D(X)=\sigma^2\)。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 9（超几何分布）</span>
+    <p>10 件产品中有 3 件次品，从中<strong>不放回</strong>地任取 4 件。求取到的次品数 \(X\) 的分布列和期望。</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：判断类型。</strong>"不放回地任取"→ <strong>超几何分布</strong>。这里 \(N=10\)、\(M=3\)、\(n=4\)。</p>
+
+    <p><strong>第二步：写出概率公式。</strong></p>
+    <div class="formula">
+      \[ P(X=k)=\frac{C_3^k\,C_7^{\,4-k}}{C_{10}^{4}},\qquad k=0,1,2,3 \]
+    </div>
+    <p>先算总取法：\(C_{10}^4=\dfrac{10\times9\times8\times7}{4\times3\times2\times1}=210\)。</p>
+
+    <p><strong>第三步：逐项计算。</strong></p>
+    <div class="formula">
+      \[ P(X=0)=\frac{C_3^0C_7^4}{210}=\frac{1\times35}{210}=\frac16 \]
+    </div>
+    <div class="formula">
+      \[ P(X=1)=\frac{C_3^1C_7^3}{210}=\frac{3\times35}{210}=\frac{105}{210}=\frac12 \]
+    </div>
+    <div class="formula">
+      \[ P(X=2)=\frac{C_3^2C_7^2}{210}=\frac{3\times21}{210}=\frac{63}{210}=\frac{3}{10} \]
+    </div>
+    <div class="formula">
+      \[ P(X=3)=\frac{C_3^3C_7^1}{210}=\frac{1\times7}{210}=\frac{7}{210}=\frac{1}{30} \]
+    </div>
+
+    <p><strong>第四步：验算概率之和为 1。</strong></p>
+    <div class="formula">
+      \[ \frac16+\frac12+\frac{3}{10}+\frac{1}{30}=\frac{5}{30}+\frac{15}{30}+\frac{9}{30}+\frac{1}{30}=\frac{30}{30}=1 \quad\checkmark \]
+    </div>
+
+    <p><strong>第五步：求期望。</strong>用超几何分布的期望公式：</p>
+    <div class="formula">
+      \[ E(X)=\frac{nM}{N}=\frac{4\times3}{10}=1.2 \]
+    </div>
+    <p><strong>用定义式验算：</strong></p>
+    <div class="formula">
+      \[ E(X)=0\times\frac16+1\times\frac12+2\times\frac{3}{10}+3\times\frac{1}{30}=0+0.5+0.6+0.1=1.2 \quad\checkmark \]
+    </div>
+    <p>两种方法一致。</p>
+
+    <p><strong>答案：</strong>分布列如上，\(\boxed{E(X)=1.2}\)</p>
+  </div>
+
+  <!-- ==================== 第 5 章 ==================== -->
+  <h2 id="ch5"><span class="num">5</span>期望与方差</h2>
+  <p class="lead">期望是"加权平均"，方差是"波动大小"。理解这两句话，很多性质就能自己推。</p>
+
+  <h3 id="ch5-1">5.1　期望</h3>
+
+  <div class="box def">
+    <span class="tag">定义</span>
+    <p>若离散型随机变量 \(X\) 的分布列为 \(P(X=x_i)=p_i\)（\(i=1,2,\dots,n\)），则称</p>
+    <div class="formula">
+      \[ \boxed{\ E(X)=x_1p_1+x_2p_2+\cdots+x_np_n=\sum_{i=1}^{n}x_ip_i\ } \]
+    </div>
+    <p>为 \(X\) 的<strong>数学期望</strong>（简称<strong>期望</strong>或均值）。</p>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">怎么理解"期望是加权平均"</span>
+    <p>普通的平均数，是把所有数直接加起来除以个数。而期望是<strong>按概率加权</strong>的平均：<strong>概率大的取值，在平均值里占的"话语权"更大</strong>。</p>
+    <p><strong>举例：</strong>某彩票中奖 100 元（概率 0.01）、不中奖 0 元（概率 0.99）。</p>
+    <ul>
+      <li>普通平均：\(\dfrac{100+0}{2}=50\)（没有意义，因为不中奖的概率远大于中奖）</li>
+      <li>期望：\(100\times0.01+0\times0.99=1\) 元 ✓ <strong>这才是"平均每买一张能拿回多少钱"</strong></li>
+    </ul>
+    <p><strong>期望的物理意义：</strong>把随机变量想象成一个"重心"——如果每个取值 \(x_i\) 处放一个质量为 \(p_i\) 的物体，那么期望就是这个系统的<strong>重心位置</strong>。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">★ 推导：二项分布的期望 \(E(X)=np\)</span>
+    <p>这个推导很漂亮，用到了一条组合数恒等式，值得学一下。</p>
+
+    <p><strong>第一步：写出期望的定义式。</strong>设 \(X\sim B(n,p)\)：</p>
+    <div class="formula">
+      \[ E(X)=\sum_{k=0}^{n}k\cdot C_n^k\,p^{\,k}(1-p)^{\,n-k} \]
+    </div>
+    <p><strong>问题：</strong>\(k=0\) 那一项是 0，所以实际上可以从 \(k=1\) 开始求和。但即使这样，直接求和也很麻烦。</p>
+
+    <p><strong>第二步：用关键恒等式 \(k\,C_n^k=n\,C_{n-1}^{\,k-1}\)。</strong></p>
+    <p><strong>先验证这条恒等式：</strong></p>
+    <div class="formula">
+      \[ k\,C_n^k=k\cdot\frac{n!}{k!\,(n-k)!}=\frac{n!}{(k-1)!\,(n-k)!} \]
+    </div>
+    <p>另一方面：</p>
+    <div class="formula">
+      \[ n\,C_{n-1}^{\,k-1}=n\cdot\frac{(n-1)!}{(k-1)!\,(n-k)!}=\frac{n!}{(k-1)!\,(n-k)!} \quad\checkmark \]
+    </div>
+    <p>两者相等，恒等式成立。（直观理解：\(C_n^k\) 表示"从 \(n\) 个里选 \(k\) 个"，\(kC_n^k\) 表示"选 \(k\) 个<strong>并指定其中一个为特殊</strong>"。换个角度看，先指定那个特殊的（\(n\) 种），再从剩下 \(n-1\) 个里选 \(k-1\) 个，即 \(nC_{n-1}^{k-1}\) ✓）</p>
+
+    <p><strong>第三步：代入并整理。</strong>因为 \(k=0\) 时该项为 0，所以求和从 \(k=1\) 开始：</p>
+    <div class="formula">
+      \[ E(X)=\sum_{k=1}^{n}k\,C_n^k\,p^{\,k}(1-p)^{\,n-k}=\sum_{k=1}^{n}n\,C_{n-1}^{\,k-1}\,p^{\,k}(1-p)^{\,n-k} \]
+    </div>
+    <p>把常数 \(n\) 和 \(p\) 提到外面（每项都有一个 \(p\)）：</p>
+    <div class="formula">
+      \[ E(X)=np\sum_{k=1}^{n}C_{n-1}^{\,k-1}\,p^{\,k-1}(1-p)^{\,n-k} \]
+    </div>
+
+    <p><strong>第四步：换元，凑成二项式定理的形式。</strong>令 \(j=k-1\)，则 \(k=1\) 时 \(j=0\)，\(k=n\) 时 \(j=n-1\)：</p>
+    <div class="formula">
+      \[ E(X)=np\sum_{j=0}^{n-1}C_{n-1}^{\,j}\,p^{\,j}(1-p)^{\,(n-1)-j} \]
+    </div>
+
+    <p><strong>第五步：认出括号里的和等于 1。</strong></p>
+    <p>这个和式正是 \((p+(1-p))^{n-1}\) 的二项式展开（把 \((a+b)^{n-1}=\sum C_{n-1}^j a^{n-1-j}b^j\) 中的 \(a\) 换成 \(1-p\)、\(b\) 换成 \(p\) 即可）。而 \(p+(1-p)=1\)，所以：</p>
+    <div class="formula">
+      \[ \sum_{j=0}^{n-1}C_{n-1}^{\,j}\,p^{\,j}(1-p)^{\,(n-1)-j}=(1)^{n-1}=1 \]
+    </div>
+    <p>（这个和式就是"概率之和为 1"，因为它其实是 \(B(n-1,p)\) 的完整分布列。）</p>
+
+    <p><strong>第六步：得到结论。</strong></p>
+    <div class="formula">
+      \[ \boxed{\ E(X)=np\cdot1=np\ } \]
+    </div>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">这个结论的直观解释</span>
+      <p>做 \(n\) 次试验，每次成功的概率是 \(p\)，那么"平均成功多少次"自然就是 \(n\times p\)。</p>
+      <p>比如射 5 次、命中率 0.8，平均命中 \(5\times0.8=4\) 次 ✓ 非常符合直觉。</p>
+    </div>
+  </div>
+
+  <h3 id="ch5-2">5.2　方差</h3>
+
+  <div class="box def">
+    <span class="tag">定义</span>
+    <p>若离散型随机变量 \(X\) 的分布列为 \(P(X=x_i)=p_i\)，则称</p>
+    <div class="formula">
+      \[ D(X)=\sum_{i=1}^{n}\bigl(x_i-E(X)\bigr)^{2}p_i \]
+    </div>
+    <p>为 \(X\) 的<strong>方差</strong>，其算术平方根 \(\sqrt{D(X)}\) 叫做<strong>标准差</strong>。</p>
+    <p><strong>直观理解：</strong>方差衡量的是各取值<strong>偏离期望的程度</strong>。方差越大，说明数据越"分散"、波动越大。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">★ 推导：方差的计算公式 \(D(X)=E(X^2)-[E(X)]^2\)</span>
+    <p>定义式 \(\sum(x_i-\mu)^2p_i\) 直接算很麻烦（要先把每个 \(x_i\) 减去 \(\mu\)，再平方，再乘概率）。这个公式给出了一个更快的算法。</p>
+
+    <p><strong>第一步：把平方展开。</strong>记 \(\mu=E(X)\)：</p>
+    <div class="formula">
+      \[ D(X)=\sum_{i=1}^{n}(x_i-\mu)^{2}p_i=\sum_{i=1}^{n}\bigl(x_i^{2}-2\mu x_i+\mu^{2}\bigr)p_i \]
+    </div>
+
+    <p><strong>第二步：把求和拆成三项。</strong></p>
+    <div class="formula">
+      \[ D(X)=\sum x_i^{2}p_i-2\mu\sum x_ip_i+\mu^{2}\sum p_i \]
+    </div>
+
+    <p><strong>第三步：逐项识别。</strong></p>
+    <ul>
+      <li>第一项 \(\sum x_i^2p_i\) 就是 \(E(X^2)\)（因为 \(X^2\) 的分布列就是把 \(x_i\) 换成 \(x_i^2\)）；</li>
+      <li>第二项里的 \(\sum x_ip_i\) 就是 \(E(X)=\mu\)；</li>
+      <li>第三项里的 \(\sum p_i=1\)（分布列性质）。</li>
+    </ul>
+    <p>代入：</p>
+    <div class="formula">
+      \[ D(X)=E(X^{2})-2\mu\cdot\mu+\mu^{2}\cdot1=E(X^{2})-2\mu^{2}+\mu^{2}=E(X^{2})-\mu^{2} \]
+    </div>
+
+    <p><strong>第四步：写成最终形式。</strong></p>
+    <div class="formula">
+      \[ \boxed{\ D(X)=E(X^{2})-\bigl[E(X)\bigr]^{2}\ } \]
+    </div>
+    <p><strong>口诀："平方的期望 减 期望的平方"。</strong>注意这两项<strong>顺序不能反</strong>（否则会算出负数）。</p>
+
+    <p><strong>验算（用两点分布检验）：</strong>设 \(P(X=1)=p\)、\(P(X=0)=1-p\)。则 \(E(X)=p\)，\(E(X^2)=1^2\cdot p+0^2\cdot(1-p)=p\)。所以：</p>
+    <div class="formula">
+      \[ D(X)=E(X^{2})-[E(X)]^{2}=p-p^{2}=p(1-p) \quad\checkmark \]
+    </div>
+    <p>与 4.2 节给出的两点分布方差公式一致。</p>
+  </div>
+
+  <h3 id="ch5-3">5.3　期望与方差的性质</h3>
+
+  <div class="box def">
+    <span class="tag">性质（\(a\)、\(b\) 为常数）</span>
+    <div class="formula">
+      \[
+      \begin{aligned}
+      E(aX+b) &= a\,E(X)+b \\[6pt]
+      D(aX+b) &= a^{2}\,D(X)
+      \end{aligned}
+      \]
+    </div>
+    <p><strong>★ 方差性质里没有 \(b\)！</strong>这是最容易错的地方。原因见下面的推导。</p>
+  </div>
+
+  <div class="box def">
+    <span class="tag">★ 期望的线性性质（第 8 章反复用，必须掌握）</span>
+    <p>对<strong>任意</strong>两个随机变量 \(X\)、\(Y\)：</p>
+    <div class="formula">
+      \[ \boxed{\ E(X+Y)=E(X)+E(Y)\ } \]
+    </div>
+    <p>更一般地，对任意 \(n\) 个随机变量：</p>
+    <div class="formula">
+      \[ E(X_1+X_2+\cdots+X_n)=E(X_1)+E(X_2)+\cdots+E(X_n) \]
+    </div>
+    <p><strong>★ 这里不要求 \(X\)、\(Y\) 相互独立！</strong>这是它和"乘法"最大的区别——\(E(XY)=E(X)E(Y)\) 才需要独立性，而<strong>加法永远不需要</strong>。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导：为什么 \(E(X+Y)=E(X)+E(Y)\)（以离散型为例）</span>
+
+    <p><strong>第一步：写出联合分布。</strong>设 \(X\)、\(Y\) 的联合分布为</p>
+    <div class="formula">
+      \[ P(X=x_i,\ Y=y_j)=p_{ij} \]
+    </div>
+    <p>则 \(X+Y\) 的取值是各种 \(x_i+y_j\)，对应的概率就是 \(p_{ij}\)。</p>
+
+    <p><strong>第二步：按定义写出 \(E(X+Y)\)。</strong></p>
+    <div class="formula">
+      \[ E(X+Y)=\sum_{i}\sum_{j}(x_i+y_j)\,p_{ij} \]
+    </div>
+
+    <p><strong>第三步：把求和拆成两项。</strong></p>
+    <div class="formula">
+      \[ E(X+Y)=\sum_{i}\sum_{j}x_i\,p_{ij}+\sum_{i}\sum_{j}y_j\,p_{ij} \]
+    </div>
+
+    <p><strong>第四步：分别化简。</strong>第一项里 \(x_i\) 与下标 \(j\) 无关，可以提到内层求和号外面：</p>
+    <div class="formula">
+      \[ \sum_{i}\sum_{j}x_i\,p_{ij}=\sum_{i}x_i\left(\sum_{j}p_{ij}\right)=\sum_{i}x_i\,P(X=x_i)=E(X) \]
+    </div>
+    <p>（这里用了 \(\sum_{j}p_{ij}=P(X=x_i)\)——"把 \(X=x_i\) 时 \(Y\) 的所有可能都加完"。）</p>
+    <p>同理，第二项等于 \(E(Y)\)。所以</p>
+    <div class="formula">
+      \[ E(X+Y)=E(X)+E(Y) \quad\checkmark \]
+    </div>
+
+    <p><strong>第五步：回头看哪里用了独立性。</strong>整个推导里<strong>一次都没用到</strong>——所以这条性质对任意 \(X\)、\(Y\) 都成立。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题（同一道题，两种解法对比）</span>
+    <p>甲、乙两人各投篮一次，甲命中的概率为 \(0.7\)，乙命中的概率为 \(0.4\)。设 \(X\) 为两人命中的总次数，求 \(E(X)\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>解法一（定义法，慢但直观）：</strong>\(X\) 的取值为 \(0\)、\(1\)、\(2\)。</p>
+    <div class="formula">
+      \[ P(X=0)=0.3\times0.6=0.18 \]
+    </div>
+    <div class="formula">
+      \[ P(X=1)=0.7\times0.6+0.3\times0.4=0.42+0.12=0.54 \]
+    </div>
+    <div class="formula">
+      \[ P(X=2)=0.7\times0.4=0.28 \]
+    </div>
+    <p><strong>验算：</strong>\(0.18+0.54+0.28=1\) ✓（分布列必须满足这一条）。</p>
+    <div class="formula">
+      \[ E(X)=0\times0.18+1\times0.54+2\times0.28=0+0.54+0.56=1.1 \]
+    </div>
+
+    <p><strong>解法二（线性性质，快）：</strong>设 \(X_1\) 是"甲命中"的指示变量（命中记 1、未中记 0），\(X_2\) 同理。则</p>
+    <div class="formula">
+      \[ X=X_1+X_2,\qquad E(X_1)=0.7,\qquad E(X_2)=0.4 \]
+    </div>
+    <p>所以</p>
+    <div class="formula">
+      \[ E(X)=E(X_1)+E(X_2)=0.7+0.4=1.1 \quad\checkmark \]
+    </div>
+
+    <p><strong>答案：</strong>\(\boxed{E(X)=1.1}\)</p>
+    <p><strong>★ 两种方法结果一致。</strong>解法二的好处是：<strong>根本不用写分布列，也不用管 \(X_1\) 与 \(X_2\) 是否独立</strong>。第 8 章的真题 3、真题 5 都靠这条性质提速。</p>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导：为什么 \(D(aX+b)=a^2D(X)\)（\(b\) 不见了）</span>
+
+    <p><strong>第一步：先推 \(E(aX+b)\)。</strong>由期望的定义：</p>
+    <div class="formula">
+      \[ E(aX+b)=\sum(a x_i+b)p_i=a\sum x_ip_i+b\sum p_i=aE(X)+b\cdot1=aE(X)+b \quad\checkmark \]
+    </div>
+    <p>（这里用了 \(\sum x_ip_i=E(X)\) 和 \(\sum p_i=1\)。）</p>
+
+    <p><strong>第二步：用 \(D(Y)=E(Y^2)-[E(Y)]^2\) 推方差。</strong>令 \(Y=aX+b\)：</p>
+    <div class="formula">
+      \[ D(aX+b)=E\bigl[(aX+b)^{2}\bigr]-\bigl[E(aX+b)\bigr]^{2} \]
+    </div>
+
+    <p><strong>第三步：分别算两项。</strong></p>
+    <p>第一项：\((aX+b)^2=a^2X^2+2abX+b^2\)，取期望得：</p>
+    <div class="formula">
+      \[ E\bigl[(aX+b)^{2}\bigr]=a^{2}E(X^{2})+2abE(X)+b^{2} \]
+    </div>
+    <p>第二项：由第一步 \(E(aX+b)=aE(X)+b\)，平方得：</p>
+    <div class="formula">
+      \[ \bigl[E(aX+b)\bigr]^{2}=\bigl[aE(X)+b\bigr]^{2}=a^{2}[E(X)]^{2}+2abE(X)+b^{2} \]
+    </div>
+
+    <p><strong>第四步：相减，观察哪些项消失了。</strong></p>
+    <div class="formula">
+      \[
+      \begin{aligned}
+      D(aX+b) &= \bigl[a^{2}E(X^{2})+2abE(X)+b^{2}\bigr]-\bigl[a^{2}[E(X)]^{2}+2abE(X)+b^{2}\bigr] \\
+      &= a^{2}E(X^{2})-a^{2}[E(X)]^{2} \\
+      &= a^{2}\bigl(E(X^{2})-[E(X)]^{2}\bigr)
+      \end{aligned}
+      \]
+    </div>
+    <p><strong>看到没有：\(2abE(X)\) 和 \(b^2\) 这两项在相减时正好抵消了！</strong>这就是为什么 \(b\) 不出现在结果里。</p>
+
+    <p><strong>第五步：得到结论。</strong></p>
+    <div class="formula">
+      \[ D(aX+b)=a^{2}D(X) \quad\checkmark \]
+    </div>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">几何直观：为什么 \(b\) 不影响方差</span>
+      <p>方差衡量的是"<strong>数据有多分散</strong>"。</p>
+      <ul>
+        <li><strong>加上 \(b\)</strong>：相当于把<strong>所有数据整体平移</strong>。平移之后，数据之间的"间距"完全没变，所以分散程度不变——方差不变 ✓</li>
+        <li><strong>乘上 \(a\)</strong>：相当于把所有数据<strong>拉伸</strong> \(a\) 倍。间距也被拉伸了 \(a\) 倍。但方差是"<strong>平方后</strong>的平均"，所以间距放大 \(a\) 倍，平方后的量放大 \(a^2\) 倍——方差变为 \(a^2D(X)\) ✓</li>
+      </ul>
+      <p><strong>而期望会同时被 \(a\) 和 \(b\) 影响</strong>（因为它衡量的是"位置"，平移和拉伸都会改变位置）。</p>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 10（期望方差的性质）</span>
+    <p>已知随机变量 \(X\) 满足 \(E(X)=3\)，\(D(X)=2\)。求 \(E(2X+1)\) 和 \(D(2X+1)\)。</p>
+
+    <h4>解析</h4>
+    <p>这里 \(a=2\)、\(b=1\)。由性质：</p>
+    <div class="formula">
+      \[ E(2X+1)=2E(X)+1=2\times3+1=7 \]
+    </div>
+    <div class="formula">
+      \[ D(2X+1)=2^{2}D(X)=4\times2=8 \]
+    </div>
+
+    <p><strong>答案：</strong>\(\boxed{E(2X+1)=7,\quad D(2X+1)=8}\)</p>
+
+    <p><strong>验算（构造一个具体分布，把公式验证一遍）：</strong>取 \(X\) 的分布列为</p>
+    <div class="formula">
+      \[ P(X=1)=\frac14,\qquad P(X=3)=\frac12,\qquad P(X=5)=\frac14 \]
+    </div>
+    <p><strong>第一步：先确认它确实满足题设的 \(E(X)=3\)、\(D(X)=2\)。</strong></p>
+    <div class="formula">
+      \[ E(X)=1\times\frac14+3\times\frac12+5\times\frac14=\frac{1+6+5}{4}=3 \quad\checkmark \]
+    </div>
+    <div class="formula">
+      \[ E(X^{2})=1\times\frac14+9\times\frac12+25\times\frac14=\frac{1+18+25}{4}=\frac{44}{4}=11 \]
+    </div>
+    <div class="formula">
+      \[ D(X)=E(X^{2})-[E(X)]^{2}=11-9=2 \quad\checkmark \]
+    </div>
+
+    <p><strong>第二步：直接算 \(2X+1\)。</strong>它的取值是 \(2\times1+1=3\)、\(2\times3+1=7\)、\(2\times5+1=11\)，概率分别是 \(\dfrac14\)、\(\dfrac12\)、\(\dfrac14\)：</p>
+    <div class="formula">
+      \[ E(2X+1)=3\times\frac14+7\times\frac12+11\times\frac14=\frac{3+14+11}{4}=\frac{28}{4}=7 \quad\checkmark \]
+    </div>
+    <div class="formula">
+      \[ E\bigl[(2X+1)^{2}\bigr]=9\times\frac14+49\times\frac12+121\times\frac14=\frac{9+98+121}{4}=\frac{228}{4}=57 \]
+    </div>
+    <div class="formula">
+      \[ D(2X+1)=57-7^{2}=57-49=8=2^{2}\times2=2^{2}D(X) \quad\checkmark \]
+    </div>
+
+    <p>两条性质都验证通过。<strong>注意：这个构造出来的分布，\(E(X)\) 和 \(D(X)\) 都与题设完全一致</strong>，所以这里连数值一起验证了，而不只是验证公式的结构关系。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 11（二项分布的期望方差）</span>
+    <p>已知 \(X\sim B(10,\ 0.3)\)。求 \(E(X)\)、\(D(X)\) 和 \(E(3X-2)\)。</p>
+
+    <h4>解析</h4>
+    <p>这里 \(n=10\)、\(p=0.3\)。</p>
+    <div class="formula">
+      \[ E(X)=np=10\times0.3=3 \]
+    </div>
+    <div class="formula">
+      \[ D(X)=np(1-p)=10\times0.3\times0.7=2.1 \]
+    </div>
+    <p>再由性质 \(E(aX+b)=aE(X)+b\)（这里 \(a=3\)、\(b=-2\)）：</p>
+    <div class="formula">
+      \[ E(3X-2)=3E(X)-2=3\times3-2=7 \]
+    </div>
+
+    <p><strong>答案：</strong>\(\boxed{E(X)=3,\quad D(X)=2.1,\quad E(3X-2)=7}\)</p>
+
+    <p><strong>验算（检查量级）：</strong>\(X\) 取值在 \(0\sim10\) 之间，期望 3 合理 ✓。\(D(X)=2.1\)，标准差 \(\sqrt{2.1}\approx1.45\)，说明取值大多集中在 \(3\pm1.45\) 附近，也合理 ✓。</p>
+  </div>
+
+  <!-- ==================== 第 6 章 ==================== -->
+  <h2 id="ch6"><span class="num">6</span>统计</h2>
+  <p class="lead">这一章计算量大但套路固定，属于"送分题"。三个公式（平均数方差、回归方程、卡方）必须默写。</p>
+
+  <h3 id="ch6-1">6.1　抽样方法</h3>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>方法</th><th>适用场景</th><th>操作要点</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>简单随机抽样</strong></td>
+          <td>总体个数较少</td>
+          <td>逐个抽取，每个个体被抽到的机会相等。有抽签法、随机数法</td>
+        </tr>
+        <tr>
+          <td><strong>分层抽样</strong></td>
+          <td>总体由<strong>差异明显</strong>的几部分组成</td>
+          <td>按比例从各层抽取。★ 各层抽取的比例相同，都等于 \(\dfrac{n}{N}\)</td>
+        </tr>
+        <tr>
+          <td><strong>系统抽样</strong></td>
+          <td>总体个数较多</td>
+          <td>编号后按固定间隔抽取。间隔 \(k=\dfrac Nn\)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">分层抽样的核心公式</span>
+    <p>设总体容量为 \(N\)，样本容量为 \(n\)，第 \(i\) 层的容量为 \(N_i\)，则该层应抽取 \(n_i\) 个个体，满足：</p>
+    <div class="formula">
+      \[ \frac{n_1}{N_1}=\frac{n_2}{N_2}=\cdots=\frac{n}{N} \]
+    </div>
+    <p><strong>即：每一层抽到的比例都相同。</strong>所以 \(n_i=\dfrac{n}{N}\times N_i\)。</p>
+  </div>
+
+  <h3 id="ch6-2">6.2　用样本估计总体</h3>
+
+  <div class="box def">
+    <span class="tag">平均数与方差</span>
+    <p><strong>样本平均数：</strong></p>
+    <div class="formula">
+      \[ \bar x=\frac{x_1+x_2+\cdots+x_n}{n} \]
+    </div>
+    <p><strong>样本方差</strong>（衡量数据的分散程度）：</p>
+    <div class="formula">
+      \[ s^{2}=\frac{1}{n}\sum_{i=1}^{n}(x_i-\bar x)^{2} \]
+    </div>
+    <p><strong>样本标准差：</strong>\(s=\sqrt{s^2}\)。</p>
+    <p><strong>简化计算式（考试常用）：</strong></p>
+    <div class="formula">
+      \[ s^{2}=\frac{1}{n}\left(\sum_{i=1}^{n}x_i^{2}\right)-\bar x^{2} \]
+    </div>
+    <p><strong>注意：</strong>这个式子与第 5 章的 \(D(X)=E(X^2)-[E(X)]^2\) <strong>结构完全一样</strong>——因为样本方差就是把"频率"当"概率"的方差。</p>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">频率分布直方图的两个重要结论</span>
+    <ul>
+      <li><strong>每个小矩形的面积 = 该组的频率。</strong>因为面积 = 组距 × 频率/组距 = 频率。</li>
+      <li><strong>所有小矩形的面积之和 = 1。</strong></li>
+    </ul>
+    <p><strong>常见考法：</strong>求众数（最高矩形的中点）、中位数（面积平分线的位置）、平均数（每个矩形中点 × 面积，再求和）。</p>
+  </div>
+
+  <h3 id="ch6-3">6.3　线性回归</h3>
+
+  <div class="box def">
+    <span class="tag">回归直线方程</span>
+    <p>若两个变量 \(x\)、\(y\) 有相关关系，则可用回归直线 \(\hat y=\hat b x+\hat a\) 来近似描述：</p>
+    <div class="formula">
+      \[
+      \hat b=\frac{\displaystyle\sum_{i=1}^{n}x_iy_i-n\bar x\bar y}{\displaystyle\sum_{i=1}^{n}x_i^{2}-n\bar x^{2}},
+      \qquad \hat a=\bar y-\hat b\,\bar x
+      \]
+    </div>
+    <p><strong>★ 两个必记结论：</strong></p>
+    <ul>
+      <li>回归直线一定经过样本中心点 \((\bar x,\ \bar y)\)。</li>
+      <li>所以先算 \(\hat b\)，再用 \(\hat a=\bar y-\hat b\bar x\) 求 \(\hat a\)，比直接套公式快得多。</li>
+    </ul>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">推导：\(\hat b\) 和 \(\hat a\) 是怎么来的（最小二乘法）</span>
+    <p><strong>核心思想：让所有数据点到直线的"竖直偏差"的平方和最小。</strong></p>
+
+    <p><strong>第一步：写出"偏差平方和"。</strong>对每一组数据 \((x_i,y_i)\)，它在直线上的预测值是 \(\hat y_i=bx_i+a\)，偏差是 \(y_i-bx_i-a\)。我们希望所有偏差的平方和最小：</p>
+    <div class="formula">
+      \[ Q(a,b)=\sum_{i=1}^{n}\bigl(y_i-bx_i-a\bigr)^{2} \]
+    </div>
+    <p><strong>为什么用平方而不是绝对值？</strong>因为平方函数光滑、便于求最值（绝对值在 0 点不可导）。而且平方能同时处理正负偏差，并让大偏差受到更重的"惩罚"。</p>
+
+    <p><strong>第二步：对 \(a\) 求最值，先得到 \(a\) 与 \(b\) 的关系。</strong></p>
+    <p>把 \(Q\) 看成关于 \(a\) 的二次函数。展开：</p>
+    <div class="formula">
+      \[ Q=\sum\bigl[(y_i-bx_i)^{2}-2(y_i-bx_i)a+a^{2}\bigr]=na^{2}-2a\sum(y_i-bx_i)+\text{常数} \]
+    </div>
+    <p>这是关于 \(a\) 的二次函数，开口向上，最小值在对称轴处取得：</p>
+    <div class="formula">
+      \[ a=\frac{2\sum(y_i-bx_i)}{2n}=\frac{\sum y_i-b\sum x_i}{n}=\bar y-b\bar x \]
+    </div>
+    <p><strong>这就是 \(\hat a=\bar y-\hat b\bar x\) 的来源</strong>，同时说明"回归直线必过 \((\bar x,\bar y)\)"。</p>
+
+    <p><strong>第三步：把 \(a=\bar y-b\bar x\) 代回 \(Q\)，对 \(b\) 求最值。</strong></p>
+    <p>把 \(a\) 代入 \(y_i-bx_i-a\)，整理得 \(y_i-bx_i-\bar y+b\bar x=(y_i-\bar y)-b(x_i-\bar x)\)。所以：</p>
+    <div class="formula">
+      \[ Q(b)=\sum\bigl[(y_i-\bar y)-b(x_i-\bar x)\bigr]^{2} \]
+    </div>
+    <p>展开（记 \(S_{xy}=\sum(x_i-\bar x)(y_i-\bar y)\)、\(S_{xx}=\sum(x_i-\bar x)^2\)）：</p>
+    <div class="formula">
+      \[ Q(b)=\sum(y_i-\bar y)^{2}-2b\,S_{xy}+b^{2}S_{xx} \]
+    </div>
+    <p>这是关于 \(b\) 的二次函数，开口向上（\(S_{xx}>0\)），最小值在对称轴：</p>
+    <div class="formula">
+      \[ b=\frac{2S_{xy}}{2S_{xx}}=\frac{S_{xy}}{S_{xx}}=\frac{\sum(x_i-\bar x)(y_i-\bar y)}{\sum(x_i-\bar x)^{2}} \]
+    </div>
+
+    <p><strong>第四步：化简成课本上的形式。</strong>把分子分母分别展开：</p>
+    <div class="formula">
+      \[ \sum(x_i-\bar x)(y_i-\bar y)=\sum x_iy_i-\bar y\sum x_i-\bar x\sum y_i+n\bar x\bar y=\sum x_iy_i-n\bar x\bar y \]
+    </div>
+    <p>（这里用了 \(\sum x_i=n\bar x\)、\(\sum y_i=n\bar y\)。）同理：</p>
+    <div class="formula">
+      \[ \sum(x_i-\bar x)^{2}=\sum x_i^{2}-n\bar x^{2} \]
+    </div>
+    <p>所以：</p>
+    <div class="formula">
+      \[ \boxed{\ \hat b=\frac{\sum x_iy_i-n\bar x\bar y}{\sum x_i^{2}-n\bar x^{2}}\ } \]
+    </div>
+    <p><strong>这就是回归系数公式的完整来源。</strong></p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 12（线性回归）</span>
+    <p>已知 5 组数据如下表。求 \(y\) 关于 \(x\) 的回归直线方程。</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>\(x\)</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr></thead>
+        <tbody>
+          <tr><td>\(y\)</td><td>2</td><td>4</td><td>5</td><td>6</td><td>8</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>解析</h4>
+    <p><strong>第一步：算样本中心。</strong></p>
+    <div class="formula">
+      \[ \bar x=\frac{1+2+3+4+5}{5}=\frac{15}{5}=3,\qquad \bar y=\frac{2+4+5+6+8}{5}=\frac{25}{5}=5 \]
+    </div>
+
+    <p><strong>第二步：算 \(\sum x_iy_i\) 和 \(\sum x_i^2\)。</strong></p>
+    <div class="formula">
+      \[ \sum x_iy_i=1\times2+2\times4+3\times5+4\times6+5\times8=2+8+15+24+40=89 \]
+    </div>
+    <div class="formula">
+      \[ \sum x_i^{2}=1+4+9+16+25=55 \]
+    </div>
+
+    <p><strong>第三步：求 \(\hat b\)。</strong>这里 \(n=5\)：</p>
+    <div class="formula">
+      \[ \hat b=\frac{\sum x_iy_i-n\bar x\bar y}{\sum x_i^{2}-n\bar x^{2}}=\frac{89-5\times3\times5}{55-5\times3^{2}}=\frac{89-75}{55-45}=\frac{14}{10}=1.4 \]
+    </div>
+
+    <p><strong>第四步：求 \(\hat a\)。</strong>用 \(\hat a=\bar y-\hat b\bar x\)：</p>
+    <div class="formula">
+      \[ \hat a=5-1.4\times3=5-4.2=0.8 \]
+    </div>
+
+    <p><strong>第五步：写出回归方程。</strong></p>
+    <div class="formula">
+      \[ \boxed{\ \hat y=1.4x+0.8\ } \]
+    </div>
+
+    <p><strong>验算（必做）：</strong>回归直线必须经过样本中心 \((3,5)\)：</p>
+    <div class="formula">
+      \[ 1.4\times3+0.8=4.2+0.8=5 \quad\checkmark \]
+    </div>
+    <p><strong>这个验算只要 10 秒，但能立刻发现大部分计算错误，一定要做。</strong></p>
+  </div>
+
+  <h3 id="ch6-4">6.4　独立性检验</h3>
+
+  <div class="box def">
+    <span class="tag">卡方统计量与判断标准</span>
+    <p>对于 \(2\times2\) 列联表（设四个格子数据为 \(a,b,c,d\)，总数 \(n=a+b+c+d\)）：</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th></th><th>类别 1</th><th>类别 2</th><th>合计</th></tr></thead>
+        <tbody>
+          <tr><td><strong>类别 A</strong></td><td>\(a\)</td><td>\(b\)</td><td>\(a+b\)</td></tr>
+          <tr><td><strong>类别 B</strong></td><td>\(c\)</td><td>\(d\)</td><td>\(c+d\)</td></tr>
+          <tr><td><strong>合计</strong></td><td>\(a+c\)</td><td>\(b+d\)</td><td>\(n\)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="formula">
+      \[ \boxed{\ \chi^{2}=\frac{n(ad-bc)^{2}}{(a+b)(c+d)(a+c)(b+d)}\ } \]
+    </div>
+    <p><strong>判断标准（临界值表）：</strong></p>
+    <div class="tbl-wrap" style="margin:0;">
+      <table>
+        <thead><tr><th>\(\chi^2\) 的范围</th><th>结论</th></tr></thead>
+        <tbody>
+          <tr><td>\(\chi^2>2.706\)</td><td>有 \(90\%\) 的把握认为两变量有关</td></tr>
+          <tr><td>\(\chi^2>3.841\)</td><td>有 \(95\%\) 的把握认为两变量有关</td></tr>
+          <tr><td>\(\chi^2>6.635\)</td><td>有 \(99\%\) 的把握认为两变量有关</td></tr>
+          <tr><td>\(\chi^2>10.828\)</td><td>有 \(99.9\%\) 的把握认为两变量有关</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>核心逻辑：\(\chi^2\) 越大，说明实际观测数据与"两变量无关"的假设偏离越远，我们就越有把握认为它们有关。</strong></p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">例题 13（独立性检验）</span>
+    <p>某校调查 200 名学生，男生、女生各 100 人。其中男生喜欢数学的有 60 人，女生喜欢数学的有 40 人。问是否有 \(95\%\) 的把握认为"性别与是否喜欢数学有关"？</p>
+
+    <h4>解析</h4>
+    <p><strong>第一步：列出 \(2\times2\) 列联表。</strong></p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th></th><th>喜欢数学</th><th>不喜欢数学</th><th>合计</th></tr></thead>
+        <tbody>
+          <tr><td><strong>男生</strong></td><td>\(a=60\)</td><td>\(b=40\)</td><td>\(100\)</td></tr>
+          <tr><td><strong>女生</strong></td><td>\(c=40\)</td><td>\(d=60\)</td><td>\(100\)</td></tr>
+          <tr><td><strong>合计</strong></td><td>\(100\)</td><td>\(100\)</td><td>\(n=200\)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>第二步：代入卡方公式。</strong>先算 \(ad-bc\)：</p>
+    <div class="formula">
+      \[ ad-bc=60\times60-40\times40=3600-1600=2000 \]
+    </div>
+    <p>所以：</p>
+    <div class="formula">
+      \[ \chi^{2}=\frac{200\times2000^{2}}{100\times100\times100\times100}=\frac{200\times4\,000\,000}{100\,000\,000}=\frac{800\,000\,000}{100\,000\,000}=8 \]
+    </div>
+
+    <p><strong>第三步：与临界值比较。</strong></p>
+    <div class="formula">
+      \[ \chi^{2}=8>6.635 \]
+    </div>
+    <p>（同时 \(8&lt;10.828\)。）</p>
+
+    <p><strong>第四步：下结论。</strong>因为 \(\chi^2=8>6.635\)，所以有 \(99\%\) 的把握认为性别与是否喜欢数学有关——<strong>当然也就满足"有 \(95\%\) 的把握"这个要求</strong>。</p>
+
+    <p><strong>答案：</strong>\(\boxed{\chi^2=8>3.841}\)，所以有 \(95\%\) 的把握（实际上达到 \(99\%\)）认为性别与是否喜欢数学有关。</p>
+
+    <p><strong>验算（检查量级）：</strong>两个方向的数据正好相反（男生 60/40，女生 40/60），差异明显，\(\chi^2\) 应该比较大 ✓。8 落在 \(6.635\) 和 \(10.828\) 之间，对应 \(99\%\) 的把握，合理。</p>
+  </div>
+
+  <!-- ==================== 第 7 章 ==================== -->
+  <h2 id="ch7"><span class="num">7</span>易错点清单、知识地图与自测</h2>
+  <p class="lead">这一章的丢分主要来自"用错模型"和"漏算情况"。这一章帮你建立判断依据。</p>
+
+  <h3 id="ch7-1">7.1　易错点清单</h3>
+
+  <div class="box warn">
+    <span class="tag">概率统计易错点 · 18 条</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>#</th><th>易错点</th><th>正确做法</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>该用加法时用了乘法</td><td>问自己："做完这一种，事情完成了吗？"完成用加法，没完成用乘法</td></tr>
+          <tr><td>2</td><td>排列组合分不清</td><td>问自己："换顺序算不算新情况？"算 → 排列；不算 → 组合</td></tr>
+          <tr><td>3</td><td>用古典概型时不检查"等可能"</td><td>必须同时满足"有限"和"等可能"两个条件</td></tr>
+          <tr><td>4</td><td>★ 分子分母用不同的标准数</td><td>总数和有利数必须<strong>同序或同无序</strong>，不能一个有序一个无序</td></tr>
+          <tr><td>5</td><td>★ 把"互斥"当成"独立"</td><td>互斥是"不能同时发生"，独立是"互不影响"。<strong>两个正概率的互斥事件一定不独立</strong></td></tr>
+          <tr><td>6</td><td>求"至少"时忘记用对立事件</td><td>优先用 \(P(\text{至少})=1-P(\text{都不})\)，比分类相加快得多</td></tr>
+          <tr><td>7</td><td>条件概率里搞错"谁是条件"</td><td>\(P(B|A)\) 中 \(A\) 是条件，样本空间缩小为 \(A\)。注意题干措辞</td></tr>
+          <tr><td>8</td><td>★ 全概率公式漏掉某个划分</td><td>检查 \(B_1,\dots,B_n\) 是否覆盖了<strong>全部</strong>情况（概率之和为 1）</td></tr>
+          <tr><td>9</td><td>★ 二项分布与超几何分布混用</td><td>看"放回/不放回"。有放回（独立）→ 二项；不放回 → 超几何</td></tr>
+          <tr><td>10</td><td>二项分布通项的下标写错</td><td>第 \(k+1\) 项对应 \(C_n^k\)，注意差 1</td></tr>
+          <tr><td>11</td><td>分布列概率之和不等于 1</td><td>每写完分布列<strong>必须验算 \(\sum p_i=1\)</strong></td></tr>
+          <tr><td>12</td><td>★ \(D(aX+b)\) 里带上了 \(b\)</td><td>\(D(aX+b)=a^{2}D(X)\)，<strong>\(b\) 完全不影响方差</strong></td></tr>
+          <tr><td>13</td><td>方差公式顺序写反</td><td>\(D(X)=E(X^2)-[E(X)]^2\)，是"平方的期望"减"期望的平方"，反了会得负数</td></tr>
+          <tr><td>14</td><td>求 \(E(X^2)\) 时直接用 \([E(X)]^2\)</td><td>两者<strong>不相等</strong>！要先算出 \(X^2\) 的分布列再求期望</td></tr>
+          <tr><td>15</td><td>线性回归算完不验算</td><td>回归直线必过 \((\bar x,\bar y)\)，代入验证只需 10 秒</td></tr>
+          <tr><td>16</td><td>独立性检验的结论表述错误</td><td>只能说"有 \(X\%\) 的把握认为<strong>有关</strong>"，不能说"证明了一定有关"</td></tr>
+          <tr><td>17</td><td>卡方公式里格子数据对应错</td><td>先把列联表列清楚，标上 \(a,b,c,d\)，再代公式</td></tr>
+          <tr><td>18</td><td>分层抽样忘记"比例相同"</td><td>各层抽取比例都等于 \(\dfrac nN\)，据此列式</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">解题流程自检表</span>
+    <p><strong>做计数/概率题时：</strong></p>
+    <ul>
+      <li>□ 分清是"分类"（加法）还是"分步"（乘法）？</li>
+      <li>□ 分清是"排列"（计顺序）还是"组合"（不计顺序）？</li>
+      <li>□ 分子分母用的是同一个标准吗？</li>
+      <li>□ 有"至少/至多"吗？考虑用对立事件了吗？</li>
+    </ul>
+    <p><strong>做分布列题时：</strong></p>
+    <ul>
+      <li>□ 判断清楚是哪种分布了吗（二项 / 超几何 / 其他）？</li>
+      <li>□ 分布列的概率之和等于 1 吗？</li>
+      <li>□ 期望、方差用的是对应分布的公式，还是定义式？</li>
+      <li>□ 如果用到性质 \(D(aX+b)=a^2D(X)\)，\(b\) 去掉了没？</li>
+    </ul>
+    <p><strong>做统计题时：</strong></p>
+    <ul>
+      <li>□ 回归直线过 \((\bar x,\bar y)\) 验算了吗？</li>
+      <li>□ 卡方公式里的四个数对应正确吗？</li>
+      <li>□ 结论的措辞规范吗（"有 X% 的把握认为有关"）？</li>
+    </ul>
+  </div>
+
+  <h3 id="ch7-2">7.2　知识地图</h3>
+
+  <div class="map">
+    <div class="node">
+      <b>① 计数原理</b>
+      <span>分类加法、分步乘法<br>\(A_n^m=\dfrac{n!}{(n-m)!}\)<br>\(C_n^m=\dfrac{n!}{m!(n-m)!}\)<br>二项式定理 \(T_{k+1}=C_n^ka^{n-k}b^k\)</span>
+    </div>
+    <div class="node">
+      <b>② 古典概型</b>
+      <span>\(P(A)=\dfrac mn\)（需"有限 + 等可能"）<br>互斥：\(P(A\cup B)=P(A)+P(B)\)<br>对立：\(P(\bar A)=1-P(A)\)<br>独立：\(P(AB)=P(A)P(B)\)</span>
+    </div>
+    <div class="node">
+      <b>③ 条件概率</b>
+      <span>\(P(B|A)=\dfrac{P(AB)}{P(A)}\)<br>乘法：\(P(AB)=P(A)P(B|A)\)<br>全概率：\(P(A)=\sum P(B_i)P(A|B_i)\)</span>
+    </div>
+    <div class="node">
+      <b>④ 常见分布</b>
+      <span>两点分布：\(E=p\)，\(D=p(1-p)\)<br>二项 \(B(n,p)\)：\(E=np\)，\(D=np(1-p)\)<br>超几何：\(E=\dfrac{nM}{N}\)<br>正态 \(N(\mu,\sigma^2)\)</span>
+    </div>
+    <div class="node">
+      <b>⑤ 期望与方差</b>
+      <span>\(E(X)=\sum x_ip_i\)<br>\(D(X)=E(X^2)-[E(X)]^2\)<br>\(E(aX+b)=aE(X)+b\)<br>\(D(aX+b)=a^2D(X)\)</span>
+    </div>
+    <div class="node">
+      <b>⑥ 统计</b>
+      <span>分层抽样：各层比例相同<br>回归：\(\hat y=\hat bx+\hat a\)，过 \((\bar x,\bar y)\)<br>卡方：\(\chi^2=\dfrac{n(ad-bc)^2}{(a+b)(c+d)(a+c)(b+d)}\)</span>
+    </div>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">把整章串成一条逻辑链</span>
+    <ol class="steps">
+      <li><strong>怎么数：</strong>分类用加法（每类都能独立完成），分步用乘法（每步只做一部分）。这是所有计数的地基。</li>
+      <li><strong>排列 vs 组合：</strong>排列计顺序、组合不计顺序。两者的桥梁是"先选后排"：\(A_n^m=C_n^m\times A_m^m\)。</li>
+      <li><strong>二项式定理：</strong>本质是在数"从 \(n\) 个括号里挑 \(k\) 个选 \(b\)"有多少种挑法，答案就是 \(C_n^k\)。</li>
+      <li><strong>古典概型：</strong>\(P(A)=\dfrac mn\)。数的时候分子分母必须用同一标准。</li>
+      <li><strong>事件关系决定运算：</strong>互斥用加法、对立用减法、独立用乘法。<strong>互斥 ≠ 独立</strong>。</li>
+      <li><strong>条件概率：</strong>已知条件后样本空间缩小，于是 \(P(B|A)=\dfrac{P(AB)}{P(A)}\)。全概率公式就是"按原因分类，分别算，再相加"。</li>
+      <li><strong>二项分布：</strong>把"某一种顺序的概率"（分步乘法）乘以"有多少种顺序"（组合），得到 \(C_n^kp^k(1-p)^{n-k}\)。</li>
+      <li><strong>期望方差：</strong>期望是"加权平均"（重心），方差是"波动大小"。方差公式 \(E(X^2)-[E(X)]^2\) 由定义展开而来。</li>
+      <li><strong>统计：</strong>用样本估计总体。回归直线由"最小化偏差平方和"推出，所以必过 \((\bar x,\bar y)\)；独立性检验用卡方衡量"偏离无关假设"的程度。</li>
+    </ol>
+  </div>
+
+  <h3 id="ch7-3">7.3　自测清单</h3>
+  <p>下面每一条，能<strong>不看讲义完整写出来</strong>就打勾。</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:44px;">✓</th><th>自测项</th></tr></thead>
+      <tbody>
+        <tr><td>☐</td><td>能说出"分类用加法、分步用乘法"的判断依据（做完这一种事情完成了吗）</td></tr>
+        <tr><td>☐</td><td>★ 能用分步乘法原理推出排列数公式 \(A_n^m=n(n-1)\cdots(n-m+1)\)</td></tr>
+        <tr><td>☐</td><td>★ 能用"先选后排"推出组合数公式 \(C_n^m=\dfrac{A_n^m}{A_m^m}\)</td></tr>
+        <tr><td>☐</td><td>能说明组合数性质 \(C_n^m=C_n^{n-m}\) 为什么成立（选出与留下的一一对应）</td></tr>
+        <tr><td>☐</td><td>能用"分类加法"说明 \(C_n^m+C_n^{m-1}=C_{n+1}^m\)</td></tr>
+        <tr><td>☐</td><td>★ 能说明二项式展开式的系数 \(C_n^k\) 是怎么来的（数"挑法"）</td></tr>
+        <tr><td>☐</td><td>能默写二项式通项 \(T_{k+1}=C_n^ka^{n-k}b^k\)，并强调下标差 1</td></tr>
+        <tr><td>☐</td><td>能用"令 \(a=b=1\)"推出 \(\sum C_n^k=2^n\)，用"令 \(b=-1\)"推出奇偶项系数和相等</td></tr>
+        <tr><td>☐</td><td>能说出古典概型必须满足的两个条件（有限 + 等可能）</td></tr>
+        <tr><td>☐</td><td>能默写互斥、对立、独立三种关系的概率公式</td></tr>
+        <tr><td>☐</td><td>★ 能论证"两个正概率的互斥事件一定不独立"</td></tr>
+        <tr><td>☐</td><td>★ 能用"样本空间缩小"的思想推导条件概率公式 \(P(B|A)=\dfrac{P(AB)}{P(A)}\)</td></tr>
+        <tr><td>☐</td><td>能说明"至少一个女孩"与"老大是女孩"的区别（条件表述影响样本空间）</td></tr>
+        <tr><td>☐</td><td>★ 能完整推导全概率公式（划分 → 拆分 → 互斥相加 → 乘法公式）</td></tr>
+        <tr><td>☐</td><td>★ 能推导二项分布的概率公式，并说清哪部分来自"分步乘法"、哪部分来自"分类加法"</td></tr>
+        <tr><td>☐</td><td>能默写分布列的两条性质，并说明第 ② 条是最实用的验算工具</td></tr>
+        <tr><td>☐</td><td>★ 能列出二项分布与超几何分布的对照表，并说出判断依据（放回/不放回）</td></tr>
+        <tr><td>☐</td><td>能说出正态分布"\(3\sigma\) 原则"的三个数据</td></tr>
+        <tr><td>☐</td><td>能用"加权平均/重心"解释期望的含义</td></tr>
+        <tr><td>☐</td><td>★ 能推导二项分布的期望 \(E(X)=np\)（用 \(kC_n^k=nC_{n-1}^{k-1}\) 和换元）</td></tr>
+        <tr><td>☐</td><td>★ 能用 \(D(X)=E(X^2)-[E(X)]^2\) 推出 \(D(X)\) 的简化计算式</td></tr>
+        <tr><td>☐</td><td>★ 能推导 \(D(aX+b)=a^2D(X)\)，并说清"为什么 \(b\) 消失了"（相减时抵消）</td></tr>
+        <tr><td>☐</td><td>能用"平移不改变分散程度"直观解释"\(b\) 不影响方差"</td></tr>
+        <tr><td>☐</td><td>能默写分层抽样的比例关系 \(\dfrac{n_i}{N_i}=\dfrac nN\)</td></tr>
+        <tr><td>☐</td><td>能默写样本方差的两种计算式，并指出它与 \(D(X)=E(X^2)-[E(X)]^2\) 结构相同</td></tr>
+        <tr><td>☐</td><td>★ 能用最小二乘法推出 \(\hat a=\bar y-\hat b\bar x\)，并说明"回归直线必过样本中心"</td></tr>
+        <tr><td>☐</td><td>★ 能推出回归系数公式 \(\hat b=\dfrac{\sum x_iy_i-n\bar x\bar y}{\sum x_i^2-n\bar x^2}\)</td></tr>
+        <tr><td>☐</td><td>能默写卡方公式，并正确对应列联表的四个格子</td></tr>
+        <tr><td>☐</td><td>能说出独立性检验结论的规范表述方式</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box proof">
+    <span class="tag">学完本册，你应该达到什么水平</span>
+    <p><strong>如果这一册学到位了，你应该能独立完成下面这些事：</strong></p>
+    <ul>
+      <li>判断一道计数题该用<strong>加法还是乘法</strong>、该用<strong>排列还是组合</strong>，并说出依据；</li>
+      <li>用古典概型算概率，并保证分子分母用的是<strong>同一个标准</strong>；</li>
+      <li>用条件概率、全概率公式处理"分来源"的问题；</li>
+      <li>识别二项分布与超几何分布，写出分布列并求期望、方差；</li>
+      <li>用最小二乘法求回归方程，并验算"直线过样本中心"；</li>
+      <li>用卡方做独立性检验，并规范表述结论。</li>
+    </ul>
+    <p><strong>如果还有困难，对照下面定位问题：</strong></p>
+    <ul>
+      <li><strong>总是选错模型</strong> → "一句话判据"没有内化：分类还是分步？排列还是组合？<strong>放回还是不放回</strong>？</li>
+      <li><strong>期望方差算错</strong> → 检查 \(D(aX+b)=a^2D(X)\) 里是不是把 \(b\) 带进去了（\(b\) 不影响方差）；</li>
+      <li><strong>分布列总对不上 1</strong> → 每写完一个分布列，<strong>务必把概率加起来验算</strong>，这是最有效的自检手段。</li>
+    </ul>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">系列完结</span>
+    <p>到这里，「高考数学重点章节梳理」系列全部完成：</p>
+    <ul>
+      <li><strong>第一册　数列</strong>——通项与前 \(n\) 项和的两大问题，累加/累乘/构造/裂项/错位相减</li>
+      <li><strong>第二册　导数</strong>——求导的十大题型分类，单调性、极值最值、恒成立</li>
+      <li><strong>第三册　三角函数</strong>——从单位圆推出全部公式，图象变换，解三角形</li>
+      <li><strong>第四册　立体几何</strong>——体积公式推导，平行垂直的判定与性质，空间向量法</li>
+      <li><strong>第五册　解析几何</strong>——三大曲线的标准方程推导，弦长公式与点差法</li>
+      <li><strong>第六册　概率统计</strong>——计数原理，条件概率与全概率，分布列期望方差，回归与独立性检验</li>
+    </ul>
+    <p>六册合起来覆盖了高考数学的主体内容，每册的结构和风格完全一致，可以放在一起当一套完整的复习讲义使用。</p>
+  </div>
+
+  <div class="foot">
+    <span>高考数学重点章节梳理 · 第六册 概率统计</span>
+    <span>建议配合课本与近 5 年真题同步使用</span>
+  </div>
+
+  <!-- ==================== 第 8 章：真题题型精讲 ==================== -->
+  <h2 id="ch8"><span class="num">8</span>高考真题题型精讲（2016—2025）</h2>
+  <p class="lead">前面七章解决"会不会"，这一章解决"考不考得出分"。十年真题按题型归类，每题给出完整解答与提分要点。</p>
+
+  <div class="box tip">
+    <span class="tag">本章说明：真题来源与使用方式</span>
+    <p><strong>题目来源：</strong>本章全部题目取自 2016—2025 年高考数学真题（全国卷 I/II/III 卷、全国甲/乙卷、新高考 I/II 卷等），题干保持原貌。</p>
+    <p><strong>解答说明：</strong>解答按本册前七章的方法体系重新组织，分步写清每一步的依据，并补充"官方答案未展开的中间步骤"。</p>
+    <p><strong>使用方法：</strong>概率统计题的失分大多是"用错模型"，所以每道题先判断类型，再动笔算。</p>
+  </div>
+
+  <div class="box def">
+    <span class="tag">十年考情速览：概率统计题的固定结构</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>题型</th><th>出现频率</th><th>考法</th><th>难度</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>分布列 + 期望</strong></td>
+            <td>最高</td>
+            <td>写出分布列，求期望、方差；比较方案的优劣</td>
+            <td>中等，<strong>必拿分</strong></td>
+          </tr>
+          <tr>
+            <td><strong>独立性检验</strong></td>
+            <td>高</td>
+            <td>计算 \(\chi^{2}\)（或 \(K^{2}\)），与临界值比较，下结论</td>
+            <td>容易，<strong>公式套用</strong></td>
+          </tr>
+          <tr>
+            <td><strong>概率递推</strong></td>
+            <td>上升趋势</td>
+            <td>与数列结合：求 \(P(A_i)\) 的递推式，再求期望</td>
+            <td><strong>难</strong>，近年新高考热点</td>
+          </tr>
+          <tr>
+            <td><strong>线性回归</strong></td>
+            <td>中等</td>
+            <td>求回归方程并预测</td>
+            <td>容易，但计算量大</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>★ 最重要的判断：先用第 4.2 节的"一句话判据"确定模型，再动笔。</strong>判断错了，后面全错。</p>
+  </div>
+
+  <h3 id="ch8-1">8.1　题型一：独立性检验</h3>
+
+  <div class="box tip">
+    <span class="tag">解题套路（四步，高度固定）</span>
+    <ol class="steps">
+      <li><strong>填列联表</strong>，把四个格子标成 \(a,b,c,d\)，算出 \(n\)。</li>
+      <li><strong>代入卡方公式</strong> \(\chi^{2}=\dfrac{n(ad-bc)^{2}}{(a+b)(c+d)(a+c)(b+d)}\)。</li>
+      <li><strong>与临界值比较。</strong></li>
+      <li><strong>规范下结论：</strong>"有 \(X\%\) 的把握认为……有关"，或"没有 \(X\%\) 的把握认为……有关"。</li>
+    </ol>
+    <p><strong>★ 结论的措辞是得分点。</strong>不能说"证明了有关"，只能说"有 \(X\%\) 的把握认为有关"。</p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 1 · 2019 全国I卷（文）</span>
+    <p>某商场为提高服务质量，随机调查了 \(50\) 名男顾客和 \(50\) 名女顾客，每位顾客对该商场的服务给出满意或不满意的评价，得到下面列联表：</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th></th><th>满意</th><th>不满意</th></tr></thead>
+        <tbody>
+          <tr><td><strong>男顾客</strong></td><td>40</td><td>10</td></tr>
+          <tr><td><strong>女顾客</strong></td><td>30</td><td>20</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>（1）分别估计男、女顾客对该商场服务满意的概率；</p>
+    <p>（2）能否有 \(95\%\) 的把握认为男、女顾客对该商场服务的评价有差异？</p>
+    <p>附：\(K^{2}=\dfrac{n(ad-bc)^{2}}{(a+b)(c+d)(a+c)(b+d)}\)；临界值 \(P(K^{2}\ge3.841)=0.050\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）用频率估计概率。</strong></p>
+    <p>男顾客中满意的有 40 人，共调查 50 人：</p>
+    <div class="formula">\[ \hat p_{\text{男}}=\frac{40}{50}=0.8 \]</div>
+    <p>女顾客中满意的有 30 人，共调查 50 人：</p>
+    <div class="formula">\[ \hat p_{\text{女}}=\frac{30}{50}=0.6 \]</div>
+    <div class="formula">
+      \[ \boxed{\ 0.8\ \text{和}\ 0.6\ } \]
+    </div>
+
+    <p><strong>（2）第一步：补全列联表。</strong></p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th></th><th>满意</th><th>不满意</th><th>合计</th></tr></thead>
+        <tbody>
+          <tr><td><strong>男顾客</strong></td><td>\(a=40\)</td><td>\(b=10\)</td><td>\(50\)</td></tr>
+          <tr><td><strong>女顾客</strong></td><td>\(c=30\)</td><td>\(d=20\)</td><td>\(50\)</td></tr>
+          <tr><td><strong>合计</strong></td><td>\(70\)</td><td>\(30\)</td><td>\(n=100\)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>第二步：代入公式。</strong>先算 \(ad-bc\)：</p>
+    <div class="formula">\[ ad-bc=40\times20-10\times30=800-300=500 \]</div>
+    <div class="formula">
+      \[ K^{2}=\frac{100\times500^{2}}{50\times50\times70\times30}=\frac{100\times250000}{5250000}=\frac{25000000}{5250000}=\frac{100}{21} \]
+    </div>
+    <p>（约分：分子分母同除 250000，得 \(\dfrac{100}{21}\)。）</p>
+    <div class="formula">\[ K^{2}=\frac{100}{21}\approx4.762 \]</div>
+
+    <p><strong>第三步：与临界值比较。</strong></p>
+    <div class="formula">\[ 4.762>3.841 \]</div>
+
+    <p><strong>第四步：下结论。</strong></p>
+    <div class="formula">
+      \[ \boxed{\ \text{有 }95\%\text{ 的把握认为男、女顾客对该商场服务的评价有差异}\ } \]
+    </div>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>\(ad-bc\) 要算准确，它是公式里唯一容易出错的地方。</strong>本题 \(40\times20=800\)、\(10\times30=300\)，差 500。</li>
+        <li><strong>结果写成精确分数 \(\dfrac{100}{21}\) 比写成小数更稳妥</strong>（避免四舍五入出错）。比较时再化成小数。</li>
+        <li><strong>结论的措辞要规范。</strong>正确说法是"有 \(95\%\) 的把握认为……有差异"；不能写"证明了两者有关"。</li>
+        <li>如果题目给的是 \(\alpha=0.05\)，对应的临界值就是 \(3.841\)；\(\alpha=0.01\) 对应 \(6.635\)；\(\alpha=0.001\) 对应 \(10.828\)。<strong>这三个数要背下来。</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 2 · 2025 全国I卷</span>
+    <p>为研究某疾病与超声波检查结果的关系，从做过超声波检查的人群中随机调查了 1000 人，得到如下列联表：</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>组别</th><th>检查正常</th><th>检查不正常</th><th>合计</th></tr></thead>
+        <tbody>
+          <tr><td><strong>患该疾病</strong></td><td>20</td><td>180</td><td>200</td></tr>
+          <tr><td><strong>未患该疾病</strong></td><td>780</td><td>20</td><td>800</td></tr>
+          <tr><td><strong>合计</strong></td><td>800</td><td>200</td><td>1000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>（1）记超声波检查结果不正常者患该疾病的概率为 \(p\)，求 \(p\) 的估计值；</p>
+    <p>（2）根据小概率值 \(\alpha=0.001\) 的独立性检验，分析超声波检查结果是否与患该疾病有关。</p>
+    <p>附：\(\chi^{2}=\dfrac{n(ad-bc)^{2}}{(a+b)(c+d)(a+c)(b+d)}\)；临界值 \(P(\chi^{2}\ge10.828)=0.001\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）注意"条件"是什么。</strong>题目问的是"<strong>检查结果不正常者</strong>中患病的概率"，所以<strong>样本空间要缩小到"检查不正常"这一列</strong>（共 200 人）。</p>
+    <p>其中患该疾病的有 180 人，所以：</p>
+    <div class="formula">
+      \[ \hat p=\frac{180}{200}=\frac{9}{10}=0.9 \]
+    </div>
+    <div class="formula">
+      \[ \boxed{\ \hat p=0.9\ } \]
+    </div>
+    <p><strong>★ 常见错误：</strong>误算成 \(\dfrac{180}{1000}=0.18\)（那是"随机抽一人、既检查不正常又患病"的概率），或 \(\dfrac{180}{200}\) 中分母搞错成 800。</p>
+
+    <p><strong>（2）第一步：标出四个格子。</strong></p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th></th><th>检查正常</th><th>检查不正常</th><th>合计</th></tr></thead>
+        <tbody>
+          <tr><td><strong>患病</strong></td><td>\(a=20\)</td><td>\(b=180\)</td><td>200</td></tr>
+          <tr><td><strong>未患病</strong></td><td>\(c=780\)</td><td>\(d=20\)</td><td>800</td></tr>
+          <tr><td><strong>合计</strong></td><td>800</td><td>200</td><td>\(n=1000\)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>第二步：提出零假设。</strong></p>
+    <p>\(H_{0}\)：超声波检查结果与患该疾病无关。</p>
+
+    <p><strong>第三步：代入公式。</strong>先算 \(ad-bc\)：</p>
+    <div class="formula">\[ ad-bc=20\times20-180\times780=400-140400=-140000 \]</div>
+    <p>平方后负号消失：</p>
+    <div class="formula">
+      \[ \chi^{2}=\frac{1000\times(-140000)^{2}}{200\times800\times800\times200}=\frac{1000\times1.96\times10^{10}}{2.56\times10^{10}} \]
+    </div>
+    <div class="formula">
+      \[ \chi^{2}=\frac{1.96\times10^{13}}{2.56\times10^{10}}=765.625 \]
+    </div>
+
+    <p><strong>第四步：与临界值比较并下结论。</strong></p>
+    <div class="formula">\[ 765.625>10.828 \]</div>
+    <div class="formula">
+      \[ \boxed{\ \text{认为超声波检查结果与患该疾病有关（犯错误的概率不超过 }0.001\text{）}\ } \]
+    </div>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>第（1）问的陷阱在"条件"。</strong>"检查不正常者患病的概率"是<strong>条件概率</strong>，分母是"检查不正常"的总人数 200，不是总人数 1000。</li>
+        <li><strong>卡方值很大（765.625）是正常的</strong>——本题的数据差异极其显著（患病的 200 人中 180 人检查不正常，未患病的 800 人中只有 20 人检查不正常）。</li>
+        <li><strong>零假设 \(H_0\) 要写出来。</strong>这是近年新高考的规范要求，不写可能扣分。</li>
+        <li>结论要说明"犯错误的概率不超过 \(0.001\)"，这比单说"有关"更完整。</li>
+        <li><strong>新高考把 \(K^{2}\) 改称 \(\chi^{2}\)</strong>，公式完全相同，只是记号变了，不要被吓到。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="ch8-2">8.2　题型二：分布列与期望</h3>
+
+  <div class="box tip">
+    <span class="tag">解题套路</span>
+    <ol class="steps">
+      <li><strong>确定随机变量 \(X\) 的所有可能取值。</strong>这一步最关键，<strong>漏一个取值就全错</strong>。</li>
+      <li><strong>逐个算出每个取值的概率。</strong>用互斥事件加法、独立事件乘法（见 2.2 节）。</li>
+      <li><strong>验算 \(\sum p_i=1\)。</strong>这是最有效的自检手段。</li>
+      <li><strong>用定义式求期望</strong> \(E(X)=\sum x_ip_i\)。</li>
+    </ol>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 3 · 2022 全国甲卷（理）</span>
+    <p>甲、乙两个学校进行体育比赛，比赛共设三个项目，每个项目胜方得 \(10\) 分，负方得 \(0\) 分，没有平局。三个项目比赛结束后，总得分高的学校获得冠军。已知甲学校在三个项目中获胜的概率分别为 \(0.5\)、\(0.4\)、\(0.8\)，各项目的比赛结果相互独立。</p>
+    <p>（1）求甲学校获得冠军的概率；</p>
+    <p>（2）用 \(X\) 表示乙学校的总得分，求 \(X\) 的分布列与期望。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：把"获得冠军"翻译成条件。</strong>三个项目，甲要获得冠军必须<strong>至少赢两个项目</strong>（赢 2 项得 20 分，赢 3 项得 30 分；赢 1 项只有 10 分，对方 20 分）。</p>
+
+    <p><strong>第二步：算"甲恰好赢 2 项"的概率。</strong>分三种情况（哪一项输）：</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>情况</th><th>概率</th></tr></thead>
+        <tbody>
+          <tr><td>赢第 1、2 项，输第 3 项</td><td>\(0.5\times0.4\times0.2=0.04\)</td></tr>
+          <tr><td>赢第 1、3 项，输第 2 项</td><td>\(0.5\times0.6\times0.8=0.24\)</td></tr>
+          <tr><td>赢第 2、3 项，输第 1 项</td><td>\(0.5\times0.4\times0.8=0.16\)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>（注意"输"的概率：第 1 项输 \(=1-0.5=0.5\)，第 2 项输 \(=1-0.4=0.6\)，第 3 项输 \(=1-0.8=0.2\)。）</p>
+    <p>三种情况<strong>互斥</strong>，所以相加：</p>
+    <div class="formula">\[ P(\text{甲赢 2 项})=0.04+0.24+0.16=0.44 \]</div>
+
+    <p><strong>第三步：算"甲赢 3 项"的概率。</strong></p>
+    <div class="formula">\[ P(\text{甲赢 3 项})=0.5\times0.4\times0.8=0.16 \]</div>
+
+    <p><strong>第四步：相加。</strong></p>
+    <div class="formula">
+      \[ P(\text{甲获冠军})=0.44+0.16=0.6 \]
+    </div>
+    <div class="formula">\[ \boxed{\ 0.6\ } \]</div>
+
+    <p><strong>（2）第一步：确定 \(X\) 的取值。</strong>\(X\) 是乙的总得分，每个项目 10 分，所以 \(X\in\{0,10,20,30\}\)。</p>
+    <p>乙在三个项目中获胜的概率分别是 \(1-0.5=0.5\)、\(1-0.4=0.6\)、\(1-0.8=0.2\)。</p>
+
+    <p><strong>第二步：逐个求概率。</strong></p>
+    <p><strong>\(X=0\)（乙全输）：</strong>三个项目乙都输，即甲都赢：</p>
+    <div class="formula">\[ P(X=0)=0.5\times0.4\times0.8=0.16=\frac{4}{25} \]</div>
+
+    <p><strong>\(X=10\)（乙恰好赢 1 项）：</strong>分三种情况：</p>
+    <div class="formula">
+      \[ P(X=10)=0.5\times0.4\times0.8+0.5\times0.6\times0.8+0.5\times0.4\times0.2 \]
+    </div>
+    <p>（分别是"乙赢第 1 项""乙赢第 2 项""乙赢第 3 项"。）</p>
+    <div class="formula">\[ P(X=10)=0.16+0.24+0.04=0.44=\frac{11}{25} \]</div>
+
+    <p><strong>\(X=20\)（乙恰好赢 2 项）：</strong></p>
+    <div class="formula">
+      \[ P(X=20)=0.5\times0.6\times0.8+0.5\times0.4\times0.2+0.5\times0.6\times0.2 \]
+    </div>
+    <div class="formula">\[ P(X=20)=0.24+0.04+0.06=0.34=\frac{17}{50} \]</div>
+
+    <p><strong>\(X=30\)（乙全赢）：</strong></p>
+    <div class="formula">\[ P(X=30)=0.5\times0.6\times0.2=0.06=\frac{3}{50} \]</div>
+
+    <p><strong>第三步：验算概率之和。</strong></p>
+    <div class="formula">
+      \[ \frac{4}{25}+\frac{11}{25}+\frac{17}{50}+\frac{3}{50}=\frac{8}{50}+\frac{22}{50}+\frac{17}{50}+\frac{3}{50}=\frac{50}{50}=1 \quad\checkmark \]
+    </div>
+
+    <p><strong>第四步：写出分布列并求期望。</strong></p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>\(X\)</th><th>0</th><th>10</th><th>20</th><th>30</th></tr></thead>
+        <tbody>
+          <tr><td>\(P\)</td><td>\(\dfrac{4}{25}\)</td><td>\(\dfrac{11}{25}\)</td><td>\(\dfrac{17}{50}\)</td><td>\(\dfrac{3}{50}\)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="formula">
+      \[ E(X)=0\times\frac{4}{25}+10\times\frac{11}{25}+20\times\frac{17}{50}+30\times\frac{3}{50} \]
+    </div>
+    <div class="formula">
+      \[ E(X)=0+4.4+6.8+1.8=13 \]
+    </div>
+    <div class="formula">
+      \[ \boxed{\ E(X)=13\ } \]
+    </div>
+
+    <p><strong>验算（用期望的线性性质）：</strong>设 \(X_i\) 为"乙在第 \(i\) 个项目得分"（赢则 10，输则 0），则 \(X=X_1+X_2+X_3\)。</p>
+    <div class="formula">
+      \[ E(X_i)=10\times p_i \]
+    </div>
+    <p>其中 \(p_i\) 是乙在第 \(i\) 项的胜率（\(0.5,0.6,0.2\)）：</p>
+    <div class="formula">
+      \[ E(X)=10\times(0.5+0.6+0.2)=10\times1.3=13 \quad\checkmark \]
+    </div>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">★ 这个验算技巧非常重要</span>
+      <p><strong>如果随机变量可以拆成几个"独立部分"的和，那么期望就等于各部分期望之和</strong>（不需要独立性，见 5.3 节的期望性质）。</p>
+      <p>本题 \(X=X_1+X_2+X_3\)，所以 \(E(X)=E(X_1)+E(X_2)+E(X_3)\)。<strong>这条性质能在 10 秒内算出期望，比用定义式快得多，而且可以用来验算。</strong></p>
+    </div>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>第（1）问的关键是"把'获得冠军'翻译成'至少赢 2 项'"。</strong>这一步想不清楚，后面就没法做。</li>
+        <li><strong>数"恰好赢 2 项"时要数全三种情况</strong>（输第 1 项、输第 2 项、输第 3 项），不能只算一种。</li>
+        <li><strong>写分布列必须验算 \(\sum p_i=1\)。</strong>这是发现漏项的最快方法。</li>
+        <li><strong>期望可以用"线性性质"快速求</strong>：把 \(X\) 拆成几个简单变量之和，各自求期望再相加。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 4 · 2021 新高考I卷</span>
+    <p>某学校组织"一带一路"知识竞赛，有 A、B 两类问题。每位参加比赛的同学先在两类问题中选择一类并从中随机抽取一个问题回答，若回答错误则该同学比赛结束；若回答正确则从另一类问题中再随机抽取一个问题回答，无论回答正确与否，该同学比赛结束。A 类问题中的每个问题回答正确得 20 分，否则得 0 分；B 类问题中的每个问题回答正确得 80 分，否则得 0 分。已知小明能正确回答 A 类问题的概率为 \(0.8\)，能正确回答 B 类问题的概率为 \(0.6\)，且能正确回答问题的概率与回答次序无关。</p>
+    <p>（1）若小明先回答 A 类问题，记 \(X\) 为小明的累计得分，求 \(X\) 的分布列；</p>
+    <p>（2）为使累计得分的期望最大，小明应选择先回答哪类问题？并说明理由。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：理清答题流程。</strong>先答 A 类：</p>
+    <ul>
+      <li>答 A 错误 → 比赛结束，得分 0；</li>
+      <li>答 A 正确 → 继续答 B 类；
+        <ul>
+          <li>答 B 错误 → 比赛结束，得分 \(20+0=20\)；</li>
+          <li>答 B 正确 → 比赛结束，得分 \(20+80=100\)。</li>
+        </ul>
+      </li>
+    </ul>
+    <p>所以 \(X\in\{0,20,100\}\)。</p>
+
+    <p><strong>第二步：逐个求概率。</strong></p>
+    <div class="formula">\[ P(X=0)=P(\text{A 答错})=1-0.8=0.2 \]</div>
+    <div class="formula">\[ P(X=20)=P(\text{A 对且 B 错})=0.8\times(1-0.6)=0.8\times0.4=0.32 \]</div>
+    <div class="formula">\[ P(X=100)=P(\text{A 对且 B 对})=0.8\times0.6=0.48 \]</div>
+
+    <p><strong>第三步：验算。</strong></p>
+    <div class="formula">\[ 0.2+0.32+0.48=1 \quad\checkmark \]</div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>\(X\)</th><th>0</th><th>20</th><th>100</th></tr></thead>
+        <tbody>
+          <tr><td>\(P\)</td><td>\(0.2\)</td><td>\(0.32\)</td><td>\(0.48\)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>（2）第一步：算"先答 A"的期望。</strong></p>
+    <div class="formula">
+      \[ E_{A}(X)=0\times0.2+20\times0.32+100\times0.48=0+6.4+48=54.4 \]
+    </div>
+
+    <p><strong>第二步：算"先答 B"的期望。</strong>先答 B 时，得分可能是 \(0\)、\(80\)、\(100\)：</p>
+    <div class="formula">\[ P=(\text{B 错})=1-0.6=0.4 \quad\Longrightarrow\quad \text{得分 }0 \]</div>
+    <div class="formula">\[ P(\text{B 对且 A 错})=0.6\times(1-0.8)=0.6\times0.2=0.12 \quad\Longrightarrow\quad \text{得分 }80 \]</div>
+    <div class="formula">\[ P(\text{B 对且 A 对})=0.6\times0.8=0.48 \quad\Longrightarrow\quad \text{得分 }100 \]</div>
+    <p>验算：\(0.4+0.12+0.48=1\) ✓</p>
+    <div class="formula">
+      \[ E_{B}(X)=0\times0.4+80\times0.12+100\times0.48=0+9.6+48=57.6 \]
+    </div>
+
+    <p><strong>第三步：比较。</strong></p>
+    <div class="formula">\[ E_{B}(X)=57.6>54.4=E_{A}(X) \]</div>
+    <div class="formula">
+      \[ \boxed{\ \text{小明应先回答 }B\text{ 类问题}\ } \]
+    </div>
+
+    <div class="box tip" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">一个更快的比较方法（不用算完整分布列）</span>
+      <p>设先答 A 的期望为 \(E_A\)，先答 B 的期望为 \(E_B\)。</p>
+      <p>注意到两种方案里，"两道都答对"的得分都是 100，概率都是 \(0.8\times0.6=0.48\)，这一项<strong>完全相同</strong>，可以抵消。</p>
+      <p>差别在于"只答对一道"的情形：</p>
+      <ul>
+        <li>先答 A：只答对 A 的概率 \(0.8\times0.4=0.32\)，得 20 分；</li>
+        <li>先答 B：只答对 B 的概率 \(0.6\times0.2=0.12\)，得 80 分。</li>
+      </ul>
+      <p>比较"只答对一道"的贡献：先答 A 是 \(0.32\times20=6.4\)；先答 B 是 \(0.12\times80=9.6\)。</p>
+      <p>因为 \(9.6>6.4\)，所以先答 B 更好。<strong>这个方法避免了计算完整分布列，考场上能省时间。</strong></p>
+    </div>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>先把"答题流程"画成树状图或分情况列出</strong>，再确定 \(X\) 的所有取值。这是这类"分步决策"题的关键。</li>
+        <li><strong>注意"答错则结束"这个规则</strong>——它决定了 \(X\) 只能取 3 个值，而不是 4 个（不存在"答错 A 还继续答 B"的情形）。</li>
+        <li><strong>比较两个方案的优劣，就是比较两个期望。</strong>本题的结论"先答 B"符合直觉（B 的分值高，先答高分项能提高期望），但<strong>不能靠直觉下结论，必须算出期望</strong>。</li>
+        <li>本题的简化比较技巧很实用：<strong>找出两个方案中"相同的部分"先抵消，只比较"不同的部分"。</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="ch8-3">8.3　题型三：概率递推（新高考热点）</h3>
+
+  <div class="box tip">
+    <span class="tag">题型特征与解题套路</span>
+    <p><strong>特征：</strong>一个过程反复进行，每一步的状态依赖上一步。题目要求"求第 \(i\) 次的概率"。</p>
+    <p><strong>套路（与数列结合）：</strong></p>
+    <ol class="steps">
+      <li><strong>设事件</strong> \(A_i\) 表示"第 \(i\) 次处于某种状态"，记 \(p_i=P(A_i)\)。</li>
+      <li><strong>用全概率公式建立递推式</strong>（见 3.2 节）：\(p_i=ap_{i-1}+b\)。</li>
+      <li><strong>用构造法求出 \(p_i\) 的通项</strong>（见数列册 4.4 节）：令 \(u_i=p_i-\dfrac{b}{1-a}\)，则 \(\{u_i\}\) 是等比数列。</li>
+      <li><strong>若要求期望</strong>，把总次数拆成"每次是否发生的指示变量"之和，再用期望的线性性质。</li>
+    </ol>
+    <p><strong>★ 这类题是"概率 + 数列"的综合，近五年新高考几乎年年考。</strong></p>
+  </div>
+
+  <div class="box eg">
+    <span class="tag">真题 5 · 2023 新高考I卷　<span class="lv-hard">★★</span></span>
+    <p>甲、乙两人投篮，每次由其中一人投篮，规则如下：若命中则此人继续投篮，若未命中则换为对方投篮。无论之前投篮情况如何，甲每次投篮的命中率均为 \(0.6\)，乙每次投篮的命中率均为 \(0.8\)。由抽签确定第一次投篮的人选，第一次投篮的人是甲、乙的概率各为 \(0.5\)。</p>
+    <p>（1）求第二次投篮的人是乙的概率；</p>
+    <p>（2）求第 \(i\) 次投篮的人是甲的概率；</p>
+    <p>（3）已知：若随机变量 \(X_i\) 服从两点分布，且 \(P(X_i=1)=1-P(X_i=0)=q_i\)（\(i=1,2,\dots,n\)），则 \(E\left(\sum_{i=1}^{n}X_i\right)=\sum_{i=1}^{n}q_i\)。记前 \(n\) 次投篮中甲投篮的次数为 \(Y\)，求 \(E(Y)\)。</p>
+
+    <h4>解析</h4>
+    <p><strong>（1）第一步：分析"第二次是乙"的两种来源。</strong></p>
+    <ul>
+      <li><strong>第一次是甲，且甲未命中</strong>（未命中则换人）：概率 \(0.5\times(1-0.6)=0.5\times0.4=0.2\)；</li>
+      <li><strong>第一次是乙，且乙命中</strong>（命中则继续）：概率 \(0.5\times0.8=0.4\)。</li>
+    </ul>
+    <p>这两种情况<strong>互斥</strong>，相加：</p>
+    <div class="formula">
+      \[ P(\text{第二次是乙})=0.2+0.4=0.6 \]
+    </div>
+    <div class="formula">\[ \boxed{\ 0.6\ } \]</div>
+
+    <p><strong>（2）第一步：设事件并用全概率公式建立递推式。</strong></p>
+    <p>记 \(A_i\) 为"第 \(i\) 次投篮的人是甲"，\(p_i=P(A_i)\)。</p>
+    <p>"第 \(i\) 次是甲"有两种来源：</p>
+    <ul>
+      <li>第 \(i-1\) 次是甲，且甲命中（继续）：概率 \(p_{i-1}\times0.6\)；</li>
+      <li>第 \(i-1\) 次是乙，且乙未命中（换人）：概率 \((1-p_{i-1})\times(1-0.8)=(1-p_{i-1})\times0.2\)。</li>
+    </ul>
+    <p>由全概率公式：</p>
+    <div class="formula">
+      \[ p_i=0.6\,p_{i-1}+0.2\,(1-p_{i-1})=0.4\,p_{i-1}+0.2 \]
+    </div>
+    <div class="formula">
+      \[ p_i=\frac25 p_{i-1}+\frac15 \qquad(i\ge2) \tag{①} \]
+    </div>
+
+    <p><strong>第二步：用构造法求通项。</strong>这是形如 \(p_i=ap_{i-1}+b\) 的递推式（见数列册 4.4 节）。先求不动点：</p>
+    <div class="formula">
+      \[ p=\frac25 p+\frac15 \quad\Longrightarrow\quad \frac35 p=\frac15 \quad\Longrightarrow\quad p=\frac13 \]
+    </div>
+    <p>令 \(u_i=p_i-\dfrac13\)，则：</p>
+    <div class="formula">
+      \[ u_i=p_i-\frac13=\frac25 p_{i-1}+\frac15-\frac13=\frac25 p_{i-1}-\frac{2}{15}=\frac25\left(p_{i-1}-\frac13\right)=\frac25 u_{i-1} \]
+    </div>
+    <p>所以 \(\{u_i\}\) 是等比数列，公比 \(\dfrac25\)。</p>
+
+    <p><strong>第三步：求首项并写通项。</strong>由 \(p_1=0.5=\dfrac12\)：</p>
+    <div class="formula">
+      \[ u_1=p_1-\frac13=\frac12-\frac13=\frac16 \]
+    </div>
+    <div class="formula">
+      \[ u_i=u_1\left(\frac25\right)^{i-1}=\frac16\left(\frac25\right)^{i-1} \]
+    </div>
+    <p>所以：</p>
+    <div class="formula">
+      \[ \boxed{\ p_i=\frac13+\frac16\left(\frac25\right)^{i-1}\ } \]
+    </div>
+
+    <p><strong>验算：</strong>\(i=1\) 时 \(p_1=\dfrac13+\dfrac16=\dfrac12\) ✓（与已知一致）。\(i\to+\infty\) 时 \(p_i\to\dfrac13\)，说明长期来看甲投篮的次数约占三分之一，符合直觉（甲的命中率低，更容易被换下）。</p>
+
+    <p><strong>（3）第一步：把 \(Y\) 拆成指示变量之和。</strong>设</p>
+    <div class="formula">
+      \[
+      X_i=\begin{cases}
+      1, & \text{第 }i\text{ 次是甲投篮},\\
+      0, & \text{第 }i\text{ 次是乙投篮}.
+      \end{cases}
+      \]
+    </div>
+    <p>则 \(X_i\) 服从两点分布，且 \(P(X_i=1)=p_i\)。前 \(n\) 次中甲投篮的次数就是：</p>
+    <div class="formula">
+      \[ Y=X_1+X_2+\cdots+X_n \]
+    </div>
+
+    <p><strong>第二步：用期望的线性性质。</strong>由题目给出的结论（这也正是期望线性性质的体现）：</p>
+    <div class="formula">
+      \[ E(Y)=E\left(\sum_{i=1}^{n}X_i\right)=\sum_{i=1}^{n}E(X_i)=\sum_{i=1}^{n}p_i \]
+    </div>
+
+    <p><strong>第三步：代入 \(p_i\) 求和。</strong></p>
+    <div class="formula">
+      \[ E(Y)=\sum_{i=1}^{n}\left[\frac13+\frac16\left(\frac25\right)^{i-1}\right]=\frac n3+\frac16\sum_{i=1}^{n}\left(\frac25\right)^{i-1} \]
+    </div>
+    <p>后面的和是等比数列（首项 1，公比 \(\dfrac25\)，共 \(n\) 项）：</p>
+    <div class="formula">
+      \[ \sum_{i=1}^{n}\left(\frac25\right)^{i-1}=\frac{1-\left(\frac25\right)^{n}}{1-\frac25}=\frac{1-\left(\frac25\right)^{n}}{\frac35}=\frac53\left[1-\left(\frac25\right)^{n}\right] \]
+    </div>
+    <div class="formula">
+      \[ E(Y)=\frac n3+\frac16\times\frac53\left[1-\left(\frac25\right)^{n}\right]=\frac n3+\frac{5}{18}\left[1-\left(\frac25\right)^{n}\right] \]
+    </div>
+    <div class="formula">
+      \[ \boxed{\ E(Y)=\frac n3+\frac{5}{18}\left[1-\left(\frac25\right)^{n}\right]\ } \]
+    </div>
+
+    <p><strong>验算：</strong>取 \(n=1\)：\(E(Y)=\dfrac13+\dfrac{5}{18}\left(1-\dfrac25\right)=\dfrac13+\dfrac{5}{18}\times\dfrac35=\dfrac13+\dfrac16=\dfrac12\) ✓（第一次是甲的概率是 \(\dfrac12\)）。</p>
+
+    <div class="box warn" style="margin-top:16px;margin-bottom:0;">
+      <span class="tag">提分要点</span>
+      <ul>
+        <li><strong>第（2）问是全概率公式的标准应用。</strong>关键是分析清楚"第 \(i\) 次是甲"的<strong>两种来源</strong>：上一步是甲且甲命中，或上一步是乙且乙未命中。</li>
+        <li><strong>递推式 \(p_i=ap_{i-1}+b\) 用构造法求通项</strong>（与数列册 4.4 节完全一样）。先求不动点 \(\dfrac{b}{1-a}=\dfrac{1/5}{1-2/5}=\dfrac13\)，再令 \(u_i=p_i-\dfrac13\)。</li>
+        <li><strong>第（3）问的关键：把"次数"拆成"每次的指示变量之和"。</strong>即 \(Y=\sum X_i\)，其中 \(X_i\) 是两点分布。这样期望就变成 \(\sum p_i\)，直接借用第（2）问的结论。</li>
+        <li><strong>注意 \(X_i\) 之间不独立</strong>（第 \(i\) 次是谁投篮依赖于第 \(i-1\) 次），但<strong>期望的线性性质不需要独立性</strong>——这是本题能做的根本原因。</li>
+        <li>最后求和时用等比数列公式，<strong>项数是 \(n\) 项</strong>（从 \(\left(\frac25\right)^0\) 到 \(\left(\frac25\right)^{n-1}\)）。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="ch8-4">8.4　提分要点总结</h3>
+
+  <div class="box proof">
+    <span class="tag">十年真题告诉我们的五件事</span>
+    <ol class="steps">
+      <li><strong>第一步永远是"判断类型"。</strong>用第 4.2 节的一句话判据：<strong>放回还是不放回</strong>（二项 vs 超几何）、<strong>分类还是分步</strong>（加法 vs 乘法）、<strong>独立还是条件</strong>。判断错了，后面全错。</li>
+      <li><strong>分布列必须验算 \(\sum p_i=1\)。</strong>这是发现"漏取值"或"算错概率"的最快方法。<strong>十年真题里，写分布列的题几乎都要求这一步。</strong></li>
+      <li><strong>期望可以用线性性质快速求。</strong>把 \(X\) 拆成几个简单变量之和，各自求期望再相加（真题 3、5 都用到）。<strong>这条性质不需要独立性，适用范围极广。</strong></li>
+      <li><strong>独立性检验是"套公式"题，必须拿满。</strong>四步固定：填表 → 代公式 → 比临界值 → 规范下结论。<strong>三个临界值 \(3.841\)、\(6.635\)、\(10.828\) 要背。</strong></li>
+      <li><strong>概率递推是近年新高考的热点，本质是"概率 + 数列"。</strong>套路固定：全概率公式建立递推 → 构造法求通项 → 期望用线性性质。真题 5（2023 新高考 I 卷）是典型，2019 全国 I 卷的概率递推题也属同类。</li>
+    </ol>
+  </div>
+
+  <div class="box tip">
+    <span class="tag">考场时间分配建议</span>
+    <ul>
+      <li><strong>概率统计大题：限时 12 分钟。</strong>独立性检验题 8 分钟（纯计算）；分布列题 12 分钟（分析 + 计算）。</li>
+      <li><strong>写分布列前先把所有取值列出来</strong>，再逐个算概率。<strong>不要边算边想</strong>，那样容易漏取值。</li>
+      <li><strong>验算技巧：</strong>① 概率之和是否为 1；② 期望是否落在"最小取值"和"最大取值"之间；③ 用线性性质另算一遍期望。</li>
+      <li><strong>结论的措辞要规范。</strong>独立性检验不能说"证明有关"，只能说"有 \(X\%\) 的把握认为有关"。</li>
+      <li><strong>概率递推题如果卡住，先把递推式写出来</strong>（用全概率公式），这一步有分；通项求不出来也能拿部分分。</li>
+    </ul>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">本章真题索引（按题型查）</span>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>题型</th><th>真题</th><th>考查点</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="2"><strong>独立性检验</strong></td><td>2019 全国I卷（文）</td><td>用频率估计概率；\(K^{2}\) 的计算与比较</td></tr>
+          <tr><td>2025 全国I卷</td><td><strong>条件概率的陷阱</strong>；零假设；\(\chi^{2}\) 与临界值</td></tr>
+          <tr><td rowspan="2"><strong>分布列与期望</strong></td><td>2022 全国甲卷（理）</td><td>互斥事件加法；分布列；<strong>期望的线性性质验算</strong></td></tr>
+          <tr><td>2021 新高考I卷</td><td>分步决策；两个方案的期望比较</td></tr>
+          <tr><td><strong>概率递推</strong></td><td>2023 新高考I卷</td><td>全概率公式建递推；构造法求通项；期望的线性性质</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>练习建议：</strong>本章 5 道题覆盖了"独立性检验、分布列与期望、概率递推"三大题型。其中<strong>概率递推（真题 5）难度最高，建议单独练三遍</strong>：第一遍看解答理解思路，第二遍独立完成，第三遍只写关键步骤（设事件 → 建递推 → 求通项 → 求期望）。</p>
+  </div>
+
+  </main>
+</div>
+
+<button class="print-btn" onclick="window.print()">打印 / 存为 PDF</button>
+
+<script>
+(function(){
+  // 公式渲染依赖 MathJax CDN（需联网）。若超时仍未就绪，提示读者。
+  var shown = false;
+  function check(){
+    var ok = window.MathJax && window.MathJax.startup && window.MathJax.startup.document;
+    if (!ok && !shown){
+      shown = true;
+      var el = document.getElementById('mathjax-warn');
+      if (el) el.style.display = 'block';
+    }
+  }
+  setTimeout(check, 4000);
+  setTimeout(check, 9000);
+})();
+</script>
+
+<script>
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('.sidenav a'));
+  if (!links.length) return;
+  var targets = links.map(function(a){
+    return document.getElementById(decodeURIComponent(a.getAttribute('href').slice(1)));
+  });
+  var ticking = false;
+  function update(){
+    ticking = false;
+    var idx = 0;
+    for (var i = 0; i < targets.length; i++){
+      if (targets[i] && targets[i].getBoundingClientRect().top <= 100) idx = i;
+    }
+    for (var j = 0; j < links.length; j++){
+      links[j].classList.toggle('active', j === idx);
+    }
+  }
+  function onScroll(){
+    if (!ticking){ ticking = true; window.requestAnimationFrame(update); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+  update();
+})();
+</script>
+</body>
+</html>
