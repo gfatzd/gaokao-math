@@ -534,11 +534,11 @@
     </div>
     <div class="node">
       <b>主线三：向量怎么"乘"</b>
-      <span>数量积 \(\bs a\cdot\bs b=|\bs a||\bs b|\cos\theta\)。<strong>它把"角度"和"长度"两个信息打包成了一个数。</strong></span>
+      <span>数量积 \(\mathbf{a}\cdot\mathbf{b}=|\mathbf{a}||\mathbf{b}|\cos\theta\)。<strong>它把"角度"和"长度"两个信息打包成了一个数。</strong></span>
     </div>
     <div class="node">
       <b>主线四：复数是什么</b>
-      <span>复数 \(a+b\i\) 可以看成平面上的点 \((a,b)\)——<strong>它和平面向量是"同一件事的两种说法"</strong>。</span>
+      <span>复数 \(a+b\mathrm{i}\) 可以看成平面上的点 \((a,b)\)——<strong>它和平面向量是"同一件事的两种说法"</strong>。</span>
     </div>
   </div>
 
@@ -546,9 +546,9 @@
     <span class="tag">学法建议</span>
     <ol>
       <li><strong>先把"几何法"和"坐标法"两条路都学会，再决定用哪条。</strong>几何法适合处理"有明确图形关系"的题（如三角形、平行四边形），坐标法适合"能建系"的题。<strong>拿到题先想"能不能建系"。</strong></li>
-      <li><strong>数量积是本章的核心</strong>，因为它一次性给出"长度"和"角度"：\(|\bs a|=\sqrt{\bs a\cdot\bs a}\)、\(\cos\theta=\dfrac{\bs a\cdot\bs b}{|\bs a||\bs b|}\)。<strong>记住这两条变形，等于记住了半章内容。</strong></li>
+      <li><strong>数量积是本章的核心</strong>，因为它一次性给出"长度"和"角度"：\(|\mathbf{a}|=\sqrt{\mathbf{a}\cdot\mathbf{a}}\)、\(\cos\theta=\dfrac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{a}||\mathbf{b}|}\)。<strong>记住这两条变形，等于记住了半章内容。</strong></li>
       <li><strong>复数部分不要怕。</strong>高考只考一道 5 分的小题，且题型固定（四则运算 + 共轭 + 模），把第 5 章的例题做熟就够。</li>
-      <li><strong>注意"零向量"这个特殊角色。</strong>零向量方向任意，所以"\(\bs a\parallel\bs b\)"不能写成"\(\dfrac{a_1}{a_2}=\dfrac{b_1}{b_2}\)"（分母可能是 0）。第 1 章会重点讲。</li>
+      <li><strong>注意"零向量"这个特殊角色。</strong>零向量方向任意，所以"\(\mathbf{a}\parallel\mathbf{b}\)"不能写成"\(\dfrac{a_1}{a_2}=\dfrac{b_1}{b_2}\)"（分母可能是 0）。第 1 章会重点讲。</li>
     </ol>
   </div>
 
@@ -556,8 +556,8 @@
     <span class="tag">先建立三个重要直觉</span>
     <ul>
       <li><strong>向量可以"平移"。</strong>只要大小和方向不变，向量就是同一个向量，画在哪儿都一样。所以向量可以自由地"搬"到需要的位置。</li>
-      <li><strong>向量的"乘法"有两种，且完全不同。</strong>数乘（\(\lambda\bs a\)）的结果还是<strong>向量</strong>；数量积（\(\bs a\cdot\bs b\)）的结果是<strong>一个数</strong>。不要混。</li>
-      <li><strong>复数 \(a+b\i\) 与向量 \((a,b)\) 一一对应。</strong>所以复数的加减法就是向量的加减法，复数的模就是向量的长度。</li>
+      <li><strong>向量的"乘法"有两种，且完全不同。</strong>数乘（\(\lambda\mathbf{a}\)）的结果还是<strong>向量</strong>；数量积（\(\mathbf{a}\cdot\mathbf{b}\)）的结果是<strong>一个数</strong>。不要混。</li>
+      <li><strong>复数 \(a+b\mathrm{i}\) 与向量 \((a,b)\) 一一对应。</strong>所以复数的加减法就是向量的加减法，复数的模就是向量的长度。</li>
     </ul>
   </div>
 
@@ -579,14 +579,14 @@
 
   <div class="box def">
     <span class="tag">定义</span>
-    <p>既有<strong>大小</strong>又有<strong>方向</strong>的量叫<strong>向量</strong>。向量常用带箭头的线段表示，记作 \(\overrightarrow{AB}\) 或 \(\bs a\)。</p>
+    <p>既有<strong>大小</strong>又有<strong>方向</strong>的量叫<strong>向量</strong>。向量常用带箭头的线段表示，记作 \(\overrightarrow{AB}\) 或 \(\mathbf{a}\)。</p>
     <ul>
-      <li><strong>向量的模：</strong>向量的大小，记作 \(|\overrightarrow{AB}|\) 或 \(|\bs a|\)。<strong>模是一个非负实数。</strong></li>
-      <li><strong>零向量：</strong>模为 \(0\) 的向量，记作 \(\bs 0\)。<strong>方向任意。</strong></li>
+      <li><strong>向量的模：</strong>向量的大小，记作 \(|\overrightarrow{AB}|\) 或 \(|\mathbf{a}|\)。<strong>模是一个非负实数。</strong></li>
+      <li><strong>零向量：</strong>模为 \(0\) 的向量，记作 \(\mathbf{0}\)。<strong>方向任意。</strong></li>
       <li><strong>单位向量：</strong>模为 \(1\) 的向量。</li>
-      <li><strong>平行向量（共线向量）：</strong>方向相同或相反的向量，记作 \(\bs a\parallel\bs b\)。<strong>规定 \(\bs 0\) 与任何向量平行。</strong></li>
-      <li><strong>相等向量：</strong>大小相等且方向相同的向量，记作 \(\bs a=\bs b\)。</li>
-      <li><strong>相反向量：</strong>大小相等且方向相反的向量，\(-\bs a\) 与 \(\bs a\) 互为相反向量。</li>
+      <li><strong>平行向量（共线向量）：</strong>方向相同或相反的向量，记作 \(\mathbf{a}\parallel\mathbf{b}\)。<strong>规定 \(\mathbf{0}\) 与任何向量平行。</strong></li>
+      <li><strong>相等向量：</strong>大小相等且方向相同的向量，记作 \(\mathbf{a}=\mathbf{b}\)。</li>
+      <li><strong>相反向量：</strong>大小相等且方向相反的向量，\(-\mathbf{a}\) 与 \(\mathbf{a}\) 互为相反向量。</li>
     </ul>
   </div>
 
@@ -595,7 +595,7 @@
     <ul>
       <li><strong>"向量相等"与"线段相等"不是一回事。</strong>向量相等要求"大小相等 + 方向相同"；线段相等只看长度。<strong>所以两个向量可以相等，但它们的位置完全不同</strong>（因为向量可以平移）。</li>
       <li><strong>平行 ≠ 位置平行。</strong>向量平行说的是"方向相同或相反"，所以两个向量可以在同一条直线上（共线），也可以分别在两条平行线上。<strong>这正是"平行向量"又叫"共线向量"的原因。</strong></li>
-      <li><strong>零向量的方向是任意的</strong>，所以它既与 \(\bs a\) 同向，也与 \(\bs a\) 反向——这就是"\(\bs 0\) 与任何向量平行"的来源。</li>
+      <li><strong>零向量的方向是任意的</strong>，所以它既与 \(\mathbf{a}\) 同向，也与 \(\mathbf{a}\) 反向——这就是"\(\mathbf{0}\) 与任何向量平行"的来源。</li>
     </ul>
   </div>
 
@@ -603,8 +603,8 @@
 
   <div class="box def">
     <span class="tag">加法：两个法则</span>
-    <p><strong>三角形法则（首尾相接）：</strong>把 \(\bs b\) 的起点平移到 \(\bs a\) 的终点，则从 \(\bs a\) 的起点指向 \(\bs b\) 的终点的向量就是 \(\bs a+\bs b\)。</p>
-    <p><strong>平行四边形法则（共起点）：</strong>把 \(\bs a\)、\(\bs b\) 的起点放在一起，以它们为邻边作平行四边形，则从公共起点出发的<strong>对角线</strong>就是 \(\bs a+\bs b\)。</p>
+    <p><strong>三角形法则（首尾相接）：</strong>把 \(\mathbf{b}\) 的起点平移到 \(\mathbf{a}\) 的终点，则从 \(\mathbf{a}\) 的起点指向 \(\mathbf{b}\) 的终点的向量就是 \(\mathbf{a}+\mathbf{b}\)。</p>
+    <p><strong>平行四边形法则（共起点）：</strong>把 \(\mathbf{a}\)、\(\mathbf{b}\) 的起点放在一起，以它们为邻边作平行四边形，则从公共起点出发的<strong>对角线</strong>就是 \(\mathbf{a}+\mathbf{b}\)。</p>
     <p><strong>★ 两个法则本质相同</strong>，只是画法不同。三角形法则适合"首尾相接"的连续相加（如 \(\overrightarrow{AB}+\overrightarrow{BC}=\overrightarrow{AC}\)）；平行四边形法则适合"共起点"的两向量相加。</p>
   </div>
 
@@ -632,7 +632,7 @@
   <div class="box warn">
     <span class="tag">★ 两个易错点</span>
     <ul>
-      <li><strong>\(|\bs a+\bs b|\le|\bs a|+|\bs b|\)，不是等号。</strong>等号成立当且仅当 \(\bs a\) 与 \(\bs b\) <strong>同向</strong>。这是"三角形两边之和大于第三边"的向量版本。</li>
+      <li><strong>\(|\mathbf{a}+\mathbf{b}|\le|\mathbf{a}|+|\mathbf{b}|\)，不是等号。</strong>等号成立当且仅当 \(\mathbf{a}\) 与 \(\mathbf{b}\) <strong>同向</strong>。这是"三角形两边之和大于第三边"的向量版本。</li>
       <li><strong>减法不要记成"\(\overrightarrow{AB}-\overrightarrow{BC}\)"。</strong>正确的"共起点"形式是 \(\overrightarrow{AC}-\overrightarrow{AB}\)，两个向量必须<strong>起点相同</strong>才能用口诀。若起点不同，先用"平移"把它们变成共起点。</li>
     </ul>
   </div>
@@ -641,48 +641,48 @@
 
   <div class="box def">
     <span class="tag">数乘的定义与运算律</span>
-    <p>实数 \(\lambda\) 与向量 \(\bs a\) 的乘积 \(\lambda\bs a\) 是一个向量，它的：</p>
+    <p>实数 \(\lambda\) 与向量 \(\mathbf{a}\) 的乘积 \(\lambda\mathbf{a}\) 是一个向量，它的：</p>
     <ul>
-      <li><strong>模</strong>：\(|\lambda\bs a|=|\lambda|\cdot|\bs a|\)；</li>
-      <li><strong>方向</strong>：当 \(\lambda&gt;0\) 时与 \(\bs a\) 同向；当 \(\lambda&lt;0\) 时与 \(\bs a\) 反向；当 \(\lambda=0\) 时结果是 \(\bs 0\)。</li>
+      <li><strong>模</strong>：\(|\lambda\mathbf{a}|=|\lambda|\cdot|\mathbf{a}|\)；</li>
+      <li><strong>方向</strong>：当 \(\lambda&gt;0\) 时与 \(\mathbf{a}\) 同向；当 \(\lambda&lt;0\) 时与 \(\mathbf{a}\) 反向；当 \(\lambda=0\) 时结果是 \(\mathbf{0}\)。</li>
     </ul>
     <p>运算律（\(\lambda,\mu\in\mathbb{R}\)）：</p>
     <div class="formula">
-      \[ \lambda(\mu\bs a)=(\lambda\mu)\bs a,\qquad (\lambda+\mu)\bs a=\lambda\bs a+\mu\bs a,\qquad \lambda(\bs a+\bs b)=\lambda\bs a+\lambda\bs b \]
+      \[ \lambda(\mu\mathbf{a})=(\lambda\mu)\mathbf{a},\qquad (\lambda+\mu)\mathbf{a}=\lambda\mathbf{a}+\mu\mathbf{a},\qquad \lambda(\mathbf{a}+\mathbf{b})=\lambda\mathbf{a}+\lambda\mathbf{b} \]
     </div>
   </div>
 
   <div class="box proof">
     <span class="tag">★ 推导：共线向量定理（本章最重要的定理）</span>
-    <p><strong>定理：</strong>向量 \(\bs b\) 与非零向量 \(\bs a\) 共线的<strong>充要条件</strong>是：存在<strong>唯一</strong>的实数 \(\lambda\)，使</p>
+    <p><strong>定理：</strong>向量 \(\mathbf{b}\) 与非零向量 \(\mathbf{a}\) 共线的<strong>充要条件</strong>是：存在<strong>唯一</strong>的实数 \(\lambda\)，使</p>
     <div class="formula">
-      \[ \bs b=\lambda\bs a \]
+      \[ \mathbf{b}=\lambda\mathbf{a} \]
     </div>
 
-    <p><strong>先证充分性（\(\Leftarrow\)）：若 \(\bs b=\lambda\bs a\)，则 \(\bs b\parallel\bs a\)。</strong></p>
-    <p>由数乘的定义，\(\lambda\bs a\) 的方向要么与 \(\bs a\) 同向（\(\lambda&gt;0\)），要么与 \(\bs a\) 反向（\(\lambda&lt;0\)），要么是 \(\bs 0\)（\(\lambda=0\)，\(\bs 0\) 与任何向量平行）。三种情况都说明 \(\bs b\parallel\bs a\) ✓。</p>
+    <p><strong>先证充分性（\(\Leftarrow\)）：若 \(\mathbf{b}=\lambda\mathbf{a}\)，则 \(\mathbf{b}\parallel\mathbf{a}\)。</strong></p>
+    <p>由数乘的定义，\(\lambda\mathbf{a}\) 的方向要么与 \(\mathbf{a}\) 同向（\(\lambda&gt;0\)），要么与 \(\mathbf{a}\) 反向（\(\lambda&lt;0\)），要么是 \(\mathbf{0}\)（\(\lambda=0\)，\(\mathbf{0}\) 与任何向量平行）。三种情况都说明 \(\mathbf{b}\parallel\mathbf{a}\) ✓。</p>
 
-    <p><strong>再证必要性（\(\Rightarrow\)）：若 \(\bs b\parallel\bs a\)（\(\bs a\ne\bs 0\)），则存在 \(\lambda\) 使 \(\bs b=\lambda\bs a\)。</strong></p>
-    <p><strong>第一步：先处理 \(\bs b=\bs 0\) 的情形。</strong>取 \(\lambda=0\)，则 \(\lambda\bs a=\bs 0=\bs b\) ✓。</p>
-    <p><strong>第二步：\(\bs b\ne\bs 0\) 时，构造 \(\lambda\)。</strong>令</p>
+    <p><strong>再证必要性（\(\Rightarrow\)）：若 \(\mathbf{b}\parallel\mathbf{a}\)（\(\mathbf{a}\ne\mathbf{0}\)），则存在 \(\lambda\) 使 \(\mathbf{b}=\lambda\mathbf{a}\)。</strong></p>
+    <p><strong>第一步：先处理 \(\mathbf{b}=\mathbf{0}\) 的情形。</strong>取 \(\lambda=0\)，则 \(\lambda\mathbf{a}=\mathbf{0}=\mathbf{b}\) ✓。</p>
+    <p><strong>第二步：\(\mathbf{b}\ne\mathbf{0}\) 时，构造 \(\lambda\)。</strong>令</p>
     <div class="formula">
-      \[ \lambda=\frac{|\bs b|}{|\bs a|} \quad(\text{若 }\bs b\text{ 与 }\bs a\text{ 同向}),\qquad \lambda=-\frac{|\bs b|}{|\bs a|} \quad(\text{若 }\bs b\text{ 与 }\bs a\text{ 反向}) \]
+      \[ \lambda=\frac{|\mathbf{b}|}{|\mathbf{a}|} \quad(\text{若 }\mathbf{b}\text{ 与 }\mathbf{a}\text{ 同向}),\qquad \lambda=-\frac{|\mathbf{b}|}{|\mathbf{a}|} \quad(\text{若 }\mathbf{b}\text{ 与 }\mathbf{a}\text{ 反向}) \]
     </div>
-    <p>由 \(\bs a\ne\bs 0\) 知 \(|\bs a|\ne0\)，所以这个 \(\lambda\) 有意义。</p>
-    <p><strong>第三步：验证 \(\lambda\bs a\) 与 \(\bs b\) 完全一致。</strong></p>
+    <p>由 \(\mathbf{a}\ne\mathbf{0}\) 知 \(|\mathbf{a}|\ne0\)，所以这个 \(\lambda\) 有意义。</p>
+    <p><strong>第三步：验证 \(\lambda\mathbf{a}\) 与 \(\mathbf{b}\) 完全一致。</strong></p>
     <ul>
-      <li><strong>模：</strong>\(|\lambda\bs a|=|\lambda|\cdot|\bs a|=\dfrac{|\bs b|}{|\bs a|}\cdot|\bs a|=|\bs b|\) ✓</li>
-      <li><strong>方向：</strong>若 \(\bs b\) 与 \(\bs a\) 同向，则 \(\lambda&gt;0\)，所以 \(\lambda\bs a\) 与 \(\bs a\) 同向，也就与 \(\bs b\) 同向 ✓；反向情形同理 ✓</li>
+      <li><strong>模：</strong>\(|\lambda\mathbf{a}|=|\lambda|\cdot|\mathbf{a}|=\dfrac{|\mathbf{b}|}{|\mathbf{a}|}\cdot|\mathbf{a}|=|\mathbf{b}|\) ✓</li>
+      <li><strong>方向：</strong>若 \(\mathbf{b}\) 与 \(\mathbf{a}\) 同向，则 \(\lambda&gt;0\)，所以 \(\lambda\mathbf{a}\) 与 \(\mathbf{a}\) 同向，也就与 \(\mathbf{b}\) 同向 ✓；反向情形同理 ✓</li>
     </ul>
-    <p>模相等、方向相同，所以 \(\lambda\bs a=\bs b\) ✓。</p>
+    <p>模相等、方向相同，所以 \(\lambda\mathbf{a}=\mathbf{b}\) ✓。</p>
 
-    <p><strong>最后证唯一性。</strong>设 \(\bs b=\lambda_1\bs a\) 且 \(\bs b=\lambda_2\bs a\)。两式相减：</p>
+    <p><strong>最后证唯一性。</strong>设 \(\mathbf{b}=\lambda_1\mathbf{a}\) 且 \(\mathbf{b}=\lambda_2\mathbf{a}\)。两式相减：</p>
     <div class="formula">
-      \[ (\lambda_1-\lambda_2)\bs a=\bs 0 \]
+      \[ (\lambda_1-\lambda_2)\mathbf{a}=\mathbf{0} \]
     </div>
-    <p>因为 \(\bs a\ne\bs 0\)，所以 \(\lambda_1-\lambda_2=0\)，即 \(\lambda_1=\lambda_2\) ✓ 唯一。</p>
+    <p>因为 \(\mathbf{a}\ne\mathbf{0}\)，所以 \(\lambda_1-\lambda_2=0\)，即 \(\lambda_1=\lambda_2\) ✓ 唯一。</p>
 
-    <p><strong>★ 注意定理里"\(\bs a\ne\bs 0\)"这个前提不能少。</strong>若 \(\bs a=\bs 0\)、\(\bs b\ne\bs 0\)，则无论 \(\lambda\) 取什么值，\(\lambda\bs 0=\bs 0\ne\bs b\)，不存在这样的 \(\lambda\)。</p>
+    <p><strong>★ 注意定理里"\(\mathbf{a}\ne\mathbf{0}\)"这个前提不能少。</strong>若 \(\mathbf{a}=\mathbf{0}\)、\(\mathbf{b}\ne\mathbf{0}\)，则无论 \(\lambda\) 取什么值，\(\lambda\mathbf{0}=\mathbf{0}\ne\mathbf{b}\)，不存在这样的 \(\lambda\)。</p>
   </div>
 
   <div class="box tip">
@@ -698,81 +698,81 @@
 
   <div class="box eg">
     <span class="tag">例题 1（用共线定理证三点共线）</span>
-    <p>已知 \(\overrightarrow{AB}=\bs a+2\bs b\)，\(\overrightarrow{BC}=-5\bs a+6\bs b\)，\(\overrightarrow{CD}=7\bs a-2\bs b\)。证明：\(A\)、\(C\)、\(D\) 三点共线。</p>
+    <p>已知 \(\overrightarrow{AB}=\mathbf{a}+2\mathbf{b}\)，\(\overrightarrow{BC}=-5\mathbf{a}+6\mathbf{b}\)，\(\overrightarrow{CD}=7\mathbf{a}-2\mathbf{b}\)。证明：\(A\)、\(C\)、\(D\) 三点共线。</p>
 
     <h4>解析</h4>
     <p><strong>第一步：求出以 \(A\) 为起点的两个向量。</strong>要证 \(A\)、\(C\)、\(D\) 共线，用"共起点 \(A\)"的形式，即比较 \(\overrightarrow{AC}\) 与 \(\overrightarrow{AD}\)。</p>
     <p>先求 \(\overrightarrow{AC}\)，用三角形法则：</p>
     <div class="formula">
-      \[ \overrightarrow{AC}=\overrightarrow{AB}+\overrightarrow{BC}=(\bs a+2\bs b)+(-5\bs a+6\bs b) \]
+      \[ \overrightarrow{AC}=\overrightarrow{AB}+\overrightarrow{BC}=(\mathbf{a}+2\mathbf{b})+(-5\mathbf{a}+6\mathbf{b}) \]
     </div>
     <div class="formula">
-      \[ =(\bs a-5\bs a)+(2\bs b+6\bs b)=-4\bs a+8\bs b \]
+      \[ =(\mathbf{a}-5\mathbf{a})+(2\mathbf{b}+6\mathbf{b})=-4\mathbf{a}+8\mathbf{b} \]
     </div>
 
     <p><strong>第二步：再求 \(\overrightarrow{AD}\)。</strong></p>
     <div class="formula">
-      \[ \overrightarrow{AD}=\overrightarrow{AC}+\overrightarrow{CD}=(-4\bs a+8\bs b)+(7\bs a-2\bs b) \]
+      \[ \overrightarrow{AD}=\overrightarrow{AC}+\overrightarrow{CD}=(-4\mathbf{a}+8\mathbf{b})+(7\mathbf{a}-2\mathbf{b}) \]
     </div>
     <div class="formula">
-      \[ =(-4+7)\bs a+(8-2)\bs b=3\bs a+6\bs b \]
+      \[ =(-4+7)\mathbf{a}+(8-2)\mathbf{b}=3\mathbf{a}+6\mathbf{b} \]
     </div>
 
-    <p><strong>第三步：检验是否成倍数关系。</strong>观察 \(\overrightarrow{AC}=-4\bs a+8\bs b\) 与 \(\overrightarrow{AD}=3\bs a+6\bs b\)。</p>
-    <p>看看能否找到 \(\lambda\) 使 \(\overrightarrow{AD}=\lambda\overrightarrow{AC}\)。若存在，则 \(\bs a\) 的系数和 \(\bs b\) 的系数都要对应成比例：</p>
+    <p><strong>第三步：检验是否成倍数关系。</strong>观察 \(\overrightarrow{AC}=-4\mathbf{a}+8\mathbf{b}\) 与 \(\overrightarrow{AD}=3\mathbf{a}+6\mathbf{b}\)。</p>
+    <p>看看能否找到 \(\lambda\) 使 \(\overrightarrow{AD}=\lambda\overrightarrow{AC}\)。若存在，则 \(\mathbf{a}\) 的系数和 \(\mathbf{b}\) 的系数都要对应成比例：</p>
     <div class="formula">
-      \[ \lambda=\frac{3}{-4}=-\frac34 \quad(\text{由 }\bs a\text{ 的系数}) \]
+      \[ \lambda=\frac{3}{-4}=-\frac34 \quad(\text{由 }\mathbf{a}\text{ 的系数}) \]
     </div>
     <div class="formula">
-      \[ \lambda=\frac{6}{8}=\frac34 \quad(\text{由 }\bs b\text{ 的系数}) \]
+      \[ \lambda=\frac{6}{8}=\frac34 \quad(\text{由 }\mathbf{b}\text{ 的系数}) \]
     </div>
     <p>两个 \(\lambda\) <strong>不相等</strong>，所以 \(\overrightarrow{AC}\) 与 \(\overrightarrow{AD}\) <strong>不</strong>成倍数关系。</p>
 
     <p><strong>第四步：重新检查，换一组点。</strong>题目要证的是 \(A\)、\(C\)、\(D\) 共线，说明应该用 \(\overrightarrow{AC}\) 与 \(\overrightarrow{CD}\)（都以 \(C\) 为起点）：</p>
     <div class="formula">
-      \[ \overrightarrow{CD}=7\bs a-2\bs b,\qquad \overrightarrow{AC}=-4\bs a+8\bs b \]
+      \[ \overrightarrow{CD}=7\mathbf{a}-2\mathbf{b},\qquad \overrightarrow{AC}=-4\mathbf{a}+8\mathbf{b} \]
     </div>
-    <p>看 \(\overrightarrow{CD}\) 与 \(\overrightarrow{AC}\) 的比例：\(\bs a\) 的系数之比为 \(\dfrac{7}{-4}=-\dfrac74\)，\(\bs b\) 的系数之比为 \(\dfrac{-2}{8}=-\dfrac14\)。也不相等。</p>
-    <p>看 \(\overrightarrow{CD}\) 与 \(\overrightarrow{CA}=-\overrightarrow{AC}=4\bs a-8\bs b\)：\(\bs a\) 系数之比 \(\dfrac74\)，\(\bs b\) 系数之比 \(\dfrac{-2}{-8}=\dfrac14\)。仍不相等。</p>
+    <p>看 \(\overrightarrow{CD}\) 与 \(\overrightarrow{AC}\) 的比例：\(\mathbf{a}\) 的系数之比为 \(\dfrac{7}{-4}=-\dfrac74\)，\(\mathbf{b}\) 的系数之比为 \(\dfrac{-2}{8}=-\dfrac14\)。也不相等。</p>
+    <p>看 \(\overrightarrow{CD}\) 与 \(\overrightarrow{CA}=-\overrightarrow{AC}=4\mathbf{a}-8\mathbf{b}\)：\(\mathbf{a}\) 系数之比 \(\dfrac74\)，\(\mathbf{b}\) 系数之比 \(\dfrac{-2}{-8}=\dfrac14\)。仍不相等。</p>
 
     <p><strong>结论：</strong>按题面给出的三个向量，\(A\)、\(C\)、\(D\) <strong>三点不共线</strong>，题目条件有误。</p>
 
     <div class="box warn" style="margin-top:16px;margin-bottom:0;">
       <span class="tag">★ 这个例子说明什么</span>
       <p>它的价值在于演示一个<strong>重要的做题纪律</strong>：当"按标准方法算不出应有的结论"时，要敢于停下来核对，<strong>而不是硬凑一个证明</strong>。</p>
-      <p>如果题目改成 \(\overrightarrow{CD}=7\bs a-2\bs b\) 中的 \(-2\bs b\) 为 \(+2\bs b\)，则 \(\overrightarrow{AD}=\overrightarrow{AC}+\overrightarrow{CD}=(-4+7)\bs a+(8+2)\bs b=3\bs a+10\bs b\)，仍然不成比例。</p>
+      <p>如果题目改成 \(\overrightarrow{CD}=7\mathbf{a}-2\mathbf{b}\) 中的 \(-2\mathbf{b}\) 为 \(+2\mathbf{b}\)，则 \(\overrightarrow{AD}=\overrightarrow{AC}+\overrightarrow{CD}=(-4+7)\mathbf{a}+(8+2)\mathbf{b}=3\mathbf{a}+10\mathbf{b}\)，仍然不成比例。</p>
       <p>正确的做法是：<strong>回到题目逐项核对条件</strong>；若确认题目无误而自己算不出，就把"用共线定理 + 系数成比例"这套方法写清楚，至少拿到方法分。</p>
     </div>
   </div>
 
   <div class="box eg">
     <span class="tag">例题 2（用共线定理求参数）</span>
-    <p>已知 \(\bs e_1\)、\(\bs e_2\) 不共线，\(\overrightarrow{AB}=2\bs e_1+k\bs e_2\)，\(\overrightarrow{CB}=\bs e_1+3\bs e_2\)，\(\overrightarrow{CD}=2\bs e_1-\bs e_2\)。若 \(A\)、\(B\)、\(D\) 三点共线，求 \(k\) 的值。</p>
+    <p>已知 \(\mathbf{e}_1\)、\(\mathbf{e}_2\) 不共线，\(\overrightarrow{AB}=2\mathbf{e}_1+k\mathbf{e}_2\)，\(\overrightarrow{CB}=\mathbf{e}_1+3\mathbf{e}_2\)，\(\overrightarrow{CD}=2\mathbf{e}_1-\mathbf{e}_2\)。若 \(A\)、\(B\)、\(D\) 三点共线，求 \(k\) 的值。</p>
 
     <h4>解析</h4>
     <p><strong>第一步：把向量都化成以 \(B\) 或 \(D\) 为起点的形式。</strong>目标是 \(A\)、\(B\)、\(D\) 共线，所以要比较"以同一点为起点"的向量。</p>
     <p>先把 \(\overrightarrow{BD}\) 求出来。注意 \(\overrightarrow{CB}\) 的起点是 \(C\)，需要先化成 \(\overrightarrow{BC}\)：</p>
     <div class="formula">
-      \[ \overrightarrow{BC}=-\overrightarrow{CB}=-(\bs e_1+3\bs e_2)=-\bs e_1-3\bs e_2 \]
+      \[ \overrightarrow{BC}=-\overrightarrow{CB}=-(\mathbf{e}_1+3\mathbf{e}_2)=-\mathbf{e}_1-3\mathbf{e}_2 \]
     </div>
     <p>再用三角形法则求 \(\overrightarrow{BD}\)：</p>
     <div class="formula">
-      \[ \overrightarrow{BD}=\overrightarrow{BC}+\overrightarrow{CD}=(-\bs e_1-3\bs e_2)+(2\bs e_1-\bs e_2) \]
+      \[ \overrightarrow{BD}=\overrightarrow{BC}+\overrightarrow{CD}=(-\mathbf{e}_1-3\mathbf{e}_2)+(2\mathbf{e}_1-\mathbf{e}_2) \]
     </div>
     <div class="formula">
-      \[ =(-1+2)\bs e_1+(-3-1)\bs e_2=\bs e_1-4\bs e_2 \]
+      \[ =(-1+2)\mathbf{e}_1+(-3-1)\mathbf{e}_2=\mathbf{e}_1-4\mathbf{e}_2 \]
     </div>
 
-    <p><strong>第二步：用共线定理列方程。</strong>\(A\)、\(B\)、\(D\) 共线，而 \(\overrightarrow{BA}=-\overrightarrow{AB}=-2\bs e_1-k\bs e_2\)，\(\overrightarrow{BD}=\bs e_1-4\bs e_2\)。存在 \(\lambda\) 使</p>
+    <p><strong>第二步：用共线定理列方程。</strong>\(A\)、\(B\)、\(D\) 共线，而 \(\overrightarrow{BA}=-\overrightarrow{AB}=-2\mathbf{e}_1-k\mathbf{e}_2\)，\(\overrightarrow{BD}=\mathbf{e}_1-4\mathbf{e}_2\)。存在 \(\lambda\) 使</p>
     <div class="formula">
       \[ \overrightarrow{BD}=\lambda\overrightarrow{BA} \]
     </div>
     <p>即</p>
     <div class="formula">
-      \[ \bs e_1-4\bs e_2=\lambda(-2\bs e_1-k\bs e_2)=-2\lambda\bs e_1-\lambda k\bs e_2 \]
+      \[ \mathbf{e}_1-4\mathbf{e}_2=\lambda(-2\mathbf{e}_1-k\mathbf{e}_2)=-2\lambda\mathbf{e}_1-\lambda k\mathbf{e}_2 \]
     </div>
 
-    <p><strong>第三步：用"\(\bs e_1\)、\(\bs e_2\) 不共线"列方程组。</strong>因为 \(\bs e_1\)、\(\bs e_2\) 不共线，所以两边 \(\bs e_1\) 与 \(\bs e_2\) 的系数必须<strong>分别相等</strong>：</p>
+    <p><strong>第三步：用"\(\mathbf{e}_1\)、\(\mathbf{e}_2\) 不共线"列方程组。</strong>因为 \(\mathbf{e}_1\)、\(\mathbf{e}_2\) 不共线，所以两边 \(\mathbf{e}_1\) 与 \(\mathbf{e}_2\) 的系数必须<strong>分别相等</strong>：</p>
     <div class="formula">
       \[
       \begin{cases}
@@ -788,13 +788,13 @@
 
     <p><strong>答案：</strong>\(\boxed{k=-8}\)</p>
 
-    <p><strong>验算：</strong>把 \(k=-8\) 代回：\(\overrightarrow{AB}=2\bs e_1-8\bs e_2\)，\(\overrightarrow{BA}=-2\bs e_1+8\bs e_2\)。</p>
-    <p>而 \(\overrightarrow{BD}=\bs e_1-4\bs e_2\)。检查：\(-2\overrightarrow{BD}=-2\bs e_1+8\bs e_2=\overrightarrow{BA}\) ✓ 确实是倍数关系（\(\lambda'=-2\)），所以共线 ✓。</p>
+    <p><strong>验算：</strong>把 \(k=-8\) 代回：\(\overrightarrow{AB}=2\mathbf{e}_1-8\mathbf{e}_2\)，\(\overrightarrow{BA}=-2\mathbf{e}_1+8\mathbf{e}_2\)。</p>
+    <p>而 \(\overrightarrow{BD}=\mathbf{e}_1-4\mathbf{e}_2\)。检查：\(-2\overrightarrow{BD}=-2\mathbf{e}_1+8\mathbf{e}_2=\overrightarrow{BA}\) ✓ 确实是倍数关系（\(\lambda'=-2\)），所以共线 ✓。</p>
 
     <div class="box tip" style="margin-top:16px;margin-bottom:0;">
       <span class="tag">★ 两个关键技巧</span>
       <ul>
-        <li><strong>"\(\bs e_1\)、\(\bs e_2\) 不共线"是列方程的依据。</strong>由第 2 章的平面向量基本定理，任何向量用不共线的 \(\bs e_1\)、\(\bs e_2\) 表示时，<strong>系数是唯一的</strong>。所以"两个表示式相等"等价于"系数分别相等"。</li>
+        <li><strong>"\(\mathbf{e}_1\)、\(\mathbf{e}_2\) 不共线"是列方程的依据。</strong>由第 2 章的平面向量基本定理，任何向量用不共线的 \(\mathbf{e}_1\)、\(\mathbf{e}_2\) 表示时，<strong>系数是唯一的</strong>。所以"两个表示式相等"等价于"系数分别相等"。</li>
         <li><strong>注意向量的"方向"。</strong>题目给的是 \(\overrightarrow{CB}\) 而不是 \(\overrightarrow{BC}\)，用之前必须先取反号。这类"方向陷阱"是共线题最常见的失分点。</li>
       </ul>
     </div>
@@ -808,11 +808,11 @@
 
   <div class="box def">
     <span class="tag">定理</span>
-    <p>如果 \(\bs e_1\)、\(\bs e_2\) 是同一平面内<strong>两个不共线</strong>的向量，那么对于这一平面内的<strong>任意</strong>向量 \(\bs a\)，<strong>有且只有一对</strong>实数 \(\lambda_1\)、\(\lambda_2\)，使</p>
+    <p>如果 \(\mathbf{e}_1\)、\(\mathbf{e}_2\) 是同一平面内<strong>两个不共线</strong>的向量，那么对于这一平面内的<strong>任意</strong>向量 \(\mathbf{a}\)，<strong>有且只有一对</strong>实数 \(\lambda_1\)、\(\lambda_2\)，使</p>
     <div class="formula">
-      \[ \bs a=\lambda_1\bs e_1+\lambda_2\bs e_2 \]
+      \[ \mathbf{a}=\lambda_1\mathbf{e}_1+\lambda_2\mathbf{e}_2 \]
     </div>
-    <p>这时称 \(\{\bs e_1,\ \bs e_2\}\) 为这个平面的一组<strong>基底</strong>。</p>
+    <p>这时称 \(\{\mathbf{e}_1,\ \mathbf{e}_2\}\) 为这个平面的一组<strong>基底</strong>。</p>
     <p><strong>★ 定理包含两层意思：</strong></p>
     <ul>
       <li><strong>存在性</strong>——任何向量都能用基底表示（这是"能算"）；</li>
@@ -822,16 +822,16 @@
 
   <div class="box proof">
     <span class="tag">直观理解：为什么"两个不共线的向量"就够了</span>
-    <p><strong>第一步：一个向量为什么不够。</strong>若只用 \(\bs e_1\)，那么 \(\lambda_1\bs e_1\) 只能表示"与 \(\bs e_1\) 共线"的向量（也就是落在同一条直线上的向量）。平面上的其他方向表示不了。</p>
+    <p><strong>第一步：一个向量为什么不够。</strong>若只用 \(\mathbf{e}_1\)，那么 \(\lambda_1\mathbf{e}_1\) 只能表示"与 \(\mathbf{e}_1\) 共线"的向量（也就是落在同一条直线上的向量）。平面上的其他方向表示不了。</p>
 
-    <p><strong>第二步：两个不共线的向量为什么够了。</strong>把 \(\bs e_1\)、\(\bs e_2\) 的起点放在一起，它们确定了一个"斜坐标系"。任取向量 \(\bs a\)：</p>
+    <p><strong>第二步：两个不共线的向量为什么够了。</strong>把 \(\mathbf{e}_1\)、\(\mathbf{e}_2\) 的起点放在一起，它们确定了一个"斜坐标系"。任取向量 \(\mathbf{a}\)：</p>
     <ul>
-      <li>过 \(\bs a\) 的终点分别作两条平行于 \(\bs e_1\)、\(\bs e_2\) 的直线；</li>
-      <li>这两条直线分别与 \(\bs e_1\)、\(\bs e_2\) 所在的直线相交，交点确定的"长度"就是 \(\lambda_1\)、\(\lambda_2\)。</li>
+      <li>过 \(\mathbf{a}\) 的终点分别作两条平行于 \(\mathbf{e}_1\)、\(\mathbf{e}_2\) 的直线；</li>
+      <li>这两条直线分别与 \(\mathbf{e}_1\)、\(\mathbf{e}_2\) 所在的直线相交，交点确定的"长度"就是 \(\lambda_1\)、\(\lambda_2\)。</li>
     </ul>
-    <p>这就是"平行四边形分解"：把 \(\bs a\) 沿两个基底方向分解成两个分量。</p>
+    <p>这就是"平行四边形分解"：把 \(\mathbf{a}\) 沿两个基底方向分解成两个分量。</p>
 
-    <p><strong>第三步：为什么必须"不共线"。</strong>若 \(\bs e_1\parallel\bs e_2\)，那么两个基底方向相同（或相反），它们张成的还是<strong>一条直线</strong>，不是整个平面。此时平面上不在该直线上的向量就无法表示。</p>
+    <p><strong>第三步：为什么必须"不共线"。</strong>若 \(\mathbf{e}_1\parallel\mathbf{e}_2\)，那么两个基底方向相同（或相反），它们张成的还是<strong>一条直线</strong>，不是整个平面。此时平面上不在该直线上的向量就无法表示。</p>
 
     <p><strong>★ 对比记忆：</strong>平面上"确定一个方向"需要 1 个向量，"确定整个平面"需要 2 个不共线的向量。这就是为什么基底必须<strong>恰好两个、且不共线</strong>。</p>
   </div>
@@ -841,21 +841,21 @@
     <p><strong>两个非零且不共线的向量</strong>就可以作为基底。</p>
     <p><strong>常见的不合格基底：</strong></p>
     <ul>
-      <li>含有 \(\bs 0\) 的（零向量与任何向量共线，不满足"不共线"）；</li>
-      <li>两个向量成倍数关系的（如 \(\bs e_1\) 与 \(2\bs e_1\)，它们共线）。</li>
+      <li>含有 \(\mathbf{0}\) 的（零向量与任何向量共线，不满足"不共线"）；</li>
+      <li>两个向量成倍数关系的（如 \(\mathbf{e}_1\) 与 \(2\mathbf{e}_1\)，它们共线）。</li>
     </ul>
-    <p><strong>★ 特别地，取 \(\bs e_1=(1,0)\)、\(\bs e_2=(0,1)\) 就得到"直角坐标系"。</strong>这是最常用的一组基底，坐标表示就是在这个基底下做的。</p>
+    <p><strong>★ 特别地，取 \(\mathbf{e}_1=(1,0)\)、\(\mathbf{e}_2=(0,1)\) 就得到"直角坐标系"。</strong>这是最常用的一组基底，坐标表示就是在这个基底下做的。</p>
   </div>
 
   <h3 id="ch2-2">2.2　向量的坐标表示</h3>
 
   <div class="box def">
     <span class="tag">定义</span>
-    <p>在平面直角坐标系中，取与 \(x\) 轴、\(y\) 轴正方向相同的两个单位向量 \(\bs i\)、\(\bs j\) 作为基底。对任意向量 \(\bs a\)，存在唯一的一对实数 \(x\)、\(y\) 使</p>
+    <p>在平面直角坐标系中，取与 \(x\) 轴、\(y\) 轴正方向相同的两个单位向量 \(\mathbf{i}\)、\(\mathbf{j}\) 作为基底。对任意向量 \(\mathbf{a}\)，存在唯一的一对实数 \(x\)、\(y\) 使</p>
     <div class="formula">
-      \[ \bs a=x\bs i+y\bs j \]
+      \[ \mathbf{a}=x\mathbf{i}+y\mathbf{j} \]
     </div>
-    <p>则称 \((x,\ y)\) 为向量 \(\bs a\) 的<strong>坐标</strong>，记作 \(\bs a=(x,\ y)\)。</p>
+    <p>则称 \((x,\ y)\) 为向量 \(\mathbf{a}\) 的<strong>坐标</strong>，记作 \(\mathbf{a}=(x,\ y)\)。</p>
     <p><strong>★ 注意：</strong>向量的坐标<strong>只与它的大小和方向有关，与起点的位置无关</strong>。</p>
   </div>
 
@@ -866,7 +866,7 @@
 
     <p><strong>第一步：把两个点的位置向量写出来。</strong>以原点 \(O\) 为起点：</p>
     <div class="formula">
-      \[ \overrightarrow{OA}=x_1\bs i+y_1\bs j,\qquad \overrightarrow{OB}=x_2\bs i+y_2\bs j \]
+      \[ \overrightarrow{OA}=x_1\mathbf{i}+y_1\mathbf{j},\qquad \overrightarrow{OB}=x_2\mathbf{i}+y_2\mathbf{j} \]
     </div>
 
     <p><strong>第二步：用"共起点连终点"求 \(\overrightarrow{AB}\)。</strong>因为 \(\overrightarrow{OA}\) 与 \(\overrightarrow{OB}\) 都以 \(O\) 为起点，由第 1.2 节的口诀：</p>
@@ -877,7 +877,7 @@
 
     <p><strong>第三步：代入坐标并合并。</strong></p>
     <div class="formula">
-      \[ \overrightarrow{AB}=(x_2\bs i+y_2\bs j)-(x_1\bs i+y_1\bs j)=(x_2-x_1)\bs i+(y_2-y_1)\bs j \]
+      \[ \overrightarrow{AB}=(x_2\mathbf{i}+y_2\mathbf{j})-(x_1\mathbf{i}+y_1\mathbf{j})=(x_2-x_1)\mathbf{i}+(y_2-y_1)\mathbf{j} \]
     </div>
     <p>所以</p>
     <div class="formula">
@@ -891,15 +891,15 @@
 
   <div class="box def">
     <span class="tag">三条运算法则</span>
-    <p>设 \(\bs a=(x_1,\ y_1)\)，\(\bs b=(x_2,\ y_2)\)，\(\lambda\in\mathbb{R}\)，则</p>
+    <p>设 \(\mathbf{a}=(x_1,\ y_1)\)，\(\mathbf{b}=(x_2,\ y_2)\)，\(\lambda\in\mathbb{R}\)，则</p>
     <div class="formula">
-      \[ \bs a+\bs b=(x_1+x_2,\ y_1+y_2) \]
+      \[ \mathbf{a}+\mathbf{b}=(x_1+x_2,\ y_1+y_2) \]
     </div>
     <div class="formula">
-      \[ \bs a-\bs b=(x_1-x_2,\ y_1-y_2) \]
+      \[ \mathbf{a}-\mathbf{b}=(x_1-x_2,\ y_1-y_2) \]
     </div>
     <div class="formula">
-      \[ \lambda\bs a=(\lambda x_1,\ \lambda y_1) \]
+      \[ \lambda\mathbf{a}=(\lambda x_1,\ \lambda y_1) \]
     </div>
     <p><strong>★ 向量加减法就是"坐标分别加减"，数乘就是"坐标分别乘"。</strong>这是坐标法比几何法简单的地方。</p>
   </div>
@@ -910,20 +910,20 @@
       <table>
         <thead><tr><th>关系</th><th>几何形式</th><th>坐标形式</th><th>记忆方式</th></tr></thead>
         <tbody>
-          <tr><td><strong>平行（共线）</strong></td><td>\(\bs a\parallel\bs b\)</td><td>\(x_1y_2-x_2y_1=0\)</td><td>"交叉相乘相减为零"</td></tr>
-          <tr><td><strong>垂直</strong></td><td>\(\bs a\perp\bs b\)</td><td>\(x_1x_2+y_1y_2=0\)</td><td>"对应相乘相加为零"</td></tr>
+          <tr><td><strong>平行（共线）</strong></td><td>\(\mathbf{a}\parallel\mathbf{b}\)</td><td>\(x_1y_2-x_2y_1=0\)</td><td>"交叉相乘相减为零"</td></tr>
+          <tr><td><strong>垂直</strong></td><td>\(\mathbf{a}\perp\mathbf{b}\)</td><td>\(x_1x_2+y_1y_2=0\)</td><td>"对应相乘相加为零"</td></tr>
         </tbody>
       </table>
     </div>
     <p><strong>★ 为什么平行要写成"交叉相乘相减"而不是"比例相等"？</strong></p>
-    <p>因为比例式 \(\dfrac{x_1}{x_2}=\dfrac{y_1}{y_2}\) <strong>要求 \(x_2\ne0\) 且 \(y_2\ne0\)</strong>。若 \(\bs b=(0,\ 3)\)，比例式就失效了。而交叉相乘的形式 \(x_1y_2-x_2y_1=0\) 对所有情况都成立（包括含零坐标的向量）。</p>
+    <p>因为比例式 \(\dfrac{x_1}{x_2}=\dfrac{y_1}{y_2}\) <strong>要求 \(x_2\ne0\) 且 \(y_2\ne0\)</strong>。若 \(\mathbf{b}=(0,\ 3)\)，比例式就失效了。而交叉相乘的形式 \(x_1y_2-x_2y_1=0\) 对所有情况都成立（包括含零坐标的向量）。</p>
     <p><strong>一句话判据：平行用"交叉相乘相减"，垂直用"对应相乘相加"。</strong></p>
   </div>
 
   <div class="box eg">
     <span class="tag">例题 3（坐标法求参数）</span>
-    <p>已知 \(\bs a=(1,\ 2)\)，\(\bs b=(x,\ -2)\)。分别求满足下列条件的 \(x\)：</p>
-    <p>(1) \(\bs a\parallel\bs b\)；　(2) \(\bs a\perp\bs b\)。</p>
+    <p>已知 \(\mathbf{a}=(1,\ 2)\)，\(\mathbf{b}=(x,\ -2)\)。分别求满足下列条件的 \(x\)：</p>
+    <p>(1) \(\mathbf{a}\parallel\mathbf{b}\)；　(2) \(\mathbf{a}\perp\mathbf{b}\)。</p>
 
     <h4>解析</h4>
     <p><strong>(1) 用平行判据"交叉相乘相减为零"。</strong></p>
@@ -934,7 +934,7 @@
       \[ -2-2x=0 \quad\Longrightarrow\quad x=-1 \]
     </div>
     <p><strong>答案：</strong>\(\boxed{x=-1}\)</p>
-    <p><strong>验算：</strong>\(x=-1\) 时 \(\bs b=(-1,\ -2)\)，而 \(\bs a=(1,\ 2)\)，确实 \(\bs b=-\bs a\)，共线 ✓。</p>
+    <p><strong>验算：</strong>\(x=-1\) 时 \(\mathbf{b}=(-1,\ -2)\)，而 \(\mathbf{a}=(1,\ 2)\)，确实 \(\mathbf{b}=-\mathbf{a}\)，共线 ✓。</p>
 
     <p><strong>(2) 用垂直判据"对应相乘相加为零"。</strong></p>
     <div class="formula">
@@ -944,7 +944,7 @@
       \[ x-4=0 \quad\Longrightarrow\quad x=4 \]
     </div>
     <p><strong>答案：</strong>\(\boxed{x=4}\)</p>
-    <p><strong>验算：</strong>\(x=4\) 时 \(\bs b=(4,\ -2)\)，\(\bs a\cdot\bs b=1\times4+2\times(-2)=4-4=0\) ✓ 垂直。</p>
+    <p><strong>验算：</strong>\(x=4\) 时 \(\mathbf{b}=(4,\ -2)\)，\(\mathbf{a}\cdot\mathbf{b}=1\times4+2\times(-2)=4-4=0\) ✓ 垂直。</p>
 
     <div class="box warn" style="margin-top:16px;margin-bottom:0;">
       <span class="tag">★ 两个判据千万不要混</span>
@@ -966,61 +966,61 @@
 
   <div class="box def">
     <span class="tag">定义</span>
-    <p>两个非零向量 \(\bs a\)、\(\bs b\) 的夹角为 \(\theta\)（\(0\le\theta\le\pi\)），则称</p>
+    <p>两个非零向量 \(\mathbf{a}\)、\(\mathbf{b}\) 的夹角为 \(\theta\)（\(0\le\theta\le\pi\)），则称</p>
     <div class="formula">
-      \[ \bs a\cdot\bs b=|\bs a||\bs b|\cos\theta \]
+      \[ \mathbf{a}\cdot\mathbf{b}=|\mathbf{a}||\mathbf{b}|\cos\theta \]
     </div>
-    <p>为 \(\bs a\) 与 \(\bs b\) 的<strong>数量积</strong>（也叫内积）。</p>
+    <p>为 \(\mathbf{a}\) 与 \(\mathbf{b}\) 的<strong>数量积</strong>（也叫内积）。</p>
     <p><strong>★ 数量积的结果是一个"数"，不是向量。</strong>这是它和数乘最大的区别。</p>
-    <p><strong>规定：</strong>\(\bs 0\cdot\bs a=0\)（零向量与任何向量的数量积为 0）。</p>
+    <p><strong>规定：</strong>\(\mathbf{0}\cdot\mathbf{a}=0\)（零向量与任何向量的数量积为 0）。</p>
   </div>
 
   <div class="box proof">
-    <span class="tag">★ 推导：为什么 \(\bs a\cdot\bs a=|\bs a|^{2}\)（最重要的变形）</span>
-    <p><strong>第一步：套定义。</strong>\(\bs a\) 与自身的夹角 \(\theta=0\)（同向），且 \(\cos0=1\)。所以</p>
+    <span class="tag">★ 推导：为什么 \(\mathbf{a}\cdot\mathbf{a}=|\mathbf{a}|^{2}\)（最重要的变形）</span>
+    <p><strong>第一步：套定义。</strong>\(\mathbf{a}\) 与自身的夹角 \(\theta=0\)（同向），且 \(\cos0=1\)。所以</p>
     <div class="formula">
-      \[ \bs a\cdot\bs a=|\bs a||\bs a|\cos0=|\bs a|^{2}\times1=|\bs a|^{2} \quad\checkmark \]
+      \[ \mathbf{a}\cdot\mathbf{a}=|\mathbf{a}||\mathbf{a}|\cos0=|\mathbf{a}|^{2}\times1=|\mathbf{a}|^{2} \quad\checkmark \]
     </div>
 
     <p><strong>第二步：反过来用（求模的公式）。</strong>两边开方：</p>
     <div class="formula">
-      \[ \boxed{\ |\bs a|=\sqrt{\bs a\cdot\bs a}\ } \]
+      \[ \boxed{\ |\mathbf{a}|=\sqrt{\mathbf{a}\cdot\mathbf{a}}\ } \]
     </div>
     <p><strong>★ 这条公式是"用数量积求长度"的唯一途径，也是坐标法求模的基础。</strong></p>
 
-    <p><strong>第三步：推广到"求 \(|\bs a\pm\bs b|\)"。</strong>展开平方：</p>
+    <p><strong>第三步：推广到"求 \(|\mathbf{a}\pm\mathbf{b}|\)"。</strong>展开平方：</p>
     <div class="formula">
-      \[ |\bs a+\bs b|^{2}=(\bs a+\bs b)\cdot(\bs a+\bs b)=\bs a\cdot\bs a+2\bs a\cdot\bs b+\bs b\cdot\bs b \]
+      \[ |\mathbf{a}+\mathbf{b}|^{2}=(\mathbf{a}+\mathbf{b})\cdot(\mathbf{a}+\mathbf{b})=\mathbf{a}\cdot\mathbf{a}+2\mathbf{a}\cdot\mathbf{b}+\mathbf{b}\cdot\mathbf{b} \]
     </div>
     <div class="formula">
-      \[ =|\bs a|^{2}+2\bs a\cdot\bs b+|\bs b|^{2} \]
+      \[ =|\mathbf{a}|^{2}+2\mathbf{a}\cdot\mathbf{b}+|\mathbf{b}|^{2} \]
     </div>
     <p>同理</p>
     <div class="formula">
-      \[ |\bs a-\bs b|^{2}=|\bs a|^{2}-2\bs a\cdot\bs b+|\bs b|^{2} \]
+      \[ |\mathbf{a}-\mathbf{b}|^{2}=|\mathbf{a}|^{2}-2\mathbf{a}\cdot\mathbf{b}+|\mathbf{b}|^{2} \]
     </div>
-    <p><strong>★ 这两个式子与完全平方公式形式完全一样</strong>（把 \(|\bs a|\) 看成 \(a\)、\(|\bs b|\) 看成 \(b\)、\(\bs a\cdot\bs b\) 看成 \(ab\)）。这是解题时最常用的变形。</p>
+    <p><strong>★ 这两个式子与完全平方公式形式完全一样</strong>（把 \(|\mathbf{a}|\) 看成 \(a\)、\(|\mathbf{b}|\) 看成 \(b\)、\(\mathbf{a}\cdot\mathbf{b}\) 看成 \(ab\)）。这是解题时最常用的变形。</p>
 
     <p><strong>第四步：由上面两式得到"极化恒等式"。</strong>把两式相减：</p>
     <div class="formula">
-      \[ |\bs a+\bs b|^{2}-|\bs a-\bs b|^{2}=4\bs a\cdot\bs b \]
+      \[ |\mathbf{a}+\mathbf{b}|^{2}-|\mathbf{a}-\mathbf{b}|^{2}=4\mathbf{a}\cdot\mathbf{b} \]
     </div>
     <p>即</p>
     <div class="formula">
-      \[ \bs a\cdot\bs b=\frac{|\bs a+\bs b|^{2}-|\bs a-\bs b|^{2}}{4} \]
+      \[ \mathbf{a}\cdot\mathbf{b}=\frac{|\mathbf{a}+\mathbf{b}|^{2}-|\mathbf{a}-\mathbf{b}|^{2}}{4} \]
     </div>
-    <p><strong>这个式子的用处：</strong>当题目只给 \(|\bs a+\bs b|\) 和 \(|\bs a-\bs b|\) 而没给夹角时，可以直接求数量积。</p>
+    <p><strong>这个式子的用处：</strong>当题目只给 \(|\mathbf{a}+\mathbf{b}|\) 和 \(|\mathbf{a}-\mathbf{b}|\) 而没给夹角时，可以直接求数量积。</p>
   </div>
 
   <div class="box tip">
     <span class="tag">★ 投影：数量积的几何意义</span>
-    <p>把 \(|\bs b|\cos\theta\) 叫做向量 \(\bs b\) 在向量 \(\bs a\) 方向上的<strong>投影</strong>（也叫投影数量）。于是</p>
+    <p>把 \(|\mathbf{b}|\cos\theta\) 叫做向量 \(\mathbf{b}\) 在向量 \(\mathbf{a}\) 方向上的<strong>投影</strong>（也叫投影数量）。于是</p>
     <div class="formula">
-      \[ \bs a\cdot\bs b=|\bs a|\times\left(|\bs b|\cos\theta\right)=\text{（}\bs a\text{ 的模）}\times\text{（}\bs b\text{ 在 }\bs a\text{ 上的投影）} \]
+      \[ \mathbf{a}\cdot\mathbf{b}=|\mathbf{a}|\times\left(|\mathbf{b}|\cos\theta\right)=\text{（}\mathbf{a}\text{ 的模）}\times\text{（}\mathbf{b}\text{ 在 }\mathbf{a}\text{ 上的投影）} \]
     </div>
-    <p><strong>几何理解：</strong>"先把 \(\bs b\) 投影到 \(\bs a\) 的方向上，再乘上 \(\bs a\) 的长度"。</p>
+    <p><strong>几何理解：</strong>"先把 \(\mathbf{b}\) 投影到 \(\mathbf{a}\) 的方向上，再乘上 \(\mathbf{a}\) 的长度"。</p>
     <p><strong>★ 投影可以是负数。</strong>当 \(\theta&gt;\dfrac{\pi}{2}\) 时 \(\cos\theta&lt;0\)，投影为负。所以"投影"不等于"投影的长度"。</p>
-    <p><strong>一句话判据：求 \(\bs b\) 在 \(\bs a\) 上的投影，用 \(\dfrac{\bs a\cdot\bs b}{|\bs a|}\)。</strong></p>
+    <p><strong>一句话判据：求 \(\mathbf{b}\) 在 \(\mathbf{a}\) 上的投影，用 \(\dfrac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{a}|}\)。</strong></p>
   </div>
 
   <h3 id="ch3-2">3.2　数量积的运算律与性质</h3>
@@ -1031,11 +1031,11 @@
       <table>
         <thead><tr><th>名称</th><th>公式</th><th>是否成立</th></tr></thead>
         <tbody>
-          <tr><td>交换律</td><td>\(\bs a\cdot\bs b=\bs b\cdot\bs a\)</td><td>✓ 成立</td></tr>
-          <tr><td>数乘结合律</td><td>\((\lambda\bs a)\cdot\bs b=\lambda(\bs a\cdot\bs b)\)</td><td>✓ 成立</td></tr>
-          <tr><td>分配律</td><td>\((\bs a+\bs b)\cdot\bs c=\bs a\cdot\bs c+\bs b\cdot\bs c\)</td><td>✓ 成立</td></tr>
-          <tr><td><strong>结合律</strong></td><td>\((\bs a\cdot\bs b)\cdot\bs c=\bs a\cdot(\bs b\cdot\bs c)\)</td><td><strong>✗ 不成立</strong></td></tr>
-          <tr><td><strong>消去律</strong></td><td>\(\bs a\cdot\bs b=\bs a\cdot\bs c\Rightarrow\bs b=\bs c\)</td><td><strong>✗ 不成立</strong></td></tr>
+          <tr><td>交换律</td><td>\(\mathbf{a}\cdot\mathbf{b}=\mathbf{b}\cdot\mathbf{a}\)</td><td>✓ 成立</td></tr>
+          <tr><td>数乘结合律</td><td>\((\lambda\mathbf{a})\cdot\mathbf{b}=\lambda(\mathbf{a}\cdot\mathbf{b})\)</td><td>✓ 成立</td></tr>
+          <tr><td>分配律</td><td>\((\mathbf{a}+\mathbf{b})\cdot\mathbf{c}=\mathbf{a}\cdot\mathbf{c}+\mathbf{b}\cdot\mathbf{c}\)</td><td>✓ 成立</td></tr>
+          <tr><td><strong>结合律</strong></td><td>\((\mathbf{a}\cdot\mathbf{b})\cdot\mathbf{c}=\mathbf{a}\cdot(\mathbf{b}\cdot\mathbf{c})\)</td><td><strong>✗ 不成立</strong></td></tr>
+          <tr><td><strong>消去律</strong></td><td>\(\mathbf{a}\cdot\mathbf{b}=\mathbf{a}\cdot\mathbf{c}\Rightarrow\mathbf{b}=\mathbf{c}\)</td><td><strong>✗ 不成立</strong></td></tr>
         </tbody>
       </table>
     </div>
@@ -1044,38 +1044,38 @@
   <div class="box proof">
     <span class="tag">★ 推导：为什么"结合律"和"消去律"都不成立</span>
 
-    <p><strong>先看结合律。</strong>\((\bs a\cdot\bs b)\cdot\bs c\) 中，\(\bs a\cdot\bs b\) 是一个<strong>数</strong>，所以 \((\bs a\cdot\bs b)\cdot\bs c\) 是"数乘向量"，结果是<strong>与 \(\bs c\) 共线的向量</strong>。</p>
-    <p>而 \(\bs a\cdot(\bs b\cdot\bs c)\) 中，\(\bs b\cdot\bs c\) 也是数，所以结果是<strong>与 \(\bs a\) 共线的向量</strong>。</p>
-    <p>一个是"沿 \(\bs c\) 方向"，一个是"沿 \(\bs a\) 方向"——<strong>当 \(\bs a\) 与 \(\bs c\) 不共线时，两者根本不可能相等。</strong></p>
-    <p><strong>举个具体反例：</strong>取 \(\bs a=(1,0)\)、\(\bs b=(1,0)\)、\(\bs c=(0,1)\)。则</p>
+    <p><strong>先看结合律。</strong>\((\mathbf{a}\cdot\mathbf{b})\cdot\mathbf{c}\) 中，\(\mathbf{a}\cdot\mathbf{b}\) 是一个<strong>数</strong>，所以 \((\mathbf{a}\cdot\mathbf{b})\cdot\mathbf{c}\) 是"数乘向量"，结果是<strong>与 \(\mathbf{c}\) 共线的向量</strong>。</p>
+    <p>而 \(\mathbf{a}\cdot(\mathbf{b}\cdot\mathbf{c})\) 中，\(\mathbf{b}\cdot\mathbf{c}\) 也是数，所以结果是<strong>与 \(\mathbf{a}\) 共线的向量</strong>。</p>
+    <p>一个是"沿 \(\mathbf{c}\) 方向"，一个是"沿 \(\mathbf{a}\) 方向"——<strong>当 \(\mathbf{a}\) 与 \(\mathbf{c}\) 不共线时，两者根本不可能相等。</strong></p>
+    <p><strong>举个具体反例：</strong>取 \(\mathbf{a}=(1,0)\)、\(\mathbf{b}=(1,0)\)、\(\mathbf{c}=(0,1)\)。则</p>
     <div class="formula">
-      \[ (\bs a\cdot\bs b)\cdot\bs c=(1\times1+0\times0)\cdot(0,1)=1\cdot(0,1)=(0,1) \]
+      \[ (\mathbf{a}\cdot\mathbf{b})\cdot\mathbf{c}=(1\times1+0\times0)\cdot(0,1)=1\cdot(0,1)=(0,1) \]
     </div>
     <div class="formula">
-      \[ \bs a\cdot(\bs b\cdot\bs c)=(1,0)\cdot(1\times0+0\times1)=(1,0)\cdot0=\bs 0 \]
+      \[ \mathbf{a}\cdot(\mathbf{b}\cdot\mathbf{c})=(1,0)\cdot(1\times0+0\times1)=(1,0)\cdot0=\mathbf{0} \]
     </div>
-    <p>\((0,1)\ne\bs 0\)，所以结合律不成立 ✓。</p>
+    <p>\((0,1)\ne\mathbf{0}\)，所以结合律不成立 ✓。</p>
 
-    <p><strong>再看消去律。</strong>由 \(\bs a\cdot\bs b=\bs a\cdot\bs c\) 移项得</p>
+    <p><strong>再看消去律。</strong>由 \(\mathbf{a}\cdot\mathbf{b}=\mathbf{a}\cdot\mathbf{c}\) 移项得</p>
     <div class="formula">
-      \[ \bs a\cdot(\bs b-\bs c)=0 \]
+      \[ \mathbf{a}\cdot(\mathbf{b}-\mathbf{c})=0 \]
     </div>
     <p>数量积为 0 有两种可能：</p>
     <ul>
-      <li>\(\bs a=\bs 0\)；或</li>
-      <li>\(\bs a\perp(\bs b-\bs c)\)。</li>
+      <li>\(\mathbf{a}=\mathbf{0}\)；或</li>
+      <li>\(\mathbf{a}\perp(\mathbf{b}-\mathbf{c})\)。</li>
     </ul>
-    <p><strong>第二种情况完全不能推出 \(\bs b=\bs c\)。</strong></p>
-    <p><strong>举个具体反例：</strong>取 \(\bs a=(1,0)\)、\(\bs b=(0,1)\)、\(\bs c=(0,2)\)。则</p>
+    <p><strong>第二种情况完全不能推出 \(\mathbf{b}=\mathbf{c}\)。</strong></p>
+    <p><strong>举个具体反例：</strong>取 \(\mathbf{a}=(1,0)\)、\(\mathbf{b}=(0,1)\)、\(\mathbf{c}=(0,2)\)。则</p>
     <div class="formula">
-      \[ \bs a\cdot\bs b=1\times0+0\times1=0,\qquad \bs a\cdot\bs c=1\times0+0\times2=0 \]
+      \[ \mathbf{a}\cdot\mathbf{b}=1\times0+0\times1=0,\qquad \mathbf{a}\cdot\mathbf{c}=1\times0+0\times2=0 \]
     </div>
-    <p>两者相等，但 \(\bs b\ne\bs c\) ✓ 消去律不成立。</p>
+    <p>两者相等，但 \(\mathbf{b}\ne\mathbf{c}\) ✓ 消去律不成立。</p>
 
     <div class="box warn" style="margin-top:16px;margin-bottom:0;">
       <span class="tag">★ 一句话判据</span>
       <p><strong>数量积里"能展开多项式、能提常数、能交换顺序"，但"不能约分、不能随便结合"。</strong></p>
-      <p>展开形如 \((\bs a+\bs b)^{2}\)、\((\bs a+\bs b)(\bs a-\bs b)\) 时，可以像多项式一样算（这是分配律的功劳）；但遇到"两边有公因子"时<strong>不能约掉</strong>。</p>
+      <p>展开形如 \((\mathbf{a}+\mathbf{b})^{2}\)、\((\mathbf{a}+\mathbf{b})(\mathbf{a}-\mathbf{b})\) 时，可以像多项式一样算（这是分配律的功劳）；但遇到"两边有公因子"时<strong>不能约掉</strong>。</p>
     </div>
   </div>
 
@@ -1083,21 +1083,21 @@
 
   <div class="box proof">
     <span class="tag">推导：坐标形式的三条公式</span>
-    <p><strong>已知：</strong>\(\bs a=(x_1,\ y_1)\)，\(\bs b=(x_2,\ y_2)\)。</p>
+    <p><strong>已知：</strong>\(\mathbf{a}=(x_1,\ y_1)\)，\(\mathbf{b}=(x_2,\ y_2)\)。</p>
 
-    <p><strong>第一步：先算基底的数量积。</strong>取 \(\bs i=(1,0)\)、\(\bs j=(0,1)\)，它们是相互垂直的单位向量。所以</p>
+    <p><strong>第一步：先算基底的数量积。</strong>取 \(\mathbf{i}=(1,0)\)、\(\mathbf{j}=(0,1)\)，它们是相互垂直的单位向量。所以</p>
     <div class="formula">
-      \[ \bs i\cdot\bs i=1,\qquad \bs j\cdot\bs j=1,\qquad \bs i\cdot\bs j=0 \]
+      \[ \mathbf{i}\cdot\mathbf{i}=1,\qquad \mathbf{j}\cdot\mathbf{j}=1,\qquad \mathbf{i}\cdot\mathbf{j}=0 \]
     </div>
-    <p>（前两条由 \(|\bs i|^{2}=1\)；第三条由"垂直则数量积为 0"。）</p>
+    <p>（前两条由 \(|\mathbf{i}|^{2}=1\)；第三条由"垂直则数量积为 0"。）</p>
 
     <p><strong>第二步：把两个向量都用基底表示，再展开。</strong></p>
     <div class="formula">
-      \[ \bs a\cdot\bs b=(x_1\bs i+y_1\bs j)\cdot(x_2\bs i+y_2\bs j) \]
+      \[ \mathbf{a}\cdot\mathbf{b}=(x_1\mathbf{i}+y_1\mathbf{j})\cdot(x_2\mathbf{i}+y_2\mathbf{j}) \]
     </div>
     <p>用分配律展开成四项：</p>
     <div class="formula">
-      \[ =x_1x_2(\bs i\cdot\bs i)+x_1y_2(\bs i\cdot\bs j)+y_1x_2(\bs j\cdot\bs i)+y_1y_2(\bs j\cdot\bs j) \]
+      \[ =x_1x_2(\mathbf{i}\cdot\mathbf{i})+x_1y_2(\mathbf{i}\cdot\mathbf{j})+y_1x_2(\mathbf{j}\cdot\mathbf{i})+y_1y_2(\mathbf{j}\cdot\mathbf{j}) \]
     </div>
 
     <p><strong>第三步：代入基底的数量积。</strong></p>
@@ -1105,103 +1105,107 @@
       \[ =x_1x_2\times1+x_1y_2\times0+y_1x_2\times0+y_1y_2\times1 \]
     </div>
     <div class="formula">
-      \[ \boxed{\ \bs a\cdot\bs b=x_1x_2+y_1y_2\ } \]
+      \[ \boxed{\ \mathbf{a}\cdot\mathbf{b}=x_1x_2+y_1y_2\ } \]
     </div>
-    <p><strong>★ 口诀："对应相乘再相加"。</strong>中间两项因为 \(\bs i\perp\bs j\) 而消失，所以只剩"同方向的项"。</p>
+    <p><strong>★ 口诀："对应相乘再相加"。</strong>中间两项因为 \(\mathbf{i}\perp\mathbf{j}\) 而消失，所以只剩"同方向的项"。</p>
 
     <p><strong>第四步：由它推出另外两条。</strong></p>
-    <p><strong>（1）求模：</strong>取 \(\bs b=\bs a\)，得</p>
+    <p><strong>（1）求模：</strong>取 \(\mathbf{b}=\mathbf{a}\)，得</p>
     <div class="formula">
-      \[ |\bs a|^{2}=\bs a\cdot\bs a=x_1^{2}+y_1^{2} \quad\Longrightarrow\quad |\bs a|=\sqrt{x_1^{2}+y_1^{2}} \]
+      \[ |\mathbf{a}|^{2}=\mathbf{a}\cdot\mathbf{a}=x_1^{2}+y_1^{2} \quad\Longrightarrow\quad |\mathbf{a}|=\sqrt{x_1^{2}+y_1^{2}} \]
     </div>
     <p>（这就是"两点间距离公式"的向量来源。）</p>
-    <p><strong>（2）求夹角：</strong>由 \(\cos\theta=\dfrac{\bs a\cdot\bs b}{|\bs a||\bs b|}\)，代入坐标形式：</p>
+    <p><strong>（2）求夹角：</strong>由 \(\cos\theta=\dfrac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{a}||\mathbf{b}|}\)，代入坐标形式：</p>
     <div class="formula">
       \[ \boxed{\ \cos\theta=\frac{x_1x_2+y_1y_2}{\sqrt{x_1^{2}+y_1^{2}}\cdot\sqrt{x_2^{2}+y_2^{2}}}\ } \]
     </div>
-    <p><strong>★ 垂直判据：</strong>\(\bs a\perp\bs b\Leftrightarrow\bs a\cdot\bs b=0\Leftrightarrow x_1x_2+y_1y_2=0\) ✓（与第 2.3 节一致。）</p>
+    <p><strong>★ 垂直判据：</strong>\(\mathbf{a}\perp\mathbf{b}\Leftrightarrow\mathbf{a}\cdot\mathbf{b}=0\Leftrightarrow x_1x_2+y_1y_2=0\) ✓（与第 2.3 节一致。）</p>
   </div>
 
   <div class="box eg">
-    <span class="tag">例题 4（求夹角）</span>
-    <p>已知 \(\bs a=(1,\ \sqrt3)\)，\(\bs b=(\sqrt3,\ 1)\)，求 \(\bs a\) 与 \(\bs b\) 的夹角 \(\theta\)。</p>
+    <span class="tag">例题 4（求夹角，含钝角情形）</span>
+    <p>已知 \(\mathbf{a}=(1,\ \sqrt3)\)，\(\mathbf{b}=(-2,\ 0)\)，求 \(\mathbf{a}\) 与 \(\mathbf{b}\) 的夹角 \(\theta\)。</p>
 
     <h4>解析</h4>
     <p><strong>第一步：算数量积。</strong></p>
     <div class="formula">
-      \[ \bs a\cdot\bs b=1\times\sqrt3+\sqrt3\times1=2\sqrt3 \]
+      \[ \mathbf{a}\cdot\mathbf{b}=1\times(-2)+\sqrt3\times0=-2 \]
     </div>
+    <p><strong>★ 数量积算出来是负数，先别慌</strong>——负的数量积说明夹角是<strong>钝角</strong>，这是正常情形。</p>
 
     <p><strong>第二步：算两个模。</strong></p>
     <div class="formula">
-      \[ |\bs a|=\sqrt{1^{2}+(\sqrt3)^{2}}=\sqrt{1+3}=2 \]
+      \[ |\mathbf{a}|=\sqrt{1^{2}+(\sqrt3)^{2}}=\sqrt{1+3}=2 \]
     </div>
     <div class="formula">
-      \[ |\bs b|=\sqrt{(\sqrt3)^{2}+1^{2}}=\sqrt{3+1}=2 \]
+      \[ |\mathbf{b}|=\sqrt{(-2)^{2}+0^{2}}=\sqrt4=2 \]
     </div>
 
     <p><strong>第三步：代入夹角公式。</strong></p>
     <div class="formula">
-      \[ \cos\theta=\frac{\bs a\cdot\bs b}{|\bs a||\bs b|}=\frac{2\sqrt3}{2\times2}=\frac{2\sqrt3}{4}=\frac{\sqrt3}{2} \]
+      \[ \cos\theta=\frac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{a}||\mathbf{b}|}=\frac{-2}{2\times2}=-\frac12 \]
     </div>
 
-    <p><strong>第四步：由 \(\cos\theta\) 求 \(\theta\)。</strong>因为 \(0\le\theta\le\pi\)，且 \(\cos\theta=\dfrac{\sqrt3}{2}\)，所以</p>
+    <p><strong>第四步：由 \(\cos\theta\) 求 \(\theta\)。</strong>因为 \(0\le\theta\le\pi\)，且 \(\cos\theta=-\dfrac12\)，所以</p>
     <div class="formula">
-      \[ \theta=\frac{\pi}{6} \]
+      \[ \theta=\frac{2\pi}{3} \]
     </div>
+    <p><strong>★ 注意：</strong>\(\cos\theta&lt;0\) 对应的是钝角，答案是 \(\dfrac{2\pi}{3}\)（即 \(120^\circ\)），<strong>不要写成 \(\dfrac{\pi}{3}\)</strong>。</p>
 
-    <p><strong>答案：</strong>\(\boxed{\theta=\dfrac{\pi}{6}}\)</p>
+    <p><strong>答案：</strong>\(\boxed{\theta=\dfrac{2\pi}{3}}\)</p>
 
-    <p><strong>验算（用几何意义）：</strong>\(\bs a\) 与 \(x\) 轴正向的夹角是 \(\arctan\dfrac{\sqrt3}{1}=\dfrac{\pi}{3}\)；\(\bs b\) 与 \(x\) 轴正向的夹角是 \(\arctan\dfrac{1}{\sqrt3}=\dfrac{\pi}{6}\)。</p>
-    <p>两者夹角 \(=\dfrac{\pi}{3}-\dfrac{\pi}{6}=\dfrac{\pi}{6}\) ✓ 一致。</p>
+    <p><strong>验算（用几何意义）：</strong>\(\mathbf{a}=(1,\sqrt3)\) 与 \(x\) 轴正向的夹角是 \(\arctan\dfrac{\sqrt3}{1}=\dfrac{\pi}{3}\)（\(60^\circ\)）。</p>
+    <p>\(\mathbf{b}=(-2,0)\) 指向 \(x\) 轴<strong>负方向</strong>，与 \(x\) 轴正向的夹角是 \(\pi\)（\(180^\circ\)）。</p>
+    <p>两者夹角 \(=\pi-\dfrac{\pi}{3}=\dfrac{2\pi}{3}\) ✓ 一致。</p>
 
     <div class="box tip" style="margin-top:16px;margin-bottom:0;">
       <span class="tag">★ 求夹角的三步固定动作</span>
       <ol class="steps">
-        <li>算数量积 \(\bs a\cdot\bs b\)</li>
-        <li>算两个模 \(|\bs a|\)、\(|\bs b|\)</li>
-        <li>代入 \(\cos\theta=\dfrac{\bs a\cdot\bs b}{|\bs a||\bs b|}\)，再由 \(\cos\theta\) 的值反查角</li>
+        <li>算数量积 \(\mathbf{a}\cdot\mathbf{b}\)</li>
+        <li>算两个模 \(|\mathbf{a}|\)、\(|\mathbf{b}|\)</li>
+        <li>代入 \(\cos\theta=\dfrac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{a}||\mathbf{b}|}\)，再由 \(\cos\theta\) 的值反查角</li>
       </ol>
       <p><strong>★ 第 3 步的"反查角"要注意：</strong>由 \(\cos\theta\) 求 \(\theta\) 时，因为 \(\theta\in[0,\pi]\)，解是<strong>唯一</strong>的。常见对应：\(\cos\theta=\dfrac12\Rightarrow\theta=\dfrac{\pi}{3}\)；\(\cos\theta=\dfrac{\sqrt2}{2}\Rightarrow\dfrac{\pi}{4}\)；\(\cos\theta=\dfrac{\sqrt3}{2}\Rightarrow\dfrac{\pi}{6}\)；\(\cos\theta=0\Rightarrow\dfrac{\pi}{2}\)；\(\cos\theta=-\dfrac12\Rightarrow\dfrac{2\pi}{3}\)。</p>
+      <p><strong>★ 一句话判据：\(\cos\theta\) 为正则是锐角，为负则是钝角，为零则是直角。</strong>看到负值就去找钝角的对应角，不要习惯性地填锐角。</p>
     </div>
   </div>
 
   <div class="box eg">
     <span class="tag">例题 5（由模的关系反求参数）</span>
-    <p>已知 \(\bs a=(m,\ 1)\)，\(\bs b=(1,\ 2)\)，且 \(|\bs a+\bs b|^{2}=|\bs a|^{2}+|\bs b|^{2}\)，求 \(m\)。</p>
+    <p>已知 \(\mathbf{a}=(m,\ 3)\)，\(\mathbf{b}=(1,\ -2)\)，且 \(|\mathbf{a}+\mathbf{b}|^{2}=|\mathbf{a}|^{2}+|\mathbf{b}|^{2}\)，求 \(m\)。</p>
 
     <h4>解析</h4>
     <p><strong>第一步：看清条件的含义（这一步能省一半计算）。</strong>由第 3.1 节的展开式：</p>
     <div class="formula">
-      \[ |\bs a+\bs b|^{2}=|\bs a|^{2}+2\bs a\cdot\bs b+|\bs b|^{2} \]
+      \[ |\mathbf{a}+\mathbf{b}|^{2}=|\mathbf{a}|^{2}+2\mathbf{a}\cdot\mathbf{b}+|\mathbf{b}|^{2} \]
     </div>
-    <p>题目给的等式是 \(|\bs a+\bs b|^{2}=|\bs a|^{2}+|\bs b|^{2}\)。两式对比，立刻得到</p>
+    <p>题目给的等式是 \(|\mathbf{a}+\mathbf{b}|^{2}=|\mathbf{a}|^{2}+|\mathbf{b}|^{2}\)。两式对比，立刻得到</p>
     <div class="formula">
-      \[ 2\bs a\cdot\bs b=0 \quad\Longrightarrow\quad \bs a\cdot\bs b=0 \quad\Longrightarrow\quad \bs a\perp\bs b \]
+      \[ 2\mathbf{a}\cdot\mathbf{b}=0 \quad\Longrightarrow\quad \mathbf{a}\cdot\mathbf{b}=0 \quad\Longrightarrow\quad \mathbf{a}\perp\mathbf{b} \]
     </div>
-    <p><strong>★ 所以"\(|\bs a+\bs b|^{2}=|\bs a|^{2}+|\bs b|^{2}\)"等价于"\(\bs a\perp\bs b\)"。</strong>这正是勾股定理的向量形式。</p>
+    <p><strong>★ 所以"\(|\mathbf{a}+\mathbf{b}|^{2}=|\mathbf{a}|^{2}+|\mathbf{b}|^{2}\)"等价于"\(\mathbf{a}\perp\mathbf{b}\)"。</strong>这正是勾股定理的向量形式。</p>
 
     <p><strong>第二步：用垂直的坐标判据。</strong></p>
     <div class="formula">
-      \[ m\times1+1\times2=0 \quad\Longrightarrow\quad m+2=0 \quad\Longrightarrow\quad m=-2 \]
+      \[ m\times1+3\times(-2)=0 \quad\Longrightarrow\quad m-6=0 \quad\Longrightarrow\quad m=6 \]
     </div>
 
-    <p><strong>答案：</strong>\(\boxed{m=-2}\)</p>
+    <p><strong>答案：</strong>\(\boxed{m=6}\)</p>
 
-    <p><strong>验算：</strong>\(m=-2\) 时 \(\bs a=(-2,\ 1)\)，\(\bs a+\bs b=(-2+1,\ 1+2)=(-1,\ 3)\)。</p>
-    <p>\(|\bs a+\bs b|^{2}=(-1)^{2}+3^{2}=1+9=10\)。</p>
-    <p>\(|\bs a|^{2}=4+1=5\)，\(|\bs b|^{2}=1+4=5\)，两者之和 \(=10\) ✓ 相等。</p>
+    <p><strong>验算：</strong>\(m=6\) 时 \(\mathbf{a}=(6,\ 3)\)，\(\mathbf{a}+\mathbf{b}=(6+1,\ 3-2)=(7,\ 1)\)。</p>
+    <p>左边：\(|\mathbf{a}+\mathbf{b}|^{2}=7^{2}+1^{2}=49+1=50\)。</p>
+    <p>右边：\(|\mathbf{a}|^{2}=6^{2}+3^{2}=36+9=45\)，\(|\mathbf{b}|^{2}=1^{2}+(-2)^{2}=1+4=5\)，两者之和 \(=45+5=50\) ✓ 相等。</p>
 
     <div class="box tip" style="margin-top:16px;margin-bottom:0;">
-      <span class="tag">★ 由 \(|\bs a\pm\bs b|\) 的关系式反推垂直/平行</span>
+      <span class="tag">★ 由 \(|\mathbf{a}\pm\mathbf{b}|\) 的关系式反推垂直/平行</span>
       <div class="tbl-wrap">
         <table>
           <thead><tr><th>已知条件</th><th>等价于</th><th>原因</th></tr></thead>
           <tbody>
-            <tr><td>\(|\bs a+\bs b|^{2}=|\bs a|^{2}+|\bs b|^{2}\)</td><td>\(\bs a\perp\bs b\)</td><td>展开后 \(2\bs a\cdot\bs b=0\)</td></tr>
-            <tr><td>\(|\bs a+\bs b|=|\bs a|+|\bs b|\)</td><td>\(\bs a\) 与 \(\bs b\) 同向</td><td>三角不等式取等</td></tr>
-            <tr><td>\(|\bs a+\bs b|=|\bs a-\bs b|\)</td><td>\(\bs a\perp\bs b\)</td><td>两边平方相减得 \(4\bs a\cdot\bs b=0\)</td></tr>
-            <tr><td>\(|\bs a+\bs b|=|\bs a-\bs b|\) 且 \(|\bs a|=|\bs b|\)</td><td>以 \(\bs a\)、\(\bs b\) 为邻边的四边形是正方形</td><td>垂直 + 等长</td></tr>
+            <tr><td>\(|\mathbf{a}+\mathbf{b}|^{2}=|\mathbf{a}|^{2}+|\mathbf{b}|^{2}\)</td><td>\(\mathbf{a}\perp\mathbf{b}\)</td><td>展开后 \(2\mathbf{a}\cdot\mathbf{b}=0\)</td></tr>
+            <tr><td>\(|\mathbf{a}+\mathbf{b}|=|\mathbf{a}|+|\mathbf{b}|\)</td><td>\(\mathbf{a}\) 与 \(\mathbf{b}\) 同向</td><td>三角不等式取等</td></tr>
+            <tr><td>\(|\mathbf{a}+\mathbf{b}|=|\mathbf{a}-\mathbf{b}|\)</td><td>\(\mathbf{a}\perp\mathbf{b}\)</td><td>两边平方相减得 \(4\mathbf{a}\cdot\mathbf{b}=0\)</td></tr>
+            <tr><td>\(|\mathbf{a}+\mathbf{b}|=|\mathbf{a}-\mathbf{b}|\) 且 \(|\mathbf{a}|=|\mathbf{b}|\)</td><td>以 \(\mathbf{a}\)、\(\mathbf{b}\) 为邻边的四边形是正方形</td><td>垂直 + 等长</td></tr>
           </tbody>
         </table>
       </div>
@@ -1217,31 +1221,33 @@
 
   <div class="box tip">
     <span class="tag">★ 结合点：数量积的两种算法</span>
-    <p>同一个数量积 \(\bs a\cdot\bs b\) 有两条算法：</p>
+    <p>同一个数量积 \(\mathbf{a}\cdot\mathbf{b}\) 有两条算法：</p>
     <ul>
       <li><strong>用坐标算：</strong>\(x_1x_2+y_1y_2\)</li>
-      <li><strong>用定义算：</strong>\(|\bs a||\bs b|\cos\theta\)</li>
+      <li><strong>用定义算：</strong>\(|\mathbf{a}||\mathbf{b}|\cos\theta\)</li>
     </ul>
-    <p><strong>"两条算法结果相等"就是列方程的依据。</strong>当 \(\bs a\)、\(\bs b\) 的坐标含三角函数时，这个等式就变成一个三角方程。</p>
+    <p><strong>"两条算法结果相等"就是列方程的依据。</strong>当 \(\mathbf{a}\)、\(\mathbf{b}\) 的坐标含三角函数时，这个等式就变成一个三角方程。</p>
   </div>
+
+  
 
   <div class="box eg">
     <span class="tag">例题 6（向量与三角恒等变换）</span>
-    <p>已知 \(\bs a=(\cos\alpha,\ \sin\alpha)\)，\(\bs b=(\cos\beta,\ \sin\beta)\)，求 \(|\bs a+\bs b|\) 的取值范围。</p>
+    <p>已知 \(\mathbf{a}=(\cos\alpha,\ \sin\alpha)\)，\(\mathbf{b}=(\cos\beta,\ \sin\beta)\)，求 \(|\mathbf{a}+\mathbf{b}|\) 的取值范围。</p>
 
     <h4>解析</h4>
     <p><strong>第一步：算模的平方（比直接算模简单）。</strong></p>
     <div class="formula">
-      \[ |\bs a+\bs b|^{2}=|\bs a|^{2}+2\bs a\cdot\bs b+|\bs b|^{2} \]
+      \[ |\mathbf{a}+\mathbf{b}|^{2}=|\mathbf{a}|^{2}+2\mathbf{a}\cdot\mathbf{b}+|\mathbf{b}|^{2} \]
     </div>
 
-    <p><strong>第二步：分别算每一项。</strong>因为 \(\bs a\)、\(\bs b\) 都是单位向量（坐标满足 \(\cos^{2}+\sin^{2}=1\)）：</p>
+    <p><strong>第二步：分别算每一项。</strong>因为 \(\mathbf{a}\)、\(\mathbf{b}\) 都是单位向量（坐标满足 \(\cos^{2}+\sin^{2}=1\)）：</p>
     <div class="formula">
-      \[ |\bs a|^{2}=\cos^{2}\alpha+\sin^{2}\alpha=1,\qquad |\bs b|^{2}=\cos^{2}\beta+\sin^{2}\beta=1 \]
+      \[ |\mathbf{a}|^{2}=\cos^{2}\alpha+\sin^{2}\alpha=1,\qquad |\mathbf{b}|^{2}=\cos^{2}\beta+\sin^{2}\beta=1 \]
     </div>
     <p>数量积用坐标算：</p>
     <div class="formula">
-      \[ \bs a\cdot\bs b=\cos\alpha\cos\beta+\sin\alpha\sin\beta \]
+      \[ \mathbf{a}\cdot\mathbf{b}=\cos\alpha\cos\beta+\sin\alpha\sin\beta \]
     </div>
     <p><strong>★ 认出这是差角余弦公式！</strong>由第三册 5.1 节：</p>
     <div class="formula">
@@ -1249,31 +1255,31 @@
     </div>
     <p>所以</p>
     <div class="formula">
-      \[ \bs a\cdot\bs b=\cos(\alpha-\beta) \]
+      \[ \mathbf{a}\cdot\mathbf{b}=\cos(\alpha-\beta) \]
     </div>
 
     <p><strong>第三步：合并。</strong></p>
     <div class="formula">
-      \[ |\bs a+\bs b|^{2}=1+2\cos(\alpha-\beta)+1=2+2\cos(\alpha-\beta) \]
+      \[ |\mathbf{a}+\mathbf{b}|^{2}=1+2\cos(\alpha-\beta)+1=2+2\cos(\alpha-\beta) \]
     </div>
 
     <p><strong>第四步：由 \(\cos\) 的范围推模的范围。</strong>因为 \(-1\le\cos(\alpha-\beta)\le1\)，所以</p>
     <div class="formula">
-      \[ 0\le|\bs a+\bs b|^{2}\le4 \]
+      \[ 0\le|\mathbf{a}+\mathbf{b}|^{2}\le4 \]
     </div>
     <p>开方（模非负）：</p>
     <div class="formula">
-      \[ 0\le|\bs a+\bs b|\le2 \]
+      \[ 0\le|\mathbf{a}+\mathbf{b}|\le2 \]
     </div>
 
-    <p><strong>答案：</strong>\(\boxed{|\bs a+\bs b|\in[0,\ 2]}\)</p>
+    <p><strong>答案：</strong>\(\boxed{|\mathbf{a}+\mathbf{b}|\in[0,\ 2]}\)</p>
 
-    <p><strong>验算：</strong>取 \(\alpha=\beta\)（即 \(\alpha-\beta=0\)）。此时 \(\bs a=\bs b\)，\(\bs a+\bs b=2\bs a\)，模为 \(2\) ✓ 取到上界。</p>
-    <p>取 \(\alpha-\beta=\pi\)。此时 \(\bs b=-\bs a\)，\(\bs a+\bs b=\bs 0\)，模为 \(0\) ✓ 取到下界。</p>
+    <p><strong>验算：</strong>取 \(\alpha=\beta\)（即 \(\alpha-\beta=0\)）。此时 \(\mathbf{a}=\mathbf{b}\)，\(\mathbf{a}+\mathbf{b}=2\mathbf{a}\)，模为 \(2\) ✓ 取到上界。</p>
+    <p>取 \(\alpha-\beta=\pi\)。此时 \(\mathbf{b}=-\mathbf{a}\)，\(\mathbf{a}+\mathbf{b}=\mathbf{0}\)，模为 \(0\) ✓ 取到下界。</p>
 
     <div class="box tip" style="margin-top:16px;margin-bottom:0;">
       <span class="tag">★ 这个例子的"双重身份"</span>
-      <p>它既是<strong>向量题</strong>（求 \(|\bs a+\bs b|\) 的范围），又是<strong>三角题</strong>（用差角余弦公式）。</p>
+      <p>它既是<strong>向量题</strong>（求 \(|\mathbf{a}+\mathbf{b}|\) 的范围），又是<strong>三角题</strong>（用差角余弦公式）。</p>
       <p><strong>高考常在这里出"跨板块"的题：</strong>表面是向量，实质考三角恒等变换。<strong>看到坐标是 \((\cos\theta,\sin\theta)\) 形式，就要想到"单位向量 + 三角公式"。</strong></p>
     </div>
   </div>
@@ -1287,7 +1293,7 @@
       <li><strong>两直线平行</strong> \(\Leftrightarrow\) 方向向量平行 \(\Leftrightarrow\) \(x_1y_2-x_2y_1=0\)</li>
       <li><strong>两直线垂直</strong> \(\Leftrightarrow\) 方向向量垂直 \(\Leftrightarrow\) \(x_1x_2+y_1y_2=0\)</li>
     </ul>
-    <p><strong>★ 更重要的用途：求点到直线的距离。</strong>第五册 1.3 节给的公式</p>
+    <p><strong>★ 更重要的用途：求点到直线的距离。</strong>第五册 1.4 节给的公式</p>
     <div class="formula">
       \[ d=\frac{|Ax_0+By_0+C|}{\sqrt{A^{2}+B^{2}}} \]
     </div>
@@ -1380,7 +1386,7 @@
           <tr><td>数量积</td><td>\(x_1x_2+y_1y_2\)</td><td>\(x_1x_2+y_1y_2+z_1z_2\)</td></tr>
           <tr><td>垂直</td><td>\(x_1x_2+y_1y_2=0\)</td><td>\(x_1x_2+y_1y_2+z_1z_2=0\)</td></tr>
           <tr><td>平行</td><td>\(x_1y_2-x_2y_1=0\)</td><td>三个二阶行列式都为 0（即对应坐标成比例）</td></tr>
-          <tr><td>夹角余弦</td><td>\(\dfrac{x_1x_2+y_1y_2}{|\bs a||\bs b|}\)</td><td>\(\dfrac{x_1x_2+y_1y_2+z_1z_2}{|\bs a||\bs b|}\)</td></tr>
+          <tr><td>夹角余弦</td><td>\(\dfrac{x_1x_2+y_1y_2}{|\mathbf{a}||\mathbf{b}|}\)</td><td>\(\dfrac{x_1x_2+y_1y_2+z_1z_2}{|\mathbf{a}||\mathbf{b}|}\)</td></tr>
         </tbody>
       </table>
     </div>
@@ -1410,7 +1416,7 @@
     </div>
     <p>若 \(G\) 是 \(\triangle ABC\) 的重心，则</p>
     <div class="formula">
-      \[ \overrightarrow{GA}+\overrightarrow{GB}+\overrightarrow{GC}=\bs 0 \]
+      \[ \overrightarrow{GA}+\overrightarrow{GB}+\overrightarrow{GC}=\mathbf{0} \]
     </div>
 
     <p><strong>模型二：等和线（三点共线的向量形式）。</strong></p>
@@ -1421,7 +1427,7 @@
     <p><strong>★ 反过来也成立：</strong>若 \(\lambda+\mu=1\)，则 \(P\) 在直线 \(AB\) 上。这是"三点共线"的向量判据。</p>
 
     <p><strong>模型三：数量积求最值。</strong></p>
-    <p>把 \(\bs a\cdot\bs b\) 用坐标表示成一个关于参数的函数，再用配方法或基本不等式求最值。</p>
+    <p>把 \(\mathbf{a}\cdot\mathbf{b}\) 用坐标表示成一个关于参数的函数，再用配方法或基本不等式求最值。</p>
 
     <p><strong>模型四：极化恒等式。</strong></p>
     <p>遇到"\(\overrightarrow{PA}\cdot\overrightarrow{PB}\)"型的式子（\(P\) 在动），用</p>
@@ -1506,143 +1512,143 @@
 
   <div class="box def">
     <span class="tag">定义</span>
-    <p>形如 \(z=a+b\i\)（\(a,b\in\mathbb{R}\)）的数叫<strong>复数</strong>，其中 \(\i\) 叫<strong>虚数单位</strong>，规定</p>
+    <p>形如 \(z=a+b\mathrm{i}\)（\(a,b\in\mathbb{R}\)）的数叫<strong>复数</strong>，其中 \(\mathrm{i}\) 叫<strong>虚数单位</strong>，规定</p>
     <div class="formula">
-      \[ \i^{2}=-1 \]
+      \[ \mathrm{i}^{2}=-1 \]
     </div>
     <p>\(a\) 叫<strong>实部</strong>，\(b\) 叫<strong>虚部</strong>。全体复数构成的集合记作 \(\mathbb{C}\)。</p>
     <p><strong>分类：</strong></p>
     <ul>
-      <li><strong>实数：</strong>\(b=0\)（如 \(3+0\i=3\)）；</li>
+      <li><strong>实数：</strong>\(b=0\)（如 \(3+0\mathrm{i}=3\)）；</li>
       <li><strong>虚数：</strong>\(b\ne0\)；</li>
-      <li><strong>纯虚数：</strong>\(a=0\) 且 \(b\ne0\)（如 \(2\i\)）。</li>
+      <li><strong>纯虚数：</strong>\(a=0\) 且 \(b\ne0\)（如 \(2\mathrm{i}\)）。</li>
     </ul>
     <p><strong>★ 两个复数相等</strong>当且仅当实部与虚部分别相等：</p>
     <div class="formula">
-      \[ a+b\i=c+d\i \iff a=c\ \text{且}\ b=d \]
+      \[ a+b\mathrm{i}=c+d\mathrm{i} \iff a=c\ \text{且}\ b=d \]
     </div>
     <p><strong>这是解"复数相等"类题目的唯一依据。</strong></p>
   </div>
 
   <div class="box tip">
-    <span class="tag">★ 虚数单位 \(\i\) 的幂的周期性</span>
-    <p>由 \(\i^{2}=-1\) 可以依次推出：</p>
+    <span class="tag">★ 虚数单位 \(\mathrm{i}\) 的幂的周期性</span>
+    <p>由 \(\mathrm{i}^{2}=-1\) 可以依次推出：</p>
     <div class="formula">
-      \[ \i^{1}=\i,\qquad \i^{2}=-1,\qquad \i^{3}=-\i,\qquad \i^{4}=1 \]
+      \[ \mathrm{i}^{1}=\mathrm{i},\qquad \mathrm{i}^{2}=-1,\qquad \mathrm{i}^{3}=-\mathrm{i},\qquad \mathrm{i}^{4}=1 \]
     </div>
-    <p>再往后就循环了（\(\i^{5}=\i\)）。所以 \(\i\) 的幂<strong>以 4 为周期</strong>。</p>
-    <p><strong>求 \(\i^{n}\) 的方法：</strong>用 \(n\) 除以 4 看余数：</p>
+    <p>再往后就循环了（\(\mathrm{i}^{5}=\mathrm{i}\)）。所以 \(\mathrm{i}\) 的幂<strong>以 4 为周期</strong>。</p>
+    <p><strong>求 \(\mathrm{i}^{n}\) 的方法：</strong>用 \(n\) 除以 4 看余数：</p>
     <div class="tbl-wrap">
       <table>
         <thead><tr><th>\(n\) 除以 4 的余数</th><th>0</th><th>1</th><th>2</th><th>3</th></tr></thead>
         <tbody>
-          <tr><td>\(\i^{n}\)</td><td>\(1\)</td><td>\(\i\)</td><td>\(-1\)</td><td>\(-\i\)</td></tr>
+          <tr><td>\(\mathrm{i}^{n}\)</td><td>\(1\)</td><td>\(\mathrm{i}\)</td><td>\(-1\)</td><td>\(-\mathrm{i}\)</td></tr>
         </tbody>
       </table>
     </div>
-    <p><strong>例：</strong>\(\i^{2025}\)。因为 \(2025=4\times506+1\)，余数是 1，所以 \(\i^{2025}=\i\)。</p>
+    <p><strong>例：</strong>\(\mathrm{i}^{2025}\)。因为 \(2025=4\times506+1\)，余数是 1，所以 \(\mathrm{i}^{2025}=\mathrm{i}\)。</p>
   </div>
 
   <h3 id="ch5-2">5.2　复数的四则运算</h3>
 
   <div class="box def">
     <span class="tag">四则运算法则</span>
-    <p>设 \(z_1=a+b\i\)，\(z_2=c+d\i\)（\(a,b,c,d\in\mathbb{R}\)）。</p>
+    <p>设 \(z_1=a+b\mathrm{i}\)，\(z_2=c+d\mathrm{i}\)（\(a,b,c,d\in\mathbb{R}\)）。</p>
     <p><strong>加法与减法（实部虚部分别加减）：</strong></p>
     <div class="formula">
-      \[ z_1\pm z_2=(a\pm c)+(b\pm d)\i \]
+      \[ z_1\pm z_2=(a\pm c)+(b\pm d)\mathrm{i} \]
     </div>
-    <p><strong>乘法（按多项式展开，再用 \(\i^{2}=-1\)）：</strong></p>
+    <p><strong>乘法（按多项式展开，再用 \(\mathrm{i}^{2}=-1\)）：</strong></p>
     <div class="formula">
-      \[ z_1z_2=(a+b\i)(c+d\i)=ac+ad\i+bc\i+bd\i^{2} \]
+      \[ z_1z_2=(a+b\mathrm{i})(c+d\mathrm{i})=ac+ad\mathrm{i}+bc\mathrm{i}+bd\mathrm{i}^{2} \]
     </div>
     <div class="formula">
-      \[ =(ac-bd)+(ad+bc)\i \]
+      \[ =(ac-bd)+(ad+bc)\mathrm{i} \]
     </div>
     <p><strong>除法（分子分母同乘分母的共轭）：</strong></p>
     <div class="formula">
-      \[ \frac{z_1}{z_2}=\frac{a+b\i}{c+d\i}=\frac{(a+b\i)(c-d\i)}{(c+d\i)(c-d\i)}=\frac{(ac+bd)+(bc-ad)\i}{c^{2}+d^{2}} \]
+      \[ \frac{z_1}{z_2}=\frac{a+b\mathrm{i}}{c+d\mathrm{i}}=\frac{(a+b\mathrm{i})(c-d\mathrm{i})}{(c+d\mathrm{i})(c-d\mathrm{i})}=\frac{(ac+bd)+(bc-ad)\mathrm{i}}{c^{2}+d^{2}} \]
     </div>
     <p><strong>★ 除法不要背公式，记住"分母实数化"这个动作即可</strong>——分子分母同乘分母的共轭，把分母变成实数 \(c^{2}+d^{2}\)。</p>
   </div>
 
   <div class="box proof">
     <span class="tag">★ 推导：为什么"乘以共轭"能把分母变成实数</span>
-    <p><strong>目标：</strong>证明 \((c+d\i)(c-d\i)=c^{2}+d^{2}\)（一个实数）。</p>
+    <p><strong>目标：</strong>证明 \((c+d\mathrm{i})(c-d\mathrm{i})=c^{2}+d^{2}\)（一个实数）。</p>
 
     <p><strong>第一步：按多项式展开。</strong></p>
     <div class="formula">
-      \[ (c+d\i)(c-d\i)=c^{2}-cd\i+cd\i-d^{2}\i^{2} \]
+      \[ (c+d\mathrm{i})(c-d\mathrm{i})=c^{2}-cd\mathrm{i}+cd\mathrm{i}-d^{2}\mathrm{i}^{2} \]
     </div>
-    <p><strong>第二步：中间两项抵消。</strong>\(-cd\i\) 与 \(+cd\i\) 正好抵消：</p>
+    <p><strong>第二步：中间两项抵消。</strong>\(-cd\mathrm{i}\) 与 \(+cd\mathrm{i}\) 正好抵消：</p>
     <div class="formula">
-      \[ =c^{2}-d^{2}\i^{2} \]
+      \[ =c^{2}-d^{2}\mathrm{i}^{2} \]
     </div>
-    <p><strong>第三步：用 \(\i^{2}=-1\) 代入。</strong></p>
+    <p><strong>第三步：用 \(\mathrm{i}^{2}=-1\) 代入。</strong></p>
     <div class="formula">
       \[ =c^{2}-d^{2}\times(-1)=c^{2}+d^{2} \quad\checkmark \]
     </div>
     <p>结果是实数，且 \(c^{2}+d^{2}\ge0\)（当 \(z_2\ne0\) 时严格大于 0）。</p>
-    <p><strong>★ 为什么分子分母都要乘？</strong>因为要保证"值不变"。乘 \(\dfrac{c-d\i}{c-d\i}=1\)（当 \(z_2\ne0\) 时分子分母都非零），相当于乘 1。</p>
-    <p><strong>★ 这个式子与"平方差公式"形式一样：</strong>\((c+d\i)(c-d\i)=c^{2}-(d\i)^{2}\)，而 \((d\i)^{2}=d^{2}\i^{2}=-d^{2}\)，所以 \(=c^{2}-(-d^{2})=c^{2}+d^{2}\)。</p>
+    <p><strong>★ 为什么分子分母都要乘？</strong>因为要保证"值不变"。乘 \(\dfrac{c-d\mathrm{i}}{c-d\mathrm{i}}=1\)（当 \(z_2\ne0\) 时分子分母都非零），相当于乘 1。</p>
+    <p><strong>★ 这个式子与"平方差公式"形式一样：</strong>\((c+d\mathrm{i})(c-d\mathrm{i})=c^{2}-(d\mathrm{i})^{2}\)，而 \((d\mathrm{i})^{2}=d^{2}\mathrm{i}^{2}=-d^{2}\)，所以 \(=c^{2}-(-d^{2})=c^{2}+d^{2}\)。</p>
   </div>
 
   <div class="box eg">
     <span class="tag">例题 9（复数四则运算）</span>
-    <p>计算：(1) \(\dfrac{2-\i}{1+2\i}\)；　(2) \((1+\i)^{2}\)；　(3) \((2-\i)(2+2\i)\)。</p>
+    <p>计算：(1) \(\dfrac{2-\mathrm{i}}{1+2\mathrm{i}}\)；　(2) \((1+\mathrm{i})^{2}\)；　(3) \((2-\mathrm{i})(2+2\mathrm{i})\)。</p>
 
     <h4>解析</h4>
-    <p><strong>(1) 分母实数化：分子分母同乘分母的共轭 \(1-2\i\)。</strong></p>
+    <p><strong>(1) 分母实数化：分子分母同乘分母的共轭 \(1-2\mathrm{i}\)。</strong></p>
     <div class="formula">
-      \[ \frac{2-\i}{1+2\i}=\frac{(2-\i)(1-2\i)}{(1+2\i)(1-2\i)} \]
+      \[ \frac{2-\mathrm{i}}{1+2\mathrm{i}}=\frac{(2-\mathrm{i})(1-2\mathrm{i})}{(1+2\mathrm{i})(1-2\mathrm{i})} \]
     </div>
     <p>先算分母：</p>
     <div class="formula">
-      \[ (1+2\i)(1-2\i)=1^{2}+2^{2}=1+4=5 \]
+      \[ (1+2\mathrm{i})(1-2\mathrm{i})=1^{2}+2^{2}=1+4=5 \]
     </div>
     <p>再算分子：</p>
     <div class="formula">
-      \[ (2-\i)(1-2\i)=2-4\i-\i+2\i^{2}=2-5\i+2\times(-1) \]
+      \[ (2-\mathrm{i})(1-2\mathrm{i})=2-4\mathrm{i}-\mathrm{i}+2\mathrm{i}^{2}=2-5\mathrm{i}+2\times(-1) \]
     </div>
     <div class="formula">
-      \[ =2-5\i-2=-5\i \]
+      \[ =2-5\mathrm{i}-2=-5\mathrm{i} \]
     </div>
     <p>所以</p>
     <div class="formula">
-      \[ \frac{2-\i}{1+2\i}=\frac{-5\i}{5}=-\i \]
+      \[ \frac{2-\mathrm{i}}{1+2\mathrm{i}}=\frac{-5\mathrm{i}}{5}=-\mathrm{i} \]
     </div>
-    <p><strong>答案：</strong>\(\boxed{-\i}\)</p>
-    <p><strong>验算：</strong>把 \(-\i\) 代回检验：\((-\i)(1+2\i)=-\i-2\i^{2}=-\i+2=2-\i\) ✓ 等于原分子。</p>
+    <p><strong>答案：</strong>\(\boxed{-\mathrm{i}}\)</p>
+    <p><strong>验算：</strong>把 \(-\mathrm{i}\) 代回检验：\((-\mathrm{i})(1+2\mathrm{i})=-\mathrm{i}-2\mathrm{i}^{2}=-\mathrm{i}+2=2-\mathrm{i}\) ✓ 等于原分子。</p>
 
     <p><strong>(2) 用完全平方公式展开。</strong></p>
     <div class="formula">
-      \[ (1+\i)^{2}=1^{2}+2\times1\times\i+\i^{2}=1+2\i+(-1)=2\i \]
+      \[ (1+\mathrm{i})^{2}=1^{2}+2\times1\times\mathrm{i}+\mathrm{i}^{2}=1+2\mathrm{i}+(-1)=2\mathrm{i} \]
     </div>
-    <p><strong>答案：</strong>\(\boxed{2\i}\)</p>
-    <p><strong>★ 记住 \((1+\i)^{2}=2\i\) 这个常用结论</strong>，考试时可以直接用。</p>
+    <p><strong>答案：</strong>\(\boxed{2\mathrm{i}}\)</p>
+    <p><strong>★ 记住 \((1+\mathrm{i})^{2}=2\mathrm{i}\) 这个常用结论</strong>，考试时可以直接用。</p>
 
     <p><strong>(3) 按多项式展开。</strong></p>
     <div class="formula">
-      \[ (2-\i)(2+2\i)=4+4\i-2\i-2\i^{2}=4+2\i+2=6+2\i \]
+      \[ (2-\mathrm{i})(2+2\mathrm{i})=4+4\mathrm{i}-2\mathrm{i}-2\mathrm{i}^{2}=4+2\mathrm{i}+2=6+2\mathrm{i} \]
     </div>
-    <p><strong>答案：</strong>\(\boxed{6+2\i}\)</p>
-    <p><strong>验算：</strong>也可以用"实部虚部公式"：\((ac-bd)+(ad+bc)\i\)，其中 \(a=2\)、\(b=-1\)、\(c=2\)、\(d=2\)。</p>
+    <p><strong>答案：</strong>\(\boxed{6+2\mathrm{i}}\)</p>
+    <p><strong>验算：</strong>也可以用"实部虚部公式"：\((ac-bd)+(ad+bc)\mathrm{i}\)，其中 \(a=2\)、\(b=-1\)、\(c=2\)、\(d=2\)。</p>
     <div class="formula">
       \[ ac-bd=2\times2-(-1)\times2=4+2=6 \]
     </div>
     <div class="formula">
       \[ ad+bc=2\times2+(-1)\times2=4-2=2 \]
     </div>
-    <p>所以结果是 \(6+2\i\) ✓ 一致。</p>
+    <p>所以结果是 \(6+2\mathrm{i}\) ✓ 一致。</p>
   </div>
 
   <h3 id="ch5-3">5.3　共轭复数与模</h3>
 
   <div class="box def">
     <span class="tag">两个定义</span>
-    <p>设 \(z=a+b\i\)（\(a,b\in\mathbb{R}\)）。</p>
+    <p>设 \(z=a+b\mathrm{i}\)（\(a,b\in\mathbb{R}\)）。</p>
     <ul>
-      <li><strong>共轭复数：</strong>\(\overline{z}=a-b\i\)（实部相同、虚部互为相反数）。</li>
+      <li><strong>共轭复数：</strong>\(\overline{z}=a-b\mathrm{i}\)（实部相同、虚部互为相反数）。</li>
       <li><strong>模：</strong>\(|z|=\sqrt{a^{2}+b^{2}}\)（一个非负实数）。</li>
     </ul>
   </div>
@@ -1653,30 +1659,30 @@
     <p><strong>性质一：\(z\cdot\overline{z}=|z|^{2}\)。</strong></p>
     <p><strong>证明：</strong>直接算。</p>
     <div class="formula">
-      \[ z\cdot\overline{z}=(a+b\i)(a-b\i)=a^{2}+b^{2} \]
+      \[ z\cdot\overline{z}=(a+b\mathrm{i})(a-b\mathrm{i})=a^{2}+b^{2} \]
     </div>
     <p>而 \(|z|^{2}=\left(\sqrt{a^{2}+b^{2}}\right)^{2}=a^{2}+b^{2}\)，两者相等 ✓。</p>
     <p><strong>★ 这条性质很有用：</strong>求 \(|z|\) 时可以先算 \(z\overline{z}\)，避免开方运算。</p>
 
     <p><strong>性质二：\(\overline{z_1\pm z_2}=\overline{z_1}\pm\overline{z_2}\)，\(\overline{z_1z_2}=\overline{z_1}\cdot\overline{z_2}\)。</strong></p>
-    <p><strong>证明第二条：</strong>设 \(z_1=a+b\i\)、\(z_2=c+d\i\)。由乘法公式</p>
+    <p><strong>证明第二条：</strong>设 \(z_1=a+b\mathrm{i}\)、\(z_2=c+d\mathrm{i}\)。由乘法公式</p>
     <div class="formula">
-      \[ z_1z_2=(ac-bd)+(ad+bc)\i \]
+      \[ z_1z_2=(ac-bd)+(ad+bc)\mathrm{i} \]
     </div>
     <p>所以</p>
     <div class="formula">
-      \[ \overline{z_1z_2}=(ac-bd)-(ad+bc)\i \]
+      \[ \overline{z_1z_2}=(ac-bd)-(ad+bc)\mathrm{i} \]
     </div>
     <p>而</p>
     <div class="formula">
-      \[ \overline{z_1}\cdot\overline{z_2}=(a-b\i)(c-d\i)=ac-ad\i-bc\i+bd\i^{2}=(ac-bd)-(ad+bc)\i \]
+      \[ \overline{z_1}\cdot\overline{z_2}=(a-b\mathrm{i})(c-d\mathrm{i})=ac-ad\mathrm{i}-bc\mathrm{i}+bd\mathrm{i}^{2}=(ac-bd)-(ad+bc)\mathrm{i} \]
     </div>
     <p>两者相等 ✓。</p>
 
-    <p><strong>性质三：\(z-\overline{z}=2b\i\)（结果是纯虚数）。</strong></p>
+    <p><strong>性质三：\(z-\overline{z}=2b\mathrm{i}\)（结果是纯虚数）。</strong></p>
     <p><strong>证明：</strong></p>
     <div class="formula">
-      \[ z-\overline{z}=(a+b\i)-(a-b\i)=2b\i \quad\checkmark \]
+      \[ z-\overline{z}=(a+b\mathrm{i})-(a-b\mathrm{i})=2b\mathrm{i} \quad\checkmark \]
     </div>
     <p><strong>★ 这条性质在高考题里出现频率很高</strong>——题目问"求 \(z-\overline{z}\)"，本质是求"\(2\times\)虚部"。</p>
     <p>另外 \(z+\overline{z}=2a\)（实数的 2 倍）。</p>
@@ -1689,13 +1695,13 @@
         <thead><tr><th>式子</th><th>结果</th><th>说明</th></tr></thead>
         <tbody>
           <tr><td>\(z+\overline{z}\)</td><td>\(2a\)</td><td>实数，等于实部的 2 倍</td></tr>
-          <tr><td>\(z-\overline{z}\)</td><td>\(2b\i\)</td><td>纯虚数，等于虚部的 2 倍乘 \(\i\)</td></tr>
+          <tr><td>\(z-\overline{z}\)</td><td>\(2b\mathrm{i}\)</td><td>纯虚数，等于虚部的 2 倍乘 \(\mathrm{i}\)</td></tr>
           <tr><td>\(z\cdot\overline{z}\)</td><td>\(|z|^{2}=a^{2}+b^{2}\)</td><td>非负实数</td></tr>
           <tr><td>\(|z_1z_2|\)</td><td>\(|z_1|\cdot|z_2|\)</td><td>模的乘法性质</td></tr>
           <tr><td>\(\left|\dfrac{z_1}{z_2}\right|\)</td><td>\(\dfrac{|z_1|}{|z_2|}\)</td><td>模的除法性质（\(z_2\ne0\)）</td></tr>
-          <tr><td>\((1+\i)^{2}\)</td><td>\(2\i\)</td><td>高频结论，直接记</td></tr>
-          <tr><td>\((1-\i)^{2}\)</td><td>\(-2\i\)</td><td>同上</td></tr>
-          <tr><td>\(\dfrac{1+\i}{1-\i}\)</td><td>\(\i\)</td><td>分子分母同乘 \(1+\i\) 可验证</td></tr>
+          <tr><td>\((1+\mathrm{i})^{2}\)</td><td>\(2\mathrm{i}\)</td><td>高频结论，直接记</td></tr>
+          <tr><td>\((1-\mathrm{i})^{2}\)</td><td>\(-2\mathrm{i}\)</td><td>同上</td></tr>
+          <tr><td>\(\dfrac{1+\mathrm{i}}{1-\mathrm{i}}\)</td><td>\(\mathrm{i}\)</td><td>分子分母同乘 \(1+\mathrm{i}\) 可验证</td></tr>
         </tbody>
       </table>
     </div>
@@ -1703,46 +1709,46 @@
 
   <div class="box eg">
     <span class="tag">例题 10（共轭与模的综合）</span>
-    <p>已知 \(z=2-\i\)，求 \(z(\overline{z}+\i)\) 的值。</p>
+    <p>已知 \(z=2-\mathrm{i}\)，求 \(z(\overline{z}+\mathrm{i})\) 的值。</p>
 
     <h4>解析</h4>
-    <p><strong>第一步：求 \(\overline{z}\)。</strong>由 \(z=2-\i\)，把虚部取反：</p>
+    <p><strong>第一步：求 \(\overline{z}\)。</strong>由 \(z=2-\mathrm{i}\)，把虚部取反：</p>
     <div class="formula">
-      \[ \overline{z}=2+\i \]
+      \[ \overline{z}=2+\mathrm{i} \]
     </div>
 
-    <p><strong>第二步：算 \(\overline{z}+\i\)。</strong></p>
+    <p><strong>第二步：算 \(\overline{z}+\mathrm{i}\)。</strong></p>
     <div class="formula">
-      \[ \overline{z}+\i=(2+\i)+\i=2+2\i \]
+      \[ \overline{z}+\mathrm{i}=(2+\mathrm{i})+\mathrm{i}=2+2\mathrm{i} \]
     </div>
 
     <p><strong>第三步：算乘积。</strong></p>
     <div class="formula">
-      \[ z(\overline{z}+\i)=(2-\i)(2+2\i) \]
+      \[ z(\overline{z}+\mathrm{i})=(2-\mathrm{i})(2+2\mathrm{i}) \]
     </div>
     <div class="formula">
-      \[ =4+4\i-2\i-2\i^{2}=4+2\i-2\times(-1)=4+2\i+2=6+2\i \]
+      \[ =4+4\mathrm{i}-2\mathrm{i}-2\mathrm{i}^{2}=4+2\mathrm{i}-2\times(-1)=4+2\mathrm{i}+2=6+2\mathrm{i} \]
     </div>
 
-    <p><strong>答案：</strong>\(\boxed{6+2\i}\)</p>
+    <p><strong>答案：</strong>\(\boxed{6+2\mathrm{i}}\)</p>
 
     <p><strong>验算（另一种算法）：</strong>先展开再代入。</p>
     <div class="formula">
-      \[ z(\overline{z}+\i)=z\overline{z}+z\i \]
+      \[ z(\overline{z}+\mathrm{i})=z\overline{z}+z\mathrm{i} \]
     </div>
     <p>由性质一，\(z\overline{z}=|z|^{2}=2^{2}+(-1)^{2}=4+1=5\)。</p>
-    <p>而 \(z\i=(2-\i)\i=2\i-\i^{2}=2\i+1=1+2\i\)。</p>
+    <p>而 \(z\mathrm{i}=(2-\mathrm{i})\mathrm{i}=2\mathrm{i}-\mathrm{i}^{2}=2\mathrm{i}+1=1+2\mathrm{i}\)。</p>
     <p>所以</p>
     <div class="formula">
-      \[ z(\overline{z}+\i)=5+(1+2\i)=6+2\i \]
+      \[ z(\overline{z}+\mathrm{i})=5+(1+2\mathrm{i})=6+2\mathrm{i} \]
     </div>
     <p>✓ 与第一种算法一致。</p>
 
     <div class="box tip" style="margin-top:16px;margin-bottom:0;">
       <span class="tag">★ 复数的两种常用技巧</span>
       <ul>
-        <li><strong>技巧一：先展开再代入。</strong>把 \(z(\overline{z}+\i)\) 展开成 \(z\overline{z}+z\i\)，前者直接用 \(z\overline{z}=|z|^{2}\) 秒算。</li>
-        <li><strong>技巧二：用"实部虚部"分解。</strong>若题目给的 \(z\) 形式复杂，先把它化成 \(a+b\i\) 的标准形式，再算其余部分。</li>
+        <li><strong>技巧一：先展开再代入。</strong>把 \(z(\overline{z}+\mathrm{i})\) 展开成 \(z\overline{z}+z\mathrm{i}\)，前者直接用 \(z\overline{z}=|z|^{2}\) 秒算。</li>
+        <li><strong>技巧二：用"实部虚部"分解。</strong>若题目给的 \(z\) 形式复杂，先把它化成 \(a+b\mathrm{i}\) 的标准形式，再算其余部分。</li>
       </ul>
     </div>
   </div>
@@ -1752,12 +1758,12 @@
   <div class="box def">
     <span class="tag">复平面</span>
     <p>建立直角坐标系，让 \(x\) 轴表示<strong>实部</strong>、\(y\) 轴表示<strong>虚部</strong>，这样的平面叫<strong>复平面</strong>。</p>
-    <p>复数 \(z=a+b\i\) 与复平面上的点 \(Z(a,\ b)\) <strong>一一对应</strong>；也与以原点为起点、以 \(Z\) 为终点的向量 \(\overrightarrow{OZ}\) 一一对应。</p>
+    <p>复数 \(z=a+b\mathrm{i}\) 与复平面上的点 \(Z(a,\ b)\) <strong>一一对应</strong>；也与以原点为起点、以 \(Z\) 为终点的向量 \(\overrightarrow{OZ}\) 一一对应。</p>
     <p><strong>★ 所以：</strong></p>
     <ul>
       <li><strong>复数的模 \(|z|=\sqrt{a^{2}+b^{2}}\)</strong> 就是<strong>点 \(Z\) 到原点的距离</strong>（向量的长度）；</li>
       <li><strong>复数的加减法</strong>就是<strong>向量的加减法</strong>；</li>
-      <li><strong>共轭 \(\overline{z}=a-b\i\)</strong> 对应的点是 \(Z\) 关于 <strong>\(x\) 轴（实轴）的对称点</strong>。</li>
+      <li><strong>共轭 \(\overline{z}=a-b\mathrm{i}\)</strong> 对应的点是 \(Z\) 关于 <strong>\(x\) 轴（实轴）的对称点</strong>。</li>
     </ul>
   </div>
 
@@ -1767,10 +1773,10 @@
       <table>
         <thead><tr><th>复数</th><th>点</th><th>向量</th></tr></thead>
         <tbody>
-          <tr><td>\(z=a+b\i\)</td><td>\(Z(a,\ b)\)</td><td>\(\overrightarrow{OZ}=(a,\ b)\)</td></tr>
+          <tr><td>\(z=a+b\mathrm{i}\)</td><td>\(Z(a,\ b)\)</td><td>\(\overrightarrow{OZ}=(a,\ b)\)</td></tr>
           <tr><td>\(|z|\)</td><td>点 \(Z\) 到原点的距离</td><td>\(|\overrightarrow{OZ}|\)</td></tr>
-          <tr><td>\(\overline{z}=a-b\i\)</td><td>关于实轴的对称点</td><td>\((a,\ -b)\)</td></tr>
-          <tr><td>\(-z=-a-b\i\)</td><td>关于原点的对称点</td><td>\((-a,\ -b)\)</td></tr>
+          <tr><td>\(\overline{z}=a-b\mathrm{i}\)</td><td>关于实轴的对称点</td><td>\((a,\ -b)\)</td></tr>
+          <tr><td>\(-z=-a-b\mathrm{i}\)</td><td>关于原点的对称点</td><td>\((-a,\ -b)\)</td></tr>
           <tr><td>\(z_1+z_2\)</td><td>—</td><td>向量加法</td></tr>
           <tr><td>\(z_1-z_2\)</td><td>—</td><td>向量减法</td></tr>
           <tr><td>\(|z_1-z_2|\)</td><td>两点 \(Z_1\)、\(Z_2\) 的距离</td><td>\(|\overrightarrow{Z_2Z_1}|\)</td></tr>
@@ -1778,7 +1784,7 @@
       </table>
     </div>
     <p><strong>★ 最后一行特别有用：</strong>\(|z_1-z_2|\) 的几何意义是"复平面上两点 \(Z_1\) 与 \(Z_2\) 之间的距离"。</p>
-    <p>由此可判断轨迹：若 \(|z-(1+\i)|=2\)，则表示"到点 \((1,1)\) 的距离为 2 的点的集合"，即<strong>以 \((1,1)\) 为圆心、2 为半径的圆</strong>。</p>
+    <p>由此可判断轨迹：若 \(|z-(1+\mathrm{i})|=2\)，则表示"到点 \((1,1)\) 的距离为 2 的点的集合"，即<strong>以 \((1,1)\) 为圆心、2 为半径的圆</strong>。</p>
   </div>
 
   <!-- ==================== 第 6 章 ==================== -->
@@ -1793,14 +1799,14 @@
         <tbody>
           <tr><td>1</td><td>把"向量相等"当成"线段相等"</td><td>向量相等要求<strong>大小相等 + 方向相同</strong>；线段相等只看长度</td></tr>
           <tr><td>2</td><td>把"平行"当成"位置平行"</td><td>向量平行指"方向相同或相反"，也叫<strong>共线</strong>，可以重合</td></tr>
-          <tr><td>3</td><td>忽略零向量的特殊性</td><td>\(\bs 0\) 方向任意，与任何向量平行；\(|\bs 0|=0\)</td></tr>
+          <tr><td>3</td><td>忽略零向量的特殊性</td><td>\(\mathbf{0}\) 方向任意，与任何向量平行；\(|\mathbf{0}|=0\)</td></tr>
           <tr><td>4</td><td>\(\overrightarrow{AB}\) 写成"终点减起点"时顺序反了</td><td>\(\overrightarrow{AB}=(x_B-x_A,\ y_B-y_A)\)，<strong>终点减起点</strong></td></tr>
           <tr><td>5</td><td>减法用错口诀</td><td>减法必须"<strong>共起点，连终点，指向被减数</strong>"；起点不同要先平移</td></tr>
-          <tr><td>6</td><td>\(|\bs a+\bs b|\) 直接写成 \(|\bs a|+|\bs b|\)</td><td>只能写 \(\le\)，等号成立要求<strong>同向</strong></td></tr>
+          <tr><td>6</td><td>\(|\mathbf{a}+\mathbf{b}|\) 直接写成 \(|\mathbf{a}|+|\mathbf{b}|\)</td><td>只能写 \(\le\)，等号成立要求<strong>同向</strong></td></tr>
           <tr><td>7</td><td>平行判据写成"比例相等"</td><td>用 \(x_1y_2-x_2y_1=0\)，<strong>避免分母为 0</strong></td></tr>
           <tr><td>8</td><td>平行判据与垂直判据混用</td><td>平行：交叉相乘<strong>相减</strong>；垂直：对应相乘<strong>相加</strong></td></tr>
-          <tr><td>9</td><td>数量积的"结合律"</td><td>\((\bs a\cdot\bs b)\bs c\ne\bs a(\bs b\cdot\bs c)\)，<strong>不成立</strong></td></tr>
-          <tr><td>10</td><td>数量积两边"约去公因子"</td><td>\(\bs a\cdot\bs b=\bs a\cdot\bs c\nRightarrow\bs b=\bs c\)，<strong>不能约</strong></td></tr>
+          <tr><td>9</td><td>数量积的"结合律"</td><td>\((\mathbf{a}\cdot\mathbf{b})\mathbf{c}\ne\mathbf{a}(\mathbf{b}\cdot\mathbf{c})\)，<strong>不成立</strong></td></tr>
+          <tr><td>10</td><td>数量积两边"约去公因子"</td><td>\(\mathbf{a}\cdot\mathbf{b}=\mathbf{a}\cdot\mathbf{c}\nRightarrow\mathbf{b}=\mathbf{c}\)，<strong>不能约</strong></td></tr>
           <tr><td>11</td><td>求夹角时忘了 \(\theta\in[0,\pi]\)</td><td>由 \(\cos\theta\) 反查角时，解<strong>唯一</strong>；注意负余弦对应钝角</td></tr>
           <tr><td>12</td><td>把"投影"当成"投影的长度"</td><td>投影可以是<strong>负数</strong>（夹角为钝角时）</td></tr>
         </tbody>
@@ -1814,13 +1820,13 @@
       <table>
         <thead><tr><th>#</th><th>易错点</th><th>正确做法</th></tr></thead>
         <tbody>
-          <tr><td>1</td><td>虚部写成 \(b\i\)</td><td>\(z=a+b\i\) 的<strong>虚部是 \(b\)</strong>（实数），不是 \(b\i\)</td></tr>
+          <tr><td>1</td><td>虚部写成 \(b\mathrm{i}\)</td><td>\(z=a+b\mathrm{i}\) 的<strong>虚部是 \(b\)</strong>（实数），不是 \(b\mathrm{i}\)</td></tr>
           <tr><td>2</td><td>"纯虚数"只要求实部为 0</td><td>纯虚数要求<strong>实部为 0 且虚部不为 0</strong>（\(a=0\) 且 \(b\ne0\)）</td></tr>
-          <tr><td>3</td><td>\(\i^{2}\) 算成 \(1\)</td><td>\(\i^{2}=-1\)，这是复数的定义基础</td></tr>
+          <tr><td>3</td><td>\(\mathrm{i}^{2}\) 算成 \(1\)</td><td>\(\mathrm{i}^{2}=-1\)，这是复数的定义基础</td></tr>
           <tr><td>4</td><td>除法只乘分子</td><td>分子分母<strong>都要</strong>乘分母的共轭（相当于乘 1）</td></tr>
-          <tr><td>5</td><td>共轭只改实部</td><td>共轭是<strong>虚部取反</strong>：\(\overline{a+b\i}=a-b\i\)</td></tr>
+          <tr><td>5</td><td>共轭只改实部</td><td>共轭是<strong>虚部取反</strong>：\(\overline{a+b\mathrm{i}}=a-b\mathrm{i}\)</td></tr>
           <tr><td>6</td><td>模算成 \(a^{2}+b^{2}\)</td><td>模是 \(\sqrt{a^{2}+b^{2}}\)，别忘开方（\(a^{2}+b^{2}\) 是 \(z\overline{z}\)）</td></tr>
-          <tr><td>7</td><td>解"复数相等"时把虚部当 \(b\i\)</td><td>两边写成 \(a+b\i=c+d\i\) 的标准形式，再令<strong>实部实部相等、虚部虚部相等</strong></td></tr>
+          <tr><td>7</td><td>解"复数相等"时把虚部当 \(b\mathrm{i}\)</td><td>两边写成 \(a+b\mathrm{i}=c+d\mathrm{i}\) 的标准形式，再令<strong>实部实部相等、虚部虚部相等</strong></td></tr>
           <tr><td>8</td><td>把 \(|z_1-z_2|\) 当成"模的差"</td><td>\(|z_1-z_2|\) 是<strong>两点间的距离</strong>，不是 \(|z_1|-|z_2|\)</td></tr>
         </tbody>
       </table>
@@ -1836,15 +1842,15 @@
   <div class="map">
     <div class="node">
       <b>① 向量的概念</b>
-      <span>大小 + 方向<br>模 \(|\bs a|\)、零向量、单位向量<br>平行（共线）、相等、相反</span>
+      <span>大小 + 方向<br>模 \(|\mathbf{a}|\)、零向量、单位向量<br>平行（共线）、相等、相反</span>
     </div>
     <div class="node">
       <b>② 线性运算</b>
-      <span>加法：三角形法则（首尾相接）／平行四边形法则（共起点）<br>减法：<strong>共起点，连终点，指向被减数</strong><br>数乘：\(\lambda\bs a\) 改变长度与方向</span>
+      <span>加法：三角形法则（首尾相接）／平行四边形法则（共起点）<br>减法：<strong>共起点，连终点，指向被减数</strong><br>数乘：\(\lambda\mathbf{a}\) 改变长度与方向</span>
     </div>
     <div class="node">
       <b>③ 共线定理</b>
-      <span>\(\bs b\parallel\bs a\ (\bs a\ne\bs 0)\iff\bs b=\lambda\bs a\)（\(\lambda\) 唯一）<br>证三点共线：\(\overrightarrow{AB}=\lambda\overrightarrow{AC}\)（<strong>必须共起点</strong>）</span>
+      <span>\(\mathbf{b}\parallel\mathbf{a}\ (\mathbf{a}\ne\mathbf{0})\iff\mathbf{b}=\lambda\mathbf{a}\)（\(\lambda\) 唯一）<br>证三点共线：\(\overrightarrow{AB}=\lambda\overrightarrow{AC}\)（<strong>必须共起点</strong>）</span>
     </div>
     <div class="node">
       <b>④ 基本定理与坐标</b>
@@ -1856,11 +1862,11 @@
     </div>
     <div class="node">
       <b>⑥ 数量积</b>
-      <span>定义：\(\bs a\cdot\bs b=|\bs a||\bs b|\cos\theta\)（结果是<strong>数</strong>）<br>\(|\bs a|=\sqrt{\bs a\cdot\bs a}\)<br>\(|\bs a\pm\bs b|^{2}=|\bs a|^{2}\pm2\bs a\cdot\bs b+|\bs b|^{2}\)<br>极化恒等式：\(\bs a\cdot\bs b=\dfrac{|\bs a+\bs b|^{2}-|\bs a-\bs b|^{2}}{4}\)</span>
+      <span>定义：\(\mathbf{a}\cdot\mathbf{b}=|\mathbf{a}||\mathbf{b}|\cos\theta\)（结果是<strong>数</strong>）<br>\(|\mathbf{a}|=\sqrt{\mathbf{a}\cdot\mathbf{a}}\)<br>\(|\mathbf{a}\pm\mathbf{b}|^{2}=|\mathbf{a}|^{2}\pm2\mathbf{a}\cdot\mathbf{b}+|\mathbf{b}|^{2}\)<br>极化恒等式：\(\mathbf{a}\cdot\mathbf{b}=\dfrac{|\mathbf{a}+\mathbf{b}|^{2}-|\mathbf{a}-\mathbf{b}|^{2}}{4}\)</span>
     </div>
     <div class="node">
       <b>⑦ 坐标形式的数量积</b>
-      <span>\(\bs a\cdot\bs b=x_1x_2+y_1y_2\)<br>\(|\bs a|=\sqrt{x_1^{2}+y_1^{2}}\)<br>\(\cos\theta=\dfrac{x_1x_2+y_1y_2}{|\bs a||\bs b|}\)<br>投影 \(=\dfrac{\bs a\cdot\bs b}{|\bs a|}\)</span>
+      <span>\(\mathbf{a}\cdot\mathbf{b}=x_1x_2+y_1y_2\)<br>\(|\mathbf{a}|=\sqrt{x_1^{2}+y_1^{2}}\)<br>\(\cos\theta=\dfrac{x_1x_2+y_1y_2}{|\mathbf{a}||\mathbf{b}|}\)<br>投影 \(=\dfrac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{a}|}\)</span>
     </div>
     <div class="node">
       <b>⑧ 向量的应用</b>
@@ -1868,7 +1874,7 @@
     </div>
     <div class="node">
       <b>⑨ 复数</b>
-      <span>\(z=a+b\i\)，\(\i^{2}=-1\)，周期为 4<br>四则运算：除法要"分母实数化"<br>共轭 \(\overline{z}=a-b\i\)；模 \(|z|=\sqrt{a^{2}+b^{2}}\)<br>\(z\overline{z}=|z|^{2}\)、\(z-\overline{z}=2b\i\)<br>几何：与复平面上的点、向量一一对应</span>
+      <span>\(z=a+b\mathrm{i}\)，\(\mathrm{i}^{2}=-1\)，周期为 4<br>四则运算：除法要"分母实数化"<br>共轭 \(\overline{z}=a-b\mathrm{i}\)；模 \(|z|=\sqrt{a^{2}+b^{2}}\)<br>\(z\overline{z}=|z|^{2}\)、\(z-\overline{z}=2b\mathrm{i}\)<br>几何：与复平面上的点、向量一一对应</span>
     </div>
   </div>
 
@@ -1879,7 +1885,7 @@
       <div class="arrow">→</div>
       <div class="step">线性运算<small>加、减、数乘</small></div>
       <div class="arrow">→</div>
-      <div class="step">共线定理<small>\(\bs b=\lambda\bs a\)</small></div>
+      <div class="step">共线定理<small>\(\mathbf{b}=\lambda\mathbf{a}\)</small></div>
       <div class="arrow">→</div>
       <div class="step">基本定理<small>基底表示唯一</small></div>
       <div class="arrow">→</div>
@@ -1890,7 +1896,7 @@
       <div class="step">应用<small>三角、解几、立几</small></div>
     </div>
     <p><strong>看清这条链：</strong>"概念"给对象，"线性运算"给基本操作，"共线定理"和"基本定理"给表示方法，"坐标表示"把几何变成代数，"数量积"给度量工具，"应用"是出口。</p>
-    <p><strong>复数在这条链的什么位置？</strong>它是"坐标表示"的<strong>孪生兄弟</strong>——复数 \(a+b\i\) 与向量 \((a,b)\) 一一对应，所以复数的加减法就是向量加减法，复数的模就是向量的长度。<strong>学完向量再看复数，会发现它们是同一件事。</strong></p>
+    <p><strong>复数在这条链的什么位置？</strong>它是"坐标表示"的<strong>孪生兄弟</strong>——复数 \(a+b\mathrm{i}\) 与向量 \((a,b)\) 一一对应，所以复数的加减法就是向量加减法，复数的模就是向量的长度。<strong>学完向量再看复数，会发现它们是同一件事。</strong></p>
   </div>
 
   <h3 id="ch7-2">7.2　自测清单</h3>
@@ -1907,7 +1913,7 @@
       <li>□ 能说出 \(\overrightarrow{AB}\) 的坐标公式，并解释为什么是"终点减起点"</li>
       <li>□ 能默写平行与垂直的坐标判据，并说明为什么平行不用"比例相等"</li>
       <li>□ 能默写数量积的定义、模的公式、夹角的公式</li>
-      <li>□ 能独立展开 \(|\bs a\pm\bs b|^{2}\)，并推导极化恒等式</li>
+      <li>□ 能独立展开 \(|\mathbf{a}\pm\mathbf{b}|^{2}\)，并推导极化恒等式</li>
       <li>□ 能默写复数的四则运算法则，并解释"分母实数化"的原理</li>
       <li>□ 能说出共轭与模的定义，并独立证明 \(z\overline{z}=|z|^{2}\)</li>
     </ul>
@@ -1917,7 +1923,7 @@
       <li>□ 能用共线定理证明三点共线（注意"共起点"）</li>
       <li>□ 能用"系数对应相等"列方程组求参数（依据是基本定理的唯一性）</li>
       <li>□ 能解释为什么数量积的"结合律"和"消去律"都不成立，并各举一个反例</li>
-      <li>□ 能由 \(|\bs a+\bs b|^{2}=|\bs a|^{2}+|\bs b|^{2}\) 立刻判断 \(\bs a\perp\bs b\)</li>
+      <li>□ 能由 \(|\mathbf{a}+\mathbf{b}|^{2}=|\mathbf{a}|^{2}+|\mathbf{b}|^{2}\) 立刻判断 \(\mathbf{a}\perp\mathbf{b}\)</li>
       <li>□ 能用"坐标含 \(\cos\theta,\sin\theta\)"识别出该用三角公式</li>
       <li>□ 能用数量积的符号判断三角形是锐角还是钝角</li>
       <li>□ 能说出复数的模与复平面上"点到原点距离"的对应关系</li>
@@ -1939,7 +1945,7 @@
       <li><strong>"减法总搞错方向"</strong> → 口诀没记牢，重点补第 1.2 节的推导（用"位移"理解）</li>
       <li><strong>"共线题不会列方程"</strong> → 不知道"系数对应相等"的依据是基本定理的唯一性，重点补第 2.1 节</li>
       <li><strong>"平行和垂直判据混"</strong> → 没有理解垂直判据的本质是"数量积为 0"，重点补第 2.3 节和第 3.3 节</li>
-      <li><strong>"看到 \(|\bs a+\bs b|\) 就慌"</strong> → 没有掌握"先平方展开"的固定动作，重点补第 3.1 节</li>
+      <li><strong>"看到 \(|\mathbf{a}+\mathbf{b}|\) 就慌"</strong> → 没有掌握"先平方展开"的固定动作，重点补第 3.1 节</li>
       <li><strong>"复数除法总算错"</strong> → 没有理解"分母实数化"的原理，重点补第 5.2 节的推导</li>
       <li><strong>"复数的模和 \(z\overline{z}\) 分不清"</strong> → 重点补第 5.3 节的性质一</li>
     </ul>
@@ -1965,10 +1971,10 @@
     <span class="tag">十年真题告诉我们的五件事</span>
     <ol class="steps">
       <li><strong>复数题是"送分题"，但每年都有人丢。</strong>近五年新高考 I 卷的第 2 题（或第 1、2 题）稳定考复数的四则运算，<strong>题型只有"化简 + 求共轭/求模/求差"几种</strong>。</li>
-      <li><strong>向量题的"垂直条件"最高频。</strong>\(\bs a\perp\bs b\Leftrightarrow x_1x_2+y_1y_2=0\) 这一条判据，十年里反复出现。</li>
-      <li><strong>向量题喜欢"设参数、列方程"。</strong>如 2023 新高考 I 卷的 \((\bs a+\lambda\bs b)\perp(\bs a+\mu\bs b)\)，考的是"把垂直条件翻译成方程"。</li>
-      <li><strong>模的等式往往等价于垂直。</strong>\(|\bs a+\bs b|^{2}=|\bs a|^{2}+|\bs b|^{2}\) 就是勾股定理的向量版本。</li>
-      <li><strong>投影是"冷门但必考"的点。</strong>投影的公式 \(\dfrac{\bs a\cdot\bs b}{|\bs a|}\) 要记牢，且要注意它<strong>可以是负数</strong>。</li>
+      <li><strong>向量题的"垂直条件"最高频。</strong>\(\mathbf{a}\perp\mathbf{b}\Leftrightarrow x_1x_2+y_1y_2=0\) 这一条判据，十年里反复出现。</li>
+      <li><strong>向量题喜欢"设参数、列方程"。</strong>如 2023 新高考 I 卷的 \((\mathbf{a}+\lambda\mathbf{b})\perp(\mathbf{a}+\mu\mathbf{b})\)，考的是"把垂直条件翻译成方程"。</li>
+      <li><strong>模的等式往往等价于垂直。</strong>\(|\mathbf{a}+\mathbf{b}|^{2}=|\mathbf{a}|^{2}+|\mathbf{b}|^{2}\) 就是勾股定理的向量版本。</li>
+      <li><strong>投影是"冷门但必考"的点。</strong>投影的公式 \(\dfrac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{a}|}\) 要记牢，且要注意它<strong>可以是负数</strong>。</li>
     </ol>
   </div>
 
@@ -1980,14 +1986,14 @@
     <p><strong>套路（两步走）：</strong></p>
     <ol class="steps">
       <li><strong>坐标形式</strong>：用 \(x_1y_2-x_2y_1=0\) 列方程。</li>
-      <li><strong>基底形式</strong>：设 \(\bs b=\lambda\bs a\)，用"系数对应相等"列方程组。</li>
+      <li><strong>基底形式</strong>：设 \(\mathbf{b}=\lambda\mathbf{a}\)，用"系数对应相等"列方程组。</li>
     </ol>
     <p><strong>★ 注意方向：</strong>题目给的是 \(\overrightarrow{AB}\) 还是 \(\overrightarrow{BA}\)？方向反了要取负号。</p>
   </div>
 
   <div class="box eg">
     <span class="tag">真题 1 · 2016 全国II卷（文）</span>
-    <p>已知向量 \(\bs a=(m,\ 4)\)，\(\bs b=(3,\ -2)\)，且 \(\bs a\parallel\bs b\)，则 \(m=\)＿＿＿。</p>
+    <p>已知向量 \(\mathbf{a}=(m,\ 4)\)，\(\mathbf{b}=(3,\ -2)\)，且 \(\mathbf{a}\parallel\mathbf{b}\)，则 \(m=\)＿＿＿。</p>
 
     <h4>解析</h4>
     <p><strong>第一步：用平行判据列方程。</strong>由 \(x_1y_2-x_2y_1=0\)，其中 \((x_1,y_1)=(m,4)\)、\((x_2,y_2)=(3,-2)\)：</p>
@@ -2002,18 +2008,18 @@
 
     <p><strong>答案：</strong>\(\boxed{-6}\)</p>
 
-    <p><strong>验算：</strong>\(m=-6\) 时 \(\bs a=(-6,\ 4)\)。检查 \(\bs a\) 与 \(\bs b\) 是否成倍数关系：</p>
+    <p><strong>验算：</strong>\(m=-6\) 时 \(\mathbf{a}=(-6,\ 4)\)。检查 \(\mathbf{a}\) 与 \(\mathbf{b}\) 是否成倍数关系：</p>
     <div class="formula">
-      \[ \bs a=(-6,\ 4)=-2\times(3,\ -2)=-2\bs b \]
+      \[ \mathbf{a}=(-6,\ 4)=-2\times(3,\ -2)=-2\mathbf{b} \]
     </div>
     <p>确实共线 ✓。</p>
 
     <div class="box warn" style="margin-top:16px;margin-bottom:0;">
       <span class="tag">提分要点</span>
       <ul>
-        <li><strong>平行判据写成 \(x_1y_2-x_2y_1=0\)，不要写"比例相等"。</strong>本题 \(\bs b=(3,-2)\) 没有零坐标，比例式也能用；但如果 \(\bs b=(0,-2)\)，比例式就失效了。<strong>养成统一用"交叉相乘相减"的习惯。</strong></li>
+        <li><strong>平行判据写成 \(x_1y_2-x_2y_1=0\)，不要写"比例相等"。</strong>本题 \(\mathbf{b}=(3,-2)\) 没有零坐标，比例式也能用；但如果 \(\mathbf{b}=(0,-2)\)，比例式就失效了。<strong>养成统一用"交叉相乘相减"的习惯。</strong></li>
         <li><strong>注意相减的顺序。</strong>\(x_1y_2-x_2y_1\) 中，第一项是"第一个向量的横坐标乘第二个的纵坐标"。顺序反了会得到相反数，但方程仍然等价（因为等于 0）。</li>
-        <li><strong>算出参数后，用"成倍数关系"验算最快。</strong>本题 \(\bs a=-2\bs b\)，一眼就能确认。</li>
+        <li><strong>算出参数后，用"成倍数关系"验算最快。</strong>本题 \(\mathbf{a}=-2\mathbf{b}\)，一眼就能确认。</li>
       </ul>
     </div>
   </div>
@@ -2025,7 +2031,7 @@
     <p><strong>特征：</strong>已知两个含参数的向量垂直，求参数；或已知一个向量与某个"组合向量"垂直。</p>
     <p><strong>套路（三步走）：</strong></p>
     <ol class="steps">
-      <li><strong>先算出"组合向量"的坐标</strong>（如 \(\bs b-4\bs a\)、\(\bs a+\lambda\bs b\)）。</li>
+      <li><strong>先算出"组合向量"的坐标</strong>（如 \(\mathbf{b}-4\mathbf{a}\)、\(\mathbf{a}+\lambda\mathbf{b}\)）。</li>
       <li><strong>用垂直判据 \(x_1x_2+y_1y_2=0\) 列方程。</strong></li>
       <li><strong>解方程，并代回验算。</strong></li>
     </ol>
@@ -2034,19 +2040,19 @@
 
   <div class="box eg">
     <span class="tag">真题 2 · 2024 新高考I卷</span>
-    <p>已知向量 \(\bs a=(0,\ 1)\)，\(\bs b=(2,\ x)\)，若 \(\bs b\perp(\bs b-4\bs a)\)，则 \(x=\)（　　）</p>
+    <p>已知向量 \(\mathbf{a}=(0,\ 1)\)，\(\mathbf{b}=(2,\ x)\)，若 \(\mathbf{b}\perp(\mathbf{b}-4\mathbf{a})\)，则 \(x=\)（　　）</p>
     <p>A. \(-2\)　　B. \(-1\)　　C. \(1\)　　D. \(2\)</p>
 
     <h4>解析</h4>
-    <p><strong>第一步：先算组合向量 \(\bs b-4\bs a\)。</strong></p>
+    <p><strong>第一步：先算组合向量 \(\mathbf{b}-4\mathbf{a}\)。</strong></p>
     <div class="formula">
-      \[ 4\bs a=4\times(0,\ 1)=(0,\ 4) \]
+      \[ 4\mathbf{a}=4\times(0,\ 1)=(0,\ 4) \]
     </div>
     <div class="formula">
-      \[ \bs b-4\bs a=(2,\ x)-(0,\ 4)=(2-0,\ x-4)=(2,\ x-4) \]
+      \[ \mathbf{b}-4\mathbf{a}=(2,\ x)-(0,\ 4)=(2-0,\ x-4)=(2,\ x-4) \]
     </div>
 
-    <p><strong>第二步：用垂直判据列方程。</strong>\(\bs b=(2,x)\) 与 \(\bs b-4\bs a=(2,x-4)\) 垂直，所以对应相乘相加为 0：</p>
+    <p><strong>第二步：用垂直判据列方程。</strong>\(\mathbf{b}=(2,x)\) 与 \(\mathbf{b}-4\mathbf{a}=(2,x-4)\) 垂直，所以对应相乘相加为 0：</p>
     <div class="formula">
       \[ 2\times2+x(x-4)=0 \]
     </div>
@@ -2062,34 +2068,34 @@
 
     <p><strong>答案：</strong>\(\boxed{\text{D}}\)</p>
 
-    <p><strong>验算：</strong>\(x=2\) 时 \(\bs b=(2,\ 2)\)，\(\bs b-4\bs a=(2,\ -2)\)。</p>
+    <p><strong>验算：</strong>\(x=2\) 时 \(\mathbf{b}=(2,\ 2)\)，\(\mathbf{b}-4\mathbf{a}=(2,\ -2)\)。</p>
     <div class="formula">
-      \[ \bs b\cdot(\bs b-4\bs a)=2\times2+2\times(-2)=4-4=0 \]
+      \[ \mathbf{b}\cdot(\mathbf{b}-4\mathbf{a})=2\times2+2\times(-2)=4-4=0 \]
     </div>
     <p>✓ 垂直成立。</p>
 
     <div class="box warn" style="margin-top:16px;margin-bottom:0;">
       <span class="tag">提分要点</span>
       <ul>
-        <li><strong>"先算组合向量，再套判据"是固定顺序。</strong>不要在脑子里同时展开——先把 \(\bs b-4\bs a\) 算成一个具体坐标，后面就只是套公式。</li>
+        <li><strong>"先算组合向量，再套判据"是固定顺序。</strong>不要在脑子里同时展开——先把 \(\mathbf{b}-4\mathbf{a}\) 算成一个具体坐标，后面就只是套公式。</li>
         <li><strong>本题的方程正好是完全平方式</strong>，所以 \(x\) 只有一个解。若题目问的是"\(x\) 的可能值有几个"，要看清 \(\Delta\) 的正负。</li>
-        <li><strong>垂直条件的本质是"数量积为 0"</strong>，所以也可以用 \((\bs b)\cdot(\bs b-4\bs a)=\bs b\cdot\bs b-4\bs a\cdot\bs b=0\) 来算，但那样要先算 \(\bs a\cdot\bs b\)，反而多一步。</li>
+        <li><strong>垂直条件的本质是"数量积为 0"</strong>，所以也可以用 \((\mathbf{b})\cdot(\mathbf{b}-4\mathbf{a})=\mathbf{b}\cdot\mathbf{b}-4\mathbf{a}\cdot\mathbf{b}=0\) 来算，但那样要先算 \(\mathbf{a}\cdot\mathbf{b}\)，反而多一步。</li>
       </ul>
     </div>
   </div>
 
   <div class="box eg">
     <span class="tag">真题 3 · 2023 新高考I卷　<span class="lv-hard">★★</span></span>
-    <p>已知向量 \(\bs a=(1,\ 1)\)，\(\bs b=(1,\ -1)\)。若 \((\bs a+\lambda\bs b)\perp(\bs a+\mu\bs b)\)，则（　　）</p>
+    <p>已知向量 \(\mathbf{a}=(1,\ 1)\)，\(\mathbf{b}=(1,\ -1)\)。若 \((\mathbf{a}+\lambda\mathbf{b})\perp(\mathbf{a}+\mu\mathbf{b})\)，则（　　）</p>
     <p>A. \(\lambda+\mu=1\)　　B. \(\lambda+\mu=-1\)　　C. \(\lambda\mu=1\)　　D. \(\lambda\mu=-1\)</p>
 
     <h4>解析</h4>
     <p><strong>第一步：算出两个组合向量。</strong></p>
     <div class="formula">
-      \[ \bs a+\lambda\bs b=(1,\ 1)+\lambda(1,\ -1)=(1+\lambda,\ 1-\lambda) \]
+      \[ \mathbf{a}+\lambda\mathbf{b}=(1,\ 1)+\lambda(1,\ -1)=(1+\lambda,\ 1-\lambda) \]
     </div>
     <div class="formula">
-      \[ \bs a+\mu\bs b=(1,\ 1)+\mu(1,\ -1)=(1+\mu,\ 1-\mu) \]
+      \[ \mathbf{a}+\mu\mathbf{b}=(1,\ 1)+\mu(1,\ -1)=(1+\mu,\ 1-\mu) \]
     </div>
 
     <p><strong>第二步：用垂直判据列方程。</strong>对应相乘相加为 0：</p>
@@ -2121,7 +2127,7 @@
 
     <p><strong>验算：</strong>取 \(\lambda=1\)、\(\mu=-1\)（满足 \(\lambda\mu=-1\)）。</p>
     <div class="formula">
-      \[ \bs a+1\bs b=(2,\ 0),\qquad \bs a+(-1)\bs b=(0,\ 2) \]
+      \[ \mathbf{a}+1\mathbf{b}=(2,\ 0),\qquad \mathbf{a}+(-1)\mathbf{b}=(0,\ 2) \]
     </div>
     <div class="formula">
       \[ (2,\ 0)\cdot(0,\ 2)=2\times0+0\times2=0 \]
@@ -2129,7 +2135,7 @@
     <p>✓ 垂直成立。</p>
     <p>再取 \(\lambda=2\)、\(\mu=-\dfrac12\)（也满足 \(\lambda\mu=-1\)）。</p>
     <div class="formula">
-      \[ \bs a+2\bs b=(3,\ -1),\qquad \bs a-\frac12\bs b=\left(\frac12,\ \frac32\right) \]
+      \[ \mathbf{a}+2\mathbf{b}=(3,\ -1),\qquad \mathbf{a}-\frac12\mathbf{b}=\left(\frac12,\ \frac32\right) \]
     </div>
     <div class="formula">
       \[ (3,\ -1)\cdot\left(\frac12,\ \frac32\right)=\frac32-\frac32=0 \]
@@ -2140,11 +2146,11 @@
       <span class="tag">提分要点</span>
       <ul>
         <li><strong>题目问的是"\(\lambda\) 与 \(\mu\) 的关系"而不是"具体值"。</strong>所以列出一个含两参数的方程就够了，不要试图解出 \(\lambda\)、\(\mu\) 各自的值（那需要两个方程）。</li>
-        <li><strong>观察题目给的 \(\bs a=(1,1)\)、\(\bs b=(1,-1)\) 是相互垂直的单位向量。</strong>用这个性质可以更快：</li>
+        <li><strong>观察题目给的 \(\mathbf{a}=(1,1)\)、\(\mathbf{b}=(1,-1)\) 是相互垂直的单位向量。</strong>用这个性质可以更快：</li>
       </ul>
-      <p>因为 \(\bs a\perp\bs b\) 且 \(|\bs a|=|\bs b|=\sqrt2\)，所以 \(\bs a\cdot\bs b=0\)、\(\bs a\cdot\bs a=\bs b\cdot\bs b=2\)。于是</p>
+      <p>因为 \(\mathbf{a}\perp\mathbf{b}\) 且 \(|\mathbf{a}|=|\mathbf{b}|=\sqrt2\)，所以 \(\mathbf{a}\cdot\mathbf{b}=0\)、\(\mathbf{a}\cdot\mathbf{a}=\mathbf{b}\cdot\mathbf{b}=2\)。于是</p>
       <div class="formula">
-        \[ (\bs a+\lambda\bs b)\cdot(\bs a+\mu\bs b)=\bs a\cdot\bs a+\mu\bs a\cdot\bs b+\lambda\bs b\cdot\bs a+\lambda\mu\bs b\cdot\bs b \]
+        \[ (\mathbf{a}+\lambda\mathbf{b})\cdot(\mathbf{a}+\mu\mathbf{b})=\mathbf{a}\cdot\mathbf{a}+\mu\mathbf{a}\cdot\mathbf{b}+\lambda\mathbf{b}\cdot\mathbf{a}+\lambda\mu\mathbf{b}\cdot\mathbf{b} \]
       </div>
       <div class="formula">
         \[ =2+0+0+2\lambda\mu=2(1+\lambda\mu) \]
@@ -2155,18 +2161,18 @@
 
   <div class="box eg">
     <span class="tag">真题 4 · 2016 山东卷（文）</span>
-    <p>已知向量 \(\bs a=(1,\ -1)\)，\(\bs b=(6,\ -4)\)。若 \(\bs a\perp(t\bs a+\bs b)\)，则实数 \(t\) 的值为＿＿＿。</p>
+    <p>已知向量 \(\mathbf{a}=(1,\ -1)\)，\(\mathbf{b}=(6,\ -4)\)。若 \(\mathbf{a}\perp(t\mathbf{a}+\mathbf{b})\)，则实数 \(t\) 的值为＿＿＿。</p>
 
     <h4>解析</h4>
-    <p><strong>第一步：算组合向量 \(t\bs a+\bs b\)。</strong></p>
+    <p><strong>第一步：算组合向量 \(t\mathbf{a}+\mathbf{b}\)。</strong></p>
     <div class="formula">
-      \[ t\bs a=t(1,\ -1)=(t,\ -t) \]
+      \[ t\mathbf{a}=t(1,\ -1)=(t,\ -t) \]
     </div>
     <div class="formula">
-      \[ t\bs a+\bs b=(t,\ -t)+(6,\ -4)=(t+6,\ -t-4) \]
+      \[ t\mathbf{a}+\mathbf{b}=(t,\ -t)+(6,\ -4)=(t+6,\ -t-4) \]
     </div>
 
-    <p><strong>第二步：用垂直判据列方程。</strong>\(\bs a=(1,-1)\) 与 \((t+6,\ -t-4)\) 垂直：</p>
+    <p><strong>第二步：用垂直判据列方程。</strong>\(\mathbf{a}=(1,-1)\) 与 \((t+6,\ -t-4)\) 垂直：</p>
     <div class="formula">
       \[ 1\times(t+6)+(-1)\times(-t-4)=0 \]
     </div>
@@ -2180,10 +2186,10 @@
 
     <p><strong>验算：</strong>\(t=-5\) 时</p>
     <div class="formula">
-      \[ t\bs a+\bs b=(-5,\ 5)+(6,\ -4)=(1,\ 1) \]
+      \[ t\mathbf{a}+\mathbf{b}=(-5,\ 5)+(6,\ -4)=(1,\ 1) \]
     </div>
     <div class="formula">
-      \[ \bs a\cdot(t\bs a+\bs b)=(1,\ -1)\cdot(1,\ 1)=1-1=0 \]
+      \[ \mathbf{a}\cdot(t\mathbf{a}+\mathbf{b})=(1,\ -1)\cdot(1,\ 1)=1-1=0 \]
     </div>
     <p>✓ 垂直成立。</p>
 
@@ -2191,16 +2197,16 @@
       <span class="tag">提分要点</span>
       <ul>
         <li><strong>展开时注意"负号"。</strong>\((-1)\times(-t-4)=t+4\) 是"负负得正"加"分配律"。这一步最容易算错，建议把展开的每一步都写出来。</li>
-        <li><strong>另一种算法（用运算律）：</strong>由 \(\bs a\perp(t\bs a+\bs b)\) 得 \(\bs a\cdot(t\bs a+\bs b)=0\)，展开为</li>
+        <li><strong>另一种算法（用运算律）：</strong>由 \(\mathbf{a}\perp(t\mathbf{a}+\mathbf{b})\) 得 \(\mathbf{a}\cdot(t\mathbf{a}+\mathbf{b})=0\)，展开为</li>
       </ul>
       <div class="formula">
-        \[ t(\bs a\cdot\bs a)+\bs a\cdot\bs b=0 \]
+        \[ t(\mathbf{a}\cdot\mathbf{a})+\mathbf{a}\cdot\mathbf{b}=0 \]
       </div>
-      <p>其中 \(\bs a\cdot\bs a=1^{2}+(-1)^{2}=2\)，\(\bs a\cdot\bs b=1\times6+(-1)\times(-4)=6+4=10\)。所以</p>
+      <p>其中 \(\mathbf{a}\cdot\mathbf{a}=1^{2}+(-1)^{2}=2\)，\(\mathbf{a}\cdot\mathbf{b}=1\times6+(-1)\times(-4)=6+4=10\)。所以</p>
       <div class="formula">
         \[ 2t+10=0 \quad\Longrightarrow\quad t=-5 \]
       </div>
-      <p>✓ 一致。<strong>这种算法不用写出 \(t\bs a+\bs b\) 的坐标，更简洁。</strong></p>
+      <p>✓ 一致。<strong>这种算法不用写出 \(t\mathbf{a}+\mathbf{b}\) 的坐标，更简洁。</strong></p>
     </div>
   </div>
 
@@ -2211,28 +2217,28 @@
     <p><strong>特征：</strong>给出两个向量的坐标或模与夹角，求它们的夹角、模，或由模的关系反求参数。</p>
     <p><strong>套路（看题目给什么）：</strong></p>
     <ol class="steps">
-      <li><strong>求夹角</strong>：算 \(\bs a\cdot\bs b\) 和两个模，代入 \(\cos\theta=\dfrac{\bs a\cdot\bs b}{|\bs a||\bs b|}\)，再反查角。</li>
-      <li><strong>求模</strong>：先算 \(|\bs a|^{2}=\bs a\cdot\bs a\)（或坐标平方和），再开方。</li>
+      <li><strong>求夹角</strong>：算 \(\mathbf{a}\cdot\mathbf{b}\) 和两个模，代入 \(\cos\theta=\dfrac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{a}||\mathbf{b}|}\)，再反查角。</li>
+      <li><strong>求模</strong>：先算 \(|\mathbf{a}|^{2}=\mathbf{a}\cdot\mathbf{a}\)（或坐标平方和），再开方。</li>
       <li><strong>给的是模的关系</strong>：两边平方展开成数量积，转化为垂直/平行条件。</li>
     </ol>
   </div>
 
   <div class="box eg">
     <span class="tag">真题 5 · 2016 北京卷（文）</span>
-    <p>已知向量 \(\bs a=(1,\ \sqrt3)\)，\(\bs b=(\sqrt3,\ 1)\)，则 \(\bs a\) 与 \(\bs b\) 夹角的大小为＿＿＿。</p>
+    <p>已知向量 \(\mathbf{a}=(1,\ \sqrt3)\)，\(\mathbf{b}=(\sqrt3,\ 1)\)，则 \(\mathbf{a}\) 与 \(\mathbf{b}\) 夹角的大小为＿＿＿。</p>
 
     <h4>解析</h4>
     <p><strong>第一步：算数量积。</strong></p>
     <div class="formula">
-      \[ \bs a\cdot\bs b=1\times\sqrt3+\sqrt3\times1=2\sqrt3 \]
+      \[ \mathbf{a}\cdot\mathbf{b}=1\times\sqrt3+\sqrt3\times1=2\sqrt3 \]
     </div>
 
     <p><strong>第二步：算两个模。</strong></p>
     <div class="formula">
-      \[ |\bs a|=\sqrt{1^{2}+(\sqrt3)^{2}}=\sqrt{1+3}=\sqrt4=2 \]
+      \[ |\mathbf{a}|=\sqrt{1^{2}+(\sqrt3)^{2}}=\sqrt{1+3}=\sqrt4=2 \]
     </div>
     <div class="formula">
-      \[ |\bs b|=\sqrt{(\sqrt3)^{2}+1^{2}}=\sqrt{3+1}=\sqrt4=2 \]
+      \[ |\mathbf{b}|=\sqrt{(\sqrt3)^{2}+1^{2}}=\sqrt{3+1}=\sqrt4=2 \]
     </div>
 
     <p><strong>第三步：代入夹角公式。</strong></p>
@@ -2247,14 +2253,14 @@
 
     <p><strong>答案：</strong>\(\boxed{\dfrac{\pi}{6}}\)</p>
 
-    <p><strong>验算（用坐标的几何意义）：</strong>\(\bs a=(1,\sqrt3)\) 与 \(x\) 轴正向的夹角是 \(\arctan\dfrac{\sqrt3}{1}=\dfrac{\pi}{3}\)（这是 \(60^\circ\) 角）。</p>
-    <p>\(\bs b=(\sqrt3,1)\) 与 \(x\) 轴正向的夹角是 \(\arctan\dfrac{1}{\sqrt3}=\dfrac{\pi}{6}\)（这是 \(30^\circ\) 角）。</p>
+    <p><strong>验算（用坐标的几何意义）：</strong>\(\mathbf{a}=(1,\sqrt3)\) 与 \(x\) 轴正向的夹角是 \(\arctan\dfrac{\sqrt3}{1}=\dfrac{\pi}{3}\)（这是 \(60^\circ\) 角）。</p>
+    <p>\(\mathbf{b}=(\sqrt3,1)\) 与 \(x\) 轴正向的夹角是 \(\arctan\dfrac{1}{\sqrt3}=\dfrac{\pi}{6}\)（这是 \(30^\circ\) 角）。</p>
     <p>两者夹角 \(=\dfrac{\pi}{3}-\dfrac{\pi}{6}=\dfrac{\pi}{6}\) ✓ 一致。</p>
 
     <div class="box warn" style="margin-top:16px;margin-bottom:0;">
       <span class="tag">提分要点</span>
       <ul>
-        <li><strong>注意到 \(\bs a\) 与 \(\bs b\) 的坐标是"交换"关系</strong>（\((1,\sqrt3)\) 与 \((\sqrt3,1)\)），所以两个模必然相等。这是出题人设置的"对称性"，看到后可以省一次计算。</li>
+        <li><strong>注意到 \(\mathbf{a}\) 与 \(\mathbf{b}\) 的坐标是"交换"关系</strong>（\((1,\sqrt3)\) 与 \((\sqrt3,1)\)），所以两个模必然相等。这是出题人设置的"对称性"，看到后可以省一次计算。</li>
         <li><strong>由 \(\cos\theta\) 反查角时，\(\theta\in[0,\pi]\) 保证解唯一。</strong>常用对应关系要背熟：\(\dfrac12\to\dfrac{\pi}{3}\)、\(\dfrac{\sqrt2}{2}\to\dfrac{\pi}{4}\)、\(\dfrac{\sqrt3}{2}\to\dfrac{\pi}{6}\)、\(0\to\dfrac{\pi}{2}\)、\(-\dfrac12\to\dfrac{2\pi}{3}\)。</li>
         <li><strong>单位要看清。</strong>题目问"夹角的大小"，填弧度制（\(\dfrac{\pi}{6}\)）或角度制（\(30^\circ\)）都可以，但<strong>要与题目的风格一致</strong>。本题是填空题，写 \(\dfrac{\pi}{6}\) 最稳妥。</li>
       </ul>
@@ -2313,18 +2319,18 @@
 
   <div class="box eg">
     <span class="tag">真题 7 · 2016 全国I卷（理）</span>
-    <p>设向量 \(\bs a=(m,\ 1)\)，\(\bs b=(1,\ 2)\)，且 \(|\bs a+\bs b|^{2}=|\bs a|^{2}+|\bs b|^{2}\)，则 \(m=\)＿＿＿。</p>
+    <p>设向量 \(\mathbf{a}=(m,\ 1)\)，\(\mathbf{b}=(1,\ 2)\)，且 \(|\mathbf{a}+\mathbf{b}|^{2}=|\mathbf{a}|^{2}+|\mathbf{b}|^{2}\)，则 \(m=\)＿＿＿。</p>
 
     <h4>解析</h4>
     <p><strong>第一步：看清条件的含义。</strong>由第 3.1 节的展开式</p>
     <div class="formula">
-      \[ |\bs a+\bs b|^{2}=|\bs a|^{2}+2\bs a\cdot\bs b+|\bs b|^{2} \]
+      \[ |\mathbf{a}+\mathbf{b}|^{2}=|\mathbf{a}|^{2}+2\mathbf{a}\cdot\mathbf{b}+|\mathbf{b}|^{2} \]
     </div>
-    <p>与题目给的 \(|\bs a+\bs b|^{2}=|\bs a|^{2}+|\bs b|^{2}\) 对比，立刻得到</p>
+    <p>与题目给的 \(|\mathbf{a}+\mathbf{b}|^{2}=|\mathbf{a}|^{2}+|\mathbf{b}|^{2}\) 对比，立刻得到</p>
     <div class="formula">
-      \[ 2\bs a\cdot\bs b=0 \quad\Longrightarrow\quad \bs a\cdot\bs b=0 \quad\Longrightarrow\quad \bs a\perp\bs b \]
+      \[ 2\mathbf{a}\cdot\mathbf{b}=0 \quad\Longrightarrow\quad \mathbf{a}\cdot\mathbf{b}=0 \quad\Longrightarrow\quad \mathbf{a}\perp\mathbf{b} \]
     </div>
-    <p><strong>★ 这个条件就是勾股定理的向量形式</strong>：若 \(\bs a\perp\bs b\)，则以 \(\bs a\)、\(\bs b\) 为邻边的矩形，其对角线长的平方等于两邻边长的平方和。</p>
+    <p><strong>★ 这个条件就是勾股定理的向量形式</strong>：若 \(\mathbf{a}\perp\mathbf{b}\)，则以 \(\mathbf{a}\)、\(\mathbf{b}\) 为邻边的矩形，其对角线长的平方等于两邻边长的平方和。</p>
 
     <p><strong>第二步：用垂直判据列方程。</strong></p>
     <div class="formula">
@@ -2333,16 +2339,16 @@
 
     <p><strong>答案：</strong>\(\boxed{-2}\)</p>
 
-    <p><strong>验算：</strong>\(m=-2\) 时 \(\bs a=(-2,\ 1)\)，\(\bs a+\bs b=(-2+1,\ 1+2)=(-1,\ 3)\)。</p>
-    <p>左边：\(|\bs a+\bs b|^{2}=(-1)^{2}+3^{2}=1+9=10\)。</p>
-    <p>右边：\(|\bs a|^{2}=(-2)^{2}+1^{2}=4+1=5\)，\(|\bs b|^{2}=1^{2}+2^{2}=1+4=5\)，两者之和 \(=10\) ✓ 相等。</p>
+    <p><strong>验算：</strong>\(m=-2\) 时 \(\mathbf{a}=(-2,\ 1)\)，\(\mathbf{a}+\mathbf{b}=(-2+1,\ 1+2)=(-1,\ 3)\)。</p>
+    <p>左边：\(|\mathbf{a}+\mathbf{b}|^{2}=(-1)^{2}+3^{2}=1+9=10\)。</p>
+    <p>右边：\(|\mathbf{a}|^{2}=(-2)^{2}+1^{2}=4+1=5\)，\(|\mathbf{b}|^{2}=1^{2}+2^{2}=1+4=5\)，两者之和 \(=10\) ✓ 相等。</p>
 
     <div class="box warn" style="margin-top:16px;margin-bottom:0;">
       <span class="tag">提分要点</span>
       <ul>
-        <li><strong>看到"模的等式"，第一反应是"两边平方展开成数量积"。</strong>本题如果老老实实算 \(|\bs a+\bs b|^{2}\) 的坐标形式，会得到 \((m+1)^{2}+9\)，而右边是 \((m^{2}+1)+5\)，展开后仍然得到 \(m=-2\)，但计算量大得多。</li>
-        <li><strong>记住这个等价关系：\(|\bs a+\bs b|^{2}=|\bs a|^{2}+|\bs b|^{2}\Leftrightarrow\bs a\perp\bs b\)。</strong>它与"\(|\bs a+\bs b|=|\bs a-\bs b|\Leftrightarrow\bs a\perp\bs b\)"是同一件事的两种说法。</li>
-        <li><strong>反过来的条件也要记住：</strong>\(|\bs a+\bs b|=|\bs a|+|\bs b|\Leftrightarrow\bs a\) 与 \(\bs b\) <strong>同向</strong>（三角不等式取等）。</li>
+        <li><strong>看到"模的等式"，第一反应是"两边平方展开成数量积"。</strong>本题如果老老实实算 \(|\mathbf{a}+\mathbf{b}|^{2}\) 的坐标形式，会得到 \((m+1)^{2}+9\)，而右边是 \((m^{2}+1)+5\)，展开后仍然得到 \(m=-2\)，但计算量大得多。</li>
+        <li><strong>记住这个等价关系：\(|\mathbf{a}+\mathbf{b}|^{2}=|\mathbf{a}|^{2}+|\mathbf{b}|^{2}\Leftrightarrow\mathbf{a}\perp\mathbf{b}\)。</strong>它与"\(|\mathbf{a}+\mathbf{b}|=|\mathbf{a}-\mathbf{b}|\Leftrightarrow\mathbf{a}\perp\mathbf{b}\)"是同一件事的两种说法。</li>
+        <li><strong>反过来的条件也要记住：</strong>\(|\mathbf{a}+\mathbf{b}|=|\mathbf{a}|+|\mathbf{b}|\Leftrightarrow\mathbf{a}\) 与 \(\mathbf{b}\) <strong>同向</strong>（三角不等式取等）。</li>
       </ul>
     </div>
   </div>
@@ -2351,14 +2357,14 @@
 
   <div class="box tip">
     <span class="tag">题型特征与解题套路</span>
-    <p><strong>特征：</strong>求"向量 \(\bs b\) 在向量 \(\bs a\) 方向上的投影"。</p>
+    <p><strong>特征：</strong>求"向量 \(\mathbf{b}\) 在向量 \(\mathbf{a}\) 方向上的投影"。</p>
     <p><strong>套路（一步到位）：</strong></p>
     <div class="formula">
-      \[ \text{投影}=\frac{\bs a\cdot\bs b}{|\bs a|} \]
+      \[ \text{投影}=\frac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{a}|} \]
     </div>
     <p><strong>★ 三个易错点：</strong></p>
     <ul>
-      <li><strong>分母是 \(|\bs a|\)（"在谁的方向上"就用谁的模），不是 \(|\bs a||\bs b|\)。</strong></li>
+      <li><strong>分母是 \(|\mathbf{a}|\)（"在谁的方向上"就用谁的模），不是 \(|\mathbf{a}||\mathbf{b}|\)。</strong></li>
       <li><strong>结果是数，不是向量。</strong>选项里若出现坐标形式（如 \((1,0)\)），一定是错的。</li>
       <li><strong>投影可以是负数。</strong>当夹角为钝角时，\(\cos\theta&lt;0\)，投影为负。</li>
     </ul>
@@ -2366,36 +2372,36 @@
 
   <div class="box eg">
     <span class="tag">真题 8 · 2016 上海春考</span>
-    <p>已知向量 \(\bs a=(1,\ 0)\)，\(\bs b=(1,\ 2)\)，则向量 \(\bs b\) 在向量 \(\bs a\) 方向上的投影为（　　）</p>
+    <p>已知向量 \(\mathbf{a}=(1,\ 0)\)，\(\mathbf{b}=(1,\ 2)\)，则向量 \(\mathbf{b}\) 在向量 \(\mathbf{a}\) 方向上的投影为（　　）</p>
     <p>A. \(1\)　　B. \(2\)　　C. \((1,\ 0)\)　　D. \((0,\ 2)\)</p>
 
     <h4>解析</h4>
     <p><strong>第一步：算数量积。</strong></p>
     <div class="formula">
-      \[ \bs a\cdot\bs b=1\times1+0\times2=1 \]
+      \[ \mathbf{a}\cdot\mathbf{b}=1\times1+0\times2=1 \]
     </div>
 
-    <p><strong>第二步：算 \(|\bs a|\)（"在 \(\bs a\) 方向上"，所以用 \(|\bs a|\)）。</strong></p>
+    <p><strong>第二步：算 \(|\mathbf{a}|\)（"在 \(\mathbf{a}\) 方向上"，所以用 \(|\mathbf{a}|\)）。</strong></p>
     <div class="formula">
-      \[ |\bs a|=\sqrt{1^{2}+0^{2}}=1 \]
+      \[ |\mathbf{a}|=\sqrt{1^{2}+0^{2}}=1 \]
     </div>
 
     <p><strong>第三步：代入投影公式。</strong></p>
     <div class="formula">
-      \[ \frac{\bs a\cdot\bs b}{|\bs a|}=\frac{1}{1}=1 \]
+      \[ \frac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{a}|}=\frac{1}{1}=1 \]
     </div>
 
     <p><strong>答案：</strong>\(\boxed{\text{A}}\)</p>
 
-    <p><strong>验算（用几何意义）：</strong>\(\bs a=(1,0)\) 的方向就是 \(x\) 轴正方向。\(\bs b=(1,2)\) 在这个方向上的投影，就是把 \(\bs b\) 的终点 \((1,2)\) 垂直投影到 \(x\) 轴上，得到的横坐标 \(1\) ✓。</p>
-    <p><strong>★ 这个几何理解很重要：</strong>当 \(\bs a\) 是 \(x\) 轴方向的单位向量时，"\(\bs b\) 在 \(\bs a\) 上的投影"就是"\(\bs b\) 的横坐标"。</p>
+    <p><strong>验算（用几何意义）：</strong>\(\mathbf{a}=(1,0)\) 的方向就是 \(x\) 轴正方向。\(\mathbf{b}=(1,2)\) 在这个方向上的投影，就是把 \(\mathbf{b}\) 的终点 \((1,2)\) 垂直投影到 \(x\) 轴上，得到的横坐标 \(1\) ✓。</p>
+    <p><strong>★ 这个几何理解很重要：</strong>当 \(\mathbf{a}\) 是 \(x\) 轴方向的单位向量时，"\(\mathbf{b}\) 在 \(\mathbf{a}\) 上的投影"就是"\(\mathbf{b}\) 的横坐标"。</p>
 
     <div class="box warn" style="margin-top:16px;margin-bottom:0;">
       <span class="tag">提分要点</span>
       <ul>
         <li><strong>先用"结果必须是数"排除 C、D 两个选项。</strong>投影是一个数（可以是负数），绝不是向量。这一步能立刻排除一半选项。</li>
-        <li><strong>看清"谁在谁的方向上"。</strong>本题是"\(\bs b\) 在 \(\bs a\) 方向上的投影"，用 \(\dfrac{\bs a\cdot\bs b}{|\bs a|}\)。若是"\(\bs a\) 在 \(\bs b\) 方向上的投影"，则用 \(\dfrac{\bs a\cdot\bs b}{|\bs b|}\)。</li>
-        <li><strong>投影与"投影向量"不同。</strong>投影是数；"投影向量"是"投影值乘以 \(\bs a\) 方向上的单位向量"，结果是向量。本题若问"投影向量"，答案是 \(1\cdot(1,0)=(1,0)\)（也就是选项 C）。<strong>读题时把"投影"和"投影向量"区分开。</strong></li>
+        <li><strong>看清"谁在谁的方向上"。</strong>本题是"\(\mathbf{b}\) 在 \(\mathbf{a}\) 方向上的投影"，用 \(\dfrac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{a}|}\)。若是"\(\mathbf{a}\) 在 \(\mathbf{b}\) 方向上的投影"，则用 \(\dfrac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{b}|}\)。</li>
+        <li><strong>投影与"投影向量"不同。</strong>投影是数；"投影向量"是"投影值乘以 \(\mathbf{a}\) 方向上的单位向量"，结果是向量。本题若问"投影向量"，答案是 \(1\cdot(1,0)=(1,0)\)（也就是选项 C）。<strong>读题时把"投影"和"投影向量"区分开。</strong></li>
       </ul>
     </div>
   </div>
@@ -2407,58 +2413,58 @@
     <p><strong>特征：</strong>给出一个复数的表达式（通常是分式形式），求化简后的复数，或求它的共轭、模、与共轭的差。</p>
     <p><strong>套路（三步走）：</strong></p>
     <ol class="steps">
-      <li><strong>化简成 \(a+b\i\) 的标准形式</strong>——分式要"分母实数化"（分子分母同乘分母的共轭）。</li>
+      <li><strong>化简成 \(a+b\mathrm{i}\) 的标准形式</strong>——分式要"分母实数化"（分子分母同乘分母的共轭）。</li>
       <li><strong>看清题目要求的是什么</strong>——是 \(z\) 本身？还是 \(\overline{z}\)？还是 \(z-\overline{z}\)？还是 \(|z|\)？</li>
-      <li><strong>按定义计算</strong>——共轭是"虚部取反"，模是"\(\sqrt{a^{2}+b^{2}}\)"，差是"\(2b\i\)"。</li>
+      <li><strong>按定义计算</strong>——共轭是"虚部取反"，模是"\(\sqrt{a^{2}+b^{2}}\)"，差是"\(2b\mathrm{i}\)"。</li>
     </ol>
     <p><strong>★ 时间控制：这道题应该在 60 秒内做完。</strong>如果超过 90 秒，说明化简出了问题。</p>
   </div>
 
   <div class="box eg">
     <span class="tag">真题 9 · 2024 新高考I卷</span>
-    <p>若 \(\dfrac{z}{z-1}=1+\i\)，则 \(z=\)（　　）</p>
-    <p>A. \(-1-\i\)　　B. \(-1+\i\)　　C. \(1-\i\)　　D. \(1+\i\)</p>
+    <p>若 \(\dfrac{z}{z-1}=1+\mathrm{i}\)，则 \(z=\)（　　）</p>
+    <p>A. \(-1-\mathrm{i}\)　　B. \(-1+\mathrm{i}\)　　C. \(1-\mathrm{i}\)　　D. \(1+\mathrm{i}\)</p>
 
     <h4>解析</h4>
     <p><strong>第一步：去分母。</strong>两边同乘 \(z-1\)（\(z\ne1\)）：</p>
     <div class="formula">
-      \[ z=(1+\i)(z-1) \]
+      \[ z=(1+\mathrm{i})(z-1) \]
     </div>
 
     <p><strong>第二步：展开并整理。</strong></p>
     <div class="formula">
-      \[ z=(1+\i)z-(1+\i) \]
+      \[ z=(1+\mathrm{i})z-(1+\mathrm{i}) \]
     </div>
     <p>把含 \(z\) 的项移到左边：</p>
     <div class="formula">
-      \[ z-(1+\i)z=-(1+\i) \]
+      \[ z-(1+\mathrm{i})z=-(1+\mathrm{i}) \]
     </div>
     <p>左边提取公因子 \(z\)：</p>
     <div class="formula">
-      \[ \left[1-(1+\i)\right]z=-(1+\i) \]
+      \[ \left[1-(1+\mathrm{i})\right]z=-(1+\mathrm{i}) \]
     </div>
     <div class="formula">
-      \[ (-\i)z=-(1+\i) \]
+      \[ (-\mathrm{i})z=-(1+\mathrm{i}) \]
     </div>
 
-    <p><strong>第三步：解出 \(z\)。</strong>两边同除 \(-\i\)：</p>
+    <p><strong>第三步：解出 \(z\)。</strong>两边同除 \(-\mathrm{i}\)：</p>
     <div class="formula">
-      \[ z=\frac{-(1+\i)}{-\i}=\frac{1+\i}{\i} \]
+      \[ z=\frac{-(1+\mathrm{i})}{-\mathrm{i}}=\frac{1+\mathrm{i}}{\mathrm{i}} \]
     </div>
-    <p>分母实数化：分子分母同乘 \(\i\) 的共轭 \(-\i\)（或直接乘 \(\i\) 也行，因为 \(\i\cdot(-\i)=1\)）：</p>
+    <p>分母实数化：分子分母同乘 \(\mathrm{i}\) 的共轭 \(-\mathrm{i}\)（或直接乘 \(\mathrm{i}\) 也行，因为 \(\mathrm{i}\cdot(-\mathrm{i})=1\)）：</p>
     <div class="formula">
-      \[ \frac{1+\i}{\i}=\frac{(1+\i)\times(-\i)}{\i\times(-\i)}=\frac{-\i-\i^{2}}{-\i^{2}}=\frac{-\i+1}{1}=1-\i \]
+      \[ \frac{1+\mathrm{i}}{\mathrm{i}}=\frac{(1+\mathrm{i})\times(-\mathrm{i})}{\mathrm{i}\times(-\mathrm{i})}=\frac{-\mathrm{i}-\mathrm{i}^{2}}{-\mathrm{i}^{2}}=\frac{-\mathrm{i}+1}{1}=1-\mathrm{i} \]
     </div>
 
     <p><strong>答案：</strong>\(\boxed{\text{C}}\)</p>
 
-    <p><strong>验算：</strong>把 \(z=1-\i\) 代回原式：</p>
+    <p><strong>验算：</strong>把 \(z=1-\mathrm{i}\) 代回原式：</p>
     <div class="formula">
-      \[ \frac{z}{z-1}=\frac{1-\i}{(1-\i)-1}=\frac{1-\i}{-\i} \]
+      \[ \frac{z}{z-1}=\frac{1-\mathrm{i}}{(1-\mathrm{i})-1}=\frac{1-\mathrm{i}}{-\mathrm{i}} \]
     </div>
-    <p>分母实数化（分子分母同乘 \(\i\)）：</p>
+    <p>分母实数化（分子分母同乘 \(\mathrm{i}\)）：</p>
     <div class="formula">
-      \[ \frac{(1-\i)\i}{-\i\times\i}=\frac{\i-\i^{2}}{-\i^{2}}=\frac{\i+1}{1}=1+\i \]
+      \[ \frac{(1-\mathrm{i})\mathrm{i}}{-\mathrm{i}\times\mathrm{i}}=\frac{\mathrm{i}-\mathrm{i}^{2}}{-\mathrm{i}^{2}}=\frac{\mathrm{i}+1}{1}=1+\mathrm{i} \]
     </div>
     <p>✓ 等于题目给的右边。</p>
 
@@ -2466,57 +2472,57 @@
       <span class="tag">提分要点</span>
       <ul>
         <li><strong>看到"\(\dfrac{z}{z-1}=\)"这种形式，先去分母再整理。</strong>把含 \(z\) 的项集中到一边，然后像解一次方程一样处理。</li>
-        <li><strong>\(\dfrac1\i=-\i\) 这个结论要背。</strong>验证：\(\dfrac1\i=\dfrac{1\times(-\i)}{\i\times(-\i)}=\dfrac{-\i}{1}=-\i\) ✓。有了它，本题第三步可以直接写成 \(z=\dfrac{1+\i}{\i}=(1+\i)\times(-\i)=-\i-\i^{2}=1-\i\)，快很多。</li>
+        <li><strong>\(\dfrac1\mathrm{i}=-\mathrm{i}\) 这个结论要背。</strong>验证：\(\dfrac1\mathrm{i}=\dfrac{1\times(-\mathrm{i})}{\mathrm{i}\times(-\mathrm{i})}=\dfrac{-\mathrm{i}}{1}=-\mathrm{i}\) ✓。有了它，本题第三步可以直接写成 \(z=\dfrac{1+\mathrm{i}}{\mathrm{i}}=(1+\mathrm{i})\times(-\mathrm{i})=-\mathrm{i}-\mathrm{i}^{2}=1-\mathrm{i}\)，快很多。</li>
         <li><strong>验算时把答案代回原式</strong>，比重新算一遍更可靠——能直接发现符号错误。</li>
-        <li><strong>注意选项的"对称设计"。</strong>四个选项正好是 \(1\pm\i\)、\(-1\pm\i\) 的全组合，说明考的就是"符号"和"实虚部位置"。<strong>算的时候把每一步的符号写清楚。</strong></li>
+        <li><strong>注意选项的"对称设计"。</strong>四个选项正好是 \(1\pm\mathrm{i}\)、\(-1\pm\mathrm{i}\) 的全组合，说明考的就是"符号"和"实虚部位置"。<strong>算的时候把每一步的符号写清楚。</strong></li>
       </ul>
     </div>
   </div>
 
   <div class="box eg">
     <span class="tag">真题 10 · 2023 新高考I卷</span>
-    <p>已知 \(z=\dfrac{1-\i}{2+2\i}\)，则 \(z-\overline{z}=\)（　　）</p>
-    <p>A. \(-\i\)　　B. \(\i\)　　C. \(0\)　　D. \(1\)</p>
+    <p>已知 \(z=\dfrac{1-\mathrm{i}}{2+2\mathrm{i}}\)，则 \(z-\overline{z}=\)（　　）</p>
+    <p>A. \(-\mathrm{i}\)　　B. \(\mathrm{i}\)　　C. \(0\)　　D. \(1\)</p>
 
     <h4>解析</h4>
-    <p><strong>第一步：化简 \(z\)。</strong>先观察分母 \(2+2\i=2(1+\i)\)，可以先把 2 提到外面：</p>
+    <p><strong>第一步：化简 \(z\)。</strong>先观察分母 \(2+2\mathrm{i}=2(1+\mathrm{i})\)，可以先把 2 提到外面：</p>
     <div class="formula">
-      \[ z=\frac{1-\i}{2(1+\i)}=\frac12\cdot\frac{1-\i}{1+\i} \]
+      \[ z=\frac{1-\mathrm{i}}{2(1+\mathrm{i})}=\frac12\cdot\frac{1-\mathrm{i}}{1+\mathrm{i}} \]
     </div>
-    <p>把 \(\dfrac{1-\i}{1+\i}\) 分母实数化（同乘 \(1-\i\)）：</p>
+    <p>把 \(\dfrac{1-\mathrm{i}}{1+\mathrm{i}}\) 分母实数化（同乘 \(1-\mathrm{i}\)）：</p>
     <div class="formula">
-      \[ \frac{1-\i}{1+\i}=\frac{(1-\i)^{2}}{(1+\i)(1-\i)}=\frac{1-2\i+\i^{2}}{1^{2}+1^{2}}=\frac{1-2\i-1}{2}=\frac{-2\i}{2}=-\i \]
+      \[ \frac{1-\mathrm{i}}{1+\mathrm{i}}=\frac{(1-\mathrm{i})^{2}}{(1+\mathrm{i})(1-\mathrm{i})}=\frac{1-2\mathrm{i}+\mathrm{i}^{2}}{1^{2}+1^{2}}=\frac{1-2\mathrm{i}-1}{2}=\frac{-2\mathrm{i}}{2}=-\mathrm{i} \]
     </div>
     <p>所以</p>
     <div class="formula">
-      \[ z=\frac12\times(-\i)=-\frac12\i \]
+      \[ z=\frac12\times(-\mathrm{i})=-\frac12\mathrm{i} \]
     </div>
 
     <p><strong>第二步：写出 \(z\) 的标准形式，读出实部和虚部。</strong></p>
     <div class="formula">
-      \[ z=0+\left(-\frac12\right)\i \]
+      \[ z=0+\left(-\frac12\right)\mathrm{i} \]
     </div>
     <p>所以实部 \(a=0\)，虚部 \(b=-\dfrac12\)。</p>
 
-    <p><strong>第三步：用 \(z-\overline{z}=2b\i\)。</strong></p>
+    <p><strong>第三步：用 \(z-\overline{z}=2b\mathrm{i}\)。</strong></p>
     <div class="formula">
-      \[ z-\overline{z}=2\times\left(-\frac12\right)\i=-\i \]
+      \[ z-\overline{z}=2\times\left(-\frac12\right)\mathrm{i}=-\mathrm{i} \]
     </div>
 
     <p><strong>答案：</strong>\(\boxed{\text{A}}\)</p>
 
-    <p><strong>验算（直接算共轭）：</strong>\(z=-\dfrac12\i\)，所以 \(\overline{z}=\dfrac12\i\)（虚部取反）。</p>
+    <p><strong>验算（直接算共轭）：</strong>\(z=-\dfrac12\mathrm{i}\)，所以 \(\overline{z}=\dfrac12\mathrm{i}\)（虚部取反）。</p>
     <div class="formula">
-      \[ z-\overline{z}=-\frac12\i-\frac12\i=-\i \]
+      \[ z-\overline{z}=-\frac12\mathrm{i}-\frac12\mathrm{i}=-\mathrm{i} \]
     </div>
     <p>✓ 一致。</p>
 
     <div class="box warn" style="margin-top:16px;margin-bottom:0;">
       <span class="tag">提分要点</span>
       <ul>
-        <li><strong>先"提出常数"能大幅简化计算。</strong>本题分母 \(2+2\i\) 提出 2 后，剩下的 \(\dfrac{1-\i}{1+\i}\) 好算很多。</li>
-        <li><strong>\((1-\i)^{2}=-2\i\) 是常用结论，直接记。</strong>验证：\((1-\i)^{2}=1-2\i+\i^{2}=1-2\i-1=-2\i\) ✓。同理 \((1+\i)^{2}=2\i\)。</li>
-        <li><strong>\(z-\overline{z}=2b\i\)（虚部的 2 倍乘 \(\i\)）</strong>这条性质要背。本题 \(b=-\dfrac12\)，所以结果是 \(-\i\)，一步到位。</li>
+        <li><strong>先"提出常数"能大幅简化计算。</strong>本题分母 \(2+2\mathrm{i}\) 提出 2 后，剩下的 \(\dfrac{1-\mathrm{i}}{1+\mathrm{i}}\) 好算很多。</li>
+        <li><strong>\((1-\mathrm{i})^{2}=-2\mathrm{i}\) 是常用结论，直接记。</strong>验证：\((1-\mathrm{i})^{2}=1-2\mathrm{i}+\mathrm{i}^{2}=1-2\mathrm{i}-1=-2\mathrm{i}\) ✓。同理 \((1+\mathrm{i})^{2}=2\mathrm{i}\)。</li>
+        <li><strong>\(z-\overline{z}=2b\mathrm{i}\)（虚部的 2 倍乘 \(\mathrm{i}\)）</strong>这条性质要背。本题 \(b=-\dfrac12\)，所以结果是 \(-\mathrm{i}\)，一步到位。</li>
         <li><strong>注意 \(z-\overline{z}\) 的结果一定是纯虚数</strong>（或 0）。选项 C（\(0\)）和 D（\(1\)）中，\(1\) 是实数，直接可以排除 D。</li>
       </ul>
     </div>
@@ -2524,106 +2530,106 @@
 
   <div class="box eg">
     <span class="tag">真题 11 · 2021 新高考I卷</span>
-    <p>已知 \(z=2-\i\)，则 \(z(\overline{z}+\i)=\)（　　）</p>
-    <p>A. \(6-2\i\)　　B. \(4-2\i\)　　C. \(6+2\i\)　　D. \(4+2\i\)</p>
+    <p>已知 \(z=2-\mathrm{i}\)，则 \(z(\overline{z}+\mathrm{i})=\)（　　）</p>
+    <p>A. \(6-2\mathrm{i}\)　　B. \(4-2\mathrm{i}\)　　C. \(6+2\mathrm{i}\)　　D. \(4+2\mathrm{i}\)</p>
 
     <h4>解析</h4>
-    <p><strong>第一步：求 \(\overline{z}\)。</strong>由 \(z=2-\i\)，虚部取反：</p>
+    <p><strong>第一步：求 \(\overline{z}\)。</strong>由 \(z=2-\mathrm{i}\)，虚部取反：</p>
     <div class="formula">
-      \[ \overline{z}=2+\i \]
+      \[ \overline{z}=2+\mathrm{i} \]
     </div>
 
-    <p><strong>第二步：算 \(\overline{z}+\i\)。</strong></p>
+    <p><strong>第二步：算 \(\overline{z}+\mathrm{i}\)。</strong></p>
     <div class="formula">
-      \[ \overline{z}+\i=(2+\i)+\i=2+2\i \]
+      \[ \overline{z}+\mathrm{i}=(2+\mathrm{i})+\mathrm{i}=2+2\mathrm{i} \]
     </div>
 
     <p><strong>第三步：算乘积。</strong></p>
     <div class="formula">
-      \[ z(\overline{z}+\i)=(2-\i)(2+2\i) \]
+      \[ z(\overline{z}+\mathrm{i})=(2-\mathrm{i})(2+2\mathrm{i}) \]
     </div>
     <p>按多项式展开：</p>
     <div class="formula">
-      \[ =2\times2+2\times2\i-\i\times2-\i\times2\i \]
+      \[ =2\times2+2\times2\mathrm{i}-\mathrm{i}\times2-\mathrm{i}\times2\mathrm{i} \]
     </div>
     <div class="formula">
-      \[ =4+4\i-2\i-2\i^{2} \]
+      \[ =4+4\mathrm{i}-2\mathrm{i}-2\mathrm{i}^{2} \]
     </div>
     <div class="formula">
-      \[ =4+2\i-2\times(-1)=4+2\i+2=6+2\i \]
+      \[ =4+2\mathrm{i}-2\times(-1)=4+2\mathrm{i}+2=6+2\mathrm{i} \]
     </div>
 
     <p><strong>答案：</strong>\(\boxed{\text{C}}\)</p>
 
     <p><strong>验算（用 \(z\overline{z}=|z|^{2}\) 拆开算）：</strong>先展开原式：</p>
     <div class="formula">
-      \[ z(\overline{z}+\i)=z\overline{z}+z\i \]
+      \[ z(\overline{z}+\mathrm{i})=z\overline{z}+z\mathrm{i} \]
     </div>
     <p>由性质 \(z\overline{z}=|z|^{2}\)：</p>
     <div class="formula">
       \[ z\overline{z}=|z|^{2}=2^{2}+(-1)^{2}=4+1=5 \]
     </div>
-    <p>再算 \(z\i\)：</p>
+    <p>再算 \(z\mathrm{i}\)：</p>
     <div class="formula">
-      \[ z\i=(2-\i)\i=2\i-\i^{2}=2\i+1=1+2\i \]
+      \[ z\mathrm{i}=(2-\mathrm{i})\mathrm{i}=2\mathrm{i}-\mathrm{i}^{2}=2\mathrm{i}+1=1+2\mathrm{i} \]
     </div>
     <p>所以</p>
     <div class="formula">
-      \[ z(\overline{z}+\i)=5+(1+2\i)=6+2\i \]
+      \[ z(\overline{z}+\mathrm{i})=5+(1+2\mathrm{i})=6+2\mathrm{i} \]
     </div>
     <p>✓ 一致。</p>
 
     <div class="box warn" style="margin-top:16px;margin-bottom:0;">
       <span class="tag">提分要点</span>
       <ul>
-        <li><strong>"先展开再代入"往往比"先算括号"更快。</strong>本题展开成 \(z\overline{z}+z\i\) 后，第一项直接用 \(z\overline{z}=|z|^{2}=5\) 秒算。</li>
+        <li><strong>"先展开再代入"往往比"先算括号"更快。</strong>本题展开成 \(z\overline{z}+z\mathrm{i}\) 后，第一项直接用 \(z\overline{z}=|z|^{2}=5\) 秒算。</li>
         <li><strong>\(z\overline{z}=|z|^{2}\) 是复数部分最有用的恒等式。</strong>它把"复数乘积"变成"实数平方和"，省去开方。</li>
-        <li><strong>选项的规律能帮你检查答案。</strong>四个选项是 \(6\pm2\i\) 与 \(4\pm2\i\) 的组合——说明实部可能是 6 或 4，虚部是 \(\pm2\)。本题算出的 \(6+2\i\) 中虚部为正，符合 \(\overline{z}+\i=2+2\i\) 中虚部为正的直觉。</li>
+        <li><strong>选项的规律能帮你检查答案。</strong>四个选项是 \(6\pm2\mathrm{i}\) 与 \(4\pm2\mathrm{i}\) 的组合——说明实部可能是 6 或 4，虚部是 \(\pm2\)。本题算出的 \(6+2\mathrm{i}\) 中虚部为正，符合 \(\overline{z}+\mathrm{i}=2+2\mathrm{i}\) 中虚部为正的直觉。</li>
       </ul>
     </div>
   </div>
 
   <div class="box eg">
     <span class="tag">真题 12 · 2020 新高考I卷</span>
-    <p>\(\dfrac{2-\i}{1+2\i}\) 等于（　　）</p>
-    <p>A. \(1\)　　B. \(-1\)　　C. \(\i\)　　D. \(-\i\)</p>
+    <p>\(\dfrac{2-\mathrm{i}}{1+2\mathrm{i}}\) 等于（　　）</p>
+    <p>A. \(1\)　　B. \(-1\)　　C. \(\mathrm{i}\)　　D. \(-\mathrm{i}\)</p>
 
     <h4>解析</h4>
-    <p><strong>第一步：分母实数化。</strong>分母 \(1+2\i\) 的共轭是 \(1-2\i\)，分子分母同乘它：</p>
+    <p><strong>第一步：分母实数化。</strong>分母 \(1+2\mathrm{i}\) 的共轭是 \(1-2\mathrm{i}\)，分子分母同乘它：</p>
     <div class="formula">
-      \[ \frac{2-\i}{1+2\i}=\frac{(2-\i)(1-2\i)}{(1+2\i)(1-2\i)} \]
+      \[ \frac{2-\mathrm{i}}{1+2\mathrm{i}}=\frac{(2-\mathrm{i})(1-2\mathrm{i})}{(1+2\mathrm{i})(1-2\mathrm{i})} \]
     </div>
 
     <p><strong>第二步：算分母。</strong>用 \(z\overline{z}=|z|^{2}\)：</p>
     <div class="formula">
-      \[ (1+2\i)(1-2\i)=1^{2}+2^{2}=1+4=5 \]
+      \[ (1+2\mathrm{i})(1-2\mathrm{i})=1^{2}+2^{2}=1+4=5 \]
     </div>
 
     <p><strong>第三步：算分子。</strong>按多项式展开：</p>
     <div class="formula">
-      \[ (2-\i)(1-2\i)=2\times1-2\times2\i-\i\times1+\i\times2\i \]
+      \[ (2-\mathrm{i})(1-2\mathrm{i})=2\times1-2\times2\mathrm{i}-\mathrm{i}\times1+\mathrm{i}\times2\mathrm{i} \]
     </div>
     <div class="formula">
-      \[ =2-4\i-\i+2\i^{2}=2-5\i+2\times(-1) \]
+      \[ =2-4\mathrm{i}-\mathrm{i}+2\mathrm{i}^{2}=2-5\mathrm{i}+2\times(-1) \]
     </div>
     <div class="formula">
-      \[ =2-5\i-2=-5\i \]
+      \[ =2-5\mathrm{i}-2=-5\mathrm{i} \]
     </div>
 
     <p><strong>第四步：相除。</strong></p>
     <div class="formula">
-      \[ \frac{-5\i}{5}=-\i \]
+      \[ \frac{-5\mathrm{i}}{5}=-\mathrm{i} \]
     </div>
 
     <p><strong>答案：</strong>\(\boxed{\text{D}}\)</p>
 
-    <p><strong>验算：</strong>把 \(-\i\) 代回检验——若 \(\dfrac{2-\i}{1+2\i}=-\i\)，则应有</p>
+    <p><strong>验算：</strong>把 \(-\mathrm{i}\) 代回检验——若 \(\dfrac{2-\mathrm{i}}{1+2\mathrm{i}}=-\mathrm{i}\)，则应有</p>
     <div class="formula">
-      \[ (-\i)(1+2\i)=2-\i \]
+      \[ (-\mathrm{i})(1+2\mathrm{i})=2-\mathrm{i} \]
     </div>
     <p>算左边：</p>
     <div class="formula">
-      \[ (-\i)(1+2\i)=-\i-2\i^{2}=-\i+2=2-\i \]
+      \[ (-\mathrm{i})(1+2\mathrm{i})=-\mathrm{i}-2\mathrm{i}^{2}=-\mathrm{i}+2=2-\mathrm{i} \]
     </div>
     <p>✓ 等于右边，验证通过。</p>
 
@@ -2631,10 +2637,10 @@
       <span class="tag">提分要点</span>
       <ul>
         <li><strong>分母实数化是"分母是复数的分式"的唯一标准动作。</strong>不要试图用别的技巧，老老实实同乘共轭。</li>
-        <li><strong>算分母时用 \(z\overline{z}=|z|^{2}\) 最快。</strong>\((1+2\i)(1-2\i)=1+4=5\)，不用展开。</li>
-        <li><strong>分子展开时注意 \(\i^{2}=-1\)。</strong>本题最后一步 \(2\i^{2}=2\times(-1)=-2\)，与前面的 \(2\) 抵消，这是结果"没有实部"的原因。</li>
-        <li><strong>验算用"乘回去"最可靠。</strong>算出 \(\dfrac{2-\i}{1+2\i}=-\i\) 后，用 \((-\i)(1+2\i)\) 反算一遍，能立刻发现错误。</li>
-        <li><strong>本题四个选项都是"实部为 0 或 \(\pm1\)"</strong>，暗示答案可能没有实部或实部为 \(\pm1\)。算出 \(-\i\)（实部为 0）后可以对照这个规律检查。</li>
+        <li><strong>算分母时用 \(z\overline{z}=|z|^{2}\) 最快。</strong>\((1+2\mathrm{i})(1-2\mathrm{i})=1+4=5\)，不用展开。</li>
+        <li><strong>分子展开时注意 \(\mathrm{i}^{2}=-1\)。</strong>本题最后一步 \(2\mathrm{i}^{2}=2\times(-1)=-2\)，与前面的 \(2\) 抵消，这是结果"没有实部"的原因。</li>
+        <li><strong>验算用"乘回去"最可靠。</strong>算出 \(\dfrac{2-\mathrm{i}}{1+2\mathrm{i}}=-\mathrm{i}\) 后，用 \((-\mathrm{i})(1+2\mathrm{i})\) 反算一遍，能立刻发现错误。</li>
+        <li><strong>本题四个选项都是"实部为 0 或 \(\pm1\)"</strong>，暗示答案可能没有实部或实部为 \(\pm1\)。算出 \(-\mathrm{i}\)（实部为 0）后可以对照这个规律检查。</li>
       </ul>
     </div>
   </div>
@@ -2644,9 +2650,9 @@
   <div class="box proof">
     <span class="tag">十年真题告诉我们的五件事</span>
     <ol class="steps">
-      <li><strong>复数题必须在 60 秒内拿下。</strong>题型固定（分式化简 + 求共轭/求模/求差），套路只有"分母实数化"。<strong>把 \((1\pm\i)^{2}=\pm2\i\)、\(\dfrac1\i=-\i\) 这两个结论背熟。</strong></li>
+      <li><strong>复数题必须在 60 秒内拿下。</strong>题型固定（分式化简 + 求共轭/求模/求差），套路只有"分母实数化"。<strong>把 \((1\pm\mathrm{i})^{2}=\pm2\mathrm{i}\)、\(\dfrac1\mathrm{i}=-\mathrm{i}\) 这两个结论背熟。</strong></li>
       <li><strong>向量垂直题的标准动作是"先算组合向量，再套 \(x_1x_2+y_1y_2=0\)"。</strong>不要跳过"算组合向量"这一步（真题 2、4）。</li>
-      <li><strong>看到"模的等式"，立刻两边平方展开。</strong>\(|\bs a+\bs b|^{2}=|\bs a|^{2}+|\bs b|^{2}\) 等价于 \(\bs a\perp\bs b\)（真题 7）。</li>
+      <li><strong>看到"模的等式"，立刻两边平方展开。</strong>\(|\mathbf{a}+\mathbf{b}|^{2}=|\mathbf{a}|^{2}+|\mathbf{b}|^{2}\) 等价于 \(\mathbf{a}\perp\mathbf{b}\)（真题 7）。</li>
       <li><strong>\(\angle ABC\) 必须用以 \(B\) 为起点的两个向量。</strong>这是夹角题最大的陷阱（真题 6）。</li>
       <li><strong>投影是数，不是向量</strong>，且公式的分母是"在谁的方向上就用谁的模"（真题 8）。</li>
     </ol>
@@ -2660,8 +2666,8 @@
       <li><strong>向量夹角题：限时 2 分钟。</strong>算数量积 30 秒，算两个模 30 秒，代入公式 + 反查角 60 秒。</li>
       <li><strong>保分动作：</strong>
         <ul>
-          <li>复数题一定要<strong>写出 \(a+b\i\) 的标准形式</strong>再回答，不要直接猜选项。</li>
-          <li>向量题一定要<strong>把"用了哪条判据"写清楚</strong>（如"由 \(\bs a\perp\bs b\) 得 \(x_1x_2+y_1y_2=0\)"）。</li>
+          <li>复数题一定要<strong>写出 \(a+b\mathrm{i}\) 的标准形式</strong>再回答，不要直接猜选项。</li>
+          <li>向量题一定要<strong>把"用了哪条判据"写清楚</strong>（如"由 \(\mathbf{a}\perp\mathbf{b}\) 得 \(x_1x_2+y_1y_2=0\)"）。</li>
         </ul>
       </li>
       <li><strong>验算技巧：</strong>
@@ -2670,7 +2676,7 @@
           <li>向量题：用<strong>另一种算法</strong>（如用运算律展开 vs 用坐标展开）交叉验证。</li>
         </ul>
       </li>
-      <li><strong>常用结论要背：</strong>\((1+\i)^{2}=2\i\)、\((1-\i)^{2}=-2\i\)、\(\dfrac1\i=-\i\)、\(\dfrac{1+\i}{1-\i}=\i\)、\(z-\overline{z}=2b\i\)、\(z\overline{z}=|z|^{2}\)。</li>
+      <li><strong>常用结论要背：</strong>\((1+\mathrm{i})^{2}=2\mathrm{i}\)、\((1-\mathrm{i})^{2}=-2\mathrm{i}\)、\(\dfrac1\mathrm{i}=-\mathrm{i}\)、\(\dfrac{1+\mathrm{i}}{1-\mathrm{i}}=\mathrm{i}\)、\(z-\overline{z}=2b\mathrm{i}\)、\(z\overline{z}=|z|^{2}\)。</li>
     </ul>
   </div>
 
@@ -2681,16 +2687,16 @@
         <thead><tr><th>题型</th><th>真题</th><th>考查点</th></tr></thead>
         <tbody>
           <tr><td><strong>8.1　线性运算与共线</strong></td><td>2016 全国II卷（文）</td><td>平行判据 \(x_1y_2-x_2y_1=0\)；成倍数关系验算</td></tr>
-          <tr><td rowspan="3"><strong>8.2　数量积与垂直</strong></td><td>2024 新高考I卷</td><td>先算组合向量 \(\bs b-4\bs a\)；完全平方式</td></tr>
+          <tr><td rowspan="3"><strong>8.2　数量积与垂直</strong></td><td>2024 新高考I卷</td><td>先算组合向量 \(\mathbf{b}-4\mathbf{a}\)；完全平方式</td></tr>
           <tr><td>2023 新高考I卷　<span class="lv-hard">★★</span></td><td>两参数的关系式；用运算律展开更简</td></tr>
-          <tr><td>2016 山东卷（文）</td><td>\(\bs a\perp(t\bs a+\bs b)\) 的两种算法</td></tr>
+          <tr><td>2016 山东卷（文）</td><td>\(\mathbf{a}\perp(t\mathbf{a}+\mathbf{b})\) 的两种算法</td></tr>
           <tr><td rowspan="3"><strong>8.3　夹角与模</strong></td><td>2016 北京卷（文）</td><td>夹角公式三步；由 \(\cos\theta\) 反查角</td></tr>
           <tr><td>2016 全国III卷（理）</td><td>\(\angle ABC\) 必须用以 \(B\) 为起点的向量；单位向量</td></tr>
-          <tr><td>2016 全国I卷（理）</td><td>\(|\bs a+\bs b|^{2}=|\bs a|^{2}+|\bs b|^{2}\Leftrightarrow\) 垂直</td></tr>
-          <tr><td><strong>8.4　投影与几何意义</strong></td><td>2016 上海春考</td><td>投影是数；公式 \(\dfrac{\bs a\cdot\bs b}{|\bs a|}\)；与"投影向量"的区别</td></tr>
-          <tr><td rowspan="4"><strong>8.5　复数的运算</strong></td><td>2024 新高考I卷</td><td>去分母整理；\(\dfrac1\i=-\i\)</td></tr>
-          <tr><td>2023 新高考I卷</td><td>提出常数简化；\(z-\overline{z}=2b\i\)</td></tr>
-          <tr><td>2021 新高考I卷</td><td>展开成 \(z\overline{z}+z\i\)；\(z\overline{z}=|z|^{2}\)</td></tr>
+          <tr><td>2016 全国I卷（理）</td><td>\(|\mathbf{a}+\mathbf{b}|^{2}=|\mathbf{a}|^{2}+|\mathbf{b}|^{2}\Leftrightarrow\) 垂直</td></tr>
+          <tr><td><strong>8.4　投影与几何意义</strong></td><td>2016 上海春考</td><td>投影是数；公式 \(\dfrac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{a}|}\)；与"投影向量"的区别</td></tr>
+          <tr><td rowspan="4"><strong>8.5　复数的运算</strong></td><td>2024 新高考I卷</td><td>去分母整理；\(\dfrac1\mathrm{i}=-\mathrm{i}\)</td></tr>
+          <tr><td>2023 新高考I卷</td><td>提出常数简化；\(z-\overline{z}=2b\mathrm{i}\)</td></tr>
+          <tr><td>2021 新高考I卷</td><td>展开成 \(z\overline{z}+z\mathrm{i}\)；\(z\overline{z}=|z|^{2}\)</td></tr>
           <tr><td>2020 新高考I卷</td><td>分母实数化；乘回去验算</td></tr>
         </tbody>
       </table>
